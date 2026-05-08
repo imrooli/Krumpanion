@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "weapons": {
+    "FavoniusSword": {
+      "key": "FavoniusSword",
+      "displayName": "Favonius Sword",
+      "weaponType": "Sword",
+      "rarity": 4
+    }
+  }
+}

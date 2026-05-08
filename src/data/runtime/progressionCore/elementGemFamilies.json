@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "families": [
+    {
+      "key": "Anemo",
+      "element": "Anemo",
+      "sliver": "VayudaTurquoiseSliver",
+      "fragment": "VayudaTurquoiseFragment",
+      "chunk": "VayudaTurquoiseChunk",
+      "gemstone": "VayudaTurquoiseGemstone"
+    },
+    {
+      "key": "Cryo",
+      "element": "Cryo",
+      "sliver": "ShivadaJadeSliver",
+      "fragment": "ShivadaJadeFragment",
+      "chunk": "ShivadaJadeChunk",
+      "gemstone": "ShivadaJadeGemstone"
+    },
+    {
+      "key": "Dendro",
+      "element": "Dendro",
+      "sliver": "NagadusEmeraldSliver",
+      "fragment": "NagadusEmeraldFragment",
+      "chunk": "NagadusEmeraldChunk",
+      "gemstone": "NagadusEmeraldGemstone"
+    },
+    {
+      "key": "Electro",
+      "element": "Electro",
+      "sliver": "VajradaAmethystSliver",
+      "fragment": "VajradaAmethystFragment",
+      "chunk": "VajradaAmethystChunk",
+      "gemstone": "VajradaAmethystGemstone"
+    },
+    {
+      "key": "Geo",
+      "element": "Geo",
+      "sliver": "PrithivaTopazSliver",
+      "fragment": "PrithivaTopazFragment",
+      "chunk": "PrithivaTopazChunk",
+      "gemstone": "PrithivaTopazGemstone"
+    },
+    {
+      "key": "Hydro",
+      "element": "Hydro",
+      "sliver": "VarunadaLazuriteSliver",
+      "fragment": "VarunadaLazuriteFragment",
+      "chunk": "VarunadaLazuriteChunk",
+      "gemstone": "VarunadaLazuriteGemstone"
+    },
+    {
+      "key": "Pyro",
+      "element": "Pyro",
+      "sliver": "AgnidusAgateSliver",
+      "fragment": "AgnidusAgateFragment",
+      "chunk": "AgnidusAgateChunk",
+      "gemstone": "AgnidusAgateGemstone"
+    }
+  ]
+}

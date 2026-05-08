@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "originalResinCap": 200,
+  "regenMinutesPerResin": 8,
+  "naturalResinPerDay": 180,
+  "naturalResinPerWeek": 1260,
+  "costs": {
+    "domain": 20,
+    "leyLine": 20,
+    "normalBoss": 40,
+    "weeklyBossDiscounted": 30,
+    "weeklyBossFull": 60,
+    "condensedResinCraft": 60
+  },
+  "fragileResinRestores": 60,
+  "transientResinRestores": 60
+}

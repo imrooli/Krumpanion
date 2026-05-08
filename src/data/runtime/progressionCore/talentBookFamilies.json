@@ -1,0 +1,215 @@
+{
+  "version": 1,
+  "families": [
+    {
+      "key": "Freedom",
+      "teachings": "TeachingsOfFreedom",
+      "guide": "GuideToFreedom",
+      "philosophies": "PhilosophiesOfFreedom",
+      "domainKey": "ForsakenRift",
+      "domainName": "Forsaken Rift",
+      "availability": "MON_THU_SUN",
+      "region": "Mondstadt"
+    },
+    {
+      "key": "Resistance",
+      "teachings": "TeachingsOfResistance",
+      "guide": "GuideToResistance",
+      "philosophies": "PhilosophiesOfResistance",
+      "domainKey": "ForsakenRift",
+      "domainName": "Forsaken Rift",
+      "availability": "TUE_FRI_SUN",
+      "region": "Mondstadt"
+    },
+    {
+      "key": "Ballad",
+      "teachings": "TeachingsOfBallad",
+      "guide": "GuideToBallad",
+      "philosophies": "PhilosophiesOfBallad",
+      "domainKey": "ForsakenRift",
+      "domainName": "Forsaken Rift",
+      "availability": "WED_SAT_SUN",
+      "region": "Mondstadt"
+    },
+    {
+      "key": "Prosperity",
+      "teachings": "TeachingsOfProsperity",
+      "guide": "GuideToProsperity",
+      "philosophies": "PhilosophiesOfProsperity",
+      "domainKey": "TaishanMansion",
+      "domainName": "Taishan Mansion",
+      "availability": "MON_THU_SUN",
+      "region": "Liyue"
+    },
+    {
+      "key": "Diligence",
+      "teachings": "TeachingsOfDiligence",
+      "guide": "GuideToDiligence",
+      "philosophies": "PhilosophiesOfDiligence",
+      "domainKey": "TaishanMansion",
+      "domainName": "Taishan Mansion",
+      "availability": "TUE_FRI_SUN",
+      "region": "Liyue"
+    },
+    {
+      "key": "Gold",
+      "teachings": "TeachingsOfGold",
+      "guide": "GuideToGold",
+      "philosophies": "PhilosophiesOfGold",
+      "domainKey": "TaishanMansion",
+      "domainName": "Taishan Mansion",
+      "availability": "WED_SAT_SUN",
+      "region": "Liyue"
+    },
+    {
+      "key": "Transience",
+      "teachings": "TeachingsOfTransience",
+      "guide": "GuideToTransience",
+      "philosophies": "PhilosophiesOfTransience",
+      "domainKey": "VioletCourt",
+      "domainName": "Violet Court",
+      "availability": "MON_THU_SUN",
+      "region": "Inazuma"
+    },
+    {
+      "key": "Elegance",
+      "teachings": "TeachingsOfElegance",
+      "guide": "GuideToElegance",
+      "philosophies": "PhilosophiesOfElegance",
+      "domainKey": "VioletCourt",
+      "domainName": "Violet Court",
+      "availability": "TUE_FRI_SUN",
+      "region": "Inazuma"
+    },
+    {
+      "key": "Light",
+      "teachings": "TeachingsOfLight",
+      "guide": "GuideToLight",
+      "philosophies": "PhilosophiesOfLight",
+      "domainKey": "VioletCourt",
+      "domainName": "Violet Court",
+      "availability": "WED_SAT_SUN",
+      "region": "Inazuma"
+    },
+    {
+      "key": "Admonition",
+      "teachings": "TeachingsOfAdmonition",
+      "guide": "GuideToAdmonition",
+      "philosophies": "PhilosophiesOfAdmonition",
+      "domainKey": "SteepleOfIgnorance",
+      "domainName": "Steeple of Ignorance",
+      "availability": "MON_THU_SUN",
+      "region": "Sumeru"
+    },
+    {
+      "key": "Ingenuity",
+      "teachings": "TeachingsOfIngenuity",
+      "guide": "GuideToIngenuity",
+      "philosophies": "PhilosophiesOfIngenuity",
+      "domainKey": "SteepleOfIgnorance",
+      "domainName": "Steeple of Ignorance",
+      "availability": "TUE_FRI_SUN",
+      "region": "Sumeru"
+    },
+    {
+      "key": "Praxis",
+      "teachings": "TeachingsOfPraxis",
+      "guide": "GuideToPraxis",
+      "philosophies": "PhilosophiesOfPraxis",
+      "domainKey": "SteepleOfIgnorance",
+      "domainName": "Steeple of Ignorance",
+      "availability": "WED_SAT_SUN",
+      "region": "Sumeru"
+    },
+    {
+      "key": "Equity",
+      "teachings": "TeachingsOfEquity",
+      "guide": "GuideToEquity",
+      "philosophies": "PhilosophiesOfEquity",
+      "domainKey": "PaleForgottenGlory",
+      "domainName": "Pale Forgotten Glory",
+      "availability": "MON_THU_SUN",
+      "region": "Fontaine"
+    },
+    {
+      "key": "Justice",
+      "teachings": "TeachingsOfJustice",
+      "guide": "GuideToJustice",
+      "philosophies": "PhilosophiesOfJustice",
+      "domainKey": "PaleForgottenGlory",
+      "domainName": "Pale Forgotten Glory",
+      "availability": "TUE_FRI_SUN",
+      "region": "Fontaine"
+    },
+    {
+      "key": "Order",
+      "teachings": "TeachingsOfOrder",
+      "guide": "GuideToOrder",
+      "philosophies": "PhilosophiesOfOrder",
+      "domainKey": "PaleForgottenGlory",
+      "domainName": "Pale Forgotten Glory",
+      "availability": "WED_SAT_SUN",
+      "region": "Fontaine"
+    },
+    {
+      "key": "Contention",
+      "teachings": "TeachingsOfContention",
+      "guide": "GuideToContention",
+      "philosophies": "PhilosophiesOfContention",
+      "domainKey": "BlazingRuins",
+      "domainName": "Blazing Ruins",
+      "availability": "MON_THU_SUN",
+      "region": "Natlan"
+    },
+    {
+      "key": "Kindling",
+      "teachings": "TeachingsOfKindling",
+      "guide": "GuideToKindling",
+      "philosophies": "PhilosophiesOfKindling",
+      "domainKey": "BlazingRuins",
+      "domainName": "Blazing Ruins",
+      "availability": "TUE_FRI_SUN",
+      "region": "Natlan"
+    },
+    {
+      "key": "Conflict",
+      "teachings": "TeachingsOfConflict",
+      "guide": "GuideToConflict",
+      "philosophies": "PhilosophiesOfConflict",
+      "domainKey": "BlazingRuins",
+      "domainName": "Blazing Ruins",
+      "availability": "WED_SAT_SUN",
+      "region": "Natlan"
+    },
+    {
+      "key": "Moonlight",
+      "teachings": "TeachingsOfMoonlight",
+      "guide": "GuideToMoonlight",
+      "philosophies": "PhilosophiesOfMoonlight",
+      "domainKey": "LightlessCapital",
+      "domainName": "Lightless Capital",
+      "availability": "MON_THU_SUN",
+      "region": "Nod-Krai"
+    },
+    {
+      "key": "Elysium",
+      "teachings": "TeachingsOfElysium",
+      "guide": "GuideToElysium",
+      "philosophies": "PhilosophiesOfElysium",
+      "domainKey": "LightlessCapital",
+      "domainName": "Lightless Capital",
+      "availability": "TUE_FRI_SUN",
+      "region": "Nod-Krai"
+    },
+    {
+      "key": "Vagrancy",
+      "teachings": "TeachingsOfVagrancy",
+      "guide": "GuideToVagrancy",
+      "philosophies": "PhilosophiesOfVagrancy",
+      "domainKey": "LightlessCapital",
+      "domainName": "Lightless Capital",
+      "availability": "WED_SAT_SUN",
+      "region": "Nod-Krai"
+    }
+  ]
+}

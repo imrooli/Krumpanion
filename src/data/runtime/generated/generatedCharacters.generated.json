@@ -1,0 +1,23 @@
+{
+  "sourceVersion": "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)",
+  "characters": {
+    "Lohen": {
+      "key": "Lohen",
+      "displayName": "Lohen",
+      "element": "Cryo",
+      "region": "Mondstadt"
+    },
+    "Nicole": {
+      "key": "Nicole",
+      "displayName": "Nicole",
+      "element": "Pyro",
+      "region": "Nod-Krai"
+    },
+    "Prune": {
+      "key": "Prune",
+      "displayName": "Prune",
+      "element": "Anemo",
+      "region": "Nod-Krai"
+    }
+  }
+}

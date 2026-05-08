@@ -1,0 +1,821 @@
+Live updated to 6.5.0.
+Beta updated to 6.6(6.5.52)
+Character Index
+Characters
+Aino
+	Aino			Varunada Lazurite Chunk
+Precision Kuuvahki Stamping Die
+Reinforced Drive Shaft
+Portable Bearing
+Philosophies of Elysium
+Silken Feather
+Albedo
+	Albedo			Prithiva Topaz Chunk
+Basalt Pillar
+Sealed Scroll
+Cecilia
+Philosophies of Ballad
+Tusk of Monoceros Caeli
+Alhaitham
+	Alhaitham			Nagadus Emerald Chunk
+Pseudo-Stamens
+Trimmed Red Silk
+Sand Grease Pupa
+Philosophies of Ingenuity
+Mirror of Mushin
+Aloy
+	Aloy			Shivada Jade Chunk
+Crystalline Bloom
+Spectral Heart
+Crystal Marrow
+Philosophies of Freedom
+Molten Moment
+Amber
+	Amber			Agnidus Agate Chunk
+Everflame Seed
+Sharp Arrowhead
+Small Lamp Grass
+Philosophies of Freedom
+Dvalin's Sigh
+Arataki Itto
+	Arataki Itto			Prithiva Topaz Chunk
+Riftborn Regalia
+Slime Secretions
+Onikabuto
+Philosophies of Elegance
+Ashen Heart
+Arlecchino
+	Arlecchino			Agnidus Agate Chunk
+Fragment of a Golden Melody
+Sergeant's Insignia
+Rainbow Rose
+Philosophies of Order
+Fading Candle
+Baizhu
+	Baizhu			Nagadus Emerald Chunk
+Evergloom Ring
+Luminescent Pollen
+Violetgrass
+Philosophies of Gold
+Worldspan Fern
+Barbara
+	Barbara			Varunada Lazurite Chunk
+Cleansing Heart
+Sealed Scroll
+Philanemo Mushroom
+Philosophies of Freedom
+Ring of Boreas
+Beidou
+	Beidou			Vajrada Amethyst Chunk
+Lightning Prism
+Silver Raven Insignia
+Noctilucous Jade
+Philosophies of Gold
+Dvalin's Sigh
+Bennett
+	Bennett			Agnidus Agate Chunk
+Everflame Seed
+Silver Raven Insignia
+Windwheel Aster
+Philosophies of Resistance
+Dvalin's Plume
+Candace
+	Candace			Varunada Lazurite Chunk
+Light Guiding Tetrahedron
+Trimmed Red Silk
+Henna Berry
+Philosophies of Admonition
+Tears of the Calamitous God
+Charlotte
+	Charlotte			Shivada Jade Chunk
+Mechanical Spur Gear
+Beryl Conch
+Philosophies of Justice
+Lightless Silk String
+Chasca
+	Chasca			Vayuda Turquoise Chunk
+Ensnaring Gaze
+Seasoned Fang
+Withering Purpurbloom
+Philosophies of Conflict
+Silken Feather
+Chevreuse
+	Chevreuse			Agnidus Agate Chunk
+Fontemer Unihorn
+Mechanical Spur Gear
+Lumidouce Bell
+Philosophies of Order
+Lightless Eye of the Maelstrom
+Chiori
+	Chiori			Prithiva Topaz Chunk
+Artificed Spare Clockwork Component — Coppelia
+Spectral Heart
+Dendrobium
+Philosophies of Light
+Lightless Silk String
+Chongyun
+	Chongyun			Shivada Jade Chunk
+Hoarfrost Core
+Stained Mask
+Cor Lapis
+Philosophies of Diligence
+Dvalin's Sigh
+Citlali
+	Citlali			Shivada Jade Chunk
+Talisman of the Enigmatic Land
+Seasoned Fang
+Quenepa Berry
+Philosophies of Kindling
+Denial and Judgment
+Clorinde
+	Clorinde			Vajrada Amethyst Chunk
+Fontemer Unihorn
+Transoceanic Chunk
+Lumitoile
+Philosophies of Justice
+Everamber
+Collei
+	Collei			Nagadus Emerald Chunk
+Majestic Hooked Beak
+Sharp Arrowhead
+Rukkhashava Mushrooms
+Philosophies of Praxis
+Tears of the Calamitous God
+Columbina
+	Columbina			Varunada Lazurite Chunk
+Radiant Antler
+Slime Secretions
+Winter Icelea
+Philosophies of Moonlight
+Mask of the Virtuous Doctor
+Cyno
+	Cyno			Vajrada Amethyst Chunk
+Thunderclap Fruitcore
+Sealed Scroll
+Scarab
+Philosophies of Admonition
+Mudra of the Malefic General
+Dahlia
+	Dahlia			Varunada Lazurite Chunk
+Secret Source Airflow Accumulator
+Sharp Arrowhead
+Calla Lily
+Philosophies of Ballad
+Eroded Scale-Feather
+Dehya
+	Dehya			Agnidus Agate Chunk
+Light Guiding Tetrahedron
+Trimmed Red Silk
+Sand Grease Pupa
+Philosophies of Praxis
+Puppet Strings
+Diluc
+	Diluc			Agnidus Agate Chunk
+Everflame Seed
+Sergeant's Insignia
+Small Lamp Grass
+Philosophies of Resistance
+Dvalin's Plume
+Diona
+	Diona			Shivada Jade Chunk
+Hoarfrost Core
+Sharp Arrowhead
+Calla Lily
+Philosophies of Freedom
+Shard of a Foul Legacy
+Dori
+	Dori			Vajrada Amethyst Chunk
+Thunderclap Fruitcore
+Trimmed Red Silk
+Kalpalata Lotus
+Philosophies of Ingenuity
+Bloodjade Branch
+Durin
+	Durin			Agnidus Agate Chunk
+Cyclic Military Kuuvahki Core
+Immaculate Warrant
+Frostlamp Flower
+Philosophies of Ballad
+Eroded Sunfire
+Emilie
+	Emilie			Nagadus Emerald Chunk
+Fragment of a Golden Melody
+Mechanical Spur Gear
+Lakelight Lily
+Philosophies of Order
+Silken Feather
+Escoffier
+	Escoffier			Shivada Jade Chunk
+Secret Source Airflow Accumulator
+Mechanical Spur Gear
+Beryl Conch
+Philosophies of Justice
+Eroded Horn
+Eula
+	Eula			Shivada Jade Chunk
+Crystalline Bloom
+Stained Mask
+Dandelion Seed
+Philosophies of Resistance
+Dragon Lord's Crown
+Faruzan
+	Faruzan			Vayuda Turquoise Chunk
+Light Guiding Tetrahedron
+Trimmed Red Silk
+Henna Berry
+Philosophies of Admonition
+Puppet Strings
+Fischl
+	Fischl			Vajrada Amethyst Chunk
+Lightning Prism
+Sharp Arrowhead
+Small Lamp Grass
+Philosophies of Ballad
+Spirit Locket of Boreas
+Flins
+	Flins			Vajrada Amethyst Chunk
+Precision Kuuvahki Stamping Die
+Reinforced Drive Shaft
+Frostlamp Flower
+Philosophies of Vagrancy
+Ascended Sample: Queen
+Freminet
+	Freminet			Shivada Jade Chunk
+Artificed Spare Clockwork Component — Coppelius
+Transoceanic Chunk
+Romaritime Flower
+Philosophies of Justice
+Worldspan Fern
+Furina
+	Furina			Varunada Lazurite Chunk
+Water That Failed To Transcend
+Shimmering Nectar
+Lakelight Lily
+Philosophies of Justice
+Lightless Mass
+Gaming
+	Gaming			Agnidus Agate Chunk
+Emperor's Resolution
+Slime Secretions
+Starconch
+Philosophies of Prosperity
+Lightless Mass
+Ganyu
+	Ganyu			Shivada Jade Chunk
+Hoarfrost Core
+Shimmering Nectar
+Qingxin
+Philosophies of Diligence
+Shadow of the Warrior
+Gorou
+	Gorou			Prithiva Topaz Chunk
+Perpetual Heart
+Spectral Heart
+Sango Pearl
+Philosophies of Light
+Molten Moment
+Hu Tao
+	Hu Tao			Agnidus Agate Chunk
+Juvenile Jade
+Shimmering Nectar
+Silk Flower
+Philosophies of Diligence
+Shard of a Foul Legacy
+Iansan
+	Iansan			Vajrada Amethyst Chunk
+Ensnaring Gaze
+Warrior's Metal Whistle
+Dracolite
+Philosophies of Contention
+Denial and Judgment
+Ifa
+	Ifa			Vayuda Turquoise Chunk
+Sparkless Statue Core
+Seasoned Fang
+Saurian Claw Succulent
+Philosophies of Conflict
+Ascended Sample: Rook
+Illuga
+	Illuga			Prithiva Topaz Chunk
+Cyclic Military Kuuvahki Core
+Reinforced Drive Shaft
+Pine Amber
+Philosophies of Elysium
+Eroded Horn
+Ineffa
+	Ineffa			Vajrada Amethyst Chunk
+Secret Source Airflow Accumulator
+Warrior's Metal Whistle
+Glowing Hornshroom
+Philosophies of Conflict
+Eroded Sunfire
+Ineffa
+	Ineffa			Vajrada Amethyst Chunk
+Secret Source Airflow Accumulator
+Warrior's Metal Whistle
+Glowing Hornshroom
+Philosophies of Conflict
+Eroded Sunfire
+Jahoda
+	Jahoda			Vayuda Turquoise Chunk
+Lightbearing Scale-Feather
+Reinforced Drive Shaft
+Portable Bearing
+Philosophies of Vagrancy
+Ascended Sample: Knight
+Jean
+	Jean			Vayuda Turquoise Chunk
+Hurricane Seed
+Stained Mask
+Dandelion Seed
+Philosophies of Resistance
+Dvalin's Plume
+Kachina
+	Kachina			Prithiva Topaz Chunk
+Overripe Flamegranate
+Warrior's Metal Whistle
+Quenepa Berry
+Philosophies of Conflict
+Fading Candle
+Kaedehara Kazuha
+	Kaedehara Kazuha			Vayuda Turquoise Chunk
+Marionette Core
+Silver Raven Insignia
+Sea Ganoderma
+Philosophies of Diligence
+Gilded Scale
+Kaeya
+	Kaeya			Shivada Jade Chunk
+Hoarfrost Core
+Silver Raven Insignia
+Calla Lily
+Philosophies of Ballad
+Spirit Locket of Boreas
+Kamisato Ayaka
+	Kamisato Ayaka			Shivada Jade Chunk
+Perpetual Heart
+Kageuchi Handguard
+Sakura Bloom
+Philosophies of Elegance
+Bloodjade Branch
+Kamisato Ayato
+	Kamisato Ayato			Varunada Lazurite Chunk
+Dew of Repudiation
+Kageuchi Handguard
+Sakura Bloom
+Philosophies of Elegance
+Mudra of the Malefic General
+Kaveh
+	Kaveh			Nagadus Emerald Chunk
+Quelled Creeper
+Luminescent Pollen
+Mourning Flower
+Philosophies of Ingenuity
+Primordial Greenbloom
+Keqing
+	Keqing			Vajrada Amethyst Chunk
+Lightning Prism
+Shimmering Nectar
+Cor Lapis
+Philosophies of Prosperity
+Ring of Boreas
+Kinich
+	Kinich			Nagadus Emerald Chunk
+Overripe Flamegranate
+Seasoned Fang
+Saurian Claw Succulent
+Philosophies of Kindling
+Denial and Judgment
+Kirara
+	Kirara			Nagadus Emerald Chunk
+Evergloom Ring
+Spectral Heart
+Amakumo Fruit
+Philosophies of Transience
+Everamber
+Klee
+	Klee			Agnidus Agate Chunk
+Everflame Seed
+Sealed Scroll
+Philanemo Mushroom
+Philosophies of Freedom
+Ring of Boreas
+Kujou Sara
+	Kujou Sara			Vajrada Amethyst Chunk
+Storm Beads
+Stained Mask
+Dendrobium
+Philosophies of Elegance
+Ashen Heart
+Kuki Shinobu
+	Kuki Shinobu			Vajrada Amethyst Chunk
+Runic Fang
+Spectral Heart
+Naku Weed
+Philosophies of Elegance
+Tears of the Calamitous God
+Lan Yan
+	Lan Yan			Vayuda Turquoise Chunk
+Gold-Inscribed Secret Source Core
+Shimmering Nectar
+Clearwater Jade
+Philosophies of Diligence
+Eroded Sunfire
+Lauma
+	Lauma			Nagadus Emerald Chunk
+Lightbearing Scale-Feather
+Immaculate Warrant
+Moonfall Silver
+Philosophies of Moonlight
+Eroded Scale-Feather
+Layla
+	Layla			Shivada Jade Chunk
+Perpetual Caliber
+Sealed Scroll
+Nilotpala Lotus
+Philosophies of Ingenuity
+Mirror of Mushin
+Linnea
+	Linnea			Prithiva Topaz Chunk
+Plume of the Fallen Watcher
+Immaculate Warrant
+Etherwing Moth
+Philosophies of Vagrancy
+Elixir of the Heretic
+Lisa
+	Lisa			Vajrada Amethyst Chunk
+Lightning Prism
+Slime Secretions
+Valberry
+Philosophies of Ballad
+Dvalin's Claw
+Lohen
+	Lohen			Shivada Jade Chunk
+Prismatic Severed Tail
+Sharp Arrowhead
+Etherwing Moth
+Philosophies of Resistance
+Ascended Sample: Knight
+Lynette
+	Lynette			Vayuda Turquoise Chunk
+Artificed Spare Clockwork Component — Coppelia
+Mechanical Spur Gear
+Lumidouce Bell
+Philosophies of Order
+Everamber
+Lyney
+	Lyney			Agnidus Agate Chunk
+Emperor's Resolution
+Sergeant's Insignia
+Rainbow Rose
+Philosophies of Equity
+Primordial Greenbloom
+Mavuika
+	Mavuika			Agnidus Agate Chunk
+Gold-Inscribed Secret Source Core
+Warrior's Metal Whistle
+Withering Purpurbloom
+Philosophies of Contention
+Eroded Horn
+Mika
+	Mika			Shivada Jade Chunk
+Pseudo-Stamens
+Sergeant's Insignia
+Wolfhook
+Philosophies of Ballad
+Mirror of Mushin
+Mona
+	Mona			Varunada Lazurite Chunk
+Cleansing Heart
+Shimmering Nectar
+Philanemo Mushroom
+Philosophies of Resistance
+Ring of Boreas
+Mualani
+	Mualani			Varunada Lazurite Chunk
+Mark of the Binding Blessing
+Warrior's Metal Whistle
+Sprayfeather Gill
+Philosophies of Contention
+Lightless Mass
+Nahida
+	Nahida			Nagadus Emerald Chunk
+Quelled Creeper
+Luminescent Pollen
+Kalpalata Lotus
+Philosophies of Ingenuity
+Puppet Strings
+Navia
+	Navia			Prithiva Topaz Chunk
+Artificed Spare Clockwork Component — Coppelius
+Transoceanic Chunk
+Spring of the First Dewdrop
+Philosophies of Equity
+Lightless Silk String
+Nefer
+	Nefer			Nagadus Emerald Chunk
+Radiant Antler
+Immaculate Warrant
+Moonfall Silver
+Philosophies of Elysium
+Ascended Sample: Rook
+Neuvillette
+	Neuvillette			Varunada Lazurite Chunk
+Fontemer Unihorn
+Transoceanic Chunk
+Lumitoile
+Philosophies of Equity
+Everamber
+Nicole
+	Nicole			Agnidus Agate Chunk
+Remnant of the Dreadwing
+Immaculate Warrant
+Pine Amber
+Philosophies of Elysium
+???
+Nilou
+	Nilou			Varunada Lazurite Chunk
+Perpetual Caliber
+Luminescent Pollen
+Padisarah
+Philosophies of Praxis
+Tears of the Calamitous God
+Ningguang
+	Ningguang			Prithiva Topaz Chunk
+Basalt Pillar
+Sergeant's Insignia
+Glaze Lily
+Philosophies of Prosperity
+Spirit Locket of Boreas
+Noelle
+	Noelle			Prithiva Topaz Chunk
+Basalt Pillar
+Stained Mask
+Valberry
+Philosophies of Resistance
+Dvalin's Claw
+Ororon
+	Ororon			Vajrada Amethyst Chunk
+Mark of the Binding Blessing
+Seasoned Fang
+Glowing Hornshroom
+Philosophies of Kindling
+Lightless Silk String
+Prune
+	Prune			Vayuda Turquoise Chunk
+Radiant Antler
+Silver Raven Insignia
+Winter Icelea
+Philosophies of Resistance
+Mask of the Virtuous Doctor
+Qiqi
+	Qiqi			Shivada Jade Chunk
+Hoarfrost Core
+Sealed Scroll
+Violetgrass
+Philosophies of Prosperity
+Tail of Boreas
+Raiden Shogun
+	Raiden Shogun			Vajrada Amethyst Chunk
+Storm Beads
+Kageuchi Handguard
+Amakumo Fruit
+Philosophies of Light
+Molten Moment
+Razor
+	Razor			Vajrada Amethyst Chunk
+Lightning Prism
+Stained Mask
+Wolfhook
+Philosophies of Resistance
+Dvalin's Claw
+Rosaria
+	Rosaria			Shivada Jade Chunk
+Hoarfrost Core
+Sergeant's Insignia
+Valberry
+Philosophies of Ballad
+Shadow of the Warrior
+Sangonomiya Kokomi
+	Sangonomiya Kokomi			Varunada Lazurite Chunk
+Dew of Repudiation
+Spectral Heart
+Sango Pearl
+Philosophies of Transience
+Hellfire Butterfly
+Sayu
+	Sayu			Vayuda Turquoise Chunk
+Marionette Core
+Shimmering Nectar
+Crystal Marrow
+Philosophies of Light
+Gilded Scale
+Sethos
+	Sethos			Vajrada Amethyst Chunk
+Cloudseam Scale
+Trimmed Red Silk
+Trishiraite
+Philosophies of Praxis
+Daka's Bell
+Shenhe
+	Shenhe			Shivada Jade Chunk
+Dragonheir's False Fin
+Shimmering Nectar
+Qingxin
+Philosophies of Prosperity
+Hellfire Butterfly
+Shikanoin Heizou
+	Shikanoin Heizou			Vayuda Turquoise Chunk
+Runic Fang
+Silver Raven Insignia
+Onikabuto
+Philosophies of Transience
+The Meaning of Aeons
+Sigewinne
+	Sigewinne			Varunada Lazurite Chunk
+Water That Failed To Transcend
+Transoceanic Chunk
+Romaritime Flower
+Philosophies of Equity
+Lightless Eye of the Maelstrom
+Skirk
+	Skirk			Shivada Jade Chunk
+Ensnaring Gaze
+Mechanical Spur Gear
+Skysplit Gembloom
+Philosophies of Contention
+Ascended Sample: Knight
+Sucrose
+	Sucrose			Vayuda Turquoise Chunk
+Hurricane Seed
+Shimmering Nectar
+Windwheel Aster
+Philosophies of Freedom
+Spirit Locket of Boreas
+Tartaglia
+	Tartaglia			Varunada Lazurite Chunk
+Cleansing Heart
+Sergeant's Insignia
+Starconch
+Philosophies of Freedom
+Shard of a Foul Legacy
+Thoma
+	Thoma			Agnidus Agate Chunk
+Smoldering Pearl
+Silver Raven Insignia
+Fluorescent Fungus
+Philosophies of Transience
+Hellfire Butterfly
+Tighnari
+	Tighnari			Nagadus Emerald Chunk
+Majestic Hooked Beak
+Luminescent Pollen
+Nilotpala Lotus
+Philosophies of Admonition
+The Meaning of Aeons
+Traveler
+	Traveler			Brilliant Diamond Chunk
+Stained Mask
+Windwheel Aster
+Guide to Ingenuity
+Philosophies of Praxis
+Traveler
+Varesa
+	Varesa			Vajrada Amethyst Chunk
+Sparkless Statue Core
+Seasoned Fang
+Skysplit Gembloom
+Philosophies of Conflict
+Eroded Scale-Feather
+Varka
+	Varka			Vayuda Turquoise Chunk
+Prismatic Severed Tail
+Reinforced Drive Shaft
+Wolfhook
+Philosophies of Freedom
+Ascended Sample: Rook
+Venti
+	Venti			Vayuda Turquoise Chunk
+Hurricane Seed
+Slime Secretions
+Cecilia
+Philosophies of Ballad
+Tail of Boreas
+Wanderer
+	Wanderer			Vayuda Turquoise Chunk
+Perpetual Caliber
+Kageuchi Handguard
+Rukkhashava Mushrooms
+Philosophies of Praxis
+Daka's Bell
+Wriothesley
+	Wriothesley			Shivada Jade Chunk
+Mechanical Spur Gear
+Subdetection Unit
+Philosophies of Order
+Primordial Greenbloom
+Xiangling
+	Xiangling			Agnidus Agate Chunk
+Everflame Seed
+Slime Secretions
+Jueyun Chili
+Philosophies of Diligence
+Dvalin's Claw
+Xianyun
+	Xianyun			Vayuda Turquoise Chunk
+Cloudseam Scale
+Sealed Scroll
+Clearwater Jade
+Philosophies of Gold
+Lightless Eye of the Maelstrom
+Xiao
+	Xiao			Vayuda Turquoise Chunk
+Juvenile Jade
+Slime Secretions
+Qingxin
+Philosophies of Prosperity
+Shadow of the Warrior
+Xilonen
+	Xilonen			Prithiva Topaz Chunk
+Gold-Inscribed Secret Source Core
+Warrior's Metal Whistle
+Brilliant Chrysanthemum
+Philosophies of Kindling
+Mirror of Mushin
+Xingqiu
+	Xingqiu			Varunada Lazurite Chunk
+Cleansing Heart
+Stained Mask
+Silk Flower
+Philosophies of Gold
+Tail of Boreas
+Xinyan
+	Xinyan			Agnidus Agate Chunk
+Everflame Seed
+Silver Raven Insignia
+Violetgrass
+Philosophies of Gold
+Tusk of Monoceros Caeli
+Yae Miko
+	Yae Miko			Vajrada Amethyst Chunk
+Dragonheir's False Fin
+Kageuchi Handguard
+Sea Ganoderma
+Philosophies of Light
+The Meaning of Aeons
+Yanfei
+	Yanfei			Agnidus Agate Chunk
+Juvenile Jade
+Silver Raven Insignia
+Noctilucous Jade
+Philosophies of Gold
+Bloodjade Branch
+Yaoyao
+	Yaoyao			Nagadus Emerald Chunk
+Quelled Creeper
+Slime Secretions
+Jueyun Chili
+Philosophies of Diligence
+Daka's Bell
+Yelan
+	Yelan			Varunada Lazurite Chunk
+Runic Fang
+Sergeant's Insignia
+Starconch
+Philosophies of Prosperity
+Gilded Scale
+Yoimiya
+	Yoimiya			Agnidus Agate Chunk
+Smoldering Pearl
+Sealed Scroll
+Naku Weed
+Philosophies of Transience
+Dragon Lord's Crown
+Yumemizuki Mizuki
+	Yumemizuki Mizuki			Vayuda Turquoise Chunk
+Talisman of the Enigmatic Land
+Kageuchi Handguard
+Sea Ganoderma
+Philosophies of Transience
+Fading Candle
+Yun Jin
+	Yun Jin			Prithiva Topaz Chunk
+Riftborn Regalia
+Stained Mask
+Glaze Lily
+Philosophies of Diligence
+Ashen Heart
+Zhongli
+	Zhongli			Prithiva Topaz Chunk
+Basalt Pillar
+Slime Secretions
+Cor Lapis
+Philosophies of Gold
+Tusk of Monoceros Caeli
+Zibai
+	Zibai			Prithiva Topaz Chunk
+Remnant of the Dreadwing
+Immaculate Warrant
+Glaze Lily
+Philosophies of Gold
+Ascended Sample: Queen

@@ -1,0 +1,396 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://krumpanion.local/schemas/save.schema.json",
+  "title": "Krumpanion Save File",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "appVersion",
+    "createdAt",
+    "updatedAt",
+    "user",
+    "settings",
+    "overridePack"
+  ],
+  "properties": {
+    "schemaVersion": { "const": 4 },
+    "appVersion": { "type": "string" },
+    "createdAt": { "type": "string" },
+    "updatedAt": { "type": "string" },
+    "user": {
+      "type": "object",
+      "required": ["schemaVersion", "activeAccountId", "accountsById", "accountOrder"],
+      "properties": {
+        "schemaVersion": { "const": 1 },
+        "activeAccountId": { "type": "string" },
+        "accountsById": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "required": [
+              "id",
+              "name",
+              "createdAt",
+              "updatedAt",
+              "metadata",
+              "importMeta",
+              "characters",
+              "weapons",
+              "artifacts",
+              "inventory",
+              "warnings",
+              "goals",
+              "plannerSettings",
+              "worldState",
+              "importState"
+            ],
+            "properties": {
+              "id": { "type": "string" },
+              "name": { "type": "string" },
+              "createdAt": { "type": "string" },
+              "updatedAt": { "type": "string" },
+              "metadata": {
+                "type": "object",
+                "properties": {
+                  "description": { "type": "string" },
+                  "serverRegion": { "type": "string" },
+                  "travelerName": { "type": "string" },
+                  "uid": { "type": "string" },
+                  "lastOpenedAt": { "type": "string" },
+                  "color": { "type": "string" },
+                  "iconCharacterKey": { "type": "string" }
+                },
+                "additionalProperties": false
+              },
+              "importMeta": {
+                "type": "object",
+                "required": ["format", "version", "importedAt"],
+                "properties": {
+                  "format": { "type": "string" },
+                  "version": { "type": "integer" },
+                  "source": { "type": "string" },
+                  "importedAt": { "type": "string" }
+                },
+                "additionalProperties": false
+              },
+              "characters": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["characterId", "currentLevel", "currentAscension", "currentTalents"],
+                  "properties": {
+                    "characterId": { "type": "string" },
+                    "currentLevel": { "type": "integer" },
+                    "currentAscension": { "type": "integer" },
+                    "constellation": { "type": "integer" },
+                    "enabled": { "type": "boolean" },
+                    "currentTalents": {
+                      "type": "object",
+                      "required": ["normal", "skill", "burst"],
+                      "properties": {
+                        "normal": { "type": "integer" },
+                        "skill": { "type": "integer" },
+                        "burst": { "type": "integer" }
+                      },
+                      "additionalProperties": false
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "weapons": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["weaponInstanceId", "weaponKey", "currentLevel", "currentAscension"],
+                  "properties": {
+                    "weaponInstanceId": { "type": "string" },
+                    "weaponKey": { "type": "string" },
+                    "weaponId": { "type": "string" },
+                    "importName": { "type": "string" },
+                    "currentLevel": { "type": "integer" },
+                    "currentAscension": { "type": "integer" },
+                    "refinement": { "type": "integer" },
+                    "equippedByCharacterId": { "type": "string" },
+                    "location": { "type": "string" },
+                    "lock": { "type": "boolean" }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "artifacts": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["artifactInstanceId", "setId", "slotKey", "level", "rarity", "mainStatKey", "substats"],
+                  "properties": {
+                    "artifactInstanceId": { "type": "string" },
+                    "setId": { "type": "string" },
+                    "slotKey": { "type": "string" },
+                    "level": { "type": "integer" },
+                    "rarity": { "type": "integer" },
+                    "mainStatKey": { "type": "string" },
+                    "location": { "type": "string" },
+                    "lock": { "type": "boolean" },
+                    "substats": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": ["key", "value"],
+                        "properties": {
+                          "key": { "type": "string" },
+                          "value": { "type": "number" },
+                          "initialValue": { "type": "number" }
+                        },
+                        "additionalProperties": false
+                      }
+                    },
+                    "astralMark": { "type": "boolean" },
+                    "elixerCrafted": { "type": "boolean" },
+                    "totalRolls": { "type": "number" },
+                    "unactivatedSubstats": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": ["key", "value"],
+                        "properties": {
+                          "key": { "type": "string" },
+                          "value": { "type": "number" },
+                          "initialValue": { "type": "number" }
+                        },
+                        "additionalProperties": false
+                      }
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "inventory": {
+                "type": "object",
+                "additionalProperties": { "type": "number" }
+              },
+              "unmatchedWeapons": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["weaponInstanceId", "importName", "currentLevel", "currentAscension"],
+                  "properties": {
+                    "weaponInstanceId": { "type": "string" },
+                    "importName": { "type": "string" },
+                    "currentLevel": { "type": "integer" },
+                    "currentAscension": { "type": "integer" },
+                    "refinement": { "type": "integer" },
+                    "equippedByCharacterId": { "type": "string" },
+                    "location": { "type": "string" },
+                    "lock": { "type": "boolean" }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "materialEditState": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "object",
+                  "required": ["editedAt", "source"],
+                  "properties": {
+                    "editedAt": { "type": "string" },
+                    "source": { "type": "string", "enum": ["manual", "bulk"] }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "warnings": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["type", "message"],
+                  "properties": {
+                    "type": { "type": "string" },
+                    "message": { "type": "string" },
+                    "key": { "type": "string" }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "goals": {
+                "type": "object",
+                "required": ["version", "characterGoals", "weaponGoals", "artifactGoals"],
+                "properties": {
+                  "version": { "const": 3 },
+                  "profileName": { "type": "string" },
+                  "characterGoals": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "object",
+                      "required": ["characterKey", "enabled"],
+                      "properties": {
+                        "characterKey": { "type": "string" },
+                        "planningMode": { "type": "string", "enum": ["owned", "prefarm", "manual"] },
+                        "priority": { "type": "integer", "minimum": 1, "maximum": 5 },
+                        "targetLevel": { "type": "integer", "minimum": 1, "maximum": 90 },
+                        "targetAscension": { "type": "integer", "minimum": 0, "maximum": 6 },
+                        "talents": {
+                          "type": "object",
+                          "properties": {
+                            "auto": { "type": "integer", "minimum": 1, "maximum": 10 },
+                            "skill": { "type": "integer", "minimum": 1, "maximum": 10 },
+                            "burst": { "type": "integer", "minimum": 1, "maximum": 10 }
+                          },
+                          "additionalProperties": false
+                        },
+                        "currentOverride": {
+                          "type": "object",
+                          "properties": {
+                            "level": { "type": "integer", "minimum": 1, "maximum": 90 },
+                            "ascension": { "type": "integer", "minimum": 0, "maximum": 6 },
+                            "talents": {
+                              "type": "object",
+                              "properties": {
+                                "auto": { "type": "integer", "minimum": 1, "maximum": 10 },
+                                "skill": { "type": "integer", "minimum": 1, "maximum": 10 },
+                                "burst": { "type": "integer", "minimum": 1, "maximum": 10 }
+                              },
+                              "additionalProperties": false
+                            }
+                          },
+                          "additionalProperties": false
+                        },
+                        "enabled": { "type": "boolean" },
+                        "notes": { "type": "string" }
+                      },
+                      "additionalProperties": false
+                    }
+                  },
+                  "weaponGoals": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "object",
+                      "required": ["weaponKey", "enabled"],
+                      "properties": {
+                        "goalId": { "type": "string" },
+                        "accountId": { "type": "string" },
+                        "id": { "type": "string" },
+                        "weaponKey": { "type": "string" },
+                        "linkedCharacterKey": { "type": "string" },
+                        "linkedInventoryInstanceId": { "type": "string" },
+                        "useOwnedInstance": { "type": "boolean" },
+                        "linkStatus": {
+                          "type": "string",
+                          "enum": ["linked", "stale", "unlinked_prefarm"]
+                        },
+                        "planningMode": { "type": "string", "enum": ["owned", "prefarm", "manual"] },
+                        "ownedWeaponInstanceId": { "type": "string" },
+                        "instanceHint": { "type": "string" },
+                        "location": { "type": "string" },
+                        "priority": { "type": "integer", "minimum": 1, "maximum": 5 },
+                        "targetLevel": { "type": "integer", "minimum": 1, "maximum": 90 },
+                        "targetAscensionPhase": { "type": "integer", "minimum": 0, "maximum": 6 },
+                        "targetAscension": { "type": "integer", "minimum": 0, "maximum": 6 },
+                        "currentOverride": {
+                          "type": "object",
+                          "properties": {
+                            "level": { "type": "integer", "minimum": 1, "maximum": 90 },
+                            "ascension": { "type": "integer", "minimum": 0, "maximum": 6 }
+                          },
+                          "additionalProperties": false
+                        },
+                        "enabled": { "type": "boolean" },
+                        "notes": { "type": "string" }
+                      },
+                      "additionalProperties": false
+                    }
+                  },
+                  "artifactGoals": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": ["id", "domainKey", "targetSetKeys", "priority", "enabled"],
+                      "properties": {
+                        "id": { "type": "string" },
+                        "characterKey": { "type": "string" },
+                        "domainKey": { "type": "string" },
+                        "targetSetKeys": { "type": "array", "items": { "type": "string" } },
+                        "priority": { "type": "integer", "minimum": 1, "maximum": 5 },
+                        "weeklyResinBudget": { "type": "integer", "minimum": 0 },
+                        "desiredMainStats": {
+                          "type": "object",
+                          "additionalProperties": {
+                            "type": "array",
+                            "items": { "type": "string" }
+                          }
+                        },
+                        "desiredSubstats": { "type": "array", "items": { "type": "string" } },
+                        "enabled": { "type": "boolean" },
+                        "notes": { "type": "string" }
+                      },
+                      "additionalProperties": false
+                    }
+                  }
+                },
+                "additionalProperties": false
+              },
+              "plannerSettings": { "$ref": "https://krumpanion.local/schemas/goals.schema.json#/properties/plannerSettings" },
+              "worldState": {
+                "type": "object",
+                "properties": {
+                  "adventureRank": { "type": "integer" },
+                  "worldLevel": { "type": "integer" },
+                  "selectedWorldLevel": { "type": "integer" },
+                  "resinCap": { "type": "integer" },
+                  "currentResin": { "type": "integer" },
+                  "currentResinUpdatedAt": { "type": "string" },
+                  "weeklyBossDiscountsUsed": { "type": "integer" },
+                  "condensedResin": { "type": "integer" },
+                  "fragileResin": { "type": "integer" },
+                  "transientResin": { "type": "integer" }
+                },
+                "additionalProperties": false
+              },
+              "importState": {
+                "type": "object",
+                "properties": {
+                  "lastGoodImportAt": { "type": "string" },
+                  "lastGoodFileName": { "type": "string" },
+                  "lastGoodSource": { "type": "string" },
+                  "lastGoodFormatVersion": { "type": "string" },
+                  "importWarnings": { "type": "array", "items": { "type": "string" } },
+                  "importSummary": {
+                    "type": "object",
+                    "properties": {
+                      "materialCount": { "type": "integer" },
+                      "characterCount": { "type": "integer" },
+                      "weaponCount": { "type": "integer" },
+                      "unmatchedWeaponCount": { "type": "integer" },
+                      "artifactCount": { "type": "integer" }
+                    },
+                    "additionalProperties": false
+                  }
+                },
+                "additionalProperties": false
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "accountOrder": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "additionalProperties": false
+    },
+    "settings": {
+      "type": "object",
+      "required": ["activeTab", "plannerView"],
+      "properties": {
+        "activeTab": { "type": "string" },
+        "plannerView": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "overridePack": {
+      "type": ["object", "null"]
+    }
+  },
+  "additionalProperties": false
+}

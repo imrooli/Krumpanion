@@ -1,0 +1,203 @@
+{
+  "sourceVersion": "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)",
+  "unresolvedReferences": [
+    {
+      "characterKey": "Albedo",
+      "displayName": "Albedo",
+      "materialSlot": "normalBossMaterial",
+      "rawName": "Basalt Pillar",
+      "generatedKey": "BasaltPillar",
+      "reason": "Normal boss material did not match the canonical material registry.",
+      "status": "unresolved"
+    },
+    {
+      "characterKey": "Charlotte",
+      "displayName": "Charlotte",
+      "materialSlot": "normalBossMaterial",
+      "rawName": "",
+      "generatedKey": "",
+      "reason": "Normal boss material is missing from the source row.",
+      "status": "unresolved"
+    },
+    {
+      "characterKey": "Charlotte",
+      "displayName": "Charlotte",
+      "materialSlot": "weeklyBossMaterial",
+      "rawName": "Lightless Silk String",
+      "generatedKey": "LightlessSilkString",
+      "reason": "Weekly boss material did not match the canonical material registry.",
+      "status": "unresolved"
+    },
+    {
+      "characterKey": "Chiori",
+      "displayName": "Chiori",
+      "materialSlot": "weeklyBossMaterial",
+      "rawName": "Lightless Silk String",
+      "generatedKey": "LightlessSilkString",
+      "reason": "Weekly boss material did not match the canonical material registry.",
+      "status": "unresolved"
+    },
+    {
+      "characterKey": "Cyno",
+      "displayName": "Cyno",
+      "materialSlot": "normalBossMaterial",
+      "rawName": "Thunderclap Fruitcore",
+      "generatedKey": "ThunderclapFruitcore",
+      "reason": "Normal boss material did not match the canonical material registry.",
+      "status": "unresolved"
+    },
+    {
+      "characterKey": "Dori",
+      "displayName": "Dori",
+      "materialSlot": "normalBossMaterial",
+      "rawName": "Thunderclap Fruitcore",
+      "generatedKey": "ThunderclapFruitcore",
+      "reason": "Normal boss material did not match the canonical material registry.",
+      "status": "unresolved"
+    },
+    {
+      "characterKey": "KujouSara",
+      "displayName": "Kujou Sara",
+      "materialSlot": "normalBossMaterial",
+      "rawName": "Storm Beads",
+      "generatedKey": "StormBeads",
+      "reason": "Normal boss material did not match the canonical material registry.",
+      "status": "unresolved"
+    },
+    {
+      "characterKey": "Navia",
+      "displayName": "Navia",
+      "materialSlot": "weeklyBossMaterial",
+      "rawName": "Lightless Silk String",
+      "generatedKey": "LightlessSilkString",
+      "reason": "Weekly boss material did not match the canonical material registry.",
+      "status": "unresolved"
+    },
+    {
+      "characterKey": "Nicole",
+      "displayName": "Nicole",
+      "materialSlot": "weeklyBossMaterial",
+      "rawName": "???",
+      "generatedKey": "",
+      "reason": "Weekly boss material is a placeholder and requires manual confirmation.",
+      "status": "unresolved"
+    },
+    {
+      "characterKey": "Ningguang",
+      "displayName": "Ningguang",
+      "materialSlot": "normalBossMaterial",
+      "rawName": "Basalt Pillar",
+      "generatedKey": "BasaltPillar",
+      "reason": "Normal boss material did not match the canonical material registry.",
+      "status": "unresolved"
+    },
+    {
+      "characterKey": "Noelle",
+      "displayName": "Noelle",
+      "materialSlot": "normalBossMaterial",
+      "rawName": "Basalt Pillar",
+      "generatedKey": "BasaltPillar",
+      "reason": "Normal boss material did not match the canonical material registry.",
+      "status": "unresolved"
+    },
+    {
+      "characterKey": "Ororon",
+      "displayName": "Ororon",
+      "materialSlot": "weeklyBossMaterial",
+      "rawName": "Lightless Silk String",
+      "generatedKey": "LightlessSilkString",
+      "reason": "Weekly boss material did not match the canonical material registry.",
+      "status": "unresolved"
+    },
+    {
+      "characterKey": "RaidenShogun",
+      "displayName": "Raiden Shogun",
+      "materialSlot": "normalBossMaterial",
+      "rawName": "Storm Beads",
+      "generatedKey": "StormBeads",
+      "reason": "Normal boss material did not match the canonical material registry.",
+      "status": "unresolved"
+    },
+    {
+      "characterKey": "Shenhe",
+      "displayName": "Shenhe",
+      "materialSlot": "normalBossMaterial",
+      "rawName": "Dragonheir's False Fin",
+      "generatedKey": "DragonheirSFalseFin",
+      "reason": "Normal boss material did not match the canonical material registry.",
+      "status": "unresolved"
+    },
+    {
+      "characterKey": "Thoma",
+      "displayName": "Thoma",
+      "materialSlot": "normalBossMaterial",
+      "rawName": "Smoldering Pearl",
+      "generatedKey": "SmolderingPearl",
+      "reason": "Normal boss material did not match the canonical material registry.",
+      "status": "unresolved"
+    },
+    {
+      "characterKey": "Traveler",
+      "displayName": "Traveler",
+      "materialSlot": "ascensionGem",
+      "rawName": "Brilliant Diamond Chunk",
+      "generatedKey": "BrilliantDiamondChunk",
+      "reason": "Representative ascension gem did not resolve to a known gem family.",
+      "status": "unresolved"
+    },
+    {
+      "characterKey": "Traveler",
+      "displayName": "Traveler",
+      "materialSlot": "normalBossMaterial",
+      "rawName": "",
+      "generatedKey": "",
+      "reason": "Normal boss material is missing from the source row.",
+      "status": "unresolved"
+    },
+    {
+      "characterKey": "Traveler",
+      "displayName": "Traveler",
+      "materialSlot": "weeklyBossMaterial",
+      "rawName": "Traveler",
+      "generatedKey": "Traveler",
+      "reason": "Weekly boss material did not match the canonical material registry.",
+      "status": "unresolved"
+    },
+    {
+      "characterKey": "Wriothesley",
+      "displayName": "Wriothesley",
+      "materialSlot": "normalBossMaterial",
+      "rawName": "",
+      "generatedKey": "",
+      "reason": "Normal boss material is missing from the source row.",
+      "status": "unresolved"
+    },
+    {
+      "characterKey": "YaeMiko",
+      "displayName": "Yae Miko",
+      "materialSlot": "normalBossMaterial",
+      "rawName": "Dragonheir's False Fin",
+      "generatedKey": "DragonheirSFalseFin",
+      "reason": "Normal boss material did not match the canonical material registry.",
+      "status": "unresolved"
+    },
+    {
+      "characterKey": "Yoimiya",
+      "displayName": "Yoimiya",
+      "materialSlot": "normalBossMaterial",
+      "rawName": "Smoldering Pearl",
+      "generatedKey": "SmolderingPearl",
+      "reason": "Normal boss material did not match the canonical material registry.",
+      "status": "unresolved"
+    },
+    {
+      "characterKey": "Zhongli",
+      "displayName": "Zhongli",
+      "materialSlot": "normalBossMaterial",
+      "rawName": "Basalt Pillar",
+      "generatedKey": "BasaltPillar",
+      "reason": "Normal boss material did not match the canonical material registry.",
+      "status": "unresolved"
+    }
+  ]
+}

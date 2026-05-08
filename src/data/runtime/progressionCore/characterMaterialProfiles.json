@@ -1,0 +1,789 @@
+{
+  "version": 1,
+  "profiles": {
+    "Aloy": {
+      "characterKey": "Aloy",
+      "talentBookFamilyKey": "Freedom",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Amber": {
+      "characterKey": "Amber",
+      "talentBookFamilyKey": "Freedom",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Barbara": {
+      "characterKey": "Barbara",
+      "talentBookFamilyKey": "Freedom",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Diona": {
+      "characterKey": "Diona",
+      "talentBookFamilyKey": "Freedom",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Klee": {
+      "characterKey": "Klee",
+      "talentBookFamilyKey": "Freedom",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Sucrose": {
+      "characterKey": "Sucrose",
+      "talentBookFamilyKey": "Freedom",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Tartaglia": {
+      "characterKey": "Tartaglia",
+      "talentBookFamilyKey": "Freedom",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Varka": {
+      "characterKey": "Varka",
+      "talentBookFamilyKey": "Freedom",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Bennett": {
+      "characterKey": "Bennett",
+      "talentBookFamilyKey": "Resistance",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Diluc": {
+      "characterKey": "Diluc",
+      "talentBookFamilyKey": "Resistance",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Eula": {
+      "characterKey": "Eula",
+      "talentBookFamilyKey": "Resistance",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Jean": {
+      "characterKey": "Jean",
+      "talentBookFamilyKey": "Resistance",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Mona": {
+      "characterKey": "Mona",
+      "talentBookFamilyKey": "Resistance",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Noelle": {
+      "characterKey": "Noelle",
+      "talentBookFamilyKey": "Resistance",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Razor": {
+      "characterKey": "Razor",
+      "talentBookFamilyKey": "Resistance",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Albedo": {
+      "characterKey": "Albedo",
+      "talentBookFamilyKey": "Ballad",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Dahlia": {
+      "characterKey": "Dahlia",
+      "talentBookFamilyKey": "Ballad",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Durin": {
+      "characterKey": "Durin",
+      "talentBookFamilyKey": "Ballad",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Fischl": {
+      "characterKey": "Fischl",
+      "talentBookFamilyKey": "Ballad",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Kaeya": {
+      "characterKey": "Kaeya",
+      "talentBookFamilyKey": "Ballad",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Lisa": {
+      "characterKey": "Lisa",
+      "talentBookFamilyKey": "Ballad",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Mika": {
+      "characterKey": "Mika",
+      "talentBookFamilyKey": "Ballad",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Rosaria": {
+      "characterKey": "Rosaria",
+      "talentBookFamilyKey": "Ballad",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Venti": {
+      "characterKey": "Venti",
+      "talentBookFamilyKey": "Ballad",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Gaming": {
+      "characterKey": "Gaming",
+      "talentBookFamilyKey": "Prosperity",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Keqing": {
+      "characterKey": "Keqing",
+      "talentBookFamilyKey": "Prosperity",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Ningguang": {
+      "characterKey": "Ningguang",
+      "talentBookFamilyKey": "Prosperity",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Qiqi": {
+      "characterKey": "Qiqi",
+      "talentBookFamilyKey": "Prosperity",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Shenhe": {
+      "characterKey": "Shenhe",
+      "talentBookFamilyKey": "Prosperity",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Xiao": {
+      "characterKey": "Xiao",
+      "talentBookFamilyKey": "Prosperity",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Yelan": {
+      "characterKey": "Yelan",
+      "talentBookFamilyKey": "Prosperity",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Chongyun": {
+      "characterKey": "Chongyun",
+      "talentBookFamilyKey": "Diligence",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Ganyu": {
+      "characterKey": "Ganyu",
+      "talentBookFamilyKey": "Diligence",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "HuTao": {
+      "characterKey": "HuTao",
+      "talentBookFamilyKey": "Diligence",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "KaedeharaKazuha": {
+      "characterKey": "KaedeharaKazuha",
+      "talentBookFamilyKey": "Diligence",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "LanYan": {
+      "characterKey": "LanYan",
+      "talentBookFamilyKey": "Diligence",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Xiangling": {
+      "characterKey": "Xiangling",
+      "talentBookFamilyKey": "Diligence",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Yaoyao": {
+      "characterKey": "Yaoyao",
+      "talentBookFamilyKey": "Diligence",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "YunJin": {
+      "characterKey": "YunJin",
+      "talentBookFamilyKey": "Diligence",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Baizhu": {
+      "characterKey": "Baizhu",
+      "talentBookFamilyKey": "Gold",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Beidou": {
+      "characterKey": "Beidou",
+      "talentBookFamilyKey": "Gold",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Xianyun": {
+      "characterKey": "Xianyun",
+      "talentBookFamilyKey": "Gold",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Xingqiu": {
+      "characterKey": "Xingqiu",
+      "talentBookFamilyKey": "Gold",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Xinyan": {
+      "characterKey": "Xinyan",
+      "talentBookFamilyKey": "Gold",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Yanfei": {
+      "characterKey": "Yanfei",
+      "talentBookFamilyKey": "Gold",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Zhongli": {
+      "characterKey": "Zhongli",
+      "talentBookFamilyKey": "Gold",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Zibai": {
+      "characterKey": "Zibai",
+      "talentBookFamilyKey": "Gold",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Kirara": {
+      "characterKey": "Kirara",
+      "talentBookFamilyKey": "Transience",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "SangonomiyaKokomi": {
+      "characterKey": "SangonomiyaKokomi",
+      "talentBookFamilyKey": "Transience",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "ShikanoinHeizou": {
+      "characterKey": "ShikanoinHeizou",
+      "talentBookFamilyKey": "Transience",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Thoma": {
+      "characterKey": "Thoma",
+      "talentBookFamilyKey": "Transience",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Yoimiya": {
+      "characterKey": "Yoimiya",
+      "talentBookFamilyKey": "Transience",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "YumemizukiMizuki": {
+      "characterKey": "YumemizukiMizuki",
+      "talentBookFamilyKey": "Transience",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "AratakiItto": {
+      "characterKey": "AratakiItto",
+      "talentBookFamilyKey": "Elegance",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "KamisatoAyaka": {
+      "characterKey": "KamisatoAyaka",
+      "talentBookFamilyKey": "Elegance",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "KamisatoAyato": {
+      "characterKey": "KamisatoAyato",
+      "talentBookFamilyKey": "Elegance",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "KujouSara": {
+      "characterKey": "KujouSara",
+      "talentBookFamilyKey": "Elegance",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "KukiShinobu": {
+      "characterKey": "KukiShinobu",
+      "talentBookFamilyKey": "Elegance",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Chiori": {
+      "characterKey": "Chiori",
+      "talentBookFamilyKey": "Light",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Gorou": {
+      "characterKey": "Gorou",
+      "talentBookFamilyKey": "Light",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "RaidenShogun": {
+      "characterKey": "RaidenShogun",
+      "talentBookFamilyKey": "Light",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Sayu": {
+      "characterKey": "Sayu",
+      "talentBookFamilyKey": "Light",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "YaeMiko": {
+      "characterKey": "YaeMiko",
+      "talentBookFamilyKey": "Light",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Candace": {
+      "characterKey": "Candace",
+      "talentBookFamilyKey": "Admonition",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Cyno": {
+      "characterKey": "Cyno",
+      "talentBookFamilyKey": "Admonition",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Faruzan": {
+      "characterKey": "Faruzan",
+      "talentBookFamilyKey": "Admonition",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Tighnari": {
+      "characterKey": "Tighnari",
+      "talentBookFamilyKey": "Admonition",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Alhaitham": {
+      "characterKey": "Alhaitham",
+      "talentBookFamilyKey": "Ingenuity",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Dori": {
+      "characterKey": "Dori",
+      "talentBookFamilyKey": "Ingenuity",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Kaveh": {
+      "characterKey": "Kaveh",
+      "talentBookFamilyKey": "Ingenuity",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Layla": {
+      "characterKey": "Layla",
+      "talentBookFamilyKey": "Ingenuity",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Nahida": {
+      "characterKey": "Nahida",
+      "talentBookFamilyKey": "Ingenuity",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Collei": {
+      "characterKey": "Collei",
+      "talentBookFamilyKey": "Praxis",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Dehya": {
+      "characterKey": "Dehya",
+      "talentBookFamilyKey": "Praxis",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Nilou": {
+      "characterKey": "Nilou",
+      "talentBookFamilyKey": "Praxis",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Sethos": {
+      "characterKey": "Sethos",
+      "talentBookFamilyKey": "Praxis",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Wanderer": {
+      "characterKey": "Wanderer",
+      "talentBookFamilyKey": "Praxis",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Lyney": {
+      "characterKey": "Lyney",
+      "talentBookFamilyKey": "Equity",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Navia": {
+      "characterKey": "Navia",
+      "talentBookFamilyKey": "Equity",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Neuvillette": {
+      "characterKey": "Neuvillette",
+      "talentBookFamilyKey": "Equity",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Sigewinne": {
+      "characterKey": "Sigewinne",
+      "talentBookFamilyKey": "Equity",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Charlotte": {
+      "characterKey": "Charlotte",
+      "talentBookFamilyKey": "Justice",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Clorinde": {
+      "characterKey": "Clorinde",
+      "talentBookFamilyKey": "Justice",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Escoffier": {
+      "characterKey": "Escoffier",
+      "talentBookFamilyKey": "Justice",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Freminet": {
+      "characterKey": "Freminet",
+      "talentBookFamilyKey": "Justice",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Furina": {
+      "characterKey": "Furina",
+      "talentBookFamilyKey": "Justice",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Arlecchino": {
+      "characterKey": "Arlecchino",
+      "talentBookFamilyKey": "Order",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Chevreuse": {
+      "characterKey": "Chevreuse",
+      "talentBookFamilyKey": "Order",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Emilie": {
+      "characterKey": "Emilie",
+      "talentBookFamilyKey": "Order",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Lynette": {
+      "characterKey": "Lynette",
+      "talentBookFamilyKey": "Order",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Wriothesley": {
+      "characterKey": "Wriothesley",
+      "talentBookFamilyKey": "Order",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Iansan": {
+      "characterKey": "Iansan",
+      "talentBookFamilyKey": "Contention",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Mavuika": {
+      "characterKey": "Mavuika",
+      "talentBookFamilyKey": "Contention",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Mualani": {
+      "characterKey": "Mualani",
+      "talentBookFamilyKey": "Contention",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Skirk": {
+      "characterKey": "Skirk",
+      "talentBookFamilyKey": "Contention",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Citlali": {
+      "characterKey": "Citlali",
+      "talentBookFamilyKey": "Kindling",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Kinich": {
+      "characterKey": "Kinich",
+      "talentBookFamilyKey": "Kindling",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Ororon": {
+      "characterKey": "Ororon",
+      "talentBookFamilyKey": "Kindling",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Xilonen": {
+      "characterKey": "Xilonen",
+      "talentBookFamilyKey": "Kindling",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Chasca": {
+      "characterKey": "Chasca",
+      "talentBookFamilyKey": "Conflict",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Ifa": {
+      "characterKey": "Ifa",
+      "talentBookFamilyKey": "Conflict",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Ineffa": {
+      "characterKey": "Ineffa",
+      "talentBookFamilyKey": "Conflict",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Kachina": {
+      "characterKey": "Kachina",
+      "talentBookFamilyKey": "Conflict",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Varesa": {
+      "characterKey": "Varesa",
+      "talentBookFamilyKey": "Conflict",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Columbina": {
+      "characterKey": "Columbina",
+      "talentBookFamilyKey": "Moonlight",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Lauma": {
+      "characterKey": "Lauma",
+      "talentBookFamilyKey": "Moonlight",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Aino": {
+      "characterKey": "Aino",
+      "talentBookFamilyKey": "Elysium",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Illuga": {
+      "characterKey": "Illuga",
+      "talentBookFamilyKey": "Elysium",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Nefer": {
+      "characterKey": "Nefer",
+      "talentBookFamilyKey": "Elysium",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Flins": {
+      "characterKey": "Flins",
+      "talentBookFamilyKey": "Vagrancy",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Jahoda": {
+      "characterKey": "Jahoda",
+      "talentBookFamilyKey": "Vagrancy",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    },
+    "Linnea": {
+      "characterKey": "Linnea",
+      "talentBookFamilyKey": "Vagrancy",
+      "normalBossMaterial": "",
+      "weeklyBossMaterial": "",
+      "localSpecialty": ""
+    }
+  }
+}

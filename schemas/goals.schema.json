@@ -1,0 +1,403 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://krumpanion.local/schemas/goals.schema.json",
+  "title": "Krumpanion Goals",
+  "type": "object",
+  "required": [
+    "version",
+    "characterGoals",
+    "weaponGoals",
+    "artifactGoals",
+    "plannerSettings"
+  ],
+  "properties": {
+    "version": {
+      "const": 3
+    },
+    "profileName": {
+      "type": "string"
+    },
+    "characterGoals": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "characterKey",
+          "enabled"
+        ],
+        "properties": {
+          "characterKey": {
+            "type": "string"
+          },
+          "planningMode": {
+            "type": "string",
+            "enum": ["owned", "prefarm", "manual"]
+          },
+          "priority": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 5,
+            "default": 3
+          },
+          "targetLevel": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 90
+          },
+          "targetAscension": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 6
+          },
+          "talents": {
+            "type": "object",
+            "properties": {
+              "auto": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 10
+              },
+              "skill": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 10
+              },
+              "burst": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 10
+              }
+            },
+            "additionalProperties": false
+          },
+          "currentOverride": {
+            "type": "object",
+            "properties": {
+              "level": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 90
+              },
+              "ascension": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 6
+              },
+              "talents": {
+                "type": "object",
+                "properties": {
+                  "auto": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 10
+                  },
+                  "skill": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 10
+                  },
+                  "burst": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 10
+                  }
+                },
+                "additionalProperties": false
+              }
+            },
+            "additionalProperties": false
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "weaponGoals": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "weaponKey",
+          "enabled"
+        ],
+        "properties": {
+          "goalId": {
+            "type": "string"
+          },
+          "accountId": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "weaponKey": {
+            "type": "string"
+          },
+          "linkedCharacterKey": {
+            "type": "string"
+          },
+          "linkedInventoryInstanceId": {
+            "type": "string"
+          },
+          "useOwnedInstance": {
+            "type": "boolean"
+          },
+          "linkStatus": {
+            "type": "string",
+            "enum": ["linked", "stale", "unlinked_prefarm"]
+          },
+          "planningMode": {
+            "type": "string",
+            "enum": ["owned", "prefarm", "manual"]
+          },
+          "ownedWeaponInstanceId": {
+            "type": "string"
+          },
+          "instanceHint": {
+            "type": "string"
+          },
+          "location": {
+            "type": "string"
+          },
+          "priority": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 5,
+            "default": 3
+          },
+          "targetLevel": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 90
+          },
+          "targetAscensionPhase": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 6
+          },
+          "targetAscension": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 6
+          },
+          "currentOverride": {
+            "type": "object",
+            "properties": {
+              "level": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 90
+              },
+              "ascension": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 6
+              }
+            },
+            "additionalProperties": false
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "artifactGoals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "domainKey",
+          "targetSetKeys",
+          "priority",
+          "enabled"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "characterKey": {
+            "type": "string"
+          },
+          "domainKey": {
+            "type": "string"
+          },
+          "targetSetKeys": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "priority": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 5
+          },
+          "weeklyResinBudget": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "desiredMainStats": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "desiredSubstats": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "plannerSettings": {
+      "type": "object",
+      "properties": {
+        "worldLevel": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9,
+          "default": 8
+        },
+        "domainLevel": {
+          "type": "string",
+          "enum": ["I", "II", "III", "IV"],
+          "default": "IV"
+        },
+        "useHighestUnlockedDomain": {
+          "type": "boolean",
+          "default": true
+        },
+        "craftAwareEstimates": {
+          "type": "boolean",
+          "default": true
+        },
+        "craftingModeForRequirementSatisfaction": {
+          "type": "string",
+          "enum": ["guaranteed", "expected_value"],
+          "default": "guaranteed"
+        },
+        "craftingModeForResinEstimate": {
+          "type": "string",
+          "enum": ["guaranteed", "expected_value"],
+          "default": "expected_value"
+        },
+        "allowCraftingTalentExpectedValue": {
+          "type": "boolean",
+          "default": true
+        },
+        "showCraftingVarianceWarning": {
+          "type": "boolean",
+          "default": true
+        },
+        "allowDustOfAzothConversion": {
+          "type": "boolean",
+          "default": false
+        },
+        "preserveOffElementGemsByDefault": {
+          "type": "boolean",
+          "default": true
+        },
+        "showDustOfAzothOption": {
+          "type": "boolean",
+          "default": true
+        },
+        "craftingPassiveOverrides": {
+          "type": "object",
+          "properties": {
+            "talentMaterials": {
+              "type": ["string", "null"]
+            },
+            "weaponAscensionMaterials": {
+              "type": ["string", "null"]
+            },
+            "characterWeaponEnhancementMaterials": {
+              "type": ["string", "null"]
+            },
+            "potions": {
+              "type": ["string", "null"]
+            }
+          },
+          "additionalProperties": false,
+          "default": {}
+        },
+        "currentResin": {
+          "type": "integer",
+          "minimum": 0,
+          "default": 0
+        },
+        "condensedResinOwned": {
+          "type": "integer",
+          "minimum": 0,
+          "default": 0
+        },
+        "fragileResinOwned": {
+          "type": "integer",
+          "minimum": 0,
+          "default": 0
+        },
+        "transientResinOwned": {
+          "type": "integer",
+          "minimum": 0,
+          "default": 0
+        },
+        "includePrimogemRefillPlanning": {
+          "type": "boolean",
+          "default": false
+        },
+        "weeklyBossDiscountClaims": {
+          "type": "integer",
+          "minimum": 0,
+          "default": 3
+        },
+        "weeklyBossDiscountClaimsUsed": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3,
+          "default": 0
+        },
+        "assumeCondensedResinEquivalentForDomains": {
+          "type": "boolean",
+          "default": true
+        },
+        "estimateOpenWorldEnemyDrops": {
+          "type": "boolean",
+          "default": false
+        },
+        "dailyResinBudget": {
+          "type": "integer",
+          "minimum": 0,
+          "default": 180
+        },
+        "includeArtifactGoals": {
+          "type": "boolean",
+          "default": true
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,707 @@
+{
+  "version": 1,
+  "source": "Darkends GOOD corpus",
+  "generatedAt": "2026-05-02T08:24:55.774Z",
+  "weapons": {
+    "Akuoumaru": {
+      "key": "Akuoumaru",
+      "displayName": "Akuoumaru"
+    },
+    "AlleyHunter": {
+      "key": "AlleyHunter",
+      "displayName": "Alley Hunter"
+    },
+    "AmenomaKageuchi": {
+      "key": "AmenomaKageuchi",
+      "displayName": "Amenoma Kageuchi"
+    },
+    "AmosBow": {
+      "key": "AmosBow",
+      "displayName": "Amos Bow"
+    },
+    "AquaSimulacra": {
+      "key": "AquaSimulacra",
+      "displayName": "Aqua Simulacra"
+    },
+    "AquilaFavonia": {
+      "key": "AquilaFavonia",
+      "displayName": "Aquila Favonia"
+    },
+    "AshGravenDrinkingHorn": {
+      "key": "AshGravenDrinkingHorn",
+      "displayName": "Ash Graven Drinking Horn"
+    },
+    "AstralVulturesCrimsonPlumage": {
+      "key": "AstralVulturesCrimsonPlumage",
+      "displayName": "Astral Vultures Crimson Plumage"
+    },
+    "AThousandBlazingSuns": {
+      "key": "AThousandBlazingSuns",
+      "displayName": "A Thousand Blazing Suns"
+    },
+    "Azurelight": {
+      "key": "Azurelight",
+      "displayName": "Azurelight"
+    },
+    "BalladOfTheBoundlessBlue": {
+      "key": "BalladOfTheBoundlessBlue",
+      "displayName": "Ballad Of The Boundless Blue"
+    },
+    "BalladOfTheFjords": {
+      "key": "BalladOfTheFjords",
+      "displayName": "Ballad Of The Fjords"
+    },
+    "BlackcliffAgate": {
+      "key": "BlackcliffAgate",
+      "displayName": "Blackcliff Agate"
+    },
+    "BlackcliffLongsword": {
+      "key": "BlackcliffLongsword",
+      "displayName": "Blackcliff Longsword"
+    },
+    "BlackcliffPole": {
+      "key": "BlackcliffPole",
+      "displayName": "Blackcliff Pole"
+    },
+    "BlackcliffSlasher": {
+      "key": "BlackcliffSlasher",
+      "displayName": "Blackcliff Slasher"
+    },
+    "BlackcliffWarbow": {
+      "key": "BlackcliffWarbow",
+      "displayName": "Blackcliff Warbow"
+    },
+    "BlackTassel": {
+      "key": "BlackTassel",
+      "displayName": "Black Tassel"
+    },
+    "BloodtaintedGreatsword": {
+      "key": "BloodtaintedGreatsword",
+      "displayName": "Bloodtainted Greatsword"
+    },
+    "CalamityOfEshu": {
+      "key": "CalamityOfEshu",
+      "displayName": "Calamity Of Eshu"
+    },
+    "ChainBreaker": {
+      "key": "ChainBreaker",
+      "displayName": "Chain Breaker"
+    },
+    "CinnabarSpindle": {
+      "key": "CinnabarSpindle",
+      "displayName": "Cinnabar Spindle"
+    },
+    "Cloudforged": {
+      "key": "Cloudforged",
+      "displayName": "Cloudforged"
+    },
+    "CompoundBow": {
+      "key": "CompoundBow",
+      "displayName": "Compound Bow"
+    },
+    "CoolSteel": {
+      "key": "CoolSteel",
+      "displayName": "Cool Steel"
+    },
+    "CranesEchoingCall": {
+      "key": "CranesEchoingCall",
+      "displayName": "Cranes Echoing Call"
+    },
+    "CrescentPike": {
+      "key": "CrescentPike",
+      "displayName": "Crescent Pike"
+    },
+    "CrimsonMoonsSemblance": {
+      "key": "CrimsonMoonsSemblance",
+      "displayName": "Crimson Moons Semblance"
+    },
+    "DarkIronSword": {
+      "key": "DarkIronSword",
+      "displayName": "Dark Iron Sword"
+    },
+    "Deathmatch": {
+      "key": "Deathmatch",
+      "displayName": "Deathmatch"
+    },
+    "DebateClub": {
+      "key": "DebateClub",
+      "displayName": "Debate Club"
+    },
+    "DialoguesOfTheDesertSages": {
+      "key": "DialoguesOfTheDesertSages",
+      "displayName": "Dialogues Of The Desert Sages"
+    },
+    "DodocoTales": {
+      "key": "DodocoTales",
+      "displayName": "Dodoco Tales"
+    },
+    "DragonsBane": {
+      "key": "DragonsBane",
+      "displayName": "Dragons Bane"
+    },
+    "DragonspineSpear": {
+      "key": "DragonspineSpear",
+      "displayName": "Dragonspine Spear"
+    },
+    "EarthShaker": {
+      "key": "EarthShaker",
+      "displayName": "Earth Shaker"
+    },
+    "EmeraldOrb": {
+      "key": "EmeraldOrb",
+      "displayName": "Emerald Orb"
+    },
+    "EndOfTheLine": {
+      "key": "EndOfTheLine",
+      "displayName": "End Of The Line"
+    },
+    "EtherlightSpindlelute": {
+      "key": "EtherlightSpindlelute",
+      "displayName": "Etherlight Spindlelute"
+    },
+    "EyeOfPerception": {
+      "key": "EyeOfPerception",
+      "displayName": "Eye Of Perception"
+    },
+    "FadingTwilight": {
+      "key": "FadingTwilight",
+      "displayName": "Fading Twilight"
+    },
+    "FavoniusCodex": {
+      "key": "FavoniusCodex",
+      "displayName": "Favonius Codex"
+    },
+    "FavoniusGreatsword": {
+      "key": "FavoniusGreatsword",
+      "displayName": "Favonius Greatsword"
+    },
+    "FavoniusLance": {
+      "key": "FavoniusLance",
+      "displayName": "Favonius Lance"
+    },
+    "FavoniusSword": {
+      "key": "FavoniusSword",
+      "displayName": "Favonius Sword"
+    },
+    "FavoniusWarbow": {
+      "key": "FavoniusWarbow",
+      "displayName": "Favonius Warbow"
+    },
+    "FerrousShadow": {
+      "key": "FerrousShadow",
+      "displayName": "Ferrous Shadow"
+    },
+    "FesteringDesire": {
+      "key": "FesteringDesire",
+      "displayName": "Festering Desire"
+    },
+    "FilletBlade": {
+      "key": "FilletBlade",
+      "displayName": "Fillet Blade"
+    },
+    "FinaleOfTheDeep": {
+      "key": "FinaleOfTheDeep",
+      "displayName": "Finale Of The Deep"
+    },
+    "FlameForgedInsight": {
+      "key": "FlameForgedInsight",
+      "displayName": "Flame Forged Insight"
+    },
+    "FleuveCendreFerryman": {
+      "key": "FleuveCendreFerryman",
+      "displayName": "Fleuve Cendre Ferryman"
+    },
+    "FlowerWreathedFeathers": {
+      "key": "FlowerWreathedFeathers",
+      "displayName": "Flower Wreathed Feathers"
+    },
+    "FlowingPurity": {
+      "key": "FlowingPurity",
+      "displayName": "Flowing Purity"
+    },
+    "FluteOfEzpitzal": {
+      "key": "FluteOfEzpitzal",
+      "displayName": "Flute Of Ezpitzal"
+    },
+    "FootprintOfTheRainbow": {
+      "key": "FootprintOfTheRainbow",
+      "displayName": "Footprint Of The Rainbow"
+    },
+    "ForestRegalia": {
+      "key": "ForestRegalia",
+      "displayName": "Forest Regalia"
+    },
+    "FreedomSworn": {
+      "key": "FreedomSworn",
+      "displayName": "Freedom Sworn"
+    },
+    "Frostbearer": {
+      "key": "Frostbearer",
+      "displayName": "Frostbearer"
+    },
+    "FruitfulHook": {
+      "key": "FruitfulHook",
+      "displayName": "Fruitful Hook"
+    },
+    "FruitOfFulfillment": {
+      "key": "FruitOfFulfillment",
+      "displayName": "Fruit Of Fulfillment"
+    },
+    "HakushinRing": {
+      "key": "HakushinRing",
+      "displayName": "Hakushin Ring"
+    },
+    "Halberd": {
+      "key": "Halberd",
+      "displayName": "Halberd"
+    },
+    "Hamayumi": {
+      "key": "Hamayumi",
+      "displayName": "Hamayumi"
+    },
+    "HarbingerOfDawn": {
+      "key": "HarbingerOfDawn",
+      "displayName": "Harbinger Of Dawn"
+    },
+    "IbisPiercer": {
+      "key": "IbisPiercer",
+      "displayName": "Ibis Piercer"
+    },
+    "IronSting": {
+      "key": "IronSting",
+      "displayName": "Iron Sting"
+    },
+    "KagotsurubeIsshin": {
+      "key": "KagotsurubeIsshin",
+      "displayName": "Kagotsurube Isshin"
+    },
+    "KagurasVerity": {
+      "key": "KagurasVerity",
+      "displayName": "Kaguras Verity"
+    },
+    "KatsuragikiriNagamasa": {
+      "key": "KatsuragikiriNagamasa",
+      "displayName": "Katsuragikiri Nagamasa"
+    },
+    "KeyOfKhajNisut": {
+      "key": "KeyOfKhajNisut",
+      "displayName": "Key Of Khaj Nisut"
+    },
+    "KingsSquire": {
+      "key": "KingsSquire",
+      "displayName": "Kings Squire"
+    },
+    "KitainCrossSpear": {
+      "key": "KitainCrossSpear",
+      "displayName": "Kitain Cross Spear"
+    },
+    "LightOfFoliarIncision": {
+      "key": "LightOfFoliarIncision",
+      "displayName": "Light Of Foliar Incision"
+    },
+    "LionsRoar": {
+      "key": "LionsRoar",
+      "displayName": "Lions Roar"
+    },
+    "LithicBlade": {
+      "key": "LithicBlade",
+      "displayName": "Lithic Blade"
+    },
+    "LithicSpear": {
+      "key": "LithicSpear",
+      "displayName": "Lithic Spear"
+    },
+    "LostPrayerToTheSacredWinds": {
+      "key": "LostPrayerToTheSacredWinds",
+      "displayName": "Lost Prayer To The Sacred Winds"
+    },
+    "LumidouceElegy": {
+      "key": "LumidouceElegy",
+      "displayName": "Lumidouce Elegy"
+    },
+    "LuxuriousSeaLord": {
+      "key": "LuxuriousSeaLord",
+      "displayName": "Luxurious Sea Lord"
+    },
+    "MagicGuide": {
+      "key": "MagicGuide",
+      "displayName": "Magic Guide"
+    },
+    "MailedFlower": {
+      "key": "MailedFlower",
+      "displayName": "Mailed Flower"
+    },
+    "MakhairaAquamarine": {
+      "key": "MakhairaAquamarine",
+      "displayName": "Makhaira Aquamarine"
+    },
+    "MappaMare": {
+      "key": "MappaMare",
+      "displayName": "Mappa Mare"
+    },
+    "MissiveWindspear": {
+      "key": "MissiveWindspear",
+      "displayName": "Missive Windspear"
+    },
+    "MitternachtsWaltz": {
+      "key": "MitternachtsWaltz",
+      "displayName": "Mitternachts Waltz"
+    },
+    "Moonpiercer": {
+      "key": "Moonpiercer",
+      "displayName": "Moonpiercer"
+    },
+    "MountainBracingBolt": {
+      "key": "MountainBracingBolt",
+      "displayName": "Mountain Bracing Bolt"
+    },
+    "MouunsMoon": {
+      "key": "MouunsMoon",
+      "displayName": "Mouuns Moon"
+    },
+    "OathswornEye": {
+      "key": "OathswornEye",
+      "displayName": "Oathsworn Eye"
+    },
+    "OtherworldlyStory": {
+      "key": "OtherworldlyStory",
+      "displayName": "Otherworldly Story"
+    },
+    "PeakPatrolSong": {
+      "key": "PeakPatrolSong",
+      "displayName": "Peak Patrol Song"
+    },
+    "PortablePowerSaw": {
+      "key": "PortablePowerSaw",
+      "displayName": "Portable Power Saw"
+    },
+    "PrimordialJadeWingedSpear": {
+      "key": "PrimordialJadeWingedSpear",
+      "displayName": "Primordial Jade Winged Spear"
+    },
+    "ProspectorsDrill": {
+      "key": "ProspectorsDrill",
+      "displayName": "Prospectors Drill"
+    },
+    "ProspectorsShovel": {
+      "key": "ProspectorsShovel",
+      "displayName": "Prospectors Shovel"
+    },
+    "PrototypeAmber": {
+      "key": "PrototypeAmber",
+      "displayName": "Prototype Amber"
+    },
+    "PrototypeArchaic": {
+      "key": "PrototypeArchaic",
+      "displayName": "Prototype Archaic"
+    },
+    "PrototypeCrescent": {
+      "key": "PrototypeCrescent",
+      "displayName": "Prototype Crescent"
+    },
+    "PrototypeRancour": {
+      "key": "PrototypeRancour",
+      "displayName": "Prototype Rancour"
+    },
+    "PrototypeStarglitter": {
+      "key": "PrototypeStarglitter",
+      "displayName": "Prototype Starglitter"
+    },
+    "RainbowSerpentsRainBow": {
+      "key": "RainbowSerpentsRainBow",
+      "displayName": "Rainbow Serpents Rain Bow"
+    },
+    "Rainslasher": {
+      "key": "Rainslasher",
+      "displayName": "Rainslasher"
+    },
+    "RangeGauge": {
+      "key": "RangeGauge",
+      "displayName": "Range Gauge"
+    },
+    "RavenBow": {
+      "key": "RavenBow",
+      "displayName": "Raven Bow"
+    },
+    "RecurveBow": {
+      "key": "RecurveBow",
+      "displayName": "Recurve Bow"
+    },
+    "RightfulReward": {
+      "key": "RightfulReward",
+      "displayName": "Rightful Reward"
+    },
+    "RingOfYaxche": {
+      "key": "RingOfYaxche",
+      "displayName": "Ring Of Yaxche"
+    },
+    "RoyalBow": {
+      "key": "RoyalBow",
+      "displayName": "Royal Bow"
+    },
+    "RoyalGreatsword": {
+      "key": "RoyalGreatsword",
+      "displayName": "Royal Greatsword"
+    },
+    "RoyalGrimoire": {
+      "key": "RoyalGrimoire",
+      "displayName": "Royal Grimoire"
+    },
+    "RoyalLongsword": {
+      "key": "RoyalLongsword",
+      "displayName": "Royal Longsword"
+    },
+    "RoyalSpear": {
+      "key": "RoyalSpear",
+      "displayName": "Royal Spear"
+    },
+    "Rust": {
+      "key": "Rust",
+      "displayName": "Rust"
+    },
+    "SacrificialBow": {
+      "key": "SacrificialBow",
+      "displayName": "Sacrificial Bow"
+    },
+    "SacrificialFragments": {
+      "key": "SacrificialFragments",
+      "displayName": "Sacrificial Fragments"
+    },
+    "SacrificialGreatsword": {
+      "key": "SacrificialGreatsword",
+      "displayName": "Sacrificial Greatsword"
+    },
+    "SacrificialJade": {
+      "key": "SacrificialJade",
+      "displayName": "Sacrificial Jade"
+    },
+    "SacrificialSword": {
+      "key": "SacrificialSword",
+      "displayName": "Sacrificial Sword"
+    },
+    "SapwoodBlade": {
+      "key": "SapwoodBlade",
+      "displayName": "Sapwood Blade"
+    },
+    "ScionOfTheBlazingSun": {
+      "key": "ScionOfTheBlazingSun",
+      "displayName": "Scion Of The Blazing Sun"
+    },
+    "SequenceOfSolitude": {
+      "key": "SequenceOfSolitude",
+      "displayName": "Sequence Of Solitude"
+    },
+    "SerpentSpine": {
+      "key": "SerpentSpine",
+      "displayName": "Serpent Spine"
+    },
+    "SharpshootersOath": {
+      "key": "SharpshootersOath",
+      "displayName": "Sharpshooters Oath"
+    },
+    "SkyriderGreatsword": {
+      "key": "SkyriderGreatsword",
+      "displayName": "Skyrider Greatsword"
+    },
+    "SkyriderSword": {
+      "key": "SkyriderSword",
+      "displayName": "Skyrider Sword"
+    },
+    "SkywardAtlas": {
+      "key": "SkywardAtlas",
+      "displayName": "Skyward Atlas"
+    },
+    "SkywardBlade": {
+      "key": "SkywardBlade",
+      "displayName": "Skyward Blade"
+    },
+    "SkywardHarp": {
+      "key": "SkywardHarp",
+      "displayName": "Skyward Harp"
+    },
+    "SkywardPride": {
+      "key": "SkywardPride",
+      "displayName": "Skyward Pride"
+    },
+    "SkywardSpine": {
+      "key": "SkywardSpine",
+      "displayName": "Skyward Spine"
+    },
+    "Slingshot": {
+      "key": "Slingshot",
+      "displayName": "Slingshot"
+    },
+    "SnareHook": {
+      "key": "SnareHook",
+      "displayName": "Snare Hook"
+    },
+    "SnowTombedStarsilver": {
+      "key": "SnowTombedStarsilver",
+      "displayName": "Snow Tombed Starsilver"
+    },
+    "SolarPearl": {
+      "key": "SolarPearl",
+      "displayName": "Solar Pearl"
+    },
+    "SongOfBrokenPines": {
+      "key": "SongOfBrokenPines",
+      "displayName": "Song Of Broken Pines"
+    },
+    "SongOfStillness": {
+      "key": "SongOfStillness",
+      "displayName": "Song Of Stillness"
+    },
+    "SplendorOfTranquilWaters": {
+      "key": "SplendorOfTranquilWaters",
+      "displayName": "Splendor Of Tranquil Waters"
+    },
+    "StaffOfHoma": {
+      "key": "StaffOfHoma",
+      "displayName": "Staff Of Homa"
+    },
+    "StarcallersWatch": {
+      "key": "StarcallersWatch",
+      "displayName": "Starcallers Watch"
+    },
+    "SturdyBone": {
+      "key": "SturdyBone",
+      "displayName": "Sturdy Bone"
+    },
+    "SunnyMorningSleepIn": {
+      "key": "SunnyMorningSleepIn",
+      "displayName": "Sunny Morning Sleep In"
+    },
+    "SwordOfDescension": {
+      "key": "SwordOfDescension",
+      "displayName": "Sword Of Descension"
+    },
+    "SwordOfNarzissenkreuz": {
+      "key": "SwordOfNarzissenkreuz",
+      "displayName": "Sword Of Narzissenkreuz"
+    },
+    "SymphonistOfScents": {
+      "key": "SymphonistOfScents",
+      "displayName": "Symphonist Of Scents"
+    },
+    "TalkingStick": {
+      "key": "TalkingStick",
+      "displayName": "Talking Stick"
+    },
+    "TamayurateiNoOhanashi": {
+      "key": "TamayurateiNoOhanashi",
+      "displayName": "Tamayuratei No Ohanashi"
+    },
+    "TheAlleyFlash": {
+      "key": "TheAlleyFlash",
+      "displayName": "The Alley Flash"
+    },
+    "TheBell": {
+      "key": "TheBell",
+      "displayName": "The Bell"
+    },
+    "TheBlackSword": {
+      "key": "TheBlackSword",
+      "displayName": "The Black Sword"
+    },
+    "TheCatch": {
+      "key": "TheCatch",
+      "displayName": "The Catch"
+    },
+    "TheDockhandsAssistant": {
+      "key": "TheDockhandsAssistant",
+      "displayName": "The Dockhands Assistant"
+    },
+    "TheFirstGreatMagic": {
+      "key": "TheFirstGreatMagic",
+      "displayName": "The First Great Magic"
+    },
+    "TheFlute": {
+      "key": "TheFlute",
+      "displayName": "The Flute"
+    },
+    "TheStringless": {
+      "key": "TheStringless",
+      "displayName": "The Stringless"
+    },
+    "TheViridescentHunt": {
+      "key": "TheViridescentHunt",
+      "displayName": "The Viridescent Hunt"
+    },
+    "TheWidsith": {
+      "key": "TheWidsith",
+      "displayName": "The Widsith"
+    },
+    "ThrillingTalesOfDragonSlayers": {
+      "key": "ThrillingTalesOfDragonSlayers",
+      "displayName": "Thrilling Tales Of Dragon Slayers"
+    },
+    "TidalShadow": {
+      "key": "TidalShadow",
+      "displayName": "Tidal Shadow"
+    },
+    "TomeOfTheEternalFlow": {
+      "key": "TomeOfTheEternalFlow",
+      "displayName": "Tome Of The Eternal Flow"
+    },
+    "ToukabouShigure": {
+      "key": "ToukabouShigure",
+      "displayName": "Toukabou Shigure"
+    },
+    "TravelersHandySword": {
+      "key": "TravelersHandySword",
+      "displayName": "Travelers Handy Sword"
+    },
+    "TwinNephrite": {
+      "key": "TwinNephrite",
+      "displayName": "Twin Nephrite"
+    },
+    "UltimateOverlordsMegaMagicSword": {
+      "key": "UltimateOverlordsMegaMagicSword",
+      "displayName": "Ultimate Overlords Mega Magic Sword"
+    },
+    "UrakuMisugiri": {
+      "key": "UrakuMisugiri",
+      "displayName": "Uraku Misugiri"
+    },
+    "WanderingEvenstar": {
+      "key": "WanderingEvenstar",
+      "displayName": "Wandering Evenstar"
+    },
+    "WavebreakersFin": {
+      "key": "WavebreakersFin",
+      "displayName": "Wavebreakers Fin"
+    },
+    "WaveridingWhirl": {
+      "key": "WaveridingWhirl",
+      "displayName": "Waveriding Whirl"
+    },
+    "Whiteblind": {
+      "key": "Whiteblind",
+      "displayName": "Whiteblind"
+    },
+    "WhiteTassel": {
+      "key": "WhiteTassel",
+      "displayName": "White Tassel"
+    },
+    "WindblumeOde": {
+      "key": "WindblumeOde",
+      "displayName": "Windblume Ode"
+    },
+    "WineAndSong": {
+      "key": "WineAndSong",
+      "displayName": "Wine And Song"
+    },
+    "WolfFang": {
+      "key": "WolfFang",
+      "displayName": "Wolf Fang"
+    },
+    "WolfsGravestone": {
+      "key": "WolfsGravestone",
+      "displayName": "Wolfs Gravestone"
+    },
+    "XiphosMoonlight": {
+      "key": "XiphosMoonlight",
+      "displayName": "Xiphos Moonlight"
+    }
+  }
+}

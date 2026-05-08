@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "domains": {
+    "GoldenTroupe": {
+      "setKey": "GoldenTroupe",
+      "domainKey": "DenouementOfSin",
+      "domainName": "Denouement of Sin",
+      "availability": "ALWAYS",
+      "resinCost": 20
+    }
+  }
+}

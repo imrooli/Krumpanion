@@ -1,0 +1,264 @@
+{
+  "schemaVersion": 1,
+  "mode": "cumulative",
+  "appliesPerTalent": true,
+  "talentSlots": [
+    "auto",
+    "skill",
+    "burst"
+  ],
+  "notes": [
+    "Use this table independently for Normal Attack, Elemental Skill, and Elemental Burst.",
+    "Upgrade step costs define the universal material pattern for every combat talent.",
+    "Generic material buckets must be resolved through character material profiles.",
+    "Do not treat constellation-boosted effective talent levels as material-upgraded base levels."
+  ],
+  "talentCapByCharacterAscension": {
+    "0": 1,
+    "1": 1,
+    "2": 2,
+    "3": 4,
+    "4": 6,
+    "5": 8,
+    "6": 10
+  },
+  "upgradeCosts": [
+    {
+      "fromLevel": 1,
+      "toLevel": 2,
+      "requiredAscensionPhase": 2,
+      "mora": 12500,
+      "commonEnemyTier": 1,
+      "commonEnemyCount": 6,
+      "talentBookTier": "teachings",
+      "talentBookCount": 3
+    },
+    {
+      "fromLevel": 2,
+      "toLevel": 3,
+      "requiredAscensionPhase": 3,
+      "mora": 17500,
+      "commonEnemyTier": 2,
+      "commonEnemyCount": 3,
+      "talentBookTier": "guide",
+      "talentBookCount": 2
+    },
+    {
+      "fromLevel": 3,
+      "toLevel": 4,
+      "requiredAscensionPhase": 3,
+      "mora": 25000,
+      "commonEnemyTier": 2,
+      "commonEnemyCount": 4,
+      "talentBookTier": "guide",
+      "talentBookCount": 4
+    },
+    {
+      "fromLevel": 4,
+      "toLevel": 5,
+      "requiredAscensionPhase": 4,
+      "mora": 30000,
+      "commonEnemyTier": 2,
+      "commonEnemyCount": 6,
+      "talentBookTier": "guide",
+      "talentBookCount": 6
+    },
+    {
+      "fromLevel": 5,
+      "toLevel": 6,
+      "requiredAscensionPhase": 4,
+      "mora": 37500,
+      "commonEnemyTier": 2,
+      "commonEnemyCount": 9,
+      "talentBookTier": "guide",
+      "talentBookCount": 9
+    },
+    {
+      "fromLevel": 6,
+      "toLevel": 7,
+      "requiredAscensionPhase": 5,
+      "mora": 120000,
+      "commonEnemyTier": 3,
+      "commonEnemyCount": 4,
+      "talentBookTier": "philosophies",
+      "talentBookCount": 4,
+      "weeklyBossMaterialCount": 1
+    },
+    {
+      "fromLevel": 7,
+      "toLevel": 8,
+      "requiredAscensionPhase": 5,
+      "mora": 260000,
+      "commonEnemyTier": 3,
+      "commonEnemyCount": 6,
+      "talentBookTier": "philosophies",
+      "talentBookCount": 6,
+      "weeklyBossMaterialCount": 1
+    },
+    {
+      "fromLevel": 8,
+      "toLevel": 9,
+      "requiredAscensionPhase": 6,
+      "mora": 450000,
+      "commonEnemyTier": 3,
+      "commonEnemyCount": 9,
+      "talentBookTier": "philosophies",
+      "talentBookCount": 12,
+      "weeklyBossMaterialCount": 2
+    },
+    {
+      "fromLevel": 9,
+      "toLevel": 10,
+      "requiredAscensionPhase": 6,
+      "mora": 700000,
+      "commonEnemyTier": 3,
+      "commonEnemyCount": 12,
+      "talentBookTier": "philosophies",
+      "talentBookCount": 16,
+      "weeklyBossMaterialCount": 2,
+      "crownOfInsightCount": 1
+    }
+  ],
+  "totalsPerTalent": {
+    "1": {
+      "mora": 0,
+      "talentBook": {},
+      "enemyDrop": {},
+      "weeklyBossMaterial": 0,
+      "CrownOfInsight": 0,
+      "requiredAscension": 0
+    },
+    "2": {
+      "mora": 12500,
+      "talentBook": {
+        "teachings": 3
+      },
+      "enemyDrop": {
+        "low": 6
+      },
+      "weeklyBossMaterial": 0,
+      "CrownOfInsight": 0,
+      "requiredAscension": 2
+    },
+    "3": {
+      "mora": 30000,
+      "talentBook": {
+        "teachings": 3,
+        "guide": 2
+      },
+      "enemyDrop": {
+        "low": 6,
+        "mid": 3
+      },
+      "weeklyBossMaterial": 0,
+      "CrownOfInsight": 0,
+      "requiredAscension": 3
+    },
+    "4": {
+      "mora": 55000,
+      "talentBook": {
+        "teachings": 3,
+        "guide": 6
+      },
+      "enemyDrop": {
+        "low": 6,
+        "mid": 7
+      },
+      "weeklyBossMaterial": 0,
+      "CrownOfInsight": 0,
+      "requiredAscension": 3
+    },
+    "5": {
+      "mora": 85000,
+      "talentBook": {
+        "teachings": 3,
+        "guide": 12
+      },
+      "enemyDrop": {
+        "low": 6,
+        "mid": 13
+      },
+      "weeklyBossMaterial": 0,
+      "CrownOfInsight": 0,
+      "requiredAscension": 4
+    },
+    "6": {
+      "mora": 122500,
+      "talentBook": {
+        "teachings": 3,
+        "guide": 21
+      },
+      "enemyDrop": {
+        "low": 6,
+        "mid": 22
+      },
+      "weeklyBossMaterial": 0,
+      "CrownOfInsight": 0,
+      "requiredAscension": 4
+    },
+    "7": {
+      "mora": 242500,
+      "talentBook": {
+        "teachings": 3,
+        "guide": 21,
+        "philosophies": 4
+      },
+      "enemyDrop": {
+        "low": 6,
+        "mid": 22,
+        "high": 4
+      },
+      "weeklyBossMaterial": 1,
+      "CrownOfInsight": 0,
+      "requiredAscension": 5
+    },
+    "8": {
+      "mora": 502500,
+      "talentBook": {
+        "teachings": 3,
+        "guide": 21,
+        "philosophies": 10
+      },
+      "enemyDrop": {
+        "low": 6,
+        "mid": 22,
+        "high": 10
+      },
+      "weeklyBossMaterial": 2,
+      "CrownOfInsight": 0,
+      "requiredAscension": 5
+    },
+    "9": {
+      "mora": 952500,
+      "talentBook": {
+        "teachings": 3,
+        "guide": 21,
+        "philosophies": 22
+      },
+      "enemyDrop": {
+        "low": 6,
+        "mid": 22,
+        "high": 19
+      },
+      "weeklyBossMaterial": 4,
+      "CrownOfInsight": 0,
+      "requiredAscension": 6
+    },
+    "10": {
+      "mora": 1652500,
+      "talentBook": {
+        "teachings": 3,
+        "guide": 21,
+        "philosophies": 38
+      },
+      "enemyDrop": {
+        "low": 6,
+        "mid": 22,
+        "high": 31
+      },
+      "weeklyBossMaterial": 6,
+      "CrownOfInsight": 1,
+      "requiredAscension": 6
+    }
+  }
+}

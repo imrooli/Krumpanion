@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "recipes": {
+    "GuideToJustice": {
+      "outputMaterialKey": "GuideToJustice",
+      "outputQuantity": 1,
+      "ingredients": {
+        "TeachingsOfJustice": 3
+      }
+    },
+    "PhilosophiesOfJustice": {
+      "outputMaterialKey": "PhilosophiesOfJustice",
+      "outputQuantity": 1,
+      "ingredients": {
+        "GuideToJustice": 3
+      }
+    },
+    "GuideToResistance": {
+      "outputMaterialKey": "GuideToResistance",
+      "outputQuantity": 1,
+      "ingredients": {
+        "TeachingsOfResistance": 3
+      }
+    },
+    "PhilosophiesOfResistance": {
+      "outputMaterialKey": "PhilosophiesOfResistance",
+      "outputQuantity": 1,
+      "ingredients": {
+        "GuideToResistance": 3
+      }
+    },
+    "DebrisOfDecarabiansCity": {
+      "outputMaterialKey": "DebrisOfDecarabiansCity",
+      "outputQuantity": 1,
+      "ingredients": {
+        "TileOfDecarabiansTower": 3
+      }
+    },
+    "FragmentOfDecarabiansEpic": {
+      "outputMaterialKey": "FragmentOfDecarabiansEpic",
+      "outputQuantity": 1,
+      "ingredients": {
+        "DebrisOfDecarabiansCity": 3
+      }
+    },
+    "ScatteredPieceOfDecarabiansDream": {
+      "outputMaterialKey": "ScatteredPieceOfDecarabiansDream",
+      "outputQuantity": 1,
+      "ingredients": {
+        "FragmentOfDecarabiansEpic": 3
+      }
+    },
+    "BlackBronzeHorn": {
+      "outputMaterialKey": "BlackBronzeHorn",
+      "outputQuantity": 1,
+      "ingredients": {
+        "HeavyHorn": 3
+      }
+    },
+    "BlackCrystalHorn": {
+      "outputMaterialKey": "BlackCrystalHorn",
+      "outputQuantity": 1,
+      "ingredients": {
+        "BlackBronzeHorn": 3
+      }
+    }
+  }
+}

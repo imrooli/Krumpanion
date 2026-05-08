@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "progressions": {
+    "FavoniusSword": {
+      "levelTotals": {
+        "1": {},
+        "20": { "Mora": 10000 },
+        "40": { "Mora": 40000 },
+        "50": { "Mora": 80000 },
+        "60": { "Mora": 140000 },
+        "70": { "Mora": 220000 },
+        "80": { "Mora": 320000 },
+        "90": { "Mora": 450000 }
+      },
+      "ascensionTotals": {
+        "0": {},
+        "1": { "TileOfDecarabiansTower": 3, "HeavyHorn": 3, "WhopperflowerNectar": 2, "Mora": 5000 },
+        "2": { "TileOfDecarabiansTower": 6, "HeavyHorn": 9, "WhopperflowerNectar": 8, "Mora": 15000 },
+        "3": { "DebrisOfDecarabiansCity": 3, "BlackBronzeHorn": 6, "WhopperflowerNectar": 12, "Mora": 35000 },
+        "4": { "DebrisOfDecarabiansCity": 6, "BlackBronzeHorn": 12, "WhopperflowerNectar": 18, "Mora": 65000 },
+        "5": { "FragmentOfDecarabiansEpic": 4, "BlackCrystalHorn": 9, "WhopperflowerNectar": 27, "Mora": 110000 },
+        "6": { "ScatteredPieceOfDecarabiansDream": 6, "BlackCrystalHorn": 18, "WhopperflowerNectar": 27, "Mora": 170000 }
+      }
+    }
+  }
+}

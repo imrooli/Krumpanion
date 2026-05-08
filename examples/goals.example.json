@@ -1,0 +1,81 @@
+{
+  "version": 2,
+  "profileName": "Example Profile",
+  "characterGoals": {
+    "Furina": {
+      "characterKey": "Furina",
+      "priority": 5,
+      "targetLevel": 90,
+      "targetAscension": 6,
+      "talents": {
+        "auto": 1,
+        "skill": 10,
+        "burst": 10
+      },
+      "enabled": true,
+      "notes": "High priority support goal"
+    },
+    "Bennett": {
+      "characterKey": "Bennett",
+      "priority": 4,
+      "targetLevel": 90,
+      "targetAscension": 6,
+      "talents": {
+        "auto": 1,
+        "skill": 6,
+        "burst": 10
+      },
+      "enabled": true
+    }
+  },
+  "weaponGoals": {
+    "weapon-001": {
+      "id": "weapon-001",
+      "weaponKey": "FavoniusSword",
+      "location": "Bennett",
+      "priority": 3,
+      "targetLevel": 90,
+      "targetAscension": 6,
+      "enabled": true
+    }
+  },
+  "artifactGoals": [
+    {
+      "id": "artifact-goal-001",
+      "characterKey": "Furina",
+      "domainKey": "DenouementOfSin",
+      "targetSetKeys": [
+        "GoldenTroupe"
+      ],
+      "priority": 5,
+      "weeklyResinBudget": 400,
+      "desiredMainStats": {
+        "sands": [
+          "hp_",
+          "enerRech_"
+        ],
+        "goblet": [
+          "hp_",
+          "hydro_dmg_"
+        ],
+        "circlet": [
+          "critRate_",
+          "critDMG_"
+        ]
+      },
+      "desiredSubstats": [
+        "critRate_",
+        "critDMG_",
+        "hp_",
+        "enerRech_"
+      ],
+      "enabled": true,
+      "notes": "Artifact goal is independent from current GOOD artifacts."
+    }
+  ],
+  "plannerSettings": {
+    "weeklyBossDiscountClaims": 3,
+    "dailyResinBudget": 180,
+    "includeArtifactGoals": true
+  }
+}

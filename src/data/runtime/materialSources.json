@@ -1,0 +1,843 @@
+{
+  "version": 1,
+  "sources": {
+    "Mora": [
+      {
+        "materialKey": "Mora",
+        "sourceType": "ley_line",
+        "sourceKey": "BlossomOfWealth",
+        "sourceName": "Blossom of Wealth",
+        "availability": "ALWAYS",
+        "resinCost": 20
+      }
+    ],
+    "HerosWit": [
+      {
+        "materialKey": "HerosWit",
+        "sourceType": "ley_line",
+        "sourceKey": "BlossomOfRevelation",
+        "sourceName": "Blossom of Revelation",
+        "availability": "ALWAYS",
+        "resinCost": 20
+      }
+    ],
+    "TeachingsOfJustice": [
+      {
+        "materialKey": "TeachingsOfJustice",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "PaleForgottenGlory",
+        "sourceName": "Pale Forgotten Glory",
+        "availability": "TUE_FRI_SUN",
+        "resinCost": 20,
+        "region": "Fontaine"
+      }
+    ],
+    "GuideToJustice": [
+      {
+        "materialKey": "GuideToJustice",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "PaleForgottenGlory",
+        "sourceName": "Pale Forgotten Glory",
+        "availability": "TUE_FRI_SUN",
+        "resinCost": 20,
+        "region": "Fontaine"
+      }
+    ],
+    "PhilosophiesOfJustice": [
+      {
+        "materialKey": "PhilosophiesOfJustice",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "PaleForgottenGlory",
+        "sourceName": "Pale Forgotten Glory",
+        "availability": "TUE_FRI_SUN",
+        "resinCost": 20,
+        "region": "Fontaine"
+      }
+    ],
+    "TeachingsOfResistance": [
+      {
+        "materialKey": "TeachingsOfResistance",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "ForsakenRift",
+        "sourceName": "Forsaken Rift",
+        "availability": "TUE_FRI_SUN",
+        "resinCost": 20,
+        "region": "Mondstadt"
+      }
+    ],
+    "GuideToResistance": [
+      {
+        "materialKey": "GuideToResistance",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "ForsakenRift",
+        "sourceName": "Forsaken Rift",
+        "availability": "TUE_FRI_SUN",
+        "resinCost": 20,
+        "region": "Mondstadt"
+      }
+    ],
+    "PhilosophiesOfResistance": [
+      {
+        "materialKey": "PhilosophiesOfResistance",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "ForsakenRift",
+        "sourceName": "Forsaken Rift",
+        "availability": "TUE_FRI_SUN",
+        "resinCost": 20,
+        "region": "Mondstadt"
+      }
+    ],
+    "TileOfDecarabiansTower": [
+      {
+        "materialKey": "TileOfDecarabiansTower",
+        "sourceType": "domain_of_forgery",
+        "sourceKey": "CeciliaGarden",
+        "sourceName": "Cecilia Garden",
+        "availability": "MON_THU_SUN",
+        "resinCost": 20
+      }
+    ],
+    "DebrisOfDecarabiansCity": [
+      {
+        "materialKey": "DebrisOfDecarabiansCity",
+        "sourceType": "domain_of_forgery",
+        "sourceKey": "CeciliaGarden",
+        "sourceName": "Cecilia Garden",
+        "availability": "MON_THU_SUN",
+        "resinCost": 20
+      }
+    ],
+    "FragmentOfDecarabiansEpic": [
+      {
+        "materialKey": "FragmentOfDecarabiansEpic",
+        "sourceType": "domain_of_forgery",
+        "sourceKey": "CeciliaGarden",
+        "sourceName": "Cecilia Garden",
+        "availability": "MON_THU_SUN",
+        "resinCost": 20
+      }
+    ],
+    "ScatteredPieceOfDecarabiansDream": [
+      {
+        "materialKey": "ScatteredPieceOfDecarabiansDream",
+        "sourceType": "domain_of_forgery",
+        "sourceKey": "CeciliaGarden",
+        "sourceName": "Cecilia Garden",
+        "availability": "MON_THU_SUN",
+        "resinCost": 20
+      }
+    ],
+    "LakelightLily": [
+      {
+        "materialKey": "LakelightLily",
+        "sourceType": "local_specialty",
+        "sourceKey": "FontaineOpenWorld",
+        "sourceName": "Fontaine Open World",
+        "availability": "ALWAYS"
+      }
+    ],
+    "WindwheelAster": [
+      {
+        "materialKey": "WindwheelAster",
+        "sourceType": "local_specialty",
+        "sourceKey": "MondstadtOpenWorld",
+        "sourceName": "Mondstadt Open World",
+        "availability": "ALWAYS"
+      }
+    ],
+    "WhopperflowerNectar": [
+      {
+        "materialKey": "WhopperflowerNectar",
+        "sourceType": "enemy_drop",
+        "sourceKey": "Whopperflowers",
+        "sourceName": "Whopperflowers",
+        "availability": "ALWAYS"
+      }
+    ],
+    "TreasureHoarderInsignia": [
+      {
+        "materialKey": "TreasureHoarderInsignia",
+        "sourceType": "enemy_drop",
+        "sourceKey": "TreasureHoarders",
+        "sourceName": "Treasure Hoarders",
+        "availability": "ALWAYS"
+      }
+    ],
+    "LightlessMass": [
+      {
+        "materialKey": "LightlessMass",
+        "sourceType": "weekly_boss",
+        "sourceKey": "AllDevouringNarwhal",
+        "sourceName": "All-Devouring Narwhal",
+        "availability": "WEEKLY",
+        "resinCost": 30
+      }
+    ],
+    "DvalinsPlume": [
+      {
+        "materialKey": "DvalinsPlume",
+        "sourceType": "weekly_boss",
+        "sourceKey": "Stormterror",
+        "sourceName": "Stormterror",
+        "availability": "WEEKLY",
+        "resinCost": 30
+      }
+    ],
+    "CrownOfInsight": [
+      {
+        "materialKey": "CrownOfInsight",
+        "sourceType": "other",
+        "sourceKey": "Events",
+        "sourceName": "Limited Events",
+        "availability": "UNKNOWN"
+      }
+    ],
+    "VarunadaLazuriteSliver": [
+      {
+        "materialKey": "VarunadaLazuriteSliver",
+        "sourceType": "normal_boss",
+        "sourceKey": "HydroBosses",
+        "sourceName": "Hydro-aligned Bosses",
+        "availability": "ALWAYS",
+        "resinCost": 40
+      }
+    ],
+    "AgnidusAgateSliver": [
+      {
+        "materialKey": "AgnidusAgateSliver",
+        "sourceType": "normal_boss",
+        "sourceKey": "PyroBosses",
+        "sourceName": "Pyro-aligned Bosses",
+        "availability": "ALWAYS",
+        "resinCost": 40
+      }
+    ],
+    "TeachingsOfFreedom": [
+      {
+        "materialKey": "TeachingsOfFreedom",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "ForsakenRift",
+        "sourceName": "Forsaken Rift",
+        "availability": "MON_THU_SUN",
+        "resinCost": 20,
+        "region": "Mondstadt"
+      }
+    ],
+    "GuideToFreedom": [
+      {
+        "materialKey": "GuideToFreedom",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "ForsakenRift",
+        "sourceName": "Forsaken Rift",
+        "availability": "MON_THU_SUN",
+        "resinCost": 20,
+        "region": "Mondstadt"
+      }
+    ],
+    "PhilosophiesOfFreedom": [
+      {
+        "materialKey": "PhilosophiesOfFreedom",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "ForsakenRift",
+        "sourceName": "Forsaken Rift",
+        "availability": "MON_THU_SUN",
+        "resinCost": 20,
+        "region": "Mondstadt"
+      }
+    ],
+    "TeachingsOfBallad": [
+      {
+        "materialKey": "TeachingsOfBallad",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "ForsakenRift",
+        "sourceName": "Forsaken Rift",
+        "availability": "WED_SAT_SUN",
+        "resinCost": 20,
+        "region": "Mondstadt"
+      }
+    ],
+    "GuideToBallad": [
+      {
+        "materialKey": "GuideToBallad",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "ForsakenRift",
+        "sourceName": "Forsaken Rift",
+        "availability": "WED_SAT_SUN",
+        "resinCost": 20,
+        "region": "Mondstadt"
+      }
+    ],
+    "PhilosophiesOfBallad": [
+      {
+        "materialKey": "PhilosophiesOfBallad",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "ForsakenRift",
+        "sourceName": "Forsaken Rift",
+        "availability": "WED_SAT_SUN",
+        "resinCost": 20,
+        "region": "Mondstadt"
+      }
+    ],
+    "TeachingsOfProsperity": [
+      {
+        "materialKey": "TeachingsOfProsperity",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "TaishanMansion",
+        "sourceName": "Taishan Mansion",
+        "availability": "MON_THU_SUN",
+        "resinCost": 20,
+        "region": "Liyue"
+      }
+    ],
+    "GuideToProsperity": [
+      {
+        "materialKey": "GuideToProsperity",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "TaishanMansion",
+        "sourceName": "Taishan Mansion",
+        "availability": "MON_THU_SUN",
+        "resinCost": 20,
+        "region": "Liyue"
+      }
+    ],
+    "PhilosophiesOfProsperity": [
+      {
+        "materialKey": "PhilosophiesOfProsperity",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "TaishanMansion",
+        "sourceName": "Taishan Mansion",
+        "availability": "MON_THU_SUN",
+        "resinCost": 20,
+        "region": "Liyue"
+      }
+    ],
+    "TeachingsOfDiligence": [
+      {
+        "materialKey": "TeachingsOfDiligence",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "TaishanMansion",
+        "sourceName": "Taishan Mansion",
+        "availability": "TUE_FRI_SUN",
+        "resinCost": 20,
+        "region": "Liyue"
+      }
+    ],
+    "GuideToDiligence": [
+      {
+        "materialKey": "GuideToDiligence",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "TaishanMansion",
+        "sourceName": "Taishan Mansion",
+        "availability": "TUE_FRI_SUN",
+        "resinCost": 20,
+        "region": "Liyue"
+      }
+    ],
+    "PhilosophiesOfDiligence": [
+      {
+        "materialKey": "PhilosophiesOfDiligence",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "TaishanMansion",
+        "sourceName": "Taishan Mansion",
+        "availability": "TUE_FRI_SUN",
+        "resinCost": 20,
+        "region": "Liyue"
+      }
+    ],
+    "TeachingsOfGold": [
+      {
+        "materialKey": "TeachingsOfGold",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "TaishanMansion",
+        "sourceName": "Taishan Mansion",
+        "availability": "WED_SAT_SUN",
+        "resinCost": 20,
+        "region": "Liyue"
+      }
+    ],
+    "GuideToGold": [
+      {
+        "materialKey": "GuideToGold",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "TaishanMansion",
+        "sourceName": "Taishan Mansion",
+        "availability": "WED_SAT_SUN",
+        "resinCost": 20,
+        "region": "Liyue"
+      }
+    ],
+    "PhilosophiesOfGold": [
+      {
+        "materialKey": "PhilosophiesOfGold",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "TaishanMansion",
+        "sourceName": "Taishan Mansion",
+        "availability": "WED_SAT_SUN",
+        "resinCost": 20,
+        "region": "Liyue"
+      }
+    ],
+    "TeachingsOfTransience": [
+      {
+        "materialKey": "TeachingsOfTransience",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "VioletCourt",
+        "sourceName": "Violet Court",
+        "availability": "MON_THU_SUN",
+        "resinCost": 20,
+        "region": "Inazuma"
+      }
+    ],
+    "GuideToTransience": [
+      {
+        "materialKey": "GuideToTransience",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "VioletCourt",
+        "sourceName": "Violet Court",
+        "availability": "MON_THU_SUN",
+        "resinCost": 20,
+        "region": "Inazuma"
+      }
+    ],
+    "PhilosophiesOfTransience": [
+      {
+        "materialKey": "PhilosophiesOfTransience",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "VioletCourt",
+        "sourceName": "Violet Court",
+        "availability": "MON_THU_SUN",
+        "resinCost": 20,
+        "region": "Inazuma"
+      }
+    ],
+    "TeachingsOfElegance": [
+      {
+        "materialKey": "TeachingsOfElegance",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "VioletCourt",
+        "sourceName": "Violet Court",
+        "availability": "TUE_FRI_SUN",
+        "resinCost": 20,
+        "region": "Inazuma"
+      }
+    ],
+    "GuideToElegance": [
+      {
+        "materialKey": "GuideToElegance",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "VioletCourt",
+        "sourceName": "Violet Court",
+        "availability": "TUE_FRI_SUN",
+        "resinCost": 20,
+        "region": "Inazuma"
+      }
+    ],
+    "PhilosophiesOfElegance": [
+      {
+        "materialKey": "PhilosophiesOfElegance",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "VioletCourt",
+        "sourceName": "Violet Court",
+        "availability": "TUE_FRI_SUN",
+        "resinCost": 20,
+        "region": "Inazuma"
+      }
+    ],
+    "TeachingsOfLight": [
+      {
+        "materialKey": "TeachingsOfLight",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "VioletCourt",
+        "sourceName": "Violet Court",
+        "availability": "WED_SAT_SUN",
+        "resinCost": 20,
+        "region": "Inazuma"
+      }
+    ],
+    "GuideToLight": [
+      {
+        "materialKey": "GuideToLight",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "VioletCourt",
+        "sourceName": "Violet Court",
+        "availability": "WED_SAT_SUN",
+        "resinCost": 20,
+        "region": "Inazuma"
+      }
+    ],
+    "PhilosophiesOfLight": [
+      {
+        "materialKey": "PhilosophiesOfLight",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "VioletCourt",
+        "sourceName": "Violet Court",
+        "availability": "WED_SAT_SUN",
+        "resinCost": 20,
+        "region": "Inazuma"
+      }
+    ],
+    "TeachingsOfAdmonition": [
+      {
+        "materialKey": "TeachingsOfAdmonition",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "SteepleOfIgnorance",
+        "sourceName": "Steeple of Ignorance",
+        "availability": "MON_THU_SUN",
+        "resinCost": 20,
+        "region": "Sumeru"
+      }
+    ],
+    "GuideToAdmonition": [
+      {
+        "materialKey": "GuideToAdmonition",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "SteepleOfIgnorance",
+        "sourceName": "Steeple of Ignorance",
+        "availability": "MON_THU_SUN",
+        "resinCost": 20,
+        "region": "Sumeru"
+      }
+    ],
+    "PhilosophiesOfAdmonition": [
+      {
+        "materialKey": "PhilosophiesOfAdmonition",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "SteepleOfIgnorance",
+        "sourceName": "Steeple of Ignorance",
+        "availability": "MON_THU_SUN",
+        "resinCost": 20,
+        "region": "Sumeru"
+      }
+    ],
+    "TeachingsOfIngenuity": [
+      {
+        "materialKey": "TeachingsOfIngenuity",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "SteepleOfIgnorance",
+        "sourceName": "Steeple of Ignorance",
+        "availability": "TUE_FRI_SUN",
+        "resinCost": 20,
+        "region": "Sumeru"
+      }
+    ],
+    "GuideToIngenuity": [
+      {
+        "materialKey": "GuideToIngenuity",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "SteepleOfIgnorance",
+        "sourceName": "Steeple of Ignorance",
+        "availability": "TUE_FRI_SUN",
+        "resinCost": 20,
+        "region": "Sumeru"
+      }
+    ],
+    "PhilosophiesOfIngenuity": [
+      {
+        "materialKey": "PhilosophiesOfIngenuity",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "SteepleOfIgnorance",
+        "sourceName": "Steeple of Ignorance",
+        "availability": "TUE_FRI_SUN",
+        "resinCost": 20,
+        "region": "Sumeru"
+      }
+    ],
+    "TeachingsOfPraxis": [
+      {
+        "materialKey": "TeachingsOfPraxis",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "SteepleOfIgnorance",
+        "sourceName": "Steeple of Ignorance",
+        "availability": "WED_SAT_SUN",
+        "resinCost": 20,
+        "region": "Sumeru"
+      }
+    ],
+    "GuideToPraxis": [
+      {
+        "materialKey": "GuideToPraxis",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "SteepleOfIgnorance",
+        "sourceName": "Steeple of Ignorance",
+        "availability": "WED_SAT_SUN",
+        "resinCost": 20,
+        "region": "Sumeru"
+      }
+    ],
+    "PhilosophiesOfPraxis": [
+      {
+        "materialKey": "PhilosophiesOfPraxis",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "SteepleOfIgnorance",
+        "sourceName": "Steeple of Ignorance",
+        "availability": "WED_SAT_SUN",
+        "resinCost": 20,
+        "region": "Sumeru"
+      }
+    ],
+    "TeachingsOfEquity": [
+      {
+        "materialKey": "TeachingsOfEquity",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "PaleForgottenGlory",
+        "sourceName": "Pale Forgotten Glory",
+        "availability": "MON_THU_SUN",
+        "resinCost": 20,
+        "region": "Fontaine"
+      }
+    ],
+    "GuideToEquity": [
+      {
+        "materialKey": "GuideToEquity",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "PaleForgottenGlory",
+        "sourceName": "Pale Forgotten Glory",
+        "availability": "MON_THU_SUN",
+        "resinCost": 20,
+        "region": "Fontaine"
+      }
+    ],
+    "PhilosophiesOfEquity": [
+      {
+        "materialKey": "PhilosophiesOfEquity",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "PaleForgottenGlory",
+        "sourceName": "Pale Forgotten Glory",
+        "availability": "MON_THU_SUN",
+        "resinCost": 20,
+        "region": "Fontaine"
+      }
+    ],
+    "TeachingsOfOrder": [
+      {
+        "materialKey": "TeachingsOfOrder",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "PaleForgottenGlory",
+        "sourceName": "Pale Forgotten Glory",
+        "availability": "WED_SAT_SUN",
+        "resinCost": 20,
+        "region": "Fontaine"
+      }
+    ],
+    "GuideToOrder": [
+      {
+        "materialKey": "GuideToOrder",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "PaleForgottenGlory",
+        "sourceName": "Pale Forgotten Glory",
+        "availability": "WED_SAT_SUN",
+        "resinCost": 20,
+        "region": "Fontaine"
+      }
+    ],
+    "PhilosophiesOfOrder": [
+      {
+        "materialKey": "PhilosophiesOfOrder",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "PaleForgottenGlory",
+        "sourceName": "Pale Forgotten Glory",
+        "availability": "WED_SAT_SUN",
+        "resinCost": 20,
+        "region": "Fontaine"
+      }
+    ],
+    "TeachingsOfContention": [
+      {
+        "materialKey": "TeachingsOfContention",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "BlazingRuins",
+        "sourceName": "Blazing Ruins",
+        "availability": "MON_THU_SUN",
+        "resinCost": 20,
+        "region": "Natlan"
+      }
+    ],
+    "GuideToContention": [
+      {
+        "materialKey": "GuideToContention",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "BlazingRuins",
+        "sourceName": "Blazing Ruins",
+        "availability": "MON_THU_SUN",
+        "resinCost": 20,
+        "region": "Natlan"
+      }
+    ],
+    "PhilosophiesOfContention": [
+      {
+        "materialKey": "PhilosophiesOfContention",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "BlazingRuins",
+        "sourceName": "Blazing Ruins",
+        "availability": "MON_THU_SUN",
+        "resinCost": 20,
+        "region": "Natlan"
+      }
+    ],
+    "TeachingsOfKindling": [
+      {
+        "materialKey": "TeachingsOfKindling",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "BlazingRuins",
+        "sourceName": "Blazing Ruins",
+        "availability": "TUE_FRI_SUN",
+        "resinCost": 20,
+        "region": "Natlan"
+      }
+    ],
+    "GuideToKindling": [
+      {
+        "materialKey": "GuideToKindling",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "BlazingRuins",
+        "sourceName": "Blazing Ruins",
+        "availability": "TUE_FRI_SUN",
+        "resinCost": 20,
+        "region": "Natlan"
+      }
+    ],
+    "PhilosophiesOfKindling": [
+      {
+        "materialKey": "PhilosophiesOfKindling",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "BlazingRuins",
+        "sourceName": "Blazing Ruins",
+        "availability": "TUE_FRI_SUN",
+        "resinCost": 20,
+        "region": "Natlan"
+      }
+    ],
+    "TeachingsOfConflict": [
+      {
+        "materialKey": "TeachingsOfConflict",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "BlazingRuins",
+        "sourceName": "Blazing Ruins",
+        "availability": "WED_SAT_SUN",
+        "resinCost": 20,
+        "region": "Natlan"
+      }
+    ],
+    "GuideToConflict": [
+      {
+        "materialKey": "GuideToConflict",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "BlazingRuins",
+        "sourceName": "Blazing Ruins",
+        "availability": "WED_SAT_SUN",
+        "resinCost": 20,
+        "region": "Natlan"
+      }
+    ],
+    "PhilosophiesOfConflict": [
+      {
+        "materialKey": "PhilosophiesOfConflict",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "BlazingRuins",
+        "sourceName": "Blazing Ruins",
+        "availability": "WED_SAT_SUN",
+        "resinCost": 20,
+        "region": "Natlan"
+      }
+    ],
+    "TeachingsOfMoonlight": [
+      {
+        "materialKey": "TeachingsOfMoonlight",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "LightlessCapital",
+        "sourceName": "Lightless Capital",
+        "availability": "MON_THU_SUN",
+        "resinCost": 20,
+        "region": "Nod-Krai"
+      }
+    ],
+    "GuideToMoonlight": [
+      {
+        "materialKey": "GuideToMoonlight",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "LightlessCapital",
+        "sourceName": "Lightless Capital",
+        "availability": "MON_THU_SUN",
+        "resinCost": 20,
+        "region": "Nod-Krai"
+      }
+    ],
+    "PhilosophiesOfMoonlight": [
+      {
+        "materialKey": "PhilosophiesOfMoonlight",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "LightlessCapital",
+        "sourceName": "Lightless Capital",
+        "availability": "MON_THU_SUN",
+        "resinCost": 20,
+        "region": "Nod-Krai"
+      }
+    ],
+    "TeachingsOfElysium": [
+      {
+        "materialKey": "TeachingsOfElysium",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "LightlessCapital",
+        "sourceName": "Lightless Capital",
+        "availability": "TUE_FRI_SUN",
+        "resinCost": 20,
+        "region": "Nod-Krai"
+      }
+    ],
+    "GuideToElysium": [
+      {
+        "materialKey": "GuideToElysium",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "LightlessCapital",
+        "sourceName": "Lightless Capital",
+        "availability": "TUE_FRI_SUN",
+        "resinCost": 20,
+        "region": "Nod-Krai"
+      }
+    ],
+    "PhilosophiesOfElysium": [
+      {
+        "materialKey": "PhilosophiesOfElysium",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "LightlessCapital",
+        "sourceName": "Lightless Capital",
+        "availability": "TUE_FRI_SUN",
+        "resinCost": 20,
+        "region": "Nod-Krai"
+      }
+    ],
+    "TeachingsOfVagrancy": [
+      {
+        "materialKey": "TeachingsOfVagrancy",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "LightlessCapital",
+        "sourceName": "Lightless Capital",
+        "availability": "WED_SAT_SUN",
+        "resinCost": 20,
+        "region": "Nod-Krai"
+      }
+    ],
+    "GuideToVagrancy": [
+      {
+        "materialKey": "GuideToVagrancy",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "LightlessCapital",
+        "sourceName": "Lightless Capital",
+        "availability": "WED_SAT_SUN",
+        "resinCost": 20,
+        "region": "Nod-Krai"
+      }
+    ],
+    "PhilosophiesOfVagrancy": [
+      {
+        "materialKey": "PhilosophiesOfVagrancy",
+        "sourceType": "domain_of_mastery",
+        "sourceKey": "LightlessCapital",
+        "sourceName": "Lightless Capital",
+        "availability": "WED_SAT_SUN",
+        "resinCost": 20,
+        "region": "Nod-Krai"
+      }
+    ]
+  }
+}

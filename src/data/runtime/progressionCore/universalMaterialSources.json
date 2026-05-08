@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "materialSources": [
+    {
+      "materialKey": "Mora",
+      "sourceType": "ley_line",
+      "sourceKey": "leyLineOutcropBlossomOfWealth",
+      "sourceName": "Ley Line Outcrop: Blossom of Wealth",
+      "availability": "ALWAYS",
+      "resinCost": 20,
+      "notes": "Primary resin-relevant Mora farming source."
+    },
+    {
+      "materialKey": "WanderersAdvice",
+      "sourceType": "ley_line",
+      "sourceKey": "leyLineOutcropBlossomOfRevelation",
+      "sourceName": "Ley Line Outcrop: Blossom of Revelation",
+      "availability": "ALWAYS",
+      "resinCost": 20,
+      "notes": "Character EXP material source; yields vary by world level."
+    },
+    {
+      "materialKey": "AdventurersExperience",
+      "sourceType": "ley_line",
+      "sourceKey": "leyLineOutcropBlossomOfRevelation",
+      "sourceName": "Ley Line Outcrop: Blossom of Revelation",
+      "availability": "ALWAYS",
+      "resinCost": 20,
+      "notes": "Character EXP material source; yields vary by world level."
+    },
+    {
+      "materialKey": "HerosWit",
+      "sourceType": "ley_line",
+      "sourceKey": "leyLineOutcropBlossomOfRevelation",
+      "sourceName": "Ley Line Outcrop: Blossom of Revelation",
+      "availability": "ALWAYS",
+      "resinCost": 20,
+      "notes": "Character EXP material source; yields vary by world level."
+    },
+    {
+      "materialKey": "MysticEnhancementOre",
+      "sourceType": "other",
+      "sourceKey": "forging",
+      "sourceName": "Forging",
+      "availability": "ALWAYS",
+      "notes": "Weapon EXP material. Not normally an Original Resin farming target."
+    },
+    {
+      "materialKey": "FineEnhancementOre",
+      "sourceType": "other",
+      "sourceKey": "forging",
+      "sourceName": "Forging",
+      "availability": "ALWAYS",
+      "notes": "Weapon EXP material. Not normally an Original Resin farming target."
+    },
+    {
+      "materialKey": "EnhancementOre",
+      "sourceType": "other",
+      "sourceKey": "forging",
+      "sourceName": "Forging",
+      "availability": "ALWAYS",
+      "notes": "Weapon EXP material. Not normally an Original Resin farming target."
+    },
+    {
+      "materialKey": "CrownOfInsight",
+      "sourceType": "other",
+      "sourceKey": "limitedEventsAndSpecialSources",
+      "sourceName": "Limited Events / Special Sources",
+      "availability": "UNKNOWN",
+      "notes": "Non-farmable limited resource for final talent upgrades."
+    },
+    {
+      "materialKey": "MasterlessStellaFortuna",
+      "sourceType": "other",
+      "sourceKey": "post90AscensionResource",
+      "sourceName": "Masterless Stella Fortuna",
+      "availability": "UNKNOWN",
+      "notes": "Advanced post-90 ascension resource; keep disabled in MVP unless post-90 planning is enabled."
+    }
+  ],
+  "sourceTypeConventions": {
+    "domain_of_mastery": {
+      "resinCost": 20,
+      "availabilityValues": [
+        "MON_THU_SUN",
+        "TUE_FRI_SUN",
+        "WED_SAT_SUN"
+      ]
+    },
+    "domain_of_forgery": {
+      "resinCost": 20,
+      "availabilityValues": [
+        "MON_THU_SUN",
+        "TUE_FRI_SUN",
+        "WED_SAT_SUN"
+      ]
+    },
+    "artifact_domain": {
+      "resinCost": 20,
+      "availabilityValues": [
+        "ALWAYS"
+      ]
+    },
+    "normal_boss": {
+      "resinCost": 40,
+      "availabilityValues": [
+        "ALWAYS"
+      ]
+    },
+    "weekly_boss": {
+      "availabilityValues": [
+        "WEEKLY"
+      ],
+      "notes": "Weekly boss resin costs depend on discount count; use resinRules.json."
+    },
+    "ley_line": {
+      "resinCost": 20,
+      "availabilityValues": [
+        "ALWAYS"
+      ]
+    },
+    "enemy_drop": {
+      "resinCost": 0,
+      "availabilityValues": [
+        "ALWAYS"
+      ]
+    },
+    "local_specialty": {
+      "resinCost": 0,
+      "availabilityValues": [
+        "ALWAYS"
+      ]
+    },
+    "alchemy": {
+      "resinCost": 0,
+      "availabilityValues": [
+        "ALWAYS"
+      ]
+    }
+  }
+}

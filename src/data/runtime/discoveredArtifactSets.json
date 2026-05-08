@@ -1,0 +1,183 @@
+{
+  "version": 1,
+  "source": "Darkends GOOD corpus",
+  "generatedAt": "2026-05-02T08:24:55.774Z",
+  "artifactSets": {
+    "ADayCarvedFromRisingWinds": {
+      "key": "ADayCarvedFromRisingWinds",
+      "displayName": "A Day Carved From Rising Winds"
+    },
+    "Adventurer": {
+      "key": "Adventurer",
+      "displayName": "Adventurer"
+    },
+    "ArchaicPetra": {
+      "key": "ArchaicPetra",
+      "displayName": "Archaic Petra"
+    },
+    "AubadeOfMorningstarAndMoon": {
+      "key": "AubadeOfMorningstarAndMoon",
+      "displayName": "Aubade Of Morningstar And Moon"
+    },
+    "Berserker": {
+      "key": "Berserker",
+      "displayName": "Berserker"
+    },
+    "BlizzardStrayer": {
+      "key": "BlizzardStrayer",
+      "displayName": "Blizzard Strayer"
+    },
+    "CrimsonWitchOfFlames": {
+      "key": "CrimsonWitchOfFlames",
+      "displayName": "Crimson Witch Of Flames"
+    },
+    "DeepwoodMemories": {
+      "key": "DeepwoodMemories",
+      "displayName": "Deepwood Memories"
+    },
+    "DesertPavilionChronicle": {
+      "key": "DesertPavilionChronicle",
+      "displayName": "Desert Pavilion Chronicle"
+    },
+    "EmblemOfSeveredFate": {
+      "key": "EmblemOfSeveredFate",
+      "displayName": "Emblem Of Severed Fate"
+    },
+    "FinaleOfTheDeepGalleries": {
+      "key": "FinaleOfTheDeepGalleries",
+      "displayName": "Finale Of The Deep Galleries"
+    },
+    "FlowerOfParadiseLost": {
+      "key": "FlowerOfParadiseLost",
+      "displayName": "Flower Of Paradise Lost"
+    },
+    "FragmentOfHarmonicWhimsy": {
+      "key": "FragmentOfHarmonicWhimsy",
+      "displayName": "Fragment Of Harmonic Whimsy"
+    },
+    "Gambler": {
+      "key": "Gambler",
+      "displayName": "Gambler"
+    },
+    "GildedDreams": {
+      "key": "GildedDreams",
+      "displayName": "Gilded Dreams"
+    },
+    "GladiatorsFinale": {
+      "key": "GladiatorsFinale",
+      "displayName": "Gladiators Finale"
+    },
+    "GoldenTroupe": {
+      "key": "GoldenTroupe",
+      "displayName": "Golden Troupe"
+    },
+    "HeartOfDepth": {
+      "key": "HeartOfDepth",
+      "displayName": "Heart Of Depth"
+    },
+    "HuskOfOpulentDreams": {
+      "key": "HuskOfOpulentDreams",
+      "displayName": "Husk Of Opulent Dreams"
+    },
+    "Instructor": {
+      "key": "Instructor",
+      "displayName": "Instructor"
+    },
+    "LongNightsOath": {
+      "key": "LongNightsOath",
+      "displayName": "Long Nights Oath"
+    },
+    "MaidenBeloved": {
+      "key": "MaidenBeloved",
+      "displayName": "Maiden Beloved"
+    },
+    "MarechausseeHunter": {
+      "key": "MarechausseeHunter",
+      "displayName": "Marechaussee Hunter"
+    },
+    "NightOfTheSkysUnveiling": {
+      "key": "NightOfTheSkysUnveiling",
+      "displayName": "Night Of The Skys Unveiling"
+    },
+    "NighttimeWhispersInTheEchoingWoods": {
+      "key": "NighttimeWhispersInTheEchoingWoods",
+      "displayName": "Nighttime Whispers In The Echoing Woods"
+    },
+    "NoblesseOblige": {
+      "key": "NoblesseOblige",
+      "displayName": "Noblesse Oblige"
+    },
+    "NymphsDream": {
+      "key": "NymphsDream",
+      "displayName": "Nymphs Dream"
+    },
+    "ObsidianCodex": {
+      "key": "ObsidianCodex",
+      "displayName": "Obsidian Codex"
+    },
+    "PaleFlame": {
+      "key": "PaleFlame",
+      "displayName": "Pale Flame"
+    },
+    "ResolutionOfSojourner": {
+      "key": "ResolutionOfSojourner",
+      "displayName": "Resolution Of Sojourner"
+    },
+    "RetracingBolide": {
+      "key": "RetracingBolide",
+      "displayName": "Retracing Bolide"
+    },
+    "ScrollOfTheHeroOfCinderCity": {
+      "key": "ScrollOfTheHeroOfCinderCity",
+      "displayName": "Scroll Of The Hero Of Cinder City"
+    },
+    "ShimenawasReminiscence": {
+      "key": "ShimenawasReminiscence",
+      "displayName": "Shimenawas Reminiscence"
+    },
+    "SilkenMoonsSerenade": {
+      "key": "SilkenMoonsSerenade",
+      "displayName": "Silken Moons Serenade"
+    },
+    "SongOfDaysPast": {
+      "key": "SongOfDaysPast",
+      "displayName": "Song Of Days Past"
+    },
+    "TenacityOfTheMillelith": {
+      "key": "TenacityOfTheMillelith",
+      "displayName": "Tenacity Of The Millelith"
+    },
+    "TheExile": {
+      "key": "TheExile",
+      "displayName": "The Exile"
+    },
+    "ThunderingFury": {
+      "key": "ThunderingFury",
+      "displayName": "Thundering Fury"
+    },
+    "TravelingDoctor": {
+      "key": "TravelingDoctor",
+      "displayName": "Traveling Doctor"
+    },
+    "UnfinishedReverie": {
+      "key": "UnfinishedReverie",
+      "displayName": "Unfinished Reverie"
+    },
+    "VermillionHereafter": {
+      "key": "VermillionHereafter",
+      "displayName": "Vermillion Hereafter"
+    },
+    "ViridescentVenerer": {
+      "key": "ViridescentVenerer",
+      "displayName": "Viridescent Venerer"
+    },
+    "VourukashasGlow": {
+      "key": "VourukashasGlow",
+      "displayName": "Vourukashas Glow"
+    },
+    "WanderersTroupe": {
+      "key": "WanderersTroupe",
+      "displayName": "Wanderers Troupe"
+    }
+  }
+}

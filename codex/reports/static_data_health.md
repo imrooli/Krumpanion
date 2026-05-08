@@ -1,0 +1,630 @@
+# Static Data Health Report
+
+Generated: 2026-05-08T08:59:06.794Z
+
+## Summary
+- Characters: catalog 124, profiles 122, complete 102, incomplete 20
+- Weapons: catalog 231, profiles 224, complete 223, incomplete 7, manual review 7
+- Materials: descriptors 1744, material records 471, source rows 476, missing sources 3
+- Families: gem validated, talent validated, general enemy validated, elite enemy validated, weapon ascension validated
+- Crafting: recipes 223, invalid recipe errors 0
+- Generated Data: source version Live updated to 6.5.0. Beta updated to 6.6(6.5.52), unresolved character material refs 3, unresolved character refs 0, unresolved weapon refs 20
+- Issue counts: errors 0, warnings 290, info 15
+
+## Blocking Errors
+- None
+
+## Warnings
+### character_profile
+- `character_profile:invalid_rarity:Aino` Character Aino is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Albedo` Character Albedo is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Alhaitham` Character Alhaitham is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Aloy` Character Aloy is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Amber` Character Amber is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:AratakiItto` Character AratakiItto is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Arlecchino` Character Arlecchino is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Baizhu` Character Baizhu is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Barbara` Character Barbara is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Beidou` Character Beidou is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Bennett` Character Bennett is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Candace` Character Candace is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Charlotte` Character Charlotte is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Chasca` Character Chasca is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Chevreuse` Character Chevreuse is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Chiori` Character Chiori is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Chongyun` Character Chongyun is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Citlali` Character Citlali is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Clorinde` Character Clorinde is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Collei` Character Collei is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Columbina` Character Columbina is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Cyno` Character Cyno is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Dahlia` Character Dahlia is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Dehya` Character Dehya is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Diluc` Character Diluc is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Diona` Character Diona is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Dori` Character Dori is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Durin` Character Durin is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Emilie` Character Emilie is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Escoffier` Character Escoffier is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Eula` Character Eula is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Faruzan` Character Faruzan is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Fischl` Character Fischl is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Flins` Character Flins is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Freminet` Character Freminet is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Furina` Character Furina is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Gaming` Character Gaming is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Ganyu` Character Ganyu is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Gorou` Character Gorou is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:HuTao` Character HuTao is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Iansan` Character Iansan is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Ifa` Character Ifa is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Illuga` Character Illuga is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Ineffa` Character Ineffa is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Jahoda` Character Jahoda is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Jean` Character Jean is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Kachina` Character Kachina is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:KaedeharaKazuha` Character KaedeharaKazuha is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Kaeya` Character Kaeya is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:KamisatoAyaka` Character KamisatoAyaka is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:KamisatoAyato` Character KamisatoAyato is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Kaveh` Character Kaveh is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Keqing` Character Keqing is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Kinich` Character Kinich is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Kirara` Character Kirara is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Klee` Character Klee is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:KujouSara` Character KujouSara is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:KukiShinobu` Character KukiShinobu is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:LanYan` Character LanYan is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Lauma` Character Lauma is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Layla` Character Layla is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Linnea` Character Linnea is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Lisa` Character Lisa is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Lynette` Character Lynette is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Lyney` Character Lyney is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Mavuika` Character Mavuika is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Mika` Character Mika is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Mona` Character Mona is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Mualani` Character Mualani is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Nahida` Character Nahida is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Navia` Character Navia is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Nefer` Character Nefer is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Neuvillette` Character Neuvillette is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Nilou` Character Nilou is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Ningguang` Character Ningguang is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Noelle` Character Noelle is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Ororon` Character Ororon is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Qiqi` Character Qiqi is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:RaidenShogun` Character RaidenShogun is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Razor` Character Razor is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Rosaria` Character Rosaria is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:SangonomiyaKokomi` Character SangonomiyaKokomi is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Sayu` Character Sayu is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Sethos` Character Sethos is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Shenhe` Character Shenhe is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:ShikanoinHeizou` Character ShikanoinHeizou is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Sigewinne` Character Sigewinne is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Skirk` Character Skirk is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Sucrose` Character Sucrose is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Tartaglia` Character Tartaglia is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Thoma` Character Thoma is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Tighnari` Character Tighnari is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Varesa` Character Varesa is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Varka` Character Varka is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Venti` Character Venti is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Wanderer` Character Wanderer is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Wriothesley` Character Wriothesley is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Xiangling` Character Xiangling is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Xianyun` Character Xianyun is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Xiao` Character Xiao is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Xilonen` Character Xilonen is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Xingqiu` Character Xingqiu is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Xinyan` Character Xinyan is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:YaeMiko` Character YaeMiko is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Yanfei` Character Yanfei is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Yaoyao` Character Yaoyao is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Yelan` Character Yelan is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Yoimiya` Character Yoimiya is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:YumemizukiMizuki` Character YumemizukiMizuki is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:YunJin` Character YunJin is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Zhongli` Character Zhongli is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Zibai` Character Zibai is missing valid catalog rarity metadata.
+- `character_profile:invalid_weapon_type:Aino` Character Aino is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Albedo` Character Albedo is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Alhaitham` Character Alhaitham is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Aloy` Character Aloy is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Amber` Character Amber is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:AratakiItto` Character AratakiItto is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Arlecchino` Character Arlecchino is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Baizhu` Character Baizhu is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Barbara` Character Barbara is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Beidou` Character Beidou is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Candace` Character Candace is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Charlotte` Character Charlotte is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Chasca` Character Chasca is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Chevreuse` Character Chevreuse is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Chiori` Character Chiori is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Chongyun` Character Chongyun is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Citlali` Character Citlali is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Clorinde` Character Clorinde is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Collei` Character Collei is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Columbina` Character Columbina is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Cyno` Character Cyno is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Dahlia` Character Dahlia is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Dehya` Character Dehya is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Diluc` Character Diluc is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Diona` Character Diona is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Dori` Character Dori is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Durin` Character Durin is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Emilie` Character Emilie is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Escoffier` Character Escoffier is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Eula` Character Eula is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Faruzan` Character Faruzan is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Fischl` Character Fischl is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Flins` Character Flins is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Freminet` Character Freminet is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Gaming` Character Gaming is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Ganyu` Character Ganyu is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Gorou` Character Gorou is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:HuTao` Character HuTao is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Iansan` Character Iansan is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Ifa` Character Ifa is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Illuga` Character Illuga is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Ineffa` Character Ineffa is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Jahoda` Character Jahoda is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Jean` Character Jean is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Kachina` Character Kachina is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:KaedeharaKazuha` Character KaedeharaKazuha is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Kaeya` Character Kaeya is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:KamisatoAyaka` Character KamisatoAyaka is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:KamisatoAyato` Character KamisatoAyato is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Kaveh` Character Kaveh is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Keqing` Character Keqing is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Kinich` Character Kinich is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Kirara` Character Kirara is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Klee` Character Klee is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:KujouSara` Character KujouSara is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:KukiShinobu` Character KukiShinobu is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:LanYan` Character LanYan is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Lauma` Character Lauma is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Layla` Character Layla is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Linnea` Character Linnea is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Lisa` Character Lisa is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Lynette` Character Lynette is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Lyney` Character Lyney is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Mavuika` Character Mavuika is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Mika` Character Mika is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Mona` Character Mona is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Mualani` Character Mualani is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Nahida` Character Nahida is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Navia` Character Navia is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Nefer` Character Nefer is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Neuvillette` Character Neuvillette is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Nilou` Character Nilou is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Ningguang` Character Ningguang is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Noelle` Character Noelle is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Ororon` Character Ororon is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Qiqi` Character Qiqi is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:RaidenShogun` Character RaidenShogun is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Razor` Character Razor is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Rosaria` Character Rosaria is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:SangonomiyaKokomi` Character SangonomiyaKokomi is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Sayu` Character Sayu is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Sethos` Character Sethos is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Shenhe` Character Shenhe is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:ShikanoinHeizou` Character ShikanoinHeizou is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Sigewinne` Character Sigewinne is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Skirk` Character Skirk is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Sucrose` Character Sucrose is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Tartaglia` Character Tartaglia is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Thoma` Character Thoma is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Tighnari` Character Tighnari is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Varesa` Character Varesa is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Varka` Character Varka is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Venti` Character Venti is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Wanderer` Character Wanderer is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Wriothesley` Character Wriothesley is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Xiangling` Character Xiangling is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Xianyun` Character Xianyun is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Xiao` Character Xiao is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Xilonen` Character Xilonen is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Xingqiu` Character Xingqiu is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Xinyan` Character Xinyan is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:YaeMiko` Character YaeMiko is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Yanfei` Character Yanfei is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Yaoyao` Character Yaoyao is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Yelan` Character Yelan is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Yoimiya` Character Yoimiya is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:YumemizukiMizuki` Character YumemizukiMizuki is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:YunJin` Character YunJin is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Zhongli` Character Zhongli is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Zibai` Character Zibai is missing valid catalog weapon-type metadata.
+- `character_profile:missing_normal_boss_material:Charlotte` Character profile Charlotte does not resolve a valid normal boss material.
+- `character_profile:missing_normal_boss_material:Wriothesley` Character profile Wriothesley does not resolve a valid normal boss material.
+
+### generated_data
+- `generated_data:profile_status_lags_resolution:Albedo` Character profile Albedo looks complete but is still marked unresolved.
+- `generated_data:profile_status_lags_resolution:Chiori` Character profile Chiori looks complete but is still marked unresolved.
+- `generated_data:profile_status_lags_resolution:Cyno` Character profile Cyno looks complete but is still marked unresolved.
+- `generated_data:profile_status_lags_resolution:Dori` Character profile Dori looks complete but is still marked unresolved.
+- `generated_data:profile_status_lags_resolution:KujouSara` Character profile KujouSara looks complete but is still marked unresolved.
+- `generated_data:profile_status_lags_resolution:Lohen` Character profile Lohen looks complete but is still marked beta.
+- `generated_data:profile_status_lags_resolution:Navia` Character profile Navia looks complete but is still marked unresolved.
+- `generated_data:profile_status_lags_resolution:Ningguang` Character profile Ningguang looks complete but is still marked unresolved.
+- `generated_data:profile_status_lags_resolution:Noelle` Character profile Noelle looks complete but is still marked unresolved.
+- `generated_data:profile_status_lags_resolution:Ororon` Character profile Ororon looks complete but is still marked unresolved.
+- `generated_data:profile_status_lags_resolution:Prune` Character profile Prune looks complete but is still marked beta.
+- `generated_data:profile_status_lags_resolution:RaidenShogun` Character profile RaidenShogun looks complete but is still marked unresolved.
+- `generated_data:profile_status_lags_resolution:Shenhe` Character profile Shenhe looks complete but is still marked unresolved.
+- `generated_data:profile_status_lags_resolution:Thoma` Character profile Thoma looks complete but is still marked unresolved.
+- `generated_data:profile_status_lags_resolution:YaeMiko` Character profile YaeMiko looks complete but is still marked unresolved.
+- `generated_data:profile_status_lags_resolution:Yoimiya` Character profile Yoimiya looks complete but is still marked unresolved.
+- `generated_data:profile_status_lags_resolution:Zhongli` Character profile Zhongli looks complete but is still marked unresolved.
+- `generated_data:unresolved_character_material_reference:Charlotte:normalBossMaterial` Charlotte still has an unresolved normalBossMaterial reference (empty).
+- `generated_data:unresolved_character_material_reference:Nicole:weeklyBossMaterial` Nicole still has an unresolved weeklyBossMaterial reference (???).
+- `generated_data:unresolved_character_material_reference:Wriothesley:normalBossMaterial` Wriothesley still has an unresolved normalBossMaterial reference (empty).
+- `generated_data:unresolved_reference_now_resolves:Albedo:normalBossMaterial` Albedo still has an unresolved generated reference for BasaltPillar, but that key now exists in the canonical material registry.
+- `generated_data:unresolved_reference_now_resolves:Charlotte:weeklyBossMaterial` Charlotte still has an unresolved generated reference for LightlessSilkString, but that key now exists in the canonical material registry.
+- `generated_data:unresolved_reference_now_resolves:Chiori:weeklyBossMaterial` Chiori still has an unresolved generated reference for LightlessSilkString, but that key now exists in the canonical material registry.
+- `generated_data:unresolved_reference_now_resolves:Cyno:normalBossMaterial` Cyno still has an unresolved generated reference for ThunderclapFruitcore, but that key now exists in the canonical material registry.
+- `generated_data:unresolved_reference_now_resolves:Dori:normalBossMaterial` Dori still has an unresolved generated reference for ThunderclapFruitcore, but that key now exists in the canonical material registry.
+- `generated_data:unresolved_reference_now_resolves:KujouSara:normalBossMaterial` Kujou Sara still has an unresolved generated reference for StormBeads, but that key now exists in the canonical material registry.
+- `generated_data:unresolved_reference_now_resolves:Navia:weeklyBossMaterial` Navia still has an unresolved generated reference for LightlessSilkString, but that key now exists in the canonical material registry.
+- `generated_data:unresolved_reference_now_resolves:Ningguang:normalBossMaterial` Ningguang still has an unresolved generated reference for BasaltPillar, but that key now exists in the canonical material registry.
+- `generated_data:unresolved_reference_now_resolves:Noelle:normalBossMaterial` Noelle still has an unresolved generated reference for BasaltPillar, but that key now exists in the canonical material registry.
+- `generated_data:unresolved_reference_now_resolves:Ororon:weeklyBossMaterial` Ororon still has an unresolved generated reference for LightlessSilkString, but that key now exists in the canonical material registry.
+- `generated_data:unresolved_reference_now_resolves:RaidenShogun:normalBossMaterial` Raiden Shogun still has an unresolved generated reference for StormBeads, but that key now exists in the canonical material registry.
+- `generated_data:unresolved_reference_now_resolves:Thoma:normalBossMaterial` Thoma still has an unresolved generated reference for SmolderingPearl, but that key now exists in the canonical material registry.
+- `generated_data:unresolved_reference_now_resolves:Yoimiya:normalBossMaterial` Yoimiya still has an unresolved generated reference for SmolderingPearl, but that key now exists in the canonical material registry.
+- `generated_data:unresolved_reference_now_resolves:Zhongli:normalBossMaterial` Zhongli still has an unresolved generated reference for BasaltPillar, but that key now exists in the canonical material registry.
+- `generated_data:unresolved_weapon_reference:ApprenticesNotes` Generated family references still point to unknown weapon Apprentice's Notes.
+- `generated_data:unresolved_weapon_reference:ApprenticesNotes#2` Generated family references still point to unknown weapon Apprentice's Notes.
+- `generated_data:unresolved_weapon_reference:BeginnersProtector` Generated family references still point to unknown weapon Beginner's Protector.
+- `generated_data:unresolved_weapon_reference:BeginnersProtector#2` Generated family references still point to unknown weapon Beginner's Protector.
+- `generated_data:unresolved_weapon_reference:DullBlade` Generated family references still point to unknown weapon Dull Blade.
+- `generated_data:unresolved_weapon_reference:DullBlade#2` Generated family references still point to unknown weapon Dull Blade.
+- `generated_data:unresolved_weapon_reference:HuntersBow` Generated family references still point to unknown weapon Hunter's Bow.
+- `generated_data:unresolved_weapon_reference:HuntersBow#2` Generated family references still point to unknown weapon Hunter's Bow.
+- `generated_data:unresolved_weapon_reference:IronPoint` Generated family references still point to unknown weapon Iron Point.
+- `generated_data:unresolved_weapon_reference:IronPoint#2` Generated family references still point to unknown weapon Iron Point.
+- `generated_data:unresolved_weapon_reference:OldMercsPal` Generated family references still point to unknown weapon Old Merc's Pal.
+- `generated_data:unresolved_weapon_reference:OldMercsPal#2` Generated family references still point to unknown weapon Old Merc's Pal.
+- `generated_data:unresolved_weapon_reference:PocketGrimoire` Generated family references still point to unknown weapon Pocket Grimoire.
+- `generated_data:unresolved_weapon_reference:PocketGrimoire#2` Generated family references still point to unknown weapon Pocket Grimoire.
+- `generated_data:unresolved_weapon_reference:SeasonedHuntersBow` Generated family references still point to unknown weapon Seasoned Hunter's Bow.
+- `generated_data:unresolved_weapon_reference:SeasonedHuntersBow#2` Generated family references still point to unknown weapon Seasoned Hunter's Bow.
+- `generated_data:unresolved_weapon_reference:SilverSword` Generated family references still point to unknown weapon Silver Sword.
+- `generated_data:unresolved_weapon_reference:SilverSword#2` Generated family references still point to unknown weapon Silver Sword.
+- `generated_data:unresolved_weapon_reference:WasterGreatsword` Generated family references still point to unknown weapon Waster Greatsword.
+- `generated_data:unresolved_weapon_reference:WasterGreatsword#2` Generated family references still point to unknown weapon Waster Greatsword.
+
+### material_source
+- `material_source:missing_source_rows:AscendedSampleKnight` Planner-facing material Ascended Sample: Knight does not have any material source rows.
+- `material_source:missing_source_rows:AscendedSampleQueen` Planner-facing material Ascended Sample: Queen does not have any material source rows.
+- `material_source:missing_source_rows:AscendedSampleRook` Planner-facing material Ascended Sample: Rook does not have any material source rows.
+
+### repository_hygiene
+- `repository_hygiene:dist_present:dist` dist is present in the repository working tree.
+- `repository_hygiene:tsbuildinfo_present:tsconfig.tsbuildinfo` tsconfig.tsbuildinfo is present in the repository working tree.
+
+### weapon_profile
+- `weapon_profile:missing_profile:AmberBead` Goal-trackable weapon Amber Bead does not have a planner-ready weapon profile.
+- `weapon_profile:missing_profile:EbonyBow` Goal-trackable weapon Ebony Bow does not have a planner-ready weapon profile.
+- `weapon_profile:missing_profile:PrizedIsshinBlade_i_n11419` Goal-trackable weapon Prized Isshin Blade does not have a planner-ready weapon profile.
+- `weapon_profile:missing_profile:PrizedIsshinBlade_i_n11420` Goal-trackable weapon Prized Isshin Blade does not have a planner-ready weapon profile.
+- `weapon_profile:missing_profile:PrizedIsshinBlade_i_n11421` Goal-trackable weapon Prized Isshin Blade does not have a planner-ready weapon profile.
+- `weapon_profile:missing_profile:Quartz` Goal-trackable weapon Quartz does not have a planner-ready weapon profile.
+- `weapon_profile:missing_profile:SwordOfNarzissenkreuz_i_n11429` Goal-trackable weapon Sword of Narzissenkreuz does not have a planner-ready weapon profile.
+
+## Suggested Fix Queue
+1. Resolve character profile gaps and generated unresolved references that are already canonical.
+2. Resolve goal-trackable weapon profile gaps and verify any manual-review weapon exclusions.
+3. Add or normalize source metadata for planner-facing materials that still lack source rows.
+4. Reassess legacy compatibility tables and document whether they remain necessary fallbacks.
+5. Clean repository hygiene findings such as generated build output, node_modules, or missing ignore rules.
+
+## Machine-Readable Issue IDs
+- `character_profile:invalid_rarity:Aino`
+- `character_profile:invalid_rarity:Albedo`
+- `character_profile:invalid_rarity:Alhaitham`
+- `character_profile:invalid_rarity:Aloy`
+- `character_profile:invalid_rarity:Amber`
+- `character_profile:invalid_rarity:AratakiItto`
+- `character_profile:invalid_rarity:Arlecchino`
+- `character_profile:invalid_rarity:Baizhu`
+- `character_profile:invalid_rarity:Barbara`
+- `character_profile:invalid_rarity:Beidou`
+- `character_profile:invalid_rarity:Bennett`
+- `character_profile:invalid_rarity:Candace`
+- `character_profile:invalid_rarity:Charlotte`
+- `character_profile:invalid_rarity:Chasca`
+- `character_profile:invalid_rarity:Chevreuse`
+- `character_profile:invalid_rarity:Chiori`
+- `character_profile:invalid_rarity:Chongyun`
+- `character_profile:invalid_rarity:Citlali`
+- `character_profile:invalid_rarity:Clorinde`
+- `character_profile:invalid_rarity:Collei`
+- `character_profile:invalid_rarity:Columbina`
+- `character_profile:invalid_rarity:Cyno`
+- `character_profile:invalid_rarity:Dahlia`
+- `character_profile:invalid_rarity:Dehya`
+- `character_profile:invalid_rarity:Diluc`
+- `character_profile:invalid_rarity:Diona`
+- `character_profile:invalid_rarity:Dori`
+- `character_profile:invalid_rarity:Durin`
+- `character_profile:invalid_rarity:Emilie`
+- `character_profile:invalid_rarity:Escoffier`
+- `character_profile:invalid_rarity:Eula`
+- `character_profile:invalid_rarity:Faruzan`
+- `character_profile:invalid_rarity:Fischl`
+- `character_profile:invalid_rarity:Flins`
+- `character_profile:invalid_rarity:Freminet`
+- `character_profile:invalid_rarity:Furina`
+- `character_profile:invalid_rarity:Gaming`
+- `character_profile:invalid_rarity:Ganyu`
+- `character_profile:invalid_rarity:Gorou`
+- `character_profile:invalid_rarity:HuTao`
+- `character_profile:invalid_rarity:Iansan`
+- `character_profile:invalid_rarity:Ifa`
+- `character_profile:invalid_rarity:Illuga`
+- `character_profile:invalid_rarity:Ineffa`
+- `character_profile:invalid_rarity:Jahoda`
+- `character_profile:invalid_rarity:Jean`
+- `character_profile:invalid_rarity:Kachina`
+- `character_profile:invalid_rarity:KaedeharaKazuha`
+- `character_profile:invalid_rarity:Kaeya`
+- `character_profile:invalid_rarity:KamisatoAyaka`
+- `character_profile:invalid_rarity:KamisatoAyato`
+- `character_profile:invalid_rarity:Kaveh`
+- `character_profile:invalid_rarity:Keqing`
+- `character_profile:invalid_rarity:Kinich`
+- `character_profile:invalid_rarity:Kirara`
+- `character_profile:invalid_rarity:Klee`
+- `character_profile:invalid_rarity:KujouSara`
+- `character_profile:invalid_rarity:KukiShinobu`
+- `character_profile:invalid_rarity:LanYan`
+- `character_profile:invalid_rarity:Lauma`
+- `character_profile:invalid_rarity:Layla`
+- `character_profile:invalid_rarity:Linnea`
+- `character_profile:invalid_rarity:Lisa`
+- `character_profile:invalid_rarity:Lynette`
+- `character_profile:invalid_rarity:Lyney`
+- `character_profile:invalid_rarity:Mavuika`
+- `character_profile:invalid_rarity:Mika`
+- `character_profile:invalid_rarity:Mona`
+- `character_profile:invalid_rarity:Mualani`
+- `character_profile:invalid_rarity:Nahida`
+- `character_profile:invalid_rarity:Navia`
+- `character_profile:invalid_rarity:Nefer`
+- `character_profile:invalid_rarity:Neuvillette`
+- `character_profile:invalid_rarity:Nilou`
+- `character_profile:invalid_rarity:Ningguang`
+- `character_profile:invalid_rarity:Noelle`
+- `character_profile:invalid_rarity:Ororon`
+- `character_profile:invalid_rarity:Qiqi`
+- `character_profile:invalid_rarity:RaidenShogun`
+- `character_profile:invalid_rarity:Razor`
+- `character_profile:invalid_rarity:Rosaria`
+- `character_profile:invalid_rarity:SangonomiyaKokomi`
+- `character_profile:invalid_rarity:Sayu`
+- `character_profile:invalid_rarity:Sethos`
+- `character_profile:invalid_rarity:Shenhe`
+- `character_profile:invalid_rarity:ShikanoinHeizou`
+- `character_profile:invalid_rarity:Sigewinne`
+- `character_profile:invalid_rarity:Skirk`
+- `character_profile:invalid_rarity:Sucrose`
+- `character_profile:invalid_rarity:Tartaglia`
+- `character_profile:invalid_rarity:Thoma`
+- `character_profile:invalid_rarity:Tighnari`
+- `character_profile:invalid_rarity:Varesa`
+- `character_profile:invalid_rarity:Varka`
+- `character_profile:invalid_rarity:Venti`
+- `character_profile:invalid_rarity:Wanderer`
+- `character_profile:invalid_rarity:Wriothesley`
+- `character_profile:invalid_rarity:Xiangling`
+- `character_profile:invalid_rarity:Xianyun`
+- `character_profile:invalid_rarity:Xiao`
+- `character_profile:invalid_rarity:Xilonen`
+- `character_profile:invalid_rarity:Xingqiu`
+- `character_profile:invalid_rarity:Xinyan`
+- `character_profile:invalid_rarity:YaeMiko`
+- `character_profile:invalid_rarity:Yanfei`
+- `character_profile:invalid_rarity:Yaoyao`
+- `character_profile:invalid_rarity:Yelan`
+- `character_profile:invalid_rarity:Yoimiya`
+- `character_profile:invalid_rarity:YumemizukiMizuki`
+- `character_profile:invalid_rarity:YunJin`
+- `character_profile:invalid_rarity:Zhongli`
+- `character_profile:invalid_rarity:Zibai`
+- `character_profile:invalid_weapon_type:Aino`
+- `character_profile:invalid_weapon_type:Albedo`
+- `character_profile:invalid_weapon_type:Alhaitham`
+- `character_profile:invalid_weapon_type:Aloy`
+- `character_profile:invalid_weapon_type:Amber`
+- `character_profile:invalid_weapon_type:AratakiItto`
+- `character_profile:invalid_weapon_type:Arlecchino`
+- `character_profile:invalid_weapon_type:Baizhu`
+- `character_profile:invalid_weapon_type:Barbara`
+- `character_profile:invalid_weapon_type:Beidou`
+- `character_profile:invalid_weapon_type:Candace`
+- `character_profile:invalid_weapon_type:Charlotte`
+- `character_profile:invalid_weapon_type:Chasca`
+- `character_profile:invalid_weapon_type:Chevreuse`
+- `character_profile:invalid_weapon_type:Chiori`
+- `character_profile:invalid_weapon_type:Chongyun`
+- `character_profile:invalid_weapon_type:Citlali`
+- `character_profile:invalid_weapon_type:Clorinde`
+- `character_profile:invalid_weapon_type:Collei`
+- `character_profile:invalid_weapon_type:Columbina`
+- `character_profile:invalid_weapon_type:Cyno`
+- `character_profile:invalid_weapon_type:Dahlia`
+- `character_profile:invalid_weapon_type:Dehya`
+- `character_profile:invalid_weapon_type:Diluc`
+- `character_profile:invalid_weapon_type:Diona`
+- `character_profile:invalid_weapon_type:Dori`
+- `character_profile:invalid_weapon_type:Durin`
+- `character_profile:invalid_weapon_type:Emilie`
+- `character_profile:invalid_weapon_type:Escoffier`
+- `character_profile:invalid_weapon_type:Eula`
+- `character_profile:invalid_weapon_type:Faruzan`
+- `character_profile:invalid_weapon_type:Fischl`
+- `character_profile:invalid_weapon_type:Flins`
+- `character_profile:invalid_weapon_type:Freminet`
+- `character_profile:invalid_weapon_type:Gaming`
+- `character_profile:invalid_weapon_type:Ganyu`
+- `character_profile:invalid_weapon_type:Gorou`
+- `character_profile:invalid_weapon_type:HuTao`
+- `character_profile:invalid_weapon_type:Iansan`
+- `character_profile:invalid_weapon_type:Ifa`
+- `character_profile:invalid_weapon_type:Illuga`
+- `character_profile:invalid_weapon_type:Ineffa`
+- `character_profile:invalid_weapon_type:Jahoda`
+- `character_profile:invalid_weapon_type:Jean`
+- `character_profile:invalid_weapon_type:Kachina`
+- `character_profile:invalid_weapon_type:KaedeharaKazuha`
+- `character_profile:invalid_weapon_type:Kaeya`
+- `character_profile:invalid_weapon_type:KamisatoAyaka`
+- `character_profile:invalid_weapon_type:KamisatoAyato`
+- `character_profile:invalid_weapon_type:Kaveh`
+- `character_profile:invalid_weapon_type:Keqing`
+- `character_profile:invalid_weapon_type:Kinich`
+- `character_profile:invalid_weapon_type:Kirara`
+- `character_profile:invalid_weapon_type:Klee`
+- `character_profile:invalid_weapon_type:KujouSara`
+- `character_profile:invalid_weapon_type:KukiShinobu`
+- `character_profile:invalid_weapon_type:LanYan`
+- `character_profile:invalid_weapon_type:Lauma`
+- `character_profile:invalid_weapon_type:Layla`
+- `character_profile:invalid_weapon_type:Linnea`
+- `character_profile:invalid_weapon_type:Lisa`
+- `character_profile:invalid_weapon_type:Lynette`
+- `character_profile:invalid_weapon_type:Lyney`
+- `character_profile:invalid_weapon_type:Mavuika`
+- `character_profile:invalid_weapon_type:Mika`
+- `character_profile:invalid_weapon_type:Mona`
+- `character_profile:invalid_weapon_type:Mualani`
+- `character_profile:invalid_weapon_type:Nahida`
+- `character_profile:invalid_weapon_type:Navia`
+- `character_profile:invalid_weapon_type:Nefer`
+- `character_profile:invalid_weapon_type:Neuvillette`
+- `character_profile:invalid_weapon_type:Nilou`
+- `character_profile:invalid_weapon_type:Ningguang`
+- `character_profile:invalid_weapon_type:Noelle`
+- `character_profile:invalid_weapon_type:Ororon`
+- `character_profile:invalid_weapon_type:Qiqi`
+- `character_profile:invalid_weapon_type:RaidenShogun`
+- `character_profile:invalid_weapon_type:Razor`
+- `character_profile:invalid_weapon_type:Rosaria`
+- `character_profile:invalid_weapon_type:SangonomiyaKokomi`
+- `character_profile:invalid_weapon_type:Sayu`
+- `character_profile:invalid_weapon_type:Sethos`
+- `character_profile:invalid_weapon_type:Shenhe`
+- `character_profile:invalid_weapon_type:ShikanoinHeizou`
+- `character_profile:invalid_weapon_type:Sigewinne`
+- `character_profile:invalid_weapon_type:Skirk`
+- `character_profile:invalid_weapon_type:Sucrose`
+- `character_profile:invalid_weapon_type:Tartaglia`
+- `character_profile:invalid_weapon_type:Thoma`
+- `character_profile:invalid_weapon_type:Tighnari`
+- `character_profile:invalid_weapon_type:Varesa`
+- `character_profile:invalid_weapon_type:Varka`
+- `character_profile:invalid_weapon_type:Venti`
+- `character_profile:invalid_weapon_type:Wanderer`
+- `character_profile:invalid_weapon_type:Wriothesley`
+- `character_profile:invalid_weapon_type:Xiangling`
+- `character_profile:invalid_weapon_type:Xianyun`
+- `character_profile:invalid_weapon_type:Xiao`
+- `character_profile:invalid_weapon_type:Xilonen`
+- `character_profile:invalid_weapon_type:Xingqiu`
+- `character_profile:invalid_weapon_type:Xinyan`
+- `character_profile:invalid_weapon_type:YaeMiko`
+- `character_profile:invalid_weapon_type:Yanfei`
+- `character_profile:invalid_weapon_type:Yaoyao`
+- `character_profile:invalid_weapon_type:Yelan`
+- `character_profile:invalid_weapon_type:Yoimiya`
+- `character_profile:invalid_weapon_type:YumemizukiMizuki`
+- `character_profile:invalid_weapon_type:YunJin`
+- `character_profile:invalid_weapon_type:Zhongli`
+- `character_profile:invalid_weapon_type:Zibai`
+- `character_profile:missing_normal_boss_material:Charlotte`
+- `character_profile:missing_normal_boss_material:Wriothesley`
+- `generated_data:profile_status_lags_resolution:Albedo`
+- `generated_data:profile_status_lags_resolution:Chiori`
+- `generated_data:profile_status_lags_resolution:Cyno`
+- `generated_data:profile_status_lags_resolution:Dori`
+- `generated_data:profile_status_lags_resolution:KujouSara`
+- `generated_data:profile_status_lags_resolution:Lohen`
+- `generated_data:profile_status_lags_resolution:Navia`
+- `generated_data:profile_status_lags_resolution:Ningguang`
+- `generated_data:profile_status_lags_resolution:Noelle`
+- `generated_data:profile_status_lags_resolution:Ororon`
+- `generated_data:profile_status_lags_resolution:Prune`
+- `generated_data:profile_status_lags_resolution:RaidenShogun`
+- `generated_data:profile_status_lags_resolution:Shenhe`
+- `generated_data:profile_status_lags_resolution:Thoma`
+- `generated_data:profile_status_lags_resolution:YaeMiko`
+- `generated_data:profile_status_lags_resolution:Yoimiya`
+- `generated_data:profile_status_lags_resolution:Zhongli`
+- `generated_data:unresolved_character_material_reference:Charlotte:normalBossMaterial`
+- `generated_data:unresolved_character_material_reference:Nicole:weeklyBossMaterial`
+- `generated_data:unresolved_character_material_reference:Wriothesley:normalBossMaterial`
+- `generated_data:unresolved_reference_now_resolves:Albedo:normalBossMaterial`
+- `generated_data:unresolved_reference_now_resolves:Charlotte:weeklyBossMaterial`
+- `generated_data:unresolved_reference_now_resolves:Chiori:weeklyBossMaterial`
+- `generated_data:unresolved_reference_now_resolves:Cyno:normalBossMaterial`
+- `generated_data:unresolved_reference_now_resolves:Dori:normalBossMaterial`
+- `generated_data:unresolved_reference_now_resolves:KujouSara:normalBossMaterial`
+- `generated_data:unresolved_reference_now_resolves:Navia:weeklyBossMaterial`
+- `generated_data:unresolved_reference_now_resolves:Ningguang:normalBossMaterial`
+- `generated_data:unresolved_reference_now_resolves:Noelle:normalBossMaterial`
+- `generated_data:unresolved_reference_now_resolves:Ororon:weeklyBossMaterial`
+- `generated_data:unresolved_reference_now_resolves:RaidenShogun:normalBossMaterial`
+- `generated_data:unresolved_reference_now_resolves:Thoma:normalBossMaterial`
+- `generated_data:unresolved_reference_now_resolves:Yoimiya:normalBossMaterial`
+- `generated_data:unresolved_reference_now_resolves:Zhongli:normalBossMaterial`
+- `generated_data:unresolved_weapon_reference:ApprenticesNotes`
+- `generated_data:unresolved_weapon_reference:ApprenticesNotes#2`
+- `generated_data:unresolved_weapon_reference:BeginnersProtector`
+- `generated_data:unresolved_weapon_reference:BeginnersProtector#2`
+- `generated_data:unresolved_weapon_reference:DullBlade`
+- `generated_data:unresolved_weapon_reference:DullBlade#2`
+- `generated_data:unresolved_weapon_reference:HuntersBow`
+- `generated_data:unresolved_weapon_reference:HuntersBow#2`
+- `generated_data:unresolved_weapon_reference:IronPoint`
+- `generated_data:unresolved_weapon_reference:IronPoint#2`
+- `generated_data:unresolved_weapon_reference:OldMercsPal`
+- `generated_data:unresolved_weapon_reference:OldMercsPal#2`
+- `generated_data:unresolved_weapon_reference:PocketGrimoire`
+- `generated_data:unresolved_weapon_reference:PocketGrimoire#2`
+- `generated_data:unresolved_weapon_reference:SeasonedHuntersBow`
+- `generated_data:unresolved_weapon_reference:SeasonedHuntersBow#2`
+- `generated_data:unresolved_weapon_reference:SilverSword`
+- `generated_data:unresolved_weapon_reference:SilverSword#2`
+- `generated_data:unresolved_weapon_reference:WasterGreatsword`
+- `generated_data:unresolved_weapon_reference:WasterGreatsword#2`
+- `material_source:missing_source_rows:AscendedSampleKnight`
+- `material_source:missing_source_rows:AscendedSampleQueen`
+- `material_source:missing_source_rows:AscendedSampleRook`
+- `repository_hygiene:dist_present:dist`
+- `repository_hygiene:tsbuildinfo_present:tsconfig.tsbuildinfo`
+- `weapon_profile:missing_profile:AmberBead`
+- `weapon_profile:missing_profile:EbonyBow`
+- `weapon_profile:missing_profile:PrizedIsshinBlade_i_n11419`
+- `weapon_profile:missing_profile:PrizedIsshinBlade_i_n11420`
+- `weapon_profile:missing_profile:PrizedIsshinBlade_i_n11421`
+- `weapon_profile:missing_profile:Quartz`
+- `weapon_profile:missing_profile:SwordOfNarzissenkreuz_i_n11429`
+- `character_profile:ignored_non_playable_character:Manekin`
+- `character_profile:ignored_non_playable_character:Manekina`
+- `character_profile:invalid_rarity:Lohen`
+- `character_profile:invalid_rarity:Nicole`
+- `character_profile:invalid_rarity:Prune`
+- `character_profile:invalid_weapon_type:Lohen`
+- `character_profile:invalid_weapon_type:Nicole`
+- `character_profile:invalid_weapon_type:Prune`
+- `character_profile:missing_weekly_boss_material:Nicole`
+- `generated_data:character_source_version:generatedCharacters`
+- `generated_data:generated_bundle_counts:generatedSummary`
+- `generated_data:weapon_source_version:generatedWeapons`
+- `legacy_compatibility:legacy_character_progressions_loaded:legacyCharacterProgressions`
+- `legacy_compatibility:legacy_weapon_progressions_loaded:legacyWeaponProgressions`
+- `repository_hygiene:node_modules_present:node_modules`

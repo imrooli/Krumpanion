@@ -1,0 +1,11 @@
+{
+  "name": "krumpanion-codex-dropin",
+  "createdAt": "2026-05-02T07:47:56.462937Z",
+  "purpose": "Codex-ready repo analysis and incremental architecture guidance for Krumpanion",
+  "entryPrompt": "codex/prompts/00_BOOTSTRAP_REPO_ANALYSIS.md",
+  "rootInstructionCandidate": "ROOT_AGENTS_KRUMPANION.md",
+  "scripts": [
+    "codex/scripts/repo_snapshot.py",
+    "codex/scripts/scan_architecture_smells.py"
+  ]
+}

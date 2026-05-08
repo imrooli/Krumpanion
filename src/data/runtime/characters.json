@@ -1,0 +1,679 @@
+{
+  "version": 1,
+  "characters": {
+    "Furina": {
+      "key": "Furina",
+      "displayName": "Furina",
+      "element": "Hydro",
+      "weaponType": "Sword",
+      "region": "Fontaine"
+    },
+    "Bennett": {
+      "key": "Bennett",
+      "displayName": "Bennett",
+      "element": "Pyro",
+      "weaponType": "Sword",
+      "region": "Mondstadt"
+    },
+    "Aloy": {
+      "key": "Aloy",
+      "displayName": "Aloy",
+      "element": "Cryo",
+      "region": "Mondstadt"
+    },
+    "Amber": {
+      "key": "Amber",
+      "displayName": "Amber",
+      "element": "Pyro",
+      "region": "Mondstadt"
+    },
+    "Barbara": {
+      "key": "Barbara",
+      "displayName": "Barbara",
+      "element": "Hydro",
+      "region": "Mondstadt"
+    },
+    "Diona": {
+      "key": "Diona",
+      "displayName": "Diona",
+      "element": "Cryo",
+      "region": "Mondstadt"
+    },
+    "Klee": {
+      "key": "Klee",
+      "displayName": "Klee",
+      "element": "Pyro",
+      "region": "Mondstadt"
+    },
+    "Sucrose": {
+      "key": "Sucrose",
+      "displayName": "Sucrose",
+      "element": "Anemo",
+      "region": "Mondstadt"
+    },
+    "Tartaglia": {
+      "key": "Tartaglia",
+      "displayName": "Tartaglia",
+      "element": "Hydro",
+      "region": "Mondstadt"
+    },
+    "Varka": {
+      "key": "Varka",
+      "displayName": "Varka",
+      "element": "Anemo",
+      "region": "Mondstadt"
+    },
+    "Diluc": {
+      "key": "Diluc",
+      "displayName": "Diluc",
+      "element": "Pyro",
+      "region": "Mondstadt"
+    },
+    "Eula": {
+      "key": "Eula",
+      "displayName": "Eula",
+      "element": "Cryo",
+      "region": "Mondstadt"
+    },
+    "Jean": {
+      "key": "Jean",
+      "displayName": "Jean",
+      "element": "Anemo",
+      "region": "Mondstadt"
+    },
+    "Mona": {
+      "key": "Mona",
+      "displayName": "Mona",
+      "element": "Hydro",
+      "region": "Mondstadt"
+    },
+    "Noelle": {
+      "key": "Noelle",
+      "displayName": "Noelle",
+      "element": "Geo",
+      "region": "Mondstadt"
+    },
+    "Razor": {
+      "key": "Razor",
+      "displayName": "Razor",
+      "element": "Electro",
+      "region": "Mondstadt"
+    },
+    "Albedo": {
+      "key": "Albedo",
+      "displayName": "Albedo",
+      "element": "Geo",
+      "region": "Mondstadt"
+    },
+    "Dahlia": {
+      "key": "Dahlia",
+      "displayName": "Dahlia",
+      "element": "Hydro",
+      "region": "Mondstadt"
+    },
+    "Durin": {
+      "key": "Durin",
+      "displayName": "Durin",
+      "element": "Pyro",
+      "region": "Mondstadt"
+    },
+    "Fischl": {
+      "key": "Fischl",
+      "displayName": "Fischl",
+      "element": "Electro",
+      "region": "Mondstadt"
+    },
+    "Kaeya": {
+      "key": "Kaeya",
+      "displayName": "Kaeya",
+      "element": "Cryo",
+      "region": "Mondstadt"
+    },
+    "Lisa": {
+      "key": "Lisa",
+      "displayName": "Lisa",
+      "element": "Electro",
+      "region": "Mondstadt"
+    },
+    "Mika": {
+      "key": "Mika",
+      "displayName": "Mika",
+      "element": "Cryo",
+      "region": "Mondstadt"
+    },
+    "Rosaria": {
+      "key": "Rosaria",
+      "displayName": "Rosaria",
+      "element": "Cryo",
+      "region": "Mondstadt"
+    },
+    "Venti": {
+      "key": "Venti",
+      "displayName": "Venti",
+      "element": "Anemo",
+      "region": "Mondstadt"
+    },
+    "Gaming": {
+      "key": "Gaming",
+      "displayName": "Gaming",
+      "element": "Pyro",
+      "region": "Liyue"
+    },
+    "Keqing": {
+      "key": "Keqing",
+      "displayName": "Keqing",
+      "element": "Electro",
+      "region": "Liyue"
+    },
+    "Ningguang": {
+      "key": "Ningguang",
+      "displayName": "Ningguang",
+      "element": "Geo",
+      "region": "Liyue"
+    },
+    "Qiqi": {
+      "key": "Qiqi",
+      "displayName": "Qiqi",
+      "element": "Cryo",
+      "region": "Liyue"
+    },
+    "Shenhe": {
+      "key": "Shenhe",
+      "displayName": "Shenhe",
+      "element": "Cryo",
+      "region": "Liyue"
+    },
+    "Xiao": {
+      "key": "Xiao",
+      "displayName": "Xiao",
+      "element": "Anemo",
+      "region": "Liyue"
+    },
+    "Yelan": {
+      "key": "Yelan",
+      "displayName": "Yelan",
+      "element": "Hydro",
+      "region": "Liyue"
+    },
+    "Chongyun": {
+      "key": "Chongyun",
+      "displayName": "Chongyun",
+      "element": "Cryo",
+      "region": "Liyue"
+    },
+    "Ganyu": {
+      "key": "Ganyu",
+      "displayName": "Ganyu",
+      "element": "Cryo",
+      "region": "Liyue"
+    },
+    "HuTao": {
+      "key": "HuTao",
+      "displayName": "HuTao",
+      "element": "Pyro",
+      "region": "Liyue"
+    },
+    "KaedeharaKazuha": {
+      "key": "KaedeharaKazuha",
+      "displayName": "KaedeharaKazuha",
+      "element": "Anemo",
+      "region": "Liyue"
+    },
+    "LanYan": {
+      "key": "LanYan",
+      "displayName": "LanYan",
+      "element": "Anemo",
+      "region": "Liyue"
+    },
+    "Xiangling": {
+      "key": "Xiangling",
+      "displayName": "Xiangling",
+      "element": "Pyro",
+      "region": "Liyue"
+    },
+    "Yaoyao": {
+      "key": "Yaoyao",
+      "displayName": "Yaoyao",
+      "element": "Dendro",
+      "region": "Liyue"
+    },
+    "YunJin": {
+      "key": "YunJin",
+      "displayName": "YunJin",
+      "element": "Geo",
+      "region": "Liyue"
+    },
+    "Baizhu": {
+      "key": "Baizhu",
+      "displayName": "Baizhu",
+      "element": "Dendro",
+      "region": "Liyue"
+    },
+    "Beidou": {
+      "key": "Beidou",
+      "displayName": "Beidou",
+      "element": "Electro",
+      "region": "Liyue"
+    },
+    "Xianyun": {
+      "key": "Xianyun",
+      "displayName": "Xianyun",
+      "element": "Anemo",
+      "region": "Liyue"
+    },
+    "Xingqiu": {
+      "key": "Xingqiu",
+      "displayName": "Xingqiu",
+      "element": "Hydro",
+      "region": "Liyue"
+    },
+    "Xinyan": {
+      "key": "Xinyan",
+      "displayName": "Xinyan",
+      "element": "Pyro",
+      "region": "Liyue"
+    },
+    "Yanfei": {
+      "key": "Yanfei",
+      "displayName": "Yanfei",
+      "element": "Pyro",
+      "region": "Liyue"
+    },
+    "Zhongli": {
+      "key": "Zhongli",
+      "displayName": "Zhongli",
+      "element": "Geo",
+      "region": "Liyue"
+    },
+    "Zibai": {
+      "key": "Zibai",
+      "displayName": "Zibai",
+      "element": "Geo",
+      "region": "Liyue"
+    },
+    "Kirara": {
+      "key": "Kirara",
+      "displayName": "Kirara",
+      "element": "Dendro",
+      "region": "Inazuma"
+    },
+    "SangonomiyaKokomi": {
+      "key": "SangonomiyaKokomi",
+      "displayName": "SangonomiyaKokomi",
+      "element": "Hydro",
+      "region": "Inazuma"
+    },
+    "ShikanoinHeizou": {
+      "key": "ShikanoinHeizou",
+      "displayName": "ShikanoinHeizou",
+      "element": "Anemo",
+      "region": "Inazuma"
+    },
+    "Thoma": {
+      "key": "Thoma",
+      "displayName": "Thoma",
+      "element": "Pyro",
+      "region": "Inazuma"
+    },
+    "Yoimiya": {
+      "key": "Yoimiya",
+      "displayName": "Yoimiya",
+      "element": "Pyro",
+      "region": "Inazuma"
+    },
+    "YumemizukiMizuki": {
+      "key": "YumemizukiMizuki",
+      "displayName": "YumemizukiMizuki",
+      "element": "Anemo",
+      "region": "Inazuma"
+    },
+    "AratakiItto": {
+      "key": "AratakiItto",
+      "displayName": "AratakiItto",
+      "element": "Geo",
+      "region": "Inazuma"
+    },
+    "KamisatoAyaka": {
+      "key": "KamisatoAyaka",
+      "displayName": "KamisatoAyaka",
+      "element": "Cryo",
+      "region": "Inazuma"
+    },
+    "KamisatoAyato": {
+      "key": "KamisatoAyato",
+      "displayName": "KamisatoAyato",
+      "element": "Hydro",
+      "region": "Inazuma"
+    },
+    "KujouSara": {
+      "key": "KujouSara",
+      "displayName": "KujouSara",
+      "element": "Electro",
+      "region": "Inazuma"
+    },
+    "KukiShinobu": {
+      "key": "KukiShinobu",
+      "displayName": "KukiShinobu",
+      "element": "Electro",
+      "region": "Inazuma"
+    },
+    "Chiori": {
+      "key": "Chiori",
+      "displayName": "Chiori",
+      "element": "Geo",
+      "region": "Inazuma"
+    },
+    "Gorou": {
+      "key": "Gorou",
+      "displayName": "Gorou",
+      "element": "Geo",
+      "region": "Inazuma"
+    },
+    "RaidenShogun": {
+      "key": "RaidenShogun",
+      "displayName": "RaidenShogun",
+      "element": "Electro",
+      "region": "Inazuma"
+    },
+    "Sayu": {
+      "key": "Sayu",
+      "displayName": "Sayu",
+      "element": "Anemo",
+      "region": "Inazuma"
+    },
+    "YaeMiko": {
+      "key": "YaeMiko",
+      "displayName": "YaeMiko",
+      "element": "Electro",
+      "region": "Inazuma"
+    },
+    "Candace": {
+      "key": "Candace",
+      "displayName": "Candace",
+      "element": "Hydro",
+      "region": "Sumeru"
+    },
+    "Cyno": {
+      "key": "Cyno",
+      "displayName": "Cyno",
+      "element": "Electro",
+      "region": "Sumeru"
+    },
+    "Faruzan": {
+      "key": "Faruzan",
+      "displayName": "Faruzan",
+      "element": "Anemo",
+      "region": "Sumeru"
+    },
+    "Tighnari": {
+      "key": "Tighnari",
+      "displayName": "Tighnari",
+      "element": "Dendro",
+      "region": "Sumeru"
+    },
+    "Alhaitham": {
+      "key": "Alhaitham",
+      "displayName": "Alhaitham",
+      "element": "Dendro",
+      "region": "Sumeru"
+    },
+    "Dori": {
+      "key": "Dori",
+      "displayName": "Dori",
+      "element": "Electro",
+      "region": "Sumeru"
+    },
+    "Kaveh": {
+      "key": "Kaveh",
+      "displayName": "Kaveh",
+      "element": "Dendro",
+      "region": "Sumeru"
+    },
+    "Layla": {
+      "key": "Layla",
+      "displayName": "Layla",
+      "element": "Cryo",
+      "region": "Sumeru"
+    },
+    "Nahida": {
+      "key": "Nahida",
+      "displayName": "Nahida",
+      "element": "Dendro",
+      "region": "Sumeru"
+    },
+    "Collei": {
+      "key": "Collei",
+      "displayName": "Collei",
+      "element": "Dendro",
+      "region": "Sumeru"
+    },
+    "Dehya": {
+      "key": "Dehya",
+      "displayName": "Dehya",
+      "element": "Pyro",
+      "region": "Sumeru"
+    },
+    "Nilou": {
+      "key": "Nilou",
+      "displayName": "Nilou",
+      "element": "Hydro",
+      "region": "Sumeru"
+    },
+    "Sethos": {
+      "key": "Sethos",
+      "displayName": "Sethos",
+      "element": "Electro",
+      "region": "Sumeru"
+    },
+    "Wanderer": {
+      "key": "Wanderer",
+      "displayName": "Wanderer",
+      "element": "Anemo",
+      "region": "Sumeru"
+    },
+    "Lyney": {
+      "key": "Lyney",
+      "displayName": "Lyney",
+      "element": "Pyro",
+      "region": "Fontaine"
+    },
+    "Navia": {
+      "key": "Navia",
+      "displayName": "Navia",
+      "element": "Geo",
+      "region": "Fontaine"
+    },
+    "Neuvillette": {
+      "key": "Neuvillette",
+      "displayName": "Neuvillette",
+      "element": "Hydro",
+      "region": "Fontaine"
+    },
+    "Sigewinne": {
+      "key": "Sigewinne",
+      "displayName": "Sigewinne",
+      "element": "Hydro",
+      "region": "Fontaine"
+    },
+    "Charlotte": {
+      "key": "Charlotte",
+      "displayName": "Charlotte",
+      "element": "Cryo",
+      "region": "Fontaine"
+    },
+    "Clorinde": {
+      "key": "Clorinde",
+      "displayName": "Clorinde",
+      "element": "Electro",
+      "region": "Fontaine"
+    },
+    "Escoffier": {
+      "key": "Escoffier",
+      "displayName": "Escoffier",
+      "element": "Cryo",
+      "region": "Fontaine"
+    },
+    "Freminet": {
+      "key": "Freminet",
+      "displayName": "Freminet",
+      "element": "Cryo",
+      "region": "Fontaine"
+    },
+    "Arlecchino": {
+      "key": "Arlecchino",
+      "displayName": "Arlecchino",
+      "element": "Pyro",
+      "region": "Fontaine"
+    },
+    "Chevreuse": {
+      "key": "Chevreuse",
+      "displayName": "Chevreuse",
+      "element": "Pyro",
+      "region": "Fontaine"
+    },
+    "Emilie": {
+      "key": "Emilie",
+      "displayName": "Emilie",
+      "element": "Dendro",
+      "region": "Fontaine"
+    },
+    "Lynette": {
+      "key": "Lynette",
+      "displayName": "Lynette",
+      "element": "Anemo",
+      "region": "Fontaine"
+    },
+    "Wriothesley": {
+      "key": "Wriothesley",
+      "displayName": "Wriothesley",
+      "element": "Cryo",
+      "region": "Fontaine"
+    },
+    "Iansan": {
+      "key": "Iansan",
+      "displayName": "Iansan",
+      "element": "Electro",
+      "region": "Natlan"
+    },
+    "Mavuika": {
+      "key": "Mavuika",
+      "displayName": "Mavuika",
+      "element": "Pyro",
+      "region": "Natlan"
+    },
+    "Mualani": {
+      "key": "Mualani",
+      "displayName": "Mualani",
+      "element": "Hydro",
+      "region": "Natlan"
+    },
+    "Skirk": {
+      "key": "Skirk",
+      "displayName": "Skirk",
+      "element": "Cryo",
+      "region": "Natlan"
+    },
+    "Citlali": {
+      "key": "Citlali",
+      "displayName": "Citlali",
+      "element": "Cryo",
+      "region": "Natlan"
+    },
+    "Kinich": {
+      "key": "Kinich",
+      "displayName": "Kinich",
+      "element": "Dendro",
+      "region": "Natlan"
+    },
+    "Ororon": {
+      "key": "Ororon",
+      "displayName": "Ororon",
+      "element": "Electro",
+      "region": "Natlan"
+    },
+    "Xilonen": {
+      "key": "Xilonen",
+      "displayName": "Xilonen",
+      "element": "Geo",
+      "region": "Natlan"
+    },
+    "Chasca": {
+      "key": "Chasca",
+      "displayName": "Chasca",
+      "element": "Anemo",
+      "region": "Natlan"
+    },
+    "Ifa": {
+      "key": "Ifa",
+      "displayName": "Ifa",
+      "element": "Anemo",
+      "region": "Natlan"
+    },
+    "Ineffa": {
+      "key": "Ineffa",
+      "displayName": "Ineffa",
+      "element": "Electro",
+      "region": "Natlan"
+    },
+    "Kachina": {
+      "key": "Kachina",
+      "displayName": "Kachina",
+      "element": "Geo",
+      "region": "Natlan"
+    },
+    "Varesa": {
+      "key": "Varesa",
+      "displayName": "Varesa",
+      "element": "Electro",
+      "region": "Natlan"
+    },
+    "Columbina": {
+      "key": "Columbina",
+      "displayName": "Columbina",
+      "element": "Hydro",
+      "region": "Nod-Krai"
+    },
+    "Lauma": {
+      "key": "Lauma",
+      "displayName": "Lauma",
+      "element": "Dendro",
+      "region": "Nod-Krai"
+    },
+    "Aino": {
+      "key": "Aino",
+      "displayName": "Aino",
+      "element": "Hydro",
+      "region": "Nod-Krai"
+    },
+    "Illuga": {
+      "key": "Illuga",
+      "displayName": "Illuga",
+      "element": "Geo",
+      "region": "Nod-Krai"
+    },
+    "Nefer": {
+      "key": "Nefer",
+      "displayName": "Nefer",
+      "element": "Dendro",
+      "region": "Nod-Krai"
+    },
+    "Flins": {
+      "key": "Flins",
+      "displayName": "Flins",
+      "element": "Electro",
+      "region": "Nod-Krai"
+    },
+    "Jahoda": {
+      "key": "Jahoda",
+      "displayName": "Jahoda",
+      "element": "Anemo",
+      "region": "Nod-Krai"
+    },
+    "Linnea": {
+      "key": "Linnea",
+      "displayName": "Linnea",
+      "element": "Geo",
+      "region": "Nod-Krai"
+    }
+  }
+}

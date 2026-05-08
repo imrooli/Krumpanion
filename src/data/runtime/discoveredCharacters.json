@@ -1,0 +1,467 @@
+{
+  "version": 1,
+  "source": "Darkends GOOD corpus",
+  "generatedAt": "2026-05-02T08:24:55.774Z",
+  "characters": {
+    "Aino": {
+      "key": "Aino",
+      "displayName": "Aino"
+    },
+    "Albedo": {
+      "key": "Albedo",
+      "displayName": "Albedo"
+    },
+    "Alhaitham": {
+      "key": "Alhaitham",
+      "displayName": "Alhaitham"
+    },
+    "Aloy": {
+      "key": "Aloy",
+      "displayName": "Aloy"
+    },
+    "Amber": {
+      "key": "Amber",
+      "displayName": "Amber"
+    },
+    "AratakiItto": {
+      "key": "AratakiItto",
+      "displayName": "Arataki Itto"
+    },
+    "Arlecchino": {
+      "key": "Arlecchino",
+      "displayName": "Arlecchino"
+    },
+    "Baizhu": {
+      "key": "Baizhu",
+      "displayName": "Baizhu"
+    },
+    "Barbara": {
+      "key": "Barbara",
+      "displayName": "Barbara"
+    },
+    "Beidou": {
+      "key": "Beidou",
+      "displayName": "Beidou"
+    },
+    "Bennett": {
+      "key": "Bennett",
+      "displayName": "Bennett"
+    },
+    "Candace": {
+      "key": "Candace",
+      "displayName": "Candace"
+    },
+    "Charlotte": {
+      "key": "Charlotte",
+      "displayName": "Charlotte"
+    },
+    "Chasca": {
+      "key": "Chasca",
+      "displayName": "Chasca"
+    },
+    "Chevreuse": {
+      "key": "Chevreuse",
+      "displayName": "Chevreuse"
+    },
+    "Chiori": {
+      "key": "Chiori",
+      "displayName": "Chiori"
+    },
+    "Chongyun": {
+      "key": "Chongyun",
+      "displayName": "Chongyun"
+    },
+    "Citlali": {
+      "key": "Citlali",
+      "displayName": "Citlali"
+    },
+    "Clorinde": {
+      "key": "Clorinde",
+      "displayName": "Clorinde"
+    },
+    "Collei": {
+      "key": "Collei",
+      "displayName": "Collei"
+    },
+    "Columbina": {
+      "key": "Columbina",
+      "displayName": "Columbina"
+    },
+    "Cyno": {
+      "key": "Cyno",
+      "displayName": "Cyno"
+    },
+    "Dahlia": {
+      "key": "Dahlia",
+      "displayName": "Dahlia"
+    },
+    "Dehya": {
+      "key": "Dehya",
+      "displayName": "Dehya"
+    },
+    "Diluc": {
+      "key": "Diluc",
+      "displayName": "Diluc"
+    },
+    "Diona": {
+      "key": "Diona",
+      "displayName": "Diona"
+    },
+    "Dori": {
+      "key": "Dori",
+      "displayName": "Dori"
+    },
+    "Durin": {
+      "key": "Durin",
+      "displayName": "Durin"
+    },
+    "Emilie": {
+      "key": "Emilie",
+      "displayName": "Emilie"
+    },
+    "Escoffier": {
+      "key": "Escoffier",
+      "displayName": "Escoffier"
+    },
+    "Eula": {
+      "key": "Eula",
+      "displayName": "Eula"
+    },
+    "Faruzan": {
+      "key": "Faruzan",
+      "displayName": "Faruzan"
+    },
+    "Fischl": {
+      "key": "Fischl",
+      "displayName": "Fischl"
+    },
+    "Flins": {
+      "key": "Flins",
+      "displayName": "Flins"
+    },
+    "Freminet": {
+      "key": "Freminet",
+      "displayName": "Freminet"
+    },
+    "Furina": {
+      "key": "Furina",
+      "displayName": "Furina"
+    },
+    "Gaming": {
+      "key": "Gaming",
+      "displayName": "Gaming"
+    },
+    "Ganyu": {
+      "key": "Ganyu",
+      "displayName": "Ganyu"
+    },
+    "Gorou": {
+      "key": "Gorou",
+      "displayName": "Gorou"
+    },
+    "HuTao": {
+      "key": "HuTao",
+      "displayName": "Hu Tao"
+    },
+    "Iansan": {
+      "key": "Iansan",
+      "displayName": "Iansan"
+    },
+    "Ifa": {
+      "key": "Ifa",
+      "displayName": "Ifa"
+    },
+    "Illuga": {
+      "key": "Illuga",
+      "displayName": "Illuga"
+    },
+    "Ineffa": {
+      "key": "Ineffa",
+      "displayName": "Ineffa"
+    },
+    "Jahoda": {
+      "key": "Jahoda",
+      "displayName": "Jahoda"
+    },
+    "Jean": {
+      "key": "Jean",
+      "displayName": "Jean"
+    },
+    "Kachina": {
+      "key": "Kachina",
+      "displayName": "Kachina"
+    },
+    "KaedeharaKazuha": {
+      "key": "KaedeharaKazuha",
+      "displayName": "Kaedehara Kazuha"
+    },
+    "Kaeya": {
+      "key": "Kaeya",
+      "displayName": "Kaeya"
+    },
+    "KamisatoAyaka": {
+      "key": "KamisatoAyaka",
+      "displayName": "Kamisato Ayaka"
+    },
+    "KamisatoAyato": {
+      "key": "KamisatoAyato",
+      "displayName": "Kamisato Ayato"
+    },
+    "Kaveh": {
+      "key": "Kaveh",
+      "displayName": "Kaveh"
+    },
+    "Keqing": {
+      "key": "Keqing",
+      "displayName": "Keqing"
+    },
+    "Kinich": {
+      "key": "Kinich",
+      "displayName": "Kinich"
+    },
+    "Kirara": {
+      "key": "Kirara",
+      "displayName": "Kirara"
+    },
+    "Klee": {
+      "key": "Klee",
+      "displayName": "Klee"
+    },
+    "KujouSara": {
+      "key": "KujouSara",
+      "displayName": "Kujou Sara"
+    },
+    "KukiShinobu": {
+      "key": "KukiShinobu",
+      "displayName": "Kuki Shinobu"
+    },
+    "LanYan": {
+      "key": "LanYan",
+      "displayName": "Lan Yan"
+    },
+    "Lauma": {
+      "key": "Lauma",
+      "displayName": "Lauma"
+    },
+    "Layla": {
+      "key": "Layla",
+      "displayName": "Layla"
+    },
+    "Linnea": {
+      "key": "Linnea",
+      "displayName": "Linnea"
+    },
+    "Lisa": {
+      "key": "Lisa",
+      "displayName": "Lisa"
+    },
+    "Lynette": {
+      "key": "Lynette",
+      "displayName": "Lynette"
+    },
+    "Lyney": {
+      "key": "Lyney",
+      "displayName": "Lyney"
+    },
+    "Manekin": {
+      "key": "Manekin",
+      "displayName": "Manekin"
+    },
+    "Manekina": {
+      "key": "Manekina",
+      "displayName": "Manekina"
+    },
+    "Mavuika": {
+      "key": "Mavuika",
+      "displayName": "Mavuika"
+    },
+    "Mika": {
+      "key": "Mika",
+      "displayName": "Mika"
+    },
+    "Mona": {
+      "key": "Mona",
+      "displayName": "Mona"
+    },
+    "Mualani": {
+      "key": "Mualani",
+      "displayName": "Mualani"
+    },
+    "Nahida": {
+      "key": "Nahida",
+      "displayName": "Nahida"
+    },
+    "Navia": {
+      "key": "Navia",
+      "displayName": "Navia"
+    },
+    "Nefer": {
+      "key": "Nefer",
+      "displayName": "Nefer"
+    },
+    "Neuvillette": {
+      "key": "Neuvillette",
+      "displayName": "Neuvillette"
+    },
+    "Nilou": {
+      "key": "Nilou",
+      "displayName": "Nilou"
+    },
+    "Ningguang": {
+      "key": "Ningguang",
+      "displayName": "Ningguang"
+    },
+    "Noelle": {
+      "key": "Noelle",
+      "displayName": "Noelle"
+    },
+    "Ororon": {
+      "key": "Ororon",
+      "displayName": "Ororon"
+    },
+    "Qiqi": {
+      "key": "Qiqi",
+      "displayName": "Qiqi"
+    },
+    "RaidenShogun": {
+      "key": "RaidenShogun",
+      "displayName": "Raiden Shogun"
+    },
+    "Razor": {
+      "key": "Razor",
+      "displayName": "Razor"
+    },
+    "Rosaria": {
+      "key": "Rosaria",
+      "displayName": "Rosaria"
+    },
+    "SangonomiyaKokomi": {
+      "key": "SangonomiyaKokomi",
+      "displayName": "Sangonomiya Kokomi"
+    },
+    "Sayu": {
+      "key": "Sayu",
+      "displayName": "Sayu"
+    },
+    "Sethos": {
+      "key": "Sethos",
+      "displayName": "Sethos"
+    },
+    "Shenhe": {
+      "key": "Shenhe",
+      "displayName": "Shenhe"
+    },
+    "ShikanoinHeizou": {
+      "key": "ShikanoinHeizou",
+      "displayName": "Shikanoin Heizou"
+    },
+    "Sigewinne": {
+      "key": "Sigewinne",
+      "displayName": "Sigewinne"
+    },
+    "Skirk": {
+      "key": "Skirk",
+      "displayName": "Skirk"
+    },
+    "Sucrose": {
+      "key": "Sucrose",
+      "displayName": "Sucrose"
+    },
+    "Tartaglia": {
+      "key": "Tartaglia",
+      "displayName": "Tartaglia"
+    },
+    "Thoma": {
+      "key": "Thoma",
+      "displayName": "Thoma"
+    },
+    "Tighnari": {
+      "key": "Tighnari",
+      "displayName": "Tighnari"
+    },
+    "Traveler": {
+      "key": "Traveler",
+      "displayName": "Traveler"
+    },
+    "Varesa": {
+      "key": "Varesa",
+      "displayName": "Varesa"
+    },
+    "Varka": {
+      "key": "Varka",
+      "displayName": "Varka"
+    },
+    "Venti": {
+      "key": "Venti",
+      "displayName": "Venti"
+    },
+    "Wanderer": {
+      "key": "Wanderer",
+      "displayName": "Wanderer"
+    },
+    "Wriothesley": {
+      "key": "Wriothesley",
+      "displayName": "Wriothesley"
+    },
+    "Xiangling": {
+      "key": "Xiangling",
+      "displayName": "Xiangling"
+    },
+    "Xianyun": {
+      "key": "Xianyun",
+      "displayName": "Xianyun"
+    },
+    "Xiao": {
+      "key": "Xiao",
+      "displayName": "Xiao"
+    },
+    "Xilonen": {
+      "key": "Xilonen",
+      "displayName": "Xilonen"
+    },
+    "Xingqiu": {
+      "key": "Xingqiu",
+      "displayName": "Xingqiu"
+    },
+    "Xinyan": {
+      "key": "Xinyan",
+      "displayName": "Xinyan"
+    },
+    "YaeMiko": {
+      "key": "YaeMiko",
+      "displayName": "Yae Miko"
+    },
+    "Yanfei": {
+      "key": "Yanfei",
+      "displayName": "Yanfei"
+    },
+    "Yaoyao": {
+      "key": "Yaoyao",
+      "displayName": "Yaoyao"
+    },
+    "Yelan": {
+      "key": "Yelan",
+      "displayName": "Yelan"
+    },
+    "Yoimiya": {
+      "key": "Yoimiya",
+      "displayName": "Yoimiya"
+    },
+    "YumemizukiMizuki": {
+      "key": "YumemizukiMizuki",
+      "displayName": "Yumemizuki Mizuki"
+    },
+    "YunJin": {
+      "key": "YunJin",
+      "displayName": "Yun Jin"
+    },
+    "Zhongli": {
+      "key": "Zhongli",
+      "displayName": "Zhongli"
+    },
+    "Zibai": {
+      "key": "Zibai",
+      "displayName": "Zibai"
+    }
+  }
+}

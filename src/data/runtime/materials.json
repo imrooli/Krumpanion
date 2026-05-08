@@ -1,0 +1,420 @@
+{
+  "version": 1,
+  "materials": {
+    "Mora": {
+      "key": "Mora",
+      "displayName": "Mora",
+      "category": "mora"
+    },
+    "HerosWit": {
+      "key": "HerosWit",
+      "displayName": "Hero's Wit",
+      "category": "character_exp"
+    },
+    "TeachingsOfJustice": {
+      "key": "TeachingsOfJustice",
+      "displayName": "Teachings of Justice",
+      "category": "talent_book"
+    },
+    "GuideToJustice": {
+      "key": "GuideToJustice",
+      "displayName": "Guide to Justice",
+      "category": "talent_book"
+    },
+    "PhilosophiesOfJustice": {
+      "key": "PhilosophiesOfJustice",
+      "displayName": "Philosophies of Justice",
+      "category": "talent_book"
+    },
+    "LakelightLily": {
+      "key": "LakelightLily",
+      "displayName": "Lakelight Lily",
+      "category": "local_specialty"
+    },
+    "LightlessMass": {
+      "key": "LightlessMass",
+      "displayName": "Lightless Mass",
+      "category": "weekly_boss"
+    },
+    "WhopperflowerNectar": {
+      "key": "WhopperflowerNectar",
+      "displayName": "Whopperflower Nectar",
+      "category": "enemy_drop"
+    },
+    "ShivadaJadeSliver": {
+      "key": "ShivadaJadeSliver",
+      "displayName": "Shivada Jade Sliver",
+      "category": "gemstone"
+    },
+    "VarunadaLazuriteSliver": {
+      "key": "VarunadaLazuriteSliver",
+      "displayName": "Varunada Lazurite Sliver",
+      "category": "gemstone"
+    },
+    "Everamber": {
+      "key": "Everamber",
+      "displayName": "Everamber",
+      "category": "weekly_boss"
+    },
+    "AgnidusAgateSliver": {
+      "key": "AgnidusAgateSliver",
+      "displayName": "Agnidus Agate Sliver",
+      "category": "gemstone"
+    },
+    "WindwheelAster": {
+      "key": "WindwheelAster",
+      "displayName": "Windwheel Aster",
+      "category": "local_specialty"
+    },
+    "TreasureHoarderInsignia": {
+      "key": "TreasureHoarderInsignia",
+      "displayName": "Treasure Hoarder Insignia",
+      "category": "enemy_drop"
+    },
+    "DvalinsPlume": {
+      "key": "DvalinsPlume",
+      "displayName": "Dvalin's Plume",
+      "category": "weekly_boss"
+    },
+    "CrownOfInsight": {
+      "key": "CrownOfInsight",
+      "displayName": "Crown of Insight",
+      "category": "weekly_boss"
+    },
+    "TeachingsOfResistance": {
+      "key": "TeachingsOfResistance",
+      "displayName": "Teachings of Resistance",
+      "category": "talent_book"
+    },
+    "GuideToResistance": {
+      "key": "GuideToResistance",
+      "displayName": "Guide to Resistance",
+      "category": "talent_book"
+    },
+    "PhilosophiesOfResistance": {
+      "key": "PhilosophiesOfResistance",
+      "displayName": "Philosophies of Resistance",
+      "category": "talent_book"
+    },
+    "TileOfDecarabiansTower": {
+      "key": "TileOfDecarabiansTower",
+      "displayName": "Tile of Decarabian's Tower",
+      "category": "weapon_ascension"
+    },
+    "DebrisOfDecarabiansCity": {
+      "key": "DebrisOfDecarabiansCity",
+      "displayName": "Debris of Decarabian's City",
+      "category": "weapon_ascension"
+    },
+    "FragmentOfDecarabiansEpic": {
+      "key": "FragmentOfDecarabiansEpic",
+      "displayName": "Fragment of Decarabian's Epic",
+      "category": "weapon_ascension"
+    },
+    "ScatteredPieceOfDecarabiansDream": {
+      "key": "Scattered Piece of Decarabian's Dream",
+      "displayName": "Scattered Piece of Decarabian's Dream",
+      "category": "weapon_ascension"
+    },
+    "HeavyHorn": {
+      "key": "HeavyHorn",
+      "displayName": "Heavy Horn",
+      "category": "enemy_drop"
+    },
+    "BlackBronzeHorn": {
+      "key": "BlackBronzeHorn",
+      "displayName": "Black Bronze Horn",
+      "category": "enemy_drop"
+    },
+    "BlackCrystalHorn": {
+      "key": "BlackCrystalHorn",
+      "displayName": "Black Crystal Horn",
+      "category": "enemy_drop"
+    },
+    "TeachingsOfFreedom": {
+      "key": "TeachingsOfFreedom",
+      "displayName": "Teachings of Freedom",
+      "category": "talent_book"
+    },
+    "GuideToFreedom": {
+      "key": "GuideToFreedom",
+      "displayName": "Guide to Freedom",
+      "category": "talent_book"
+    },
+    "PhilosophiesOfFreedom": {
+      "key": "PhilosophiesOfFreedom",
+      "displayName": "Philosophies of Freedom",
+      "category": "talent_book"
+    },
+    "TeachingsOfBallad": {
+      "key": "TeachingsOfBallad",
+      "displayName": "Teachings of Ballad",
+      "category": "talent_book"
+    },
+    "GuideToBallad": {
+      "key": "GuideToBallad",
+      "displayName": "Guide to Ballad",
+      "category": "talent_book"
+    },
+    "PhilosophiesOfBallad": {
+      "key": "PhilosophiesOfBallad",
+      "displayName": "Philosophies of Ballad",
+      "category": "talent_book"
+    },
+    "TeachingsOfProsperity": {
+      "key": "TeachingsOfProsperity",
+      "displayName": "Teachings of Prosperity",
+      "category": "talent_book"
+    },
+    "GuideToProsperity": {
+      "key": "GuideToProsperity",
+      "displayName": "Guide to Prosperity",
+      "category": "talent_book"
+    },
+    "PhilosophiesOfProsperity": {
+      "key": "PhilosophiesOfProsperity",
+      "displayName": "Philosophies of Prosperity",
+      "category": "talent_book"
+    },
+    "TeachingsOfDiligence": {
+      "key": "TeachingsOfDiligence",
+      "displayName": "Teachings of Diligence",
+      "category": "talent_book"
+    },
+    "GuideToDiligence": {
+      "key": "GuideToDiligence",
+      "displayName": "Guide to Diligence",
+      "category": "talent_book"
+    },
+    "PhilosophiesOfDiligence": {
+      "key": "PhilosophiesOfDiligence",
+      "displayName": "Philosophies of Diligence",
+      "category": "talent_book"
+    },
+    "TeachingsOfGold": {
+      "key": "TeachingsOfGold",
+      "displayName": "Teachings of Gold",
+      "category": "talent_book"
+    },
+    "GuideToGold": {
+      "key": "GuideToGold",
+      "displayName": "Guide to Gold",
+      "category": "talent_book"
+    },
+    "PhilosophiesOfGold": {
+      "key": "PhilosophiesOfGold",
+      "displayName": "Philosophies of Gold",
+      "category": "talent_book"
+    },
+    "TeachingsOfTransience": {
+      "key": "TeachingsOfTransience",
+      "displayName": "Teachings of Transience",
+      "category": "talent_book"
+    },
+    "GuideToTransience": {
+      "key": "GuideToTransience",
+      "displayName": "Guide to Transience",
+      "category": "talent_book"
+    },
+    "PhilosophiesOfTransience": {
+      "key": "PhilosophiesOfTransience",
+      "displayName": "Philosophies of Transience",
+      "category": "talent_book"
+    },
+    "TeachingsOfElegance": {
+      "key": "TeachingsOfElegance",
+      "displayName": "Teachings of Elegance",
+      "category": "talent_book"
+    },
+    "GuideToElegance": {
+      "key": "GuideToElegance",
+      "displayName": "Guide to Elegance",
+      "category": "talent_book"
+    },
+    "PhilosophiesOfElegance": {
+      "key": "PhilosophiesOfElegance",
+      "displayName": "Philosophies of Elegance",
+      "category": "talent_book"
+    },
+    "TeachingsOfLight": {
+      "key": "TeachingsOfLight",
+      "displayName": "Teachings of Light",
+      "category": "talent_book"
+    },
+    "GuideToLight": {
+      "key": "GuideToLight",
+      "displayName": "Guide to Light",
+      "category": "talent_book"
+    },
+    "PhilosophiesOfLight": {
+      "key": "PhilosophiesOfLight",
+      "displayName": "Philosophies of Light",
+      "category": "talent_book"
+    },
+    "TeachingsOfAdmonition": {
+      "key": "TeachingsOfAdmonition",
+      "displayName": "Teachings of Admonition",
+      "category": "talent_book"
+    },
+    "GuideToAdmonition": {
+      "key": "GuideToAdmonition",
+      "displayName": "Guide to Admonition",
+      "category": "talent_book"
+    },
+    "PhilosophiesOfAdmonition": {
+      "key": "PhilosophiesOfAdmonition",
+      "displayName": "Philosophies of Admonition",
+      "category": "talent_book"
+    },
+    "TeachingsOfIngenuity": {
+      "key": "TeachingsOfIngenuity",
+      "displayName": "Teachings of Ingenuity",
+      "category": "talent_book"
+    },
+    "GuideToIngenuity": {
+      "key": "GuideToIngenuity",
+      "displayName": "Guide to Ingenuity",
+      "category": "talent_book"
+    },
+    "PhilosophiesOfIngenuity": {
+      "key": "PhilosophiesOfIngenuity",
+      "displayName": "Philosophies of Ingenuity",
+      "category": "talent_book"
+    },
+    "TeachingsOfPraxis": {
+      "key": "TeachingsOfPraxis",
+      "displayName": "Teachings of Praxis",
+      "category": "talent_book"
+    },
+    "GuideToPraxis": {
+      "key": "GuideToPraxis",
+      "displayName": "Guide to Praxis",
+      "category": "talent_book"
+    },
+    "PhilosophiesOfPraxis": {
+      "key": "PhilosophiesOfPraxis",
+      "displayName": "Philosophies of Praxis",
+      "category": "talent_book"
+    },
+    "TeachingsOfEquity": {
+      "key": "TeachingsOfEquity",
+      "displayName": "Teachings of Equity",
+      "category": "talent_book"
+    },
+    "GuideToEquity": {
+      "key": "GuideToEquity",
+      "displayName": "Guide to Equity",
+      "category": "talent_book"
+    },
+    "PhilosophiesOfEquity": {
+      "key": "PhilosophiesOfEquity",
+      "displayName": "Philosophies of Equity",
+      "category": "talent_book"
+    },
+    "TeachingsOfOrder": {
+      "key": "TeachingsOfOrder",
+      "displayName": "Teachings of Order",
+      "category": "talent_book"
+    },
+    "GuideToOrder": {
+      "key": "GuideToOrder",
+      "displayName": "Guide to Order",
+      "category": "talent_book"
+    },
+    "PhilosophiesOfOrder": {
+      "key": "PhilosophiesOfOrder",
+      "displayName": "Philosophies of Order",
+      "category": "talent_book"
+    },
+    "TeachingsOfContention": {
+      "key": "TeachingsOfContention",
+      "displayName": "Teachings of Contention",
+      "category": "talent_book"
+    },
+    "GuideToContention": {
+      "key": "GuideToContention",
+      "displayName": "Guide to Contention",
+      "category": "talent_book"
+    },
+    "PhilosophiesOfContention": {
+      "key": "PhilosophiesOfContention",
+      "displayName": "Philosophies of Contention",
+      "category": "talent_book"
+    },
+    "TeachingsOfKindling": {
+      "key": "TeachingsOfKindling",
+      "displayName": "Teachings of Kindling",
+      "category": "talent_book"
+    },
+    "GuideToKindling": {
+      "key": "GuideToKindling",
+      "displayName": "Guide to Kindling",
+      "category": "talent_book"
+    },
+    "PhilosophiesOfKindling": {
+      "key": "PhilosophiesOfKindling",
+      "displayName": "Philosophies of Kindling",
+      "category": "talent_book"
+    },
+    "TeachingsOfConflict": {
+      "key": "TeachingsOfConflict",
+      "displayName": "Teachings of Conflict",
+      "category": "talent_book"
+    },
+    "GuideToConflict": {
+      "key": "GuideToConflict",
+      "displayName": "Guide to Conflict",
+      "category": "talent_book"
+    },
+    "PhilosophiesOfConflict": {
+      "key": "PhilosophiesOfConflict",
+      "displayName": "Philosophies of Conflict",
+      "category": "talent_book"
+    },
+    "TeachingsOfMoonlight": {
+      "key": "TeachingsOfMoonlight",
+      "displayName": "Teachings of Moonlight",
+      "category": "talent_book"
+    },
+    "GuideToMoonlight": {
+      "key": "GuideToMoonlight",
+      "displayName": "Guide to Moonlight",
+      "category": "talent_book"
+    },
+    "PhilosophiesOfMoonlight": {
+      "key": "PhilosophiesOfMoonlight",
+      "displayName": "Philosophies of Moonlight",
+      "category": "talent_book"
+    },
+    "TeachingsOfElysium": {
+      "key": "TeachingsOfElysium",
+      "displayName": "Teachings of Elysium",
+      "category": "talent_book"
+    },
+    "GuideToElysium": {
+      "key": "GuideToElysium",
+      "displayName": "Guide to Elysium",
+      "category": "talent_book"
+    },
+    "PhilosophiesOfElysium": {
+      "key": "PhilosophiesOfElysium",
+      "displayName": "Philosophies of Elysium",
+      "category": "talent_book"
+    },
+    "TeachingsOfVagrancy": {
+      "key": "TeachingsOfVagrancy",
+      "displayName": "Teachings of Vagrancy",
+      "category": "talent_book"
+    },
+    "GuideToVagrancy": {
+      "key": "GuideToVagrancy",
+      "displayName": "Guide to Vagrancy",
+      "category": "talent_book"
+    },
+    "PhilosophiesOfVagrancy": {
+      "key": "PhilosophiesOfVagrancy",
+      "displayName": "Philosophies of Vagrancy",
+      "category": "talent_book"
+    }
+  }
+}

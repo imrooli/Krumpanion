@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "materials": [
+    {
+      "key": "Mora",
+      "displayName": "Mora",
+      "category": "mora"
+    },
+    {
+      "key": "WanderersAdvice",
+      "displayName": "Wanderer's Advice",
+      "category": "character_exp",
+      "expValue": 1000
+    },
+    {
+      "key": "AdventurersExperience",
+      "displayName": "Adventurer's Experience",
+      "category": "character_exp",
+      "expValue": 5000
+    },
+    {
+      "key": "HerosWit",
+      "displayName": "Hero's Wit",
+      "category": "character_exp",
+      "expValue": 20000
+    },
+    {
+      "key": "EnhancementOre",
+      "displayName": "Enhancement Ore",
+      "category": "other",
+      "weaponExpValue": 400
+    },
+    {
+      "key": "FineEnhancementOre",
+      "displayName": "Fine Enhancement Ore",
+      "category": "other",
+      "weaponExpValue": 2000
+    },
+    {
+      "key": "MysticEnhancementOre",
+      "displayName": "Mystic Enhancement Ore",
+      "category": "other",
+      "weaponExpValue": 10000
+    },
+    {
+      "key": "CrownOfInsight",
+      "displayName": "Crown of Insight",
+      "category": "other"
+    },
+    {
+      "key": "MasterlessStellaFortuna",
+      "displayName": "Masterless Stella Fortuna",
+      "category": "other"
+    },
+    {
+      "key": "FragileResin",
+      "displayName": "Fragile Resin",
+      "category": "other"
+    },
+    {
+      "key": "TransientResin",
+      "displayName": "Transient Resin",
+      "category": "other"
+    },
+    {
+      "key": "CondensedResin",
+      "displayName": "Condensed Resin",
+      "category": "other"
+    }
+  ],
+  "notes": [
+    "This file only includes universal materials needed for progression-core logic.",
+    "Full exact material descriptors should be added by GOOD key as the catalog is expanded."
+  ]
+}

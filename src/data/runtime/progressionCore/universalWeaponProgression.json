@@ -1,0 +1,592 @@
+{
+  "schemaVersion": 1,
+  "mode": "cumulative",
+  "notes": [
+    "Weapon level EXP and weapon ascension are separate.",
+    "Weapon ascension generic buckets must be resolved through weapon material profiles.",
+    "3-star, 4-star, and 5-star weapons are fully supported for MVP planner material costs.",
+    "1-star and 2-star weapons include level totals and Mora-only ascension totals for additive compatibility."
+  ],
+  "levelCapByAscension": {
+    "0": 20,
+    "1": 40,
+    "2": 50,
+    "3": 60,
+    "4": 70,
+    "5": 80,
+    "6": 90
+  },
+  "levelTotalsByRarity": {
+    "5": {
+      "1": {
+        "exp": 0,
+        "mora": 0
+      },
+      "20": {
+        "exp": 121550,
+        "mora": 12160
+      },
+      "40": {
+        "exp": 744350,
+        "mora": 74440
+      },
+      "50": {
+        "exp": 1372500,
+        "mora": 137260
+      },
+      "60": {
+        "exp": 2300175,
+        "mora": 230040
+      },
+      "70": {
+        "exp": 3599300,
+        "mora": 359960
+      },
+      "80": {
+        "exp": 5349675,
+        "mora": 535000
+      },
+      "90": {
+        "exp": 9064450,
+        "mora": 906480
+      }
+    },
+    "4": {
+      "1": {
+        "exp": 0,
+        "mora": 0
+      },
+      "20": {
+        "exp": 81000,
+        "mora": 8100
+      },
+      "40": {
+        "exp": 496125,
+        "mora": 49620
+      },
+      "50": {
+        "exp": 914850,
+        "mora": 91500
+      },
+      "60": {
+        "exp": 1533250,
+        "mora": 153340
+      },
+      "70": {
+        "exp": 2399300,
+        "mora": 239960
+      },
+      "80": {
+        "exp": 3566175,
+        "mora": 356660
+      },
+      "90": {
+        "exp": 6042650,
+        "mora": 604320
+      }
+    },
+    "3": {
+      "1": {
+        "exp": 0,
+        "mora": 0
+      },
+      "20": {
+        "exp": 53475,
+        "mora": 5360
+      },
+      "40": {
+        "exp": 327475,
+        "mora": 32760
+      },
+      "50": {
+        "exp": 603825,
+        "mora": 60400
+      },
+      "60": {
+        "exp": 1011975,
+        "mora": 101220
+      },
+      "70": {
+        "exp": 1583600,
+        "mora": 158400
+      },
+      "80": {
+        "exp": 2353725,
+        "mora": 235420
+      },
+      "90": {
+        "exp": 3988200,
+        "mora": 398880
+      }
+    },
+    "2": {
+      "1": {
+        "exp": 0,
+        "mora": 0
+      },
+      "20": {
+        "exp": 36400,
+        "mora": 3640
+      },
+      "40": {
+        "exp": 223225,
+        "mora": 22340
+      },
+      "50": {
+        "exp": 411650,
+        "mora": 41200
+      },
+      "60": {
+        "exp": 689950,
+        "mora": 69040
+      },
+      "70": {
+        "exp": 1079675,
+        "mora": 108020
+      }
+    },
+    "1": {
+      "1": {
+        "exp": 0,
+        "mora": 0
+      },
+      "20": {
+        "exp": 24325,
+        "mora": 2440
+      },
+      "40": {
+        "exp": 148875,
+        "mora": 14900
+      },
+      "50": {
+        "exp": 274500,
+        "mora": 27480
+      },
+      "60": {
+        "exp": 460025,
+        "mora": 46040
+      },
+      "70": {
+        "exp": 719875,
+        "mora": 72040
+      }
+    }
+  },
+  "ascensionTotalsByRarity": {
+    "5": {
+      "0": {
+        "mora": 0,
+        "weaponAscensionMaterial": {},
+        "eliteEnemyDrop": {},
+        "commonEnemyDrop": {}
+      },
+      "1": {
+        "requiredLevel": 20,
+        "maxLevelAfter": 40,
+        "requiredAdventureRank": 15,
+        "mora": 10000,
+        "weaponAscensionMaterial": {
+          "tier1": 5
+        },
+        "eliteEnemyDrop": {
+          "low": 5
+        },
+        "commonEnemyDrop": {
+          "low": 3
+        }
+      },
+      "2": {
+        "requiredLevel": 40,
+        "maxLevelAfter": 50,
+        "requiredAdventureRank": 25,
+        "mora": 30000,
+        "weaponAscensionMaterial": {
+          "tier1": 5,
+          "tier2": 5
+        },
+        "eliteEnemyDrop": {
+          "low": 23
+        },
+        "commonEnemyDrop": {
+          "low": 15
+        }
+      },
+      "3": {
+        "requiredLevel": 50,
+        "maxLevelAfter": 60,
+        "requiredAdventureRank": 30,
+        "mora": 60000,
+        "weaponAscensionMaterial": {
+          "tier1": 5,
+          "tier2": 14
+        },
+        "eliteEnemyDrop": {
+          "low": 23,
+          "mid": 9
+        },
+        "commonEnemyDrop": {
+          "low": 15,
+          "mid": 9
+        }
+      },
+      "4": {
+        "requiredLevel": 60,
+        "maxLevelAfter": 70,
+        "requiredAdventureRank": 35,
+        "mora": 105000,
+        "weaponAscensionMaterial": {
+          "tier1": 5,
+          "tier2": 14,
+          "tier3": 5
+        },
+        "eliteEnemyDrop": {
+          "low": 23,
+          "mid": 27
+        },
+        "commonEnemyDrop": {
+          "low": 15,
+          "mid": 23
+        }
+      },
+      "5": {
+        "requiredLevel": 70,
+        "maxLevelAfter": 80,
+        "requiredAdventureRank": 40,
+        "mora": 160000,
+        "weaponAscensionMaterial": {
+          "tier1": 5,
+          "tier2": 14,
+          "tier3": 14
+        },
+        "eliteEnemyDrop": {
+          "low": 23,
+          "mid": 27,
+          "high": 14
+        },
+        "commonEnemyDrop": {
+          "low": 15,
+          "mid": 23,
+          "high": 9
+        }
+      },
+      "6": {
+        "requiredLevel": 80,
+        "maxLevelAfter": 90,
+        "requiredAdventureRank": 50,
+        "mora": 225000,
+        "weaponAscensionMaterial": {
+          "tier1": 5,
+          "tier2": 14,
+          "tier3": 14,
+          "tier4": 6
+        },
+        "eliteEnemyDrop": {
+          "low": 23,
+          "mid": 27,
+          "high": 41
+        },
+        "commonEnemyDrop": {
+          "low": 15,
+          "mid": 23,
+          "high": 27
+        }
+      }
+    },
+    "4": {
+      "0": {
+        "mora": 0,
+        "weaponAscensionMaterial": {},
+        "eliteEnemyDrop": {},
+        "commonEnemyDrop": {}
+      },
+      "1": {
+        "requiredLevel": 20,
+        "maxLevelAfter": 40,
+        "requiredAdventureRank": 15,
+        "mora": 5000,
+        "weaponAscensionMaterial": {
+          "tier1": 3
+        },
+        "eliteEnemyDrop": {
+          "low": 3
+        },
+        "commonEnemyDrop": {
+          "low": 2
+        }
+      },
+      "2": {
+        "requiredLevel": 40,
+        "maxLevelAfter": 50,
+        "requiredAdventureRank": 25,
+        "mora": 20000,
+        "weaponAscensionMaterial": {
+          "tier1": 3,
+          "tier2": 3
+        },
+        "eliteEnemyDrop": {
+          "low": 15
+        },
+        "commonEnemyDrop": {
+          "low": 10
+        }
+      },
+      "3": {
+        "requiredLevel": 50,
+        "maxLevelAfter": 60,
+        "requiredAdventureRank": 30,
+        "mora": 40000,
+        "weaponAscensionMaterial": {
+          "tier1": 3,
+          "tier2": 9
+        },
+        "eliteEnemyDrop": {
+          "low": 15,
+          "mid": 6
+        },
+        "commonEnemyDrop": {
+          "low": 10,
+          "mid": 6
+        }
+      },
+      "4": {
+        "requiredLevel": 60,
+        "maxLevelAfter": 70,
+        "requiredAdventureRank": 35,
+        "mora": 70000,
+        "weaponAscensionMaterial": {
+          "tier1": 3,
+          "tier2": 9,
+          "tier3": 3
+        },
+        "eliteEnemyDrop": {
+          "low": 15,
+          "mid": 18
+        },
+        "commonEnemyDrop": {
+          "low": 10,
+          "mid": 15
+        }
+      },
+      "5": {
+        "requiredLevel": 70,
+        "maxLevelAfter": 80,
+        "requiredAdventureRank": 40,
+        "mora": 105000,
+        "weaponAscensionMaterial": {
+          "tier1": 3,
+          "tier2": 9,
+          "tier3": 9
+        },
+        "eliteEnemyDrop": {
+          "low": 15,
+          "mid": 18,
+          "high": 9
+        },
+        "commonEnemyDrop": {
+          "low": 10,
+          "mid": 15,
+          "high": 6
+        }
+      },
+      "6": {
+        "requiredLevel": 80,
+        "maxLevelAfter": 90,
+        "requiredAdventureRank": 50,
+        "mora": 150000,
+        "weaponAscensionMaterial": {
+          "tier1": 3,
+          "tier2": 9,
+          "tier3": 9,
+          "tier4": 4
+        },
+        "eliteEnemyDrop": {
+          "low": 15,
+          "mid": 18,
+          "high": 27
+        },
+        "commonEnemyDrop": {
+          "low": 10,
+          "mid": 15,
+          "high": 18
+        }
+      }
+    },
+    "3": {
+      "0": {
+        "mora": 0,
+        "weaponAscensionMaterial": {},
+        "eliteEnemyDrop": {},
+        "commonEnemyDrop": {}
+      },
+      "1": {
+        "requiredLevel": 20,
+        "maxLevelAfter": 40,
+        "requiredAdventureRank": 15,
+        "mora": 5000,
+        "weaponAscensionMaterial": {
+          "tier1": 2
+        },
+        "eliteEnemyDrop": {
+          "low": 2
+        },
+        "commonEnemyDrop": {
+          "low": 1
+        }
+      },
+      "2": {
+        "requiredLevel": 40,
+        "maxLevelAfter": 50,
+        "requiredAdventureRank": 25,
+        "mora": 15000,
+        "weaponAscensionMaterial": {
+          "tier1": 2,
+          "tier2": 2
+        },
+        "eliteEnemyDrop": {
+          "low": 10
+        },
+        "commonEnemyDrop": {
+          "low": 6
+        }
+      },
+      "3": {
+        "requiredLevel": 50,
+        "maxLevelAfter": 60,
+        "requiredAdventureRank": 30,
+        "mora": 30000,
+        "weaponAscensionMaterial": {
+          "tier1": 2,
+          "tier2": 6
+        },
+        "eliteEnemyDrop": {
+          "low": 10,
+          "mid": 4
+        },
+        "commonEnemyDrop": {
+          "low": 6,
+          "mid": 4
+        }
+      },
+      "4": {
+        "requiredLevel": 60,
+        "maxLevelAfter": 70,
+        "requiredAdventureRank": 35,
+        "mora": 50000,
+        "weaponAscensionMaterial": {
+          "tier1": 2,
+          "tier2": 6,
+          "tier3": 2
+        },
+        "eliteEnemyDrop": {
+          "low": 10,
+          "mid": 12
+        },
+        "commonEnemyDrop": {
+          "low": 6,
+          "mid": 10
+        }
+      },
+      "5": {
+        "requiredLevel": 70,
+        "maxLevelAfter": 80,
+        "requiredAdventureRank": 40,
+        "mora": 75000,
+        "weaponAscensionMaterial": {
+          "tier1": 2,
+          "tier2": 6,
+          "tier3": 6
+        },
+        "eliteEnemyDrop": {
+          "low": 10,
+          "mid": 12,
+          "high": 6
+        },
+        "commonEnemyDrop": {
+          "low": 6,
+          "mid": 10,
+          "high": 4
+        }
+      },
+      "6": {
+        "requiredLevel": 80,
+        "maxLevelAfter": 90,
+        "requiredAdventureRank": 50,
+        "mora": 105000,
+        "weaponAscensionMaterial": {
+          "tier1": 2,
+          "tier2": 6,
+          "tier3": 6,
+          "tier4": 3
+        },
+        "eliteEnemyDrop": {
+          "low": 10,
+          "mid": 12,
+          "high": 18
+        },
+        "commonEnemyDrop": {
+          "low": 6,
+          "mid": 10,
+          "high": 12
+        }
+      }
+    },
+    "2": {
+      "0": {
+        "mora": 0
+      },
+      "1": {
+        "requiredLevel": 20,
+        "maxLevelAfter": 40,
+        "requiredAdventureRank": 15,
+        "mora": 5000
+      },
+      "2": {
+        "requiredLevel": 40,
+        "maxLevelAfter": 50,
+        "requiredAdventureRank": 25,
+        "mora": 10000
+      },
+      "3": {
+        "requiredLevel": 50,
+        "maxLevelAfter": 60,
+        "requiredAdventureRank": 30,
+        "mora": 20000
+      },
+      "4": {
+        "requiredLevel": 60,
+        "maxLevelAfter": 70,
+        "requiredAdventureRank": 35,
+        "mora": 35000
+      }
+    },
+    "1": {
+      "0": {
+        "mora": 0
+      },
+      "1": {
+        "requiredLevel": 20,
+        "maxLevelAfter": 40,
+        "requiredAdventureRank": 15,
+        "mora": 0
+      },
+      "2": {
+        "requiredLevel": 40,
+        "maxLevelAfter": 50,
+        "requiredAdventureRank": 25,
+        "mora": 5000
+      },
+      "3": {
+        "requiredLevel": 50,
+        "maxLevelAfter": 60,
+        "requiredAdventureRank": 30,
+        "mora": 10000
+      },
+      "4": {
+        "requiredLevel": 60,
+        "maxLevelAfter": 70,
+        "requiredAdventureRank": 35,
+        "mora": 20000
+      }
+    }
+  }
+}
