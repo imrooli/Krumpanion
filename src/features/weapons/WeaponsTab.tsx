@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { StatusBadge, WorkspaceTabs } from "../../app/layoutPrimitives";
 import {
   defaultPlanningMode,
@@ -130,6 +130,23 @@ export function WeaponsTab({ plannerOutput }: WeaponsTabProps) {
   const [showCompletedR5, setShowCompletedR5] = useState(false);
   const [showNotOwned, setShowNotOwned] = useState(false);
   const [refinementSearch, setRefinementSearch] = useState("");
+
+  useEffect(() => {
+    setMode("progression");
+    setProgressionTab("owned");
+    setSearch("");
+    setOwnershipFilter("all");
+    setWeaponTypeFilter("all");
+    setRarityFilter("all");
+    setSelectedGoalIds([]);
+    setSelectedPresetKey("lvl-80-a5");
+    setRefinementWeaponTypeFilter("all");
+    setRefinementRarityFilter("all");
+    setRefinementStatusFilter("all");
+    setShowCompletedR5(false);
+    setShowNotOwned(false);
+    setRefinementSearch("");
+  }, [account?.id]);
 
   const plansByGoalId = useMemo(
     () => Object.fromEntries(plannerOutput.byWeapon.map((plan) => [plan.goalKey, plan])),

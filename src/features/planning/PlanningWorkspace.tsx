@@ -133,9 +133,9 @@ export function PlanningWorkspace({ plannerOutput }: PlanningWorkspaceProps) {
         ]}
       />
 
-      {subview === "characters" ? <CharactersTab plannerOutput={plannerOutput} /> : null}
-      {subview === "weapons" ? <WeaponsTab plannerOutput={plannerOutput} /> : null}
-      {subview === "artifacts" ? <ArtifactGoalsTab plannerOutput={plannerOutput} /> : null}
+      {subview === "characters" ? <CharactersTab key={`characters-${account.id}`} plannerOutput={plannerOutput} /> : null}
+      {subview === "weapons" ? <WeaponsTab key={`weapons-${account.id}`} plannerOutput={plannerOutput} /> : null}
+      {subview === "artifacts" ? <ArtifactGoalsTab key={`artifacts-${account.id}`} plannerOutput={plannerOutput} /> : null}
 
       {subview === "calculator" ? (
         <>

@@ -135,9 +135,9 @@ export function GoalsWorkspace({ plannerOutput }: GoalsWorkspaceProps) {
         </div>
       ) : null}
 
-      {activeTab === "characters" ? <CharactersTab plannerOutput={plannerOutput} /> : null}
-      {activeTab === "weapons" ? <WeaponsTab plannerOutput={plannerOutput} /> : null}
-      {activeTab === "artifacts" ? <ArtifactGoalsTab plannerOutput={plannerOutput} /> : null}
+      {activeTab === "characters" ? <CharactersTab key={`characters-${account.id}`} plannerOutput={plannerOutput} /> : null}
+      {activeTab === "weapons" ? <WeaponsTab key={`weapons-${account.id}`} plannerOutput={plannerOutput} /> : null}
+      {activeTab === "artifacts" ? <ArtifactGoalsTab key={`artifacts-${account.id}`} plannerOutput={plannerOutput} /> : null}
     </PageShell>
   );
 }
