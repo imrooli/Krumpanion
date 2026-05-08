@@ -1,6 +1,6 @@
 # Static Data Health Report
 
-Generated: 2026-05-08T08:59:06.794Z
+Generated: 2026-05-08T13:42:30.087Z
 
 ## Summary
 - Characters: catalog 124, profiles 122, complete 102, incomplete 20

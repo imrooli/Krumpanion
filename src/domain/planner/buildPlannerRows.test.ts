@@ -631,6 +631,66 @@ describe("buildPlannerOutput", () => {
     expect(plan.missingByMaterial.Common3).toBe(27);
   });
 
+  it("reduces linked owned weapon goal costs to zero once the owned copy reaches the target", () => {
+    const account: ImportedAccountState = {
+      importMeta: {
+        format: "GOOD",
+        version: 1,
+        importedAt: new Date("2026-05-02T00:00:00.000Z").toISOString(),
+      },
+      characters: [],
+      weapons: [
+        {
+          weaponInstanceId: "weapon-favonius",
+          weaponKey: "FavoniusSword",
+          weaponId: "FavoniusSword",
+          currentLevel: 90,
+          currentAscension: 6,
+          refinement: 5,
+          equippedByCharacterId: "Furina",
+          location: "Furina",
+          lock: true,
+        },
+      ],
+      artifacts: [],
+      inventory: {},
+      warnings: [],
+    };
+
+    const planner = buildPlannerOutput({
+      ...buildPlannerInput(account),
+      goals: {
+        ...exampleGoals,
+        characterGoals: {},
+        weaponGoals: {
+          "weapon-goal-favonius": {
+            goalId: "weapon-goal-favonius",
+            id: "weapon-goal-favonius",
+            accountId: "test-account",
+            weaponKey: "FavoniusSword",
+            linkedInventoryInstanceId: "weapon-favonius",
+            useOwnedInstance: true,
+            linkStatus: "linked",
+            enabled: true,
+            priority: 3,
+            targetLevel: 90,
+            targetAscensionPhase: 6,
+          },
+        },
+        artifactGoals: [],
+      } as unknown as KrumpanionGoals,
+      staticData: loadStaticData(),
+      today: "Monday",
+      resinSettings: exampleGoals.plannerSettings,
+    });
+
+    const plan = planner.byWeapon.find((entry) => entry.goalKey === "weapon-goal-favonius");
+    expect(plan).toBeDefined();
+    expect(plan?.breakdown).toHaveLength(0);
+    expect(plan?.missingByMaterial).toEqual({});
+    expect(plan?.estimatedResin).toBe(0);
+  });
+
   it("warns on partial weapon level ranges instead of approximating EXP costs", () => {
     const staticData = loadStaticData({
       version: 1,

@@ -32,6 +32,10 @@ Generated from: `D:\Imran\Documents\Codex\Krumpanion\krumpanion_codex_ui_package
 ## Directory map
 
 ```text
+.codex/
+.codex\environments/
+.codex\environments\environment.toml
+.gitattributes
 .gitignore
 AGENTS.md
 codex/
@@ -221,6 +225,8 @@ src\domain\staticData\weaponGoalProfileRegistry.ts
 src\domain\staticData\weaponProgressionRegistry.test.ts
 src\domain\staticData\weaponProgressionRegistry.ts
 src\domain\staticData\weeklyBossMaterialRegistry.ts
+src\domain\weapons/
+src\domain\weapons\refinementTracker.ts
 src\features/
 src\features\accounts/
 src\features\accounts\AccountSwitcher.test.tsx

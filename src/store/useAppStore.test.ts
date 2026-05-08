@@ -37,6 +37,24 @@ function buildGoodWithMora(mora: number) {
   });
 }
 
+function buildGoodWithWeapons(weapons: Array<{
+  key: string;
+  level: number;
+  ascension: number;
+  refinement: number;
+  location: string;
+  lock: boolean;
+}>) {
+  return JSON.stringify({
+    ...exampleGood,
+    characters: [],
+    weapons,
+    materials: {
+      Mora: 0,
+    },
+  });
+}
+
 describe("useAppStore multi-account support", () => {
   beforeEach(() => {
     vi.restoreAllMocks();
@@ -330,6 +348,149 @@ describe("useAppStore multi-account support", () => {
     expect(weaponGoal.priority).toBe(2);
     expect(weaponGoal.targetLevel).toBe(90);
     expect(weaponGoal.linkedInventoryInstanceId).toBe(ownedWeapon.weaponInstanceId);
+  });
+
+  it("updates planner weapon costs when a linked owned weapon is upgraded to its target", async () => {
+    await useAppStore.getState().importGoodText(
+      buildGoodWithWeapons([
+        {
+          key: "FavoniusSword",
+          level: 80,
+          ascension: 5,
+          refinement: 5,
+          location: "Furina",
+          lock: true,
+        },
+      ]),
+      {
+        fileName: "weapons.json",
+        source: "file",
+      },
+    );
+
+    const ownedWeapon = useAppStore.getState().user.accountsById[useAppStore.getState().user.activeAccountId]?.weapons[0];
+    expect(ownedWeapon).toBeDefined();
+    if (!ownedWeapon) {
+      return;
+    }
+
+    const goalId = await useAppStore.getState().createWeaponGoal({
+      weaponKey: ownedWeapon.weaponKey,
+      linkedInventoryInstanceId: ownedWeapon.weaponInstanceId,
+      useOwnedInstance: true,
+      targetLevel: 90,
+      targetAscensionPhase: 6,
+    });
+
+    const plannerBeforeUpgrade = selectPlannerOutput(useAppStore.getState());
+    const planBeforeUpgrade = plannerBeforeUpgrade.byWeapon.find((plan) => plan.goalKey === goalId);
+    expect(planBeforeUpgrade?.missingByMaterial.Mora).toBeGreaterThan(0);
+
+    await useAppStore.getState().importGoodText(
+      buildGoodWithWeapons([
+        {
+          key: "FavoniusSword",
+          level: 90,
+          ascension: 6,
+          refinement: 5,
+          location: "Furina",
+          lock: true,
+        },
+      ]),
+      {
+        fileName: "weapons-upgraded.json",
+        source: "file",
+      },
+    );
+
+    const plannerAfterUpgrade = selectPlannerOutput(useAppStore.getState());
+    const planAfterUpgrade = plannerAfterUpgrade.byWeapon.find((plan) => plan.goalKey === goalId);
+    expect(planAfterUpgrade).toBeDefined();
+    expect(planAfterUpgrade?.breakdown).toHaveLength(0);
+    expect(planAfterUpgrade?.missingSummary).toHaveLength(0);
+    expect(planAfterUpgrade?.estimatedResin).toBe(0);
+  });
+
+  it("relinks duplicate owned weapon goals to the upgraded copy when GOOD instance ids reshuffle", async () => {
+    await useAppStore.getState().importGoodText(
+      buildGoodWithWeapons([
+        {
+          key: "FavoniusSword",
+          level: 1,
+          ascension: 0,
+          refinement: 1,
+          location: "",
+          lock: false,
+        },
+        {
+          key: "FavoniusSword",
+          level: 80,
+          ascension: 5,
+          refinement: 5,
+          location: "",
+          lock: false,
+        },
+      ]),
+      {
+        fileName: "duplicate-weapons.json",
+        source: "file",
+      },
+    );
+
+    const initialWeapons = useAppStore.getState().user.accountsById[useAppStore.getState().user.activeAccountId]?.weapons ?? [];
+    const trackedWeapon = initialWeapons.find((weapon) => weapon.currentLevel === 80);
+    expect(trackedWeapon).toBeDefined();
+    if (!trackedWeapon) {
+      return;
+    }
+
+    const goalId = await useAppStore.getState().createWeaponGoal({
+      weaponKey: trackedWeapon.weaponKey,
+      linkedInventoryInstanceId: trackedWeapon.weaponInstanceId,
+      useOwnedInstance: true,
+      targetLevel: 90,
+      targetAscensionPhase: 6,
+    });
+
+    const plannerBeforeUpgrade = selectPlannerOutput(useAppStore.getState());
+    expect(plannerBeforeUpgrade.byWeapon.find((plan) => plan.goalKey === goalId)?.missingByMaterial.Mora).toBeGreaterThan(0);
+
+    await useAppStore.getState().importGoodText(
+      buildGoodWithWeapons([
+        {
+          key: "FavoniusSword",
+          level: 90,
+          ascension: 6,
+          refinement: 5,
+          location: "",
+          lock: false,
+        },
+        {
+          key: "FavoniusSword",
+          level: 1,
+          ascension: 0,
+          refinement: 1,
+          location: "",
+          lock: false,
+        },
+      ]),
+      {
+        fileName: "duplicate-weapons-upgraded.json",
+        source: "file",
+      },
+    );
+
+    const activeAccount = useAppStore.getState().user.accountsById[useAppStore.getState().user.activeAccountId];
+    const upgradedWeapon = activeAccount?.weapons.find((weapon) => weapon.currentLevel === 90 && weapon.currentAscension === 6);
+    const migratedGoal = selectActiveGoals(useAppStore.getState()).weaponGoals[goalId];
+    expect(upgradedWeapon).toBeDefined();
+    expect(migratedGoal?.linkStatus).toBe("linked");
+    expect(migratedGoal?.linkedInventoryInstanceId).toBe(upgradedWeapon?.weaponInstanceId);
+
+    const plannerAfterUpgrade = selectPlannerOutput(useAppStore.getState());
+    const planAfterUpgrade = plannerAfterUpgrade.byWeapon.find((plan) => plan.goalKey === goalId);
+    expect(planAfterUpgrade?.breakdown).toHaveLength(0);
+    expect(planAfterUpgrade?.estimatedResin).toBe(0);
   });
 
   it("recovers safely if a malformed user state is loaded into the store", () => {

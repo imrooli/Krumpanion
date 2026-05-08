@@ -243,6 +243,115 @@ function createWeaponGoalRecord(
   );
 }
 
+function scoreWeaponRelinkCandidate(
+  previousWeapon: KrumpanionAccount["weapons"][number] | undefined,
+  candidate: ImportedAccountState["weapons"][number],
+  previousLinkedInstanceId: string | undefined,
+): {
+  regressionCount: number;
+  exactStateMatch: number;
+  exactLocationAndLock: number;
+  exactEquippedCharacter: number;
+  exactInstanceId: number;
+  absoluteDistance: number;
+  progressDistance: number;
+} {
+  if (!previousWeapon) {
+    return {
+      regressionCount: 0,
+      exactStateMatch: 0,
+      exactLocationAndLock: 0,
+      exactEquippedCharacter: 0,
+      exactInstanceId: previousLinkedInstanceId && candidate.weaponInstanceId === previousLinkedInstanceId ? 1 : 0,
+      absoluteDistance: 0,
+      progressDistance: 0,
+    };
+  }
+
+  const previousRefinement = previousWeapon.refinement ?? 1;
+  const candidateRefinement = candidate.refinement ?? 1;
+  const levelDelta = candidate.currentLevel - previousWeapon.currentLevel;
+  const ascensionDelta = candidate.currentAscension - previousWeapon.currentAscension;
+  const refinementDelta = candidateRefinement - previousRefinement;
+
+  return {
+    regressionCount:
+      (levelDelta < 0 ? 1 : 0) + (ascensionDelta < 0 ? 1 : 0) + (refinementDelta < 0 ? 1 : 0),
+    exactStateMatch:
+      candidate.currentLevel === previousWeapon.currentLevel &&
+      candidate.currentAscension === previousWeapon.currentAscension &&
+      candidateRefinement === previousRefinement
+        ? 1
+        : 0,
+    exactLocationAndLock:
+      (candidate.location ?? "") === (previousWeapon.location ?? "") &&
+      Boolean(candidate.lock) === Boolean(previousWeapon.lock)
+        ? 1
+        : 0,
+    exactEquippedCharacter:
+      (candidate.equippedByCharacterId ?? "") === (previousWeapon.equippedByCharacterId ?? "")
+        ? 1
+        : 0,
+    exactInstanceId: previousLinkedInstanceId && candidate.weaponInstanceId === previousLinkedInstanceId ? 1 : 0,
+    absoluteDistance: Math.abs(levelDelta) + Math.abs(ascensionDelta) + Math.abs(refinementDelta),
+    progressDistance:
+      Math.max(0, levelDelta) + Math.max(0, ascensionDelta) + Math.max(0, refinementDelta),
+  };
+}
+
+function chooseRelinkedWeapon(
+  previousWeapon: KrumpanionAccount["weapons"][number] | undefined,
+  previousLinkedInstanceId: string | undefined,
+  candidates: ImportedAccountState["weapons"],
+): ImportedAccountState["weapons"][number] | undefined {
+  if (candidates.length === 0) {
+    return undefined;
+  }
+
+  if (!previousWeapon && candidates.length === 1) {
+    return candidates[0];
+  }
+
+  const ranked = candidates
+    .map((candidate) => ({
+      candidate,
+      score: scoreWeaponRelinkCandidate(previousWeapon, candidate, previousLinkedInstanceId),
+    }))
+    .sort((left, right) => {
+      return (
+        left.score.regressionCount - right.score.regressionCount ||
+        right.score.exactStateMatch - left.score.exactStateMatch ||
+        right.score.exactLocationAndLock - left.score.exactLocationAndLock ||
+        right.score.exactEquippedCharacter - left.score.exactEquippedCharacter ||
+        right.score.exactInstanceId - left.score.exactInstanceId ||
+        left.score.absoluteDistance - right.score.absoluteDistance ||
+        left.score.progressDistance - right.score.progressDistance ||
+        right.candidate.currentLevel - left.candidate.currentLevel ||
+        right.candidate.currentAscension - left.candidate.currentAscension ||
+        (right.candidate.refinement ?? 1) - (left.candidate.refinement ?? 1)
+      );
+    });
+
+  if (ranked.length === 1) {
+    return ranked[0].candidate;
+  }
+
+  const [best, second] = ranked;
+  const isTie =
+    best.score.regressionCount === second.score.regressionCount &&
+    best.score.exactStateMatch === second.score.exactStateMatch &&
+    best.score.exactLocationAndLock === second.score.exactLocationAndLock &&
+    best.score.exactEquippedCharacter === second.score.exactEquippedCharacter &&
+    best.score.exactInstanceId === second.score.exactInstanceId &&
+    best.score.absoluteDistance === second.score.absoluteDistance &&
+    best.score.progressDistance === second.score.progressDistance &&
+    best.candidate.currentLevel === second.candidate.currentLevel &&
+    best.candidate.currentAscension === second.candidate.currentAscension &&
+    (best.candidate.refinement ?? 1) === (second.candidate.refinement ?? 1);
+
+  return isTie ? undefined : best.candidate;
+}
+
 function relinkWeaponGoalsAfterImport(
   goals: KrumpanionAccount["goals"]["weaponGoals"],
   previousWeapons: KrumpanionAccount["weapons"],
@@ -250,7 +359,6 @@ function relinkWeaponGoalsAfterImport(
   accountId: AccountId,
 ): KrumpanionAccount["goals"]["weaponGoals"] {
   const previousWeaponsById = new Map(previousWeapons.map((weapon) => [weapon.weaponInstanceId, weapon]));
-  const nextWeaponsById = new Map(nextWeapons.map((weapon) => [weapon.weaponInstanceId, weapon]));
   const relinkedGoals: KrumpanionAccount["goals"]["weaponGoals"] = {};
 
   for (const [storedGoalId, rawGoal] of Object.entries(goals)) {
@@ -269,43 +377,16 @@ function relinkWeaponGoalsAfterImport(
     const previousLinkedInstanceId = getLinkedWeaponInstanceId(normalizedGoal);
     const previousLinkedWeapon = previousLinkedInstanceId ? previousWeaponsById.get(previousLinkedInstanceId) : undefined;
     const sameWeaponCandidates = nextWeapons.filter((weapon) => weapon.weaponKey === normalizedGoal.weaponKey);
-
-    let matchedWeapon =
-      (previousLinkedInstanceId ? nextWeaponsById.get(previousLinkedInstanceId) : undefined) ??
-      sameWeaponCandidates.find(
-        (weapon) =>
-          previousLinkedWeapon &&
-          weapon.currentLevel === previousLinkedWeapon.currentLevel &&
-          weapon.currentAscension === previousLinkedWeapon.currentAscension &&
-          (weapon.refinement ?? 1) === (previousLinkedWeapon.refinement ?? 1) &&
-          (weapon.location ?? "") === (previousLinkedWeapon.location ?? "") &&
-          Boolean(weapon.lock) === Boolean(previousLinkedWeapon.lock),
-      );
-
-    if (!matchedWeapon && previousLinkedWeapon) {
-      const closeCandidates = sameWeaponCandidates
-        .filter(
+    const exactLocationAndLockCandidates = previousLinkedWeapon
+      ? sameWeaponCandidates.filter(
           (weapon) =>
             (weapon.location ?? "") === (previousLinkedWeapon.location ?? "") &&
             Boolean(weapon.lock) === Boolean(previousLinkedWeapon.lock),
         )
-        .sort((left, right) => {
-          const leftDistance =
-            Math.abs((left.refinement ?? 1) - (previousLinkedWeapon.refinement ?? 1)) +
-            Math.abs(left.currentAscension - previousLinkedWeapon.currentAscension) +
-            Math.abs(left.currentLevel - previousLinkedWeapon.currentLevel);
-          const rightDistance =
-            Math.abs((right.refinement ?? 1) - (previousLinkedWeapon.refinement ?? 1)) +
-            Math.abs(right.currentAscension - previousLinkedWeapon.currentAscension) +
-            Math.abs(right.currentLevel - previousLinkedWeapon.currentLevel);
-          return leftDistance - rightDistance;
-        });
-      matchedWeapon = closeCandidates[0];
-    }
-
-    if (!matchedWeapon && sameWeaponCandidates.length === 1) {
-      matchedWeapon = sameWeaponCandidates[0];
-    }
+      : [];
+    const matchedWeapon =
+      chooseRelinkedWeapon(previousLinkedWeapon, previousLinkedInstanceId, exactLocationAndLockCandidates) ??
+      chooseRelinkedWeapon(previousLinkedWeapon, previousLinkedInstanceId, sameWeaponCandidates);
 
     relinkedGoals[normalizedGoalId] = {
       ...normalizedGoal,
