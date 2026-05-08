@@ -10,6 +10,9 @@ import discoveredWeapons from "../../src/data/runtime/discoveredWeapons.json";
 import progressionCoreMaterials from "../../src/data/runtime/progressionCore/universalMaterials.json";
 import baseElementGemFamilies from "../../src/data/runtime/progressionCore/elementGemFamilies.json";
 import baseTalentBookFamilies from "../../src/data/runtime/progressionCore/talentBookFamilies.json";
+import { buildNormalBossMaterialRegistry } from "../../src/domain/staticData/normalBossMaterialRegistry";
+import { buildWeeklyBossMaterialRegistry } from "../../src/domain/staticData/weeklyBossMaterialRegistry";
+import { buildSpecialProgressionMaterialRegistry } from "../../src/domain/staticData/specialProgressionMaterialRegistry";
 import { buildCharacterMaterialImportBundle } from "../../src/domain/staticData/characterMaterialImport";
 import { buildGeneralEnemyDropRegistry } from "../../src/domain/staticData/generalEnemyDropRegistry";
 import { buildLocalSpecialtyRegistry } from "../../src/domain/staticData/localSpecialtyRegistry";
@@ -49,12 +52,15 @@ async function main() {
   };
   const localSpecialtyRegistry = buildLocalSpecialtyRegistry();
   const generalRegistry = buildGeneralEnemyDropRegistry(baseCharactersRecord, baseWeaponsRecord);
+  const normalBossMaterialRegistry = buildNormalBossMaterialRegistry();
+  const weeklyBossMaterialRegistry = buildWeeklyBossMaterialRegistry();
+  const specialProgressionMaterialRegistry = buildSpecialProgressionMaterialRegistry();
 
   const bundle = buildCharacterMaterialImportBundle({
     sourceVersion: getSourceVersion(rawTable),
     rawTable,
     characters: baseCharactersRecord,
-    materials: {
+        materials: {
       ...(discoveredMaterials.materials as Record<string, MaterialDescriptor>),
       ...mapByKey(
         (progressionCoreMaterials.materials as Array<MaterialDescriptor & { expValue?: number; weaponExpValue?: number }>).map((material) => ({
@@ -65,8 +71,17 @@ async function main() {
           weaponExpValue: material.weaponExpValue,
         })),
       ),
+
+      // Canonical registries required for character material profile resolution.
+      // These must be available during generation, not only at runtime, otherwise
+      // generated profiles incorrectly mark known boss/weekly/special materials
+      // as unresolved.
       ...localSpecialtyRegistry.materials,
+      ...normalBossMaterialRegistry.materials,
+      ...weeklyBossMaterialRegistry.materials,
+      ...specialProgressionMaterialRegistry.materials,
       ...generalRegistry.materials,
+
       ...(baseMaterials.materials as Record<string, MaterialDescriptor>),
     },
     elementGemFamilies: mapByKey(baseElementGemFamilies.families as ElementGemFamily[]),
