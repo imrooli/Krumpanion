@@ -1,0 +1,196 @@
+{
+  "weaponAscensionDomainDropModel": {
+    "I": {
+      "domainLevel": "I",
+      "resinCost": 20,
+      "overall": {
+        "twoStar": {
+          "range": "4-6",
+          "average": 4.7
+        },
+        "threeStar": null,
+        "fourStar": null,
+        "fiveStar": null
+      },
+      "twoStarRollMean": 2.2,
+      "dropPackMean": 2.5,
+      "dropPackDistribution": {
+        "twoStar": 1,
+        "threeStar": 0,
+        "fourStar": 0,
+        "fiveStar": 0
+      }
+    },
+    "II": {
+      "domainLevel": "II",
+      "resinCost": 20,
+      "overall": {
+        "twoStar": {
+          "range": "2-3",
+          "average": 2.7
+        },
+        "threeStar": {
+          "range": "2",
+          "average": 2
+        },
+        "fourStar": null,
+        "fiveStar": null
+      },
+      "twoStarRollMean": 2.7,
+      "dropPackMean": 2,
+      "dropPackDistribution": {
+        "twoStar": 0,
+        "threeStar": 1,
+        "fourStar": 0,
+        "fiveStar": 0
+      }
+    },
+    "III": {
+      "domainLevel": "III",
+      "resinCost": 20,
+      "overall": {
+        "twoStar": {
+          "range": "2-3",
+          "average": 2.26
+        },
+        "threeStar": {
+          "range": "0-3",
+          "average": 2.76
+        },
+        "fourStar": {
+          "range": "0-3",
+          "average": 0.24
+        },
+        "fiveStar": null
+      },
+      "twoStarRollMean": 2.26,
+      "dropPackMean": 3,
+      "dropPackDistribution": {
+        "twoStar": 0,
+        "threeStar": 0.92,
+        "fourStar": 0.08,
+        "fiveStar": 0
+      }
+    },
+    "IV": {
+      "domainLevel": "IV",
+      "resinCost": 20,
+      "overall": {
+        "twoStar": {
+          "range": "2-3",
+          "average": 2.2
+        },
+        "threeStar": {
+          "range": "0-4",
+          "average": 2.418
+        },
+        "fourStar": {
+          "range": "0-4",
+          "average": 0.62
+        },
+        "fiveStar": {
+          "range": "0-4",
+          "average": 0.062
+        }
+      },
+      "twoStarRollMean": 2.2,
+      "dropPackMean": 3.1,
+      "dropPackDistribution": {
+        "twoStar": 0,
+        "threeStar": 0.78,
+        "fourStar": 0.2,
+        "fiveStar": 0.02
+      }
+    }
+  },
+  "talentBookDomainDropModel": {
+    "I": {
+      "domainLevel": "I",
+      "resinCost": 20,
+      "overall": {
+        "twoStar": {
+          "range": "3-4",
+          "average": 3.2
+        },
+        "threeStar": null,
+        "fourStar": null
+      },
+      "twoStarRollMean": 2.2,
+      "dropPackMean": 1,
+      "dropPackDistribution": {
+        "twoStar": 1,
+        "threeStar": 0,
+        "fourStar": 0
+      }
+    },
+    "II": {
+      "domainLevel": "II",
+      "resinCost": 20,
+      "overall": {
+        "twoStar": {
+          "range": "2-3",
+          "average": 2.5
+        },
+        "threeStar": {
+          "range": "1",
+          "average": 1
+        },
+        "fourStar": null
+      },
+      "twoStarRollMean": 2.5,
+      "dropPackMean": 1,
+      "dropPackDistribution": {
+        "twoStar": 0,
+        "threeStar": 1,
+        "fourStar": 0
+      }
+    },
+    "III": {
+      "domainLevel": "III",
+      "resinCost": 20,
+      "overall": {
+        "twoStar": {
+          "range": "1-2",
+          "average": 1.8
+        },
+        "threeStar": {
+          "range": "2",
+          "average": 2
+        },
+        "fourStar": null
+      },
+      "twoStarRollMean": 1.8,
+      "dropPackMean": 2,
+      "dropPackDistribution": {
+        "twoStar": 0,
+        "threeStar": 1,
+        "fourStar": 0
+      }
+    },
+    "IV": {
+      "domainLevel": "IV",
+      "resinCost": 20,
+      "overall": {
+        "twoStar": {
+          "range": "2-3",
+          "average": 2.2
+        },
+        "threeStar": {
+          "range": "0-3",
+          "average": 1.98
+        },
+        "fourStar": {
+          "range": "0-3",
+          "average": 0.22
+        }
+      },
+      "twoStarRollMean": 2.2,
+      "dropPackMean": 2.2,
+      "dropPackDistribution": {
+        "twoStar": 0,
+        "threeStar": 0.9,
+        "fourStar": 0.1
+      }
+    }
+  }
+}

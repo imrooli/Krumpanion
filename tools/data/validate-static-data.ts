@@ -3,6 +3,7 @@ import { existsSync } from "node:fs";
 import { mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { validateCanonicalDatabase } from "../../src/data/database/validation/validateDatabase.ts";
 import {
   extendStaticDataHealthReport,
   formatStaticDataHealthMarkdown,
@@ -206,8 +207,17 @@ async function main(): Promise<void> {
   const rootDir = path.resolve(scriptDir, "..", "..");
   const staticData = loadStaticData();
   const report = validateStaticData(staticData);
+  const canonicalReport = validateCanonicalDatabase();
   const hygieneIssues = await buildRepositoryHygieneIssues(rootDir);
-  const finalReport = hygieneIssues.length > 0 ? extendStaticDataHealthReport(report, staticData, hygieneIssues) : report;
+  const canonicalIssues = canonicalReport.issues.map((item) =>
+    createIssue(item.severity, "repository_hygiene", `canonical_database_${item.category}`, item.message, {
+      entityKey: item.key,
+    }),
+  );
+  const finalReport =
+    hygieneIssues.length > 0 || canonicalIssues.length > 0
+      ? extendStaticDataHealthReport(report, staticData, [...canonicalIssues, ...hygieneIssues])
+      : report;
   const reportDir = path.join(rootDir, "codex", "reports");
   const jsonPath = path.join(reportDir, "static_data_health.json");
   const markdownPath = path.join(reportDir, "static_data_health.md");

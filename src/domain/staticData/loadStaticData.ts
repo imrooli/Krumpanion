@@ -1,6 +1,7 @@
 import type { ImportedAccountState } from "../account/types";
 import type { ImportWarning } from "../good/types";
 import type { PlannerWarning } from "../planner/types";
+import { assertCanonicalDatabaseValid } from "../../data/database/validation/validateDatabase";
 import { applyOverridePack } from "./applyOverridePack";
 import { assembleBaseStaticData } from "./assembleBaseStaticData";
 import { buildDerivedStaticDataIndexes } from "./buildDerivedStaticDataIndexes";
@@ -8,10 +9,12 @@ import type { OverrideDataPack, StaticGameData } from "./types";
 
 export function loadStaticData(overridePack?: OverrideDataPack | null): StaticGameData {
   // Assembly order:
-  // 1. Build base registries from seed runtime JSON plus generated bundles.
-  // 2. Construct canonical materials and source rows once during base assembly.
-  // 3. Apply override packs on top of the consolidated base model.
-  // 4. Build derived lookup indexes and compatibility maps without rebuilding canonical rows.
+  // 1. Load the canonical database from src/data/database.
+  // 2. Validate canonical source-of-truth records.
+  // 3. Normalize the canonical database into the current StaticGameData shape.
+  // 4. Apply validated override packs.
+  // 5. Build derived lookup indexes and compatibility maps.
+  assertCanonicalDatabaseValid();
   const baseData = assembleBaseStaticData();
   const dataWithOverrides = applyOverridePack(baseData, overridePack);
   return buildDerivedStaticDataIndexes(dataWithOverrides);

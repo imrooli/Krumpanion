@@ -1,0 +1,5818 @@
+{
+  "AberrantCoreOfTheDeepShadow": {
+    "outputKey": "AberrantCoreOfTheDeepShadow",
+    "outputMaterialKey": "AberrantCoreOfTheDeepShadow",
+    "outputName": "Aberrant Core of the Deep Shadow",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "FracturedEyeOfTheDeepShadow",
+        "materialName": "Fractured Eye of the Deep Shadow",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "FracturedEyeOfTheDeepShadow": 3
+    },
+    "moraCost": 50,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "fisher_of_hidden_depths_materials",
+    "tierIndex": 1
+  },
+  "AfterglowOfLongNightFlint": {
+    "outputKey": "AfterglowOfLongNightFlint",
+    "outputMaterialKey": "AfterglowOfLongNightFlint",
+    "outputName": "Afterglow of Long Night Flint",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "EmberOfLongNightFlint",
+        "materialName": "Ember of Long Night Flint",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "EmberOfLongNightFlint": 3
+    },
+    "moraCost": 125,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "LongNightFlint",
+    "tierIndex": 1
+  },
+  "AgentsSacrificialKnife": {
+    "outputKey": "AgentsSacrificialKnife",
+    "outputMaterialKey": "AgentsSacrificialKnife",
+    "outputName": "Agent's Sacrificial Knife",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "HuntersSacrificialKnife",
+        "materialName": "Hunter's Sacrificial Knife",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "HuntersSacrificialKnife": 3
+    },
+    "moraCost": 50,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "fatui_pyro_agent_materials",
+    "tierIndex": 1
+  },
+  "AgnidusAgateChunk": {
+    "outputKey": "AgnidusAgateChunk",
+    "outputMaterialKey": "AgnidusAgateChunk",
+    "outputName": "Agnidus Agate Chunk",
+    "outputQuantity": 1,
+    "category": "character_ascension_gem",
+    "inputMaterials": [
+      {
+        "materialKey": "AgnidusAgateFragment",
+        "materialName": "Agnidus Agate Fragment",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "AgnidusAgateFragment": 3
+    },
+    "moraCost": 900,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "none"
+    ],
+    "familyKey": "Pyro",
+    "tierIndex": 2
+  },
+  "AgnidusAgateFragment": {
+    "outputKey": "AgnidusAgateFragment",
+    "outputMaterialKey": "AgnidusAgateFragment",
+    "outputName": "Agnidus Agate Fragment",
+    "outputQuantity": 1,
+    "category": "character_ascension_gem",
+    "inputMaterials": [
+      {
+        "materialKey": "AgnidusAgateSliver",
+        "materialName": "Agnidus Agate Sliver",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "AgnidusAgateSliver": 3
+    },
+    "moraCost": 300,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "none"
+    ],
+    "familyKey": "Pyro",
+    "tierIndex": 1
+  },
+  "AgnidusAgateGemstone": {
+    "outputKey": "AgnidusAgateGemstone",
+    "outputMaterialKey": "AgnidusAgateGemstone",
+    "outputName": "Agnidus Agate Gemstone",
+    "outputQuantity": 1,
+    "category": "character_ascension_gem",
+    "inputMaterials": [
+      {
+        "materialKey": "AgnidusAgateChunk",
+        "materialName": "Agnidus Agate Chunk",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "AgnidusAgateChunk": 3
+    },
+    "moraCost": 2700,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "none"
+    ],
+    "familyKey": "Pyro",
+    "tierIndex": 3
+  },
+  "AlienLifeCore": {
+    "outputKey": "AlienLifeCore",
+    "outputMaterialKey": "AlienLifeCore",
+    "outputName": "Alien Life Core",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "ForeignSynapse",
+        "materialName": "Foreign Synapse",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "ForeignSynapse": 3
+    },
+    "moraCost": 125,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "breacher_primus_materials",
+    "tierIndex": 2
+  },
+  "ArtfulDeviceInheritance": {
+    "outputKey": "ArtfulDeviceInheritance",
+    "outputMaterialKey": "ArtfulDeviceInheritance",
+    "outputName": "Artful Device Inheritance",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "ArtfulDeviceReplica",
+        "materialName": "Artful Device Replica",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "ArtfulDeviceReplica": 3
+    },
+    "moraCost": 350,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "ArtfulDevice",
+    "tierIndex": 2
+  },
+  "ArtfulDeviceReplica": {
+    "outputKey": "ArtfulDeviceReplica",
+    "outputMaterialKey": "ArtfulDeviceReplica",
+    "outputName": "Artful Device Replica",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "ArtfulDeviceFragment",
+        "materialName": "Artful Device Fragment",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "ArtfulDeviceFragment": 3
+    },
+    "moraCost": 125,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "ArtfulDevice",
+    "tierIndex": 1
+  },
+  "ArtfulDeviceWish": {
+    "outputKey": "ArtfulDeviceWish",
+    "outputMaterialKey": "ArtfulDeviceWish",
+    "outputName": "Artful Device Wish",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "ArtfulDeviceInheritance",
+        "materialName": "Artful Device Inheritance",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "ArtfulDeviceInheritance": 3
+    },
+    "moraCost": 1075,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "ArtfulDevice",
+    "tierIndex": 3
+  },
+  "ArtificedDynamicGear": {
+    "outputKey": "ArtificedDynamicGear",
+    "outputMaterialKey": "ArtificedDynamicGear",
+    "outputName": "Artificed Dynamic Gear",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "MechanicalSpurGear",
+        "materialName": "Mechanical Spur Gear",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "MechanicalSpurGear": 3
+    },
+    "moraCost": 50,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "clockwork_meka_materials",
+    "tierIndex": 2
+  },
+  "AureateRadianceOfTheFarNorthScions": {
+    "outputKey": "AureateRadianceOfTheFarNorthScions",
+    "outputMaterialKey": "AureateRadianceOfTheFarNorthScions",
+    "outputName": "Aureate Radiance of the Far-North Scions",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "OblationOfTheFarNorthScions",
+        "materialName": "Oblation of the Far-North Scions",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "OblationOfTheFarNorthScions": 3
+    },
+    "moraCost": 1075,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "FarNorthScions",
+    "tierIndex": 3
+  },
+  "BewilderingBroadleaf": {
+    "outputKey": "BewilderingBroadleaf",
+    "outputMaterialKey": "BewilderingBroadleaf",
+    "outputName": "Bewildering Broadleaf",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "RefractiveBud",
+        "materialName": "Refractive Bud",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "RefractiveBud": 3
+    },
+    "moraCost": 50,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "tenebrous_mimesis_materials",
+    "tierIndex": 1
+  },
+  "BitOfAerosiderite": {
+    "outputKey": "BitOfAerosiderite",
+    "outputMaterialKey": "BitOfAerosiderite",
+    "outputName": "Bit of Aerosiderite",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "PieceOfAerosiderite",
+        "materialName": "Piece of Aerosiderite",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "PieceOfAerosiderite": 3
+    },
+    "moraCost": 350,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "Aerosiderite",
+    "tierIndex": 2
+  },
+  "BlackBronzeHorn": {
+    "outputKey": "BlackBronzeHorn",
+    "outputMaterialKey": "BlackBronzeHorn",
+    "outputName": "Black Bronze Horn",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "HeavyHorn",
+        "materialName": "Heavy Horn",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "HeavyHorn": 3
+    },
+    "moraCost": 50,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "mitachurl_materials",
+    "tierIndex": 1
+  },
+  "BlackCrystalHorn": {
+    "outputKey": "BlackCrystalHorn",
+    "outputMaterialKey": "BlackCrystalHorn",
+    "outputName": "Black Crystal Horn",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "BlackBronzeHorn",
+        "materialName": "Black Bronze Horn",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "BlackBronzeHorn": 3
+    },
+    "moraCost": 125,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "mitachurl_materials",
+    "tierIndex": 2
+  },
+  "BlazeOfLongNightFlint": {
+    "outputKey": "BlazeOfLongNightFlint",
+    "outputMaterialKey": "BlazeOfLongNightFlint",
+    "outputName": "Blaze of Long Night Flint",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "FlareOfLongNightFlint",
+        "materialName": "Flare of Long Night Flint",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "FlareOfLongNightFlint": 3
+    },
+    "moraCost": 1075,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "LongNightFlint",
+    "tierIndex": 3
+  },
+  "BlazingPrismshell": {
+    "outputKey": "BlazingPrismshell",
+    "outputMaterialKey": "BlazingPrismshell",
+    "outputName": "Blazing Prismshell",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "WarmBackShell",
+        "materialName": "Warm Back-Shell",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "WarmBackShell": 3
+    },
+    "moraCost": 125,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "furnace_shell_mountain_weasel_materials",
+    "tierIndex": 2
+  },
+  "BlazingSacrificialHeartsHesitance": {
+    "outputKey": "BlazingSacrificialHeartsHesitance",
+    "outputMaterialKey": "BlazingSacrificialHeartsHesitance",
+    "outputName": "Blazing Sacrificial Heart's Hesitance",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "BlazingSacrificialHeartsTerror",
+        "materialName": "Blazing Sacrificial Heart's Terror",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "BlazingSacrificialHeartsTerror": 3
+    },
+    "moraCost": 125,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "BlazingSacrificialHeart",
+    "tierIndex": 1
+  },
+  "BlazingSacrificialHeartsResolve": {
+    "outputKey": "BlazingSacrificialHeartsResolve",
+    "outputMaterialKey": "BlazingSacrificialHeartsResolve",
+    "outputName": "Blazing Sacrificial Heart's Resolve",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "BlazingSacrificialHeartsHesitance",
+        "materialName": "Blazing Sacrificial Heart's Hesitance",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "BlazingSacrificialHeartsHesitance": 3
+    },
+    "moraCost": 350,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "BlazingSacrificialHeart",
+    "tierIndex": 2
+  },
+  "BlazingSacrificialHeartsSplendor": {
+    "outputKey": "BlazingSacrificialHeartsSplendor",
+    "outputMaterialKey": "BlazingSacrificialHeartsSplendor",
+    "outputName": "Blazing Sacrificial Heart's Splendor",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "BlazingSacrificialHeartsResolve",
+        "materialName": "Blazing Sacrificial Heart's Resolve",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "BlazingSacrificialHeartsResolve": 3
+    },
+    "moraCost": 1075,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "BlazingSacrificialHeart",
+    "tierIndex": 3
+  },
+  "BorealWolfsBrokenFang": {
+    "outputKey": "BorealWolfsBrokenFang",
+    "outputMaterialKey": "BorealWolfsBrokenFang",
+    "outputName": "Boreal Wolf's Broken Fang",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "BorealWolfsCrackedTooth",
+        "materialName": "Boreal Wolf's Cracked Tooth",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "BorealWolfsCrackedTooth": 3
+    },
+    "moraCost": 350,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "BorealWolf",
+    "tierIndex": 2
+  },
+  "BorealWolfsCrackedTooth": {
+    "outputKey": "BorealWolfsCrackedTooth",
+    "outputMaterialKey": "BorealWolfsCrackedTooth",
+    "outputName": "Boreal Wolf's Cracked Tooth",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "BorealWolfsMilkTooth",
+        "materialName": "Boreal Wolf's Milk Tooth",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "BorealWolfsMilkTooth": 3
+    },
+    "moraCost": 125,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "BorealWolf",
+    "tierIndex": 1
+  },
+  "BorealWolfsNostalgia": {
+    "outputKey": "BorealWolfsNostalgia",
+    "outputMaterialKey": "BorealWolfsNostalgia",
+    "outputName": "Boreal Wolf's Nostalgia",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "BorealWolfsBrokenFang",
+        "materialName": "Boreal Wolf's Broken Fang",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "BorealWolfsBrokenFang": 3
+    },
+    "moraCost": 1075,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "BorealWolf",
+    "tierIndex": 3
+  },
+  "BrilliantDiamondChunk": {
+    "outputKey": "BrilliantDiamondChunk",
+    "outputMaterialKey": "BrilliantDiamondChunk",
+    "outputName": "BrilliantDiamondChunk",
+    "outputQuantity": 1,
+    "category": "character_ascension_gem",
+    "inputMaterials": [
+      {
+        "materialKey": "BrilliantDiamondFragment",
+        "materialName": "BrilliantDiamondFragment",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "BrilliantDiamondFragment": 3
+    },
+    "moraCost": 900,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "none"
+    ],
+    "familyKey": "Traveler",
+    "tierIndex": 2
+  },
+  "BrilliantDiamondFragment": {
+    "outputKey": "BrilliantDiamondFragment",
+    "outputMaterialKey": "BrilliantDiamondFragment",
+    "outputName": "BrilliantDiamondFragment",
+    "outputQuantity": 1,
+    "category": "character_ascension_gem",
+    "inputMaterials": [
+      {
+        "materialKey": "BrilliantDiamondSliver",
+        "materialName": "BrilliantDiamondSliver",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "BrilliantDiamondSliver": 3
+    },
+    "moraCost": 300,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "none"
+    ],
+    "familyKey": "Traveler",
+    "tierIndex": 1
+  },
+  "BrilliantDiamondGemstone": {
+    "outputKey": "BrilliantDiamondGemstone",
+    "outputMaterialKey": "BrilliantDiamondGemstone",
+    "outputName": "BrilliantDiamondGemstone",
+    "outputQuantity": 1,
+    "category": "character_ascension_gem",
+    "inputMaterials": [
+      {
+        "materialKey": "BrilliantDiamondChunk",
+        "materialName": "BrilliantDiamondChunk",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "BrilliantDiamondChunk": 3
+    },
+    "moraCost": 2700,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "none"
+    ],
+    "familyKey": "Traveler",
+    "tierIndex": 3
+  },
+  "ChainsOfTheDandelionGladiator": {
+    "outputKey": "ChainsOfTheDandelionGladiator",
+    "outputMaterialKey": "ChainsOfTheDandelionGladiator",
+    "outputName": "Chains of the Dandelion Gladiator",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "FettersOfTheDandelionGladiator",
+        "materialName": "Fetters of the Dandelion Gladiator",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "FettersOfTheDandelionGladiator": 3
+    },
+    "moraCost": 125,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "DandelionGladiator",
+    "tierIndex": 1
+  },
+  "ChaosAxis": {
+    "outputKey": "ChaosAxis",
+    "outputMaterialKey": "ChaosAxis",
+    "outputName": "Chaos Axis",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "ChaosGear",
+        "materialName": "Chaos Gear",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "ChaosGear": 3
+    },
+    "moraCost": 50,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "ruin_sentinel_materials",
+    "tierIndex": 1
+  },
+  "ChaosBolt": {
+    "outputKey": "ChaosBolt",
+    "outputMaterialKey": "ChaosBolt",
+    "outputName": "Chaos Bolt",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "ChaosModule",
+        "materialName": "Chaos Module",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "ChaosModule": 3
+    },
+    "moraCost": 125,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "ruin_drake_materials",
+    "tierIndex": 2
+  },
+  "ChaosCircuit": {
+    "outputKey": "ChaosCircuit",
+    "outputMaterialKey": "ChaosCircuit",
+    "outputName": "Chaos Circuit",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "ChaosDevice",
+        "materialName": "Chaos Device",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "ChaosDevice": 3
+    },
+    "moraCost": 50,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "humanoid_ruin_machine_materials",
+    "tierIndex": 1
+  },
+  "ChaosCore": {
+    "outputKey": "ChaosCore",
+    "outputMaterialKey": "ChaosCore",
+    "outputName": "Chaos Core",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "ChaosCircuit",
+        "materialName": "Chaos Circuit",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "ChaosCircuit": 3
+    },
+    "moraCost": 125,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "humanoid_ruin_machine_materials",
+    "tierIndex": 2
+  },
+  "ChaosModule": {
+    "outputKey": "ChaosModule",
+    "outputMaterialKey": "ChaosModule",
+    "outputName": "Chaos Module",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "ChaosStorage",
+        "materialName": "Chaos Storage",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "ChaosStorage": 3
+    },
+    "moraCost": 50,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "ruin_drake_materials",
+    "tierIndex": 1
+  },
+  "ChaosOculus": {
+    "outputKey": "ChaosOculus",
+    "outputMaterialKey": "ChaosOculus",
+    "outputName": "Chaos Oculus",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "ChaosAxis",
+        "materialName": "Chaos Axis",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "ChaosAxis": 3
+    },
+    "moraCost": 125,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "ruin_sentinel_materials",
+    "tierIndex": 2
+  },
+  "ChapterOfAnAncientChord": {
+    "outputKey": "ChapterOfAnAncientChord",
+    "outputMaterialKey": "ChapterOfAnAncientChord",
+    "outputName": "Chapter of an Ancient Chord",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "FragmentOfAnAncientChord",
+        "materialName": "Fragment of an Ancient Chord",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "FragmentOfAnAncientChord": 3
+    },
+    "moraCost": 125,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "AncientChord",
+    "tierIndex": 1
+  },
+  "ChasmlightFin": {
+    "outputKey": "ChasmlightFin",
+    "outputMaterialKey": "ChasmlightFin",
+    "outputName": "Chasmlight Fin",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "LunarFin",
+        "materialName": "Lunar Fin",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "LunarFin": 3
+    },
+    "moraCost": 125,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "xuanwen_beast_materials",
+    "tierIndex": 2
+  },
+  "ChunkOfAerosiderite": {
+    "outputKey": "ChunkOfAerosiderite",
+    "outputMaterialKey": "ChunkOfAerosiderite",
+    "outputName": "Chunk of Aerosiderite",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "BitOfAerosiderite",
+        "materialName": "Bit of Aerosiderite",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "BitOfAerosiderite": 3
+    },
+    "moraCost": 1075,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "Aerosiderite",
+    "tierIndex": 3
+  },
+  "ConcealedTalon": {
+    "outputKey": "ConcealedTalon",
+    "outputMaterialKey": "ConcealedTalon",
+    "outputName": "Concealed Talon",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "ConcealedUnguis",
+        "materialName": "Concealed Unguis",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "ConcealedUnguis": 3
+    },
+    "moraCost": 125,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "riftwolf_materials",
+    "tierIndex": 2
+  },
+  "ConcealedUnguis": {
+    "outputKey": "ConcealedUnguis",
+    "outputMaterialKey": "ConcealedUnguis",
+    "outputName": "Concealed Unguis",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "ConcealedClaw",
+        "materialName": "Concealed Claw",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "ConcealedClaw": 3
+    },
+    "moraCost": 50,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "riftwolf_materials",
+    "tierIndex": 1
+  },
+  "CrystallineCystDust": {
+    "outputKey": "CrystallineCystDust",
+    "outputMaterialKey": "CrystallineCystDust",
+    "outputName": "Crystalline Cyst Dust",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "LuminescentPollen",
+        "materialName": "Luminescent Pollen",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "LuminescentPollen": 3
+    },
+    "moraCost": 50,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "fungus_materials",
+    "tierIndex": 2
+  },
+  "CrystalPrism": {
+    "outputKey": "CrystalPrism",
+    "outputMaterialKey": "CrystalPrism",
+    "outputName": "Crystal Prism",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "DismalPrism",
+        "materialName": "Dismal Prism",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "DismalPrism": 3
+    },
+    "moraCost": 50,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "mirror_maiden_materials",
+    "tierIndex": 1
+  },
+  "DarkStatuette": {
+    "outputKey": "DarkStatuette",
+    "outputMaterialKey": "DarkStatuette",
+    "outputName": "Dark Statuette",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "GloomyStatuette",
+        "materialName": "Gloomy Statuette",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "GloomyStatuette": 3
+    },
+    "moraCost": 50,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "black_serpent_materials",
+    "tierIndex": 1
+  },
+  "DeadLeyLineLeaves": {
+    "outputKey": "DeadLeyLineLeaves",
+    "outputMaterialKey": "DeadLeyLineLeaves",
+    "outputName": "Dead Ley Line Leaves",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "DeadLeyLineBranch",
+        "materialName": "Dead Ley Line Branch",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "DeadLeyLineBranch": 3
+    },
+    "moraCost": 50,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "abyss_mage_materials",
+    "tierIndex": 1
+  },
+  "DeathlyStatuette": {
+    "outputKey": "DeathlyStatuette",
+    "outputMaterialKey": "DeathlyStatuette",
+    "outputName": "Deathly Statuette",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "DarkStatuette",
+        "materialName": "Dark Statuette",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "DarkStatuette": 3
+    },
+    "moraCost": 125,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "black_serpent_materials",
+    "tierIndex": 2
+  },
+  "DebrisOfDecarabiansCity": {
+    "outputKey": "DebrisOfDecarabiansCity",
+    "outputMaterialKey": "DebrisOfDecarabiansCity",
+    "outputName": "Debris of Decarabian's City",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "TileOfDecarabiansTower",
+        "materialName": "Tile of Decarabian's Tower",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "TileOfDecarabiansTower": 3
+    },
+    "moraCost": 125,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "Decarabian",
+    "tierIndex": 1
+  },
+  "DeliriousDemeanorOfTheSacredLord": {
+    "outputKey": "DeliriousDemeanorOfTheSacredLord",
+    "outputMaterialKey": "DeliriousDemeanorOfTheSacredLord",
+    "outputName": "Delirious Demeanor of the Sacred Lord",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "DeliriousDesolationOfTheSacredLord",
+        "materialName": "Delirious Desolation of the Sacred Lord",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "DeliriousDesolationOfTheSacredLord": 3
+    },
+    "moraCost": 350,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "SacredLord",
+    "tierIndex": 2
+  },
+  "DeliriousDesolationOfTheSacredLord": {
+    "outputKey": "DeliriousDesolationOfTheSacredLord",
+    "outputMaterialKey": "DeliriousDesolationOfTheSacredLord",
+    "outputName": "Delirious Desolation of the Sacred Lord",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "DeliriousDecadenceOfTheSacredLord",
+        "materialName": "Delirious Decadence of the Sacred Lord",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "DeliriousDecadenceOfTheSacredLord": 3
+    },
+    "moraCost": 125,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "SacredLord",
+    "tierIndex": 1
+  },
+  "DeliriousDivinityOfTheSacredLord": {
+    "outputKey": "DeliriousDivinityOfTheSacredLord",
+    "outputMaterialKey": "DeliriousDivinityOfTheSacredLord",
+    "outputName": "Delirious Divinity of the Sacred Lord",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "DeliriousDemeanorOfTheSacredLord",
+        "materialName": "Delirious Demeanor of the Sacred Lord",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "DeliriousDemeanorOfTheSacredLord": 3
+    },
+    "moraCost": 1075,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "SacredLord",
+    "tierIndex": 3
+  },
+  "DivineBodyFromGuyun": {
+    "outputKey": "DivineBodyFromGuyun",
+    "outputMaterialKey": "DivineBodyFromGuyun",
+    "outputName": "Divine Body from Guyun",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "RelicFromGuyun",
+        "materialName": "Relic from Guyun",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "RelicFromGuyun": 3
+    },
+    "moraCost": 1075,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "Guyun",
+    "tierIndex": 3
+  },
+  "DormantFungalNucleus": {
+    "outputKey": "DormantFungalNucleus",
+    "outputMaterialKey": "DormantFungalNucleus",
+    "outputName": "Dormant Fungal Nucleus",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "InactivatedFungalNucleus",
+        "materialName": "Inactivated Fungal Nucleus",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "InactivatedFungalNucleus": 3
+    },
+    "moraCost": 50,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "state_shifted_fungus_materials",
+    "tierIndex": 1
+  },
+  "DreamOfScorchingMight": {
+    "outputKey": "DreamOfScorchingMight",
+    "outputMaterialKey": "DreamOfScorchingMight",
+    "outputName": "Dream of Scorching Might",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "RemnantGlowOfScorchingMight",
+        "materialName": "Remnant Glow of Scorching Might",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "RemnantGlowOfScorchingMight": 3
+    },
+    "moraCost": 350,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "ScorchingMight",
+    "tierIndex": 2
+  },
+  "DreamOfTheDandelionGladiator": {
+    "outputKey": "DreamOfTheDandelionGladiator",
+    "outputMaterialKey": "DreamOfTheDandelionGladiator",
+    "outputName": "Dream of the Dandelion Gladiator",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "ShacklesOfTheDandelionGladiator",
+        "materialName": "Shackles of the Dandelion Gladiator",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "ShacklesOfTheDandelionGladiator": 3
+    },
+    "moraCost": 1075,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "DandelionGladiator",
+    "tierIndex": 3
+  },
+  "EchoOfAnAncientChord": {
+    "outputKey": "EchoOfAnAncientChord",
+    "outputMaterialKey": "EchoOfAnAncientChord",
+    "outputName": "Echo of an Ancient Chord",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "MovementOfAnAncientChord",
+        "materialName": "Movement of an Ancient Chord",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "MovementOfAnAncientChord": 3
+    },
+    "moraCost": 1075,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "AncientChord",
+    "tierIndex": 3
+  },
+  "EnergyNectar": {
+    "outputKey": "EnergyNectar",
+    "outputMaterialKey": "EnergyNectar",
+    "outputName": "Energy Nectar",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "ShimmeringNectar",
+        "materialName": "Shimmering Nectar",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "ShimmeringNectar": 3
+    },
+    "moraCost": 50,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "whopperflower_materials",
+    "tierIndex": 2
+  },
+  "EssenceOfPureSacredDewdrop": {
+    "outputKey": "EssenceOfPureSacredDewdrop",
+    "outputMaterialKey": "EssenceOfPureSacredDewdrop",
+    "outputName": "Essence of Pure Sacred Dewdrop",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "SpringOfPureSacredDewdrop",
+        "materialName": "Spring of Pure Sacred Dewdrop",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "SpringOfPureSacredDewdrop": 3
+    },
+    "moraCost": 1075,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "PureSacredDewdrop",
+    "tierIndex": 3
+  },
+  "FamedHandguard": {
+    "outputKey": "FamedHandguard",
+    "outputMaterialKey": "FamedHandguard",
+    "outputName": "Famed Handguard",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "KageuchiHandguard",
+        "materialName": "Kageuchi Handguard",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "KageuchiHandguard": 3
+    },
+    "moraCost": 50,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "nobushi_materials",
+    "tierIndex": 2
+  },
+  "FlareOfLongNightFlint": {
+    "outputKey": "FlareOfLongNightFlint",
+    "outputMaterialKey": "FlareOfLongNightFlint",
+    "outputName": "Flare of Long Night Flint",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "AfterglowOfLongNightFlint",
+        "materialName": "Afterglow of Long Night Flint",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "AfterglowOfLongNightFlint": 3
+    },
+    "moraCost": 350,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "LongNightFlint",
+    "tierIndex": 2
+  },
+  "ForbiddenCurseScroll": {
+    "outputKey": "ForbiddenCurseScroll",
+    "outputMaterialKey": "ForbiddenCurseScroll",
+    "outputName": "Forbidden Curse Scroll",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "SealedScroll",
+        "materialName": "Sealed Scroll",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "SealedScroll": 3
+    },
+    "moraCost": 50,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "samachurl_materials",
+    "tierIndex": 2
+  },
+  "ForeignSynapse": {
+    "outputKey": "ForeignSynapse",
+    "outputMaterialKey": "ForeignSynapse",
+    "outputName": "Foreign Synapse",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "RiftCore",
+        "materialName": "Rift Core",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "RiftCore": 3
+    },
+    "moraCost": 50,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "breacher_primus_materials",
+    "tierIndex": 1
+  },
+  "FossilizedBoneShard": {
+    "outputKey": "FossilizedBoneShard",
+    "outputMaterialKey": "FossilizedBoneShard",
+    "outputName": "Fossilized Bone Shard",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "SturdyBoneShard",
+        "materialName": "Sturdy Bone Shard",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "SturdyBoneShard": 3
+    },
+    "moraCost": 125,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "vishap_materials",
+    "tierIndex": 2
+  },
+  "FracturedFlamingHilt": {
+    "outputKey": "FracturedFlamingHilt",
+    "outputMaterialKey": "FracturedFlamingHilt",
+    "outputName": "Fractured Flaming Hilt",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "FadedFlamingHilt",
+        "materialName": "Faded Flaming Hilt",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "FadedFlamingHilt": 3
+    },
+    "moraCost": 50,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "domain_keeper_materials",
+    "tierIndex": 1
+  },
+  "FragmentOfDecarabiansEpic": {
+    "outputKey": "FragmentOfDecarabiansEpic",
+    "outputMaterialKey": "FragmentOfDecarabiansEpic",
+    "outputName": "Fragment of Decarabian's Epic",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "DebrisOfDecarabiansCity",
+        "materialName": "Debris of Decarabian's City",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "DebrisOfDecarabiansCity": 3
+    },
+    "moraCost": 350,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "Decarabian",
+    "tierIndex": 2
+  },
+  "FrostEtchedWarrant": {
+    "outputKey": "FrostEtchedWarrant",
+    "outputMaterialKey": "FrostEtchedWarrant",
+    "outputName": "Frost-Etched Warrant",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "ImmaculateWarrant",
+        "materialName": "Immaculate Warrant",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "ImmaculateWarrant": 3
+    },
+    "moraCost": 50,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "fatui_oprichniki_materials",
+    "tierIndex": 2
+  },
+  "FrostnightsGlory": {
+    "outputKey": "FrostnightsGlory",
+    "outputMaterialKey": "FrostnightsGlory",
+    "outputName": "Frostnight's Glory",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "FrostnightsGlow",
+        "materialName": "Frostnight's Glow",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "FrostnightsGlow": 3
+    },
+    "moraCost": 125,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "frostnight_scion_materials",
+    "tierIndex": 2
+  },
+  "FrostnightsGlow": {
+    "outputKey": "FrostnightsGlow",
+    "outputMaterialKey": "FrostnightsGlow",
+    "outputName": "Frostnight's Glow",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "FrostnightsGlimmer",
+        "materialName": "Frostnight's Glimmer",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "FrostnightsGlimmer": 3
+    },
+    "moraCost": 50,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "frostnight_scion_materials",
+    "tierIndex": 1
+  },
+  "GlowingRemains": {
+    "outputKey": "GlowingRemains",
+    "outputMaterialKey": "GlowingRemains",
+    "outputName": "Glowing Remains",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "LightlessBone",
+        "materialName": "Lightless Bone",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "LightlessBone": 3
+    },
+    "moraCost": 50,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "radiant_beast_materials",
+    "tierIndex": 1
+  },
+  "GoldenBranchOfADistantSea": {
+    "outputKey": "GoldenBranchOfADistantSea",
+    "outputMaterialKey": "GoldenBranchOfADistantSea",
+    "outputName": "Golden Branch of a Distant Sea",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "JadeBranchOfADistantSea",
+        "materialName": "Jade Branch of a Distant Sea",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "JadeBranchOfADistantSea": 3
+    },
+    "moraCost": 1075,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "DistantSea",
+    "tierIndex": 3
+  },
+  "GoldenGobletOfThePristineSea": {
+    "outputKey": "GoldenGobletOfThePristineSea",
+    "outputMaterialKey": "GoldenGobletOfThePristineSea",
+    "outputName": "Golden Goblet of the Pristine Sea",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "SilverGobletOfThePristineSea",
+        "materialName": "Silver Goblet of the Pristine Sea",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "SilverGobletOfThePristineSea": 3
+    },
+    "moraCost": 1075,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "PristineSea",
+    "tierIndex": 3
+  },
+  "GoldenRavenInsignia": {
+    "outputKey": "GoldenRavenInsignia",
+    "outputMaterialKey": "GoldenRavenInsignia",
+    "outputName": "Golden Raven Insignia",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "SilverRavenInsignia",
+        "materialName": "Silver Raven Insignia",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "SilverRavenInsignia": 3
+    },
+    "moraCost": 50,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "treasure_hoarder_materials",
+    "tierIndex": 2
+  },
+  "GoldenTalismanOfTheForestDew": {
+    "outputKey": "GoldenTalismanOfTheForestDew",
+    "outputMaterialKey": "GoldenTalismanOfTheForestDew",
+    "outputName": "Golden Talisman of the Forest Dew",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "SilverTalismanOfTheForestDew",
+        "materialName": "Silver Talisman of the Forest Dew",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "SilverTalismanOfTheForestDew": 3
+    },
+    "moraCost": 1075,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "ForestDew",
+    "tierIndex": 3
+  },
+  "GuideToAdmonition": {
+    "outputKey": "GuideToAdmonition",
+    "outputMaterialKey": "GuideToAdmonition",
+    "outputName": "Guide to Admonition",
+    "outputQuantity": 1,
+    "category": "talent_level_up_material",
+    "inputMaterials": [
+      {
+        "materialKey": "TeachingsOfAdmonition",
+        "materialName": "Teachings of Admonition",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "TeachingsOfAdmonition": 3
+    },
+    "moraCost": 175,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_talent_material",
+      "refund_character_talent_material",
+      "regional_extra_character_talent_material"
+    ],
+    "familyKey": "Admonition",
+    "tierIndex": 1
+  },
+  "GuideToBallad": {
+    "outputKey": "GuideToBallad",
+    "outputMaterialKey": "GuideToBallad",
+    "outputName": "Guide to Ballad",
+    "outputQuantity": 1,
+    "category": "talent_level_up_material",
+    "inputMaterials": [
+      {
+        "materialKey": "TeachingsOfBallad",
+        "materialName": "Teachings of Ballad",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "TeachingsOfBallad": 3
+    },
+    "moraCost": 175,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_talent_material",
+      "refund_character_talent_material",
+      "regional_extra_character_talent_material"
+    ],
+    "familyKey": "Ballad",
+    "tierIndex": 1
+  },
+  "GuideToConflict": {
+    "outputKey": "GuideToConflict",
+    "outputMaterialKey": "GuideToConflict",
+    "outputName": "Guide to Conflict",
+    "outputQuantity": 1,
+    "category": "talent_level_up_material",
+    "inputMaterials": [
+      {
+        "materialKey": "TeachingsOfConflict",
+        "materialName": "Teachings of Conflict",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "TeachingsOfConflict": 3
+    },
+    "moraCost": 175,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_talent_material",
+      "refund_character_talent_material",
+      "regional_extra_character_talent_material"
+    ],
+    "familyKey": "Conflict",
+    "tierIndex": 1
+  },
+  "GuideToContention": {
+    "outputKey": "GuideToContention",
+    "outputMaterialKey": "GuideToContention",
+    "outputName": "Guide to Contention",
+    "outputQuantity": 1,
+    "category": "talent_level_up_material",
+    "inputMaterials": [
+      {
+        "materialKey": "TeachingsOfContention",
+        "materialName": "Teachings of Contention",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "TeachingsOfContention": 3
+    },
+    "moraCost": 175,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_talent_material",
+      "refund_character_talent_material",
+      "regional_extra_character_talent_material"
+    ],
+    "familyKey": "Contention",
+    "tierIndex": 1
+  },
+  "GuideToDiligence": {
+    "outputKey": "GuideToDiligence",
+    "outputMaterialKey": "GuideToDiligence",
+    "outputName": "Guide to Diligence",
+    "outputQuantity": 1,
+    "category": "talent_level_up_material",
+    "inputMaterials": [
+      {
+        "materialKey": "TeachingsOfDiligence",
+        "materialName": "Teachings of Diligence",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "TeachingsOfDiligence": 3
+    },
+    "moraCost": 175,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_talent_material",
+      "refund_character_talent_material",
+      "regional_extra_character_talent_material"
+    ],
+    "familyKey": "Diligence",
+    "tierIndex": 1
+  },
+  "GuideToElegance": {
+    "outputKey": "GuideToElegance",
+    "outputMaterialKey": "GuideToElegance",
+    "outputName": "Guide to Elegance",
+    "outputQuantity": 1,
+    "category": "talent_level_up_material",
+    "inputMaterials": [
+      {
+        "materialKey": "TeachingsOfElegance",
+        "materialName": "Teachings of Elegance",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "TeachingsOfElegance": 3
+    },
+    "moraCost": 175,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_talent_material",
+      "refund_character_talent_material",
+      "regional_extra_character_talent_material"
+    ],
+    "familyKey": "Elegance",
+    "tierIndex": 1
+  },
+  "GuideToElysium": {
+    "outputKey": "GuideToElysium",
+    "outputMaterialKey": "GuideToElysium",
+    "outputName": "Guide to Elysium",
+    "outputQuantity": 1,
+    "category": "talent_level_up_material",
+    "inputMaterials": [
+      {
+        "materialKey": "TeachingsOfElysium",
+        "materialName": "Teachings of Elysium",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "TeachingsOfElysium": 3
+    },
+    "moraCost": 175,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_talent_material",
+      "refund_character_talent_material",
+      "regional_extra_character_talent_material"
+    ],
+    "familyKey": "Elysium",
+    "tierIndex": 1
+  },
+  "GuideToEquity": {
+    "outputKey": "GuideToEquity",
+    "outputMaterialKey": "GuideToEquity",
+    "outputName": "Guide to Equity",
+    "outputQuantity": 1,
+    "category": "talent_level_up_material",
+    "inputMaterials": [
+      {
+        "materialKey": "TeachingsOfEquity",
+        "materialName": "Teachings of Equity",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "TeachingsOfEquity": 3
+    },
+    "moraCost": 175,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_talent_material",
+      "refund_character_talent_material",
+      "regional_extra_character_talent_material"
+    ],
+    "familyKey": "Equity",
+    "tierIndex": 1
+  },
+  "GuideToFreedom": {
+    "outputKey": "GuideToFreedom",
+    "outputMaterialKey": "GuideToFreedom",
+    "outputName": "Guide to Freedom",
+    "outputQuantity": 1,
+    "category": "talent_level_up_material",
+    "inputMaterials": [
+      {
+        "materialKey": "TeachingsOfFreedom",
+        "materialName": "Teachings of Freedom",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "TeachingsOfFreedom": 3
+    },
+    "moraCost": 175,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_talent_material",
+      "refund_character_talent_material",
+      "regional_extra_character_talent_material"
+    ],
+    "familyKey": "Freedom",
+    "tierIndex": 1
+  },
+  "GuideToGold": {
+    "outputKey": "GuideToGold",
+    "outputMaterialKey": "GuideToGold",
+    "outputName": "Guide to Gold",
+    "outputQuantity": 1,
+    "category": "talent_level_up_material",
+    "inputMaterials": [
+      {
+        "materialKey": "TeachingsOfGold",
+        "materialName": "Teachings of Gold",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "TeachingsOfGold": 3
+    },
+    "moraCost": 175,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_talent_material",
+      "refund_character_talent_material",
+      "regional_extra_character_talent_material"
+    ],
+    "familyKey": "Gold",
+    "tierIndex": 1
+  },
+  "GuideToIngenuity": {
+    "outputKey": "GuideToIngenuity",
+    "outputMaterialKey": "GuideToIngenuity",
+    "outputName": "Guide to Ingenuity",
+    "outputQuantity": 1,
+    "category": "talent_level_up_material",
+    "inputMaterials": [
+      {
+        "materialKey": "TeachingsOfIngenuity",
+        "materialName": "Teachings of Ingenuity",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "TeachingsOfIngenuity": 3
+    },
+    "moraCost": 175,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_talent_material",
+      "refund_character_talent_material",
+      "regional_extra_character_talent_material"
+    ],
+    "familyKey": "Ingenuity",
+    "tierIndex": 1
+  },
+  "GuideToJustice": {
+    "outputKey": "GuideToJustice",
+    "outputMaterialKey": "GuideToJustice",
+    "outputName": "Guide to Justice",
+    "outputQuantity": 1,
+    "category": "talent_level_up_material",
+    "inputMaterials": [
+      {
+        "materialKey": "TeachingsOfJustice",
+        "materialName": "Teachings of Justice",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "TeachingsOfJustice": 3
+    },
+    "moraCost": 175,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_talent_material",
+      "refund_character_talent_material",
+      "regional_extra_character_talent_material"
+    ],
+    "familyKey": "Justice",
+    "tierIndex": 1
+  },
+  "GuideToKindling": {
+    "outputKey": "GuideToKindling",
+    "outputMaterialKey": "GuideToKindling",
+    "outputName": "Guide to Kindling",
+    "outputQuantity": 1,
+    "category": "talent_level_up_material",
+    "inputMaterials": [
+      {
+        "materialKey": "TeachingsOfKindling",
+        "materialName": "Teachings of Kindling",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "TeachingsOfKindling": 3
+    },
+    "moraCost": 175,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_talent_material",
+      "refund_character_talent_material",
+      "regional_extra_character_talent_material"
+    ],
+    "familyKey": "Kindling",
+    "tierIndex": 1
+  },
+  "GuideToLight": {
+    "outputKey": "GuideToLight",
+    "outputMaterialKey": "GuideToLight",
+    "outputName": "Guide to Light",
+    "outputQuantity": 1,
+    "category": "talent_level_up_material",
+    "inputMaterials": [
+      {
+        "materialKey": "TeachingsOfLight",
+        "materialName": "Teachings of Light",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "TeachingsOfLight": 3
+    },
+    "moraCost": 175,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_talent_material",
+      "refund_character_talent_material",
+      "regional_extra_character_talent_material"
+    ],
+    "familyKey": "Light",
+    "tierIndex": 1
+  },
+  "GuideToMoonlight": {
+    "outputKey": "GuideToMoonlight",
+    "outputMaterialKey": "GuideToMoonlight",
+    "outputName": "Guide to Moonlight",
+    "outputQuantity": 1,
+    "category": "talent_level_up_material",
+    "inputMaterials": [
+      {
+        "materialKey": "TeachingsOfMoonlight",
+        "materialName": "Teachings of Moonlight",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "TeachingsOfMoonlight": 3
+    },
+    "moraCost": 175,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_talent_material",
+      "refund_character_talent_material",
+      "regional_extra_character_talent_material"
+    ],
+    "familyKey": "Moonlight",
+    "tierIndex": 1
+  },
+  "GuideToOrder": {
+    "outputKey": "GuideToOrder",
+    "outputMaterialKey": "GuideToOrder",
+    "outputName": "Guide to Order",
+    "outputQuantity": 1,
+    "category": "talent_level_up_material",
+    "inputMaterials": [
+      {
+        "materialKey": "TeachingsOfOrder",
+        "materialName": "Teachings of Order",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "TeachingsOfOrder": 3
+    },
+    "moraCost": 175,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_talent_material",
+      "refund_character_talent_material",
+      "regional_extra_character_talent_material"
+    ],
+    "familyKey": "Order",
+    "tierIndex": 1
+  },
+  "GuideToPraxis": {
+    "outputKey": "GuideToPraxis",
+    "outputMaterialKey": "GuideToPraxis",
+    "outputName": "Guide to Praxis",
+    "outputQuantity": 1,
+    "category": "talent_level_up_material",
+    "inputMaterials": [
+      {
+        "materialKey": "TeachingsOfPraxis",
+        "materialName": "Teachings of Praxis",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "TeachingsOfPraxis": 3
+    },
+    "moraCost": 175,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_talent_material",
+      "refund_character_talent_material",
+      "regional_extra_character_talent_material"
+    ],
+    "familyKey": "Praxis",
+    "tierIndex": 1
+  },
+  "GuideToProsperity": {
+    "outputKey": "GuideToProsperity",
+    "outputMaterialKey": "GuideToProsperity",
+    "outputName": "Guide to Prosperity",
+    "outputQuantity": 1,
+    "category": "talent_level_up_material",
+    "inputMaterials": [
+      {
+        "materialKey": "TeachingsOfProsperity",
+        "materialName": "Teachings of Prosperity",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "TeachingsOfProsperity": 3
+    },
+    "moraCost": 175,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_talent_material",
+      "refund_character_talent_material",
+      "regional_extra_character_talent_material"
+    ],
+    "familyKey": "Prosperity",
+    "tierIndex": 1
+  },
+  "GuideToResistance": {
+    "outputKey": "GuideToResistance",
+    "outputMaterialKey": "GuideToResistance",
+    "outputName": "Guide to Resistance",
+    "outputQuantity": 1,
+    "category": "talent_level_up_material",
+    "inputMaterials": [
+      {
+        "materialKey": "TeachingsOfResistance",
+        "materialName": "Teachings of Resistance",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "TeachingsOfResistance": 3
+    },
+    "moraCost": 175,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_talent_material",
+      "refund_character_talent_material",
+      "regional_extra_character_talent_material"
+    ],
+    "familyKey": "Resistance",
+    "tierIndex": 1
+  },
+  "GuideToTransience": {
+    "outputKey": "GuideToTransience",
+    "outputMaterialKey": "GuideToTransience",
+    "outputName": "Guide to Transience",
+    "outputQuantity": 1,
+    "category": "talent_level_up_material",
+    "inputMaterials": [
+      {
+        "materialKey": "TeachingsOfTransience",
+        "materialName": "Teachings of Transience",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "TeachingsOfTransience": 3
+    },
+    "moraCost": 175,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_talent_material",
+      "refund_character_talent_material",
+      "regional_extra_character_talent_material"
+    ],
+    "familyKey": "Transience",
+    "tierIndex": 1
+  },
+  "GuideToVagrancy": {
+    "outputKey": "GuideToVagrancy",
+    "outputMaterialKey": "GuideToVagrancy",
+    "outputName": "Guide to Vagrancy",
+    "outputQuantity": 1,
+    "category": "talent_level_up_material",
+    "inputMaterials": [
+      {
+        "materialKey": "TeachingsOfVagrancy",
+        "materialName": "Teachings of Vagrancy",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "TeachingsOfVagrancy": 3
+    },
+    "moraCost": 175,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_talent_material",
+      "refund_character_talent_material",
+      "regional_extra_character_talent_material"
+    ],
+    "familyKey": "Vagrancy",
+    "tierIndex": 1
+  },
+  "HeartOfTheSecretSource": {
+    "outputKey": "HeartOfTheSecretSource",
+    "outputMaterialKey": "HeartOfTheSecretSource",
+    "outputName": "Heart of the Secret Source",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "SheathOfTheSecretSource",
+        "materialName": "Sheath of the Secret Source",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "SheathOfTheSecretSource": 3
+    },
+    "moraCost": 125,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "secret_source_automaton_hunter_seeker_materials",
+    "tierIndex": 2
+  },
+  "HookedBeakOfTheDeepShadow": {
+    "outputKey": "HookedBeakOfTheDeepShadow",
+    "outputMaterialKey": "HookedBeakOfTheDeepShadow",
+    "outputName": "Hooked Beak of the Deep Shadow",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "AberrantCoreOfTheDeepShadow",
+        "materialName": "Aberrant Core of the Deep Shadow",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "AberrantCoreOfTheDeepShadow": 3
+    },
+    "moraCost": 125,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "fisher_of_hidden_depths_materials",
+    "tierIndex": 2
+  },
+  "IgnitedSeedOfLife": {
+    "outputKey": "IgnitedSeedOfLife",
+    "outputMaterialKey": "IgnitedSeedOfLife",
+    "outputName": "Ignited Seed of Life",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "IgnitedStone",
+        "materialName": "Ignited Stone",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "IgnitedStone": 3
+    },
+    "moraCost": 50,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "avatar_of_lava_materials",
+    "tierIndex": 1
+  },
+  "IgnitedSeeingEye": {
+    "outputKey": "IgnitedSeeingEye",
+    "outputMaterialKey": "IgnitedSeeingEye",
+    "outputName": "Ignited Seeing Eye",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "IgnitedSeedOfLife",
+        "materialName": "Ignited Seed of Life",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "IgnitedSeedOfLife": 3
+    },
+    "moraCost": 125,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "avatar_of_lava_materials",
+    "tierIndex": 2
+  },
+  "IllusoryLeafcoil": {
+    "outputKey": "IllusoryLeafcoil",
+    "outputMaterialKey": "IllusoryLeafcoil",
+    "outputName": "Illusory Leafcoil",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "BewilderingBroadleaf",
+        "materialName": "Bewildering Broadleaf",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "BewilderingBroadleaf": 3
+    },
+    "moraCost": 125,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "tenebrous_mimesis_materials",
+    "tierIndex": 2
+  },
+  "ImmaculateWarrant": {
+    "outputKey": "ImmaculateWarrant",
+    "outputMaterialKey": "ImmaculateWarrant",
+    "outputName": "Immaculate Warrant",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "TatteredWarrant",
+        "materialName": "Tattered Warrant",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "TatteredWarrant": 3
+    },
+    "moraCost": 25,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "fatui_oprichniki_materials",
+    "tierIndex": 1
+  },
+  "InspectorsSacrificialKnife": {
+    "outputKey": "InspectorsSacrificialKnife",
+    "outputMaterialKey": "InspectorsSacrificialKnife",
+    "outputName": "Inspector's Sacrificial Knife",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "AgentsSacrificialKnife",
+        "materialName": "Agent's Sacrificial Knife",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "AgentsSacrificialKnife": 3
+    },
+    "moraCost": 125,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "fatui_pyro_agent_materials",
+    "tierIndex": 2
+  },
+  "IronTalismanOfTheForestDew": {
+    "outputKey": "IronTalismanOfTheForestDew",
+    "outputMaterialKey": "IronTalismanOfTheForestDew",
+    "outputName": "Iron Talisman of the Forest Dew",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "CopperTalismanOfTheForestDew",
+        "materialName": "Copper Talisman of the Forest Dew",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "CopperTalismanOfTheForestDew": 3
+    },
+    "moraCost": 125,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "ForestDew",
+    "tierIndex": 1
+  },
+  "JadeBranchOfADistantSea": {
+    "outputKey": "JadeBranchOfADistantSea",
+    "outputMaterialKey": "JadeBranchOfADistantSea",
+    "outputName": "Jade Branch of a Distant Sea",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "JeweledBranchOfADistantSea",
+        "materialName": "Jeweled Branch of a Distant Sea",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "JeweledBranchOfADistantSea": 3
+    },
+    "moraCost": 350,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "DistantSea",
+    "tierIndex": 2
+  },
+  "JeweledBranchOfADistantSea": {
+    "outputKey": "JeweledBranchOfADistantSea",
+    "outputMaterialKey": "JeweledBranchOfADistantSea",
+    "outputName": "Jeweled Branch of a Distant Sea",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "CoralBranchOfADistantSea",
+        "materialName": "Coral Branch of a Distant Sea",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "CoralBranchOfADistantSea": 3
+    },
+    "moraCost": 125,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "DistantSea",
+    "tierIndex": 1
+  },
+  "JeweledFlamingHilt": {
+    "outputKey": "JeweledFlamingHilt",
+    "outputMaterialKey": "JeweledFlamingHilt",
+    "outputName": "Jeweled Flaming Hilt",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "FracturedFlamingHilt",
+        "materialName": "Fractured Flaming Hilt",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "FracturedFlamingHilt": 3
+    },
+    "moraCost": 125,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "domain_keeper_materials",
+    "tierIndex": 2
+  },
+  "KageuchiHandguard": {
+    "outputKey": "KageuchiHandguard",
+    "outputMaterialKey": "KageuchiHandguard",
+    "outputName": "Kageuchi Handguard",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "OldHandguard",
+        "materialName": "Old Handguard",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "OldHandguard": 3
+    },
+    "moraCost": 25,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "nobushi_materials",
+    "tierIndex": 1
+  },
+  "LeyLineSprout": {
+    "outputKey": "LeyLineSprout",
+    "outputMaterialKey": "LeyLineSprout",
+    "outputName": "Ley Line Sprout",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "DeadLeyLineLeaves",
+        "materialName": "Dead Ley Line Leaves",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "DeadLeyLineLeaves": 3
+    },
+    "moraCost": 125,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "abyss_mage_materials",
+    "tierIndex": 2
+  },
+  "LieutenantsInsignia": {
+    "outputKey": "LieutenantsInsignia",
+    "outputMaterialKey": "LieutenantsInsignia",
+    "outputName": "Lieutenant's Insignia",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "SergeantsInsignia",
+        "materialName": "Sergeant's Insignia",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "SergeantsInsignia": 3
+    },
+    "moraCost": 50,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "fatui_skirmisher_materials",
+    "tierIndex": 2
+  },
+  "LocusOfAClearWill": {
+    "outputKey": "LocusOfAClearWill",
+    "outputMaterialKey": "LocusOfAClearWill",
+    "outputName": "Locus of a Clear Will",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "ShardOfAShatteredWill",
+        "materialName": "Shard of a Shattered Will",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "ShardOfAShatteredWill": 3
+    },
+    "moraCost": 50,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "wayob_manifestation_materials",
+    "tierIndex": 1
+  },
+  "LuminescentPollen": {
+    "outputKey": "LuminescentPollen",
+    "outputMaterialKey": "LuminescentPollen",
+    "outputName": "Luminescent Pollen",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "FungalSpores",
+        "materialName": "Fungal Spores",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "FungalSpores": 3
+    },
+    "moraCost": 25,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "fungus_materials",
+    "tierIndex": 1
+  },
+  "LunarFin": {
+    "outputKey": "LunarFin",
+    "outputMaterialKey": "LunarFin",
+    "outputName": "Lunar Fin",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "FeatheryFin",
+        "materialName": "Feathery Fin",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "FeatheryFin": 3
+    },
+    "moraCost": 50,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "xuanwen_beast_materials",
+    "tierIndex": 1
+  },
+  "LustrousStoneFromGuyun": {
+    "outputKey": "LustrousStoneFromGuyun",
+    "outputMaterialKey": "LustrousStoneFromGuyun",
+    "outputName": "Lustrous Stone from Guyun",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "LuminousSandsFromGuyun",
+        "materialName": "Luminous Sands from Guyun",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "LuminousSandsFromGuyun": 3
+    },
+    "moraCost": 125,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "Guyun",
+    "tierIndex": 1
+  },
+  "MarkedShell": {
+    "outputKey": "MarkedShell",
+    "outputMaterialKey": "MarkedShell",
+    "outputName": "Marked Shell",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "SturdyShell",
+        "materialName": "Sturdy Shell",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "SturdyShell": 3
+    },
+    "moraCost": 125,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "consecrated_beast_materials",
+    "tierIndex": 2
+  },
+  "MaskOfTheKijin": {
+    "outputKey": "MaskOfTheKijin",
+    "outputMaterialKey": "MaskOfTheKijin",
+    "outputName": "Mask of the Kijin",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "MaskOfTheOneHorned",
+        "materialName": "Mask of the One-Horned",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "MaskOfTheOneHorned": 3
+    },
+    "moraCost": 1075,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "Mask",
+    "tierIndex": 3
+  },
+  "MaskOfTheOneHorned": {
+    "outputKey": "MaskOfTheOneHorned",
+    "outputMaterialKey": "MaskOfTheOneHorned",
+    "outputName": "Mask of the One-Horned",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "MaskOfTheTigersBite",
+        "materialName": "Mask of the Tiger's Bite",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "MaskOfTheTigersBite": 3
+    },
+    "moraCost": 350,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "Mask",
+    "tierIndex": 2
+  },
+  "MaskOfTheTigersBite": {
+    "outputKey": "MaskOfTheTigersBite",
+    "outputMaterialKey": "MaskOfTheTigersBite",
+    "outputName": "Mask of the Tiger's Bite",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "MaskOfTheWickedLieutenant",
+        "materialName": "Mask of the Wicked Lieutenant",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "MaskOfTheWickedLieutenant": 3
+    },
+    "moraCost": 125,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "Mask",
+    "tierIndex": 1
+  },
+  "MechanicalSpurGear": {
+    "outputKey": "MechanicalSpurGear",
+    "outputMaterialKey": "MechanicalSpurGear",
+    "outputName": "Mechanical Spur Gear",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "MeshingGear",
+        "materialName": "Meshing Gear",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "MeshingGear": 3
+    },
+    "moraCost": 25,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "clockwork_meka_materials",
+    "tierIndex": 1
+  },
+  "MistGrass": {
+    "outputKey": "MistGrass",
+    "outputMaterialKey": "MistGrass",
+    "outputName": "Mist Grass",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "MistGrassPollen",
+        "materialName": "Mist Grass Pollen",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "MistGrassPollen": 3
+    },
+    "moraCost": 50,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "fatui_cicin_mage_materials",
+    "tierIndex": 1
+  },
+  "MistGrassWick": {
+    "outputKey": "MistGrassWick",
+    "outputMaterialKey": "MistGrassWick",
+    "outputName": "Mist Grass Wick",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "MistGrass",
+        "materialName": "Mist Grass",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "MistGrass": 3
+    },
+    "moraCost": 125,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "fatui_cicin_mage_materials",
+    "tierIndex": 2
+  },
+  "MistshroudHelmet": {
+    "outputKey": "MistshroudHelmet",
+    "outputMaterialKey": "MistshroudHelmet",
+    "outputName": "Mistshroud Helmet",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "MistshroudPlate",
+        "materialName": "Mistshroud Plate",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "MistshroudPlate": 3
+    },
+    "moraCost": 125,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "wasteland_wild_hunt_materials",
+    "tierIndex": 2
+  },
+  "MistshroudPlate": {
+    "outputKey": "MistshroudPlate",
+    "outputMaterialKey": "MistshroudPlate",
+    "outputName": "Mistshroud Plate",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "MistshroudManifestation",
+        "materialName": "Mistshroud Manifestation",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "MistshroudManifestation": 3
+    },
+    "moraCost": 50,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "wasteland_wild_hunt_materials",
+    "tierIndex": 1
+  },
+  "MistVeiledGoldElixir": {
+    "outputKey": "MistVeiledGoldElixir",
+    "outputMaterialKey": "MistVeiledGoldElixir",
+    "outputName": "Mist Veiled Gold Elixir",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "MistVeiledMercuryElixir",
+        "materialName": "Mist Veiled Mercury Elixir",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "MistVeiledMercuryElixir": 3
+    },
+    "moraCost": 350,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "MistVeiledElixir",
+    "tierIndex": 2
+  },
+  "MistVeiledMercuryElixir": {
+    "outputKey": "MistVeiledMercuryElixir",
+    "outputMaterialKey": "MistVeiledMercuryElixir",
+    "outputName": "Mist Veiled Mercury Elixir",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "MistVeiledLeadElixir",
+        "materialName": "Mist Veiled Lead Elixir",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "MistVeiledLeadElixir": 3
+    },
+    "moraCost": 125,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "MistVeiledElixir",
+    "tierIndex": 1
+  },
+  "MistVeiledPrimoElixir": {
+    "outputKey": "MistVeiledPrimoElixir",
+    "outputMaterialKey": "MistVeiledPrimoElixir",
+    "outputName": "Mist Veiled Primo Elixir",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "MistVeiledGoldElixir",
+        "materialName": "Mist Veiled Gold Elixir",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "MistVeiledGoldElixir": 3
+    },
+    "moraCost": 1075,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "MistVeiledElixir",
+    "tierIndex": 3
+  },
+  "MovementOfAnAncientChord": {
+    "outputKey": "MovementOfAnAncientChord",
+    "outputMaterialKey": "MovementOfAnAncientChord",
+    "outputName": "Movement of an Ancient Chord",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "ChapterOfAnAncientChord",
+        "materialName": "Chapter of an Ancient Chord",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "ChapterOfAnAncientChord": 3
+    },
+    "moraCost": 350,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "AncientChord",
+    "tierIndex": 2
+  },
+  "NagadusEmeraldChunk": {
+    "outputKey": "NagadusEmeraldChunk",
+    "outputMaterialKey": "NagadusEmeraldChunk",
+    "outputName": "Nagadus Emerald Chunk",
+    "outputQuantity": 1,
+    "category": "character_ascension_gem",
+    "inputMaterials": [
+      {
+        "materialKey": "NagadusEmeraldFragment",
+        "materialName": "Nagadus Emerald Fragment",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "NagadusEmeraldFragment": 3
+    },
+    "moraCost": 900,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "none"
+    ],
+    "familyKey": "Dendro",
+    "tierIndex": 2
+  },
+  "NagadusEmeraldFragment": {
+    "outputKey": "NagadusEmeraldFragment",
+    "outputMaterialKey": "NagadusEmeraldFragment",
+    "outputName": "Nagadus Emerald Fragment",
+    "outputQuantity": 1,
+    "category": "character_ascension_gem",
+    "inputMaterials": [
+      {
+        "materialKey": "NagadusEmeraldSliver",
+        "materialName": "Nagadus Emerald Sliver",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "NagadusEmeraldSliver": 3
+    },
+    "moraCost": 300,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "none"
+    ],
+    "familyKey": "Dendro",
+    "tierIndex": 1
+  },
+  "NagadusEmeraldGemstone": {
+    "outputKey": "NagadusEmeraldGemstone",
+    "outputMaterialKey": "NagadusEmeraldGemstone",
+    "outputName": "Nagadus Emerald Gemstone",
+    "outputQuantity": 1,
+    "category": "character_ascension_gem",
+    "inputMaterials": [
+      {
+        "materialKey": "NagadusEmeraldChunk",
+        "materialName": "Nagadus Emerald Chunk",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "NagadusEmeraldChunk": 3
+    },
+    "moraCost": 2700,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "none"
+    ],
+    "familyKey": "Dendro",
+    "tierIndex": 3
+  },
+  "NarukamisAffection": {
+    "outputKey": "NarukamisAffection",
+    "outputMaterialKey": "NarukamisAffection",
+    "outputName": "Narukami's Affection",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "NarukamisJoy",
+        "materialName": "Narukami's Joy",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "NarukamisJoy": 3
+    },
+    "moraCost": 350,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "Narukami",
+    "tierIndex": 2
+  },
+  "NarukamisJoy": {
+    "outputKey": "NarukamisJoy",
+    "outputMaterialKey": "NarukamisJoy",
+    "outputName": "Narukami's Joy",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "NarukamisWisdom",
+        "materialName": "Narukami's Wisdom",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "NarukamisWisdom": 3
+    },
+    "moraCost": 125,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "Narukami",
+    "tierIndex": 1
+  },
+  "NarukamisValor": {
+    "outputKey": "NarukamisValor",
+    "outputMaterialKey": "NarukamisValor",
+    "outputName": "Narukami's Valor",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "NarukamisAffection",
+        "materialName": "Narukami's Affection",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "NarukamisAffection": 3
+    },
+    "moraCost": 1075,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "Narukami",
+    "tierIndex": 3
+  },
+  "NewbornTaintedHydroPhantasm": {
+    "outputKey": "NewbornTaintedHydroPhantasm",
+    "outputMaterialKey": "NewbornTaintedHydroPhantasm",
+    "outputName": "Newborn Tainted Hydro Phantasm",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "ScoopOfTaintedWater",
+        "materialName": "Scoop of Tainted Water",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "ScoopOfTaintedWater": 3
+    },
+    "moraCost": 125,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "tainted_hydro_phantasm_materials",
+    "tierIndex": 2
+  },
+  "NightWindsMysticAugury": {
+    "outputKey": "NightWindsMysticAugury",
+    "outputMaterialKey": "NightWindsMysticAugury",
+    "outputName": "Night-Wind's Mystic Augury",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "NightWindsMysticPremonition",
+        "materialName": "Night-Wind's Mystic Premonition",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "NightWindsMysticPremonition": 3
+    },
+    "moraCost": 350,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "NightWind",
+    "tierIndex": 2
+  },
+  "NightWindsMysticPremonition": {
+    "outputKey": "NightWindsMysticPremonition",
+    "outputMaterialKey": "NightWindsMysticPremonition",
+    "outputName": "Night-Wind's Mystic Premonition",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "NightWindsMysticConsideration",
+        "materialName": "Night-Wind's Mystic Consideration",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "NightWindsMysticConsideration": 3
+    },
+    "moraCost": 125,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "NightWind",
+    "tierIndex": 1
+  },
+  "NightWindsMysticRevelation": {
+    "outputKey": "NightWindsMysticRevelation",
+    "outputMaterialKey": "NightWindsMysticRevelation",
+    "outputName": "Night-Wind's Mystic Revelation",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "NightWindsMysticAugury",
+        "materialName": "Night-Wind's Mystic Augury",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "NightWindsMysticAugury": 3
+    },
+    "moraCost": 1075,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "NightWind",
+    "tierIndex": 3
+  },
+  "OasisGardensKindness": {
+    "outputKey": "OasisGardensKindness",
+    "outputMaterialKey": "OasisGardensKindness",
+    "outputName": "Oasis Garden's Kindness",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "OasisGardensReminiscence",
+        "materialName": "Oasis Garden's Reminiscence",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "OasisGardensReminiscence": 3
+    },
+    "moraCost": 125,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "OasisGarden",
+    "tierIndex": 1
+  },
+  "OasisGardensMourning": {
+    "outputKey": "OasisGardensMourning",
+    "outputMaterialKey": "OasisGardensMourning",
+    "outputName": "Oasis Garden's Mourning",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "OasisGardensKindness",
+        "materialName": "Oasis Garden's Kindness",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "OasisGardensKindness": 3
+    },
+    "moraCost": 350,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "OasisGarden",
+    "tierIndex": 2
+  },
+  "OasisGardensTruth": {
+    "outputKey": "OasisGardensTruth",
+    "outputMaterialKey": "OasisGardensTruth",
+    "outputName": "Oasis Garden's Truth",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "OasisGardensMourning",
+        "materialName": "Oasis Garden's Mourning",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "OasisGardensMourning": 3
+    },
+    "moraCost": 1075,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "OasisGarden",
+    "tierIndex": 3
+  },
+  "OblationOfTheFarNorthScions": {
+    "outputKey": "OblationOfTheFarNorthScions",
+    "outputMaterialKey": "OblationOfTheFarNorthScions",
+    "outputName": "Oblation of the Far-North Scions",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "UnyieldingDelusionOfTheFarNorthScions",
+        "materialName": "Unyielding Delusion of the Far-North Scions",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "UnyieldingDelusionOfTheFarNorthScions": 3
+    },
+    "moraCost": 350,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "FarNorthScions",
+    "tierIndex": 2
+  },
+  "OldenDaysOfScorchingMight": {
+    "outputKey": "OldenDaysOfScorchingMight",
+    "outputMaterialKey": "OldenDaysOfScorchingMight",
+    "outputName": "Olden Days of Scorching Might",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "DreamOfScorchingMight",
+        "materialName": "Dream of Scorching Might",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "DreamOfScorchingMight": 3
+    },
+    "moraCost": 1075,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "ScorchingMight",
+    "tierIndex": 3
+  },
+  "OminousMask": {
+    "outputKey": "OminousMask",
+    "outputMaterialKey": "OminousMask",
+    "outputName": "Ominous Mask",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "StainedMask",
+        "materialName": "Stained Mask",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "StainedMask": 3
+    },
+    "moraCost": 50,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "hilichurl_materials",
+    "tierIndex": 2
+  },
+  "OperativesConstancy": {
+    "outputKey": "OperativesConstancy",
+    "outputMaterialKey": "OperativesConstancy",
+    "outputName": "Operative's Constancy",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "OperativesStandardPocketWatch",
+        "materialName": "Operative's Standard Pocket Watch",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "OperativesStandardPocketWatch": 3
+    },
+    "moraCost": 125,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "fatui_operative_materials",
+    "tierIndex": 2
+  },
+  "OperativesStandardPocketWatch": {
+    "outputKey": "OperativesStandardPocketWatch",
+    "outputMaterialKey": "OperativesStandardPocketWatch",
+    "outputName": "Operative's Standard Pocket Watch",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "OldOperativesPocketWatch",
+        "materialName": "Old Operative's Pocket Watch",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "OldOperativesPocketWatch": 3
+    },
+    "moraCost": 50,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "fatui_operative_materials",
+    "tierIndex": 1
+  },
+  "PhilosophiesOfAdmonition": {
+    "outputKey": "PhilosophiesOfAdmonition",
+    "outputMaterialKey": "PhilosophiesOfAdmonition",
+    "outputName": "Philosophies of Admonition",
+    "outputQuantity": 1,
+    "category": "talent_level_up_material",
+    "inputMaterials": [
+      {
+        "materialKey": "GuideToAdmonition",
+        "materialName": "Guide to Admonition",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "GuideToAdmonition": 3
+    },
+    "moraCost": 550,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_talent_material",
+      "refund_character_talent_material",
+      "regional_extra_character_talent_material"
+    ],
+    "familyKey": "Admonition",
+    "tierIndex": 2
+  },
+  "PhilosophiesOfBallad": {
+    "outputKey": "PhilosophiesOfBallad",
+    "outputMaterialKey": "PhilosophiesOfBallad",
+    "outputName": "Philosophies of Ballad",
+    "outputQuantity": 1,
+    "category": "talent_level_up_material",
+    "inputMaterials": [
+      {
+        "materialKey": "GuideToBallad",
+        "materialName": "Guide to Ballad",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "GuideToBallad": 3
+    },
+    "moraCost": 550,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_talent_material",
+      "refund_character_talent_material",
+      "regional_extra_character_talent_material"
+    ],
+    "familyKey": "Ballad",
+    "tierIndex": 2
+  },
+  "PhilosophiesOfConflict": {
+    "outputKey": "PhilosophiesOfConflict",
+    "outputMaterialKey": "PhilosophiesOfConflict",
+    "outputName": "Philosophies of Conflict",
+    "outputQuantity": 1,
+    "category": "talent_level_up_material",
+    "inputMaterials": [
+      {
+        "materialKey": "GuideToConflict",
+        "materialName": "Guide to Conflict",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "GuideToConflict": 3
+    },
+    "moraCost": 550,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_talent_material",
+      "refund_character_talent_material",
+      "regional_extra_character_talent_material"
+    ],
+    "familyKey": "Conflict",
+    "tierIndex": 2
+  },
+  "PhilosophiesOfContention": {
+    "outputKey": "PhilosophiesOfContention",
+    "outputMaterialKey": "PhilosophiesOfContention",
+    "outputName": "Philosophies of Contention",
+    "outputQuantity": 1,
+    "category": "talent_level_up_material",
+    "inputMaterials": [
+      {
+        "materialKey": "GuideToContention",
+        "materialName": "Guide to Contention",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "GuideToContention": 3
+    },
+    "moraCost": 550,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_talent_material",
+      "refund_character_talent_material",
+      "regional_extra_character_talent_material"
+    ],
+    "familyKey": "Contention",
+    "tierIndex": 2
+  },
+  "PhilosophiesOfDiligence": {
+    "outputKey": "PhilosophiesOfDiligence",
+    "outputMaterialKey": "PhilosophiesOfDiligence",
+    "outputName": "Philosophies of Diligence",
+    "outputQuantity": 1,
+    "category": "talent_level_up_material",
+    "inputMaterials": [
+      {
+        "materialKey": "GuideToDiligence",
+        "materialName": "Guide to Diligence",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "GuideToDiligence": 3
+    },
+    "moraCost": 550,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_talent_material",
+      "refund_character_talent_material",
+      "regional_extra_character_talent_material"
+    ],
+    "familyKey": "Diligence",
+    "tierIndex": 2
+  },
+  "PhilosophiesOfElegance": {
+    "outputKey": "PhilosophiesOfElegance",
+    "outputMaterialKey": "PhilosophiesOfElegance",
+    "outputName": "Philosophies of Elegance",
+    "outputQuantity": 1,
+    "category": "talent_level_up_material",
+    "inputMaterials": [
+      {
+        "materialKey": "GuideToElegance",
+        "materialName": "Guide to Elegance",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "GuideToElegance": 3
+    },
+    "moraCost": 550,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_talent_material",
+      "refund_character_talent_material",
+      "regional_extra_character_talent_material"
+    ],
+    "familyKey": "Elegance",
+    "tierIndex": 2
+  },
+  "PhilosophiesOfElysium": {
+    "outputKey": "PhilosophiesOfElysium",
+    "outputMaterialKey": "PhilosophiesOfElysium",
+    "outputName": "Philosophies of Elysium",
+    "outputQuantity": 1,
+    "category": "talent_level_up_material",
+    "inputMaterials": [
+      {
+        "materialKey": "GuideToElysium",
+        "materialName": "Guide to Elysium",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "GuideToElysium": 3
+    },
+    "moraCost": 550,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_talent_material",
+      "refund_character_talent_material",
+      "regional_extra_character_talent_material"
+    ],
+    "familyKey": "Elysium",
+    "tierIndex": 2
+  },
+  "PhilosophiesOfEquity": {
+    "outputKey": "PhilosophiesOfEquity",
+    "outputMaterialKey": "PhilosophiesOfEquity",
+    "outputName": "Philosophies of Equity",
+    "outputQuantity": 1,
+    "category": "talent_level_up_material",
+    "inputMaterials": [
+      {
+        "materialKey": "GuideToEquity",
+        "materialName": "Guide to Equity",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "GuideToEquity": 3
+    },
+    "moraCost": 550,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_talent_material",
+      "refund_character_talent_material",
+      "regional_extra_character_talent_material"
+    ],
+    "familyKey": "Equity",
+    "tierIndex": 2
+  },
+  "PhilosophiesOfFreedom": {
+    "outputKey": "PhilosophiesOfFreedom",
+    "outputMaterialKey": "PhilosophiesOfFreedom",
+    "outputName": "Philosophies of Freedom",
+    "outputQuantity": 1,
+    "category": "talent_level_up_material",
+    "inputMaterials": [
+      {
+        "materialKey": "GuideToFreedom",
+        "materialName": "Guide to Freedom",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "GuideToFreedom": 3
+    },
+    "moraCost": 550,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_talent_material",
+      "refund_character_talent_material",
+      "regional_extra_character_talent_material"
+    ],
+    "familyKey": "Freedom",
+    "tierIndex": 2
+  },
+  "PhilosophiesOfGold": {
+    "outputKey": "PhilosophiesOfGold",
+    "outputMaterialKey": "PhilosophiesOfGold",
+    "outputName": "Philosophies of Gold",
+    "outputQuantity": 1,
+    "category": "talent_level_up_material",
+    "inputMaterials": [
+      {
+        "materialKey": "GuideToGold",
+        "materialName": "Guide to Gold",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "GuideToGold": 3
+    },
+    "moraCost": 550,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_talent_material",
+      "refund_character_talent_material",
+      "regional_extra_character_talent_material"
+    ],
+    "familyKey": "Gold",
+    "tierIndex": 2
+  },
+  "PhilosophiesOfIngenuity": {
+    "outputKey": "PhilosophiesOfIngenuity",
+    "outputMaterialKey": "PhilosophiesOfIngenuity",
+    "outputName": "Philosophies of Ingenuity",
+    "outputQuantity": 1,
+    "category": "talent_level_up_material",
+    "inputMaterials": [
+      {
+        "materialKey": "GuideToIngenuity",
+        "materialName": "Guide to Ingenuity",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "GuideToIngenuity": 3
+    },
+    "moraCost": 550,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_talent_material",
+      "refund_character_talent_material",
+      "regional_extra_character_talent_material"
+    ],
+    "familyKey": "Ingenuity",
+    "tierIndex": 2
+  },
+  "PhilosophiesOfJustice": {
+    "outputKey": "PhilosophiesOfJustice",
+    "outputMaterialKey": "PhilosophiesOfJustice",
+    "outputName": "Philosophies of Justice",
+    "outputQuantity": 1,
+    "category": "talent_level_up_material",
+    "inputMaterials": [
+      {
+        "materialKey": "GuideToJustice",
+        "materialName": "Guide to Justice",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "GuideToJustice": 3
+    },
+    "moraCost": 550,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_talent_material",
+      "refund_character_talent_material",
+      "regional_extra_character_talent_material"
+    ],
+    "familyKey": "Justice",
+    "tierIndex": 2
+  },
+  "PhilosophiesOfKindling": {
+    "outputKey": "PhilosophiesOfKindling",
+    "outputMaterialKey": "PhilosophiesOfKindling",
+    "outputName": "Philosophies of Kindling",
+    "outputQuantity": 1,
+    "category": "talent_level_up_material",
+    "inputMaterials": [
+      {
+        "materialKey": "GuideToKindling",
+        "materialName": "Guide to Kindling",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "GuideToKindling": 3
+    },
+    "moraCost": 550,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_talent_material",
+      "refund_character_talent_material",
+      "regional_extra_character_talent_material"
+    ],
+    "familyKey": "Kindling",
+    "tierIndex": 2
+  },
+  "PhilosophiesOfLight": {
+    "outputKey": "PhilosophiesOfLight",
+    "outputMaterialKey": "PhilosophiesOfLight",
+    "outputName": "Philosophies of Light",
+    "outputQuantity": 1,
+    "category": "talent_level_up_material",
+    "inputMaterials": [
+      {
+        "materialKey": "GuideToLight",
+        "materialName": "Guide to Light",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "GuideToLight": 3
+    },
+    "moraCost": 550,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_talent_material",
+      "refund_character_talent_material",
+      "regional_extra_character_talent_material"
+    ],
+    "familyKey": "Light",
+    "tierIndex": 2
+  },
+  "PhilosophiesOfMoonlight": {
+    "outputKey": "PhilosophiesOfMoonlight",
+    "outputMaterialKey": "PhilosophiesOfMoonlight",
+    "outputName": "Philosophies of Moonlight",
+    "outputQuantity": 1,
+    "category": "talent_level_up_material",
+    "inputMaterials": [
+      {
+        "materialKey": "GuideToMoonlight",
+        "materialName": "Guide to Moonlight",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "GuideToMoonlight": 3
+    },
+    "moraCost": 550,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_talent_material",
+      "refund_character_talent_material",
+      "regional_extra_character_talent_material"
+    ],
+    "familyKey": "Moonlight",
+    "tierIndex": 2
+  },
+  "PhilosophiesOfOrder": {
+    "outputKey": "PhilosophiesOfOrder",
+    "outputMaterialKey": "PhilosophiesOfOrder",
+    "outputName": "Philosophies of Order",
+    "outputQuantity": 1,
+    "category": "talent_level_up_material",
+    "inputMaterials": [
+      {
+        "materialKey": "GuideToOrder",
+        "materialName": "Guide to Order",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "GuideToOrder": 3
+    },
+    "moraCost": 550,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_talent_material",
+      "refund_character_talent_material",
+      "regional_extra_character_talent_material"
+    ],
+    "familyKey": "Order",
+    "tierIndex": 2
+  },
+  "PhilosophiesOfPraxis": {
+    "outputKey": "PhilosophiesOfPraxis",
+    "outputMaterialKey": "PhilosophiesOfPraxis",
+    "outputName": "Philosophies of Praxis",
+    "outputQuantity": 1,
+    "category": "talent_level_up_material",
+    "inputMaterials": [
+      {
+        "materialKey": "GuideToPraxis",
+        "materialName": "Guide to Praxis",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "GuideToPraxis": 3
+    },
+    "moraCost": 550,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_talent_material",
+      "refund_character_talent_material",
+      "regional_extra_character_talent_material"
+    ],
+    "familyKey": "Praxis",
+    "tierIndex": 2
+  },
+  "PhilosophiesOfProsperity": {
+    "outputKey": "PhilosophiesOfProsperity",
+    "outputMaterialKey": "PhilosophiesOfProsperity",
+    "outputName": "Philosophies of Prosperity",
+    "outputQuantity": 1,
+    "category": "talent_level_up_material",
+    "inputMaterials": [
+      {
+        "materialKey": "GuideToProsperity",
+        "materialName": "Guide to Prosperity",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "GuideToProsperity": 3
+    },
+    "moraCost": 550,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_talent_material",
+      "refund_character_talent_material",
+      "regional_extra_character_talent_material"
+    ],
+    "familyKey": "Prosperity",
+    "tierIndex": 2
+  },
+  "PhilosophiesOfResistance": {
+    "outputKey": "PhilosophiesOfResistance",
+    "outputMaterialKey": "PhilosophiesOfResistance",
+    "outputName": "Philosophies of Resistance",
+    "outputQuantity": 1,
+    "category": "talent_level_up_material",
+    "inputMaterials": [
+      {
+        "materialKey": "GuideToResistance",
+        "materialName": "Guide to Resistance",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "GuideToResistance": 3
+    },
+    "moraCost": 550,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_talent_material",
+      "refund_character_talent_material",
+      "regional_extra_character_talent_material"
+    ],
+    "familyKey": "Resistance",
+    "tierIndex": 2
+  },
+  "PhilosophiesOfTransience": {
+    "outputKey": "PhilosophiesOfTransience",
+    "outputMaterialKey": "PhilosophiesOfTransience",
+    "outputName": "Philosophies of Transience",
+    "outputQuantity": 1,
+    "category": "talent_level_up_material",
+    "inputMaterials": [
+      {
+        "materialKey": "GuideToTransience",
+        "materialName": "Guide to Transience",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "GuideToTransience": 3
+    },
+    "moraCost": 550,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_talent_material",
+      "refund_character_talent_material",
+      "regional_extra_character_talent_material"
+    ],
+    "familyKey": "Transience",
+    "tierIndex": 2
+  },
+  "PhilosophiesOfVagrancy": {
+    "outputKey": "PhilosophiesOfVagrancy",
+    "outputMaterialKey": "PhilosophiesOfVagrancy",
+    "outputName": "Philosophies of Vagrancy",
+    "outputQuantity": 1,
+    "category": "talent_level_up_material",
+    "inputMaterials": [
+      {
+        "materialKey": "GuideToVagrancy",
+        "materialName": "Guide to Vagrancy",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "GuideToVagrancy": 3
+    },
+    "moraCost": 550,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_talent_material",
+      "refund_character_talent_material",
+      "regional_extra_character_talent_material"
+    ],
+    "familyKey": "Vagrancy",
+    "tierIndex": 2
+  },
+  "PieceOfAerosiderite": {
+    "outputKey": "PieceOfAerosiderite",
+    "outputMaterialKey": "PieceOfAerosiderite",
+    "outputName": "Piece of Aerosiderite",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "GrainOfAerosiderite",
+        "materialName": "Grain of Aerosiderite",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "GrainOfAerosiderite": 3
+    },
+    "moraCost": 125,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "Aerosiderite",
+    "tierIndex": 1
+  },
+  "PolarizingPrism": {
+    "outputKey": "PolarizingPrism",
+    "outputMaterialKey": "PolarizingPrism",
+    "outputName": "Polarizing Prism",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "CrystalPrism",
+        "materialName": "Crystal Prism",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "CrystalPrism": 3
+    },
+    "moraCost": 125,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "mirror_maiden_materials",
+    "tierIndex": 2
+  },
+  "PrecisionDriveShaft": {
+    "outputKey": "PrecisionDriveShaft",
+    "outputMaterialKey": "PrecisionDriveShaft",
+    "outputName": "Precision Drive Shaft",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "ReinforcedDriveShaft",
+        "materialName": "Reinforced Drive Shaft",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "ReinforcedDriveShaft": 3
+    },
+    "moraCost": 50,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "landcruiser_materials",
+    "tierIndex": 2
+  },
+  "PrithivaTopazChunk": {
+    "outputKey": "PrithivaTopazChunk",
+    "outputMaterialKey": "PrithivaTopazChunk",
+    "outputName": "Prithiva Topaz Chunk",
+    "outputQuantity": 1,
+    "category": "character_ascension_gem",
+    "inputMaterials": [
+      {
+        "materialKey": "PrithivaTopazFragment",
+        "materialName": "Prithiva Topaz Fragment",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "PrithivaTopazFragment": 3
+    },
+    "moraCost": 900,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "none"
+    ],
+    "familyKey": "Geo",
+    "tierIndex": 2
+  },
+  "PrithivaTopazFragment": {
+    "outputKey": "PrithivaTopazFragment",
+    "outputMaterialKey": "PrithivaTopazFragment",
+    "outputName": "Prithiva Topaz Fragment",
+    "outputQuantity": 1,
+    "category": "character_ascension_gem",
+    "inputMaterials": [
+      {
+        "materialKey": "PrithivaTopazSliver",
+        "materialName": "Prithiva Topaz Sliver",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "PrithivaTopazSliver": 3
+    },
+    "moraCost": 300,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "none"
+    ],
+    "familyKey": "Geo",
+    "tierIndex": 1
+  },
+  "PrithivaTopazGemstone": {
+    "outputKey": "PrithivaTopazGemstone",
+    "outputMaterialKey": "PrithivaTopazGemstone",
+    "outputName": "Prithiva Topaz Gemstone",
+    "outputQuantity": 1,
+    "category": "character_ascension_gem",
+    "inputMaterials": [
+      {
+        "materialKey": "PrithivaTopazChunk",
+        "materialName": "Prithiva Topaz Chunk",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "PrithivaTopazChunk": 3
+    },
+    "moraCost": 2700,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "none"
+    ],
+    "familyKey": "Geo",
+    "tierIndex": 3
+  },
+  "RadiantExoskeleton": {
+    "outputKey": "RadiantExoskeleton",
+    "outputMaterialKey": "RadiantExoskeleton",
+    "outputName": "Radiant Exoskeleton",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "GlowingRemains",
+        "materialName": "Glowing Remains",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "GlowingRemains": 3
+    },
+    "moraCost": 125,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "radiant_beast_materials",
+    "tierIndex": 2
+  },
+  "RadiantPrism": {
+    "outputKey": "RadiantPrism",
+    "outputMaterialKey": "RadiantPrism",
+    "outputName": "Radiant Prism",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "TurbidPrism",
+        "materialName": "Turbid Prism",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "TurbidPrism": 3
+    },
+    "moraCost": 125,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "primal_construct_materials",
+    "tierIndex": 2
+  },
+  "ReinforcedDriveShaft": {
+    "outputKey": "ReinforcedDriveShaft",
+    "outputMaterialKey": "ReinforcedDriveShaft",
+    "outputName": "Reinforced Drive Shaft",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "BrokenDriveShaft",
+        "materialName": "Broken Drive Shaft",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "BrokenDriveShaft": 3
+    },
+    "moraCost": 25,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "landcruiser_materials",
+    "tierIndex": 1
+  },
+  "RelicFromGuyun": {
+    "outputKey": "RelicFromGuyun",
+    "outputMaterialKey": "RelicFromGuyun",
+    "outputName": "Relic from Guyun",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "LustrousStoneFromGuyun",
+        "materialName": "Lustrous Stone from Guyun",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "LustrousStoneFromGuyun": 3
+    },
+    "moraCost": 350,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "Guyun",
+    "tierIndex": 2
+  },
+  "RemnantGlowOfScorchingMight": {
+    "outputKey": "RemnantGlowOfScorchingMight",
+    "outputMaterialKey": "RemnantGlowOfScorchingMight",
+    "outputName": "Remnant Glow of Scorching Might",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "EchoOfScorchingMight",
+        "materialName": "Echo of Scorching Might",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "EchoOfScorchingMight": 3
+    },
+    "moraCost": 125,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "ScorchingMight",
+    "tierIndex": 1
+  },
+  "RichRedBrocade": {
+    "outputKey": "RichRedBrocade",
+    "outputMaterialKey": "RichRedBrocade",
+    "outputName": "Rich Red Brocade",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "TrimmedRedSilk",
+        "materialName": "Trimmed Red Silk",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "TrimmedRedSilk": 3
+    },
+    "moraCost": 50,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "eremite_materials",
+    "tierIndex": 2
+  },
+  "RobustFungalNucleus": {
+    "outputKey": "RobustFungalNucleus",
+    "outputMaterialKey": "RobustFungalNucleus",
+    "outputName": "Robust Fungal Nucleus",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "DormantFungalNucleus",
+        "materialName": "Dormant Fungal Nucleus",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "DormantFungalNucleus": 3
+    },
+    "moraCost": 125,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "state_shifted_fungus_materials",
+    "tierIndex": 2
+  },
+  "SaurianCrownedWarriorsGoldenWhistle": {
+    "outputKey": "SaurianCrownedWarriorsGoldenWhistle",
+    "outputMaterialKey": "SaurianCrownedWarriorsGoldenWhistle",
+    "outputName": "Saurian-Crowned Warrior's Golden Whistle",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "WarriorsMetalWhistle",
+        "materialName": "Warrior's Metal Whistle",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "WarriorsMetalWhistle": 3
+    },
+    "moraCost": 50,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "sauroform_tribal_warrior_materials",
+    "tierIndex": 2
+  },
+  "ScatteredPieceOfDecarabiansDream": {
+    "outputKey": "ScatteredPieceOfDecarabiansDream",
+    "outputMaterialKey": "ScatteredPieceOfDecarabiansDream",
+    "outputName": "Scattered Piece of Decarabian's Dream",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "FragmentOfDecarabiansEpic",
+        "materialName": "Fragment of Decarabian's Epic",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "FragmentOfDecarabiansEpic": 3
+    },
+    "moraCost": 1075,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "Decarabian",
+    "tierIndex": 3
+  },
+  "ScoopOfTaintedWater": {
+    "outputKey": "ScoopOfTaintedWater",
+    "outputMaterialKey": "ScoopOfTaintedWater",
+    "outputName": "Scoop of Tainted Water",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "DropOfTaintedWater",
+        "materialName": "Drop of Tainted Water",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "DropOfTaintedWater": 3
+    },
+    "moraCost": 50,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "tainted_hydro_phantasm_materials",
+    "tierIndex": 1
+  },
+  "SealedScroll": {
+    "outputKey": "SealedScroll",
+    "outputMaterialKey": "SealedScroll",
+    "outputName": "Sealed Scroll",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "DiviningScroll",
+        "materialName": "Divining Scroll",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "DiviningScroll": 3
+    },
+    "moraCost": 25,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "samachurl_materials",
+    "tierIndex": 1
+  },
+  "SeasonedFang": {
+    "outputKey": "SeasonedFang",
+    "outputMaterialKey": "SeasonedFang",
+    "outputName": "Seasoned Fang",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "JuvenileFang",
+        "materialName": "Juvenile Fang",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "JuvenileFang": 3
+    },
+    "moraCost": 25,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "natlan_saurian_materials",
+    "tierIndex": 1
+  },
+  "SergeantsInsignia": {
+    "outputKey": "SergeantsInsignia",
+    "outputMaterialKey": "SergeantsInsignia",
+    "outputName": "Sergeant's Insignia",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "RecruitsInsignia",
+        "materialName": "Recruit's Insignia",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "RecruitsInsignia": 3
+    },
+    "moraCost": 25,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "fatui_skirmisher_materials",
+    "tierIndex": 1
+  },
+  "ShacklesOfTheDandelionGladiator": {
+    "outputKey": "ShacklesOfTheDandelionGladiator",
+    "outputMaterialKey": "ShacklesOfTheDandelionGladiator",
+    "outputName": "Shackles of the Dandelion Gladiator",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "ChainsOfTheDandelionGladiator",
+        "materialName": "Chains of the Dandelion Gladiator",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "ChainsOfTheDandelionGladiator": 3
+    },
+    "moraCost": 350,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "DandelionGladiator",
+    "tierIndex": 2
+  },
+  "SharpArrowhead": {
+    "outputKey": "SharpArrowhead",
+    "outputMaterialKey": "SharpArrowhead",
+    "outputName": "Sharp Arrowhead",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "FirmArrowhead",
+        "materialName": "Firm Arrowhead",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "FirmArrowhead": 3
+    },
+    "moraCost": 25,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "hilichurl_shooter_materials",
+    "tierIndex": 1
+  },
+  "SheathOfTheSecretSource": {
+    "outputKey": "SheathOfTheSecretSource",
+    "outputMaterialKey": "SheathOfTheSecretSource",
+    "outputName": "Sheath of the Secret Source",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "AxisOfTheSecretSource",
+        "materialName": "Axis of the Secret Source",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "AxisOfTheSecretSource": 3
+    },
+    "moraCost": 50,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "secret_source_automaton_hunter_seeker_materials",
+    "tierIndex": 1
+  },
+  "ShimmeringNectar": {
+    "outputKey": "ShimmeringNectar",
+    "outputMaterialKey": "ShimmeringNectar",
+    "outputName": "Shimmering Nectar",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "WhopperflowerNectar",
+        "materialName": "Whopperflower Nectar",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "WhopperflowerNectar": 3
+    },
+    "moraCost": 25,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "whopperflower_materials",
+    "tierIndex": 1
+  },
+  "ShivadaJadeChunk": {
+    "outputKey": "ShivadaJadeChunk",
+    "outputMaterialKey": "ShivadaJadeChunk",
+    "outputName": "ShivadaJadeChunk",
+    "outputQuantity": 1,
+    "category": "character_ascension_gem",
+    "inputMaterials": [
+      {
+        "materialKey": "ShivadaJadeFragment",
+        "materialName": "Shivada Jade Fragment",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "ShivadaJadeFragment": 3
+    },
+    "moraCost": 900,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "none"
+    ],
+    "familyKey": "Cryo",
+    "tierIndex": 2
+  },
+  "ShivadaJadeFragment": {
+    "outputKey": "ShivadaJadeFragment",
+    "outputMaterialKey": "ShivadaJadeFragment",
+    "outputName": "Shivada Jade Fragment",
+    "outputQuantity": 1,
+    "category": "character_ascension_gem",
+    "inputMaterials": [
+      {
+        "materialKey": "ShivadaJadeSliver",
+        "materialName": "Shivada Jade Sliver",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "ShivadaJadeSliver": 3
+    },
+    "moraCost": 300,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "none"
+    ],
+    "familyKey": "Cryo",
+    "tierIndex": 1
+  },
+  "ShivadaJadeGemstone": {
+    "outputKey": "ShivadaJadeGemstone",
+    "outputMaterialKey": "ShivadaJadeGemstone",
+    "outputName": "ShivadaJadeGemstone",
+    "outputQuantity": 1,
+    "category": "character_ascension_gem",
+    "inputMaterials": [
+      {
+        "materialKey": "ShivadaJadeChunk",
+        "materialName": "ShivadaJadeChunk",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "ShivadaJadeChunk": 3
+    },
+    "moraCost": 2700,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "none"
+    ],
+    "familyKey": "Cryo",
+    "tierIndex": 3
+  },
+  "SigilOfAStridingWill": {
+    "outputKey": "SigilOfAStridingWill",
+    "outputMaterialKey": "SigilOfAStridingWill",
+    "outputName": "Sigil of a Striding Will",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "LocusOfAClearWill",
+        "materialName": "Locus of a Clear Will",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "LocusOfAClearWill": 3
+    },
+    "moraCost": 125,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "wayob_manifestation_materials",
+    "tierIndex": 2
+  },
+  "SilverGobletOfThePristineSea": {
+    "outputKey": "SilverGobletOfThePristineSea",
+    "outputMaterialKey": "SilverGobletOfThePristineSea",
+    "outputName": "Silver Goblet of the Pristine Sea",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "WineGobletOfThePristineSea",
+        "materialName": "Wine Goblet of the Pristine Sea",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "WineGobletOfThePristineSea": 3
+    },
+    "moraCost": 350,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "PristineSea",
+    "tierIndex": 2
+  },
+  "SilverRavenInsignia": {
+    "outputKey": "SilverRavenInsignia",
+    "outputMaterialKey": "SilverRavenInsignia",
+    "outputName": "Silver Raven Insignia",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "TreasureHoarderInsignia",
+        "materialName": "Treasure Hoarder Insignia",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "TreasureHoarderInsignia": 3
+    },
+    "moraCost": 25,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "treasure_hoarder_materials",
+    "tierIndex": 1
+  },
+  "SilverTalismanOfTheForestDew": {
+    "outputKey": "SilverTalismanOfTheForestDew",
+    "outputMaterialKey": "SilverTalismanOfTheForestDew",
+    "outputName": "Silver Talisman of the Forest Dew",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "IronTalismanOfTheForestDew",
+        "materialName": "Iron Talisman of the Forest Dew",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "IronTalismanOfTheForestDew": 3
+    },
+    "moraCost": 350,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "ForestDew",
+    "tierIndex": 2
+  },
+  "SlimeConcentrate": {
+    "outputKey": "SlimeConcentrate",
+    "outputMaterialKey": "SlimeConcentrate",
+    "outputName": "Slime Concentrate",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "SlimeSecretions",
+        "materialName": "Slime Secretions",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "SlimeSecretions": 3
+    },
+    "moraCost": 50,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "slime_materials",
+    "tierIndex": 2
+  },
+  "SlimeSecretions": {
+    "outputKey": "SlimeSecretions",
+    "outputMaterialKey": "SlimeSecretions",
+    "outputName": "Slime Secretions",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "SlimeCondensate",
+        "materialName": "Slime Condensate",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "SlimeCondensate": 3
+    },
+    "moraCost": 25,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "slime_materials",
+    "tierIndex": 1
+  },
+  "SpectralHeart": {
+    "outputKey": "SpectralHeart",
+    "outputMaterialKey": "SpectralHeart",
+    "outputName": "Spectral Heart",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "SpectralHusk",
+        "materialName": "Spectral Husk",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "SpectralHusk": 3
+    },
+    "moraCost": 25,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "specter_materials",
+    "tierIndex": 1
+  },
+  "SpectralNucleus": {
+    "outputKey": "SpectralNucleus",
+    "outputMaterialKey": "SpectralNucleus",
+    "outputName": "Spectral Nucleus",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "SpectralHeart",
+        "materialName": "Spectral Heart",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "SpectralHeart": 3
+    },
+    "moraCost": 50,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "specter_materials",
+    "tierIndex": 2
+  },
+  "SplinteredHilt": {
+    "outputKey": "SplinteredHilt",
+    "outputMaterialKey": "SplinteredHilt",
+    "outputName": "Splintered Hilt",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "RuinedHilt",
+        "materialName": "Ruined Hilt",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "RuinedHilt": 3
+    },
+    "moraCost": 50,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "praetorian_golem_materials",
+    "tierIndex": 1
+  },
+  "SpringOfPureSacredDewdrop": {
+    "outputKey": "SpringOfPureSacredDewdrop",
+    "outputMaterialKey": "SpringOfPureSacredDewdrop",
+    "outputName": "Spring of Pure Sacred Dewdrop",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "SublimationOfPureSacredDewdrop",
+        "materialName": "Sublimation of Pure Sacred Dewdrop",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "SublimationOfPureSacredDewdrop": 3
+    },
+    "moraCost": 350,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "PureSacredDewdrop",
+    "tierIndex": 2
+  },
+  "StainedMask": {
+    "outputKey": "StainedMask",
+    "outputMaterialKey": "StainedMask",
+    "outputName": "Stained Mask",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "DamagedMask",
+        "materialName": "Damaged Mask",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "DamagedMask": 3
+    },
+    "moraCost": 25,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "hilichurl_materials",
+    "tierIndex": 1
+  },
+  "StillSmolderingHilt": {
+    "outputKey": "StillSmolderingHilt",
+    "outputMaterialKey": "StillSmolderingHilt",
+    "outputName": "Still-Smoldering Hilt",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "SplinteredHilt",
+        "materialName": "Splintered Hilt",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "SplinteredHilt": 3
+    },
+    "moraCost": 125,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "praetorian_golem_materials",
+    "tierIndex": 2
+  },
+  "SturdyBoneShard": {
+    "outputKey": "SturdyBoneShard",
+    "outputMaterialKey": "SturdyBoneShard",
+    "outputName": "Sturdy Bone Shard",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "FragileBoneShard",
+        "materialName": "Fragile Bone Shard",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "FragileBoneShard": 3
+    },
+    "moraCost": 50,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "vishap_materials",
+    "tierIndex": 1
+  },
+  "SturdyShell": {
+    "outputKey": "SturdyShell",
+    "outputMaterialKey": "SturdyShell",
+    "outputName": "Sturdy Shell",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "DesiccatedShell",
+        "materialName": "Desiccated Shell",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "DesiccatedShell": 3
+    },
+    "moraCost": 50,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "consecrated_beast_materials",
+    "tierIndex": 1
+  },
+  "SublimationOfPureSacredDewdrop": {
+    "outputKey": "SublimationOfPureSacredDewdrop",
+    "outputMaterialKey": "SublimationOfPureSacredDewdrop",
+    "outputName": "Sublimation of Pure Sacred Dewdrop",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "DrossOfPureSacredDewdrop",
+        "materialName": "Dross of Pure Sacred Dewdrop",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "DrossOfPureSacredDewdrop": 3
+    },
+    "moraCost": 125,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "PureSacredDewdrop",
+    "tierIndex": 1
+  },
+  "TransoceanicChunk": {
+    "outputKey": "TransoceanicChunk",
+    "outputMaterialKey": "TransoceanicChunk",
+    "outputName": "Transoceanic Chunk",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "TransoceanicPearl",
+        "materialName": "Transoceanic Pearl",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "TransoceanicPearl": 3
+    },
+    "moraCost": 25,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "fontemer_aberrant_materials",
+    "tierIndex": 1
+  },
+  "TreasuredFlower": {
+    "outputKey": "TreasuredFlower",
+    "outputMaterialKey": "TreasuredFlower",
+    "outputName": "Treasured Flower",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "AFlowerYetToBloom",
+        "materialName": "A Flower Yet to Bloom",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "AFlowerYetToBloom": 3
+    },
+    "moraCost": 50,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "hilichurl_rogue_materials",
+    "tierIndex": 1
+  },
+  "TrimmedRedSilk": {
+    "outputKey": "TrimmedRedSilk",
+    "outputMaterialKey": "TrimmedRedSilk",
+    "outputName": "Trimmed Red Silk",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "FadedRedSatin",
+        "materialName": "Faded Red Satin",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "FadedRedSatin": 3
+    },
+    "moraCost": 25,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "eremite_materials",
+    "tierIndex": 1
+  },
+  "TurbidPrism": {
+    "outputKey": "TurbidPrism",
+    "outputMaterialKey": "TurbidPrism",
+    "outputName": "Turbid Prism",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "DamagedPrism",
+        "materialName": "Damaged Prism",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "DamagedPrism": 3
+    },
+    "moraCost": 50,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "primal_construct_materials",
+    "tierIndex": 1
+  },
+  "TyrantsFang": {
+    "outputKey": "TyrantsFang",
+    "outputMaterialKey": "TyrantsFang",
+    "outputName": "Tyrant's Fang",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "SeasonedFang",
+        "materialName": "Seasoned Fang",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "SeasonedFang": 3
+    },
+    "moraCost": 50,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "natlan_saurian_materials",
+    "tierIndex": 2
+  },
+  "UnyieldingDelusionOfTheFarNorthScions": {
+    "outputKey": "UnyieldingDelusionOfTheFarNorthScions",
+    "outputMaterialKey": "UnyieldingDelusionOfTheFarNorthScions",
+    "outputName": "Unyielding Delusion of the Far-North Scions",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "SunderedGloryOfTheFarNorthScions",
+        "materialName": "Sundered Glory of the Far-North Scions",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "SunderedGloryOfTheFarNorthScions": 3
+    },
+    "moraCost": 125,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "FarNorthScions",
+    "tierIndex": 1
+  },
+  "VajradaAmethystChunk": {
+    "outputKey": "VajradaAmethystChunk",
+    "outputMaterialKey": "VajradaAmethystChunk",
+    "outputName": "Vajrada Amethyst Chunk",
+    "outputQuantity": 1,
+    "category": "character_ascension_gem",
+    "inputMaterials": [
+      {
+        "materialKey": "VajradaAmethystFragment",
+        "materialName": "Vajrada Amethyst Fragment",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "VajradaAmethystFragment": 3
+    },
+    "moraCost": 900,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "none"
+    ],
+    "familyKey": "Electro",
+    "tierIndex": 2
+  },
+  "VajradaAmethystFragment": {
+    "outputKey": "VajradaAmethystFragment",
+    "outputMaterialKey": "VajradaAmethystFragment",
+    "outputName": "Vajrada Amethyst Fragment",
+    "outputQuantity": 1,
+    "category": "character_ascension_gem",
+    "inputMaterials": [
+      {
+        "materialKey": "VajradaAmethystSliver",
+        "materialName": "Vajrada Amethyst Sliver",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "VajradaAmethystSliver": 3
+    },
+    "moraCost": 300,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "none"
+    ],
+    "familyKey": "Electro",
+    "tierIndex": 1
+  },
+  "VajradaAmethystGemstone": {
+    "outputKey": "VajradaAmethystGemstone",
+    "outputMaterialKey": "VajradaAmethystGemstone",
+    "outputName": "VajradaAmethystGemstone",
+    "outputQuantity": 1,
+    "category": "character_ascension_gem",
+    "inputMaterials": [
+      {
+        "materialKey": "VajradaAmethystChunk",
+        "materialName": "Vajrada Amethyst Chunk",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "VajradaAmethystChunk": 3
+    },
+    "moraCost": 2700,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "none"
+    ],
+    "familyKey": "Electro",
+    "tierIndex": 3
+  },
+  "VarunadaLazuriteChunk": {
+    "outputKey": "VarunadaLazuriteChunk",
+    "outputMaterialKey": "VarunadaLazuriteChunk",
+    "outputName": "VarunadaLazuriteChunk",
+    "outputQuantity": 1,
+    "category": "character_ascension_gem",
+    "inputMaterials": [
+      {
+        "materialKey": "VarunadaLazuriteFragment",
+        "materialName": "Varunada Lazurite Fragment",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "VarunadaLazuriteFragment": 3
+    },
+    "moraCost": 900,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "none"
+    ],
+    "familyKey": "Hydro",
+    "tierIndex": 2
+  },
+  "VarunadaLazuriteFragment": {
+    "outputKey": "VarunadaLazuriteFragment",
+    "outputMaterialKey": "VarunadaLazuriteFragment",
+    "outputName": "Varunada Lazurite Fragment",
+    "outputQuantity": 1,
+    "category": "character_ascension_gem",
+    "inputMaterials": [
+      {
+        "materialKey": "VarunadaLazuriteSliver",
+        "materialName": "Varunada Lazurite Sliver",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "VarunadaLazuriteSliver": 3
+    },
+    "moraCost": 300,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "none"
+    ],
+    "familyKey": "Hydro",
+    "tierIndex": 1
+  },
+  "VarunadaLazuriteGemstone": {
+    "outputKey": "VarunadaLazuriteGemstone",
+    "outputMaterialKey": "VarunadaLazuriteGemstone",
+    "outputName": "Varunada Lazurite Gemstone",
+    "outputQuantity": 1,
+    "category": "character_ascension_gem",
+    "inputMaterials": [
+      {
+        "materialKey": "VarunadaLazuriteChunk",
+        "materialName": "VarunadaLazuriteChunk",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "VarunadaLazuriteChunk": 3
+    },
+    "moraCost": 2700,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "none"
+    ],
+    "familyKey": "Hydro",
+    "tierIndex": 3
+  },
+  "VayudaTurquoiseChunk": {
+    "outputKey": "VayudaTurquoiseChunk",
+    "outputMaterialKey": "VayudaTurquoiseChunk",
+    "outputName": "Vayuda Turquoise Chunk",
+    "outputQuantity": 1,
+    "category": "character_ascension_gem",
+    "inputMaterials": [
+      {
+        "materialKey": "VayudaTurquoiseFragment",
+        "materialName": "Vayuda Turquoise Fragment",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "VayudaTurquoiseFragment": 3
+    },
+    "moraCost": 900,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "none"
+    ],
+    "familyKey": "Anemo",
+    "tierIndex": 2
+  },
+  "VayudaTurquoiseFragment": {
+    "outputKey": "VayudaTurquoiseFragment",
+    "outputMaterialKey": "VayudaTurquoiseFragment",
+    "outputName": "Vayuda Turquoise Fragment",
+    "outputQuantity": 1,
+    "category": "character_ascension_gem",
+    "inputMaterials": [
+      {
+        "materialKey": "VayudaTurquoiseSliver",
+        "materialName": "Vayuda Turquoise Sliver",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "VayudaTurquoiseSliver": 3
+    },
+    "moraCost": 300,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "none"
+    ],
+    "familyKey": "Anemo",
+    "tierIndex": 1
+  },
+  "VayudaTurquoiseGemstone": {
+    "outputKey": "VayudaTurquoiseGemstone",
+    "outputMaterialKey": "VayudaTurquoiseGemstone",
+    "outputName": "VayudaTurquoiseGemstone",
+    "outputQuantity": 1,
+    "category": "character_ascension_gem",
+    "inputMaterials": [
+      {
+        "materialKey": "VayudaTurquoiseChunk",
+        "materialName": "Vayuda Turquoise Chunk",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "VayudaTurquoiseChunk": 3
+    },
+    "moraCost": 2700,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "none"
+    ],
+    "familyKey": "Anemo",
+    "tierIndex": 3
+  },
+  "WanderersBloomingFlower": {
+    "outputKey": "WanderersBloomingFlower",
+    "outputMaterialKey": "WanderersBloomingFlower",
+    "outputName": "Wanderer's Blooming Flower",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "TreasuredFlower",
+        "materialName": "Treasured Flower",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "TreasuredFlower": 3
+    },
+    "moraCost": 125,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "hilichurl_rogue_materials",
+    "tierIndex": 2
+  },
+  "WarmBackShell": {
+    "outputKey": "WarmBackShell",
+    "outputMaterialKey": "WarmBackShell",
+    "outputName": "Warm Back-Shell",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "ColdCrackedShellshard",
+        "materialName": "Cold-Cracked Shellshard",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "ColdCrackedShellshard": 3
+    },
+    "moraCost": 50,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "furnace_shell_mountain_weasel_materials",
+    "tierIndex": 1
+  },
+  "WarriorsMetalWhistle": {
+    "outputKey": "WarriorsMetalWhistle",
+    "outputMaterialKey": "WarriorsMetalWhistle",
+    "outputName": "Warrior's Metal Whistle",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "SentrysWoodenWhistle",
+        "materialName": "Sentry's Wooden Whistle",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "SentrysWoodenWhistle": 3
+    },
+    "moraCost": 25,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "sauroform_tribal_warrior_materials",
+    "tierIndex": 1
+  },
+  "WeatheredArrowhead": {
+    "outputKey": "WeatheredArrowhead",
+    "outputMaterialKey": "WeatheredArrowhead",
+    "outputName": "Weathered Arrowhead",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "SharpArrowhead",
+        "materialName": "Sharp Arrowhead",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "SharpArrowhead": 3
+    },
+    "moraCost": 50,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "hilichurl_shooter_materials",
+    "tierIndex": 2
+  },
+  "WineGobletOfThePristineSea": {
+    "outputKey": "WineGobletOfThePristineSea",
+    "outputMaterialKey": "WineGobletOfThePristineSea",
+    "outputName": "Wine Goblet of the Pristine Sea",
+    "outputQuantity": 1,
+    "category": "weapon_ascension_material",
+    "inputMaterials": [
+      {
+        "materialKey": "BrokenGobletOfThePristineSea",
+        "materialName": "Broken Goblet of the Pristine Sea",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "BrokenGobletOfThePristineSea": 3
+    },
+    "moraCost": 125,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_weapon_ascension_material",
+      "refund_weapon_ascension_material"
+    ],
+    "familyKey": "PristineSea",
+    "tierIndex": 1
+  },
+  "XenochromaticCrystal": {
+    "outputKey": "XenochromaticCrystal",
+    "outputMaterialKey": "XenochromaticCrystal",
+    "outputName": "Xenochromatic Crystal",
+    "outputQuantity": 1,
+    "category": "character_weapon_enhancement_material",
+    "inputMaterials": [
+      {
+        "materialKey": "TransoceanicChunk",
+        "materialName": "Transoceanic Chunk",
+        "quantity": 3
+      }
+    ],
+    "ingredients": {
+      "TransoceanicChunk": 3
+    },
+    "moraCost": 50,
+    "craftingMethod": "alchemy",
+    "isTierUpgrade": true,
+    "eligibleCraftingBonusTypes": [
+      "double_product_character_weapon_enhancement_material",
+      "refund_character_weapon_material"
+    ],
+    "familyKey": "fontemer_aberrant_materials",
+    "tierIndex": 2
+  }
+}

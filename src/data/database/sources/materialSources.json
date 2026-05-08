@@ -1,0 +1,5003 @@
+{
+  "AberrantCoreOfTheDeepShadow": [
+    {
+      "materialKey": "AberrantCoreOfTheDeepShadow",
+      "sourceType": "enemy_drop",
+      "sourceKey": "fisher_of_hidden_depths_materials",
+      "sourceName": "Fisher of Hidden Depths",
+      "availability": "ALWAYS",
+      "notes": "Fisher of Hidden Depths Materials"
+    }
+  ],
+  "AdventurersExperience": [
+    {
+      "materialKey": "AdventurersExperience",
+      "sourceType": "ley_line",
+      "sourceKey": "leyLineOutcropBlossomOfRevelation",
+      "sourceName": "Ley Line Outcrop: Blossom of Revelation",
+      "availability": "ALWAYS",
+      "resinCost": 20,
+      "notes": "Character EXP material source; yields vary by world level."
+    }
+  ],
+  "AFlowerYetToBloom": [
+    {
+      "materialKey": "AFlowerYetToBloom",
+      "sourceType": "enemy_drop",
+      "sourceKey": "hilichurl_rogue_materials",
+      "sourceName": "Hilichurl Rogues",
+      "availability": "ALWAYS",
+      "notes": "Hilichurl Rogue Materials"
+    }
+  ],
+  "AfterglowOfLongNightFlint": [
+    {
+      "materialKey": "AfterglowOfLongNightFlint",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "LostMooncourt",
+      "sourceName": "Lost Mooncourt",
+      "availability": "TUE_FRI_SUN",
+      "region": "Nod-Krai",
+      "notes": "Long Night Flint drops in Lost Mooncourt."
+    }
+  ],
+  "AgentsSacrificialKnife": [
+    {
+      "materialKey": "AgentsSacrificialKnife",
+      "sourceType": "enemy_drop",
+      "sourceKey": "fatui_pyro_agent_materials",
+      "sourceName": "Fatui Pyro Agents",
+      "availability": "ALWAYS",
+      "notes": "Fatui Pyro Agent Materials"
+    }
+  ],
+  "AgnidusAgateChunk": [
+    {
+      "materialKey": "AgnidusAgateChunk",
+      "sourceType": "normal_boss",
+      "sourceKey": "PyroBosses",
+      "sourceName": "Pyro-aligned Bosses",
+      "availability": "ALWAYS",
+      "resinCost": 40,
+      "notes": "Dropped by elemental-aligned bosses and craftable upward at the alchemy bench."
+    }
+  ],
+  "AgnidusAgateFragment": [
+    {
+      "materialKey": "AgnidusAgateFragment",
+      "sourceType": "normal_boss",
+      "sourceKey": "PyroBosses",
+      "sourceName": "Pyro-aligned Bosses",
+      "availability": "ALWAYS",
+      "resinCost": 40,
+      "notes": "Dropped by elemental-aligned bosses and craftable upward at the alchemy bench."
+    }
+  ],
+  "AgnidusAgateGemstone": [
+    {
+      "materialKey": "AgnidusAgateGemstone",
+      "sourceType": "normal_boss",
+      "sourceKey": "PyroBosses",
+      "sourceName": "Pyro-aligned Bosses",
+      "availability": "ALWAYS",
+      "resinCost": 40,
+      "notes": "Dropped by elemental-aligned bosses and craftable upward at the alchemy bench."
+    }
+  ],
+  "AgnidusAgateSliver": [
+    {
+      "materialKey": "AgnidusAgateSliver",
+      "sourceType": "normal_boss",
+      "sourceKey": "PyroBosses",
+      "sourceName": "Pyro-aligned Bosses",
+      "availability": "ALWAYS",
+      "resinCost": 40
+    }
+  ],
+  "AlienLifeCore": [
+    {
+      "materialKey": "AlienLifeCore",
+      "sourceType": "enemy_drop",
+      "sourceKey": "breacher_primus_materials",
+      "sourceName": "Breacher Primuses",
+      "availability": "ALWAYS",
+      "notes": "Breacher Primus Materials"
+    }
+  ],
+  "AmakumoFruit": [
+    {
+      "materialKey": "AmakumoFruit",
+      "sourceType": "local_specialty",
+      "sourceKey": "AmakumoFruit",
+      "sourceName": "Amakumo Fruit",
+      "availability": "ALWAYS",
+      "region": "Inazuma",
+      "notes": "Found in the wild on Seirai Island"
+    }
+  ],
+  "ArtfulDeviceFragment": [
+    {
+      "materialKey": "ArtfulDeviceFragment",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "LostMooncourt",
+      "sourceName": "Lost Mooncourt",
+      "availability": "MON_THU_SUN",
+      "region": "Nod-Krai",
+      "notes": "Artful Device drops in Lost Mooncourt."
+    }
+  ],
+  "ArtfulDeviceInheritance": [
+    {
+      "materialKey": "ArtfulDeviceInheritance",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "LostMooncourt",
+      "sourceName": "Lost Mooncourt",
+      "availability": "MON_THU_SUN",
+      "region": "Nod-Krai",
+      "notes": "Artful Device drops in Lost Mooncourt."
+    }
+  ],
+  "ArtfulDeviceReplica": [
+    {
+      "materialKey": "ArtfulDeviceReplica",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "LostMooncourt",
+      "sourceName": "Lost Mooncourt",
+      "availability": "MON_THU_SUN",
+      "region": "Nod-Krai",
+      "notes": "Artful Device drops in Lost Mooncourt."
+    }
+  ],
+  "ArtfulDeviceWish": [
+    {
+      "materialKey": "ArtfulDeviceWish",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "LostMooncourt",
+      "sourceName": "Lost Mooncourt",
+      "availability": "MON_THU_SUN",
+      "region": "Nod-Krai",
+      "notes": "Artful Device drops in Lost Mooncourt."
+    }
+  ],
+  "ArtificedDynamicGear": [
+    {
+      "materialKey": "ArtificedDynamicGear",
+      "sourceType": "enemy_drop",
+      "sourceKey": "clockwork_meka_materials",
+      "sourceName": "Clockwork Meka",
+      "availability": "ALWAYS",
+      "notes": "Clockwork Meka Materials"
+    }
+  ],
+  "ArtificedSpareClockworkComponentCoppelia": [
+    {
+      "materialKey": "ArtificedSpareClockworkComponentCoppelia",
+      "sourceType": "normal_boss",
+      "sourceKey": "IcewindSuiteDirgeOfCoppelia",
+      "sourceName": "Icewind Suite: Dirge of Coppelia",
+      "availability": "ALWAYS",
+      "notes": "Artificed Spare Clockwork Component — Coppelia"
+    }
+  ],
+  "ArtificedSpareClockworkComponentCoppelius": [
+    {
+      "materialKey": "ArtificedSpareClockworkComponentCoppelius",
+      "sourceType": "normal_boss",
+      "sourceKey": "IcewindSuiteNemesisOfCoppelius",
+      "sourceName": "Icewind Suite: Nemesis of Coppelius",
+      "availability": "ALWAYS",
+      "notes": "Artificed Spare Clockwork Component — Coppelius"
+    }
+  ],
+  "AshenHeart": [
+    {
+      "materialKey": "AshenHeart",
+      "sourceType": "weekly_boss",
+      "sourceKey": "NarukamiIslandTenshukaku",
+      "sourceName": "Narukami Island: Tenshukaku",
+      "availability": "WEEKLY",
+      "notes": "Narukami Island: Tenshukaku"
+    }
+  ],
+  "AureateRadianceOfTheFarNorthScions": [
+    {
+      "materialKey": "AureateRadianceOfTheFarNorthScions",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "LostMooncourt",
+      "sourceName": "Lost Mooncourt",
+      "availability": "WED_SAT_SUN",
+      "region": "Nod-Krai",
+      "notes": "Far-North Scions drops in Lost Mooncourt."
+    }
+  ],
+  "AxisOfTheSecretSource": [
+    {
+      "materialKey": "AxisOfTheSecretSource",
+      "sourceType": "enemy_drop",
+      "sourceKey": "secret_source_automaton_hunter_seeker_materials",
+      "sourceName": "Secret Source Automaton: Hunter-Seeker",
+      "availability": "ALWAYS",
+      "notes": "Secret Source Automaton: Hunter-Seeker Materials"
+    }
+  ],
+  "BasaltPillar": [
+    {
+      "materialKey": "BasaltPillar",
+      "sourceType": "normal_boss",
+      "sourceKey": "GeoHypostasis",
+      "sourceName": "Geo Hypostasis",
+      "availability": "ALWAYS",
+      "notes": "Basalt Pillar"
+    }
+  ],
+  "BerylConch": [
+    {
+      "materialKey": "BerylConch",
+      "sourceType": "local_specialty",
+      "sourceKey": "BerylConch",
+      "sourceName": "Beryl Conch",
+      "availability": "ALWAYS",
+      "region": "Fontaine",
+      "notes": "Found underwater in the Source of All Waters: The Great Fontaine Lake"
+    }
+  ],
+  "BewilderingBroadleaf": [
+    {
+      "materialKey": "BewilderingBroadleaf",
+      "sourceType": "enemy_drop",
+      "sourceKey": "tenebrous_mimesis_materials",
+      "sourceName": "Tenebrous Mimeses",
+      "availability": "ALWAYS",
+      "notes": "Tenebrous Mimesis Materials"
+    }
+  ],
+  "BitOfAerosiderite": [
+    {
+      "materialKey": "BitOfAerosiderite",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "HiddenPalaceOfLianshanFormula",
+      "sourceName": "Hidden Palace of Lianshan Formula",
+      "availability": "WED_SAT_SUN",
+      "region": "Liyue",
+      "notes": "Aerosiderite drops in Hidden Palace of Lianshan Formula."
+    }
+  ],
+  "BlackBronzeHorn": [
+    {
+      "materialKey": "BlackBronzeHorn",
+      "sourceType": "enemy_drop",
+      "sourceKey": "mitachurl_materials",
+      "sourceName": "Mitachurls",
+      "availability": "ALWAYS",
+      "notes": "Mitachurl Materials"
+    }
+  ],
+  "BlackCrystalHorn": [
+    {
+      "materialKey": "BlackCrystalHorn",
+      "sourceType": "enemy_drop",
+      "sourceKey": "mitachurl_materials",
+      "sourceName": "Mitachurls",
+      "availability": "ALWAYS",
+      "notes": "Mitachurl Materials"
+    }
+  ],
+  "BlazeOfLongNightFlint": [
+    {
+      "materialKey": "BlazeOfLongNightFlint",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "LostMooncourt",
+      "sourceName": "Lost Mooncourt",
+      "availability": "TUE_FRI_SUN",
+      "region": "Nod-Krai",
+      "notes": "Long Night Flint drops in Lost Mooncourt."
+    }
+  ],
+  "BlazingPrismshell": [
+    {
+      "materialKey": "BlazingPrismshell",
+      "sourceType": "enemy_drop",
+      "sourceKey": "furnace_shell_mountain_weasel_materials",
+      "sourceName": "Furnace Shell Mountain Weasels",
+      "availability": "ALWAYS",
+      "notes": "Furnace Shell Mountain Weasel Materials"
+    }
+  ],
+  "BlazingSacrificialHeartsHesitance": [
+    {
+      "materialKey": "BlazingSacrificialHeartsHesitance",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "AncientWatchtower",
+      "sourceName": "Ancient Watchtower",
+      "availability": "MON_THU_SUN",
+      "region": "Natlan",
+      "notes": "Blazing Sacrificial Heart drops in Ancient Watchtower."
+    }
+  ],
+  "BlazingSacrificialHeartsResolve": [
+    {
+      "materialKey": "BlazingSacrificialHeartsResolve",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "AncientWatchtower",
+      "sourceName": "Ancient Watchtower",
+      "availability": "MON_THU_SUN",
+      "region": "Natlan",
+      "notes": "Blazing Sacrificial Heart drops in Ancient Watchtower."
+    }
+  ],
+  "BlazingSacrificialHeartsSplendor": [
+    {
+      "materialKey": "BlazingSacrificialHeartsSplendor",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "AncientWatchtower",
+      "sourceName": "Ancient Watchtower",
+      "availability": "MON_THU_SUN",
+      "region": "Natlan",
+      "notes": "Blazing Sacrificial Heart drops in Ancient Watchtower."
+    }
+  ],
+  "BlazingSacrificialHeartsTerror": [
+    {
+      "materialKey": "BlazingSacrificialHeartsTerror",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "AncientWatchtower",
+      "sourceName": "Ancient Watchtower",
+      "availability": "MON_THU_SUN",
+      "region": "Natlan",
+      "notes": "Blazing Sacrificial Heart drops in Ancient Watchtower."
+    }
+  ],
+  "BloodjadeBranch": [
+    {
+      "materialKey": "BloodjadeBranch",
+      "sourceType": "weekly_boss",
+      "sourceKey": "BeneathTheDragonQueller",
+      "sourceName": "Beneath the Dragon-Queller",
+      "availability": "WEEKLY",
+      "notes": "Beneath the Dragon-Queller"
+    }
+  ],
+  "BorealWolfsBrokenFang": [
+    {
+      "materialKey": "BorealWolfsBrokenFang",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "CeciliaGarden",
+      "sourceName": "Cecilia Garden",
+      "availability": "TUE_FRI_SUN",
+      "region": "Mondstadt",
+      "notes": "Boreal Wolf drops in Cecilia Garden."
+    }
+  ],
+  "BorealWolfsCrackedTooth": [
+    {
+      "materialKey": "BorealWolfsCrackedTooth",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "CeciliaGarden",
+      "sourceName": "Cecilia Garden",
+      "availability": "TUE_FRI_SUN",
+      "region": "Mondstadt",
+      "notes": "Boreal Wolf drops in Cecilia Garden."
+    }
+  ],
+  "BorealWolfsMilkTooth": [
+    {
+      "materialKey": "BorealWolfsMilkTooth",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "CeciliaGarden",
+      "sourceName": "Cecilia Garden",
+      "availability": "TUE_FRI_SUN",
+      "region": "Mondstadt",
+      "notes": "Boreal Wolf drops in Cecilia Garden."
+    }
+  ],
+  "BorealWolfsNostalgia": [
+    {
+      "materialKey": "BorealWolfsNostalgia",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "CeciliaGarden",
+      "sourceName": "Cecilia Garden",
+      "availability": "TUE_FRI_SUN",
+      "region": "Mondstadt",
+      "notes": "Boreal Wolf drops in Cecilia Garden."
+    }
+  ],
+  "BrilliantChrysanthemum": [
+    {
+      "materialKey": "BrilliantChrysanthemum",
+      "sourceType": "local_specialty",
+      "sourceKey": "BrilliantChrysanthemum",
+      "sourceName": "Brilliant Chrysanthemum",
+      "availability": "ALWAYS",
+      "region": "Natlan",
+      "notes": "Found in Natlan"
+    }
+  ],
+  "BrilliantDiamondChunk": [
+    {
+      "materialKey": "BrilliantDiamondChunk",
+      "sourceType": "other",
+      "sourceKey": "TravelerProgression",
+      "sourceName": "Traveler Progression",
+      "availability": "UNKNOWN",
+      "notes": "Traveler-specific gem family. Requires special handling."
+    }
+  ],
+  "BrilliantDiamondFragment": [
+    {
+      "materialKey": "BrilliantDiamondFragment",
+      "sourceType": "other",
+      "sourceKey": "TravelerProgression",
+      "sourceName": "Traveler Progression",
+      "availability": "UNKNOWN",
+      "notes": "Traveler-specific gem family. Requires special handling."
+    }
+  ],
+  "BrilliantDiamondGemstone": [
+    {
+      "materialKey": "BrilliantDiamondGemstone",
+      "sourceType": "other",
+      "sourceKey": "TravelerProgression",
+      "sourceName": "Traveler Progression",
+      "availability": "UNKNOWN",
+      "notes": "Traveler-specific gem family. Requires special handling."
+    }
+  ],
+  "BrilliantDiamondSliver": [
+    {
+      "materialKey": "BrilliantDiamondSliver",
+      "sourceType": "other",
+      "sourceKey": "TravelerProgression",
+      "sourceName": "Traveler Progression",
+      "availability": "UNKNOWN",
+      "notes": "Traveler-specific gem family. Requires special handling."
+    }
+  ],
+  "BrokenDriveShaft": [
+    {
+      "materialKey": "BrokenDriveShaft",
+      "sourceType": "enemy_drop",
+      "sourceKey": "landcruiser_materials",
+      "sourceName": "Landcruisers",
+      "availability": "ALWAYS",
+      "notes": "Landcruiser Materials"
+    }
+  ],
+  "BrokenGobletOfThePristineSea": [
+    {
+      "materialKey": "BrokenGobletOfThePristineSea",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "EchoesOfTheDeepTides",
+      "sourceName": "Echoes of the Deep Tides",
+      "availability": "WED_SAT_SUN",
+      "region": "Fontaine",
+      "notes": "Pristine Sea drops in Echoes of the Deep Tides."
+    }
+  ],
+  "CallaLily": [
+    {
+      "materialKey": "CallaLily",
+      "sourceType": "local_specialty",
+      "sourceKey": "CallaLily",
+      "sourceName": "Calla Lily",
+      "availability": "ALWAYS",
+      "region": "Mondstadt",
+      "notes": "Found near lakes in Mondstadt, especially Springvale"
+    }
+  ],
+  "Cecilia": [
+    {
+      "materialKey": "Cecilia",
+      "sourceType": "local_specialty",
+      "sourceKey": "Cecilia",
+      "sourceName": "Cecilia",
+      "availability": "ALWAYS",
+      "region": "Mondstadt",
+      "notes": "Found in the wild on Starsnatch Cliff"
+    }
+  ],
+  "ChainsOfTheDandelionGladiator": [
+    {
+      "materialKey": "ChainsOfTheDandelionGladiator",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "CeciliaGarden",
+      "sourceName": "Cecilia Garden",
+      "availability": "WED_SAT_SUN",
+      "region": "Mondstadt",
+      "notes": "Dandelion Gladiator drops in Cecilia Garden."
+    }
+  ],
+  "ChaosAxis": [
+    {
+      "materialKey": "ChaosAxis",
+      "sourceType": "enemy_drop",
+      "sourceKey": "ruin_sentinel_materials",
+      "sourceName": "Ruin Sentinels",
+      "availability": "ALWAYS",
+      "notes": "Ruin Sentinel Materials"
+    }
+  ],
+  "ChaosBolt": [
+    {
+      "materialKey": "ChaosBolt",
+      "sourceType": "enemy_drop",
+      "sourceKey": "ruin_drake_materials",
+      "sourceName": "Ruin Drakes",
+      "availability": "ALWAYS",
+      "notes": "Ruin Drake Materials"
+    }
+  ],
+  "ChaosCircuit": [
+    {
+      "materialKey": "ChaosCircuit",
+      "sourceType": "enemy_drop",
+      "sourceKey": "humanoid_ruin_machine_materials",
+      "sourceName": "Humanoid Ruin Machines",
+      "availability": "ALWAYS",
+      "notes": "Humanoid Ruin Machine Materials"
+    }
+  ],
+  "ChaosCore": [
+    {
+      "materialKey": "ChaosCore",
+      "sourceType": "enemy_drop",
+      "sourceKey": "humanoid_ruin_machine_materials",
+      "sourceName": "Humanoid Ruin Machines",
+      "availability": "ALWAYS",
+      "notes": "Humanoid Ruin Machine Materials"
+    }
+  ],
+  "ChaosDevice": [
+    {
+      "materialKey": "ChaosDevice",
+      "sourceType": "enemy_drop",
+      "sourceKey": "humanoid_ruin_machine_materials",
+      "sourceName": "Humanoid Ruin Machines",
+      "availability": "ALWAYS",
+      "notes": "Humanoid Ruin Machine Materials"
+    }
+  ],
+  "ChaosGear": [
+    {
+      "materialKey": "ChaosGear",
+      "sourceType": "enemy_drop",
+      "sourceKey": "ruin_sentinel_materials",
+      "sourceName": "Ruin Sentinels",
+      "availability": "ALWAYS",
+      "notes": "Ruin Sentinel Materials"
+    }
+  ],
+  "ChaosModule": [
+    {
+      "materialKey": "ChaosModule",
+      "sourceType": "enemy_drop",
+      "sourceKey": "ruin_drake_materials",
+      "sourceName": "Ruin Drakes",
+      "availability": "ALWAYS",
+      "notes": "Ruin Drake Materials"
+    }
+  ],
+  "ChaosOculus": [
+    {
+      "materialKey": "ChaosOculus",
+      "sourceType": "enemy_drop",
+      "sourceKey": "ruin_sentinel_materials",
+      "sourceName": "Ruin Sentinels",
+      "availability": "ALWAYS",
+      "notes": "Ruin Sentinel Materials"
+    }
+  ],
+  "ChaosStorage": [
+    {
+      "materialKey": "ChaosStorage",
+      "sourceType": "enemy_drop",
+      "sourceKey": "ruin_drake_materials",
+      "sourceName": "Ruin Drakes",
+      "availability": "ALWAYS",
+      "notes": "Ruin Drake Materials"
+    }
+  ],
+  "ChapterOfAnAncientChord": [
+    {
+      "materialKey": "ChapterOfAnAncientChord",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "EchoesOfTheDeepTides",
+      "sourceName": "Echoes of the Deep Tides",
+      "availability": "MON_THU_SUN",
+      "region": "Fontaine",
+      "notes": "Ancient Chord drops in Echoes of the Deep Tides."
+    }
+  ],
+  "ChasmlightFin": [
+    {
+      "materialKey": "ChasmlightFin",
+      "sourceType": "enemy_drop",
+      "sourceKey": "xuanwen_beast_materials",
+      "sourceName": "Xuanwen Beasts",
+      "availability": "ALWAYS",
+      "notes": "Xuanwen Beast Materials"
+    }
+  ],
+  "ChunkOfAerosiderite": [
+    {
+      "materialKey": "ChunkOfAerosiderite",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "HiddenPalaceOfLianshanFormula",
+      "sourceName": "Hidden Palace of Lianshan Formula",
+      "availability": "WED_SAT_SUN",
+      "region": "Liyue",
+      "notes": "Aerosiderite drops in Hidden Palace of Lianshan Formula."
+    }
+  ],
+  "CleansingHeart": [
+    {
+      "materialKey": "CleansingHeart",
+      "sourceType": "normal_boss",
+      "sourceKey": "RhodeiaOfLoch",
+      "sourceName": "Rhodeia of Loch",
+      "availability": "ALWAYS",
+      "notes": "Cleansing Heart"
+    }
+  ],
+  "ClearwaterJade": [
+    {
+      "materialKey": "ClearwaterJade",
+      "sourceType": "local_specialty",
+      "sourceKey": "ClearwaterJade",
+      "sourceName": "Clearwater Jade",
+      "availability": "ALWAYS",
+      "region": "Liyue",
+      "notes": "Found in Chenyu Vale"
+    }
+  ],
+  "CloudseamScale": [
+    {
+      "materialKey": "CloudseamScale",
+      "sourceType": "normal_boss",
+      "sourceKey": "SolitarySuanni",
+      "sourceName": "Solitary Suanni",
+      "availability": "ALWAYS",
+      "notes": "Cloudseam Scale"
+    }
+  ],
+  "ColdCrackedShellshard": [
+    {
+      "materialKey": "ColdCrackedShellshard",
+      "sourceType": "enemy_drop",
+      "sourceKey": "furnace_shell_mountain_weasel_materials",
+      "sourceName": "Furnace Shell Mountain Weasels",
+      "availability": "ALWAYS",
+      "notes": "Furnace Shell Mountain Weasel Materials"
+    }
+  ],
+  "ConcealedClaw": [
+    {
+      "materialKey": "ConcealedClaw",
+      "sourceType": "enemy_drop",
+      "sourceKey": "riftwolf_materials",
+      "sourceName": "Riftwolves",
+      "availability": "ALWAYS",
+      "notes": "Riftwolf Materials"
+    }
+  ],
+  "ConcealedTalon": [
+    {
+      "materialKey": "ConcealedTalon",
+      "sourceType": "enemy_drop",
+      "sourceKey": "riftwolf_materials",
+      "sourceName": "Riftwolves",
+      "availability": "ALWAYS",
+      "notes": "Riftwolf Materials"
+    }
+  ],
+  "ConcealedUnguis": [
+    {
+      "materialKey": "ConcealedUnguis",
+      "sourceType": "enemy_drop",
+      "sourceKey": "riftwolf_materials",
+      "sourceName": "Riftwolves",
+      "availability": "ALWAYS",
+      "notes": "Riftwolf Materials"
+    }
+  ],
+  "CondessenceCrystal": [
+    {
+      "materialKey": "CondessenceCrystal",
+      "sourceType": "world_gathering",
+      "sourceKey": "CondessenceCrystalVeins",
+      "sourceName": "Condessence Crystal Veins",
+      "availability": "ALWAYS",
+      "resinCost": 0,
+      "notes": "Ore chunk veins respawn 3 days after mining.",
+      "respawnDays": 3
+    }
+  ],
+  "CopperTalismanOfTheForestDew": [
+    {
+      "materialKey": "CopperTalismanOfTheForestDew",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "TowerOfAbjectPride",
+      "sourceName": "Tower of Abject Pride",
+      "availability": "MON_THU_SUN",
+      "region": "Sumeru",
+      "notes": "Forest Dew drops in Tower of Abject Pride."
+    }
+  ],
+  "CoralBranchOfADistantSea": [
+    {
+      "materialKey": "CoralBranchOfADistantSea",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "CourtOfFlowingSand",
+      "sourceName": "Court of Flowing Sand",
+      "availability": "MON_THU_SUN",
+      "region": "Inazuma",
+      "notes": "Distant Sea drops in Court of Flowing Sand."
+    }
+  ],
+  "CorLapis": [
+    {
+      "materialKey": "CorLapis",
+      "sourceType": "local_specialty",
+      "sourceKey": "CorLapis",
+      "sourceName": "Cor Lapis",
+      "availability": "ALWAYS",
+      "region": "Liyue",
+      "notes": "Found under cliffs in Liyue, especially Mt. Hulao"
+    }
+  ],
+  "CrownOfInsight": [
+    {
+      "materialKey": "CrownOfInsight",
+      "sourceType": "other",
+      "sourceKey": "Events",
+      "sourceName": "Limited Events",
+      "availability": "UNKNOWN"
+    }
+  ],
+  "CrystalChunk": [
+    {
+      "materialKey": "CrystalChunk",
+      "sourceType": "world_gathering",
+      "sourceKey": "CrystalChunkVeins",
+      "sourceName": "Crystal Chunk Veins",
+      "availability": "ALWAYS",
+      "resinCost": 0,
+      "notes": "Ore chunk veins respawn 3 days after mining.",
+      "respawnDays": 3
+    }
+  ],
+  "CrystallineBloom": [
+    {
+      "materialKey": "CrystallineBloom",
+      "sourceType": "normal_boss",
+      "sourceKey": "CryoHypostasis",
+      "sourceName": "Cryo Hypostasis",
+      "availability": "ALWAYS",
+      "notes": "Crystalline Bloom"
+    }
+  ],
+  "CrystallineCystDust": [
+    {
+      "materialKey": "CrystallineCystDust",
+      "sourceType": "enemy_drop",
+      "sourceKey": "fungus_materials",
+      "sourceName": "Fungi",
+      "availability": "ALWAYS",
+      "notes": "Fungus Materials"
+    }
+  ],
+  "CrystalMarrow": [
+    {
+      "materialKey": "CrystalMarrow",
+      "sourceType": "local_specialty",
+      "sourceKey": "CrystalMarrow",
+      "sourceName": "Crystal Marrow",
+      "availability": "ALWAYS",
+      "region": "Inazuma",
+      "notes": "Found on Orobashi's bones on Yashiori Island and Tatarasuna"
+    }
+  ],
+  "CrystalPrism": [
+    {
+      "materialKey": "CrystalPrism",
+      "sourceType": "enemy_drop",
+      "sourceKey": "mirror_maiden_materials",
+      "sourceName": "Mirror Maidens",
+      "availability": "ALWAYS",
+      "notes": "Mirror Maiden Materials"
+    }
+  ],
+  "CyclicMilitaryKuuvahkiCore": [
+    {
+      "materialKey": "CyclicMilitaryKuuvahkiCore",
+      "sourceType": "normal_boss",
+      "sourceKey": "SuperHeavyLandroverMechanizedFortress",
+      "sourceName": "Super-Heavy Landrover: Mechanized Fortress",
+      "availability": "ALWAYS",
+      "notes": "Cyclic Military Kuuvahki Core"
+    }
+  ],
+  "DakasBell": [
+    {
+      "materialKey": "DakasBell",
+      "sourceType": "weekly_boss",
+      "sourceKey": "JoururiWorkshop",
+      "sourceName": "Joururi Workshop",
+      "availability": "WEEKLY",
+      "notes": "Joururi Workshop"
+    }
+  ],
+  "DamagedMask": [
+    {
+      "materialKey": "DamagedMask",
+      "sourceType": "enemy_drop",
+      "sourceKey": "hilichurl_materials",
+      "sourceName": "Hilichurls",
+      "availability": "ALWAYS",
+      "notes": "Hilichurl Materials"
+    }
+  ],
+  "DamagedPrism": [
+    {
+      "materialKey": "DamagedPrism",
+      "sourceType": "enemy_drop",
+      "sourceKey": "primal_construct_materials",
+      "sourceName": "Primal Constructs",
+      "availability": "ALWAYS",
+      "notes": "Primal Construct Materials"
+    }
+  ],
+  "DandelionSeed": [
+    {
+      "materialKey": "DandelionSeed",
+      "sourceType": "local_specialty",
+      "sourceKey": "DandelionSeed",
+      "sourceName": "Dandelion Seed",
+      "availability": "ALWAYS",
+      "region": "Mondstadt",
+      "notes": "Found in the wild in Mondstadt"
+    }
+  ],
+  "DarkStatuette": [
+    {
+      "materialKey": "DarkStatuette",
+      "sourceType": "enemy_drop",
+      "sourceKey": "black_serpent_materials",
+      "sourceName": "The Black Serpents",
+      "availability": "ALWAYS",
+      "notes": "The Black Serpents Materials"
+    }
+  ],
+  "DeadLeyLineBranch": [
+    {
+      "materialKey": "DeadLeyLineBranch",
+      "sourceType": "enemy_drop",
+      "sourceKey": "abyss_mage_materials",
+      "sourceName": "Abyss Mages",
+      "availability": "ALWAYS",
+      "notes": "Abyss Mage Materials"
+    }
+  ],
+  "DeadLeyLineLeaves": [
+    {
+      "materialKey": "DeadLeyLineLeaves",
+      "sourceType": "enemy_drop",
+      "sourceKey": "abyss_mage_materials",
+      "sourceName": "Abyss Mages",
+      "availability": "ALWAYS",
+      "notes": "Abyss Mage Materials"
+    }
+  ],
+  "DeathlyStatuette": [
+    {
+      "materialKey": "DeathlyStatuette",
+      "sourceType": "enemy_drop",
+      "sourceKey": "black_serpent_materials",
+      "sourceName": "The Black Serpents",
+      "availability": "ALWAYS",
+      "notes": "The Black Serpents Materials"
+    }
+  ],
+  "DebrisOfDecarabiansCity": [
+    {
+      "materialKey": "DebrisOfDecarabiansCity",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "CeciliaGarden",
+      "sourceName": "Cecilia Garden",
+      "availability": "MON_THU_SUN",
+      "resinCost": 20
+    }
+  ],
+  "DeliriousDecadenceOfTheSacredLord": [
+    {
+      "materialKey": "DeliriousDecadenceOfTheSacredLord",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "AncientWatchtower",
+      "sourceName": "Ancient Watchtower",
+      "availability": "TUE_FRI_SUN",
+      "region": "Natlan",
+      "notes": "Sacred Lord drops in Ancient Watchtower."
+    }
+  ],
+  "DeliriousDemeanorOfTheSacredLord": [
+    {
+      "materialKey": "DeliriousDemeanorOfTheSacredLord",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "AncientWatchtower",
+      "sourceName": "Ancient Watchtower",
+      "availability": "TUE_FRI_SUN",
+      "region": "Natlan",
+      "notes": "Sacred Lord drops in Ancient Watchtower."
+    }
+  ],
+  "DeliriousDesolationOfTheSacredLord": [
+    {
+      "materialKey": "DeliriousDesolationOfTheSacredLord",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "AncientWatchtower",
+      "sourceName": "Ancient Watchtower",
+      "availability": "TUE_FRI_SUN",
+      "region": "Natlan",
+      "notes": "Sacred Lord drops in Ancient Watchtower."
+    }
+  ],
+  "DeliriousDivinityOfTheSacredLord": [
+    {
+      "materialKey": "DeliriousDivinityOfTheSacredLord",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "AncientWatchtower",
+      "sourceName": "Ancient Watchtower",
+      "availability": "TUE_FRI_SUN",
+      "region": "Natlan",
+      "notes": "Sacred Lord drops in Ancient Watchtower."
+    }
+  ],
+  "Dendrobium": [
+    {
+      "materialKey": "Dendrobium",
+      "sourceType": "local_specialty",
+      "sourceKey": "Dendrobium",
+      "sourceName": "Dendrobium",
+      "availability": "ALWAYS",
+      "region": "Inazuma",
+      "notes": "Found in the wild on Kannazuka and Yashiori Island"
+    }
+  ],
+  "DenialAndJudgment": [
+    {
+      "materialKey": "DenialAndJudgment",
+      "sourceType": "weekly_boss",
+      "sourceKey": "ScatteredRuins",
+      "sourceName": "Scattered Ruins",
+      "availability": "WEEKLY",
+      "notes": "Scattered Ruins"
+    }
+  ],
+  "DesiccatedShell": [
+    {
+      "materialKey": "DesiccatedShell",
+      "sourceType": "enemy_drop",
+      "sourceKey": "consecrated_beast_materials",
+      "sourceName": "Consecrated Beasts",
+      "availability": "ALWAYS",
+      "notes": "Consecrated Beast Materials"
+    }
+  ],
+  "DewOfRepudiation": [
+    {
+      "materialKey": "DewOfRepudiation",
+      "sourceType": "normal_boss",
+      "sourceKey": "HydroHypostasis",
+      "sourceName": "Hydro Hypostasis",
+      "availability": "ALWAYS",
+      "notes": "Dew of Repudiation"
+    }
+  ],
+  "DismalPrism": [
+    {
+      "materialKey": "DismalPrism",
+      "sourceType": "enemy_drop",
+      "sourceKey": "mirror_maiden_materials",
+      "sourceName": "Mirror Maidens",
+      "availability": "ALWAYS",
+      "notes": "Mirror Maiden Materials"
+    }
+  ],
+  "DivineBodyFromGuyun": [
+    {
+      "materialKey": "DivineBodyFromGuyun",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "HiddenPalaceOfLianshanFormula",
+      "sourceName": "Hidden Palace of Lianshan Formula",
+      "availability": "MON_THU_SUN",
+      "region": "Liyue",
+      "notes": "Guyun drops in Hidden Palace of Lianshan Formula."
+    }
+  ],
+  "DiviningScroll": [
+    {
+      "materialKey": "DiviningScroll",
+      "sourceType": "enemy_drop",
+      "sourceKey": "samachurl_materials",
+      "sourceName": "Samachurls",
+      "availability": "ALWAYS",
+      "notes": "Samachurl Materials"
+    }
+  ],
+  "DormantFungalNucleus": [
+    {
+      "materialKey": "DormantFungalNucleus",
+      "sourceType": "enemy_drop",
+      "sourceKey": "state_shifted_fungus_materials",
+      "sourceName": "State-Shifted Fungi",
+      "availability": "ALWAYS",
+      "notes": "State-Shifted Fungus Materials"
+    }
+  ],
+  "Dracolite": [
+    {
+      "materialKey": "Dracolite",
+      "sourceType": "local_specialty",
+      "sourceKey": "Dracolite",
+      "sourceName": "Dracolite",
+      "availability": "ALWAYS",
+      "region": "Natlan",
+      "notes": "Found in Atocpan"
+    }
+  ],
+  "DragonheirsFalseFin": [
+    {
+      "materialKey": "DragonheirsFalseFin",
+      "sourceType": "normal_boss",
+      "sourceKey": "CoralDefenders",
+      "sourceName": "Coral Defenders",
+      "availability": "ALWAYS",
+      "notes": "Dragonheir's False Fin"
+    }
+  ],
+  "DragonLordsCrown": [
+    {
+      "materialKey": "DragonLordsCrown",
+      "sourceType": "weekly_boss",
+      "sourceKey": "BeneathTheDragonQueller",
+      "sourceName": "Beneath the Dragon-Queller",
+      "availability": "WEEKLY",
+      "notes": "Beneath the Dragon-Queller"
+    }
+  ],
+  "DreamOfScorchingMight": [
+    {
+      "materialKey": "DreamOfScorchingMight",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "TowerOfAbjectPride",
+      "sourceName": "Tower of Abject Pride",
+      "availability": "WED_SAT_SUN",
+      "region": "Sumeru",
+      "notes": "Scorching Might drops in Tower of Abject Pride."
+    }
+  ],
+  "DreamOfTheDandelionGladiator": [
+    {
+      "materialKey": "DreamOfTheDandelionGladiator",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "CeciliaGarden",
+      "sourceName": "Cecilia Garden",
+      "availability": "WED_SAT_SUN",
+      "region": "Mondstadt",
+      "notes": "Dandelion Gladiator drops in Cecilia Garden."
+    }
+  ],
+  "DropOfTaintedWater": [
+    {
+      "materialKey": "DropOfTaintedWater",
+      "sourceType": "enemy_drop",
+      "sourceKey": "tainted_hydro_phantasm_materials",
+      "sourceName": "Tainted Hydro Phantasms",
+      "availability": "ALWAYS",
+      "notes": "Tainted Hydro Phantasm Materials"
+    }
+  ],
+  "DrossOfPureSacredDewdrop": [
+    {
+      "materialKey": "DrossOfPureSacredDewdrop",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "EchoesOfTheDeepTides",
+      "sourceName": "Echoes of the Deep Tides",
+      "availability": "TUE_FRI_SUN",
+      "region": "Fontaine",
+      "notes": "Pure Sacred Dewdrop drops in Echoes of the Deep Tides."
+    }
+  ],
+  "DustOfAzoth": [
+    {
+      "materialKey": "DustOfAzoth",
+      "sourceType": "other",
+      "sourceKey": "DustOfAzoth",
+      "sourceName": "Dust of Azoth",
+      "availability": "UNKNOWN",
+      "notes": "Used for elemental gem conversion at the crafting bench."
+    }
+  ],
+  "DvalinsClaw": [
+    {
+      "materialKey": "DvalinsClaw",
+      "sourceType": "weekly_boss",
+      "sourceKey": "ConfrontStormterror",
+      "sourceName": "Confront Stormterror",
+      "availability": "WEEKLY",
+      "notes": "Confront Stormterror"
+    }
+  ],
+  "DvalinsPlume": [
+    {
+      "materialKey": "DvalinsPlume",
+      "sourceType": "weekly_boss",
+      "sourceKey": "Stormterror",
+      "sourceName": "Stormterror",
+      "availability": "WEEKLY",
+      "resinCost": 30
+    }
+  ],
+  "DvalinsSigh": [
+    {
+      "materialKey": "DvalinsSigh",
+      "sourceType": "weekly_boss",
+      "sourceKey": "ConfrontStormterror",
+      "sourceName": "Confront Stormterror",
+      "availability": "WEEKLY",
+      "notes": "Confront Stormterror"
+    }
+  ],
+  "EchoOfAnAncientChord": [
+    {
+      "materialKey": "EchoOfAnAncientChord",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "EchoesOfTheDeepTides",
+      "sourceName": "Echoes of the Deep Tides",
+      "availability": "MON_THU_SUN",
+      "region": "Fontaine",
+      "notes": "Ancient Chord drops in Echoes of the Deep Tides."
+    }
+  ],
+  "EchoOfScorchingMight": [
+    {
+      "materialKey": "EchoOfScorchingMight",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "TowerOfAbjectPride",
+      "sourceName": "Tower of Abject Pride",
+      "availability": "WED_SAT_SUN",
+      "region": "Sumeru",
+      "notes": "Scorching Might drops in Tower of Abject Pride."
+    }
+  ],
+  "ElixirOfTheHeretic": [
+    {
+      "materialKey": "ElixirOfTheHeretic",
+      "sourceType": "weekly_boss",
+      "sourceKey": "FalseMoonInstitute",
+      "sourceName": "False Moon Institute",
+      "availability": "WEEKLY",
+      "notes": "False Moon Institute"
+    }
+  ],
+  "EmberOfLongNightFlint": [
+    {
+      "materialKey": "EmberOfLongNightFlint",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "LostMooncourt",
+      "sourceName": "Lost Mooncourt",
+      "availability": "TUE_FRI_SUN",
+      "region": "Nod-Krai",
+      "notes": "Long Night Flint drops in Lost Mooncourt."
+    }
+  ],
+  "EmperorsResolution": [
+    {
+      "materialKey": "EmperorsResolution",
+      "sourceType": "normal_boss",
+      "sourceKey": "EmperorOfFireAndIron",
+      "sourceName": "Emperor of Fire and Iron",
+      "availability": "ALWAYS",
+      "notes": "Emperor's Resolution"
+    }
+  ],
+  "EnergyNectar": [
+    {
+      "materialKey": "EnergyNectar",
+      "sourceType": "enemy_drop",
+      "sourceKey": "whopperflower_materials",
+      "sourceName": "Whopperflowers",
+      "availability": "ALWAYS",
+      "notes": "Whopperflower Materials"
+    }
+  ],
+  "EnhancementOre": [
+    {
+      "materialKey": "EnhancementOre",
+      "sourceType": "other",
+      "sourceKey": "forging",
+      "sourceName": "Forging",
+      "availability": "ALWAYS",
+      "notes": "Weapon EXP material. Not normally an Original Resin farming target."
+    }
+  ],
+  "EnsnaringGaze": [
+    {
+      "materialKey": "EnsnaringGaze",
+      "sourceType": "normal_boss",
+      "sourceKey": "TenebrousPapilla",
+      "sourceName": "Tenebrous Papilla",
+      "availability": "ALWAYS",
+      "notes": "Ensnaring Gaze"
+    }
+  ],
+  "ErodedHorn": [
+    {
+      "materialKey": "ErodedHorn",
+      "sourceType": "weekly_boss",
+      "sourceKey": "StoneSteleRecords",
+      "sourceName": "Stone Stele Records",
+      "availability": "WEEKLY",
+      "notes": "Stone Stele Records"
+    }
+  ],
+  "ErodedScaleFeather": [
+    {
+      "materialKey": "ErodedScaleFeather",
+      "sourceType": "weekly_boss",
+      "sourceKey": "StoneSteleRecords",
+      "sourceName": "Stone Stele Records",
+      "availability": "WEEKLY",
+      "notes": "Stone Stele Records"
+    }
+  ],
+  "ErodedSunfire": [
+    {
+      "materialKey": "ErodedSunfire",
+      "sourceType": "weekly_boss",
+      "sourceKey": "StoneSteleRecords",
+      "sourceName": "Stone Stele Records",
+      "availability": "WEEKLY",
+      "notes": "Stone Stele Records"
+    }
+  ],
+  "EssenceOfPureSacredDewdrop": [
+    {
+      "materialKey": "EssenceOfPureSacredDewdrop",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "EchoesOfTheDeepTides",
+      "sourceName": "Echoes of the Deep Tides",
+      "availability": "TUE_FRI_SUN",
+      "region": "Fontaine",
+      "notes": "Pure Sacred Dewdrop drops in Echoes of the Deep Tides."
+    }
+  ],
+  "EtherwingMoth": [
+    {
+      "materialKey": "EtherwingMoth",
+      "sourceType": "local_specialty",
+      "sourceKey": "EtherwingMoth",
+      "sourceName": "Etherwing Moth",
+      "availability": "ALWAYS",
+      "region": "Mondstadt",
+      "notes": "Found in Mondstadt"
+    }
+  ],
+  "Everamber": [
+    {
+      "materialKey": "Everamber",
+      "sourceType": "weekly_boss",
+      "sourceKey": "TheRealmOfBeginnings",
+      "sourceName": "The Realm of Beginnings",
+      "availability": "WEEKLY",
+      "notes": "The Realm of Beginnings"
+    }
+  ],
+  "EverflameSeed": [
+    {
+      "materialKey": "EverflameSeed",
+      "sourceType": "normal_boss",
+      "sourceKey": "PyroRegisvine",
+      "sourceName": "Pyro Regisvine",
+      "availability": "ALWAYS",
+      "notes": "Everflame Seed"
+    }
+  ],
+  "EvergloomRing": [
+    {
+      "materialKey": "EvergloomRing",
+      "sourceType": "normal_boss",
+      "sourceKey": "IniquitousBaptist",
+      "sourceName": "Iniquitous Baptist",
+      "availability": "ALWAYS",
+      "notes": "Evergloom Ring"
+    }
+  ],
+  "FadedFlamingHilt": [
+    {
+      "materialKey": "FadedFlamingHilt",
+      "sourceType": "enemy_drop",
+      "sourceKey": "domain_keeper_materials",
+      "sourceName": "Domain Keepers",
+      "availability": "ALWAYS",
+      "notes": "Domain Keeper Materials"
+    }
+  ],
+  "FadedRedSatin": [
+    {
+      "materialKey": "FadedRedSatin",
+      "sourceType": "enemy_drop",
+      "sourceKey": "eremite_materials",
+      "sourceName": "The Eremites",
+      "availability": "ALWAYS",
+      "notes": "The Eremites Materials"
+    }
+  ],
+  "FadingCandle": [
+    {
+      "materialKey": "FadingCandle",
+      "sourceType": "weekly_boss",
+      "sourceKey": "ScatteredRuins",
+      "sourceName": "Scattered Ruins",
+      "availability": "WEEKLY",
+      "notes": "Scattered Ruins"
+    }
+  ],
+  "FamedHandguard": [
+    {
+      "materialKey": "FamedHandguard",
+      "sourceType": "enemy_drop",
+      "sourceKey": "nobushi_materials",
+      "sourceName": "Nobushi and Kairagi",
+      "availability": "ALWAYS",
+      "notes": "Nobushi Materials"
+    }
+  ],
+  "FeatheryFin": [
+    {
+      "materialKey": "FeatheryFin",
+      "sourceType": "enemy_drop",
+      "sourceKey": "xuanwen_beast_materials",
+      "sourceName": "Xuanwen Beasts",
+      "availability": "ALWAYS",
+      "notes": "Xuanwen Beast Materials"
+    }
+  ],
+  "FettersOfTheDandelionGladiator": [
+    {
+      "materialKey": "FettersOfTheDandelionGladiator",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "CeciliaGarden",
+      "sourceName": "Cecilia Garden",
+      "availability": "WED_SAT_SUN",
+      "region": "Mondstadt",
+      "notes": "Dandelion Gladiator drops in Cecilia Garden."
+    }
+  ],
+  "FineEnhancementOre": [
+    {
+      "materialKey": "FineEnhancementOre",
+      "sourceType": "other",
+      "sourceKey": "forging",
+      "sourceName": "Forging",
+      "availability": "ALWAYS",
+      "notes": "Weapon EXP material. Not normally an Original Resin farming target."
+    }
+  ],
+  "FirmArrowhead": [
+    {
+      "materialKey": "FirmArrowhead",
+      "sourceType": "enemy_drop",
+      "sourceKey": "hilichurl_shooter_materials",
+      "sourceName": "Hilichurl Shooters",
+      "availability": "ALWAYS",
+      "notes": "Hilichurl Shooter Materials"
+    }
+  ],
+  "FlareOfLongNightFlint": [
+    {
+      "materialKey": "FlareOfLongNightFlint",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "LostMooncourt",
+      "sourceName": "Lost Mooncourt",
+      "availability": "TUE_FRI_SUN",
+      "region": "Nod-Krai",
+      "notes": "Long Night Flint drops in Lost Mooncourt."
+    }
+  ],
+  "FluorescentFungus": [
+    {
+      "materialKey": "FluorescentFungus",
+      "sourceType": "local_specialty",
+      "sourceKey": "FluorescentFungus",
+      "sourceName": "Fluorescent Fungus",
+      "availability": "ALWAYS",
+      "region": "Inazuma",
+      "notes": "Found in the wild on Tsurumi Island"
+    }
+  ],
+  "FontemerUnihorn": [
+    {
+      "materialKey": "FontemerUnihorn",
+      "sourceType": "normal_boss",
+      "sourceKey": "MillennialPearlSeahorse",
+      "sourceName": "Millennial Pearl Seahorse",
+      "availability": "ALWAYS",
+      "notes": "Fontemer Unihorn"
+    }
+  ],
+  "ForbiddenCurseScroll": [
+    {
+      "materialKey": "ForbiddenCurseScroll",
+      "sourceType": "enemy_drop",
+      "sourceKey": "samachurl_materials",
+      "sourceName": "Samachurls",
+      "availability": "ALWAYS",
+      "notes": "Samachurl Materials"
+    }
+  ],
+  "ForeignSynapse": [
+    {
+      "materialKey": "ForeignSynapse",
+      "sourceType": "enemy_drop",
+      "sourceKey": "breacher_primus_materials",
+      "sourceName": "Breacher Primuses",
+      "availability": "ALWAYS",
+      "notes": "Breacher Primus Materials"
+    }
+  ],
+  "FossilizedBoneShard": [
+    {
+      "materialKey": "FossilizedBoneShard",
+      "sourceType": "enemy_drop",
+      "sourceKey": "vishap_materials",
+      "sourceName": "Vishaps",
+      "availability": "ALWAYS",
+      "notes": "Vishap Materials"
+    }
+  ],
+  "FracturedEyeOfTheDeepShadow": [
+    {
+      "materialKey": "FracturedEyeOfTheDeepShadow",
+      "sourceType": "enemy_drop",
+      "sourceKey": "fisher_of_hidden_depths_materials",
+      "sourceName": "Fisher of Hidden Depths",
+      "availability": "ALWAYS",
+      "notes": "Fisher of Hidden Depths Materials"
+    }
+  ],
+  "FracturedFlamingHilt": [
+    {
+      "materialKey": "FracturedFlamingHilt",
+      "sourceType": "enemy_drop",
+      "sourceKey": "domain_keeper_materials",
+      "sourceName": "Domain Keepers",
+      "availability": "ALWAYS",
+      "notes": "Domain Keeper Materials"
+    }
+  ],
+  "FragileBoneShard": [
+    {
+      "materialKey": "FragileBoneShard",
+      "sourceType": "enemy_drop",
+      "sourceKey": "vishap_materials",
+      "sourceName": "Vishaps",
+      "availability": "ALWAYS",
+      "notes": "Vishap Materials"
+    }
+  ],
+  "FragmentOfAGoldenMelody": [
+    {
+      "materialKey": "FragmentOfAGoldenMelody",
+      "sourceType": "normal_boss",
+      "sourceKey": "StatueOfMarbleAndBrass",
+      "sourceName": "Statue of Marble and Brass",
+      "availability": "ALWAYS",
+      "notes": "Fragment of a Golden Melody"
+    }
+  ],
+  "FragmentOfAnAncientChord": [
+    {
+      "materialKey": "FragmentOfAnAncientChord",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "EchoesOfTheDeepTides",
+      "sourceName": "Echoes of the Deep Tides",
+      "availability": "MON_THU_SUN",
+      "region": "Fontaine",
+      "notes": "Ancient Chord drops in Echoes of the Deep Tides."
+    }
+  ],
+  "FragmentOfDecarabiansEpic": [
+    {
+      "materialKey": "FragmentOfDecarabiansEpic",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "CeciliaGarden",
+      "sourceName": "Cecilia Garden",
+      "availability": "MON_THU_SUN",
+      "resinCost": 20
+    }
+  ],
+  "FrostEtchedWarrant": [
+    {
+      "materialKey": "FrostEtchedWarrant",
+      "sourceType": "enemy_drop",
+      "sourceKey": "fatui_oprichniki_materials",
+      "sourceName": "Fatui Oprichniki",
+      "availability": "ALWAYS",
+      "notes": "Fatui Oprichniki Materials"
+    }
+  ],
+  "FrostlampFlower": [
+    {
+      "materialKey": "FrostlampFlower",
+      "sourceType": "local_specialty",
+      "sourceKey": "FrostlampFlower",
+      "sourceName": "Frostlamp Flower",
+      "availability": "ALWAYS",
+      "region": "Nod-Krai",
+      "notes": "Found in Nod-Krai"
+    }
+  ],
+  "FrostnightsGlimmer": [
+    {
+      "materialKey": "FrostnightsGlimmer",
+      "sourceType": "enemy_drop",
+      "sourceKey": "frostnight_scion_materials",
+      "sourceName": "Frostnight Scions",
+      "availability": "ALWAYS",
+      "notes": "Frostnight Scion Materials"
+    }
+  ],
+  "FrostnightsGlory": [
+    {
+      "materialKey": "FrostnightsGlory",
+      "sourceType": "enemy_drop",
+      "sourceKey": "frostnight_scion_materials",
+      "sourceName": "Frostnight Scions",
+      "availability": "ALWAYS",
+      "notes": "Frostnight Scion Materials"
+    }
+  ],
+  "FrostnightsGlow": [
+    {
+      "materialKey": "FrostnightsGlow",
+      "sourceType": "enemy_drop",
+      "sourceKey": "frostnight_scion_materials",
+      "sourceName": "Frostnight Scions",
+      "availability": "ALWAYS",
+      "notes": "Frostnight Scion Materials"
+    }
+  ],
+  "FungalSpores": [
+    {
+      "materialKey": "FungalSpores",
+      "sourceType": "enemy_drop",
+      "sourceKey": "fungus_materials",
+      "sourceName": "Fungi",
+      "availability": "ALWAYS",
+      "notes": "Fungus Materials"
+    }
+  ],
+  "GildedScale": [
+    {
+      "materialKey": "GildedScale",
+      "sourceType": "weekly_boss",
+      "sourceKey": "BeneathTheDragonQueller",
+      "sourceName": "Beneath the Dragon-Queller",
+      "availability": "WEEKLY",
+      "notes": "Beneath the Dragon-Queller"
+    }
+  ],
+  "GlazeLily": [
+    {
+      "materialKey": "GlazeLily",
+      "sourceType": "local_specialty",
+      "sourceKey": "GlazeLily",
+      "sourceName": "Glaze Lily",
+      "availability": "ALWAYS",
+      "region": "Liyue",
+      "notes": "Found in Liyue Harbor and Qingce Village"
+    }
+  ],
+  "GloomyStatuette": [
+    {
+      "materialKey": "GloomyStatuette",
+      "sourceType": "enemy_drop",
+      "sourceKey": "black_serpent_materials",
+      "sourceName": "The Black Serpents",
+      "availability": "ALWAYS",
+      "notes": "The Black Serpents Materials"
+    }
+  ],
+  "GlowingHornshroom": [
+    {
+      "materialKey": "GlowingHornshroom",
+      "sourceType": "local_specialty",
+      "sourceKey": "GlowingHornshroom",
+      "sourceName": "Glowing Hornshroom",
+      "availability": "ALWAYS",
+      "region": "Natlan",
+      "notes": "Found in Tezcatepetonco Range near the Masters of the Night-Wind"
+    }
+  ],
+  "GlowingRemains": [
+    {
+      "materialKey": "GlowingRemains",
+      "sourceType": "enemy_drop",
+      "sourceKey": "radiant_beast_materials",
+      "sourceName": "Radiant Beasts",
+      "availability": "ALWAYS",
+      "notes": "Radiant Beast Materials"
+    }
+  ],
+  "GoldenBranchOfADistantSea": [
+    {
+      "materialKey": "GoldenBranchOfADistantSea",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "CourtOfFlowingSand",
+      "sourceName": "Court of Flowing Sand",
+      "availability": "MON_THU_SUN",
+      "region": "Inazuma",
+      "notes": "Distant Sea drops in Court of Flowing Sand."
+    }
+  ],
+  "GoldenGobletOfThePristineSea": [
+    {
+      "materialKey": "GoldenGobletOfThePristineSea",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "EchoesOfTheDeepTides",
+      "sourceName": "Echoes of the Deep Tides",
+      "availability": "WED_SAT_SUN",
+      "region": "Fontaine",
+      "notes": "Pristine Sea drops in Echoes of the Deep Tides."
+    }
+  ],
+  "GoldenRavenInsignia": [
+    {
+      "materialKey": "GoldenRavenInsignia",
+      "sourceType": "enemy_drop",
+      "sourceKey": "treasure_hoarder_materials",
+      "sourceName": "Treasure Hoarders",
+      "availability": "ALWAYS",
+      "notes": "Treasure Hoarder Materials"
+    }
+  ],
+  "GoldenTalismanOfTheForestDew": [
+    {
+      "materialKey": "GoldenTalismanOfTheForestDew",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "TowerOfAbjectPride",
+      "sourceName": "Tower of Abject Pride",
+      "availability": "MON_THU_SUN",
+      "region": "Sumeru",
+      "notes": "Forest Dew drops in Tower of Abject Pride."
+    }
+  ],
+  "GoldInscribedSecretSourceCore": [
+    {
+      "materialKey": "GoldInscribedSecretSourceCore",
+      "sourceType": "normal_boss",
+      "sourceKey": "SecretSourceAutomatonConfigurationDevice",
+      "sourceName": "Secret Source Automaton: Configuration Device",
+      "availability": "ALWAYS",
+      "notes": "Gold-Inscribed Secret Source Core"
+    }
+  ],
+  "GrainOfAerosiderite": [
+    {
+      "materialKey": "GrainOfAerosiderite",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "HiddenPalaceOfLianshanFormula",
+      "sourceName": "Hidden Palace of Lianshan Formula",
+      "availability": "WED_SAT_SUN",
+      "region": "Liyue",
+      "notes": "Aerosiderite drops in Hidden Palace of Lianshan Formula."
+    }
+  ],
+  "GuideToAdmonition": [
+    {
+      "materialKey": "GuideToAdmonition",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "SteepleOfIgnorance",
+      "sourceName": "Steeple of Ignorance",
+      "availability": "MON_THU_SUN",
+      "resinCost": 20,
+      "region": "Sumeru"
+    }
+  ],
+  "GuideToBallad": [
+    {
+      "materialKey": "GuideToBallad",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "ForsakenRift",
+      "sourceName": "Forsaken Rift",
+      "availability": "WED_SAT_SUN",
+      "resinCost": 20,
+      "region": "Mondstadt"
+    }
+  ],
+  "GuideToConflict": [
+    {
+      "materialKey": "GuideToConflict",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "BlazingRuins",
+      "sourceName": "Blazing Ruins",
+      "availability": "WED_SAT_SUN",
+      "resinCost": 20,
+      "region": "Natlan"
+    }
+  ],
+  "GuideToContention": [
+    {
+      "materialKey": "GuideToContention",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "BlazingRuins",
+      "sourceName": "Blazing Ruins",
+      "availability": "MON_THU_SUN",
+      "resinCost": 20,
+      "region": "Natlan"
+    }
+  ],
+  "GuideToDiligence": [
+    {
+      "materialKey": "GuideToDiligence",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "TaishanMansion",
+      "sourceName": "Taishan Mansion",
+      "availability": "TUE_FRI_SUN",
+      "resinCost": 20,
+      "region": "Liyue"
+    }
+  ],
+  "GuideToElegance": [
+    {
+      "materialKey": "GuideToElegance",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "VioletCourt",
+      "sourceName": "Violet Court",
+      "availability": "TUE_FRI_SUN",
+      "resinCost": 20,
+      "region": "Inazuma"
+    }
+  ],
+  "GuideToElysium": [
+    {
+      "materialKey": "GuideToElysium",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "LightlessCapital",
+      "sourceName": "Lightless Capital",
+      "availability": "TUE_FRI_SUN",
+      "resinCost": 20,
+      "region": "Nod-Krai"
+    }
+  ],
+  "GuideToEquity": [
+    {
+      "materialKey": "GuideToEquity",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "PaleForgottenGlory",
+      "sourceName": "Pale Forgotten Glory",
+      "availability": "MON_THU_SUN",
+      "resinCost": 20,
+      "region": "Fontaine"
+    }
+  ],
+  "GuideToFreedom": [
+    {
+      "materialKey": "GuideToFreedom",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "ForsakenRift",
+      "sourceName": "Forsaken Rift",
+      "availability": "MON_THU_SUN",
+      "resinCost": 20,
+      "region": "Mondstadt"
+    }
+  ],
+  "GuideToGold": [
+    {
+      "materialKey": "GuideToGold",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "TaishanMansion",
+      "sourceName": "Taishan Mansion",
+      "availability": "WED_SAT_SUN",
+      "resinCost": 20,
+      "region": "Liyue"
+    }
+  ],
+  "GuideToIngenuity": [
+    {
+      "materialKey": "GuideToIngenuity",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "SteepleOfIgnorance",
+      "sourceName": "Steeple of Ignorance",
+      "availability": "TUE_FRI_SUN",
+      "resinCost": 20,
+      "region": "Sumeru"
+    }
+  ],
+  "GuideToJustice": [
+    {
+      "materialKey": "GuideToJustice",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "PaleForgottenGlory",
+      "sourceName": "Pale Forgotten Glory",
+      "availability": "TUE_FRI_SUN",
+      "resinCost": 20,
+      "region": "Fontaine"
+    }
+  ],
+  "GuideToKindling": [
+    {
+      "materialKey": "GuideToKindling",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "BlazingRuins",
+      "sourceName": "Blazing Ruins",
+      "availability": "TUE_FRI_SUN",
+      "resinCost": 20,
+      "region": "Natlan"
+    }
+  ],
+  "GuideToLight": [
+    {
+      "materialKey": "GuideToLight",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "VioletCourt",
+      "sourceName": "Violet Court",
+      "availability": "WED_SAT_SUN",
+      "resinCost": 20,
+      "region": "Inazuma"
+    }
+  ],
+  "GuideToMoonlight": [
+    {
+      "materialKey": "GuideToMoonlight",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "LightlessCapital",
+      "sourceName": "Lightless Capital",
+      "availability": "MON_THU_SUN",
+      "resinCost": 20,
+      "region": "Nod-Krai"
+    }
+  ],
+  "GuideToOrder": [
+    {
+      "materialKey": "GuideToOrder",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "PaleForgottenGlory",
+      "sourceName": "Pale Forgotten Glory",
+      "availability": "WED_SAT_SUN",
+      "resinCost": 20,
+      "region": "Fontaine"
+    }
+  ],
+  "GuideToPraxis": [
+    {
+      "materialKey": "GuideToPraxis",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "SteepleOfIgnorance",
+      "sourceName": "Steeple of Ignorance",
+      "availability": "WED_SAT_SUN",
+      "resinCost": 20,
+      "region": "Sumeru"
+    }
+  ],
+  "GuideToProsperity": [
+    {
+      "materialKey": "GuideToProsperity",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "TaishanMansion",
+      "sourceName": "Taishan Mansion",
+      "availability": "MON_THU_SUN",
+      "resinCost": 20,
+      "region": "Liyue"
+    }
+  ],
+  "GuideToResistance": [
+    {
+      "materialKey": "GuideToResistance",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "ForsakenRift",
+      "sourceName": "Forsaken Rift",
+      "availability": "TUE_FRI_SUN",
+      "resinCost": 20,
+      "region": "Mondstadt"
+    }
+  ],
+  "GuideToTransience": [
+    {
+      "materialKey": "GuideToTransience",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "VioletCourt",
+      "sourceName": "Violet Court",
+      "availability": "MON_THU_SUN",
+      "resinCost": 20,
+      "region": "Inazuma"
+    }
+  ],
+  "GuideToVagrancy": [
+    {
+      "materialKey": "GuideToVagrancy",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "LightlessCapital",
+      "sourceName": "Lightless Capital",
+      "availability": "WED_SAT_SUN",
+      "resinCost": 20,
+      "region": "Nod-Krai"
+    }
+  ],
+  "HeartOfTheSecretSource": [
+    {
+      "materialKey": "HeartOfTheSecretSource",
+      "sourceType": "enemy_drop",
+      "sourceKey": "secret_source_automaton_hunter_seeker_materials",
+      "sourceName": "Secret Source Automaton: Hunter-Seeker",
+      "availability": "ALWAYS",
+      "notes": "Secret Source Automaton: Hunter-Seeker Materials"
+    }
+  ],
+  "HeavyHorn": [
+    {
+      "materialKey": "HeavyHorn",
+      "sourceType": "enemy_drop",
+      "sourceKey": "mitachurl_materials",
+      "sourceName": "Mitachurls",
+      "availability": "ALWAYS",
+      "notes": "Mitachurl Materials"
+    }
+  ],
+  "HellfireButterfly": [
+    {
+      "materialKey": "HellfireButterfly",
+      "sourceType": "weekly_boss",
+      "sourceKey": "NarukamiIslandTenshukaku",
+      "sourceName": "Narukami Island: Tenshukaku",
+      "availability": "WEEKLY",
+      "notes": "Narukami Island: Tenshukaku"
+    }
+  ],
+  "HennaBerry": [
+    {
+      "materialKey": "HennaBerry",
+      "sourceType": "local_specialty",
+      "sourceKey": "HennaBerry",
+      "sourceName": "Henna Berry",
+      "availability": "ALWAYS",
+      "region": "Sumeru",
+      "notes": "Found in the deserts of Sumeru"
+    }
+  ],
+  "HerosWit": [
+    {
+      "materialKey": "HerosWit",
+      "sourceType": "ley_line",
+      "sourceKey": "BlossomOfRevelation",
+      "sourceName": "Blossom of Revelation",
+      "availability": "ALWAYS",
+      "resinCost": 20
+    }
+  ],
+  "HoarfrostCore": [
+    {
+      "materialKey": "HoarfrostCore",
+      "sourceType": "normal_boss",
+      "sourceKey": "CryoRegisvine",
+      "sourceName": "Cryo Regisvine",
+      "availability": "ALWAYS",
+      "notes": "Hoarfrost Core"
+    }
+  ],
+  "HookedBeakOfTheDeepShadow": [
+    {
+      "materialKey": "HookedBeakOfTheDeepShadow",
+      "sourceType": "enemy_drop",
+      "sourceKey": "fisher_of_hidden_depths_materials",
+      "sourceName": "Fisher of Hidden Depths",
+      "availability": "ALWAYS",
+      "notes": "Fisher of Hidden Depths Materials"
+    }
+  ],
+  "HuntersSacrificialKnife": [
+    {
+      "materialKey": "HuntersSacrificialKnife",
+      "sourceType": "enemy_drop",
+      "sourceKey": "fatui_pyro_agent_materials",
+      "sourceName": "Fatui Pyro Agents",
+      "availability": "ALWAYS",
+      "notes": "Fatui Pyro Agent Materials"
+    }
+  ],
+  "HurricaneSeed": [
+    {
+      "materialKey": "HurricaneSeed",
+      "sourceType": "normal_boss",
+      "sourceKey": "AnemoHypostasis",
+      "sourceName": "Anemo Hypostasis",
+      "availability": "ALWAYS",
+      "notes": "Hurricane Seed"
+    }
+  ],
+  "IgnitedSeedOfLife": [
+    {
+      "materialKey": "IgnitedSeedOfLife",
+      "sourceType": "enemy_drop",
+      "sourceKey": "avatar_of_lava_materials",
+      "sourceName": "Avatars of Lava",
+      "availability": "ALWAYS",
+      "notes": "Avatar of Lava Materials"
+    }
+  ],
+  "IgnitedSeeingEye": [
+    {
+      "materialKey": "IgnitedSeeingEye",
+      "sourceType": "enemy_drop",
+      "sourceKey": "avatar_of_lava_materials",
+      "sourceName": "Avatars of Lava",
+      "availability": "ALWAYS",
+      "notes": "Avatar of Lava Materials"
+    }
+  ],
+  "IgnitedStone": [
+    {
+      "materialKey": "IgnitedStone",
+      "sourceType": "enemy_drop",
+      "sourceKey": "avatar_of_lava_materials",
+      "sourceName": "Avatars of Lava",
+      "availability": "ALWAYS",
+      "notes": "Avatar of Lava Materials"
+    }
+  ],
+  "IllusoryLeafcoil": [
+    {
+      "materialKey": "IllusoryLeafcoil",
+      "sourceType": "enemy_drop",
+      "sourceKey": "tenebrous_mimesis_materials",
+      "sourceName": "Tenebrous Mimeses",
+      "availability": "ALWAYS",
+      "notes": "Tenebrous Mimesis Materials"
+    }
+  ],
+  "ImmaculateWarrant": [
+    {
+      "materialKey": "ImmaculateWarrant",
+      "sourceType": "enemy_drop",
+      "sourceKey": "fatui_oprichniki_materials",
+      "sourceName": "Fatui Oprichniki",
+      "availability": "ALWAYS",
+      "notes": "Fatui Oprichniki Materials"
+    }
+  ],
+  "InactivatedFungalNucleus": [
+    {
+      "materialKey": "InactivatedFungalNucleus",
+      "sourceType": "enemy_drop",
+      "sourceKey": "state_shifted_fungus_materials",
+      "sourceName": "State-Shifted Fungi",
+      "availability": "ALWAYS",
+      "notes": "State-Shifted Fungus Materials"
+    }
+  ],
+  "InspectorsSacrificialKnife": [
+    {
+      "materialKey": "InspectorsSacrificialKnife",
+      "sourceType": "enemy_drop",
+      "sourceKey": "fatui_pyro_agent_materials",
+      "sourceName": "Fatui Pyro Agents",
+      "availability": "ALWAYS",
+      "notes": "Fatui Pyro Agent Materials"
+    }
+  ],
+  "IronTalismanOfTheForestDew": [
+    {
+      "materialKey": "IronTalismanOfTheForestDew",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "TowerOfAbjectPride",
+      "sourceName": "Tower of Abject Pride",
+      "availability": "MON_THU_SUN",
+      "region": "Sumeru",
+      "notes": "Forest Dew drops in Tower of Abject Pride."
+    }
+  ],
+  "JadeBranchOfADistantSea": [
+    {
+      "materialKey": "JadeBranchOfADistantSea",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "CourtOfFlowingSand",
+      "sourceName": "Court of Flowing Sand",
+      "availability": "MON_THU_SUN",
+      "region": "Inazuma",
+      "notes": "Distant Sea drops in Court of Flowing Sand."
+    }
+  ],
+  "JeweledBranchOfADistantSea": [
+    {
+      "materialKey": "JeweledBranchOfADistantSea",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "CourtOfFlowingSand",
+      "sourceName": "Court of Flowing Sand",
+      "availability": "MON_THU_SUN",
+      "region": "Inazuma",
+      "notes": "Distant Sea drops in Court of Flowing Sand."
+    }
+  ],
+  "JeweledFlamingHilt": [
+    {
+      "materialKey": "JeweledFlamingHilt",
+      "sourceType": "enemy_drop",
+      "sourceKey": "domain_keeper_materials",
+      "sourceName": "Domain Keepers",
+      "availability": "ALWAYS",
+      "notes": "Domain Keeper Materials"
+    }
+  ],
+  "JueyunChili": [
+    {
+      "materialKey": "JueyunChili",
+      "sourceType": "local_specialty",
+      "sourceKey": "JueyunChili",
+      "sourceName": "Jueyun Chili",
+      "availability": "ALWAYS",
+      "region": "Liyue",
+      "notes": "Found in the wild in Minlin, Qingce Village and Stone Gate"
+    }
+  ],
+  "JuvenileFang": [
+    {
+      "materialKey": "JuvenileFang",
+      "sourceType": "enemy_drop",
+      "sourceKey": "natlan_saurian_materials",
+      "sourceName": "Natlan Saurians",
+      "availability": "ALWAYS",
+      "notes": "Natlan Saurian Materials"
+    }
+  ],
+  "JuvenileJade": [
+    {
+      "materialKey": "JuvenileJade",
+      "sourceType": "normal_boss",
+      "sourceKey": "PrimoGeovishap",
+      "sourceName": "Primo Geovishap",
+      "availability": "ALWAYS",
+      "notes": "Juvenile Jade"
+    }
+  ],
+  "KageuchiHandguard": [
+    {
+      "materialKey": "KageuchiHandguard",
+      "sourceType": "enemy_drop",
+      "sourceKey": "nobushi_materials",
+      "sourceName": "Nobushi and Kairagi",
+      "availability": "ALWAYS",
+      "notes": "Nobushi Materials"
+    }
+  ],
+  "KalpalataLotus": [
+    {
+      "materialKey": "KalpalataLotus",
+      "sourceType": "local_specialty",
+      "sourceKey": "KalpalataLotus",
+      "sourceName": "Kalpalata Lotus",
+      "availability": "ALWAYS",
+      "region": "Sumeru",
+      "notes": "Found in the mountains of Sumeru"
+    }
+  ],
+  "LakelightLily": [
+    {
+      "materialKey": "LakelightLily",
+      "sourceType": "local_specialty",
+      "sourceKey": "FontaineOpenWorld",
+      "sourceName": "Fontaine Open World",
+      "availability": "ALWAYS"
+    }
+  ],
+  "LeyLineSprout": [
+    {
+      "materialKey": "LeyLineSprout",
+      "sourceType": "enemy_drop",
+      "sourceKey": "abyss_mage_materials",
+      "sourceName": "Abyss Mages",
+      "availability": "ALWAYS",
+      "notes": "Abyss Mage Materials"
+    }
+  ],
+  "LieutenantsInsignia": [
+    {
+      "materialKey": "LieutenantsInsignia",
+      "sourceType": "enemy_drop",
+      "sourceKey": "fatui_skirmisher_materials",
+      "sourceName": "Fatui Skirmishers",
+      "availability": "ALWAYS",
+      "notes": "Fatui Skirmisher Materials"
+    }
+  ],
+  "LightbearingScaleFeather": [
+    {
+      "materialKey": "LightbearingScaleFeather",
+      "sourceType": "normal_boss",
+      "sourceKey": "RadiantMoonfly",
+      "sourceName": "Radiant Moonfly",
+      "availability": "ALWAYS",
+      "notes": "Lightbearing Scale-Feather"
+    }
+  ],
+  "LightGuidingTetrahedron": [
+    {
+      "materialKey": "LightGuidingTetrahedron",
+      "sourceType": "normal_boss",
+      "sourceKey": "AlgorithmOfSemiIntransientMatrixOfOverseerNetwork",
+      "sourceName": "Algorithm of Semi-Intransient Matrix of Overseer Network",
+      "availability": "ALWAYS",
+      "notes": "Light Guiding Tetrahedron"
+    }
+  ],
+  "LightlessBone": [
+    {
+      "materialKey": "LightlessBone",
+      "sourceType": "enemy_drop",
+      "sourceKey": "radiant_beast_materials",
+      "sourceName": "Radiant Beasts",
+      "availability": "ALWAYS",
+      "notes": "Radiant Beast Materials"
+    }
+  ],
+  "LightlessEyeOfTheMaelstrom": [
+    {
+      "materialKey": "LightlessEyeOfTheMaelstrom",
+      "sourceType": "weekly_boss",
+      "sourceKey": "ShadowOfAnotherWorld",
+      "sourceName": "Shadow of Another World",
+      "availability": "WEEKLY",
+      "notes": "Shadow of Another World"
+    }
+  ],
+  "LightlessMass": [
+    {
+      "materialKey": "LightlessMass",
+      "sourceType": "weekly_boss",
+      "sourceKey": "AllDevouringNarwhal",
+      "sourceName": "All-Devouring Narwhal",
+      "availability": "WEEKLY",
+      "resinCost": 30
+    }
+  ],
+  "LightlessSilkString": [
+    {
+      "materialKey": "LightlessSilkString",
+      "sourceType": "weekly_boss",
+      "sourceKey": "ShadowOfAnotherWorld",
+      "sourceName": "Shadow of Another World",
+      "availability": "WEEKLY",
+      "notes": "Shadow of Another World"
+    }
+  ],
+  "LightningPrism": [
+    {
+      "materialKey": "LightningPrism",
+      "sourceType": "normal_boss",
+      "sourceKey": "ElectroHypostasis",
+      "sourceName": "Electro Hypostasis",
+      "availability": "ALWAYS",
+      "notes": "Lightning Prism"
+    }
+  ],
+  "LocusOfAClearWill": [
+    {
+      "materialKey": "LocusOfAClearWill",
+      "sourceType": "enemy_drop",
+      "sourceKey": "wayob_manifestation_materials",
+      "sourceName": "Wayob Manifestations",
+      "availability": "ALWAYS",
+      "notes": "Wayob Manifestation Materials"
+    }
+  ],
+  "LumidouceBell": [
+    {
+      "materialKey": "LumidouceBell",
+      "sourceType": "local_specialty",
+      "sourceKey": "LumidouceBell",
+      "sourceName": "Lumidouce Bell",
+      "availability": "ALWAYS",
+      "region": "Fontaine",
+      "notes": "Found in the north of the Court of Fontaine"
+    }
+  ],
+  "LuminescentPollen": [
+    {
+      "materialKey": "LuminescentPollen",
+      "sourceType": "enemy_drop",
+      "sourceKey": "fungus_materials",
+      "sourceName": "Fungi",
+      "availability": "ALWAYS",
+      "notes": "Fungus Materials"
+    }
+  ],
+  "LuminousSandsFromGuyun": [
+    {
+      "materialKey": "LuminousSandsFromGuyun",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "HiddenPalaceOfLianshanFormula",
+      "sourceName": "Hidden Palace of Lianshan Formula",
+      "availability": "MON_THU_SUN",
+      "region": "Liyue",
+      "notes": "Guyun drops in Hidden Palace of Lianshan Formula."
+    }
+  ],
+  "Lumitoile": [
+    {
+      "materialKey": "Lumitoile",
+      "sourceType": "local_specialty",
+      "sourceKey": "Lumitoile",
+      "sourceName": "Lumitoile",
+      "availability": "ALWAYS",
+      "region": "Fontaine",
+      "notes": "Found on beaches and underwater in Liffey Region"
+    }
+  ],
+  "LunarFin": [
+    {
+      "materialKey": "LunarFin",
+      "sourceType": "enemy_drop",
+      "sourceKey": "xuanwen_beast_materials",
+      "sourceName": "Xuanwen Beasts",
+      "availability": "ALWAYS",
+      "notes": "Xuanwen Beast Materials"
+    }
+  ],
+  "LustrousStoneFromGuyun": [
+    {
+      "materialKey": "LustrousStoneFromGuyun",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "HiddenPalaceOfLianshanFormula",
+      "sourceName": "Hidden Palace of Lianshan Formula",
+      "availability": "MON_THU_SUN",
+      "region": "Liyue",
+      "notes": "Guyun drops in Hidden Palace of Lianshan Formula."
+    }
+  ],
+  "MajesticHookedBeak": [
+    {
+      "materialKey": "MajesticHookedBeak",
+      "sourceType": "normal_boss",
+      "sourceKey": "JadeplumeTerrorshroom",
+      "sourceName": "Jadeplume Terrorshroom",
+      "availability": "ALWAYS",
+      "notes": "Majestic Hooked Beak"
+    }
+  ],
+  "MarionetteCore": [
+    {
+      "materialKey": "MarionetteCore",
+      "sourceType": "normal_boss",
+      "sourceKey": "MaguuKenki",
+      "sourceName": "Maguu Kenki",
+      "availability": "ALWAYS",
+      "notes": "Marionette Core"
+    }
+  ],
+  "MarkedShell": [
+    {
+      "materialKey": "MarkedShell",
+      "sourceType": "enemy_drop",
+      "sourceKey": "consecrated_beast_materials",
+      "sourceName": "Consecrated Beasts",
+      "availability": "ALWAYS",
+      "notes": "Consecrated Beast Materials"
+    }
+  ],
+  "MarkOfTheBindingBlessing": [
+    {
+      "materialKey": "MarkOfTheBindingBlessing",
+      "sourceType": "normal_boss",
+      "sourceKey": "HolawaqaNgoubou",
+      "sourceName": "Holawaqa Ngoubou",
+      "availability": "ALWAYS",
+      "notes": "Mark of the Binding Blessing"
+    }
+  ],
+  "MaskOfTheKijin": [
+    {
+      "materialKey": "MaskOfTheKijin",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "CourtOfFlowingSand",
+      "sourceName": "Court of Flowing Sand",
+      "availability": "WED_SAT_SUN",
+      "region": "Inazuma",
+      "notes": "Mask drops in Court of Flowing Sand."
+    }
+  ],
+  "MaskOfTheOneHorned": [
+    {
+      "materialKey": "MaskOfTheOneHorned",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "CourtOfFlowingSand",
+      "sourceName": "Court of Flowing Sand",
+      "availability": "WED_SAT_SUN",
+      "region": "Inazuma",
+      "notes": "Mask drops in Court of Flowing Sand."
+    }
+  ],
+  "MaskOfTheTigersBite": [
+    {
+      "materialKey": "MaskOfTheTigersBite",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "CourtOfFlowingSand",
+      "sourceName": "Court of Flowing Sand",
+      "availability": "WED_SAT_SUN",
+      "region": "Inazuma",
+      "notes": "Mask drops in Court of Flowing Sand."
+    }
+  ],
+  "MaskOfTheVirtuousDoctor": [
+    {
+      "materialKey": "MaskOfTheVirtuousDoctor",
+      "sourceType": "weekly_boss",
+      "sourceKey": "FalseMoonInstitute",
+      "sourceName": "False Moon Institute",
+      "availability": "WEEKLY",
+      "notes": "False Moon Institute"
+    }
+  ],
+  "MaskOfTheWickedLieutenant": [
+    {
+      "materialKey": "MaskOfTheWickedLieutenant",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "CourtOfFlowingSand",
+      "sourceName": "Court of Flowing Sand",
+      "availability": "WED_SAT_SUN",
+      "region": "Inazuma",
+      "notes": "Mask drops in Court of Flowing Sand."
+    }
+  ],
+  "MasterlessStellaFortuna": [
+    {
+      "materialKey": "MasterlessStellaFortuna",
+      "sourceType": "other",
+      "sourceKey": "MasterlessStellaFortuna",
+      "sourceName": "Masterless Stella Fortuna",
+      "availability": "UNKNOWN",
+      "notes": "Post-90 progression material from user-defined project rules. Verify against allowed sources before treating as live game data."
+    }
+  ],
+  "MechanicalSpurGear": [
+    {
+      "materialKey": "MechanicalSpurGear",
+      "sourceType": "enemy_drop",
+      "sourceKey": "clockwork_meka_materials",
+      "sourceName": "Clockwork Meka",
+      "availability": "ALWAYS",
+      "notes": "Clockwork Meka Materials"
+    }
+  ],
+  "MeshingGear": [
+    {
+      "materialKey": "MeshingGear",
+      "sourceType": "enemy_drop",
+      "sourceKey": "clockwork_meka_materials",
+      "sourceName": "Clockwork Meka",
+      "availability": "ALWAYS",
+      "notes": "Clockwork Meka Materials"
+    }
+  ],
+  "MirrorOfMushin": [
+    {
+      "materialKey": "MirrorOfMushin",
+      "sourceType": "weekly_boss",
+      "sourceKey": "JoururiWorkshop",
+      "sourceName": "Joururi Workshop",
+      "availability": "WEEKLY",
+      "notes": "Joururi Workshop"
+    }
+  ],
+  "MistGrass": [
+    {
+      "materialKey": "MistGrass",
+      "sourceType": "enemy_drop",
+      "sourceKey": "fatui_cicin_mage_materials",
+      "sourceName": "Fatui Cicin Mages",
+      "availability": "ALWAYS",
+      "notes": "Fatui Cicin Mage Materials"
+    }
+  ],
+  "MistGrassPollen": [
+    {
+      "materialKey": "MistGrassPollen",
+      "sourceType": "enemy_drop",
+      "sourceKey": "fatui_cicin_mage_materials",
+      "sourceName": "Fatui Cicin Mages",
+      "availability": "ALWAYS",
+      "notes": "Fatui Cicin Mage Materials"
+    }
+  ],
+  "MistGrassWick": [
+    {
+      "materialKey": "MistGrassWick",
+      "sourceType": "enemy_drop",
+      "sourceKey": "fatui_cicin_mage_materials",
+      "sourceName": "Fatui Cicin Mages",
+      "availability": "ALWAYS",
+      "notes": "Fatui Cicin Mage Materials"
+    }
+  ],
+  "MistshroudHelmet": [
+    {
+      "materialKey": "MistshroudHelmet",
+      "sourceType": "enemy_drop",
+      "sourceKey": "wasteland_wild_hunt_materials",
+      "sourceName": "Wasteland Wild Hunt",
+      "availability": "ALWAYS",
+      "notes": "Wasteland Wild Hunt Materials"
+    }
+  ],
+  "MistshroudManifestation": [
+    {
+      "materialKey": "MistshroudManifestation",
+      "sourceType": "enemy_drop",
+      "sourceKey": "wasteland_wild_hunt_materials",
+      "sourceName": "Wasteland Wild Hunt",
+      "availability": "ALWAYS",
+      "notes": "Wasteland Wild Hunt Materials"
+    }
+  ],
+  "MistshroudPlate": [
+    {
+      "materialKey": "MistshroudPlate",
+      "sourceType": "enemy_drop",
+      "sourceKey": "wasteland_wild_hunt_materials",
+      "sourceName": "Wasteland Wild Hunt",
+      "availability": "ALWAYS",
+      "notes": "Wasteland Wild Hunt Materials"
+    }
+  ],
+  "MistVeiledGoldElixir": [
+    {
+      "materialKey": "MistVeiledGoldElixir",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "HiddenPalaceOfLianshanFormula",
+      "sourceName": "Hidden Palace of Lianshan Formula",
+      "availability": "TUE_FRI_SUN",
+      "region": "Liyue",
+      "notes": "Mist Veiled Elixir drops in Hidden Palace of Lianshan Formula."
+    }
+  ],
+  "MistVeiledLeadElixir": [
+    {
+      "materialKey": "MistVeiledLeadElixir",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "HiddenPalaceOfLianshanFormula",
+      "sourceName": "Hidden Palace of Lianshan Formula",
+      "availability": "TUE_FRI_SUN",
+      "region": "Liyue",
+      "notes": "Mist Veiled Elixir drops in Hidden Palace of Lianshan Formula."
+    }
+  ],
+  "MistVeiledMercuryElixir": [
+    {
+      "materialKey": "MistVeiledMercuryElixir",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "HiddenPalaceOfLianshanFormula",
+      "sourceName": "Hidden Palace of Lianshan Formula",
+      "availability": "TUE_FRI_SUN",
+      "region": "Liyue",
+      "notes": "Mist Veiled Elixir drops in Hidden Palace of Lianshan Formula."
+    }
+  ],
+  "MistVeiledPrimoElixir": [
+    {
+      "materialKey": "MistVeiledPrimoElixir",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "HiddenPalaceOfLianshanFormula",
+      "sourceName": "Hidden Palace of Lianshan Formula",
+      "availability": "TUE_FRI_SUN",
+      "region": "Liyue",
+      "notes": "Mist Veiled Elixir drops in Hidden Palace of Lianshan Formula."
+    }
+  ],
+  "MoltenMoment": [
+    {
+      "materialKey": "MoltenMoment",
+      "sourceType": "weekly_boss",
+      "sourceKey": "NarukamiIslandTenshukaku",
+      "sourceName": "Narukami Island: Tenshukaku",
+      "availability": "WEEKLY",
+      "notes": "Narukami Island: Tenshukaku"
+    }
+  ],
+  "MoonfallSilver": [
+    {
+      "materialKey": "MoonfallSilver",
+      "sourceType": "local_specialty",
+      "sourceKey": "MoonfallSilver",
+      "sourceName": "Moonfall Silver",
+      "availability": "ALWAYS",
+      "region": "Nod-Krai",
+      "notes": "Found in Hiisi Island"
+    }
+  ],
+  "Mora": [
+    {
+      "materialKey": "Mora",
+      "sourceType": "ley_line",
+      "sourceKey": "BlossomOfWealth",
+      "sourceName": "Blossom of Wealth",
+      "availability": "ALWAYS",
+      "resinCost": 20
+    }
+  ],
+  "MourningFlower": [
+    {
+      "materialKey": "MourningFlower",
+      "sourceType": "local_specialty",
+      "sourceKey": "MourningFlower",
+      "sourceName": "Mourning Flower",
+      "availability": "ALWAYS",
+      "region": "Sumeru",
+      "notes": "Found in the deserts of Sumeru"
+    }
+  ],
+  "MovementOfAnAncientChord": [
+    {
+      "materialKey": "MovementOfAnAncientChord",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "EchoesOfTheDeepTides",
+      "sourceName": "Echoes of the Deep Tides",
+      "availability": "MON_THU_SUN",
+      "region": "Fontaine",
+      "notes": "Ancient Chord drops in Echoes of the Deep Tides."
+    }
+  ],
+  "MudraOfTheMaleficGeneral": [
+    {
+      "materialKey": "MudraOfTheMaleficGeneral",
+      "sourceType": "weekly_boss",
+      "sourceKey": "EndOfTheOneiricEuthymia",
+      "sourceName": "End of the Oneiric Euthymia",
+      "availability": "WEEKLY",
+      "notes": "End of the Oneiric Euthymia"
+    }
+  ],
+  "MysticEnhancementOre": [
+    {
+      "materialKey": "MysticEnhancementOre",
+      "sourceType": "forging",
+      "sourceKey": "ForgeMysticEnhancementOreFromCrystalChunk",
+      "sourceName": "Forge from Crystal Chunk",
+      "availability": "ALWAYS",
+      "resinCost": 0,
+      "inputMaterialKey": "CrystalChunk",
+      "inputQuantity": 40,
+      "outputQuantity": 10,
+      "dailyOutputCap": 40,
+      "resetCadence": "daily",
+      "notes": "Forge 40 Crystal Chunk into 10 Mystic Enhancement Ore. Daily forging output is capped at 40 Mystic Enhancement Ore."
+    },
+    {
+      "materialKey": "MysticEnhancementOre",
+      "sourceType": "forging",
+      "sourceKey": "ForgeMysticEnhancementOreFromRainbowdropCrystal",
+      "sourceName": "Forge from Rainbowdrop Crystal",
+      "availability": "ALWAYS",
+      "resinCost": 0,
+      "inputMaterialKey": "RainbowdropCrystal",
+      "inputQuantity": 40,
+      "outputQuantity": 10,
+      "dailyOutputCap": 40,
+      "resetCadence": "daily",
+      "notes": "Forge 40 Rainbowdrop Crystal into 10 Mystic Enhancement Ore. Daily forging output is capped at 40 Mystic Enhancement Ore."
+    },
+    {
+      "materialKey": "MysticEnhancementOre",
+      "sourceType": "forging",
+      "sourceKey": "ForgeMysticEnhancementOreFromCondessenceCrystal",
+      "sourceName": "Forge from Condessence Crystal",
+      "availability": "ALWAYS",
+      "resinCost": 0,
+      "inputMaterialKey": "CondessenceCrystal",
+      "inputQuantity": 40,
+      "outputQuantity": 10,
+      "dailyOutputCap": 40,
+      "resetCadence": "daily",
+      "notes": "Forge 40 Condessence Crystal into 10 Mystic Enhancement Ore. Daily forging output is capped at 40 Mystic Enhancement Ore."
+    }
+  ],
+  "NagadusEmeraldChunk": [
+    {
+      "materialKey": "NagadusEmeraldChunk",
+      "sourceType": "normal_boss",
+      "sourceKey": "DendroBosses",
+      "sourceName": "Dendro-aligned Bosses",
+      "availability": "ALWAYS",
+      "resinCost": 40,
+      "notes": "Dropped by elemental-aligned bosses and craftable upward at the alchemy bench."
+    }
+  ],
+  "NagadusEmeraldFragment": [
+    {
+      "materialKey": "NagadusEmeraldFragment",
+      "sourceType": "normal_boss",
+      "sourceKey": "DendroBosses",
+      "sourceName": "Dendro-aligned Bosses",
+      "availability": "ALWAYS",
+      "resinCost": 40,
+      "notes": "Dropped by elemental-aligned bosses and craftable upward at the alchemy bench."
+    }
+  ],
+  "NagadusEmeraldGemstone": [
+    {
+      "materialKey": "NagadusEmeraldGemstone",
+      "sourceType": "normal_boss",
+      "sourceKey": "DendroBosses",
+      "sourceName": "Dendro-aligned Bosses",
+      "availability": "ALWAYS",
+      "resinCost": 40,
+      "notes": "Dropped by elemental-aligned bosses and craftable upward at the alchemy bench."
+    }
+  ],
+  "NagadusEmeraldSliver": [
+    {
+      "materialKey": "NagadusEmeraldSliver",
+      "sourceType": "normal_boss",
+      "sourceKey": "DendroBosses",
+      "sourceName": "Dendro-aligned Bosses",
+      "availability": "ALWAYS",
+      "resinCost": 40,
+      "notes": "Dropped by elemental-aligned bosses and craftable upward at the alchemy bench."
+    }
+  ],
+  "NakuWeed": [
+    {
+      "materialKey": "NakuWeed",
+      "sourceType": "local_specialty",
+      "sourceKey": "NakuWeed",
+      "sourceName": "Naku Weed",
+      "availability": "ALWAYS",
+      "region": "Inazuma",
+      "notes": "Found in areas of high Electro concentration in Inazuma, especially Seirai Island"
+    }
+  ],
+  "NarukamisAffection": [
+    {
+      "materialKey": "NarukamisAffection",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "CourtOfFlowingSand",
+      "sourceName": "Court of Flowing Sand",
+      "availability": "TUE_FRI_SUN",
+      "region": "Inazuma",
+      "notes": "Narukami drops in Court of Flowing Sand."
+    }
+  ],
+  "NarukamisJoy": [
+    {
+      "materialKey": "NarukamisJoy",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "CourtOfFlowingSand",
+      "sourceName": "Court of Flowing Sand",
+      "availability": "TUE_FRI_SUN",
+      "region": "Inazuma",
+      "notes": "Narukami drops in Court of Flowing Sand."
+    }
+  ],
+  "NarukamisValor": [
+    {
+      "materialKey": "NarukamisValor",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "CourtOfFlowingSand",
+      "sourceName": "Court of Flowing Sand",
+      "availability": "TUE_FRI_SUN",
+      "region": "Inazuma",
+      "notes": "Narukami drops in Court of Flowing Sand."
+    }
+  ],
+  "NarukamisWisdom": [
+    {
+      "materialKey": "NarukamisWisdom",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "CourtOfFlowingSand",
+      "sourceName": "Court of Flowing Sand",
+      "availability": "TUE_FRI_SUN",
+      "region": "Inazuma",
+      "notes": "Narukami drops in Court of Flowing Sand."
+    }
+  ],
+  "NewbornTaintedHydroPhantasm": [
+    {
+      "materialKey": "NewbornTaintedHydroPhantasm",
+      "sourceType": "enemy_drop",
+      "sourceKey": "tainted_hydro_phantasm_materials",
+      "sourceName": "Tainted Hydro Phantasms",
+      "availability": "ALWAYS",
+      "notes": "Tainted Hydro Phantasm Materials"
+    }
+  ],
+  "NightWindsMysticAugury": [
+    {
+      "materialKey": "NightWindsMysticAugury",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "AncientWatchtower",
+      "sourceName": "Ancient Watchtower",
+      "availability": "WED_SAT_SUN",
+      "region": "Natlan",
+      "notes": "Night-Wind drops in Ancient Watchtower."
+    }
+  ],
+  "NightWindsMysticConsideration": [
+    {
+      "materialKey": "NightWindsMysticConsideration",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "AncientWatchtower",
+      "sourceName": "Ancient Watchtower",
+      "availability": "WED_SAT_SUN",
+      "region": "Natlan",
+      "notes": "Night-Wind drops in Ancient Watchtower."
+    }
+  ],
+  "NightWindsMysticPremonition": [
+    {
+      "materialKey": "NightWindsMysticPremonition",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "AncientWatchtower",
+      "sourceName": "Ancient Watchtower",
+      "availability": "WED_SAT_SUN",
+      "region": "Natlan",
+      "notes": "Night-Wind drops in Ancient Watchtower."
+    }
+  ],
+  "NightWindsMysticRevelation": [
+    {
+      "materialKey": "NightWindsMysticRevelation",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "AncientWatchtower",
+      "sourceName": "Ancient Watchtower",
+      "availability": "WED_SAT_SUN",
+      "region": "Natlan",
+      "notes": "Night-Wind drops in Ancient Watchtower."
+    }
+  ],
+  "NilotpalaLotus": [
+    {
+      "materialKey": "NilotpalaLotus",
+      "sourceType": "local_specialty",
+      "sourceKey": "NilotpalaLotus",
+      "sourceName": "Nilotpala Lotus",
+      "availability": "ALWAYS",
+      "region": "Sumeru",
+      "notes": "Found near lakes and river banks in Sumeru"
+    }
+  ],
+  "NoctilucousJade": [
+    {
+      "materialKey": "NoctilucousJade",
+      "sourceType": "local_specialty",
+      "sourceKey": "NoctilucousJade",
+      "sourceName": "Noctilucous Jade",
+      "availability": "ALWAYS",
+      "region": "Liyue",
+      "notes": "Found in caves in Liyue, especially Mingyun Village"
+    }
+  ],
+  "OasisGardensKindness": [
+    {
+      "materialKey": "OasisGardensKindness",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "TowerOfAbjectPride",
+      "sourceName": "Tower of Abject Pride",
+      "availability": "TUE_FRI_SUN",
+      "region": "Sumeru",
+      "notes": "Oasis Garden drops in Tower of Abject Pride."
+    }
+  ],
+  "OasisGardensMourning": [
+    {
+      "materialKey": "OasisGardensMourning",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "TowerOfAbjectPride",
+      "sourceName": "Tower of Abject Pride",
+      "availability": "TUE_FRI_SUN",
+      "region": "Sumeru",
+      "notes": "Oasis Garden drops in Tower of Abject Pride."
+    }
+  ],
+  "OasisGardensReminiscence": [
+    {
+      "materialKey": "OasisGardensReminiscence",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "TowerOfAbjectPride",
+      "sourceName": "Tower of Abject Pride",
+      "availability": "TUE_FRI_SUN",
+      "region": "Sumeru",
+      "notes": "Oasis Garden drops in Tower of Abject Pride."
+    }
+  ],
+  "OasisGardensTruth": [
+    {
+      "materialKey": "OasisGardensTruth",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "TowerOfAbjectPride",
+      "sourceName": "Tower of Abject Pride",
+      "availability": "TUE_FRI_SUN",
+      "region": "Sumeru",
+      "notes": "Oasis Garden drops in Tower of Abject Pride."
+    }
+  ],
+  "OblationOfTheFarNorthScions": [
+    {
+      "materialKey": "OblationOfTheFarNorthScions",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "LostMooncourt",
+      "sourceName": "Lost Mooncourt",
+      "availability": "WED_SAT_SUN",
+      "region": "Nod-Krai",
+      "notes": "Far-North Scions drops in Lost Mooncourt."
+    }
+  ],
+  "OldenDaysOfScorchingMight": [
+    {
+      "materialKey": "OldenDaysOfScorchingMight",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "TowerOfAbjectPride",
+      "sourceName": "Tower of Abject Pride",
+      "availability": "WED_SAT_SUN",
+      "region": "Sumeru",
+      "notes": "Scorching Might drops in Tower of Abject Pride."
+    }
+  ],
+  "OldHandguard": [
+    {
+      "materialKey": "OldHandguard",
+      "sourceType": "enemy_drop",
+      "sourceKey": "nobushi_materials",
+      "sourceName": "Nobushi and Kairagi",
+      "availability": "ALWAYS",
+      "notes": "Nobushi Materials"
+    }
+  ],
+  "OldOperativesPocketWatch": [
+    {
+      "materialKey": "OldOperativesPocketWatch",
+      "sourceType": "enemy_drop",
+      "sourceKey": "fatui_operative_materials",
+      "sourceName": "Fatui Operatives",
+      "availability": "ALWAYS",
+      "notes": "Fatui Operative Materials"
+    }
+  ],
+  "OminousMask": [
+    {
+      "materialKey": "OminousMask",
+      "sourceType": "enemy_drop",
+      "sourceKey": "hilichurl_materials",
+      "sourceName": "Hilichurls",
+      "availability": "ALWAYS",
+      "notes": "Hilichurl Materials"
+    }
+  ],
+  "OneStarWeaponFodder": [
+    {
+      "materialKey": "OneStarWeaponFodder",
+      "sourceType": "weapon_fodder",
+      "sourceKey": "OneStarWeaponFodder",
+      "sourceName": "1-Star Weapon Fodder",
+      "availability": "ALWAYS",
+      "notes": "Generic 1-Star weapon consumed as weapon EXP."
+    }
+  ],
+  "Onikabuto": [
+    {
+      "materialKey": "Onikabuto",
+      "sourceType": "local_specialty",
+      "sourceKey": "Onikabuto",
+      "sourceName": "Onikabuto",
+      "availability": "ALWAYS",
+      "region": "Inazuma",
+      "notes": "Found in areas of high Electro concentration in Inazuma, especially Mikage Furnace and Mt. Yougou"
+    }
+  ],
+  "OperativesConstancy": [
+    {
+      "materialKey": "OperativesConstancy",
+      "sourceType": "enemy_drop",
+      "sourceKey": "fatui_operative_materials",
+      "sourceName": "Fatui Operatives",
+      "availability": "ALWAYS",
+      "notes": "Fatui Operative Materials"
+    }
+  ],
+  "OperativesStandardPocketWatch": [
+    {
+      "materialKey": "OperativesStandardPocketWatch",
+      "sourceType": "enemy_drop",
+      "sourceKey": "fatui_operative_materials",
+      "sourceName": "Fatui Operatives",
+      "availability": "ALWAYS",
+      "notes": "Fatui Operative Materials"
+    }
+  ],
+  "OverripeFlamegranate": [
+    {
+      "materialKey": "OverripeFlamegranate",
+      "sourceType": "normal_boss",
+      "sourceKey": "Kongamato",
+      "sourceName": "Kongamato",
+      "availability": "ALWAYS",
+      "notes": "Overripe Flamegranate"
+    }
+  ],
+  "Padisarah": [
+    {
+      "materialKey": "Padisarah",
+      "sourceType": "local_specialty",
+      "sourceKey": "Padisarah",
+      "sourceName": "Padisarah",
+      "availability": "ALWAYS",
+      "region": "Sumeru",
+      "notes": "Found in Sumeru City"
+    }
+  ],
+  "PerpetualCaliber": [
+    {
+      "materialKey": "PerpetualCaliber",
+      "sourceType": "normal_boss",
+      "sourceKey": "AeonblightDrake",
+      "sourceName": "Aeonblight Drake",
+      "availability": "ALWAYS",
+      "notes": "Perpetual Caliber"
+    }
+  ],
+  "PerpetualHeart": [
+    {
+      "materialKey": "PerpetualHeart",
+      "sourceType": "normal_boss",
+      "sourceKey": "PerpetualMechanicalArray",
+      "sourceName": "Perpetual Mechanical Array",
+      "availability": "ALWAYS",
+      "notes": "Perpetual Heart"
+    }
+  ],
+  "PhilanemoMushroom": [
+    {
+      "materialKey": "PhilanemoMushroom",
+      "sourceType": "local_specialty",
+      "sourceKey": "PhilanemoMushroom",
+      "sourceName": "Philanemo Mushroom",
+      "availability": "ALWAYS",
+      "region": "Mondstadt",
+      "notes": "Found under the eaves of houses in the City of Mondstadt, Springvale, Dawn Winery, and Millhaven"
+    }
+  ],
+  "PhilosophiesOfAdmonition": [
+    {
+      "materialKey": "PhilosophiesOfAdmonition",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "SteepleOfIgnorance",
+      "sourceName": "Steeple of Ignorance",
+      "availability": "MON_THU_SUN",
+      "resinCost": 20,
+      "region": "Sumeru"
+    }
+  ],
+  "PhilosophiesOfBallad": [
+    {
+      "materialKey": "PhilosophiesOfBallad",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "ForsakenRift",
+      "sourceName": "Forsaken Rift",
+      "availability": "WED_SAT_SUN",
+      "resinCost": 20,
+      "region": "Mondstadt"
+    }
+  ],
+  "PhilosophiesOfConflict": [
+    {
+      "materialKey": "PhilosophiesOfConflict",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "BlazingRuins",
+      "sourceName": "Blazing Ruins",
+      "availability": "WED_SAT_SUN",
+      "resinCost": 20,
+      "region": "Natlan"
+    }
+  ],
+  "PhilosophiesOfContention": [
+    {
+      "materialKey": "PhilosophiesOfContention",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "BlazingRuins",
+      "sourceName": "Blazing Ruins",
+      "availability": "MON_THU_SUN",
+      "resinCost": 20,
+      "region": "Natlan"
+    }
+  ],
+  "PhilosophiesOfDiligence": [
+    {
+      "materialKey": "PhilosophiesOfDiligence",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "TaishanMansion",
+      "sourceName": "Taishan Mansion",
+      "availability": "TUE_FRI_SUN",
+      "resinCost": 20,
+      "region": "Liyue"
+    }
+  ],
+  "PhilosophiesOfElegance": [
+    {
+      "materialKey": "PhilosophiesOfElegance",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "VioletCourt",
+      "sourceName": "Violet Court",
+      "availability": "TUE_FRI_SUN",
+      "resinCost": 20,
+      "region": "Inazuma"
+    }
+  ],
+  "PhilosophiesOfElysium": [
+    {
+      "materialKey": "PhilosophiesOfElysium",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "LightlessCapital",
+      "sourceName": "Lightless Capital",
+      "availability": "TUE_FRI_SUN",
+      "resinCost": 20,
+      "region": "Nod-Krai"
+    }
+  ],
+  "PhilosophiesOfEquity": [
+    {
+      "materialKey": "PhilosophiesOfEquity",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "PaleForgottenGlory",
+      "sourceName": "Pale Forgotten Glory",
+      "availability": "MON_THU_SUN",
+      "resinCost": 20,
+      "region": "Fontaine"
+    }
+  ],
+  "PhilosophiesOfFreedom": [
+    {
+      "materialKey": "PhilosophiesOfFreedom",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "ForsakenRift",
+      "sourceName": "Forsaken Rift",
+      "availability": "MON_THU_SUN",
+      "resinCost": 20,
+      "region": "Mondstadt"
+    }
+  ],
+  "PhilosophiesOfGold": [
+    {
+      "materialKey": "PhilosophiesOfGold",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "TaishanMansion",
+      "sourceName": "Taishan Mansion",
+      "availability": "WED_SAT_SUN",
+      "resinCost": 20,
+      "region": "Liyue"
+    }
+  ],
+  "PhilosophiesOfIngenuity": [
+    {
+      "materialKey": "PhilosophiesOfIngenuity",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "SteepleOfIgnorance",
+      "sourceName": "Steeple of Ignorance",
+      "availability": "TUE_FRI_SUN",
+      "resinCost": 20,
+      "region": "Sumeru"
+    }
+  ],
+  "PhilosophiesOfJustice": [
+    {
+      "materialKey": "PhilosophiesOfJustice",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "PaleForgottenGlory",
+      "sourceName": "Pale Forgotten Glory",
+      "availability": "TUE_FRI_SUN",
+      "resinCost": 20,
+      "region": "Fontaine"
+    }
+  ],
+  "PhilosophiesOfKindling": [
+    {
+      "materialKey": "PhilosophiesOfKindling",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "BlazingRuins",
+      "sourceName": "Blazing Ruins",
+      "availability": "TUE_FRI_SUN",
+      "resinCost": 20,
+      "region": "Natlan"
+    }
+  ],
+  "PhilosophiesOfLight": [
+    {
+      "materialKey": "PhilosophiesOfLight",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "VioletCourt",
+      "sourceName": "Violet Court",
+      "availability": "WED_SAT_SUN",
+      "resinCost": 20,
+      "region": "Inazuma"
+    }
+  ],
+  "PhilosophiesOfMoonlight": [
+    {
+      "materialKey": "PhilosophiesOfMoonlight",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "LightlessCapital",
+      "sourceName": "Lightless Capital",
+      "availability": "MON_THU_SUN",
+      "resinCost": 20,
+      "region": "Nod-Krai"
+    }
+  ],
+  "PhilosophiesOfOrder": [
+    {
+      "materialKey": "PhilosophiesOfOrder",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "PaleForgottenGlory",
+      "sourceName": "Pale Forgotten Glory",
+      "availability": "WED_SAT_SUN",
+      "resinCost": 20,
+      "region": "Fontaine"
+    }
+  ],
+  "PhilosophiesOfPraxis": [
+    {
+      "materialKey": "PhilosophiesOfPraxis",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "SteepleOfIgnorance",
+      "sourceName": "Steeple of Ignorance",
+      "availability": "WED_SAT_SUN",
+      "resinCost": 20,
+      "region": "Sumeru"
+    }
+  ],
+  "PhilosophiesOfProsperity": [
+    {
+      "materialKey": "PhilosophiesOfProsperity",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "TaishanMansion",
+      "sourceName": "Taishan Mansion",
+      "availability": "MON_THU_SUN",
+      "resinCost": 20,
+      "region": "Liyue"
+    }
+  ],
+  "PhilosophiesOfResistance": [
+    {
+      "materialKey": "PhilosophiesOfResistance",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "ForsakenRift",
+      "sourceName": "Forsaken Rift",
+      "availability": "TUE_FRI_SUN",
+      "resinCost": 20,
+      "region": "Mondstadt"
+    }
+  ],
+  "PhilosophiesOfTransience": [
+    {
+      "materialKey": "PhilosophiesOfTransience",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "VioletCourt",
+      "sourceName": "Violet Court",
+      "availability": "MON_THU_SUN",
+      "resinCost": 20,
+      "region": "Inazuma"
+    }
+  ],
+  "PhilosophiesOfVagrancy": [
+    {
+      "materialKey": "PhilosophiesOfVagrancy",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "LightlessCapital",
+      "sourceName": "Lightless Capital",
+      "availability": "WED_SAT_SUN",
+      "resinCost": 20,
+      "region": "Nod-Krai"
+    }
+  ],
+  "PieceOfAerosiderite": [
+    {
+      "materialKey": "PieceOfAerosiderite",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "HiddenPalaceOfLianshanFormula",
+      "sourceName": "Hidden Palace of Lianshan Formula",
+      "availability": "WED_SAT_SUN",
+      "region": "Liyue",
+      "notes": "Aerosiderite drops in Hidden Palace of Lianshan Formula."
+    }
+  ],
+  "PineAmber": [
+    {
+      "materialKey": "PineAmber",
+      "sourceType": "local_specialty",
+      "sourceKey": "PineAmber",
+      "sourceName": "Pine Amber",
+      "availability": "ALWAYS",
+      "region": "Nod-Krai",
+      "notes": "Found in Dreadshade Mire"
+    }
+  ],
+  "PlumeOfTheFallenWatcher": [
+    {
+      "materialKey": "PlumeOfTheFallenWatcher",
+      "sourceType": "normal_boss",
+      "sourceKey": "TheOpenEyed",
+      "sourceName": "The Open-Eyed",
+      "availability": "ALWAYS",
+      "notes": "Plume of the Fallen Watcher"
+    }
+  ],
+  "PolarizingPrism": [
+    {
+      "materialKey": "PolarizingPrism",
+      "sourceType": "enemy_drop",
+      "sourceKey": "mirror_maiden_materials",
+      "sourceName": "Mirror Maidens",
+      "availability": "ALWAYS",
+      "notes": "Mirror Maiden Materials"
+    }
+  ],
+  "PortableBearing": [
+    {
+      "materialKey": "PortableBearing",
+      "sourceType": "local_specialty",
+      "sourceKey": "PortableBearing",
+      "sourceName": "Portable Bearing",
+      "availability": "ALWAYS",
+      "region": "Nod-Krai",
+      "notes": "Found in Lempo Isle"
+    }
+  ],
+  "PrecisionDriveShaft": [
+    {
+      "materialKey": "PrecisionDriveShaft",
+      "sourceType": "enemy_drop",
+      "sourceKey": "landcruiser_materials",
+      "sourceName": "Landcruisers",
+      "availability": "ALWAYS",
+      "notes": "Landcruiser Materials"
+    }
+  ],
+  "PrecisionKuuvahkiStampingDie": [
+    {
+      "materialKey": "PrecisionKuuvahkiStampingDie",
+      "sourceType": "normal_boss",
+      "sourceKey": "KnuckleDuckle",
+      "sourceName": "Knuckle Duckle",
+      "availability": "ALWAYS",
+      "notes": "Precision Kuuvahki Stamping Die"
+    }
+  ],
+  "PrimordialGreenbloom": [
+    {
+      "materialKey": "PrimordialGreenbloom",
+      "sourceType": "weekly_boss",
+      "sourceKey": "TheRealmOfBeginnings",
+      "sourceName": "The Realm of Beginnings",
+      "availability": "WEEKLY",
+      "notes": "The Realm of Beginnings"
+    }
+  ],
+  "PrismaticSeveredTail": [
+    {
+      "materialKey": "PrismaticSeveredTail",
+      "sourceType": "normal_boss",
+      "sourceKey": "RadiantMoongecko",
+      "sourceName": "Radiant Moongecko",
+      "availability": "ALWAYS",
+      "notes": "Prismatic Severed Tail"
+    }
+  ],
+  "PrithivaTopazChunk": [
+    {
+      "materialKey": "PrithivaTopazChunk",
+      "sourceType": "normal_boss",
+      "sourceKey": "GeoBosses",
+      "sourceName": "Geo-aligned Bosses",
+      "availability": "ALWAYS",
+      "resinCost": 40,
+      "notes": "Dropped by elemental-aligned bosses and craftable upward at the alchemy bench."
+    }
+  ],
+  "PrithivaTopazFragment": [
+    {
+      "materialKey": "PrithivaTopazFragment",
+      "sourceType": "normal_boss",
+      "sourceKey": "GeoBosses",
+      "sourceName": "Geo-aligned Bosses",
+      "availability": "ALWAYS",
+      "resinCost": 40,
+      "notes": "Dropped by elemental-aligned bosses and craftable upward at the alchemy bench."
+    }
+  ],
+  "PrithivaTopazGemstone": [
+    {
+      "materialKey": "PrithivaTopazGemstone",
+      "sourceType": "normal_boss",
+      "sourceKey": "GeoBosses",
+      "sourceName": "Geo-aligned Bosses",
+      "availability": "ALWAYS",
+      "resinCost": 40,
+      "notes": "Dropped by elemental-aligned bosses and craftable upward at the alchemy bench."
+    }
+  ],
+  "PrithivaTopazSliver": [
+    {
+      "materialKey": "PrithivaTopazSliver",
+      "sourceType": "normal_boss",
+      "sourceKey": "GeoBosses",
+      "sourceName": "Geo-aligned Bosses",
+      "availability": "ALWAYS",
+      "resinCost": 40,
+      "notes": "Dropped by elemental-aligned bosses and craftable upward at the alchemy bench."
+    }
+  ],
+  "PseudoStamens": [
+    {
+      "materialKey": "PseudoStamens",
+      "sourceType": "normal_boss",
+      "sourceKey": "SetekhWenut",
+      "sourceName": "Setekh Wenut",
+      "availability": "ALWAYS",
+      "notes": "Pseudo-Stamens"
+    }
+  ],
+  "PuppetStrings": [
+    {
+      "materialKey": "PuppetStrings",
+      "sourceType": "weekly_boss",
+      "sourceKey": "JoururiWorkshop",
+      "sourceName": "Joururi Workshop",
+      "availability": "WEEKLY",
+      "notes": "Joururi Workshop"
+    }
+  ],
+  "Qingxin": [
+    {
+      "materialKey": "Qingxin",
+      "sourceType": "local_specialty",
+      "sourceKey": "Qingxin",
+      "sourceName": "Qingxin",
+      "availability": "ALWAYS",
+      "region": "Liyue",
+      "notes": "Found in the heights of Liyue, especially Minlin and Wuwang Hill"
+    }
+  ],
+  "QuelledCreeper": [
+    {
+      "materialKey": "QuelledCreeper",
+      "sourceType": "normal_boss",
+      "sourceKey": "DendroHypostasis",
+      "sourceName": "Dendro Hypostasis",
+      "availability": "ALWAYS",
+      "notes": "Quelled Creeper"
+    }
+  ],
+  "QuenepaBerry": [
+    {
+      "materialKey": "QuenepaBerry",
+      "sourceType": "local_specialty",
+      "sourceKey": "QuenepaBerry",
+      "sourceName": "Quenepa Berry",
+      "availability": "ALWAYS",
+      "region": "Natlan",
+      "notes": "Found in Natlan"
+    }
+  ],
+  "RadiantAntler": [
+    {
+      "materialKey": "RadiantAntler",
+      "sourceType": "normal_boss",
+      "sourceKey": "FrostnightHerra",
+      "sourceName": "Frostnight Herra",
+      "availability": "ALWAYS",
+      "notes": "Radiant Antler"
+    }
+  ],
+  "RadiantExoskeleton": [
+    {
+      "materialKey": "RadiantExoskeleton",
+      "sourceType": "enemy_drop",
+      "sourceKey": "radiant_beast_materials",
+      "sourceName": "Radiant Beasts",
+      "availability": "ALWAYS",
+      "notes": "Radiant Beast Materials"
+    }
+  ],
+  "RadiantPrism": [
+    {
+      "materialKey": "RadiantPrism",
+      "sourceType": "enemy_drop",
+      "sourceKey": "primal_construct_materials",
+      "sourceName": "Primal Constructs",
+      "availability": "ALWAYS",
+      "notes": "Primal Construct Materials"
+    }
+  ],
+  "RainbowdropCrystal": [
+    {
+      "materialKey": "RainbowdropCrystal",
+      "sourceType": "world_gathering",
+      "sourceKey": "RainbowdropCrystalVeins",
+      "sourceName": "Rainbowdrop Crystal Veins",
+      "availability": "ALWAYS",
+      "resinCost": 0,
+      "notes": "Ore chunk veins respawn 3 days after mining.",
+      "respawnDays": 3
+    }
+  ],
+  "RainbowRose": [
+    {
+      "materialKey": "RainbowRose",
+      "sourceType": "local_specialty",
+      "sourceKey": "RainbowRose",
+      "sourceName": "Rainbow Rose",
+      "availability": "ALWAYS",
+      "region": "Fontaine",
+      "notes": "Found in the wilds of Beryl Region and surrounding the Fountain of Lucine"
+    }
+  ],
+  "RecruitsInsignia": [
+    {
+      "materialKey": "RecruitsInsignia",
+      "sourceType": "enemy_drop",
+      "sourceKey": "fatui_skirmisher_materials",
+      "sourceName": "Fatui Skirmishers",
+      "availability": "ALWAYS",
+      "notes": "Fatui Skirmisher Materials"
+    }
+  ],
+  "RefractiveBud": [
+    {
+      "materialKey": "RefractiveBud",
+      "sourceType": "enemy_drop",
+      "sourceKey": "tenebrous_mimesis_materials",
+      "sourceName": "Tenebrous Mimeses",
+      "availability": "ALWAYS",
+      "notes": "Tenebrous Mimesis Materials"
+    }
+  ],
+  "ReinforcedDriveShaft": [
+    {
+      "materialKey": "ReinforcedDriveShaft",
+      "sourceType": "enemy_drop",
+      "sourceKey": "landcruiser_materials",
+      "sourceName": "Landcruisers",
+      "availability": "ALWAYS",
+      "notes": "Landcruiser Materials"
+    }
+  ],
+  "RelicFromGuyun": [
+    {
+      "materialKey": "RelicFromGuyun",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "HiddenPalaceOfLianshanFormula",
+      "sourceName": "Hidden Palace of Lianshan Formula",
+      "availability": "MON_THU_SUN",
+      "region": "Liyue",
+      "notes": "Guyun drops in Hidden Palace of Lianshan Formula."
+    }
+  ],
+  "RemnantGlowOfScorchingMight": [
+    {
+      "materialKey": "RemnantGlowOfScorchingMight",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "TowerOfAbjectPride",
+      "sourceName": "Tower of Abject Pride",
+      "availability": "WED_SAT_SUN",
+      "region": "Sumeru",
+      "notes": "Scorching Might drops in Tower of Abject Pride."
+    }
+  ],
+  "RemnantOfTheDreadwing": [
+    {
+      "materialKey": "RemnantOfTheDreadwing",
+      "sourceType": "normal_boss",
+      "sourceKey": "LordOfTheHiddenDepthsWhispererOfNightmares",
+      "sourceName": "Lord of the Hidden Depths: Whisperer of Nightmares",
+      "availability": "ALWAYS",
+      "notes": "Remnant of the Dreadwing"
+    }
+  ],
+  "RichRedBrocade": [
+    {
+      "materialKey": "RichRedBrocade",
+      "sourceType": "enemy_drop",
+      "sourceKey": "eremite_materials",
+      "sourceName": "The Eremites",
+      "availability": "ALWAYS",
+      "notes": "The Eremites Materials"
+    }
+  ],
+  "RiftbornRegalia": [
+    {
+      "materialKey": "RiftbornRegalia",
+      "sourceType": "normal_boss",
+      "sourceKey": "GoldenWolflord",
+      "sourceName": "Golden Wolflord",
+      "availability": "ALWAYS",
+      "notes": "Riftborn Regalia"
+    }
+  ],
+  "RiftCore": [
+    {
+      "materialKey": "RiftCore",
+      "sourceType": "enemy_drop",
+      "sourceKey": "breacher_primus_materials",
+      "sourceName": "Breacher Primuses",
+      "availability": "ALWAYS",
+      "notes": "Breacher Primus Materials"
+    }
+  ],
+  "RingOfBoreas": [
+    {
+      "materialKey": "RingOfBoreas",
+      "sourceType": "weekly_boss",
+      "sourceKey": "LupusBoreas",
+      "sourceName": "Wolf of the North Challenge",
+      "availability": "WEEKLY",
+      "notes": "Lupus Boreas"
+    }
+  ],
+  "RobustFungalNucleus": [
+    {
+      "materialKey": "RobustFungalNucleus",
+      "sourceType": "enemy_drop",
+      "sourceKey": "state_shifted_fungus_materials",
+      "sourceName": "State-Shifted Fungi",
+      "availability": "ALWAYS",
+      "notes": "State-Shifted Fungus Materials"
+    }
+  ],
+  "RomaritimeFlower": [
+    {
+      "materialKey": "RomaritimeFlower",
+      "sourceType": "local_specialty",
+      "sourceKey": "RomaritimeFlower",
+      "sourceName": "Romaritime Flower",
+      "availability": "ALWAYS",
+      "region": "Fontaine",
+      "notes": "Found mainly in or around bodies of water in Fontaine"
+    }
+  ],
+  "RuinedHilt": [
+    {
+      "materialKey": "RuinedHilt",
+      "sourceType": "enemy_drop",
+      "sourceKey": "praetorian_golem_materials",
+      "sourceName": "Praetorian Golems",
+      "availability": "ALWAYS",
+      "notes": "Praetorian Golem Materials"
+    }
+  ],
+  "RukkhashavaMushrooms": [
+    {
+      "materialKey": "RukkhashavaMushrooms",
+      "sourceType": "local_specialty",
+      "sourceKey": "RukkhashavaMushrooms",
+      "sourceName": "Rukkhashava Mushrooms",
+      "availability": "ALWAYS",
+      "region": "Sumeru",
+      "notes": "Found in the wild in the Ashavan Realm and Lokapala Jungle"
+    }
+  ],
+  "RunicFang": [
+    {
+      "materialKey": "RunicFang",
+      "sourceType": "normal_boss",
+      "sourceKey": "RuinSerpent",
+      "sourceName": "Ruin Serpent",
+      "availability": "ALWAYS",
+      "notes": "Runic Fang"
+    }
+  ],
+  "SakuraBloom": [
+    {
+      "materialKey": "SakuraBloom",
+      "sourceType": "local_specialty",
+      "sourceKey": "SakuraBloom",
+      "sourceName": "Sakura Bloom",
+      "availability": "ALWAYS",
+      "region": "Inazuma",
+      "notes": "Found in the wild on Narukami Island"
+    }
+  ],
+  "SandGreasePupa": [
+    {
+      "materialKey": "SandGreasePupa",
+      "sourceType": "local_specialty",
+      "sourceKey": "SandGreasePupa",
+      "sourceName": "Sand Grease Pupa",
+      "availability": "ALWAYS",
+      "region": "Sumeru",
+      "notes": "Found in the deserts of Sumeru"
+    }
+  ],
+  "SangoPearl": [
+    {
+      "materialKey": "SangoPearl",
+      "sourceType": "local_specialty",
+      "sourceKey": "SangoPearl",
+      "sourceName": "Sango Pearl",
+      "availability": "ALWAYS",
+      "region": "Inazuma",
+      "notes": "Found in the wild on Watatsumi Island and in Enkanomiya"
+    }
+  ],
+  "SaurianClawSucculent": [
+    {
+      "materialKey": "SaurianClawSucculent",
+      "sourceType": "local_specialty",
+      "sourceKey": "SaurianClawSucculent",
+      "sourceName": "Saurian Claw Succulent",
+      "availability": "ALWAYS",
+      "region": "Natlan",
+      "notes": "Found in Natlan"
+    }
+  ],
+  "SaurianCrownedWarriorsGoldenWhistle": [
+    {
+      "materialKey": "SaurianCrownedWarriorsGoldenWhistle",
+      "sourceType": "enemy_drop",
+      "sourceKey": "sauroform_tribal_warrior_materials",
+      "sourceName": "Sauroform Tribal Warriors",
+      "availability": "ALWAYS",
+      "notes": "Sauroform Tribal Warrior Materials"
+    }
+  ],
+  "Scarab": [
+    {
+      "materialKey": "Scarab",
+      "sourceType": "local_specialty",
+      "sourceKey": "Scarab",
+      "sourceName": "Scarab",
+      "availability": "ALWAYS",
+      "region": "Sumeru",
+      "notes": "Found in the desert ruins of Sumeru"
+    }
+  ],
+  "ScatteredPieceOfDecarabiansDream": [
+    {
+      "materialKey": "ScatteredPieceOfDecarabiansDream",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "CeciliaGarden",
+      "sourceName": "Cecilia Garden",
+      "availability": "MON_THU_SUN",
+      "resinCost": 20
+    }
+  ],
+  "ScoopOfTaintedWater": [
+    {
+      "materialKey": "ScoopOfTaintedWater",
+      "sourceType": "enemy_drop",
+      "sourceKey": "tainted_hydro_phantasm_materials",
+      "sourceName": "Tainted Hydro Phantasms",
+      "availability": "ALWAYS",
+      "notes": "Tainted Hydro Phantasm Materials"
+    }
+  ],
+  "SeaGanoderma": [
+    {
+      "materialKey": "SeaGanoderma",
+      "sourceType": "local_specialty",
+      "sourceKey": "SeaGanoderma",
+      "sourceName": "Sea Ganoderma",
+      "availability": "ALWAYS",
+      "region": "Inazuma",
+      "notes": "Found on beaches and tidal flats of Inazuma"
+    }
+  ],
+  "SealedScroll": [
+    {
+      "materialKey": "SealedScroll",
+      "sourceType": "enemy_drop",
+      "sourceKey": "samachurl_materials",
+      "sourceName": "Samachurls",
+      "availability": "ALWAYS",
+      "notes": "Samachurl Materials"
+    }
+  ],
+  "SeasonedFang": [
+    {
+      "materialKey": "SeasonedFang",
+      "sourceType": "enemy_drop",
+      "sourceKey": "natlan_saurian_materials",
+      "sourceName": "Natlan Saurians",
+      "availability": "ALWAYS",
+      "notes": "Natlan Saurian Materials"
+    }
+  ],
+  "SecretSourceAirflowAccumulator": [
+    {
+      "materialKey": "SecretSourceAirflowAccumulator",
+      "sourceType": "normal_boss",
+      "sourceKey": "SecretSourceAutomatonOverseerDevice",
+      "sourceName": "Secret Source Automaton: Overseer Device",
+      "availability": "ALWAYS",
+      "notes": "Secret Source Airflow Accumulator"
+    }
+  ],
+  "SentrysWoodenWhistle": [
+    {
+      "materialKey": "SentrysWoodenWhistle",
+      "sourceType": "enemy_drop",
+      "sourceKey": "sauroform_tribal_warrior_materials",
+      "sourceName": "Sauroform Tribal Warriors",
+      "availability": "ALWAYS",
+      "notes": "Sauroform Tribal Warrior Materials"
+    }
+  ],
+  "SergeantsInsignia": [
+    {
+      "materialKey": "SergeantsInsignia",
+      "sourceType": "enemy_drop",
+      "sourceKey": "fatui_skirmisher_materials",
+      "sourceName": "Fatui Skirmishers",
+      "availability": "ALWAYS",
+      "notes": "Fatui Skirmisher Materials"
+    }
+  ],
+  "ShacklesOfTheDandelionGladiator": [
+    {
+      "materialKey": "ShacklesOfTheDandelionGladiator",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "CeciliaGarden",
+      "sourceName": "Cecilia Garden",
+      "availability": "WED_SAT_SUN",
+      "region": "Mondstadt",
+      "notes": "Dandelion Gladiator drops in Cecilia Garden."
+    }
+  ],
+  "ShadowOfTheWarrior": [
+    {
+      "materialKey": "ShadowOfTheWarrior",
+      "sourceType": "weekly_boss",
+      "sourceKey": "EnterTheGoldenHouse",
+      "sourceName": "Enter the Golden House",
+      "availability": "WEEKLY",
+      "notes": "Enter the Golden House"
+    }
+  ],
+  "ShardOfAFoulLegacy": [
+    {
+      "materialKey": "ShardOfAFoulLegacy",
+      "sourceType": "weekly_boss",
+      "sourceKey": "EnterTheGoldenHouse",
+      "sourceName": "Enter the Golden House",
+      "availability": "WEEKLY",
+      "notes": "Enter the Golden House"
+    }
+  ],
+  "ShardOfAShatteredWill": [
+    {
+      "materialKey": "ShardOfAShatteredWill",
+      "sourceType": "enemy_drop",
+      "sourceKey": "wayob_manifestation_materials",
+      "sourceName": "Wayob Manifestations",
+      "availability": "ALWAYS",
+      "notes": "Wayob Manifestation Materials"
+    }
+  ],
+  "SharpArrowhead": [
+    {
+      "materialKey": "SharpArrowhead",
+      "sourceType": "enemy_drop",
+      "sourceKey": "hilichurl_shooter_materials",
+      "sourceName": "Hilichurl Shooters",
+      "availability": "ALWAYS",
+      "notes": "Hilichurl Shooter Materials"
+    }
+  ],
+  "SheathOfTheSecretSource": [
+    {
+      "materialKey": "SheathOfTheSecretSource",
+      "sourceType": "enemy_drop",
+      "sourceKey": "secret_source_automaton_hunter_seeker_materials",
+      "sourceName": "Secret Source Automaton: Hunter-Seeker",
+      "availability": "ALWAYS",
+      "notes": "Secret Source Automaton: Hunter-Seeker Materials"
+    }
+  ],
+  "ShimmeringNectar": [
+    {
+      "materialKey": "ShimmeringNectar",
+      "sourceType": "enemy_drop",
+      "sourceKey": "whopperflower_materials",
+      "sourceName": "Whopperflowers",
+      "availability": "ALWAYS",
+      "notes": "Whopperflower Materials"
+    }
+  ],
+  "ShivadaJadeChunk": [
+    {
+      "materialKey": "ShivadaJadeChunk",
+      "sourceType": "normal_boss",
+      "sourceKey": "CryoBosses",
+      "sourceName": "Cryo-aligned Bosses",
+      "availability": "ALWAYS",
+      "resinCost": 40,
+      "notes": "Dropped by elemental-aligned bosses and craftable upward at the alchemy bench."
+    }
+  ],
+  "ShivadaJadeFragment": [
+    {
+      "materialKey": "ShivadaJadeFragment",
+      "sourceType": "normal_boss",
+      "sourceKey": "CryoBosses",
+      "sourceName": "Cryo-aligned Bosses",
+      "availability": "ALWAYS",
+      "resinCost": 40,
+      "notes": "Dropped by elemental-aligned bosses and craftable upward at the alchemy bench."
+    }
+  ],
+  "ShivadaJadeGemstone": [
+    {
+      "materialKey": "ShivadaJadeGemstone",
+      "sourceType": "normal_boss",
+      "sourceKey": "CryoBosses",
+      "sourceName": "Cryo-aligned Bosses",
+      "availability": "ALWAYS",
+      "resinCost": 40,
+      "notes": "Dropped by elemental-aligned bosses and craftable upward at the alchemy bench."
+    }
+  ],
+  "ShivadaJadeSliver": [
+    {
+      "materialKey": "ShivadaJadeSliver",
+      "sourceType": "normal_boss",
+      "sourceKey": "CryoBosses",
+      "sourceName": "Cryo-aligned Bosses",
+      "availability": "ALWAYS",
+      "resinCost": 40,
+      "notes": "Dropped by elemental-aligned bosses and craftable upward at the alchemy bench."
+    }
+  ],
+  "SigilOfAStridingWill": [
+    {
+      "materialKey": "SigilOfAStridingWill",
+      "sourceType": "enemy_drop",
+      "sourceKey": "wayob_manifestation_materials",
+      "sourceName": "Wayob Manifestations",
+      "availability": "ALWAYS",
+      "notes": "Wayob Manifestation Materials"
+    }
+  ],
+  "SilkenFeather": [
+    {
+      "materialKey": "SilkenFeather",
+      "sourceType": "weekly_boss",
+      "sourceKey": "ScatteredRuins",
+      "sourceName": "Scattered Ruins",
+      "availability": "WEEKLY",
+      "notes": "Scattered Ruins"
+    }
+  ],
+  "SilkFlower": [
+    {
+      "materialKey": "SilkFlower",
+      "sourceType": "local_specialty",
+      "sourceKey": "SilkFlower",
+      "sourceName": "Silk Flower",
+      "availability": "ALWAYS",
+      "region": "Liyue",
+      "notes": "Found in Liyue Harbor and Wangshu Inn"
+    }
+  ],
+  "SilverGobletOfThePristineSea": [
+    {
+      "materialKey": "SilverGobletOfThePristineSea",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "EchoesOfTheDeepTides",
+      "sourceName": "Echoes of the Deep Tides",
+      "availability": "WED_SAT_SUN",
+      "region": "Fontaine",
+      "notes": "Pristine Sea drops in Echoes of the Deep Tides."
+    }
+  ],
+  "SilverRavenInsignia": [
+    {
+      "materialKey": "SilverRavenInsignia",
+      "sourceType": "enemy_drop",
+      "sourceKey": "treasure_hoarder_materials",
+      "sourceName": "Treasure Hoarders",
+      "availability": "ALWAYS",
+      "notes": "Treasure Hoarder Materials"
+    }
+  ],
+  "SilverTalismanOfTheForestDew": [
+    {
+      "materialKey": "SilverTalismanOfTheForestDew",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "TowerOfAbjectPride",
+      "sourceName": "Tower of Abject Pride",
+      "availability": "MON_THU_SUN",
+      "region": "Sumeru",
+      "notes": "Forest Dew drops in Tower of Abject Pride."
+    }
+  ],
+  "SkysplitGembloom": [
+    {
+      "materialKey": "SkysplitGembloom",
+      "sourceType": "local_specialty",
+      "sourceKey": "SkysplitGembloom",
+      "sourceName": "Skysplit Gembloom",
+      "availability": "ALWAYS",
+      "region": "Natlan",
+      "notes": "Found in Natlan"
+    }
+  ],
+  "SlimeConcentrate": [
+    {
+      "materialKey": "SlimeConcentrate",
+      "sourceType": "enemy_drop",
+      "sourceKey": "slime_materials",
+      "sourceName": "Slimes",
+      "availability": "ALWAYS",
+      "notes": "Slime Materials"
+    }
+  ],
+  "SlimeCondensate": [
+    {
+      "materialKey": "SlimeCondensate",
+      "sourceType": "enemy_drop",
+      "sourceKey": "slime_materials",
+      "sourceName": "Slimes",
+      "availability": "ALWAYS",
+      "notes": "Slime Materials"
+    }
+  ],
+  "SlimeSecretions": [
+    {
+      "materialKey": "SlimeSecretions",
+      "sourceType": "enemy_drop",
+      "sourceKey": "slime_materials",
+      "sourceName": "Slimes",
+      "availability": "ALWAYS",
+      "notes": "Slime Materials"
+    }
+  ],
+  "SmallLampGrass": [
+    {
+      "materialKey": "SmallLampGrass",
+      "sourceType": "local_specialty",
+      "sourceKey": "SmallLampGrass",
+      "sourceName": "Small Lamp Grass",
+      "availability": "ALWAYS",
+      "region": "Mondstadt",
+      "notes": "Found in the wild in Mondstadt, especially Whispering Woods"
+    }
+  ],
+  "SmolderingPearl": [
+    {
+      "materialKey": "SmolderingPearl",
+      "sourceType": "normal_boss",
+      "sourceKey": "PyroHypostasis",
+      "sourceName": "Pyro Hypostasis",
+      "availability": "ALWAYS",
+      "notes": "Smoldering Pearl"
+    }
+  ],
+  "SparklessStatueCore": [
+    {
+      "materialKey": "SparklessStatueCore",
+      "sourceType": "normal_boss",
+      "sourceKey": "LavaDragonStatue",
+      "sourceName": "Lava Dragon Statue",
+      "availability": "ALWAYS",
+      "notes": "Sparkless Statue Core"
+    }
+  ],
+  "SpectralHeart": [
+    {
+      "materialKey": "SpectralHeart",
+      "sourceType": "enemy_drop",
+      "sourceKey": "specter_materials",
+      "sourceName": "Specters",
+      "availability": "ALWAYS",
+      "notes": "Specter Materials"
+    }
+  ],
+  "SpectralHusk": [
+    {
+      "materialKey": "SpectralHusk",
+      "sourceType": "enemy_drop",
+      "sourceKey": "specter_materials",
+      "sourceName": "Specters",
+      "availability": "ALWAYS",
+      "notes": "Specter Materials"
+    }
+  ],
+  "SpectralNucleus": [
+    {
+      "materialKey": "SpectralNucleus",
+      "sourceType": "enemy_drop",
+      "sourceKey": "specter_materials",
+      "sourceName": "Specters",
+      "availability": "ALWAYS",
+      "notes": "Specter Materials"
+    }
+  ],
+  "SpiritLocketOfBoreas": [
+    {
+      "materialKey": "SpiritLocketOfBoreas",
+      "sourceType": "weekly_boss",
+      "sourceKey": "LupusBoreas",
+      "sourceName": "Wolf of the North Challenge",
+      "availability": "WEEKLY",
+      "notes": "Lupus Boreas"
+    }
+  ],
+  "SplinteredHilt": [
+    {
+      "materialKey": "SplinteredHilt",
+      "sourceType": "enemy_drop",
+      "sourceKey": "praetorian_golem_materials",
+      "sourceName": "Praetorian Golems",
+      "availability": "ALWAYS",
+      "notes": "Praetorian Golem Materials"
+    }
+  ],
+  "SprayfeatherGill": [
+    {
+      "materialKey": "SprayfeatherGill",
+      "sourceType": "local_specialty",
+      "sourceKey": "SprayfeatherGill",
+      "sourceName": "Sprayfeather Gill",
+      "availability": "ALWAYS",
+      "region": "Natlan",
+      "notes": "Found in Natlan"
+    }
+  ],
+  "SpringOfPureSacredDewdrop": [
+    {
+      "materialKey": "SpringOfPureSacredDewdrop",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "EchoesOfTheDeepTides",
+      "sourceName": "Echoes of the Deep Tides",
+      "availability": "TUE_FRI_SUN",
+      "region": "Fontaine",
+      "notes": "Pure Sacred Dewdrop drops in Echoes of the Deep Tides."
+    }
+  ],
+  "SpringOfTheFirstDewdrop": [
+    {
+      "materialKey": "SpringOfTheFirstDewdrop",
+      "sourceType": "local_specialty",
+      "sourceKey": "SpringOfTheFirstDewdrop",
+      "sourceName": "Spring of the First Dewdrop",
+      "availability": "ALWAYS",
+      "region": "Fontaine",
+      "notes": "Found underwater surrounding the Tower of Ipsissimus in Morte Region"
+    }
+  ],
+  "StainedMask": [
+    {
+      "materialKey": "StainedMask",
+      "sourceType": "enemy_drop",
+      "sourceKey": "hilichurl_materials",
+      "sourceName": "Hilichurls",
+      "availability": "ALWAYS",
+      "notes": "Hilichurl Materials"
+    }
+  ],
+  "Starconch": [
+    {
+      "materialKey": "Starconch",
+      "sourceType": "local_specialty",
+      "sourceKey": "Starconch",
+      "sourceName": "Starconch",
+      "availability": "ALWAYS",
+      "region": "Liyue",
+      "notes": "Found on the beaches of Liyue and Dragonspine"
+    }
+  ],
+  "StillSmolderingHilt": [
+    {
+      "materialKey": "StillSmolderingHilt",
+      "sourceType": "enemy_drop",
+      "sourceKey": "praetorian_golem_materials",
+      "sourceName": "Praetorian Golems",
+      "availability": "ALWAYS",
+      "notes": "Praetorian Golem Materials"
+    }
+  ],
+  "StormBeads": [
+    {
+      "materialKey": "StormBeads",
+      "sourceType": "normal_boss",
+      "sourceKey": "ThunderManifestation",
+      "sourceName": "Thunder Manifestation",
+      "availability": "ALWAYS",
+      "notes": "Storm Beads"
+    }
+  ],
+  "SturdyBoneShard": [
+    {
+      "materialKey": "SturdyBoneShard",
+      "sourceType": "enemy_drop",
+      "sourceKey": "vishap_materials",
+      "sourceName": "Vishaps",
+      "availability": "ALWAYS",
+      "notes": "Vishap Materials"
+    }
+  ],
+  "SturdyShell": [
+    {
+      "materialKey": "SturdyShell",
+      "sourceType": "enemy_drop",
+      "sourceKey": "consecrated_beast_materials",
+      "sourceName": "Consecrated Beasts",
+      "availability": "ALWAYS",
+      "notes": "Consecrated Beast Materials"
+    }
+  ],
+  "SubdetectionUnit": [
+    {
+      "materialKey": "SubdetectionUnit",
+      "sourceType": "local_specialty",
+      "sourceKey": "SubdetectionUnit",
+      "sourceName": "Subdetection Unit",
+      "availability": "ALWAYS",
+      "region": "Fontaine",
+      "notes": "Found in Fontaine Research Institute of Kinetic Energy Engineering Region, Liffey Region"
+    }
+  ],
+  "SublimationOfPureSacredDewdrop": [
+    {
+      "materialKey": "SublimationOfPureSacredDewdrop",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "EchoesOfTheDeepTides",
+      "sourceName": "Echoes of the Deep Tides",
+      "availability": "TUE_FRI_SUN",
+      "region": "Fontaine",
+      "notes": "Pure Sacred Dewdrop drops in Echoes of the Deep Tides."
+    }
+  ],
+  "SunderedGloryOfTheFarNorthScions": [
+    {
+      "materialKey": "SunderedGloryOfTheFarNorthScions",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "LostMooncourt",
+      "sourceName": "Lost Mooncourt",
+      "availability": "WED_SAT_SUN",
+      "region": "Nod-Krai",
+      "notes": "Far-North Scions drops in Lost Mooncourt."
+    }
+  ],
+  "TailOfBoreas": [
+    {
+      "materialKey": "TailOfBoreas",
+      "sourceType": "weekly_boss",
+      "sourceKey": "LupusBoreas",
+      "sourceName": "Wolf of the North Challenge",
+      "availability": "WEEKLY",
+      "notes": "Lupus Boreas"
+    }
+  ],
+  "TalismanOfTheEnigmaticLand": [
+    {
+      "materialKey": "TalismanOfTheEnigmaticLand",
+      "sourceType": "normal_boss",
+      "sourceKey": "WaywardHermeticSpiritspeaker",
+      "sourceName": "Wayward Hermetic Spiritspeaker",
+      "availability": "ALWAYS",
+      "notes": "Talisman of the Enigmatic Land"
+    }
+  ],
+  "TatteredWarrant": [
+    {
+      "materialKey": "TatteredWarrant",
+      "sourceType": "enemy_drop",
+      "sourceKey": "fatui_oprichniki_materials",
+      "sourceName": "Fatui Oprichniki",
+      "availability": "ALWAYS",
+      "notes": "Fatui Oprichniki Materials"
+    }
+  ],
+  "TeachingsOfAdmonition": [
+    {
+      "materialKey": "TeachingsOfAdmonition",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "SteepleOfIgnorance",
+      "sourceName": "Steeple of Ignorance",
+      "availability": "MON_THU_SUN",
+      "resinCost": 20,
+      "region": "Sumeru"
+    }
+  ],
+  "TeachingsOfBallad": [
+    {
+      "materialKey": "TeachingsOfBallad",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "ForsakenRift",
+      "sourceName": "Forsaken Rift",
+      "availability": "WED_SAT_SUN",
+      "resinCost": 20,
+      "region": "Mondstadt"
+    }
+  ],
+  "TeachingsOfConflict": [
+    {
+      "materialKey": "TeachingsOfConflict",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "BlazingRuins",
+      "sourceName": "Blazing Ruins",
+      "availability": "WED_SAT_SUN",
+      "resinCost": 20,
+      "region": "Natlan"
+    }
+  ],
+  "TeachingsOfContention": [
+    {
+      "materialKey": "TeachingsOfContention",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "BlazingRuins",
+      "sourceName": "Blazing Ruins",
+      "availability": "MON_THU_SUN",
+      "resinCost": 20,
+      "region": "Natlan"
+    }
+  ],
+  "TeachingsOfDiligence": [
+    {
+      "materialKey": "TeachingsOfDiligence",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "TaishanMansion",
+      "sourceName": "Taishan Mansion",
+      "availability": "TUE_FRI_SUN",
+      "resinCost": 20,
+      "region": "Liyue"
+    }
+  ],
+  "TeachingsOfElegance": [
+    {
+      "materialKey": "TeachingsOfElegance",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "VioletCourt",
+      "sourceName": "Violet Court",
+      "availability": "TUE_FRI_SUN",
+      "resinCost": 20,
+      "region": "Inazuma"
+    }
+  ],
+  "TeachingsOfElysium": [
+    {
+      "materialKey": "TeachingsOfElysium",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "LightlessCapital",
+      "sourceName": "Lightless Capital",
+      "availability": "TUE_FRI_SUN",
+      "resinCost": 20,
+      "region": "Nod-Krai"
+    }
+  ],
+  "TeachingsOfEquity": [
+    {
+      "materialKey": "TeachingsOfEquity",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "PaleForgottenGlory",
+      "sourceName": "Pale Forgotten Glory",
+      "availability": "MON_THU_SUN",
+      "resinCost": 20,
+      "region": "Fontaine"
+    }
+  ],
+  "TeachingsOfFreedom": [
+    {
+      "materialKey": "TeachingsOfFreedom",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "ForsakenRift",
+      "sourceName": "Forsaken Rift",
+      "availability": "MON_THU_SUN",
+      "resinCost": 20,
+      "region": "Mondstadt"
+    }
+  ],
+  "TeachingsOfGold": [
+    {
+      "materialKey": "TeachingsOfGold",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "TaishanMansion",
+      "sourceName": "Taishan Mansion",
+      "availability": "WED_SAT_SUN",
+      "resinCost": 20,
+      "region": "Liyue"
+    }
+  ],
+  "TeachingsOfIngenuity": [
+    {
+      "materialKey": "TeachingsOfIngenuity",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "SteepleOfIgnorance",
+      "sourceName": "Steeple of Ignorance",
+      "availability": "TUE_FRI_SUN",
+      "resinCost": 20,
+      "region": "Sumeru"
+    }
+  ],
+  "TeachingsOfJustice": [
+    {
+      "materialKey": "TeachingsOfJustice",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "PaleForgottenGlory",
+      "sourceName": "Pale Forgotten Glory",
+      "availability": "TUE_FRI_SUN",
+      "resinCost": 20,
+      "region": "Fontaine"
+    }
+  ],
+  "TeachingsOfKindling": [
+    {
+      "materialKey": "TeachingsOfKindling",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "BlazingRuins",
+      "sourceName": "Blazing Ruins",
+      "availability": "TUE_FRI_SUN",
+      "resinCost": 20,
+      "region": "Natlan"
+    }
+  ],
+  "TeachingsOfLight": [
+    {
+      "materialKey": "TeachingsOfLight",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "VioletCourt",
+      "sourceName": "Violet Court",
+      "availability": "WED_SAT_SUN",
+      "resinCost": 20,
+      "region": "Inazuma"
+    }
+  ],
+  "TeachingsOfMoonlight": [
+    {
+      "materialKey": "TeachingsOfMoonlight",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "LightlessCapital",
+      "sourceName": "Lightless Capital",
+      "availability": "MON_THU_SUN",
+      "resinCost": 20,
+      "region": "Nod-Krai"
+    }
+  ],
+  "TeachingsOfOrder": [
+    {
+      "materialKey": "TeachingsOfOrder",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "PaleForgottenGlory",
+      "sourceName": "Pale Forgotten Glory",
+      "availability": "WED_SAT_SUN",
+      "resinCost": 20,
+      "region": "Fontaine"
+    }
+  ],
+  "TeachingsOfPraxis": [
+    {
+      "materialKey": "TeachingsOfPraxis",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "SteepleOfIgnorance",
+      "sourceName": "Steeple of Ignorance",
+      "availability": "WED_SAT_SUN",
+      "resinCost": 20,
+      "region": "Sumeru"
+    }
+  ],
+  "TeachingsOfProsperity": [
+    {
+      "materialKey": "TeachingsOfProsperity",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "TaishanMansion",
+      "sourceName": "Taishan Mansion",
+      "availability": "MON_THU_SUN",
+      "resinCost": 20,
+      "region": "Liyue"
+    }
+  ],
+  "TeachingsOfResistance": [
+    {
+      "materialKey": "TeachingsOfResistance",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "ForsakenRift",
+      "sourceName": "Forsaken Rift",
+      "availability": "TUE_FRI_SUN",
+      "resinCost": 20,
+      "region": "Mondstadt"
+    }
+  ],
+  "TeachingsOfTransience": [
+    {
+      "materialKey": "TeachingsOfTransience",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "VioletCourt",
+      "sourceName": "Violet Court",
+      "availability": "MON_THU_SUN",
+      "resinCost": 20,
+      "region": "Inazuma"
+    }
+  ],
+  "TeachingsOfVagrancy": [
+    {
+      "materialKey": "TeachingsOfVagrancy",
+      "sourceType": "domain_of_mastery",
+      "sourceKey": "LightlessCapital",
+      "sourceName": "Lightless Capital",
+      "availability": "WED_SAT_SUN",
+      "resinCost": 20,
+      "region": "Nod-Krai"
+    }
+  ],
+  "TearsOfTheCalamitousGod": [
+    {
+      "materialKey": "TearsOfTheCalamitousGod",
+      "sourceType": "weekly_boss",
+      "sourceKey": "EndOfTheOneiricEuthymia",
+      "sourceName": "End of the Oneiric Euthymia",
+      "availability": "WEEKLY",
+      "notes": "End of the Oneiric Euthymia"
+    }
+  ],
+  "TheCornerstoneOfStarsAndFlames": [
+    {
+      "materialKey": "TheCornerstoneOfStarsAndFlames",
+      "sourceType": "other",
+      "sourceKey": "TheCornerstoneOfStarsAndFlames",
+      "sourceName": "The Cornerstone of Stars and Flames",
+      "availability": "UNKNOWN",
+      "notes": "Traveler-specific Pyro talent progression material acquired from Traveler progression content."
+    }
+  ],
+  "TheMeaningOfAeons": [
+    {
+      "materialKey": "TheMeaningOfAeons",
+      "sourceType": "weekly_boss",
+      "sourceKey": "EndOfTheOneiricEuthymia",
+      "sourceName": "End of the Oneiric Euthymia",
+      "availability": "WEEKLY",
+      "notes": "End of the Oneiric Euthymia"
+    }
+  ],
+  "ThreeStarWeaponFodder": [
+    {
+      "materialKey": "ThreeStarWeaponFodder",
+      "sourceType": "weapon_fodder",
+      "sourceKey": "ThreeStarWeaponFodder",
+      "sourceName": "3-Star Weapon Fodder",
+      "availability": "ALWAYS",
+      "notes": "Generic 3-Star weapon consumed as weapon EXP."
+    }
+  ],
+  "ThunderclapFruitcore": [
+    {
+      "materialKey": "ThunderclapFruitcore",
+      "sourceType": "normal_boss",
+      "sourceKey": "ElectroRegisvine",
+      "sourceName": "Electro Regisvine",
+      "availability": "ALWAYS",
+      "notes": "Thunderclap Fruitcore"
+    }
+  ],
+  "TileOfDecarabiansTower": [
+    {
+      "materialKey": "TileOfDecarabiansTower",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "CeciliaGarden",
+      "sourceName": "Cecilia Garden",
+      "availability": "MON_THU_SUN",
+      "resinCost": 20
+    }
+  ],
+  "TourbillonDevice": [
+    {
+      "materialKey": "TourbillonDevice",
+      "sourceType": "normal_boss",
+      "sourceKey": "PrototypeCalBreguet",
+      "sourceName": "Prototype Cal. Breguet",
+      "availability": "ALWAYS",
+      "notes": "Tourbillon Device"
+    }
+  ],
+  "TransoceanicChunk": [
+    {
+      "materialKey": "TransoceanicChunk",
+      "sourceType": "enemy_drop",
+      "sourceKey": "fontemer_aberrant_materials",
+      "sourceName": "Fontemer Aberrants",
+      "availability": "ALWAYS",
+      "notes": "Fontemer Aberrant Materials"
+    }
+  ],
+  "TransoceanicPearl": [
+    {
+      "materialKey": "TransoceanicPearl",
+      "sourceType": "enemy_drop",
+      "sourceKey": "fontemer_aberrant_materials",
+      "sourceName": "Fontemer Aberrants",
+      "availability": "ALWAYS",
+      "notes": "Fontemer Aberrant Materials"
+    }
+  ],
+  "TreasuredFlower": [
+    {
+      "materialKey": "TreasuredFlower",
+      "sourceType": "enemy_drop",
+      "sourceKey": "hilichurl_rogue_materials",
+      "sourceName": "Hilichurl Rogues",
+      "availability": "ALWAYS",
+      "notes": "Hilichurl Rogue Materials"
+    }
+  ],
+  "TreasureHoarderInsignia": [
+    {
+      "materialKey": "TreasureHoarderInsignia",
+      "sourceType": "enemy_drop",
+      "sourceKey": "TreasureHoarders",
+      "sourceName": "Treasure Hoarders",
+      "availability": "ALWAYS"
+    }
+  ],
+  "TrimmedRedSilk": [
+    {
+      "materialKey": "TrimmedRedSilk",
+      "sourceType": "enemy_drop",
+      "sourceKey": "eremite_materials",
+      "sourceName": "The Eremites",
+      "availability": "ALWAYS",
+      "notes": "The Eremites Materials"
+    }
+  ],
+  "Trishiraite": [
+    {
+      "materialKey": "Trishiraite",
+      "sourceType": "local_specialty",
+      "sourceKey": "Trishiraite",
+      "sourceName": "Trishiraite",
+      "availability": "ALWAYS",
+      "region": "Sumeru",
+      "notes": "Found in the deserts of Sumeru"
+    }
+  ],
+  "TurbidPrism": [
+    {
+      "materialKey": "TurbidPrism",
+      "sourceType": "enemy_drop",
+      "sourceKey": "primal_construct_materials",
+      "sourceName": "Primal Constructs",
+      "availability": "ALWAYS",
+      "notes": "Primal Construct Materials"
+    }
+  ],
+  "TuskOfMonocerosCaeli": [
+    {
+      "materialKey": "TuskOfMonocerosCaeli",
+      "sourceType": "weekly_boss",
+      "sourceKey": "EnterTheGoldenHouse",
+      "sourceName": "Enter the Golden House",
+      "availability": "WEEKLY",
+      "notes": "Enter the Golden House"
+    }
+  ],
+  "TwoStarWeaponFodder": [
+    {
+      "materialKey": "TwoStarWeaponFodder",
+      "sourceType": "weapon_fodder",
+      "sourceKey": "TwoStarWeaponFodder",
+      "sourceName": "2-Star Weapon Fodder",
+      "availability": "ALWAYS",
+      "notes": "Generic 2-Star weapon consumed as weapon EXP."
+    }
+  ],
+  "TyrantsFang": [
+    {
+      "materialKey": "TyrantsFang",
+      "sourceType": "enemy_drop",
+      "sourceKey": "natlan_saurian_materials",
+      "sourceName": "Natlan Saurians",
+      "availability": "ALWAYS",
+      "notes": "Natlan Saurian Materials"
+    }
+  ],
+  "UnyieldingDelusionOfTheFarNorthScions": [
+    {
+      "materialKey": "UnyieldingDelusionOfTheFarNorthScions",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "LostMooncourt",
+      "sourceName": "Lost Mooncourt",
+      "availability": "WED_SAT_SUN",
+      "region": "Nod-Krai",
+      "notes": "Far-North Scions drops in Lost Mooncourt."
+    }
+  ],
+  "VajradaAmethystChunk": [
+    {
+      "materialKey": "VajradaAmethystChunk",
+      "sourceType": "normal_boss",
+      "sourceKey": "ElectroBosses",
+      "sourceName": "Electro-aligned Bosses",
+      "availability": "ALWAYS",
+      "resinCost": 40,
+      "notes": "Dropped by elemental-aligned bosses and craftable upward at the alchemy bench."
+    }
+  ],
+  "VajradaAmethystFragment": [
+    {
+      "materialKey": "VajradaAmethystFragment",
+      "sourceType": "normal_boss",
+      "sourceKey": "ElectroBosses",
+      "sourceName": "Electro-aligned Bosses",
+      "availability": "ALWAYS",
+      "resinCost": 40,
+      "notes": "Dropped by elemental-aligned bosses and craftable upward at the alchemy bench."
+    }
+  ],
+  "VajradaAmethystGemstone": [
+    {
+      "materialKey": "VajradaAmethystGemstone",
+      "sourceType": "normal_boss",
+      "sourceKey": "ElectroBosses",
+      "sourceName": "Electro-aligned Bosses",
+      "availability": "ALWAYS",
+      "resinCost": 40,
+      "notes": "Dropped by elemental-aligned bosses and craftable upward at the alchemy bench."
+    }
+  ],
+  "VajradaAmethystSliver": [
+    {
+      "materialKey": "VajradaAmethystSliver",
+      "sourceType": "normal_boss",
+      "sourceKey": "ElectroBosses",
+      "sourceName": "Electro-aligned Bosses",
+      "availability": "ALWAYS",
+      "resinCost": 40,
+      "notes": "Dropped by elemental-aligned bosses and craftable upward at the alchemy bench."
+    }
+  ],
+  "Valberry": [
+    {
+      "materialKey": "Valberry",
+      "sourceType": "local_specialty",
+      "sourceKey": "Valberry",
+      "sourceName": "Valberry",
+      "availability": "ALWAYS",
+      "region": "Mondstadt",
+      "notes": "Found in the wild around Stormbearer Mountains and Stormbearer Point"
+    }
+  ],
+  "VarunadaLazuriteChunk": [
+    {
+      "materialKey": "VarunadaLazuriteChunk",
+      "sourceType": "normal_boss",
+      "sourceKey": "HydroBosses",
+      "sourceName": "Hydro-aligned Bosses",
+      "availability": "ALWAYS",
+      "resinCost": 40,
+      "notes": "Dropped by elemental-aligned bosses and craftable upward at the alchemy bench."
+    }
+  ],
+  "VarunadaLazuriteFragment": [
+    {
+      "materialKey": "VarunadaLazuriteFragment",
+      "sourceType": "normal_boss",
+      "sourceKey": "HydroBosses",
+      "sourceName": "Hydro-aligned Bosses",
+      "availability": "ALWAYS",
+      "resinCost": 40,
+      "notes": "Dropped by elemental-aligned bosses and craftable upward at the alchemy bench."
+    }
+  ],
+  "VarunadaLazuriteGemstone": [
+    {
+      "materialKey": "VarunadaLazuriteGemstone",
+      "sourceType": "normal_boss",
+      "sourceKey": "HydroBosses",
+      "sourceName": "Hydro-aligned Bosses",
+      "availability": "ALWAYS",
+      "resinCost": 40,
+      "notes": "Dropped by elemental-aligned bosses and craftable upward at the alchemy bench."
+    }
+  ],
+  "VarunadaLazuriteSliver": [
+    {
+      "materialKey": "VarunadaLazuriteSliver",
+      "sourceType": "normal_boss",
+      "sourceKey": "HydroBosses",
+      "sourceName": "Hydro-aligned Bosses",
+      "availability": "ALWAYS",
+      "resinCost": 40
+    }
+  ],
+  "VayudaTurquoiseChunk": [
+    {
+      "materialKey": "VayudaTurquoiseChunk",
+      "sourceType": "normal_boss",
+      "sourceKey": "AnemoBosses",
+      "sourceName": "Anemo-aligned Bosses",
+      "availability": "ALWAYS",
+      "resinCost": 40,
+      "notes": "Dropped by elemental-aligned bosses and craftable upward at the alchemy bench."
+    }
+  ],
+  "VayudaTurquoiseFragment": [
+    {
+      "materialKey": "VayudaTurquoiseFragment",
+      "sourceType": "normal_boss",
+      "sourceKey": "AnemoBosses",
+      "sourceName": "Anemo-aligned Bosses",
+      "availability": "ALWAYS",
+      "resinCost": 40,
+      "notes": "Dropped by elemental-aligned bosses and craftable upward at the alchemy bench."
+    }
+  ],
+  "VayudaTurquoiseGemstone": [
+    {
+      "materialKey": "VayudaTurquoiseGemstone",
+      "sourceType": "normal_boss",
+      "sourceKey": "AnemoBosses",
+      "sourceName": "Anemo-aligned Bosses",
+      "availability": "ALWAYS",
+      "resinCost": 40,
+      "notes": "Dropped by elemental-aligned bosses and craftable upward at the alchemy bench."
+    }
+  ],
+  "VayudaTurquoiseSliver": [
+    {
+      "materialKey": "VayudaTurquoiseSliver",
+      "sourceType": "normal_boss",
+      "sourceKey": "AnemoBosses",
+      "sourceName": "Anemo-aligned Bosses",
+      "availability": "ALWAYS",
+      "resinCost": 40,
+      "notes": "Dropped by elemental-aligned bosses and craftable upward at the alchemy bench."
+    }
+  ],
+  "Violetgrass": [
+    {
+      "materialKey": "Violetgrass",
+      "sourceType": "local_specialty",
+      "sourceKey": "Violetgrass",
+      "sourceName": "Violetgrass",
+      "availability": "ALWAYS",
+      "region": "Liyue",
+      "notes": "Found near cliffs in Liyue"
+    }
+  ],
+  "WanderersAdvice": [
+    {
+      "materialKey": "WanderersAdvice",
+      "sourceType": "ley_line",
+      "sourceKey": "leyLineOutcropBlossomOfRevelation",
+      "sourceName": "Ley Line Outcrop: Blossom of Revelation",
+      "availability": "ALWAYS",
+      "resinCost": 20,
+      "notes": "Character EXP material source; yields vary by world level."
+    }
+  ],
+  "WanderersBloomingFlower": [
+    {
+      "materialKey": "WanderersBloomingFlower",
+      "sourceType": "enemy_drop",
+      "sourceKey": "hilichurl_rogue_materials",
+      "sourceName": "Hilichurl Rogues",
+      "availability": "ALWAYS",
+      "notes": "Hilichurl Rogue Materials"
+    }
+  ],
+  "WarmBackShell": [
+    {
+      "materialKey": "WarmBackShell",
+      "sourceType": "enemy_drop",
+      "sourceKey": "furnace_shell_mountain_weasel_materials",
+      "sourceName": "Furnace Shell Mountain Weasels",
+      "availability": "ALWAYS",
+      "notes": "Furnace Shell Mountain Weasel Materials"
+    }
+  ],
+  "WarriorsMetalWhistle": [
+    {
+      "materialKey": "WarriorsMetalWhistle",
+      "sourceType": "enemy_drop",
+      "sourceKey": "sauroform_tribal_warrior_materials",
+      "sourceName": "Sauroform Tribal Warriors",
+      "availability": "ALWAYS",
+      "notes": "Sauroform Tribal Warrior Materials"
+    }
+  ],
+  "WaterThatFailedToTranscend": [
+    {
+      "materialKey": "WaterThatFailedToTranscend",
+      "sourceType": "normal_boss",
+      "sourceKey": "HydroTulpa",
+      "sourceName": "Hydro Tulpa",
+      "availability": "ALWAYS",
+      "notes": "Water That Failed To Transcend"
+    }
+  ],
+  "WeatheredArrowhead": [
+    {
+      "materialKey": "WeatheredArrowhead",
+      "sourceType": "enemy_drop",
+      "sourceKey": "hilichurl_shooter_materials",
+      "sourceName": "Hilichurl Shooters",
+      "availability": "ALWAYS",
+      "notes": "Hilichurl Shooter Materials"
+    }
+  ],
+  "WhopperflowerNectar": [
+    {
+      "materialKey": "WhopperflowerNectar",
+      "sourceType": "enemy_drop",
+      "sourceKey": "Whopperflowers",
+      "sourceName": "Whopperflowers",
+      "availability": "ALWAYS"
+    }
+  ],
+  "WindwheelAster": [
+    {
+      "materialKey": "WindwheelAster",
+      "sourceType": "local_specialty",
+      "sourceKey": "MondstadtOpenWorld",
+      "sourceName": "Mondstadt Open World",
+      "availability": "ALWAYS"
+    }
+  ],
+  "WineGobletOfThePristineSea": [
+    {
+      "materialKey": "WineGobletOfThePristineSea",
+      "sourceType": "domain_of_forgery",
+      "sourceKey": "EchoesOfTheDeepTides",
+      "sourceName": "Echoes of the Deep Tides",
+      "availability": "WED_SAT_SUN",
+      "region": "Fontaine",
+      "notes": "Pristine Sea drops in Echoes of the Deep Tides."
+    }
+  ],
+  "WinterIcelea": [
+    {
+      "materialKey": "WinterIcelea",
+      "sourceType": "local_specialty",
+      "sourceKey": "WinterIcelea",
+      "sourceName": "Winter Icelea",
+      "availability": "ALWAYS",
+      "region": "Nod-Krai",
+      "notes": "Found at the Pillar of Embla"
+    }
+  ],
+  "WitheringPurpurbloom": [
+    {
+      "materialKey": "WitheringPurpurbloom",
+      "sourceType": "local_specialty",
+      "sourceKey": "WitheringPurpurbloom",
+      "sourceName": "Withering Purpurbloom",
+      "availability": "ALWAYS",
+      "region": "Natlan",
+      "notes": "Found in Natlan"
+    }
+  ],
+  "Wolfhook": [
+    {
+      "materialKey": "Wolfhook",
+      "sourceType": "local_specialty",
+      "sourceKey": "Wolfhook",
+      "sourceName": "Wolfhook",
+      "availability": "ALWAYS",
+      "region": "Mondstadt",
+      "notes": "Found in the wild in Wolvendom"
+    }
+  ],
+  "WorldspanFern": [
+    {
+      "materialKey": "WorldspanFern",
+      "sourceType": "weekly_boss",
+      "sourceKey": "TheRealmOfBeginnings",
+      "sourceName": "The Realm of Beginnings",
+      "availability": "WEEKLY",
+      "notes": "The Realm of Beginnings"
+    }
+  ],
+  "XenochromaticCrystal": [
+    {
+      "materialKey": "XenochromaticCrystal",
+      "sourceType": "enemy_drop",
+      "sourceKey": "fontemer_aberrant_materials",
+      "sourceName": "Fontemer Aberrants",
+      "availability": "ALWAYS",
+      "notes": "Fontemer Aberrant Materials"
+    }
+  ]
+}

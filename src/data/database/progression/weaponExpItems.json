@@ -1,0 +1,98 @@
+{
+  "EnhancementOre": {
+    "key": "EnhancementOre",
+    "displayName": "Enhancement Ore",
+    "category": "weapon_exp_material",
+    "rarity": "1-Star",
+    "expValue": 400,
+    "usedFor": [
+      "weapon_leveling"
+    ],
+    "craftable": false,
+    "source": {
+      "type": "weapon_exp_material",
+      "sourceHint": "Weapon enhancement material. Also may be returned from excess weapon EXP when applicable."
+    },
+    "status": "verified"
+  },
+  "FineEnhancementOre": {
+    "key": "FineEnhancementOre",
+    "displayName": "Fine Enhancement Ore",
+    "category": "weapon_exp_material",
+    "rarity": "2-Star",
+    "expValue": 2000,
+    "usedFor": [
+      "weapon_leveling"
+    ],
+    "craftable": false,
+    "source": {
+      "type": "weapon_exp_material",
+      "sourceHint": "Weapon enhancement material."
+    },
+    "status": "verified"
+  },
+  "MysticEnhancementOre": {
+    "key": "MysticEnhancementOre",
+    "displayName": "Mystic Enhancement Ore",
+    "category": "weapon_exp_material",
+    "rarity": "3-Star",
+    "expValue": 10000,
+    "usedFor": [
+      "weapon_leveling"
+    ],
+    "craftable": false,
+    "source": {
+      "type": "weapon_exp_material",
+      "sourceHint": "Weapon enhancement material."
+    },
+    "status": "verified"
+  },
+  "OneStarWeaponFodder": {
+    "key": "OneStarWeaponFodder",
+    "displayName": "1-Star Weapon Fodder",
+    "category": "weapon_fodder_exp",
+    "rarity": "1-Star",
+    "expValue": 600,
+    "usedFor": [
+      "weapon_leveling"
+    ],
+    "craftable": false,
+    "source": {
+      "type": "weapon_fodder",
+      "sourceHint": "Generic 1-Star weapon consumed as weapon EXP."
+    },
+    "status": "verified"
+  },
+  "TwoStarWeaponFodder": {
+    "key": "TwoStarWeaponFodder",
+    "displayName": "2-Star Weapon Fodder",
+    "category": "weapon_fodder_exp",
+    "rarity": "2-Star",
+    "expValue": 1200,
+    "usedFor": [
+      "weapon_leveling"
+    ],
+    "craftable": false,
+    "source": {
+      "type": "weapon_fodder",
+      "sourceHint": "Generic 2-Star weapon consumed as weapon EXP."
+    },
+    "status": "verified"
+  },
+  "ThreeStarWeaponFodder": {
+    "key": "ThreeStarWeaponFodder",
+    "displayName": "3-Star Weapon Fodder",
+    "category": "weapon_fodder_exp",
+    "rarity": "3-Star",
+    "expValue": 1800,
+    "usedFor": [
+      "weapon_leveling"
+    ],
+    "craftable": false,
+    "source": {
+      "type": "weapon_fodder",
+      "sourceHint": "Generic 3-Star weapon consumed as weapon EXP."
+    },
+    "status": "verified"
+  }
+}

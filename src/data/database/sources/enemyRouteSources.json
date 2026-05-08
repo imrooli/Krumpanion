@@ -1,0 +1,2069 @@
+{
+  "AberrantCoreOfTheDeepShadow": [
+    {
+      "materialKey": "AberrantCoreOfTheDeepShadow",
+      "sourceType": "enemy_drop",
+      "sourceKey": "fisher_of_hidden_depths_materials",
+      "sourceName": "Fisher of Hidden Depths",
+      "availability": "ALWAYS",
+      "notes": "Fisher of Hidden Depths Materials"
+    }
+  ],
+  "AFlowerYetToBloom": [
+    {
+      "materialKey": "AFlowerYetToBloom",
+      "sourceType": "enemy_drop",
+      "sourceKey": "hilichurl_rogue_materials",
+      "sourceName": "Hilichurl Rogues",
+      "availability": "ALWAYS",
+      "notes": "Hilichurl Rogue Materials"
+    }
+  ],
+  "AgentsSacrificialKnife": [
+    {
+      "materialKey": "AgentsSacrificialKnife",
+      "sourceType": "enemy_drop",
+      "sourceKey": "fatui_pyro_agent_materials",
+      "sourceName": "Fatui Pyro Agents",
+      "availability": "ALWAYS",
+      "notes": "Fatui Pyro Agent Materials"
+    }
+  ],
+  "AlienLifeCore": [
+    {
+      "materialKey": "AlienLifeCore",
+      "sourceType": "enemy_drop",
+      "sourceKey": "breacher_primus_materials",
+      "sourceName": "Breacher Primuses",
+      "availability": "ALWAYS",
+      "notes": "Breacher Primus Materials"
+    }
+  ],
+  "AmakumoFruit": [
+    {
+      "materialKey": "AmakumoFruit",
+      "sourceType": "local_specialty",
+      "sourceKey": "AmakumoFruit",
+      "sourceName": "Amakumo Fruit",
+      "availability": "ALWAYS",
+      "region": "Inazuma",
+      "notes": "Found in the wild on Seirai Island"
+    }
+  ],
+  "ArtificedDynamicGear": [
+    {
+      "materialKey": "ArtificedDynamicGear",
+      "sourceType": "enemy_drop",
+      "sourceKey": "clockwork_meka_materials",
+      "sourceName": "Clockwork Meka",
+      "availability": "ALWAYS",
+      "notes": "Clockwork Meka Materials"
+    }
+  ],
+  "AxisOfTheSecretSource": [
+    {
+      "materialKey": "AxisOfTheSecretSource",
+      "sourceType": "enemy_drop",
+      "sourceKey": "secret_source_automaton_hunter_seeker_materials",
+      "sourceName": "Secret Source Automaton: Hunter-Seeker",
+      "availability": "ALWAYS",
+      "notes": "Secret Source Automaton: Hunter-Seeker Materials"
+    }
+  ],
+  "BerylConch": [
+    {
+      "materialKey": "BerylConch",
+      "sourceType": "local_specialty",
+      "sourceKey": "BerylConch",
+      "sourceName": "Beryl Conch",
+      "availability": "ALWAYS",
+      "region": "Fontaine",
+      "notes": "Found underwater in the Source of All Waters: The Great Fontaine Lake"
+    }
+  ],
+  "BewilderingBroadleaf": [
+    {
+      "materialKey": "BewilderingBroadleaf",
+      "sourceType": "enemy_drop",
+      "sourceKey": "tenebrous_mimesis_materials",
+      "sourceName": "Tenebrous Mimeses",
+      "availability": "ALWAYS",
+      "notes": "Tenebrous Mimesis Materials"
+    }
+  ],
+  "BlackBronzeHorn": [
+    {
+      "materialKey": "BlackBronzeHorn",
+      "sourceType": "enemy_drop",
+      "sourceKey": "mitachurl_materials",
+      "sourceName": "Mitachurls",
+      "availability": "ALWAYS",
+      "notes": "Mitachurl Materials"
+    }
+  ],
+  "BlackCrystalHorn": [
+    {
+      "materialKey": "BlackCrystalHorn",
+      "sourceType": "enemy_drop",
+      "sourceKey": "mitachurl_materials",
+      "sourceName": "Mitachurls",
+      "availability": "ALWAYS",
+      "notes": "Mitachurl Materials"
+    }
+  ],
+  "BlazingPrismshell": [
+    {
+      "materialKey": "BlazingPrismshell",
+      "sourceType": "enemy_drop",
+      "sourceKey": "furnace_shell_mountain_weasel_materials",
+      "sourceName": "Furnace Shell Mountain Weasels",
+      "availability": "ALWAYS",
+      "notes": "Furnace Shell Mountain Weasel Materials"
+    }
+  ],
+  "BrilliantChrysanthemum": [
+    {
+      "materialKey": "BrilliantChrysanthemum",
+      "sourceType": "local_specialty",
+      "sourceKey": "BrilliantChrysanthemum",
+      "sourceName": "Brilliant Chrysanthemum",
+      "availability": "ALWAYS",
+      "region": "Natlan",
+      "notes": "Found in Natlan"
+    }
+  ],
+  "BrokenDriveShaft": [
+    {
+      "materialKey": "BrokenDriveShaft",
+      "sourceType": "enemy_drop",
+      "sourceKey": "landcruiser_materials",
+      "sourceName": "Landcruisers",
+      "availability": "ALWAYS",
+      "notes": "Landcruiser Materials"
+    }
+  ],
+  "CallaLily": [
+    {
+      "materialKey": "CallaLily",
+      "sourceType": "local_specialty",
+      "sourceKey": "CallaLily",
+      "sourceName": "Calla Lily",
+      "availability": "ALWAYS",
+      "region": "Mondstadt",
+      "notes": "Found near lakes in Mondstadt, especially Springvale"
+    }
+  ],
+  "Cecilia": [
+    {
+      "materialKey": "Cecilia",
+      "sourceType": "local_specialty",
+      "sourceKey": "Cecilia",
+      "sourceName": "Cecilia",
+      "availability": "ALWAYS",
+      "region": "Mondstadt",
+      "notes": "Found in the wild on Starsnatch Cliff"
+    }
+  ],
+  "ChaosAxis": [
+    {
+      "materialKey": "ChaosAxis",
+      "sourceType": "enemy_drop",
+      "sourceKey": "ruin_sentinel_materials",
+      "sourceName": "Ruin Sentinels",
+      "availability": "ALWAYS",
+      "notes": "Ruin Sentinel Materials"
+    }
+  ],
+  "ChaosBolt": [
+    {
+      "materialKey": "ChaosBolt",
+      "sourceType": "enemy_drop",
+      "sourceKey": "ruin_drake_materials",
+      "sourceName": "Ruin Drakes",
+      "availability": "ALWAYS",
+      "notes": "Ruin Drake Materials"
+    }
+  ],
+  "ChaosCircuit": [
+    {
+      "materialKey": "ChaosCircuit",
+      "sourceType": "enemy_drop",
+      "sourceKey": "humanoid_ruin_machine_materials",
+      "sourceName": "Humanoid Ruin Machines",
+      "availability": "ALWAYS",
+      "notes": "Humanoid Ruin Machine Materials"
+    }
+  ],
+  "ChaosCore": [
+    {
+      "materialKey": "ChaosCore",
+      "sourceType": "enemy_drop",
+      "sourceKey": "humanoid_ruin_machine_materials",
+      "sourceName": "Humanoid Ruin Machines",
+      "availability": "ALWAYS",
+      "notes": "Humanoid Ruin Machine Materials"
+    }
+  ],
+  "ChaosDevice": [
+    {
+      "materialKey": "ChaosDevice",
+      "sourceType": "enemy_drop",
+      "sourceKey": "humanoid_ruin_machine_materials",
+      "sourceName": "Humanoid Ruin Machines",
+      "availability": "ALWAYS",
+      "notes": "Humanoid Ruin Machine Materials"
+    }
+  ],
+  "ChaosGear": [
+    {
+      "materialKey": "ChaosGear",
+      "sourceType": "enemy_drop",
+      "sourceKey": "ruin_sentinel_materials",
+      "sourceName": "Ruin Sentinels",
+      "availability": "ALWAYS",
+      "notes": "Ruin Sentinel Materials"
+    }
+  ],
+  "ChaosModule": [
+    {
+      "materialKey": "ChaosModule",
+      "sourceType": "enemy_drop",
+      "sourceKey": "ruin_drake_materials",
+      "sourceName": "Ruin Drakes",
+      "availability": "ALWAYS",
+      "notes": "Ruin Drake Materials"
+    }
+  ],
+  "ChaosOculus": [
+    {
+      "materialKey": "ChaosOculus",
+      "sourceType": "enemy_drop",
+      "sourceKey": "ruin_sentinel_materials",
+      "sourceName": "Ruin Sentinels",
+      "availability": "ALWAYS",
+      "notes": "Ruin Sentinel Materials"
+    }
+  ],
+  "ChaosStorage": [
+    {
+      "materialKey": "ChaosStorage",
+      "sourceType": "enemy_drop",
+      "sourceKey": "ruin_drake_materials",
+      "sourceName": "Ruin Drakes",
+      "availability": "ALWAYS",
+      "notes": "Ruin Drake Materials"
+    }
+  ],
+  "ChasmlightFin": [
+    {
+      "materialKey": "ChasmlightFin",
+      "sourceType": "enemy_drop",
+      "sourceKey": "xuanwen_beast_materials",
+      "sourceName": "Xuanwen Beasts",
+      "availability": "ALWAYS",
+      "notes": "Xuanwen Beast Materials"
+    }
+  ],
+  "ClearwaterJade": [
+    {
+      "materialKey": "ClearwaterJade",
+      "sourceType": "local_specialty",
+      "sourceKey": "ClearwaterJade",
+      "sourceName": "Clearwater Jade",
+      "availability": "ALWAYS",
+      "region": "Liyue",
+      "notes": "Found in Chenyu Vale"
+    }
+  ],
+  "ColdCrackedShellshard": [
+    {
+      "materialKey": "ColdCrackedShellshard",
+      "sourceType": "enemy_drop",
+      "sourceKey": "furnace_shell_mountain_weasel_materials",
+      "sourceName": "Furnace Shell Mountain Weasels",
+      "availability": "ALWAYS",
+      "notes": "Furnace Shell Mountain Weasel Materials"
+    }
+  ],
+  "ConcealedClaw": [
+    {
+      "materialKey": "ConcealedClaw",
+      "sourceType": "enemy_drop",
+      "sourceKey": "riftwolf_materials",
+      "sourceName": "Riftwolves",
+      "availability": "ALWAYS",
+      "notes": "Riftwolf Materials"
+    }
+  ],
+  "ConcealedTalon": [
+    {
+      "materialKey": "ConcealedTalon",
+      "sourceType": "enemy_drop",
+      "sourceKey": "riftwolf_materials",
+      "sourceName": "Riftwolves",
+      "availability": "ALWAYS",
+      "notes": "Riftwolf Materials"
+    }
+  ],
+  "ConcealedUnguis": [
+    {
+      "materialKey": "ConcealedUnguis",
+      "sourceType": "enemy_drop",
+      "sourceKey": "riftwolf_materials",
+      "sourceName": "Riftwolves",
+      "availability": "ALWAYS",
+      "notes": "Riftwolf Materials"
+    }
+  ],
+  "CondessenceCrystal": [
+    {
+      "materialKey": "CondessenceCrystal",
+      "sourceType": "world_gathering",
+      "sourceKey": "CondessenceCrystalVeins",
+      "sourceName": "Condessence Crystal Veins",
+      "availability": "ALWAYS",
+      "resinCost": 0,
+      "notes": "Ore chunk veins respawn 3 days after mining.",
+      "respawnDays": 3
+    }
+  ],
+  "CorLapis": [
+    {
+      "materialKey": "CorLapis",
+      "sourceType": "local_specialty",
+      "sourceKey": "CorLapis",
+      "sourceName": "Cor Lapis",
+      "availability": "ALWAYS",
+      "region": "Liyue",
+      "notes": "Found under cliffs in Liyue, especially Mt. Hulao"
+    }
+  ],
+  "CrystalChunk": [
+    {
+      "materialKey": "CrystalChunk",
+      "sourceType": "world_gathering",
+      "sourceKey": "CrystalChunkVeins",
+      "sourceName": "Crystal Chunk Veins",
+      "availability": "ALWAYS",
+      "resinCost": 0,
+      "notes": "Ore chunk veins respawn 3 days after mining.",
+      "respawnDays": 3
+    }
+  ],
+  "CrystallineCystDust": [
+    {
+      "materialKey": "CrystallineCystDust",
+      "sourceType": "enemy_drop",
+      "sourceKey": "fungus_materials",
+      "sourceName": "Fungi",
+      "availability": "ALWAYS",
+      "notes": "Fungus Materials"
+    }
+  ],
+  "CrystalMarrow": [
+    {
+      "materialKey": "CrystalMarrow",
+      "sourceType": "local_specialty",
+      "sourceKey": "CrystalMarrow",
+      "sourceName": "Crystal Marrow",
+      "availability": "ALWAYS",
+      "region": "Inazuma",
+      "notes": "Found on Orobashi's bones on Yashiori Island and Tatarasuna"
+    }
+  ],
+  "CrystalPrism": [
+    {
+      "materialKey": "CrystalPrism",
+      "sourceType": "enemy_drop",
+      "sourceKey": "mirror_maiden_materials",
+      "sourceName": "Mirror Maidens",
+      "availability": "ALWAYS",
+      "notes": "Mirror Maiden Materials"
+    }
+  ],
+  "DamagedMask": [
+    {
+      "materialKey": "DamagedMask",
+      "sourceType": "enemy_drop",
+      "sourceKey": "hilichurl_materials",
+      "sourceName": "Hilichurls",
+      "availability": "ALWAYS",
+      "notes": "Hilichurl Materials"
+    }
+  ],
+  "DamagedPrism": [
+    {
+      "materialKey": "DamagedPrism",
+      "sourceType": "enemy_drop",
+      "sourceKey": "primal_construct_materials",
+      "sourceName": "Primal Constructs",
+      "availability": "ALWAYS",
+      "notes": "Primal Construct Materials"
+    }
+  ],
+  "DandelionSeed": [
+    {
+      "materialKey": "DandelionSeed",
+      "sourceType": "local_specialty",
+      "sourceKey": "DandelionSeed",
+      "sourceName": "Dandelion Seed",
+      "availability": "ALWAYS",
+      "region": "Mondstadt",
+      "notes": "Found in the wild in Mondstadt"
+    }
+  ],
+  "DarkStatuette": [
+    {
+      "materialKey": "DarkStatuette",
+      "sourceType": "enemy_drop",
+      "sourceKey": "black_serpent_materials",
+      "sourceName": "The Black Serpents",
+      "availability": "ALWAYS",
+      "notes": "The Black Serpents Materials"
+    }
+  ],
+  "DeadLeyLineBranch": [
+    {
+      "materialKey": "DeadLeyLineBranch",
+      "sourceType": "enemy_drop",
+      "sourceKey": "abyss_mage_materials",
+      "sourceName": "Abyss Mages",
+      "availability": "ALWAYS",
+      "notes": "Abyss Mage Materials"
+    }
+  ],
+  "DeadLeyLineLeaves": [
+    {
+      "materialKey": "DeadLeyLineLeaves",
+      "sourceType": "enemy_drop",
+      "sourceKey": "abyss_mage_materials",
+      "sourceName": "Abyss Mages",
+      "availability": "ALWAYS",
+      "notes": "Abyss Mage Materials"
+    }
+  ],
+  "DeathlyStatuette": [
+    {
+      "materialKey": "DeathlyStatuette",
+      "sourceType": "enemy_drop",
+      "sourceKey": "black_serpent_materials",
+      "sourceName": "The Black Serpents",
+      "availability": "ALWAYS",
+      "notes": "The Black Serpents Materials"
+    }
+  ],
+  "Dendrobium": [
+    {
+      "materialKey": "Dendrobium",
+      "sourceType": "local_specialty",
+      "sourceKey": "Dendrobium",
+      "sourceName": "Dendrobium",
+      "availability": "ALWAYS",
+      "region": "Inazuma",
+      "notes": "Found in the wild on Kannazuka and Yashiori Island"
+    }
+  ],
+  "DesiccatedShell": [
+    {
+      "materialKey": "DesiccatedShell",
+      "sourceType": "enemy_drop",
+      "sourceKey": "consecrated_beast_materials",
+      "sourceName": "Consecrated Beasts",
+      "availability": "ALWAYS",
+      "notes": "Consecrated Beast Materials"
+    }
+  ],
+  "DismalPrism": [
+    {
+      "materialKey": "DismalPrism",
+      "sourceType": "enemy_drop",
+      "sourceKey": "mirror_maiden_materials",
+      "sourceName": "Mirror Maidens",
+      "availability": "ALWAYS",
+      "notes": "Mirror Maiden Materials"
+    }
+  ],
+  "DiviningScroll": [
+    {
+      "materialKey": "DiviningScroll",
+      "sourceType": "enemy_drop",
+      "sourceKey": "samachurl_materials",
+      "sourceName": "Samachurls",
+      "availability": "ALWAYS",
+      "notes": "Samachurl Materials"
+    }
+  ],
+  "DormantFungalNucleus": [
+    {
+      "materialKey": "DormantFungalNucleus",
+      "sourceType": "enemy_drop",
+      "sourceKey": "state_shifted_fungus_materials",
+      "sourceName": "State-Shifted Fungi",
+      "availability": "ALWAYS",
+      "notes": "State-Shifted Fungus Materials"
+    }
+  ],
+  "Dracolite": [
+    {
+      "materialKey": "Dracolite",
+      "sourceType": "local_specialty",
+      "sourceKey": "Dracolite",
+      "sourceName": "Dracolite",
+      "availability": "ALWAYS",
+      "region": "Natlan",
+      "notes": "Found in Atocpan"
+    }
+  ],
+  "DropOfTaintedWater": [
+    {
+      "materialKey": "DropOfTaintedWater",
+      "sourceType": "enemy_drop",
+      "sourceKey": "tainted_hydro_phantasm_materials",
+      "sourceName": "Tainted Hydro Phantasms",
+      "availability": "ALWAYS",
+      "notes": "Tainted Hydro Phantasm Materials"
+    }
+  ],
+  "EnergyNectar": [
+    {
+      "materialKey": "EnergyNectar",
+      "sourceType": "enemy_drop",
+      "sourceKey": "whopperflower_materials",
+      "sourceName": "Whopperflowers",
+      "availability": "ALWAYS",
+      "notes": "Whopperflower Materials"
+    }
+  ],
+  "EtherwingMoth": [
+    {
+      "materialKey": "EtherwingMoth",
+      "sourceType": "local_specialty",
+      "sourceKey": "EtherwingMoth",
+      "sourceName": "Etherwing Moth",
+      "availability": "ALWAYS",
+      "region": "Mondstadt",
+      "notes": "Found in Mondstadt"
+    }
+  ],
+  "FadedFlamingHilt": [
+    {
+      "materialKey": "FadedFlamingHilt",
+      "sourceType": "enemy_drop",
+      "sourceKey": "domain_keeper_materials",
+      "sourceName": "Domain Keepers",
+      "availability": "ALWAYS",
+      "notes": "Domain Keeper Materials"
+    }
+  ],
+  "FadedRedSatin": [
+    {
+      "materialKey": "FadedRedSatin",
+      "sourceType": "enemy_drop",
+      "sourceKey": "eremite_materials",
+      "sourceName": "The Eremites",
+      "availability": "ALWAYS",
+      "notes": "The Eremites Materials"
+    }
+  ],
+  "FamedHandguard": [
+    {
+      "materialKey": "FamedHandguard",
+      "sourceType": "enemy_drop",
+      "sourceKey": "nobushi_materials",
+      "sourceName": "Nobushi and Kairagi",
+      "availability": "ALWAYS",
+      "notes": "Nobushi Materials"
+    }
+  ],
+  "FeatheryFin": [
+    {
+      "materialKey": "FeatheryFin",
+      "sourceType": "enemy_drop",
+      "sourceKey": "xuanwen_beast_materials",
+      "sourceName": "Xuanwen Beasts",
+      "availability": "ALWAYS",
+      "notes": "Xuanwen Beast Materials"
+    }
+  ],
+  "FirmArrowhead": [
+    {
+      "materialKey": "FirmArrowhead",
+      "sourceType": "enemy_drop",
+      "sourceKey": "hilichurl_shooter_materials",
+      "sourceName": "Hilichurl Shooters",
+      "availability": "ALWAYS",
+      "notes": "Hilichurl Shooter Materials"
+    }
+  ],
+  "FluorescentFungus": [
+    {
+      "materialKey": "FluorescentFungus",
+      "sourceType": "local_specialty",
+      "sourceKey": "FluorescentFungus",
+      "sourceName": "Fluorescent Fungus",
+      "availability": "ALWAYS",
+      "region": "Inazuma",
+      "notes": "Found in the wild on Tsurumi Island"
+    }
+  ],
+  "ForbiddenCurseScroll": [
+    {
+      "materialKey": "ForbiddenCurseScroll",
+      "sourceType": "enemy_drop",
+      "sourceKey": "samachurl_materials",
+      "sourceName": "Samachurls",
+      "availability": "ALWAYS",
+      "notes": "Samachurl Materials"
+    }
+  ],
+  "ForeignSynapse": [
+    {
+      "materialKey": "ForeignSynapse",
+      "sourceType": "enemy_drop",
+      "sourceKey": "breacher_primus_materials",
+      "sourceName": "Breacher Primuses",
+      "availability": "ALWAYS",
+      "notes": "Breacher Primus Materials"
+    }
+  ],
+  "FossilizedBoneShard": [
+    {
+      "materialKey": "FossilizedBoneShard",
+      "sourceType": "enemy_drop",
+      "sourceKey": "vishap_materials",
+      "sourceName": "Vishaps",
+      "availability": "ALWAYS",
+      "notes": "Vishap Materials"
+    }
+  ],
+  "FracturedEyeOfTheDeepShadow": [
+    {
+      "materialKey": "FracturedEyeOfTheDeepShadow",
+      "sourceType": "enemy_drop",
+      "sourceKey": "fisher_of_hidden_depths_materials",
+      "sourceName": "Fisher of Hidden Depths",
+      "availability": "ALWAYS",
+      "notes": "Fisher of Hidden Depths Materials"
+    }
+  ],
+  "FracturedFlamingHilt": [
+    {
+      "materialKey": "FracturedFlamingHilt",
+      "sourceType": "enemy_drop",
+      "sourceKey": "domain_keeper_materials",
+      "sourceName": "Domain Keepers",
+      "availability": "ALWAYS",
+      "notes": "Domain Keeper Materials"
+    }
+  ],
+  "FragileBoneShard": [
+    {
+      "materialKey": "FragileBoneShard",
+      "sourceType": "enemy_drop",
+      "sourceKey": "vishap_materials",
+      "sourceName": "Vishaps",
+      "availability": "ALWAYS",
+      "notes": "Vishap Materials"
+    }
+  ],
+  "FrostEtchedWarrant": [
+    {
+      "materialKey": "FrostEtchedWarrant",
+      "sourceType": "enemy_drop",
+      "sourceKey": "fatui_oprichniki_materials",
+      "sourceName": "Fatui Oprichniki",
+      "availability": "ALWAYS",
+      "notes": "Fatui Oprichniki Materials"
+    }
+  ],
+  "FrostlampFlower": [
+    {
+      "materialKey": "FrostlampFlower",
+      "sourceType": "local_specialty",
+      "sourceKey": "FrostlampFlower",
+      "sourceName": "Frostlamp Flower",
+      "availability": "ALWAYS",
+      "region": "Nod-Krai",
+      "notes": "Found in Nod-Krai"
+    }
+  ],
+  "FrostnightsGlimmer": [
+    {
+      "materialKey": "FrostnightsGlimmer",
+      "sourceType": "enemy_drop",
+      "sourceKey": "frostnight_scion_materials",
+      "sourceName": "Frostnight Scions",
+      "availability": "ALWAYS",
+      "notes": "Frostnight Scion Materials"
+    }
+  ],
+  "FrostnightsGlory": [
+    {
+      "materialKey": "FrostnightsGlory",
+      "sourceType": "enemy_drop",
+      "sourceKey": "frostnight_scion_materials",
+      "sourceName": "Frostnight Scions",
+      "availability": "ALWAYS",
+      "notes": "Frostnight Scion Materials"
+    }
+  ],
+  "FrostnightsGlow": [
+    {
+      "materialKey": "FrostnightsGlow",
+      "sourceType": "enemy_drop",
+      "sourceKey": "frostnight_scion_materials",
+      "sourceName": "Frostnight Scions",
+      "availability": "ALWAYS",
+      "notes": "Frostnight Scion Materials"
+    }
+  ],
+  "FungalSpores": [
+    {
+      "materialKey": "FungalSpores",
+      "sourceType": "enemy_drop",
+      "sourceKey": "fungus_materials",
+      "sourceName": "Fungi",
+      "availability": "ALWAYS",
+      "notes": "Fungus Materials"
+    }
+  ],
+  "GlazeLily": [
+    {
+      "materialKey": "GlazeLily",
+      "sourceType": "local_specialty",
+      "sourceKey": "GlazeLily",
+      "sourceName": "Glaze Lily",
+      "availability": "ALWAYS",
+      "region": "Liyue",
+      "notes": "Found in Liyue Harbor and Qingce Village"
+    }
+  ],
+  "GloomyStatuette": [
+    {
+      "materialKey": "GloomyStatuette",
+      "sourceType": "enemy_drop",
+      "sourceKey": "black_serpent_materials",
+      "sourceName": "The Black Serpents",
+      "availability": "ALWAYS",
+      "notes": "The Black Serpents Materials"
+    }
+  ],
+  "GlowingHornshroom": [
+    {
+      "materialKey": "GlowingHornshroom",
+      "sourceType": "local_specialty",
+      "sourceKey": "GlowingHornshroom",
+      "sourceName": "Glowing Hornshroom",
+      "availability": "ALWAYS",
+      "region": "Natlan",
+      "notes": "Found in Tezcatepetonco Range near the Masters of the Night-Wind"
+    }
+  ],
+  "GlowingRemains": [
+    {
+      "materialKey": "GlowingRemains",
+      "sourceType": "enemy_drop",
+      "sourceKey": "radiant_beast_materials",
+      "sourceName": "Radiant Beasts",
+      "availability": "ALWAYS",
+      "notes": "Radiant Beast Materials"
+    }
+  ],
+  "GoldenRavenInsignia": [
+    {
+      "materialKey": "GoldenRavenInsignia",
+      "sourceType": "enemy_drop",
+      "sourceKey": "treasure_hoarder_materials",
+      "sourceName": "Treasure Hoarders",
+      "availability": "ALWAYS",
+      "notes": "Treasure Hoarder Materials"
+    }
+  ],
+  "HeartOfTheSecretSource": [
+    {
+      "materialKey": "HeartOfTheSecretSource",
+      "sourceType": "enemy_drop",
+      "sourceKey": "secret_source_automaton_hunter_seeker_materials",
+      "sourceName": "Secret Source Automaton: Hunter-Seeker",
+      "availability": "ALWAYS",
+      "notes": "Secret Source Automaton: Hunter-Seeker Materials"
+    }
+  ],
+  "HeavyHorn": [
+    {
+      "materialKey": "HeavyHorn",
+      "sourceType": "enemy_drop",
+      "sourceKey": "mitachurl_materials",
+      "sourceName": "Mitachurls",
+      "availability": "ALWAYS",
+      "notes": "Mitachurl Materials"
+    }
+  ],
+  "HennaBerry": [
+    {
+      "materialKey": "HennaBerry",
+      "sourceType": "local_specialty",
+      "sourceKey": "HennaBerry",
+      "sourceName": "Henna Berry",
+      "availability": "ALWAYS",
+      "region": "Sumeru",
+      "notes": "Found in the deserts of Sumeru"
+    }
+  ],
+  "HookedBeakOfTheDeepShadow": [
+    {
+      "materialKey": "HookedBeakOfTheDeepShadow",
+      "sourceType": "enemy_drop",
+      "sourceKey": "fisher_of_hidden_depths_materials",
+      "sourceName": "Fisher of Hidden Depths",
+      "availability": "ALWAYS",
+      "notes": "Fisher of Hidden Depths Materials"
+    }
+  ],
+  "HuntersSacrificialKnife": [
+    {
+      "materialKey": "HuntersSacrificialKnife",
+      "sourceType": "enemy_drop",
+      "sourceKey": "fatui_pyro_agent_materials",
+      "sourceName": "Fatui Pyro Agents",
+      "availability": "ALWAYS",
+      "notes": "Fatui Pyro Agent Materials"
+    }
+  ],
+  "IgnitedSeedOfLife": [
+    {
+      "materialKey": "IgnitedSeedOfLife",
+      "sourceType": "enemy_drop",
+      "sourceKey": "avatar_of_lava_materials",
+      "sourceName": "Avatars of Lava",
+      "availability": "ALWAYS",
+      "notes": "Avatar of Lava Materials"
+    }
+  ],
+  "IgnitedSeeingEye": [
+    {
+      "materialKey": "IgnitedSeeingEye",
+      "sourceType": "enemy_drop",
+      "sourceKey": "avatar_of_lava_materials",
+      "sourceName": "Avatars of Lava",
+      "availability": "ALWAYS",
+      "notes": "Avatar of Lava Materials"
+    }
+  ],
+  "IgnitedStone": [
+    {
+      "materialKey": "IgnitedStone",
+      "sourceType": "enemy_drop",
+      "sourceKey": "avatar_of_lava_materials",
+      "sourceName": "Avatars of Lava",
+      "availability": "ALWAYS",
+      "notes": "Avatar of Lava Materials"
+    }
+  ],
+  "IllusoryLeafcoil": [
+    {
+      "materialKey": "IllusoryLeafcoil",
+      "sourceType": "enemy_drop",
+      "sourceKey": "tenebrous_mimesis_materials",
+      "sourceName": "Tenebrous Mimeses",
+      "availability": "ALWAYS",
+      "notes": "Tenebrous Mimesis Materials"
+    }
+  ],
+  "ImmaculateWarrant": [
+    {
+      "materialKey": "ImmaculateWarrant",
+      "sourceType": "enemy_drop",
+      "sourceKey": "fatui_oprichniki_materials",
+      "sourceName": "Fatui Oprichniki",
+      "availability": "ALWAYS",
+      "notes": "Fatui Oprichniki Materials"
+    }
+  ],
+  "InactivatedFungalNucleus": [
+    {
+      "materialKey": "InactivatedFungalNucleus",
+      "sourceType": "enemy_drop",
+      "sourceKey": "state_shifted_fungus_materials",
+      "sourceName": "State-Shifted Fungi",
+      "availability": "ALWAYS",
+      "notes": "State-Shifted Fungus Materials"
+    }
+  ],
+  "InspectorsSacrificialKnife": [
+    {
+      "materialKey": "InspectorsSacrificialKnife",
+      "sourceType": "enemy_drop",
+      "sourceKey": "fatui_pyro_agent_materials",
+      "sourceName": "Fatui Pyro Agents",
+      "availability": "ALWAYS",
+      "notes": "Fatui Pyro Agent Materials"
+    }
+  ],
+  "JeweledFlamingHilt": [
+    {
+      "materialKey": "JeweledFlamingHilt",
+      "sourceType": "enemy_drop",
+      "sourceKey": "domain_keeper_materials",
+      "sourceName": "Domain Keepers",
+      "availability": "ALWAYS",
+      "notes": "Domain Keeper Materials"
+    }
+  ],
+  "JueyunChili": [
+    {
+      "materialKey": "JueyunChili",
+      "sourceType": "local_specialty",
+      "sourceKey": "JueyunChili",
+      "sourceName": "Jueyun Chili",
+      "availability": "ALWAYS",
+      "region": "Liyue",
+      "notes": "Found in the wild in Minlin, Qingce Village and Stone Gate"
+    }
+  ],
+  "JuvenileFang": [
+    {
+      "materialKey": "JuvenileFang",
+      "sourceType": "enemy_drop",
+      "sourceKey": "natlan_saurian_materials",
+      "sourceName": "Natlan Saurians",
+      "availability": "ALWAYS",
+      "notes": "Natlan Saurian Materials"
+    }
+  ],
+  "KageuchiHandguard": [
+    {
+      "materialKey": "KageuchiHandguard",
+      "sourceType": "enemy_drop",
+      "sourceKey": "nobushi_materials",
+      "sourceName": "Nobushi and Kairagi",
+      "availability": "ALWAYS",
+      "notes": "Nobushi Materials"
+    }
+  ],
+  "KalpalataLotus": [
+    {
+      "materialKey": "KalpalataLotus",
+      "sourceType": "local_specialty",
+      "sourceKey": "KalpalataLotus",
+      "sourceName": "Kalpalata Lotus",
+      "availability": "ALWAYS",
+      "region": "Sumeru",
+      "notes": "Found in the mountains of Sumeru"
+    }
+  ],
+  "LakelightLily": [
+    {
+      "materialKey": "LakelightLily",
+      "sourceType": "local_specialty",
+      "sourceKey": "FontaineOpenWorld",
+      "sourceName": "Fontaine Open World",
+      "availability": "ALWAYS"
+    }
+  ],
+  "LeyLineSprout": [
+    {
+      "materialKey": "LeyLineSprout",
+      "sourceType": "enemy_drop",
+      "sourceKey": "abyss_mage_materials",
+      "sourceName": "Abyss Mages",
+      "availability": "ALWAYS",
+      "notes": "Abyss Mage Materials"
+    }
+  ],
+  "LieutenantsInsignia": [
+    {
+      "materialKey": "LieutenantsInsignia",
+      "sourceType": "enemy_drop",
+      "sourceKey": "fatui_skirmisher_materials",
+      "sourceName": "Fatui Skirmishers",
+      "availability": "ALWAYS",
+      "notes": "Fatui Skirmisher Materials"
+    }
+  ],
+  "LightlessBone": [
+    {
+      "materialKey": "LightlessBone",
+      "sourceType": "enemy_drop",
+      "sourceKey": "radiant_beast_materials",
+      "sourceName": "Radiant Beasts",
+      "availability": "ALWAYS",
+      "notes": "Radiant Beast Materials"
+    }
+  ],
+  "LocusOfAClearWill": [
+    {
+      "materialKey": "LocusOfAClearWill",
+      "sourceType": "enemy_drop",
+      "sourceKey": "wayob_manifestation_materials",
+      "sourceName": "Wayob Manifestations",
+      "availability": "ALWAYS",
+      "notes": "Wayob Manifestation Materials"
+    }
+  ],
+  "LumidouceBell": [
+    {
+      "materialKey": "LumidouceBell",
+      "sourceType": "local_specialty",
+      "sourceKey": "LumidouceBell",
+      "sourceName": "Lumidouce Bell",
+      "availability": "ALWAYS",
+      "region": "Fontaine",
+      "notes": "Found in the north of the Court of Fontaine"
+    }
+  ],
+  "LuminescentPollen": [
+    {
+      "materialKey": "LuminescentPollen",
+      "sourceType": "enemy_drop",
+      "sourceKey": "fungus_materials",
+      "sourceName": "Fungi",
+      "availability": "ALWAYS",
+      "notes": "Fungus Materials"
+    }
+  ],
+  "Lumitoile": [
+    {
+      "materialKey": "Lumitoile",
+      "sourceType": "local_specialty",
+      "sourceKey": "Lumitoile",
+      "sourceName": "Lumitoile",
+      "availability": "ALWAYS",
+      "region": "Fontaine",
+      "notes": "Found on beaches and underwater in Liffey Region"
+    }
+  ],
+  "LunarFin": [
+    {
+      "materialKey": "LunarFin",
+      "sourceType": "enemy_drop",
+      "sourceKey": "xuanwen_beast_materials",
+      "sourceName": "Xuanwen Beasts",
+      "availability": "ALWAYS",
+      "notes": "Xuanwen Beast Materials"
+    }
+  ],
+  "MarkedShell": [
+    {
+      "materialKey": "MarkedShell",
+      "sourceType": "enemy_drop",
+      "sourceKey": "consecrated_beast_materials",
+      "sourceName": "Consecrated Beasts",
+      "availability": "ALWAYS",
+      "notes": "Consecrated Beast Materials"
+    }
+  ],
+  "MechanicalSpurGear": [
+    {
+      "materialKey": "MechanicalSpurGear",
+      "sourceType": "enemy_drop",
+      "sourceKey": "clockwork_meka_materials",
+      "sourceName": "Clockwork Meka",
+      "availability": "ALWAYS",
+      "notes": "Clockwork Meka Materials"
+    }
+  ],
+  "MeshingGear": [
+    {
+      "materialKey": "MeshingGear",
+      "sourceType": "enemy_drop",
+      "sourceKey": "clockwork_meka_materials",
+      "sourceName": "Clockwork Meka",
+      "availability": "ALWAYS",
+      "notes": "Clockwork Meka Materials"
+    }
+  ],
+  "MistGrass": [
+    {
+      "materialKey": "MistGrass",
+      "sourceType": "enemy_drop",
+      "sourceKey": "fatui_cicin_mage_materials",
+      "sourceName": "Fatui Cicin Mages",
+      "availability": "ALWAYS",
+      "notes": "Fatui Cicin Mage Materials"
+    }
+  ],
+  "MistGrassPollen": [
+    {
+      "materialKey": "MistGrassPollen",
+      "sourceType": "enemy_drop",
+      "sourceKey": "fatui_cicin_mage_materials",
+      "sourceName": "Fatui Cicin Mages",
+      "availability": "ALWAYS",
+      "notes": "Fatui Cicin Mage Materials"
+    }
+  ],
+  "MistGrassWick": [
+    {
+      "materialKey": "MistGrassWick",
+      "sourceType": "enemy_drop",
+      "sourceKey": "fatui_cicin_mage_materials",
+      "sourceName": "Fatui Cicin Mages",
+      "availability": "ALWAYS",
+      "notes": "Fatui Cicin Mage Materials"
+    }
+  ],
+  "MistshroudHelmet": [
+    {
+      "materialKey": "MistshroudHelmet",
+      "sourceType": "enemy_drop",
+      "sourceKey": "wasteland_wild_hunt_materials",
+      "sourceName": "Wasteland Wild Hunt",
+      "availability": "ALWAYS",
+      "notes": "Wasteland Wild Hunt Materials"
+    }
+  ],
+  "MistshroudManifestation": [
+    {
+      "materialKey": "MistshroudManifestation",
+      "sourceType": "enemy_drop",
+      "sourceKey": "wasteland_wild_hunt_materials",
+      "sourceName": "Wasteland Wild Hunt",
+      "availability": "ALWAYS",
+      "notes": "Wasteland Wild Hunt Materials"
+    }
+  ],
+  "MistshroudPlate": [
+    {
+      "materialKey": "MistshroudPlate",
+      "sourceType": "enemy_drop",
+      "sourceKey": "wasteland_wild_hunt_materials",
+      "sourceName": "Wasteland Wild Hunt",
+      "availability": "ALWAYS",
+      "notes": "Wasteland Wild Hunt Materials"
+    }
+  ],
+  "MoonfallSilver": [
+    {
+      "materialKey": "MoonfallSilver",
+      "sourceType": "local_specialty",
+      "sourceKey": "MoonfallSilver",
+      "sourceName": "Moonfall Silver",
+      "availability": "ALWAYS",
+      "region": "Nod-Krai",
+      "notes": "Found in Hiisi Island"
+    }
+  ],
+  "MourningFlower": [
+    {
+      "materialKey": "MourningFlower",
+      "sourceType": "local_specialty",
+      "sourceKey": "MourningFlower",
+      "sourceName": "Mourning Flower",
+      "availability": "ALWAYS",
+      "region": "Sumeru",
+      "notes": "Found in the deserts of Sumeru"
+    }
+  ],
+  "NakuWeed": [
+    {
+      "materialKey": "NakuWeed",
+      "sourceType": "local_specialty",
+      "sourceKey": "NakuWeed",
+      "sourceName": "Naku Weed",
+      "availability": "ALWAYS",
+      "region": "Inazuma",
+      "notes": "Found in areas of high Electro concentration in Inazuma, especially Seirai Island"
+    }
+  ],
+  "NewbornTaintedHydroPhantasm": [
+    {
+      "materialKey": "NewbornTaintedHydroPhantasm",
+      "sourceType": "enemy_drop",
+      "sourceKey": "tainted_hydro_phantasm_materials",
+      "sourceName": "Tainted Hydro Phantasms",
+      "availability": "ALWAYS",
+      "notes": "Tainted Hydro Phantasm Materials"
+    }
+  ],
+  "NilotpalaLotus": [
+    {
+      "materialKey": "NilotpalaLotus",
+      "sourceType": "local_specialty",
+      "sourceKey": "NilotpalaLotus",
+      "sourceName": "Nilotpala Lotus",
+      "availability": "ALWAYS",
+      "region": "Sumeru",
+      "notes": "Found near lakes and river banks in Sumeru"
+    }
+  ],
+  "NoctilucousJade": [
+    {
+      "materialKey": "NoctilucousJade",
+      "sourceType": "local_specialty",
+      "sourceKey": "NoctilucousJade",
+      "sourceName": "Noctilucous Jade",
+      "availability": "ALWAYS",
+      "region": "Liyue",
+      "notes": "Found in caves in Liyue, especially Mingyun Village"
+    }
+  ],
+  "OldHandguard": [
+    {
+      "materialKey": "OldHandguard",
+      "sourceType": "enemy_drop",
+      "sourceKey": "nobushi_materials",
+      "sourceName": "Nobushi and Kairagi",
+      "availability": "ALWAYS",
+      "notes": "Nobushi Materials"
+    }
+  ],
+  "OldOperativesPocketWatch": [
+    {
+      "materialKey": "OldOperativesPocketWatch",
+      "sourceType": "enemy_drop",
+      "sourceKey": "fatui_operative_materials",
+      "sourceName": "Fatui Operatives",
+      "availability": "ALWAYS",
+      "notes": "Fatui Operative Materials"
+    }
+  ],
+  "OminousMask": [
+    {
+      "materialKey": "OminousMask",
+      "sourceType": "enemy_drop",
+      "sourceKey": "hilichurl_materials",
+      "sourceName": "Hilichurls",
+      "availability": "ALWAYS",
+      "notes": "Hilichurl Materials"
+    }
+  ],
+  "Onikabuto": [
+    {
+      "materialKey": "Onikabuto",
+      "sourceType": "local_specialty",
+      "sourceKey": "Onikabuto",
+      "sourceName": "Onikabuto",
+      "availability": "ALWAYS",
+      "region": "Inazuma",
+      "notes": "Found in areas of high Electro concentration in Inazuma, especially Mikage Furnace and Mt. Yougou"
+    }
+  ],
+  "OperativesConstancy": [
+    {
+      "materialKey": "OperativesConstancy",
+      "sourceType": "enemy_drop",
+      "sourceKey": "fatui_operative_materials",
+      "sourceName": "Fatui Operatives",
+      "availability": "ALWAYS",
+      "notes": "Fatui Operative Materials"
+    }
+  ],
+  "OperativesStandardPocketWatch": [
+    {
+      "materialKey": "OperativesStandardPocketWatch",
+      "sourceType": "enemy_drop",
+      "sourceKey": "fatui_operative_materials",
+      "sourceName": "Fatui Operatives",
+      "availability": "ALWAYS",
+      "notes": "Fatui Operative Materials"
+    }
+  ],
+  "Padisarah": [
+    {
+      "materialKey": "Padisarah",
+      "sourceType": "local_specialty",
+      "sourceKey": "Padisarah",
+      "sourceName": "Padisarah",
+      "availability": "ALWAYS",
+      "region": "Sumeru",
+      "notes": "Found in Sumeru City"
+    }
+  ],
+  "PhilanemoMushroom": [
+    {
+      "materialKey": "PhilanemoMushroom",
+      "sourceType": "local_specialty",
+      "sourceKey": "PhilanemoMushroom",
+      "sourceName": "Philanemo Mushroom",
+      "availability": "ALWAYS",
+      "region": "Mondstadt",
+      "notes": "Found under the eaves of houses in the City of Mondstadt, Springvale, Dawn Winery, and Millhaven"
+    }
+  ],
+  "PineAmber": [
+    {
+      "materialKey": "PineAmber",
+      "sourceType": "local_specialty",
+      "sourceKey": "PineAmber",
+      "sourceName": "Pine Amber",
+      "availability": "ALWAYS",
+      "region": "Nod-Krai",
+      "notes": "Found in Dreadshade Mire"
+    }
+  ],
+  "PolarizingPrism": [
+    {
+      "materialKey": "PolarizingPrism",
+      "sourceType": "enemy_drop",
+      "sourceKey": "mirror_maiden_materials",
+      "sourceName": "Mirror Maidens",
+      "availability": "ALWAYS",
+      "notes": "Mirror Maiden Materials"
+    }
+  ],
+  "PortableBearing": [
+    {
+      "materialKey": "PortableBearing",
+      "sourceType": "local_specialty",
+      "sourceKey": "PortableBearing",
+      "sourceName": "Portable Bearing",
+      "availability": "ALWAYS",
+      "region": "Nod-Krai",
+      "notes": "Found in Lempo Isle"
+    }
+  ],
+  "PrecisionDriveShaft": [
+    {
+      "materialKey": "PrecisionDriveShaft",
+      "sourceType": "enemy_drop",
+      "sourceKey": "landcruiser_materials",
+      "sourceName": "Landcruisers",
+      "availability": "ALWAYS",
+      "notes": "Landcruiser Materials"
+    }
+  ],
+  "Qingxin": [
+    {
+      "materialKey": "Qingxin",
+      "sourceType": "local_specialty",
+      "sourceKey": "Qingxin",
+      "sourceName": "Qingxin",
+      "availability": "ALWAYS",
+      "region": "Liyue",
+      "notes": "Found in the heights of Liyue, especially Minlin and Wuwang Hill"
+    }
+  ],
+  "QuenepaBerry": [
+    {
+      "materialKey": "QuenepaBerry",
+      "sourceType": "local_specialty",
+      "sourceKey": "QuenepaBerry",
+      "sourceName": "Quenepa Berry",
+      "availability": "ALWAYS",
+      "region": "Natlan",
+      "notes": "Found in Natlan"
+    }
+  ],
+  "RadiantExoskeleton": [
+    {
+      "materialKey": "RadiantExoskeleton",
+      "sourceType": "enemy_drop",
+      "sourceKey": "radiant_beast_materials",
+      "sourceName": "Radiant Beasts",
+      "availability": "ALWAYS",
+      "notes": "Radiant Beast Materials"
+    }
+  ],
+  "RadiantPrism": [
+    {
+      "materialKey": "RadiantPrism",
+      "sourceType": "enemy_drop",
+      "sourceKey": "primal_construct_materials",
+      "sourceName": "Primal Constructs",
+      "availability": "ALWAYS",
+      "notes": "Primal Construct Materials"
+    }
+  ],
+  "RainbowdropCrystal": [
+    {
+      "materialKey": "RainbowdropCrystal",
+      "sourceType": "world_gathering",
+      "sourceKey": "RainbowdropCrystalVeins",
+      "sourceName": "Rainbowdrop Crystal Veins",
+      "availability": "ALWAYS",
+      "resinCost": 0,
+      "notes": "Ore chunk veins respawn 3 days after mining.",
+      "respawnDays": 3
+    }
+  ],
+  "RainbowRose": [
+    {
+      "materialKey": "RainbowRose",
+      "sourceType": "local_specialty",
+      "sourceKey": "RainbowRose",
+      "sourceName": "Rainbow Rose",
+      "availability": "ALWAYS",
+      "region": "Fontaine",
+      "notes": "Found in the wilds of Beryl Region and surrounding the Fountain of Lucine"
+    }
+  ],
+  "RecruitsInsignia": [
+    {
+      "materialKey": "RecruitsInsignia",
+      "sourceType": "enemy_drop",
+      "sourceKey": "fatui_skirmisher_materials",
+      "sourceName": "Fatui Skirmishers",
+      "availability": "ALWAYS",
+      "notes": "Fatui Skirmisher Materials"
+    }
+  ],
+  "RefractiveBud": [
+    {
+      "materialKey": "RefractiveBud",
+      "sourceType": "enemy_drop",
+      "sourceKey": "tenebrous_mimesis_materials",
+      "sourceName": "Tenebrous Mimeses",
+      "availability": "ALWAYS",
+      "notes": "Tenebrous Mimesis Materials"
+    }
+  ],
+  "ReinforcedDriveShaft": [
+    {
+      "materialKey": "ReinforcedDriveShaft",
+      "sourceType": "enemy_drop",
+      "sourceKey": "landcruiser_materials",
+      "sourceName": "Landcruisers",
+      "availability": "ALWAYS",
+      "notes": "Landcruiser Materials"
+    }
+  ],
+  "RichRedBrocade": [
+    {
+      "materialKey": "RichRedBrocade",
+      "sourceType": "enemy_drop",
+      "sourceKey": "eremite_materials",
+      "sourceName": "The Eremites",
+      "availability": "ALWAYS",
+      "notes": "The Eremites Materials"
+    }
+  ],
+  "RiftCore": [
+    {
+      "materialKey": "RiftCore",
+      "sourceType": "enemy_drop",
+      "sourceKey": "breacher_primus_materials",
+      "sourceName": "Breacher Primuses",
+      "availability": "ALWAYS",
+      "notes": "Breacher Primus Materials"
+    }
+  ],
+  "RobustFungalNucleus": [
+    {
+      "materialKey": "RobustFungalNucleus",
+      "sourceType": "enemy_drop",
+      "sourceKey": "state_shifted_fungus_materials",
+      "sourceName": "State-Shifted Fungi",
+      "availability": "ALWAYS",
+      "notes": "State-Shifted Fungus Materials"
+    }
+  ],
+  "RomaritimeFlower": [
+    {
+      "materialKey": "RomaritimeFlower",
+      "sourceType": "local_specialty",
+      "sourceKey": "RomaritimeFlower",
+      "sourceName": "Romaritime Flower",
+      "availability": "ALWAYS",
+      "region": "Fontaine",
+      "notes": "Found mainly in or around bodies of water in Fontaine"
+    }
+  ],
+  "RuinedHilt": [
+    {
+      "materialKey": "RuinedHilt",
+      "sourceType": "enemy_drop",
+      "sourceKey": "praetorian_golem_materials",
+      "sourceName": "Praetorian Golems",
+      "availability": "ALWAYS",
+      "notes": "Praetorian Golem Materials"
+    }
+  ],
+  "RukkhashavaMushrooms": [
+    {
+      "materialKey": "RukkhashavaMushrooms",
+      "sourceType": "local_specialty",
+      "sourceKey": "RukkhashavaMushrooms",
+      "sourceName": "Rukkhashava Mushrooms",
+      "availability": "ALWAYS",
+      "region": "Sumeru",
+      "notes": "Found in the wild in the Ashavan Realm and Lokapala Jungle"
+    }
+  ],
+  "SakuraBloom": [
+    {
+      "materialKey": "SakuraBloom",
+      "sourceType": "local_specialty",
+      "sourceKey": "SakuraBloom",
+      "sourceName": "Sakura Bloom",
+      "availability": "ALWAYS",
+      "region": "Inazuma",
+      "notes": "Found in the wild on Narukami Island"
+    }
+  ],
+  "SandGreasePupa": [
+    {
+      "materialKey": "SandGreasePupa",
+      "sourceType": "local_specialty",
+      "sourceKey": "SandGreasePupa",
+      "sourceName": "Sand Grease Pupa",
+      "availability": "ALWAYS",
+      "region": "Sumeru",
+      "notes": "Found in the deserts of Sumeru"
+    }
+  ],
+  "SangoPearl": [
+    {
+      "materialKey": "SangoPearl",
+      "sourceType": "local_specialty",
+      "sourceKey": "SangoPearl",
+      "sourceName": "Sango Pearl",
+      "availability": "ALWAYS",
+      "region": "Inazuma",
+      "notes": "Found in the wild on Watatsumi Island and in Enkanomiya"
+    }
+  ],
+  "SaurianClawSucculent": [
+    {
+      "materialKey": "SaurianClawSucculent",
+      "sourceType": "local_specialty",
+      "sourceKey": "SaurianClawSucculent",
+      "sourceName": "Saurian Claw Succulent",
+      "availability": "ALWAYS",
+      "region": "Natlan",
+      "notes": "Found in Natlan"
+    }
+  ],
+  "SaurianCrownedWarriorsGoldenWhistle": [
+    {
+      "materialKey": "SaurianCrownedWarriorsGoldenWhistle",
+      "sourceType": "enemy_drop",
+      "sourceKey": "sauroform_tribal_warrior_materials",
+      "sourceName": "Sauroform Tribal Warriors",
+      "availability": "ALWAYS",
+      "notes": "Sauroform Tribal Warrior Materials"
+    }
+  ],
+  "Scarab": [
+    {
+      "materialKey": "Scarab",
+      "sourceType": "local_specialty",
+      "sourceKey": "Scarab",
+      "sourceName": "Scarab",
+      "availability": "ALWAYS",
+      "region": "Sumeru",
+      "notes": "Found in the desert ruins of Sumeru"
+    }
+  ],
+  "ScoopOfTaintedWater": [
+    {
+      "materialKey": "ScoopOfTaintedWater",
+      "sourceType": "enemy_drop",
+      "sourceKey": "tainted_hydro_phantasm_materials",
+      "sourceName": "Tainted Hydro Phantasms",
+      "availability": "ALWAYS",
+      "notes": "Tainted Hydro Phantasm Materials"
+    }
+  ],
+  "SeaGanoderma": [
+    {
+      "materialKey": "SeaGanoderma",
+      "sourceType": "local_specialty",
+      "sourceKey": "SeaGanoderma",
+      "sourceName": "Sea Ganoderma",
+      "availability": "ALWAYS",
+      "region": "Inazuma",
+      "notes": "Found on beaches and tidal flats of Inazuma"
+    }
+  ],
+  "SealedScroll": [
+    {
+      "materialKey": "SealedScroll",
+      "sourceType": "enemy_drop",
+      "sourceKey": "samachurl_materials",
+      "sourceName": "Samachurls",
+      "availability": "ALWAYS",
+      "notes": "Samachurl Materials"
+    }
+  ],
+  "SeasonedFang": [
+    {
+      "materialKey": "SeasonedFang",
+      "sourceType": "enemy_drop",
+      "sourceKey": "natlan_saurian_materials",
+      "sourceName": "Natlan Saurians",
+      "availability": "ALWAYS",
+      "notes": "Natlan Saurian Materials"
+    }
+  ],
+  "SentrysWoodenWhistle": [
+    {
+      "materialKey": "SentrysWoodenWhistle",
+      "sourceType": "enemy_drop",
+      "sourceKey": "sauroform_tribal_warrior_materials",
+      "sourceName": "Sauroform Tribal Warriors",
+      "availability": "ALWAYS",
+      "notes": "Sauroform Tribal Warrior Materials"
+    }
+  ],
+  "SergeantsInsignia": [
+    {
+      "materialKey": "SergeantsInsignia",
+      "sourceType": "enemy_drop",
+      "sourceKey": "fatui_skirmisher_materials",
+      "sourceName": "Fatui Skirmishers",
+      "availability": "ALWAYS",
+      "notes": "Fatui Skirmisher Materials"
+    }
+  ],
+  "ShardOfAShatteredWill": [
+    {
+      "materialKey": "ShardOfAShatteredWill",
+      "sourceType": "enemy_drop",
+      "sourceKey": "wayob_manifestation_materials",
+      "sourceName": "Wayob Manifestations",
+      "availability": "ALWAYS",
+      "notes": "Wayob Manifestation Materials"
+    }
+  ],
+  "SharpArrowhead": [
+    {
+      "materialKey": "SharpArrowhead",
+      "sourceType": "enemy_drop",
+      "sourceKey": "hilichurl_shooter_materials",
+      "sourceName": "Hilichurl Shooters",
+      "availability": "ALWAYS",
+      "notes": "Hilichurl Shooter Materials"
+    }
+  ],
+  "SheathOfTheSecretSource": [
+    {
+      "materialKey": "SheathOfTheSecretSource",
+      "sourceType": "enemy_drop",
+      "sourceKey": "secret_source_automaton_hunter_seeker_materials",
+      "sourceName": "Secret Source Automaton: Hunter-Seeker",
+      "availability": "ALWAYS",
+      "notes": "Secret Source Automaton: Hunter-Seeker Materials"
+    }
+  ],
+  "ShimmeringNectar": [
+    {
+      "materialKey": "ShimmeringNectar",
+      "sourceType": "enemy_drop",
+      "sourceKey": "whopperflower_materials",
+      "sourceName": "Whopperflowers",
+      "availability": "ALWAYS",
+      "notes": "Whopperflower Materials"
+    }
+  ],
+  "SigilOfAStridingWill": [
+    {
+      "materialKey": "SigilOfAStridingWill",
+      "sourceType": "enemy_drop",
+      "sourceKey": "wayob_manifestation_materials",
+      "sourceName": "Wayob Manifestations",
+      "availability": "ALWAYS",
+      "notes": "Wayob Manifestation Materials"
+    }
+  ],
+  "SilkFlower": [
+    {
+      "materialKey": "SilkFlower",
+      "sourceType": "local_specialty",
+      "sourceKey": "SilkFlower",
+      "sourceName": "Silk Flower",
+      "availability": "ALWAYS",
+      "region": "Liyue",
+      "notes": "Found in Liyue Harbor and Wangshu Inn"
+    }
+  ],
+  "SilverRavenInsignia": [
+    {
+      "materialKey": "SilverRavenInsignia",
+      "sourceType": "enemy_drop",
+      "sourceKey": "treasure_hoarder_materials",
+      "sourceName": "Treasure Hoarders",
+      "availability": "ALWAYS",
+      "notes": "Treasure Hoarder Materials"
+    }
+  ],
+  "SkysplitGembloom": [
+    {
+      "materialKey": "SkysplitGembloom",
+      "sourceType": "local_specialty",
+      "sourceKey": "SkysplitGembloom",
+      "sourceName": "Skysplit Gembloom",
+      "availability": "ALWAYS",
+      "region": "Natlan",
+      "notes": "Found in Natlan"
+    }
+  ],
+  "SlimeConcentrate": [
+    {
+      "materialKey": "SlimeConcentrate",
+      "sourceType": "enemy_drop",
+      "sourceKey": "slime_materials",
+      "sourceName": "Slimes",
+      "availability": "ALWAYS",
+      "notes": "Slime Materials"
+    }
+  ],
+  "SlimeCondensate": [
+    {
+      "materialKey": "SlimeCondensate",
+      "sourceType": "enemy_drop",
+      "sourceKey": "slime_materials",
+      "sourceName": "Slimes",
+      "availability": "ALWAYS",
+      "notes": "Slime Materials"
+    }
+  ],
+  "SlimeSecretions": [
+    {
+      "materialKey": "SlimeSecretions",
+      "sourceType": "enemy_drop",
+      "sourceKey": "slime_materials",
+      "sourceName": "Slimes",
+      "availability": "ALWAYS",
+      "notes": "Slime Materials"
+    }
+  ],
+  "SmallLampGrass": [
+    {
+      "materialKey": "SmallLampGrass",
+      "sourceType": "local_specialty",
+      "sourceKey": "SmallLampGrass",
+      "sourceName": "Small Lamp Grass",
+      "availability": "ALWAYS",
+      "region": "Mondstadt",
+      "notes": "Found in the wild in Mondstadt, especially Whispering Woods"
+    }
+  ],
+  "SpectralHeart": [
+    {
+      "materialKey": "SpectralHeart",
+      "sourceType": "enemy_drop",
+      "sourceKey": "specter_materials",
+      "sourceName": "Specters",
+      "availability": "ALWAYS",
+      "notes": "Specter Materials"
+    }
+  ],
+  "SpectralHusk": [
+    {
+      "materialKey": "SpectralHusk",
+      "sourceType": "enemy_drop",
+      "sourceKey": "specter_materials",
+      "sourceName": "Specters",
+      "availability": "ALWAYS",
+      "notes": "Specter Materials"
+    }
+  ],
+  "SpectralNucleus": [
+    {
+      "materialKey": "SpectralNucleus",
+      "sourceType": "enemy_drop",
+      "sourceKey": "specter_materials",
+      "sourceName": "Specters",
+      "availability": "ALWAYS",
+      "notes": "Specter Materials"
+    }
+  ],
+  "SplinteredHilt": [
+    {
+      "materialKey": "SplinteredHilt",
+      "sourceType": "enemy_drop",
+      "sourceKey": "praetorian_golem_materials",
+      "sourceName": "Praetorian Golems",
+      "availability": "ALWAYS",
+      "notes": "Praetorian Golem Materials"
+    }
+  ],
+  "SprayfeatherGill": [
+    {
+      "materialKey": "SprayfeatherGill",
+      "sourceType": "local_specialty",
+      "sourceKey": "SprayfeatherGill",
+      "sourceName": "Sprayfeather Gill",
+      "availability": "ALWAYS",
+      "region": "Natlan",
+      "notes": "Found in Natlan"
+    }
+  ],
+  "SpringOfTheFirstDewdrop": [
+    {
+      "materialKey": "SpringOfTheFirstDewdrop",
+      "sourceType": "local_specialty",
+      "sourceKey": "SpringOfTheFirstDewdrop",
+      "sourceName": "Spring of the First Dewdrop",
+      "availability": "ALWAYS",
+      "region": "Fontaine",
+      "notes": "Found underwater surrounding the Tower of Ipsissimus in Morte Region"
+    }
+  ],
+  "StainedMask": [
+    {
+      "materialKey": "StainedMask",
+      "sourceType": "enemy_drop",
+      "sourceKey": "hilichurl_materials",
+      "sourceName": "Hilichurls",
+      "availability": "ALWAYS",
+      "notes": "Hilichurl Materials"
+    }
+  ],
+  "Starconch": [
+    {
+      "materialKey": "Starconch",
+      "sourceType": "local_specialty",
+      "sourceKey": "Starconch",
+      "sourceName": "Starconch",
+      "availability": "ALWAYS",
+      "region": "Liyue",
+      "notes": "Found on the beaches of Liyue and Dragonspine"
+    }
+  ],
+  "StillSmolderingHilt": [
+    {
+      "materialKey": "StillSmolderingHilt",
+      "sourceType": "enemy_drop",
+      "sourceKey": "praetorian_golem_materials",
+      "sourceName": "Praetorian Golems",
+      "availability": "ALWAYS",
+      "notes": "Praetorian Golem Materials"
+    }
+  ],
+  "SturdyBoneShard": [
+    {
+      "materialKey": "SturdyBoneShard",
+      "sourceType": "enemy_drop",
+      "sourceKey": "vishap_materials",
+      "sourceName": "Vishaps",
+      "availability": "ALWAYS",
+      "notes": "Vishap Materials"
+    }
+  ],
+  "SturdyShell": [
+    {
+      "materialKey": "SturdyShell",
+      "sourceType": "enemy_drop",
+      "sourceKey": "consecrated_beast_materials",
+      "sourceName": "Consecrated Beasts",
+      "availability": "ALWAYS",
+      "notes": "Consecrated Beast Materials"
+    }
+  ],
+  "SubdetectionUnit": [
+    {
+      "materialKey": "SubdetectionUnit",
+      "sourceType": "local_specialty",
+      "sourceKey": "SubdetectionUnit",
+      "sourceName": "Subdetection Unit",
+      "availability": "ALWAYS",
+      "region": "Fontaine",
+      "notes": "Found in Fontaine Research Institute of Kinetic Energy Engineering Region, Liffey Region"
+    }
+  ],
+  "TatteredWarrant": [
+    {
+      "materialKey": "TatteredWarrant",
+      "sourceType": "enemy_drop",
+      "sourceKey": "fatui_oprichniki_materials",
+      "sourceName": "Fatui Oprichniki",
+      "availability": "ALWAYS",
+      "notes": "Fatui Oprichniki Materials"
+    }
+  ],
+  "TransoceanicChunk": [
+    {
+      "materialKey": "TransoceanicChunk",
+      "sourceType": "enemy_drop",
+      "sourceKey": "fontemer_aberrant_materials",
+      "sourceName": "Fontemer Aberrants",
+      "availability": "ALWAYS",
+      "notes": "Fontemer Aberrant Materials"
+    }
+  ],
+  "TransoceanicPearl": [
+    {
+      "materialKey": "TransoceanicPearl",
+      "sourceType": "enemy_drop",
+      "sourceKey": "fontemer_aberrant_materials",
+      "sourceName": "Fontemer Aberrants",
+      "availability": "ALWAYS",
+      "notes": "Fontemer Aberrant Materials"
+    }
+  ],
+  "TreasuredFlower": [
+    {
+      "materialKey": "TreasuredFlower",
+      "sourceType": "enemy_drop",
+      "sourceKey": "hilichurl_rogue_materials",
+      "sourceName": "Hilichurl Rogues",
+      "availability": "ALWAYS",
+      "notes": "Hilichurl Rogue Materials"
+    }
+  ],
+  "TreasureHoarderInsignia": [
+    {
+      "materialKey": "TreasureHoarderInsignia",
+      "sourceType": "enemy_drop",
+      "sourceKey": "TreasureHoarders",
+      "sourceName": "Treasure Hoarders",
+      "availability": "ALWAYS"
+    }
+  ],
+  "TrimmedRedSilk": [
+    {
+      "materialKey": "TrimmedRedSilk",
+      "sourceType": "enemy_drop",
+      "sourceKey": "eremite_materials",
+      "sourceName": "The Eremites",
+      "availability": "ALWAYS",
+      "notes": "The Eremites Materials"
+    }
+  ],
+  "Trishiraite": [
+    {
+      "materialKey": "Trishiraite",
+      "sourceType": "local_specialty",
+      "sourceKey": "Trishiraite",
+      "sourceName": "Trishiraite",
+      "availability": "ALWAYS",
+      "region": "Sumeru",
+      "notes": "Found in the deserts of Sumeru"
+    }
+  ],
+  "TurbidPrism": [
+    {
+      "materialKey": "TurbidPrism",
+      "sourceType": "enemy_drop",
+      "sourceKey": "primal_construct_materials",
+      "sourceName": "Primal Constructs",
+      "availability": "ALWAYS",
+      "notes": "Primal Construct Materials"
+    }
+  ],
+  "TyrantsFang": [
+    {
+      "materialKey": "TyrantsFang",
+      "sourceType": "enemy_drop",
+      "sourceKey": "natlan_saurian_materials",
+      "sourceName": "Natlan Saurians",
+      "availability": "ALWAYS",
+      "notes": "Natlan Saurian Materials"
+    }
+  ],
+  "Valberry": [
+    {
+      "materialKey": "Valberry",
+      "sourceType": "local_specialty",
+      "sourceKey": "Valberry",
+      "sourceName": "Valberry",
+      "availability": "ALWAYS",
+      "region": "Mondstadt",
+      "notes": "Found in the wild around Stormbearer Mountains and Stormbearer Point"
+    }
+  ],
+  "Violetgrass": [
+    {
+      "materialKey": "Violetgrass",
+      "sourceType": "local_specialty",
+      "sourceKey": "Violetgrass",
+      "sourceName": "Violetgrass",
+      "availability": "ALWAYS",
+      "region": "Liyue",
+      "notes": "Found near cliffs in Liyue"
+    }
+  ],
+  "WanderersBloomingFlower": [
+    {
+      "materialKey": "WanderersBloomingFlower",
+      "sourceType": "enemy_drop",
+      "sourceKey": "hilichurl_rogue_materials",
+      "sourceName": "Hilichurl Rogues",
+      "availability": "ALWAYS",
+      "notes": "Hilichurl Rogue Materials"
+    }
+  ],
+  "WarmBackShell": [
+    {
+      "materialKey": "WarmBackShell",
+      "sourceType": "enemy_drop",
+      "sourceKey": "furnace_shell_mountain_weasel_materials",
+      "sourceName": "Furnace Shell Mountain Weasels",
+      "availability": "ALWAYS",
+      "notes": "Furnace Shell Mountain Weasel Materials"
+    }
+  ],
+  "WarriorsMetalWhistle": [
+    {
+      "materialKey": "WarriorsMetalWhistle",
+      "sourceType": "enemy_drop",
+      "sourceKey": "sauroform_tribal_warrior_materials",
+      "sourceName": "Sauroform Tribal Warriors",
+      "availability": "ALWAYS",
+      "notes": "Sauroform Tribal Warrior Materials"
+    }
+  ],
+  "WeatheredArrowhead": [
+    {
+      "materialKey": "WeatheredArrowhead",
+      "sourceType": "enemy_drop",
+      "sourceKey": "hilichurl_shooter_materials",
+      "sourceName": "Hilichurl Shooters",
+      "availability": "ALWAYS",
+      "notes": "Hilichurl Shooter Materials"
+    }
+  ],
+  "WhopperflowerNectar": [
+    {
+      "materialKey": "WhopperflowerNectar",
+      "sourceType": "enemy_drop",
+      "sourceKey": "Whopperflowers",
+      "sourceName": "Whopperflowers",
+      "availability": "ALWAYS"
+    }
+  ],
+  "WindwheelAster": [
+    {
+      "materialKey": "WindwheelAster",
+      "sourceType": "local_specialty",
+      "sourceKey": "MondstadtOpenWorld",
+      "sourceName": "Mondstadt Open World",
+      "availability": "ALWAYS"
+    }
+  ],
+  "WinterIcelea": [
+    {
+      "materialKey": "WinterIcelea",
+      "sourceType": "local_specialty",
+      "sourceKey": "WinterIcelea",
+      "sourceName": "Winter Icelea",
+      "availability": "ALWAYS",
+      "region": "Nod-Krai",
+      "notes": "Found at the Pillar of Embla"
+    }
+  ],
+  "WitheringPurpurbloom": [
+    {
+      "materialKey": "WitheringPurpurbloom",
+      "sourceType": "local_specialty",
+      "sourceKey": "WitheringPurpurbloom",
+      "sourceName": "Withering Purpurbloom",
+      "availability": "ALWAYS",
+      "region": "Natlan",
+      "notes": "Found in Natlan"
+    }
+  ],
+  "Wolfhook": [
+    {
+      "materialKey": "Wolfhook",
+      "sourceType": "local_specialty",
+      "sourceKey": "Wolfhook",
+      "sourceName": "Wolfhook",
+      "availability": "ALWAYS",
+      "region": "Mondstadt",
+      "notes": "Found in the wild in Wolvendom"
+    }
+  ],
+  "XenochromaticCrystal": [
+    {
+      "materialKey": "XenochromaticCrystal",
+      "sourceType": "enemy_drop",
+      "sourceKey": "fontemer_aberrant_materials",
+      "sourceName": "Fontemer Aberrants",
+      "availability": "ALWAYS",
+      "notes": "Fontemer Aberrant Materials"
+    }
+  ]
+}

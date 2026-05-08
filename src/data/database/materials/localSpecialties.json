@@ -1,0 +1,844 @@
+{
+  "AmakumoFruit": {
+    "key": "AmakumoFruit",
+    "displayName": "Amakumo Fruit",
+    "category": "local_specialty",
+    "region": "Inazuma",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": false,
+    "purchaseVendors": [],
+    "searchHint": "Found in the wild on Seirai Island",
+    "craftable": false
+  },
+  "BerylConch": {
+    "key": "BerylConch",
+    "displayName": "Beryl Conch",
+    "category": "local_specialty",
+    "region": "Fontaine",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": true,
+    "purchaseVendors": [
+      "Hinterman",
+      "Xana"
+    ],
+    "searchHint": "Found underwater in the Source of All Waters: The Great Fontaine Lake",
+    "craftable": false
+  },
+  "BrilliantChrysanthemum": {
+    "key": "BrilliantChrysanthemum",
+    "displayName": "Brilliant Chrysanthemum",
+    "category": "local_specialty",
+    "region": "Natlan",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": true,
+    "purchaseVendors": [
+      "Kuzmich",
+      "Motolinia"
+    ],
+    "searchHint": "Found in Natlan",
+    "craftable": false
+  },
+  "CallaLily": {
+    "key": "CallaLily",
+    "displayName": "Calla Lily",
+    "category": "local_specialty",
+    "region": "Mondstadt",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": true,
+    "purchaseVendors": [
+      "Flora"
+    ],
+    "searchHint": "Found near lakes in Mondstadt, especially Springvale",
+    "craftable": false
+  },
+  "Cecilia": {
+    "key": "Cecilia",
+    "displayName": "Cecilia",
+    "category": "local_specialty",
+    "region": "Mondstadt",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": true,
+    "purchaseVendors": [
+      "Flora"
+    ],
+    "searchHint": "Found in the wild on Starsnatch Cliff",
+    "craftable": false
+  },
+  "ClearwaterJade": {
+    "key": "ClearwaterJade",
+    "displayName": "Clearwater Jade",
+    "category": "local_specialty",
+    "region": "Liyue",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": true,
+    "purchaseVendors": [
+      "Fengtai"
+    ],
+    "searchHint": "Found in Chenyu Vale",
+    "craftable": false
+  },
+  "CorLapis": {
+    "key": "CorLapis",
+    "displayName": "Cor Lapis",
+    "category": "local_specialty",
+    "region": "Liyue",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": true,
+    "purchaseVendors": [
+      "Changshun",
+      "Fengtai",
+      "Qiuwei"
+    ],
+    "searchHint": "Found under cliffs in Liyue, especially Mt. Hulao",
+    "craftable": false
+  },
+  "CrystalMarrow": {
+    "key": "CrystalMarrow",
+    "displayName": "Crystal Marrow",
+    "category": "local_specialty",
+    "region": "Inazuma",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": false,
+    "purchaseVendors": [],
+    "searchHint": "Found on Orobashi's bones on Yashiori Island and Tatarasuna",
+    "craftable": false
+  },
+  "DandelionSeed": {
+    "key": "DandelionSeed",
+    "displayName": "Dandelion Seed",
+    "category": "local_specialty",
+    "region": "Mondstadt",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": true,
+    "purchaseVendors": [
+      "Babak",
+      "Karpillia"
+    ],
+    "searchHint": "Found in the wild in Mondstadt",
+    "craftable": false
+  },
+  "Dendrobium": {
+    "key": "Dendrobium",
+    "displayName": "Dendrobium",
+    "category": "local_specialty",
+    "region": "Inazuma",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": false,
+    "purchaseVendors": [],
+    "searchHint": "Found in the wild on Kannazuka and Yashiori Island",
+    "craftable": false
+  },
+  "Dracolite": {
+    "key": "Dracolite",
+    "displayName": "Dracolite",
+    "category": "local_specialty",
+    "region": "Natlan",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": true,
+    "purchaseVendors": [
+      "Kofitse"
+    ],
+    "searchHint": "Found in Atocpan",
+    "craftable": false
+  },
+  "EtherwingMoth": {
+    "key": "EtherwingMoth",
+    "displayName": "Etherwing Moth",
+    "category": "local_specialty",
+    "region": "Mondstadt",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": false,
+    "purchaseVendors": [],
+    "searchHint": "Found in Mondstadt",
+    "craftable": false
+  },
+  "FluorescentFungus": {
+    "key": "FluorescentFungus",
+    "displayName": "Fluorescent Fungus",
+    "category": "local_specialty",
+    "region": "Inazuma",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": false,
+    "purchaseVendors": [],
+    "searchHint": "Found in the wild on Tsurumi Island",
+    "craftable": false
+  },
+  "FrostlampFlower": {
+    "key": "FrostlampFlower",
+    "displayName": "Frostlamp Flower",
+    "category": "local_specialty",
+    "region": "Nod-Krai",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": true,
+    "purchaseVendors": [
+      "Kuzmich",
+      "Richeza"
+    ],
+    "searchHint": "Found in Nod-Krai",
+    "craftable": false
+  },
+  "GlazeLily": {
+    "key": "GlazeLily",
+    "displayName": "Glaze Lily",
+    "category": "local_specialty",
+    "region": "Liyue",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": true,
+    "purchaseVendors": [
+      "Ms. Bai"
+    ],
+    "searchHint": "Found in Liyue Harbor and Qingce Village",
+    "craftable": false
+  },
+  "GlowingHornshroom": {
+    "key": "GlowingHornshroom",
+    "displayName": "Glowing Hornshroom",
+    "category": "local_specialty",
+    "region": "Natlan",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": true,
+    "purchaseVendors": [
+      "Kofitse"
+    ],
+    "searchHint": "Found in Tezcatepetonco Range near the Masters of the Night-Wind",
+    "craftable": false
+  },
+  "HennaBerry": {
+    "key": "HennaBerry",
+    "displayName": "Henna Berry",
+    "category": "local_specialty",
+    "region": "Sumeru",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": false,
+    "purchaseVendors": [],
+    "searchHint": "Found in the deserts of Sumeru",
+    "craftable": false
+  },
+  "JueyunChili": {
+    "key": "JueyunChili",
+    "displayName": "Jueyun Chili",
+    "category": "local_specialty",
+    "region": "Liyue",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": true,
+    "purchaseVendors": [
+      "Chef Mao",
+      "Fengtai"
+    ],
+    "searchHint": "Found in the wild in Minlin, Qingce Village and Stone Gate",
+    "craftable": false
+  },
+  "KalpalataLotus": {
+    "key": "KalpalataLotus",
+    "displayName": "Kalpalata Lotus",
+    "category": "local_specialty",
+    "region": "Sumeru",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": true,
+    "purchaseVendors": [
+      "Aramani"
+    ],
+    "searchHint": "Found in the mountains of Sumeru",
+    "craftable": false
+  },
+  "LakelightLily": {
+    "key": "LakelightLily",
+    "displayName": "Lakelight Lily",
+    "category": "local_specialty",
+    "region": "Fontaine",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": true,
+    "purchaseVendors": [
+      "Pahsiv"
+    ],
+    "searchHint": "Found near bodies of water in Erinnyes Forest",
+    "craftable": false
+  },
+  "LumidouceBell": {
+    "key": "LumidouceBell",
+    "displayName": "Lumidouce Bell",
+    "category": "local_specialty",
+    "region": "Fontaine",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": false,
+    "purchaseVendors": [],
+    "searchHint": "Found in the north of the Court of Fontaine",
+    "craftable": false
+  },
+  "Lumitoile": {
+    "key": "Lumitoile",
+    "displayName": "Lumitoile",
+    "category": "local_specialty",
+    "region": "Fontaine",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": false,
+    "purchaseVendors": [],
+    "searchHint": "Found on beaches and underwater in Liffey Region",
+    "craftable": false
+  },
+  "MoonfallSilver": {
+    "key": "MoonfallSilver",
+    "displayName": "Moonfall Silver",
+    "category": "local_specialty",
+    "region": "Nod-Krai",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": false,
+    "purchaseVendors": [],
+    "searchHint": "Found in Hiisi Island",
+    "craftable": false
+  },
+  "MourningFlower": {
+    "key": "MourningFlower",
+    "displayName": "Mourning Flower",
+    "category": "local_specialty",
+    "region": "Sumeru",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": false,
+    "purchaseVendors": [],
+    "searchHint": "Found in the deserts of Sumeru",
+    "craftable": false
+  },
+  "NakuWeed": {
+    "key": "NakuWeed",
+    "displayName": "Naku Weed",
+    "category": "local_specialty",
+    "region": "Inazuma",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": true,
+    "purchaseVendors": [
+      "Aoi",
+      "Babak"
+    ],
+    "searchHint": "Found in areas of high Electro concentration in Inazuma, especially Seirai Island",
+    "craftable": false
+  },
+  "NilotpalaLotus": {
+    "key": "NilotpalaLotus",
+    "displayName": "Nilotpala Lotus",
+    "category": "local_specialty",
+    "region": "Sumeru",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": false,
+    "purchaseVendors": [],
+    "searchHint": "Found near lakes and river banks in Sumeru",
+    "craftable": false
+  },
+  "NoctilucousJade": {
+    "key": "NoctilucousJade",
+    "displayName": "Noctilucous Jade",
+    "category": "local_specialty",
+    "region": "Liyue",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": true,
+    "purchaseVendors": [
+      "Fengtai",
+      "Qiuwei",
+      "Shitou"
+    ],
+    "searchHint": "Found in caves in Liyue, especially Mingyun Village",
+    "craftable": false
+  },
+  "Onikabuto": {
+    "key": "Onikabuto",
+    "displayName": "Onikabuto",
+    "category": "local_specialty",
+    "region": "Inazuma",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": false,
+    "purchaseVendors": [],
+    "searchHint": "Found in areas of high Electro concentration in Inazuma, especially Mikage Furnace and Mt. Yougou",
+    "craftable": false
+  },
+  "Padisarah": {
+    "key": "Padisarah",
+    "displayName": "Padisarah",
+    "category": "local_specialty",
+    "region": "Sumeru",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": true,
+    "purchaseVendors": [
+      "Jut"
+    ],
+    "searchHint": "Found in Sumeru City",
+    "craftable": false
+  },
+  "PhilanemoMushroom": {
+    "key": "PhilanemoMushroom",
+    "displayName": "Philanemo Mushroom",
+    "category": "local_specialty",
+    "region": "Mondstadt",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": true,
+    "purchaseVendors": [
+      "Babak",
+      "Chloris"
+    ],
+    "searchHint": "Found under the eaves of houses in the City of Mondstadt, Springvale, Dawn Winery, and Millhaven",
+    "craftable": false
+  },
+  "PineAmber": {
+    "key": "PineAmber",
+    "displayName": "Pine Amber",
+    "category": "local_specialty",
+    "region": "Nod-Krai",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": true,
+    "purchaseVendors": [
+      "Kuzmich"
+    ],
+    "searchHint": "Found in Dreadshade Mire",
+    "craftable": false
+  },
+  "PortableBearing": {
+    "key": "PortableBearing",
+    "displayName": "Portable Bearing",
+    "category": "local_specialty",
+    "region": "Nod-Krai",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": false,
+    "purchaseVendors": [],
+    "searchHint": "Found in Lempo Isle",
+    "craftable": false
+  },
+  "Qingxin": {
+    "key": "Qingxin",
+    "displayName": "Qingxin",
+    "category": "local_specialty",
+    "region": "Liyue",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": true,
+    "purchaseVendors": [
+      "Babak",
+      "Herbalist Gui"
+    ],
+    "searchHint": "Found in the heights of Liyue, especially Minlin and Wuwang Hill",
+    "craftable": false
+  },
+  "QuenepaBerry": {
+    "key": "QuenepaBerry",
+    "displayName": "Quenepa Berry",
+    "category": "local_specialty",
+    "region": "Natlan",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": true,
+    "purchaseVendors": [
+      "Cintli",
+      "Kuzmich"
+    ],
+    "searchHint": "Found in Natlan",
+    "craftable": false
+  },
+  "RainbowRose": {
+    "key": "RainbowRose",
+    "displayName": "Rainbow Rose",
+    "category": "local_specialty",
+    "region": "Fontaine",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": true,
+    "purchaseVendors": [
+      "Eugenie"
+    ],
+    "searchHint": "Found in the wilds of Beryl Region and surrounding the Fountain of Lucine",
+    "craftable": false
+  },
+  "RomaritimeFlower": {
+    "key": "RomaritimeFlower",
+    "displayName": "Romaritime Flower",
+    "category": "local_specialty",
+    "region": "Fontaine",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": true,
+    "purchaseVendors": [
+      "Hinterman",
+      "Xana"
+    ],
+    "searchHint": "Found mainly in or around bodies of water in Fontaine",
+    "craftable": false
+  },
+  "RukkhashavaMushrooms": {
+    "key": "RukkhashavaMushrooms",
+    "displayName": "Rukkhashava Mushrooms",
+    "category": "local_specialty",
+    "region": "Sumeru",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": true,
+    "purchaseVendors": [
+      "Aramani",
+      "Ashpazi"
+    ],
+    "searchHint": "Found in the wild in the Ashavan Realm and Lokapala Jungle",
+    "craftable": false
+  },
+  "SakuraBloom": {
+    "key": "SakuraBloom",
+    "displayName": "Sakura Bloom",
+    "category": "local_specialty",
+    "region": "Inazuma",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": false,
+    "purchaseVendors": [],
+    "searchHint": "Found in the wild on Narukami Island",
+    "craftable": false
+  },
+  "SandGreasePupa": {
+    "key": "SandGreasePupa",
+    "displayName": "Sand Grease Pupa",
+    "category": "local_specialty",
+    "region": "Sumeru",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": false,
+    "purchaseVendors": [],
+    "searchHint": "Found in the deserts of Sumeru",
+    "craftable": false
+  },
+  "SangoPearl": {
+    "key": "SangoPearl",
+    "displayName": "Sango Pearl",
+    "category": "local_specialty",
+    "region": "Inazuma",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": true,
+    "purchaseVendors": [
+      "Babak",
+      "Yamashiro Kenta"
+    ],
+    "searchHint": "Found in the wild on Watatsumi Island and in Enkanomiya",
+    "craftable": false
+  },
+  "SaurianClawSucculent": {
+    "key": "SaurianClawSucculent",
+    "displayName": "Saurian Claw Succulent",
+    "category": "local_specialty",
+    "region": "Natlan",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": true,
+    "purchaseVendors": [
+      "Cintli",
+      "Kuzmich",
+      "Motolinia"
+    ],
+    "searchHint": "Found in Natlan",
+    "craftable": false
+  },
+  "Scarab": {
+    "key": "Scarab",
+    "displayName": "Scarab",
+    "category": "local_specialty",
+    "region": "Sumeru",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": false,
+    "purchaseVendors": [],
+    "searchHint": "Found in the desert ruins of Sumeru",
+    "craftable": false
+  },
+  "SeaGanoderma": {
+    "key": "SeaGanoderma",
+    "displayName": "Sea Ganoderma",
+    "category": "local_specialty",
+    "region": "Inazuma",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": true,
+    "purchaseVendors": [
+      "Obata"
+    ],
+    "searchHint": "Found on beaches and tidal flats of Inazuma",
+    "craftable": false
+  },
+  "SilkFlower": {
+    "key": "SilkFlower",
+    "displayName": "Silk Flower",
+    "category": "local_specialty",
+    "region": "Liyue",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": true,
+    "purchaseVendors": [
+      "Fengtai",
+      "Ms. Bai",
+      "Qiuwei",
+      "Verr Goldet"
+    ],
+    "searchHint": "Found in Liyue Harbor and Wangshu Inn",
+    "craftable": false
+  },
+  "SkysplitGembloom": {
+    "key": "SkysplitGembloom",
+    "displayName": "Skysplit Gembloom",
+    "category": "local_specialty",
+    "region": "Natlan",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": true,
+    "purchaseVendors": [
+      "Motolinia"
+    ],
+    "searchHint": "Found in Natlan",
+    "craftable": false
+  },
+  "SmallLampGrass": {
+    "key": "SmallLampGrass",
+    "displayName": "Small Lamp Grass",
+    "category": "local_specialty",
+    "region": "Mondstadt",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": true,
+    "purchaseVendors": [
+      "Flora"
+    ],
+    "searchHint": "Found in the wild in Mondstadt, especially Whispering Woods",
+    "craftable": false
+  },
+  "SprayfeatherGill": {
+    "key": "SprayfeatherGill",
+    "displayName": "Sprayfeather Gill",
+    "category": "local_specialty",
+    "region": "Natlan",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": true,
+    "purchaseVendors": [
+      "Motolinia"
+    ],
+    "searchHint": "Found in Natlan",
+    "craftable": false
+  },
+  "SpringOfTheFirstDewdrop": {
+    "key": "SpringOfTheFirstDewdrop",
+    "displayName": "Spring of the First Dewdrop",
+    "category": "local_specialty",
+    "region": "Fontaine",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": true,
+    "purchaseVendors": [
+      "Pahsiv"
+    ],
+    "searchHint": "Found underwater surrounding the Tower of Ipsissimus in Morte Region",
+    "craftable": false
+  },
+  "Starconch": {
+    "key": "Starconch",
+    "displayName": "Starconch",
+    "category": "local_specialty",
+    "region": "Liyue",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": true,
+    "purchaseVendors": [
+      "Bolai"
+    ],
+    "searchHint": "Found on the beaches of Liyue and Dragonspine",
+    "craftable": false
+  },
+  "SubdetectionUnit": {
+    "key": "SubdetectionUnit",
+    "displayName": "Subdetection Unit",
+    "category": "local_specialty",
+    "region": "Fontaine",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": false,
+    "purchaseVendors": [],
+    "searchHint": "Found in Fontaine Research Institute of Kinetic Energy Engineering Region, Liffey Region",
+    "craftable": false
+  },
+  "Trishiraite": {
+    "key": "Trishiraite",
+    "displayName": "Trishiraite",
+    "category": "local_specialty",
+    "region": "Sumeru",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": false,
+    "purchaseVendors": [],
+    "searchHint": "Found in the deserts of Sumeru",
+    "craftable": false
+  },
+  "Valberry": {
+    "key": "Valberry",
+    "displayName": "Valberry",
+    "category": "local_specialty",
+    "region": "Mondstadt",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": true,
+    "purchaseVendors": [
+      "Chloris",
+      "Eugenie"
+    ],
+    "searchHint": "Found in the wild around Stormbearer Mountains and Stormbearer Point",
+    "craftable": false
+  },
+  "Violetgrass": {
+    "key": "Violetgrass",
+    "displayName": "Violetgrass",
+    "category": "local_specialty",
+    "region": "Liyue",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": true,
+    "purchaseVendors": [
+      "Babak",
+      "Fengtai",
+      "Herbalist Gui",
+      "Verr Goldet"
+    ],
+    "searchHint": "Found near cliffs in Liyue",
+    "craftable": false
+  },
+  "WindwheelAster": {
+    "key": "WindwheelAster",
+    "displayName": "Windwheel Aster",
+    "category": "local_specialty",
+    "region": "Mondstadt",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": true,
+    "purchaseVendors": [
+      "Flora"
+    ],
+    "searchHint": "Found near the Statue of The Seven at Windrise and Dawn Winery, and all around Stormterror's Lair",
+    "craftable": false
+  },
+  "WinterIcelea": {
+    "key": "WinterIcelea",
+    "displayName": "Winter Icelea",
+    "category": "local_specialty",
+    "region": "Nod-Krai",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": true,
+    "purchaseVendors": [
+      "Kuzmich"
+    ],
+    "searchHint": "Found at the Pillar of Embla",
+    "craftable": false
+  },
+  "WitheringPurpurbloom": {
+    "key": "WitheringPurpurbloom",
+    "displayName": "Withering Purpurbloom",
+    "category": "local_specialty",
+    "region": "Natlan",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": false,
+    "purchaseVendors": [],
+    "searchHint": "Found in Natlan",
+    "craftable": false
+  },
+  "Wolfhook": {
+    "key": "Wolfhook",
+    "displayName": "Wolfhook",
+    "category": "local_specialty",
+    "region": "Mondstadt",
+    "usedFor": [
+      "character_ascension"
+    ],
+    "isPurchasable": true,
+    "purchaseVendors": [
+      "Chloris"
+    ],
+    "searchHint": "Found in the wild in Wolvendom",
+    "craftable": false
+  }
+}

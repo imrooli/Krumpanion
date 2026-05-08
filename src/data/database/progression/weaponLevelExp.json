@@ -1,0 +1,931 @@
+{
+  "universalWeaponProgressionCore": {
+    "schemaVersion": 1,
+    "mode": "cumulative",
+    "notes": [
+      "Weapon level EXP and weapon ascension are separate.",
+      "Weapon ascension generic buckets must be resolved through weapon material profiles.",
+      "3-star, 4-star, and 5-star weapons are fully supported for MVP planner material costs.",
+      "1-star and 2-star weapons include level totals and Mora-only ascension totals for additive compatibility."
+    ],
+    "levelCapByAscension": {
+      "0": 20,
+      "1": 40,
+      "2": 50,
+      "3": 60,
+      "4": 70,
+      "5": 80,
+      "6": 90
+    },
+    "levelTotalsByRarity": {
+      "1": {
+        "1": {
+          "exp": 0,
+          "mora": 0
+        },
+        "20": {
+          "exp": 24325,
+          "mora": 2440
+        },
+        "40": {
+          "exp": 148875,
+          "mora": 14900
+        },
+        "50": {
+          "exp": 274500,
+          "mora": 27480
+        },
+        "60": {
+          "exp": 460025,
+          "mora": 46040
+        },
+        "70": {
+          "exp": 719875,
+          "mora": 72040
+        }
+      },
+      "2": {
+        "1": {
+          "exp": 0,
+          "mora": 0
+        },
+        "20": {
+          "exp": 36400,
+          "mora": 3640
+        },
+        "40": {
+          "exp": 223225,
+          "mora": 22340
+        },
+        "50": {
+          "exp": 411650,
+          "mora": 41200
+        },
+        "60": {
+          "exp": 689950,
+          "mora": 69040
+        },
+        "70": {
+          "exp": 1079675,
+          "mora": 108020
+        }
+      },
+      "3": {
+        "1": {
+          "exp": 0,
+          "mora": 0
+        },
+        "20": {
+          "exp": 53475,
+          "mora": 5360
+        },
+        "40": {
+          "exp": 327475,
+          "mora": 32760
+        },
+        "50": {
+          "exp": 603825,
+          "mora": 60400
+        },
+        "60": {
+          "exp": 1011975,
+          "mora": 101220
+        },
+        "70": {
+          "exp": 1583600,
+          "mora": 158400
+        },
+        "80": {
+          "exp": 2353725,
+          "mora": 235420
+        },
+        "90": {
+          "exp": 3988200,
+          "mora": 398880
+        }
+      },
+      "4": {
+        "1": {
+          "exp": 0,
+          "mora": 0
+        },
+        "20": {
+          "exp": 81000,
+          "mora": 8100
+        },
+        "40": {
+          "exp": 496125,
+          "mora": 49620
+        },
+        "50": {
+          "exp": 914850,
+          "mora": 91500
+        },
+        "60": {
+          "exp": 1533250,
+          "mora": 153340
+        },
+        "70": {
+          "exp": 2399300,
+          "mora": 239960
+        },
+        "80": {
+          "exp": 3566175,
+          "mora": 356660
+        },
+        "90": {
+          "exp": 6042650,
+          "mora": 604320
+        }
+      },
+      "5": {
+        "1": {
+          "exp": 0,
+          "mora": 0
+        },
+        "20": {
+          "exp": 121550,
+          "mora": 12160
+        },
+        "40": {
+          "exp": 744350,
+          "mora": 74440
+        },
+        "50": {
+          "exp": 1372500,
+          "mora": 137260
+        },
+        "60": {
+          "exp": 2300175,
+          "mora": 230040
+        },
+        "70": {
+          "exp": 3599300,
+          "mora": 359960
+        },
+        "80": {
+          "exp": 5349675,
+          "mora": 535000
+        },
+        "90": {
+          "exp": 9064450,
+          "mora": 906480
+        }
+      }
+    },
+    "ascensionTotalsByRarity": {
+      "1": {
+        "0": {
+          "mora": 0
+        },
+        "1": {
+          "requiredLevel": 20,
+          "maxLevelAfter": 40,
+          "requiredAdventureRank": 15,
+          "mora": 0
+        },
+        "2": {
+          "requiredLevel": 40,
+          "maxLevelAfter": 50,
+          "requiredAdventureRank": 25,
+          "mora": 5000
+        },
+        "3": {
+          "requiredLevel": 50,
+          "maxLevelAfter": 60,
+          "requiredAdventureRank": 30,
+          "mora": 10000
+        },
+        "4": {
+          "requiredLevel": 60,
+          "maxLevelAfter": 70,
+          "requiredAdventureRank": 35,
+          "mora": 20000
+        }
+      },
+      "2": {
+        "0": {
+          "mora": 0
+        },
+        "1": {
+          "requiredLevel": 20,
+          "maxLevelAfter": 40,
+          "requiredAdventureRank": 15,
+          "mora": 5000
+        },
+        "2": {
+          "requiredLevel": 40,
+          "maxLevelAfter": 50,
+          "requiredAdventureRank": 25,
+          "mora": 10000
+        },
+        "3": {
+          "requiredLevel": 50,
+          "maxLevelAfter": 60,
+          "requiredAdventureRank": 30,
+          "mora": 20000
+        },
+        "4": {
+          "requiredLevel": 60,
+          "maxLevelAfter": 70,
+          "requiredAdventureRank": 35,
+          "mora": 35000
+        }
+      },
+      "3": {
+        "0": {
+          "mora": 0,
+          "weaponAscensionMaterial": {},
+          "eliteEnemyDrop": {},
+          "commonEnemyDrop": {}
+        },
+        "1": {
+          "requiredLevel": 20,
+          "maxLevelAfter": 40,
+          "requiredAdventureRank": 15,
+          "mora": 5000,
+          "weaponAscensionMaterial": {
+            "tier1": 2
+          },
+          "eliteEnemyDrop": {
+            "low": 2
+          },
+          "commonEnemyDrop": {
+            "low": 1
+          }
+        },
+        "2": {
+          "requiredLevel": 40,
+          "maxLevelAfter": 50,
+          "requiredAdventureRank": 25,
+          "mora": 15000,
+          "weaponAscensionMaterial": {
+            "tier1": 2,
+            "tier2": 2
+          },
+          "eliteEnemyDrop": {
+            "low": 10
+          },
+          "commonEnemyDrop": {
+            "low": 6
+          }
+        },
+        "3": {
+          "requiredLevel": 50,
+          "maxLevelAfter": 60,
+          "requiredAdventureRank": 30,
+          "mora": 30000,
+          "weaponAscensionMaterial": {
+            "tier1": 2,
+            "tier2": 6
+          },
+          "eliteEnemyDrop": {
+            "low": 10,
+            "mid": 4
+          },
+          "commonEnemyDrop": {
+            "low": 6,
+            "mid": 4
+          }
+        },
+        "4": {
+          "requiredLevel": 60,
+          "maxLevelAfter": 70,
+          "requiredAdventureRank": 35,
+          "mora": 50000,
+          "weaponAscensionMaterial": {
+            "tier1": 2,
+            "tier2": 6,
+            "tier3": 2
+          },
+          "eliteEnemyDrop": {
+            "low": 10,
+            "mid": 12
+          },
+          "commonEnemyDrop": {
+            "low": 6,
+            "mid": 10
+          }
+        },
+        "5": {
+          "requiredLevel": 70,
+          "maxLevelAfter": 80,
+          "requiredAdventureRank": 40,
+          "mora": 75000,
+          "weaponAscensionMaterial": {
+            "tier1": 2,
+            "tier2": 6,
+            "tier3": 6
+          },
+          "eliteEnemyDrop": {
+            "low": 10,
+            "mid": 12,
+            "high": 6
+          },
+          "commonEnemyDrop": {
+            "low": 6,
+            "mid": 10,
+            "high": 4
+          }
+        },
+        "6": {
+          "requiredLevel": 80,
+          "maxLevelAfter": 90,
+          "requiredAdventureRank": 50,
+          "mora": 105000,
+          "weaponAscensionMaterial": {
+            "tier1": 2,
+            "tier2": 6,
+            "tier3": 6,
+            "tier4": 3
+          },
+          "eliteEnemyDrop": {
+            "low": 10,
+            "mid": 12,
+            "high": 18
+          },
+          "commonEnemyDrop": {
+            "low": 6,
+            "mid": 10,
+            "high": 12
+          }
+        }
+      },
+      "4": {
+        "0": {
+          "mora": 0,
+          "weaponAscensionMaterial": {},
+          "eliteEnemyDrop": {},
+          "commonEnemyDrop": {}
+        },
+        "1": {
+          "requiredLevel": 20,
+          "maxLevelAfter": 40,
+          "requiredAdventureRank": 15,
+          "mora": 5000,
+          "weaponAscensionMaterial": {
+            "tier1": 3
+          },
+          "eliteEnemyDrop": {
+            "low": 3
+          },
+          "commonEnemyDrop": {
+            "low": 2
+          }
+        },
+        "2": {
+          "requiredLevel": 40,
+          "maxLevelAfter": 50,
+          "requiredAdventureRank": 25,
+          "mora": 20000,
+          "weaponAscensionMaterial": {
+            "tier1": 3,
+            "tier2": 3
+          },
+          "eliteEnemyDrop": {
+            "low": 15
+          },
+          "commonEnemyDrop": {
+            "low": 10
+          }
+        },
+        "3": {
+          "requiredLevel": 50,
+          "maxLevelAfter": 60,
+          "requiredAdventureRank": 30,
+          "mora": 40000,
+          "weaponAscensionMaterial": {
+            "tier1": 3,
+            "tier2": 9
+          },
+          "eliteEnemyDrop": {
+            "low": 15,
+            "mid": 6
+          },
+          "commonEnemyDrop": {
+            "low": 10,
+            "mid": 6
+          }
+        },
+        "4": {
+          "requiredLevel": 60,
+          "maxLevelAfter": 70,
+          "requiredAdventureRank": 35,
+          "mora": 70000,
+          "weaponAscensionMaterial": {
+            "tier1": 3,
+            "tier2": 9,
+            "tier3": 3
+          },
+          "eliteEnemyDrop": {
+            "low": 15,
+            "mid": 18
+          },
+          "commonEnemyDrop": {
+            "low": 10,
+            "mid": 15
+          }
+        },
+        "5": {
+          "requiredLevel": 70,
+          "maxLevelAfter": 80,
+          "requiredAdventureRank": 40,
+          "mora": 105000,
+          "weaponAscensionMaterial": {
+            "tier1": 3,
+            "tier2": 9,
+            "tier3": 9
+          },
+          "eliteEnemyDrop": {
+            "low": 15,
+            "mid": 18,
+            "high": 9
+          },
+          "commonEnemyDrop": {
+            "low": 10,
+            "mid": 15,
+            "high": 6
+          }
+        },
+        "6": {
+          "requiredLevel": 80,
+          "maxLevelAfter": 90,
+          "requiredAdventureRank": 50,
+          "mora": 150000,
+          "weaponAscensionMaterial": {
+            "tier1": 3,
+            "tier2": 9,
+            "tier3": 9,
+            "tier4": 4
+          },
+          "eliteEnemyDrop": {
+            "low": 15,
+            "mid": 18,
+            "high": 27
+          },
+          "commonEnemyDrop": {
+            "low": 10,
+            "mid": 15,
+            "high": 18
+          }
+        }
+      },
+      "5": {
+        "0": {
+          "mora": 0,
+          "weaponAscensionMaterial": {},
+          "eliteEnemyDrop": {},
+          "commonEnemyDrop": {}
+        },
+        "1": {
+          "requiredLevel": 20,
+          "maxLevelAfter": 40,
+          "requiredAdventureRank": 15,
+          "mora": 10000,
+          "weaponAscensionMaterial": {
+            "tier1": 5
+          },
+          "eliteEnemyDrop": {
+            "low": 5
+          },
+          "commonEnemyDrop": {
+            "low": 3
+          }
+        },
+        "2": {
+          "requiredLevel": 40,
+          "maxLevelAfter": 50,
+          "requiredAdventureRank": 25,
+          "mora": 30000,
+          "weaponAscensionMaterial": {
+            "tier1": 5,
+            "tier2": 5
+          },
+          "eliteEnemyDrop": {
+            "low": 23
+          },
+          "commonEnemyDrop": {
+            "low": 15
+          }
+        },
+        "3": {
+          "requiredLevel": 50,
+          "maxLevelAfter": 60,
+          "requiredAdventureRank": 30,
+          "mora": 60000,
+          "weaponAscensionMaterial": {
+            "tier1": 5,
+            "tier2": 14
+          },
+          "eliteEnemyDrop": {
+            "low": 23,
+            "mid": 9
+          },
+          "commonEnemyDrop": {
+            "low": 15,
+            "mid": 9
+          }
+        },
+        "4": {
+          "requiredLevel": 60,
+          "maxLevelAfter": 70,
+          "requiredAdventureRank": 35,
+          "mora": 105000,
+          "weaponAscensionMaterial": {
+            "tier1": 5,
+            "tier2": 14,
+            "tier3": 5
+          },
+          "eliteEnemyDrop": {
+            "low": 23,
+            "mid": 27
+          },
+          "commonEnemyDrop": {
+            "low": 15,
+            "mid": 23
+          }
+        },
+        "5": {
+          "requiredLevel": 70,
+          "maxLevelAfter": 80,
+          "requiredAdventureRank": 40,
+          "mora": 160000,
+          "weaponAscensionMaterial": {
+            "tier1": 5,
+            "tier2": 14,
+            "tier3": 14
+          },
+          "eliteEnemyDrop": {
+            "low": 23,
+            "mid": 27,
+            "high": 14
+          },
+          "commonEnemyDrop": {
+            "low": 15,
+            "mid": 23,
+            "high": 9
+          }
+        },
+        "6": {
+          "requiredLevel": 80,
+          "maxLevelAfter": 90,
+          "requiredAdventureRank": 50,
+          "mora": 225000,
+          "weaponAscensionMaterial": {
+            "tier1": 5,
+            "tier2": 14,
+            "tier3": 14,
+            "tier4": 6
+          },
+          "eliteEnemyDrop": {
+            "low": 23,
+            "mid": 27,
+            "high": 41
+          },
+          "commonEnemyDrop": {
+            "low": 15,
+            "mid": 23,
+            "high": 27
+          }
+        }
+      }
+    }
+  },
+  "weaponExpRequirements": {
+    "5-Star": [
+      {
+        "range": "1-20",
+        "startLevel": 1,
+        "endLevel": 20,
+        "mysticOre": 12,
+        "fineOre": 0,
+        "threeStarWeapons": 0,
+        "twoStarWeapons": 1,
+        "oneStarWeapons": 0,
+        "enhancementOre": 1,
+        "expNeeded": 121550,
+        "wastedExp": 50,
+        "mora": 12160
+      },
+      {
+        "range": "20-40",
+        "startLevel": 20,
+        "endLevel": 40,
+        "mysticOre": 62,
+        "fineOre": 0,
+        "threeStarWeapons": 1,
+        "twoStarWeapons": 0,
+        "oneStarWeapons": 1,
+        "enhancementOre": 1,
+        "expNeeded": 622800,
+        "wastedExp": 0,
+        "mora": 62280
+      },
+      {
+        "range": "40-50",
+        "startLevel": 40,
+        "endLevel": 50,
+        "mysticOre": 62,
+        "fineOre": 3,
+        "threeStarWeapons": 1,
+        "twoStarWeapons": 0,
+        "oneStarWeapons": 0,
+        "enhancementOre": 1,
+        "expNeeded": 628150,
+        "wastedExp": 50,
+        "mora": 62820
+      },
+      {
+        "range": "50-60",
+        "startLevel": 50,
+        "endLevel": 60,
+        "mysticOre": 92,
+        "fineOre": 3,
+        "threeStarWeapons": 1,
+        "twoStarWeapons": 0,
+        "oneStarWeapons": 0,
+        "enhancementOre": 0,
+        "expNeeded": 927675,
+        "wastedExp": 125,
+        "mora": 92780
+      },
+      {
+        "range": "60-70",
+        "startLevel": 60,
+        "endLevel": 70,
+        "mysticOre": 129,
+        "fineOre": 4,
+        "threeStarWeapons": 0,
+        "twoStarWeapons": 1,
+        "oneStarWeapons": 0,
+        "enhancementOre": 0,
+        "expNeeded": 1299125,
+        "wastedExp": 75,
+        "mora": 129920
+      },
+      {
+        "range": "70-80",
+        "startLevel": 70,
+        "endLevel": 80,
+        "mysticOre": 175,
+        "fineOre": 0,
+        "threeStarWeapons": 0,
+        "twoStarWeapons": 0,
+        "oneStarWeapons": 0,
+        "enhancementOre": 1,
+        "expNeeded": 1750375,
+        "wastedExp": 25,
+        "mora": 175040
+      },
+      {
+        "range": "80-90",
+        "startLevel": 80,
+        "endLevel": 90,
+        "mysticOre": 371,
+        "fineOre": 2,
+        "threeStarWeapons": 0,
+        "twoStarWeapons": 0,
+        "oneStarWeapons": 0,
+        "enhancementOre": 2,
+        "expNeeded": 3714775,
+        "wastedExp": 25,
+        "mora": 371480
+      }
+    ],
+    "4-Star": [
+      {
+        "range": "1-20",
+        "startLevel": 1,
+        "endLevel": 20,
+        "mysticOre": 8,
+        "fineOre": 0,
+        "threeStarWeapons": 0,
+        "twoStarWeapons": 0,
+        "oneStarWeapons": 1,
+        "enhancementOre": 1,
+        "expNeeded": 81000,
+        "wastedExp": 0,
+        "mora": 8100
+      },
+      {
+        "range": "20-40",
+        "startLevel": 20,
+        "endLevel": 40,
+        "mysticOre": 41,
+        "fineOre": 2,
+        "threeStarWeapons": 0,
+        "twoStarWeapons": 1,
+        "oneStarWeapons": 0,
+        "enhancementOre": 0,
+        "expNeeded": 415125,
+        "wastedExp": 75,
+        "mora": 41520
+      },
+      {
+        "range": "40-50",
+        "startLevel": 40,
+        "endLevel": 50,
+        "mysticOre": 41,
+        "fineOre": 3,
+        "threeStarWeapons": 1,
+        "twoStarWeapons": 0,
+        "oneStarWeapons": 1,
+        "enhancementOre": 1,
+        "expNeeded": 418725,
+        "wastedExp": 75,
+        "mora": 41880
+      },
+      {
+        "range": "50-60",
+        "startLevel": 50,
+        "endLevel": 60,
+        "mysticOre": 61,
+        "fineOre": 4,
+        "threeStarWeapons": 0,
+        "twoStarWeapons": 0,
+        "oneStarWeapons": 0,
+        "enhancementOre": 1,
+        "expNeeded": 618400,
+        "wastedExp": 0,
+        "mora": 61840
+      },
+      {
+        "range": "60-70",
+        "startLevel": 60,
+        "endLevel": 70,
+        "mysticOre": 86,
+        "fineOre": 2,
+        "threeStarWeapons": 1,
+        "twoStarWeapons": 0,
+        "oneStarWeapons": 0,
+        "enhancementOre": 1,
+        "expNeeded": 866050,
+        "wastedExp": 150,
+        "mora": 86620
+      },
+      {
+        "range": "70-80",
+        "startLevel": 70,
+        "endLevel": 80,
+        "mysticOre": 116,
+        "fineOre": 3,
+        "threeStarWeapons": 0,
+        "twoStarWeapons": 0,
+        "oneStarWeapons": 1,
+        "enhancementOre": 1,
+        "expNeeded": 1166875,
+        "wastedExp": 125,
+        "mora": 116700
+      },
+      {
+        "range": "80-90",
+        "startLevel": 80,
+        "endLevel": 90,
+        "mysticOre": 247,
+        "fineOre": 3,
+        "threeStarWeapons": 0,
+        "twoStarWeapons": 0,
+        "oneStarWeapons": 1,
+        "enhancementOre": 0,
+        "expNeeded": 2476475,
+        "wastedExp": 125,
+        "mora": 247660
+      }
+    ],
+    "3-Star": [
+      {
+        "range": "1-20",
+        "startLevel": 1,
+        "endLevel": 20,
+        "mysticOre": 5,
+        "fineOre": 1,
+        "threeStarWeapons": 0,
+        "twoStarWeapons": 1,
+        "oneStarWeapons": 0,
+        "enhancementOre": 1,
+        "expNeeded": 53475,
+        "wastedExp": 125,
+        "mora": 5360
+      },
+      {
+        "range": "20-40",
+        "startLevel": 20,
+        "endLevel": 40,
+        "mysticOre": 27,
+        "fineOre": 2,
+        "threeStarWeapons": 0,
+        "twoStarWeapons": 0,
+        "oneStarWeapons": 0,
+        "enhancementOre": 0,
+        "expNeeded": 274000,
+        "wastedExp": 0,
+        "mora": 27400
+      },
+      {
+        "range": "40-50",
+        "startLevel": 40,
+        "endLevel": 50,
+        "mysticOre": 27,
+        "fineOre": 3,
+        "threeStarWeapons": 0,
+        "twoStarWeapons": 0,
+        "oneStarWeapons": 0,
+        "enhancementOre": 1,
+        "expNeeded": 276350,
+        "wastedExp": 50,
+        "mora": 27640
+      },
+      {
+        "range": "50-60",
+        "startLevel": 50,
+        "endLevel": 60,
+        "mysticOre": 40,
+        "fineOre": 3,
+        "threeStarWeapons": 1,
+        "twoStarWeapons": 0,
+        "oneStarWeapons": 0,
+        "enhancementOre": 1,
+        "expNeeded": 408150,
+        "wastedExp": 50,
+        "mora": 40820
+      },
+      {
+        "range": "60-70",
+        "startLevel": 60,
+        "endLevel": 70,
+        "mysticOre": 57,
+        "fineOre": 0,
+        "threeStarWeapons": 1,
+        "twoStarWeapons": 0,
+        "oneStarWeapons": 0,
+        "enhancementOre": 0,
+        "expNeeded": 571625,
+        "wastedExp": 175,
+        "mora": 57180
+      },
+      {
+        "range": "70-80",
+        "startLevel": 70,
+        "endLevel": 80,
+        "mysticOre": 76,
+        "fineOre": 4,
+        "threeStarWeapons": 1,
+        "twoStarWeapons": 0,
+        "oneStarWeapons": 0,
+        "enhancementOre": 1,
+        "expNeeded": 770125,
+        "wastedExp": 75,
+        "mora": 77020
+      },
+      {
+        "range": "80-90",
+        "startLevel": 80,
+        "endLevel": 90,
+        "mysticOre": 163,
+        "fineOre": 2,
+        "threeStarWeapons": 0,
+        "twoStarWeapons": 0,
+        "oneStarWeapons": 1,
+        "enhancementOre": 0,
+        "expNeeded": 1634475,
+        "wastedExp": 125,
+        "mora": 163460
+      }
+    ]
+  },
+  "weaponExpTotals1To90": {
+    "5-Star": {
+      "mysticOre": 903,
+      "fineOre": 12,
+      "threeStarWeapons": 3,
+      "twoStarWeapons": 2,
+      "oneStarWeapons": 1,
+      "enhancementOre": 6,
+      "expNeeded": 9064450,
+      "wastedExp": 350,
+      "mora": 906480
+    },
+    "4-Star": {
+      "mysticOre": 600,
+      "fineOre": 17,
+      "threeStarWeapons": 2,
+      "twoStarWeapons": 1,
+      "oneStarWeapons": 4,
+      "enhancementOre": 5,
+      "expNeeded": 6042650,
+      "wastedExp": 550,
+      "mora": 604320
+    },
+    "3-Star": {
+      "mysticOre": 395,
+      "fineOre": 15,
+      "threeStarWeapons": 3,
+      "twoStarWeapons": 1,
+      "oneStarWeapons": 1,
+      "enhancementOre": 4,
+      "expNeeded": 3988200,
+      "wastedExp": 600,
+      "mora": 398880
+    }
+  }
+}

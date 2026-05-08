@@ -1,0 +1,254 @@
+{
+  "Furina": {
+    "key": "Furina",
+    "levelTotals": {
+      "1": {},
+      "20": {
+        "Mora": 20000,
+        "HerosWit": 5
+      },
+      "40": {
+        "Mora": 120000,
+        "HerosWit": 25
+      },
+      "50": {
+        "Mora": 220000,
+        "HerosWit": 45
+      },
+      "60": {
+        "Mora": 420000,
+        "HerosWit": 80
+      },
+      "70": {
+        "Mora": 720000,
+        "HerosWit": 140
+      },
+      "80": {
+        "Mora": 1020000,
+        "HerosWit": 210
+      },
+      "90": {
+        "Mora": 1420000,
+        "HerosWit": 250
+      }
+    },
+    "ascensionTotals": {
+      "0": {},
+      "1": {
+        "VarunadaLazuriteSliver": 1,
+        "WhopperflowerNectar": 3,
+        "LakelightLily": 3,
+        "Mora": 20000
+      },
+      "2": {
+        "VarunadaLazuriteSliver": 3,
+        "WhopperflowerNectar": 15,
+        "LakelightLily": 10,
+        "Mora": 60000
+      },
+      "3": {
+        "VarunadaLazuriteSliver": 6,
+        "WhopperflowerNectar": 24,
+        "LakelightLily": 20,
+        "Mora": 120000
+      },
+      "4": {
+        "VarunadaLazuriteSliver": 9,
+        "WhopperflowerNectar": 36,
+        "LakelightLily": 30,
+        "Mora": 200000
+      },
+      "5": {
+        "VarunadaLazuriteSliver": 12,
+        "WhopperflowerNectar": 48,
+        "LakelightLily": 45,
+        "Mora": 300000
+      },
+      "6": {
+        "VarunadaLazuriteSliver": 18,
+        "WhopperflowerNectar": 60,
+        "LakelightLily": 60,
+        "Mora": 420000
+      }
+    },
+    "talentTotals": {
+      "1": {},
+      "2": {
+        "TeachingsOfJustice": 3,
+        "WhopperflowerNectar": 6,
+        "Mora": 12500
+      },
+      "3": {
+        "TeachingsOfJustice": 5,
+        "WhopperflowerNectar": 12,
+        "Mora": 30000
+      },
+      "4": {
+        "GuideToJustice": 4,
+        "WhopperflowerNectar": 18,
+        "Mora": 55000
+      },
+      "5": {
+        "GuideToJustice": 9,
+        "WhopperflowerNectar": 24,
+        "Mora": 92500
+      },
+      "6": {
+        "GuideToJustice": 13,
+        "WhopperflowerNectar": 30,
+        "Mora": 157500
+      },
+      "7": {
+        "PhilosophiesOfJustice": 4,
+        "WhopperflowerNectar": 36,
+        "LightlessMass": 1,
+        "Mora": 277500
+      },
+      "8": {
+        "PhilosophiesOfJustice": 10,
+        "WhopperflowerNectar": 42,
+        "LightlessMass": 1,
+        "Mora": 537500
+      },
+      "9": {
+        "PhilosophiesOfJustice": 22,
+        "WhopperflowerNectar": 54,
+        "LightlessMass": 2,
+        "Mora": 987500
+      },
+      "10": {
+        "PhilosophiesOfJustice": 38,
+        "WhopperflowerNectar": 66,
+        "LightlessMass": 4,
+        "CrownOfInsight": 1,
+        "Mora": 1652500
+      }
+    }
+  },
+  "Bennett": {
+    "key": "Bennett",
+    "levelTotals": {
+      "1": {},
+      "20": {
+        "Mora": 20000,
+        "HerosWit": 5
+      },
+      "40": {
+        "Mora": 120000,
+        "HerosWit": 25
+      },
+      "50": {
+        "Mora": 220000,
+        "HerosWit": 45
+      },
+      "60": {
+        "Mora": 420000,
+        "HerosWit": 80
+      },
+      "70": {
+        "Mora": 720000,
+        "HerosWit": 140
+      },
+      "80": {
+        "Mora": 1020000,
+        "HerosWit": 210
+      },
+      "90": {
+        "Mora": 1420000,
+        "HerosWit": 250
+      }
+    },
+    "ascensionTotals": {
+      "0": {},
+      "1": {
+        "AgnidusAgateSliver": 1,
+        "TreasureHoarderInsignia": 3,
+        "WindwheelAster": 3,
+        "Mora": 20000
+      },
+      "2": {
+        "AgnidusAgateSliver": 3,
+        "TreasureHoarderInsignia": 15,
+        "WindwheelAster": 10,
+        "Mora": 60000
+      },
+      "3": {
+        "AgnidusAgateSliver": 6,
+        "TreasureHoarderInsignia": 24,
+        "WindwheelAster": 20,
+        "Mora": 120000
+      },
+      "4": {
+        "AgnidusAgateSliver": 9,
+        "TreasureHoarderInsignia": 36,
+        "WindwheelAster": 30,
+        "Mora": 200000
+      },
+      "5": {
+        "AgnidusAgateSliver": 12,
+        "TreasureHoarderInsignia": 48,
+        "WindwheelAster": 45,
+        "Mora": 300000
+      },
+      "6": {
+        "AgnidusAgateSliver": 18,
+        "TreasureHoarderInsignia": 60,
+        "WindwheelAster": 60,
+        "Mora": 420000
+      }
+    },
+    "talentTotals": {
+      "1": {},
+      "2": {
+        "TeachingsOfResistance": 3,
+        "TreasureHoarderInsignia": 6,
+        "Mora": 12500
+      },
+      "3": {
+        "TeachingsOfResistance": 5,
+        "TreasureHoarderInsignia": 12,
+        "Mora": 30000
+      },
+      "4": {
+        "GuideToResistance": 4,
+        "TreasureHoarderInsignia": 18,
+        "Mora": 55000
+      },
+      "5": {
+        "GuideToResistance": 9,
+        "TreasureHoarderInsignia": 24,
+        "Mora": 92500
+      },
+      "6": {
+        "GuideToResistance": 13,
+        "TreasureHoarderInsignia": 30,
+        "Mora": 157500
+      },
+      "7": {
+        "PhilosophiesOfResistance": 4,
+        "TreasureHoarderInsignia": 36,
+        "DvalinsPlume": 1,
+        "Mora": 277500
+      },
+      "8": {
+        "PhilosophiesOfResistance": 10,
+        "TreasureHoarderInsignia": 42,
+        "DvalinsPlume": 1,
+        "Mora": 537500
+      },
+      "9": {
+        "PhilosophiesOfResistance": 22,
+        "TreasureHoarderInsignia": 54,
+        "DvalinsPlume": 2,
+        "Mora": 987500
+      },
+      "10": {
+        "PhilosophiesOfResistance": 38,
+        "TreasureHoarderInsignia": 66,
+        "DvalinsPlume": 4,
+        "CrownOfInsight": 1,
+        "Mora": 1652500
+      }
+    }
+  }
+}

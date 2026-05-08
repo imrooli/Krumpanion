@@ -2,6 +2,30 @@
 
 Krumpanion's planner should be deterministic, fast, and separated from React components.
 
+## Static data source
+
+The planner now reads game data through the normalized static-data layer built from the
+canonical database in `src/data/database/`.
+
+Runtime loading order:
+
+1. Load the canonical database from `src/data/database/index.ts`.
+2. Validate the canonical database.
+3. Normalize the canonical records into the runtime `StaticGameData` shape.
+4. Apply validated override packs on top of canonical keys.
+5. Build derived lookup indexes used by planner and UI selectors.
+
+The planner must not read or depend on:
+
+- generated copied-table outputs as runtime truth
+- discovered runtime catalogs as runtime truth
+- raw scraped table rows
+- name-based fallback guesses
+- one-off hardcoded planner fixes for missing character or material data
+
+If a planner-critical relationship is missing from canonical data, that is a database validation
+issue or planner warning. The planner should not silently guess.
+
 ## Inputs
 
 ```ts
@@ -40,37 +64,55 @@ type PlannerOutput = {
 
 1. Read the active account snapshot.
 2. Read active account inventory, ownership, goals, and planner settings as separate inputs.
-3. Normalize goals.
-4. For each character goal:
+3. Read normalized static game data derived from the canonical database.
+4. Normalize goals.
+5. For each character goal:
    - calculate level/ascension materials missing
    - calculate each talent's materials missing
    - group into a character plan
-5. For each weapon goal:
+6. For each weapon goal:
    - calculate weapon EXP/ascension materials missing
    - group into a weapon plan
-6. For each artifact goal:
+7. For each artifact goal:
    - add as a Resin-budgeted farming plan, not a deterministic material shortage
-7. Sum material requirements across all goals.
-8. Subtract owned material quantities from the active account inventory.
-9. Apply guaranteed or expected-value crafting coverage for estimation, without mutating deterministic requirements.
-10. Attach source metadata:
+8. Sum material requirements across all goals.
+9. Subtract owned material quantities from the active account inventory.
+10. Apply guaranteed or expected-value crafting coverage for estimation, without mutating deterministic requirements.
+11. Attach source metadata:
    - domain
    - boss
    - ley line
    - weekly boss
    - day availability
    - Resin cost
-11. Build source-level farming estimates:
+12. Build source-level farming estimates:
    - deterministic requirements stay exact
    - inventory deficits stay exact
    - crafting-adjusted deficits feed the estimator
    - one activity claim can satisfy multiple related material deficits
-12. Group by availability.
-13. Build Planner tab rows.
+13. Group by availability.
+14. Build Planner tab rows.
 
 ## Core rule
 
 A material calculator should never mutate inventory. It should only produce a plan.
+
+## Canonical relationship rules
+
+Planner relationships are resolved through canonical normalized profiles:
+
+- character profile -> local specialty
+- character profile -> common enemy family
+- character profile -> normal boss material
+- character profile -> weekly boss material
+- character profile -> talent book family
+- character profile -> elemental gem family
+- weapon profile -> weapon ascension family
+- weapon profile -> elite enemy family
+- weapon profile -> common enemy family
+
+Traveler remains a special-case profile and is resolved through the dedicated Traveler data path
+instead of a normal single-element character profile.
 
 ## Account scoping rule
 

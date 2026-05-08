@@ -1,0 +1,3685 @@
+{
+  "Absolution": {
+    "weaponKey": "Absolution",
+    "displayName": "Absolution",
+    "weaponType": "Sword",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "AncientChord",
+    "eliteEnemyDropFamilyKey": "fatui_operative_materials",
+    "commonEnemyDropFamilyKey": "clockwork_meka_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Absolution"
+    ]
+  },
+  "Akuoumaru": {
+    "weaponKey": "Akuoumaru",
+    "displayName": "Akuoumaru",
+    "weaponType": "Claymore",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "DistantSea",
+    "eliteEnemyDropFamilyKey": "riftwolf_materials",
+    "commonEnemyDropFamilyKey": "nobushi_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Akuoumaru"
+    ]
+  },
+  "AlleyHunter": {
+    "weaponKey": "AlleyHunter",
+    "displayName": "Alley Hunter",
+    "weaponType": "Bow",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "DandelionGladiator",
+    "eliteEnemyDropFamilyKey": "humanoid_ruin_machine_materials",
+    "commonEnemyDropFamilyKey": "slime_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Alley Hunter"
+    ]
+  },
+  "AmberBead": {
+    "weaponKey": "AmberBead",
+    "displayName": "Amber Bead",
+    "weaponType": "Catalyst",
+    "rarity": 3,
+    "weaponAscensionMaterialFamilyKey": "",
+    "eliteEnemyDropFamilyKey": "",
+    "commonEnemyDropFamilyKey": "",
+    "releaseState": "live",
+    "status": "unresolved",
+    "plannerEligible": false,
+    "notes": [],
+    "aliases": [
+      "Amber Bead"
+    ]
+  },
+  "AmenomaKageuchi": {
+    "weaponKey": "AmenomaKageuchi",
+    "displayName": "Amenoma Kageuchi",
+    "weaponType": "Sword",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "DistantSea",
+    "eliteEnemyDropFamilyKey": "ruin_sentinel_materials",
+    "commonEnemyDropFamilyKey": "nobushi_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Amenoma Kageuchi"
+    ]
+  },
+  "AmosBow": {
+    "weaponKey": "AmosBow",
+    "displayName": "Amos' Bow",
+    "weaponType": "Bow",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "DandelionGladiator",
+    "eliteEnemyDropFamilyKey": "humanoid_ruin_machine_materials",
+    "commonEnemyDropFamilyKey": "slime_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Amos' Bow"
+    ]
+  },
+  "AquaSimulacra": {
+    "weaponKey": "AquaSimulacra",
+    "displayName": "Aqua Simulacra",
+    "weaponType": "Bow",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "Guyun",
+    "eliteEnemyDropFamilyKey": "black_serpent_materials",
+    "commonEnemyDropFamilyKey": "specter_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Aqua Simulacra"
+    ]
+  },
+  "AquilaFavonia": {
+    "weaponKey": "AquilaFavonia",
+    "displayName": "Aquila Favonia",
+    "weaponType": "Sword",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "Decarabian",
+    "eliteEnemyDropFamilyKey": "mitachurl_materials",
+    "commonEnemyDropFamilyKey": "hilichurl_shooter_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Aquila Favonia"
+    ]
+  },
+  "AshGravenDrinkingHorn": {
+    "weaponKey": "AshGravenDrinkingHorn",
+    "displayName": "Ash-Graven Drinking Horn",
+    "weaponType": "Catalyst",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "NightWind",
+    "eliteEnemyDropFamilyKey": "secret_source_automaton_hunter_seeker_materials",
+    "commonEnemyDropFamilyKey": "natlan_saurian_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Ash-Graven Drinking Horn"
+    ]
+  },
+  "AstralVulturesCrimsonPlumage": {
+    "weaponKey": "AstralVulturesCrimsonPlumage",
+    "displayName": "Astral Vulture's Crimson Plumage",
+    "weaponType": "Bow",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "NightWind",
+    "eliteEnemyDropFamilyKey": "tenebrous_mimesis_materials",
+    "commonEnemyDropFamilyKey": "sauroform_tribal_warrior_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Astral Vulture's Crimson Plumage"
+    ]
+  },
+  "AthameArtis": {
+    "weaponKey": "AthameArtis",
+    "displayName": "Athame Artis",
+    "weaponType": "Sword",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "Decarabian",
+    "eliteEnemyDropFamilyKey": "frostnight_scion_materials",
+    "commonEnemyDropFamilyKey": "landcruiser_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Athame Artis"
+    ]
+  },
+  "AThousandBlazingSuns": {
+    "weaponKey": "AThousandBlazingSuns",
+    "displayName": "A Thousand Blazing Suns",
+    "weaponType": "Claymore",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "BlazingSacrificialHeart",
+    "eliteEnemyDropFamilyKey": "secret_source_automaton_hunter_seeker_materials",
+    "commonEnemyDropFamilyKey": "natlan_saurian_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "A Thousand Blazing Suns"
+    ]
+  },
+  "AThousandFloatingDreams": {
+    "weaponKey": "AThousandFloatingDreams",
+    "displayName": "A Thousand Floating Dreams",
+    "weaponType": "Catalyst",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "OasisGarden",
+    "eliteEnemyDropFamilyKey": "primal_construct_materials",
+    "commonEnemyDropFamilyKey": "fungus_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "A Thousand Floating Dreams"
+    ]
+  },
+  "Azurelight": {
+    "weaponKey": "Azurelight",
+    "displayName": "Azurelight",
+    "weaponType": "Sword",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "NightWind",
+    "eliteEnemyDropFamilyKey": "tenebrous_mimesis_materials",
+    "commonEnemyDropFamilyKey": "sauroform_tribal_warrior_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Azurelight"
+    ]
+  },
+  "BalladOfTheBoundlessBlue": {
+    "weaponKey": "BalladOfTheBoundlessBlue",
+    "displayName": "Ballad of the Boundless Blue",
+    "weaponType": "Catalyst",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "BorealWolf",
+    "eliteEnemyDropFamilyKey": "vishap_materials",
+    "commonEnemyDropFamilyKey": "treasure_hoarder_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Ballad of the Boundless Blue"
+    ]
+  },
+  "BalladOfTheFjords": {
+    "weaponKey": "BalladOfTheFjords",
+    "displayName": "Ballad of the Fjords",
+    "weaponType": "Polearm",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "PristineSea",
+    "eliteEnemyDropFamilyKey": "hilichurl_rogue_materials",
+    "commonEnemyDropFamilyKey": "whopperflower_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Ballad of the Fjords"
+    ]
+  },
+  "BeaconOfTheReedSea": {
+    "weaponKey": "BeaconOfTheReedSea",
+    "displayName": "Beacon of the Reed Sea",
+    "weaponType": "Claymore",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "ScorchingMight",
+    "eliteEnemyDropFamilyKey": "consecrated_beast_materials",
+    "commonEnemyDropFamilyKey": "eremite_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Beacon of the Reed Sea"
+    ]
+  },
+  "BlackcliffAgate": {
+    "weaponKey": "BlackcliffAgate",
+    "displayName": "Blackcliff Agate",
+    "weaponType": "Catalyst",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "Guyun",
+    "eliteEnemyDropFamilyKey": "fatui_pyro_agent_materials",
+    "commonEnemyDropFamilyKey": "samachurl_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Blackcliff Agate"
+    ]
+  },
+  "BlackcliffLongsword": {
+    "weaponKey": "BlackcliffLongsword",
+    "displayName": "Blackcliff Longsword",
+    "weaponType": "Sword",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "Guyun",
+    "eliteEnemyDropFamilyKey": "fatui_pyro_agent_materials",
+    "commonEnemyDropFamilyKey": "hilichurl_shooter_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Blackcliff Longsword"
+    ]
+  },
+  "BlackcliffPole": {
+    "weaponKey": "BlackcliffPole",
+    "displayName": "Blackcliff Pole",
+    "weaponType": "Polearm",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "MistVeiledElixir",
+    "eliteEnemyDropFamilyKey": "fatui_cicin_mage_materials",
+    "commonEnemyDropFamilyKey": "fatui_skirmisher_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Blackcliff Pole"
+    ]
+  },
+  "BlackcliffSlasher": {
+    "weaponKey": "BlackcliffSlasher",
+    "displayName": "Blackcliff Slasher",
+    "weaponType": "Claymore",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "MistVeiledElixir",
+    "eliteEnemyDropFamilyKey": "fatui_cicin_mage_materials",
+    "commonEnemyDropFamilyKey": "fatui_skirmisher_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Blackcliff Slasher"
+    ]
+  },
+  "BlackcliffWarbow": {
+    "weaponKey": "BlackcliffWarbow",
+    "displayName": "Blackcliff Warbow",
+    "weaponType": "Bow",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "Guyun",
+    "eliteEnemyDropFamilyKey": "fatui_pyro_agent_materials",
+    "commonEnemyDropFamilyKey": "whopperflower_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Blackcliff Warbow"
+    ]
+  },
+  "BlackmarrowLantern": {
+    "weaponKey": "BlackmarrowLantern",
+    "displayName": "Blackmarrow Lantern",
+    "weaponType": "Catalyst",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "ArtfulDevice",
+    "eliteEnemyDropFamilyKey": "frostnight_scion_materials",
+    "commonEnemyDropFamilyKey": "fatui_oprichniki_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Blackmarrow Lantern"
+    ]
+  },
+  "BlackTassel": {
+    "weaponKey": "BlackTassel",
+    "displayName": "Black Tassel",
+    "weaponType": "Polearm",
+    "rarity": 3,
+    "weaponAscensionMaterialFamilyKey": "Aerosiderite",
+    "eliteEnemyDropFamilyKey": "vishap_materials",
+    "commonEnemyDropFamilyKey": "hilichurl_shooter_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Black Tassel"
+    ]
+  },
+  "BloodsoakedRuins": {
+    "weaponKey": "BloodsoakedRuins",
+    "displayName": "Bloodsoaked Ruins",
+    "weaponType": "Polearm",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "LongNightFlint",
+    "eliteEnemyDropFamilyKey": "wasteland_wild_hunt_materials",
+    "commonEnemyDropFamilyKey": "fatui_oprichniki_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Bloodsoaked Ruins"
+    ]
+  },
+  "BloodtaintedGreatsword": {
+    "weaponKey": "BloodtaintedGreatsword",
+    "displayName": "Bloodtainted Greatsword",
+    "weaponType": "Claymore",
+    "rarity": 3,
+    "weaponAscensionMaterialFamilyKey": "BorealWolf",
+    "eliteEnemyDropFamilyKey": "abyss_mage_materials",
+    "commonEnemyDropFamilyKey": "hilichurl_shooter_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Bloodtainted Greatsword"
+    ]
+  },
+  "CalamityOfEshu": {
+    "weaponKey": "CalamityOfEshu",
+    "displayName": "Calamity of Eshu",
+    "weaponType": "Sword",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "SacredLord",
+    "eliteEnemyDropFamilyKey": "tenebrous_mimesis_materials",
+    "commonEnemyDropFamilyKey": "sauroform_tribal_warrior_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Calamity of Eshu"
+    ]
+  },
+  "CalamityQueller": {
+    "weaponKey": "CalamityQueller",
+    "displayName": "Calamity Queller",
+    "weaponType": "Polearm",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "MistVeiledElixir",
+    "eliteEnemyDropFamilyKey": "fatui_cicin_mage_materials",
+    "commonEnemyDropFamilyKey": "whopperflower_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Calamity Queller"
+    ]
+  },
+  "CashflowSupervision": {
+    "weaponKey": "CashflowSupervision",
+    "displayName": "Cashflow Supervision",
+    "weaponType": "Catalyst",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "PristineSea",
+    "eliteEnemyDropFamilyKey": "fatui_operative_materials",
+    "commonEnemyDropFamilyKey": "fontemer_aberrant_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Cashflow Supervision"
+    ]
+  },
+  "ChainBreaker": {
+    "weaponKey": "ChainBreaker",
+    "displayName": "Chain Breaker",
+    "weaponType": "Bow",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "NightWind",
+    "eliteEnemyDropFamilyKey": "xuanwen_beast_materials",
+    "commonEnemyDropFamilyKey": "natlan_saurian_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Chain Breaker"
+    ]
+  },
+  "CinnabarSpindle": {
+    "weaponKey": "CinnabarSpindle",
+    "displayName": "Cinnabar Spindle",
+    "weaponType": "Sword",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "Decarabian",
+    "eliteEnemyDropFamilyKey": "humanoid_ruin_machine_materials",
+    "commonEnemyDropFamilyKey": "hilichurl_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Cinnabar Spindle"
+    ]
+  },
+  "Cloudforged": {
+    "weaponKey": "Cloudforged",
+    "displayName": "Cloudforged",
+    "weaponType": "Bow",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "Aerosiderite",
+    "eliteEnemyDropFamilyKey": "praetorian_golem_materials",
+    "commonEnemyDropFamilyKey": "fatui_skirmisher_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Cloudforged"
+    ]
+  },
+  "CompoundBow": {
+    "weaponKey": "CompoundBow",
+    "displayName": "Compound Bow",
+    "weaponType": "Bow",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "Aerosiderite",
+    "eliteEnemyDropFamilyKey": "vishap_materials",
+    "commonEnemyDropFamilyKey": "fatui_skirmisher_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Compound Bow"
+    ]
+  },
+  "CoolSteel": {
+    "weaponKey": "CoolSteel",
+    "displayName": "Cool Steel",
+    "weaponType": "Sword",
+    "rarity": 3,
+    "weaponAscensionMaterialFamilyKey": "Decarabian",
+    "eliteEnemyDropFamilyKey": "mitachurl_materials",
+    "commonEnemyDropFamilyKey": "hilichurl_shooter_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Cool Steel"
+    ]
+  },
+  "CranesEchoingCall": {
+    "weaponKey": "CranesEchoingCall",
+    "displayName": "Crane's Echoing Call",
+    "weaponType": "Catalyst",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "MistVeiledElixir",
+    "eliteEnemyDropFamilyKey": "xuanwen_beast_materials",
+    "commonEnemyDropFamilyKey": "samachurl_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Crane's Echoing Call"
+    ]
+  },
+  "CrescentPike": {
+    "weaponKey": "CrescentPike",
+    "displayName": "Crescent Pike",
+    "weaponType": "Polearm",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "Guyun",
+    "eliteEnemyDropFamilyKey": "fatui_pyro_agent_materials",
+    "commonEnemyDropFamilyKey": "treasure_hoarder_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Crescent Pike"
+    ]
+  },
+  "CrimsonMoonsSemblance": {
+    "weaponKey": "CrimsonMoonsSemblance",
+    "displayName": "Crimson Moon's Semblance",
+    "weaponType": "Polearm",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "PristineSea",
+    "eliteEnemyDropFamilyKey": "praetorian_golem_materials",
+    "commonEnemyDropFamilyKey": "clockwork_meka_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Crimson Moon's Semblance"
+    ]
+  },
+  "DarkIronSword": {
+    "weaponKey": "DarkIronSword",
+    "displayName": "Dark Iron Sword",
+    "weaponType": "Sword",
+    "rarity": 3,
+    "weaponAscensionMaterialFamilyKey": "Guyun",
+    "eliteEnemyDropFamilyKey": "fatui_pyro_agent_materials",
+    "commonEnemyDropFamilyKey": "hilichurl_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Dark Iron Sword"
+    ]
+  },
+  "DawningFrost": {
+    "weaponKey": "DawningFrost",
+    "displayName": "Dawning Frost",
+    "weaponType": "Catalyst",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "ArtfulDevice",
+    "eliteEnemyDropFamilyKey": "frostnight_scion_materials",
+    "commonEnemyDropFamilyKey": "fatui_oprichniki_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Dawning Frost"
+    ]
+  },
+  "Deathmatch": {
+    "weaponKey": "Deathmatch",
+    "displayName": "Deathmatch",
+    "weaponType": "Polearm",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "BorealWolf",
+    "eliteEnemyDropFamilyKey": "abyss_mage_materials",
+    "commonEnemyDropFamilyKey": "whopperflower_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Deathmatch"
+    ]
+  },
+  "DebateClub": {
+    "weaponKey": "DebateClub",
+    "displayName": "Debate Club",
+    "weaponType": "Claymore",
+    "rarity": 3,
+    "weaponAscensionMaterialFamilyKey": "MistVeiledElixir",
+    "eliteEnemyDropFamilyKey": "fatui_cicin_mage_materials",
+    "commonEnemyDropFamilyKey": "hilichurl_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Debate Club"
+    ]
+  },
+  "DialoguesOfTheDesertSages": {
+    "weaponKey": "DialoguesOfTheDesertSages",
+    "displayName": "Dialogues of the Desert Sages",
+    "weaponType": "Polearm",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "ForestDew",
+    "eliteEnemyDropFamilyKey": "xuanwen_beast_materials",
+    "commonEnemyDropFamilyKey": "specter_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Dialogues of the Desert Sages"
+    ]
+  },
+  "DisasterAndRemorse": {
+    "weaponKey": "DisasterAndRemorse",
+    "displayName": "Disaster and Remorse",
+    "weaponType": "Polearm",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "Decarabian",
+    "eliteEnemyDropFamilyKey": "radiant_beast_materials",
+    "commonEnemyDropFamilyKey": "whopperflower_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Disaster and Remorse"
+    ]
+  },
+  "DodocoTales": {
+    "weaponKey": "DodocoTales",
+    "displayName": "Dodoco Tales",
+    "weaponType": "Catalyst",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "BorealWolf",
+    "eliteEnemyDropFamilyKey": "abyss_mage_materials",
+    "commonEnemyDropFamilyKey": "hilichurl_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Dodoco Tales"
+    ]
+  },
+  "DragonsBane": {
+    "weaponKey": "DragonsBane",
+    "displayName": "Dragon's Bane",
+    "weaponType": "Polearm",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "MistVeiledElixir",
+    "eliteEnemyDropFamilyKey": "fatui_cicin_mage_materials",
+    "commonEnemyDropFamilyKey": "samachurl_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Dragon's Bane"
+    ]
+  },
+  "DragonspineSpear": {
+    "weaponKey": "DragonspineSpear",
+    "displayName": "Dragonspine Spear",
+    "weaponType": "Polearm",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "BorealWolf",
+    "eliteEnemyDropFamilyKey": "fatui_cicin_mage_materials",
+    "commonEnemyDropFamilyKey": "fatui_skirmisher_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Dragonspine Spear"
+    ]
+  },
+  "EarthShaker": {
+    "weaponKey": "EarthShaker",
+    "displayName": "Earth Shaker",
+    "weaponType": "Claymore",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "BlazingSacrificialHeart",
+    "eliteEnemyDropFamilyKey": "avatar_of_lava_materials",
+    "commonEnemyDropFamilyKey": "sauroform_tribal_warrior_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Earth Shaker"
+    ]
+  },
+  "EbonyBow": {
+    "weaponKey": "EbonyBow",
+    "displayName": "Ebony Bow",
+    "weaponType": "Bow",
+    "rarity": 3,
+    "weaponAscensionMaterialFamilyKey": "",
+    "eliteEnemyDropFamilyKey": "",
+    "commonEnemyDropFamilyKey": "",
+    "releaseState": "live",
+    "status": "unresolved",
+    "plannerEligible": false,
+    "notes": [],
+    "aliases": [
+      "Ebony Bow"
+    ]
+  },
+  "ElegyForTheEnd": {
+    "weaponKey": "ElegyForTheEnd",
+    "displayName": "Elegy for the End",
+    "weaponType": "Bow",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "BorealWolf",
+    "eliteEnemyDropFamilyKey": "mitachurl_materials",
+    "commonEnemyDropFamilyKey": "fatui_skirmisher_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Elegy for the End"
+    ]
+  },
+  "EmeraldOrb": {
+    "weaponKey": "EmeraldOrb",
+    "displayName": "Emerald Orb",
+    "weaponType": "Catalyst",
+    "rarity": 3,
+    "weaponAscensionMaterialFamilyKey": "Guyun",
+    "eliteEnemyDropFamilyKey": "fatui_pyro_agent_materials",
+    "commonEnemyDropFamilyKey": "treasure_hoarder_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Emerald Orb"
+    ]
+  },
+  "EndOfTheLine": {
+    "weaponKey": "EndOfTheLine",
+    "displayName": "End of the Line",
+    "weaponType": "Bow",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "ScorchingMight",
+    "eliteEnemyDropFamilyKey": "state_shifted_fungus_materials",
+    "commonEnemyDropFamilyKey": "fungus_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "End of the Line"
+    ]
+  },
+  "EngulfingLightning": {
+    "weaponKey": "EngulfingLightning",
+    "displayName": "Engulfing Lightning",
+    "weaponType": "Polearm",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "Mask",
+    "eliteEnemyDropFamilyKey": "ruin_sentinel_materials",
+    "commonEnemyDropFamilyKey": "nobushi_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Engulfing Lightning"
+    ]
+  },
+  "EtherlightSpindlelute": {
+    "weaponKey": "EtherlightSpindlelute",
+    "displayName": "Etherlight Spindlelute",
+    "weaponType": "Catalyst",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "FarNorthScions",
+    "eliteEnemyDropFamilyKey": "radiant_beast_materials",
+    "commonEnemyDropFamilyKey": "fatui_oprichniki_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Etherlight Spindlelute"
+    ]
+  },
+  "EverlastingMoonglow": {
+    "weaponKey": "EverlastingMoonglow",
+    "displayName": "Everlasting Moonglow",
+    "weaponType": "Catalyst",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "DistantSea",
+    "eliteEnemyDropFamilyKey": "mirror_maiden_materials",
+    "commonEnemyDropFamilyKey": "specter_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Everlasting Moonglow"
+    ]
+  },
+  "EyeOfPerception": {
+    "weaponKey": "EyeOfPerception",
+    "displayName": "Eye of Perception",
+    "weaponType": "Catalyst",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "MistVeiledElixir",
+    "eliteEnemyDropFamilyKey": "fatui_cicin_mage_materials",
+    "commonEnemyDropFamilyKey": "hilichurl_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Eye of Perception"
+    ]
+  },
+  "FadingTwilight": {
+    "weaponKey": "FadingTwilight",
+    "displayName": "Fading Twilight",
+    "weaponType": "Bow",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "Aerosiderite",
+    "eliteEnemyDropFamilyKey": "fatui_pyro_agent_materials",
+    "commonEnemyDropFamilyKey": "samachurl_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Fading Twilight"
+    ]
+  },
+  "FangOfTheMountainKing": {
+    "weaponKey": "FangOfTheMountainKing",
+    "displayName": "Fang of the Mountain King",
+    "weaponType": "Claymore",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "SacredLord",
+    "eliteEnemyDropFamilyKey": "avatar_of_lava_materials",
+    "commonEnemyDropFamilyKey": "sauroform_tribal_warrior_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Fang of the Mountain King"
+    ]
+  },
+  "FavoniusCodex": {
+    "weaponKey": "FavoniusCodex",
+    "displayName": "Favonius Codex",
+    "weaponType": "Catalyst",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "Decarabian",
+    "eliteEnemyDropFamilyKey": "mitachurl_materials",
+    "commonEnemyDropFamilyKey": "samachurl_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Favonius Codex"
+    ]
+  },
+  "FavoniusGreatsword": {
+    "weaponKey": "FavoniusGreatsword",
+    "displayName": "Favonius Greatsword",
+    "weaponType": "Claymore",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "DandelionGladiator",
+    "eliteEnemyDropFamilyKey": "humanoid_ruin_machine_materials",
+    "commonEnemyDropFamilyKey": "fatui_skirmisher_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Favonius Greatsword"
+    ]
+  },
+  "FavoniusLance": {
+    "weaponKey": "FavoniusLance",
+    "displayName": "Favonius Lance",
+    "weaponType": "Polearm",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "DandelionGladiator",
+    "eliteEnemyDropFamilyKey": "humanoid_ruin_machine_materials",
+    "commonEnemyDropFamilyKey": "slime_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Favonius Lance"
+    ]
+  },
+  "FavoniusSword": {
+    "weaponKey": "FavoniusSword",
+    "displayName": "Favonius Sword",
+    "weaponType": "Sword",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "Decarabian",
+    "eliteEnemyDropFamilyKey": "mitachurl_materials",
+    "commonEnemyDropFamilyKey": "hilichurl_shooter_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Favonius Sword"
+    ]
+  },
+  "FavoniusWarbow": {
+    "weaponKey": "FavoniusWarbow",
+    "displayName": "Favonius Warbow",
+    "weaponType": "Bow",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "DandelionGladiator",
+    "eliteEnemyDropFamilyKey": "humanoid_ruin_machine_materials",
+    "commonEnemyDropFamilyKey": "whopperflower_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Favonius Warbow"
+    ]
+  },
+  "FerrousShadow": {
+    "weaponKey": "FerrousShadow",
+    "displayName": "Ferrous Shadow",
+    "weaponType": "Claymore",
+    "rarity": 3,
+    "weaponAscensionMaterialFamilyKey": "Decarabian",
+    "eliteEnemyDropFamilyKey": "mitachurl_materials",
+    "commonEnemyDropFamilyKey": "whopperflower_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Ferrous Shadow"
+    ]
+  },
+  "FesteringDesire": {
+    "weaponKey": "FesteringDesire",
+    "displayName": "Festering Desire",
+    "weaponType": "Sword",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "DandelionGladiator",
+    "eliteEnemyDropFamilyKey": "mitachurl_materials",
+    "commonEnemyDropFamilyKey": "fatui_skirmisher_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Festering Desire"
+    ]
+  },
+  "FilletBlade": {
+    "weaponKey": "FilletBlade",
+    "displayName": "Fillet Blade",
+    "weaponType": "Sword",
+    "rarity": 3,
+    "weaponAscensionMaterialFamilyKey": "MistVeiledElixir",
+    "eliteEnemyDropFamilyKey": "fatui_cicin_mage_materials",
+    "commonEnemyDropFamilyKey": "treasure_hoarder_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Fillet Blade"
+    ]
+  },
+  "FinaleOfTheDeep": {
+    "weaponKey": "FinaleOfTheDeep",
+    "displayName": "Finale of the Deep",
+    "weaponType": "Sword",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "PureSacredDewdrop",
+    "eliteEnemyDropFamilyKey": "tainted_hydro_phantasm_materials",
+    "commonEnemyDropFamilyKey": "nobushi_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Finale of the Deep"
+    ]
+  },
+  "FlameForgedInsight": {
+    "weaponKey": "FlameForgedInsight",
+    "displayName": "Flame-Forged Insight",
+    "weaponType": "Claymore",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "SacredLord",
+    "eliteEnemyDropFamilyKey": "furnace_shell_mountain_weasel_materials",
+    "commonEnemyDropFamilyKey": "fontemer_aberrant_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Flame-Forged Insight"
+    ]
+  },
+  "FleuveCendreFerryman": {
+    "weaponKey": "FleuveCendreFerryman",
+    "displayName": "Fleuve Cendre Ferryman",
+    "weaponType": "Sword",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "AncientChord",
+    "eliteEnemyDropFamilyKey": "tainted_hydro_phantasm_materials",
+    "commonEnemyDropFamilyKey": "fontemer_aberrant_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Fleuve Cendre Ferryman"
+    ]
+  },
+  "FlowerWreathedFeathers": {
+    "weaponKey": "FlowerWreathedFeathers",
+    "displayName": "Flower-Wreathed Feathers",
+    "weaponType": "Bow",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "NightWind",
+    "eliteEnemyDropFamilyKey": "avatar_of_lava_materials",
+    "commonEnemyDropFamilyKey": "sauroform_tribal_warrior_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Flower-Wreathed Feathers"
+    ]
+  },
+  "FlowingPurity": {
+    "weaponKey": "FlowingPurity",
+    "displayName": "Flowing Purity",
+    "weaponType": "Catalyst",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "PureSacredDewdrop",
+    "eliteEnemyDropFamilyKey": "breacher_primus_materials",
+    "commonEnemyDropFamilyKey": "fontemer_aberrant_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Flowing Purity"
+    ]
+  },
+  "FluteOfEzpitzal": {
+    "weaponKey": "FluteOfEzpitzal",
+    "displayName": "Flute of Ezpitzal",
+    "weaponType": "Sword",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "BlazingSacrificialHeart",
+    "eliteEnemyDropFamilyKey": "praetorian_golem_materials",
+    "commonEnemyDropFamilyKey": "natlan_saurian_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Flute of Ezpitzal"
+    ]
+  },
+  "FootprintOfTheRainbow": {
+    "weaponKey": "FootprintOfTheRainbow",
+    "displayName": "Footprint of the Rainbow",
+    "weaponType": "Polearm",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "SacredLord",
+    "eliteEnemyDropFamilyKey": "secret_source_automaton_hunter_seeker_materials",
+    "commonEnemyDropFamilyKey": "sauroform_tribal_warrior_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Footprint of the Rainbow"
+    ]
+  },
+  "ForestRegalia": {
+    "weaponKey": "ForestRegalia",
+    "displayName": "Forest Regalia",
+    "weaponType": "Claymore",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "ForestDew",
+    "eliteEnemyDropFamilyKey": "ruin_drake_materials",
+    "commonEnemyDropFamilyKey": "eremite_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Forest Regalia"
+    ]
+  },
+  "FracturedHalo": {
+    "weaponKey": "FracturedHalo",
+    "displayName": "Fractured Halo",
+    "weaponType": "Polearm",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "BlazingSacrificialHeart",
+    "eliteEnemyDropFamilyKey": "furnace_shell_mountain_weasel_materials",
+    "commonEnemyDropFamilyKey": "natlan_saurian_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Fractured Halo"
+    ]
+  },
+  "FreedomSworn": {
+    "weaponKey": "FreedomSworn",
+    "displayName": "Freedom-Sworn",
+    "weaponType": "Sword",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "DandelionGladiator",
+    "eliteEnemyDropFamilyKey": "humanoid_ruin_machine_materials",
+    "commonEnemyDropFamilyKey": "samachurl_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Freedom-Sworn"
+    ]
+  },
+  "Frostbearer": {
+    "weaponKey": "Frostbearer",
+    "displayName": "Frostbearer",
+    "weaponType": "Catalyst",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "DandelionGladiator",
+    "eliteEnemyDropFamilyKey": "humanoid_ruin_machine_materials",
+    "commonEnemyDropFamilyKey": "whopperflower_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Frostbearer"
+    ]
+  },
+  "FruitfulHook": {
+    "weaponKey": "FruitfulHook",
+    "displayName": "Fruitful Hook",
+    "weaponType": "Claymore",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "NightWind",
+    "eliteEnemyDropFamilyKey": "secret_source_automaton_hunter_seeker_materials",
+    "commonEnemyDropFamilyKey": "natlan_saurian_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Fruitful Hook"
+    ]
+  },
+  "FruitOfFulfillment": {
+    "weaponKey": "FruitOfFulfillment",
+    "displayName": "Fruit of Fulfillment",
+    "weaponType": "Catalyst",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "OasisGarden",
+    "eliteEnemyDropFamilyKey": "black_serpent_materials",
+    "commonEnemyDropFamilyKey": "fungus_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Fruit of Fulfillment"
+    ]
+  },
+  "GestOfTheMightyWolf": {
+    "weaponKey": "GestOfTheMightyWolf",
+    "displayName": "Gest of the Mighty Wolf",
+    "weaponType": "Claymore",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "BorealWolf",
+    "eliteEnemyDropFamilyKey": "fisher_of_hidden_depths_materials",
+    "commonEnemyDropFamilyKey": "fatui_skirmisher_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Gest of the Mighty Wolf"
+    ]
+  },
+  "GoldenFrostboundOath": {
+    "weaponKey": "GoldenFrostboundOath",
+    "displayName": "Golden Frostbound Oath",
+    "weaponType": "Bow",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "LongNightFlint",
+    "eliteEnemyDropFamilyKey": "domain_keeper_materials",
+    "commonEnemyDropFamilyKey": "fatui_oprichniki_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Golden Frostbound Oath"
+    ]
+  },
+  "HakushinRing": {
+    "weaponKey": "HakushinRing",
+    "displayName": "Hakushin Ring",
+    "weaponType": "Catalyst",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "DistantSea",
+    "eliteEnemyDropFamilyKey": "mirror_maiden_materials",
+    "commonEnemyDropFamilyKey": "samachurl_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Hakushin Ring"
+    ]
+  },
+  "Halberd": {
+    "weaponKey": "Halberd",
+    "displayName": "Halberd",
+    "weaponType": "Polearm",
+    "rarity": 3,
+    "weaponAscensionMaterialFamilyKey": "MistVeiledElixir",
+    "eliteEnemyDropFamilyKey": "fatui_cicin_mage_materials",
+    "commonEnemyDropFamilyKey": "whopperflower_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Halberd"
+    ]
+  },
+  "Hamayumi": {
+    "weaponKey": "Hamayumi",
+    "displayName": "Hamayumi",
+    "weaponType": "Bow",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "Narukami",
+    "eliteEnemyDropFamilyKey": "mirror_maiden_materials",
+    "commonEnemyDropFamilyKey": "hilichurl_shooter_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Hamayumi"
+    ]
+  },
+  "HaranGeppakuFutsu": {
+    "weaponKey": "HaranGeppakuFutsu",
+    "displayName": "Haran Geppaku Futsu",
+    "weaponType": "Sword",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "Narukami",
+    "eliteEnemyDropFamilyKey": "black_serpent_materials",
+    "commonEnemyDropFamilyKey": "nobushi_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Haran Geppaku Futsu"
+    ]
+  },
+  "HarbingerOfDawn": {
+    "weaponKey": "HarbingerOfDawn",
+    "displayName": "Harbinger of Dawn",
+    "weaponType": "Sword",
+    "rarity": 3,
+    "weaponAscensionMaterialFamilyKey": "BorealWolf",
+    "eliteEnemyDropFamilyKey": "abyss_mage_materials",
+    "commonEnemyDropFamilyKey": "slime_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Harbinger of Dawn"
+    ]
+  },
+  "HuntersPath": {
+    "weaponKey": "HuntersPath",
+    "displayName": "Hunter's Path",
+    "weaponType": "Bow",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "ScorchingMight",
+    "eliteEnemyDropFamilyKey": "state_shifted_fungus_materials",
+    "commonEnemyDropFamilyKey": "eremite_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Hunter's Path"
+    ]
+  },
+  "IbisPiercer": {
+    "weaponKey": "IbisPiercer",
+    "displayName": "Ibis Piercer",
+    "weaponType": "Bow",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "ForestDew",
+    "eliteEnemyDropFamilyKey": "hilichurl_rogue_materials",
+    "commonEnemyDropFamilyKey": "eremite_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Ibis Piercer"
+    ]
+  },
+  "IronSting": {
+    "weaponKey": "IronSting",
+    "displayName": "Iron Sting",
+    "weaponType": "Sword",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "Aerosiderite",
+    "eliteEnemyDropFamilyKey": "vishap_materials",
+    "commonEnemyDropFamilyKey": "whopperflower_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Iron Sting"
+    ]
+  },
+  "JadefallsSplendor": {
+    "weaponKey": "JadefallsSplendor",
+    "displayName": "Jadefall's Splendor",
+    "weaponType": "Catalyst",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "Guyun",
+    "eliteEnemyDropFamilyKey": "hilichurl_rogue_materials",
+    "commonEnemyDropFamilyKey": "fungus_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Jadefall's Splendor"
+    ]
+  },
+  "KagotsurubeIsshin": {
+    "weaponKey": "KagotsurubeIsshin",
+    "displayName": "Kagotsurube Isshin",
+    "weaponType": "Sword",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "Mask",
+    "eliteEnemyDropFamilyKey": "black_serpent_materials",
+    "commonEnemyDropFamilyKey": "specter_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Kagotsurube Isshin"
+    ]
+  },
+  "KagurasVerity": {
+    "weaponKey": "KagurasVerity",
+    "displayName": "Kagura's Verity",
+    "weaponType": "Catalyst",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "Mask",
+    "eliteEnemyDropFamilyKey": "riftwolf_materials",
+    "commonEnemyDropFamilyKey": "specter_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Kagura's Verity"
+    ]
+  },
+  "KatsuragikiriNagamasa": {
+    "weaponKey": "KatsuragikiriNagamasa",
+    "displayName": "Katsuragikiri Nagamasa",
+    "weaponType": "Claymore",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "Narukami",
+    "eliteEnemyDropFamilyKey": "ruin_sentinel_materials",
+    "commonEnemyDropFamilyKey": "nobushi_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Katsuragikiri Nagamasa"
+    ]
+  },
+  "KeyOfKhajNisut": {
+    "weaponKey": "KeyOfKhajNisut",
+    "displayName": "Key of Khaj-Nisut",
+    "weaponType": "Sword",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "ForestDew",
+    "eliteEnemyDropFamilyKey": "primal_construct_materials",
+    "commonEnemyDropFamilyKey": "eremite_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Key of Khaj-Nisut"
+    ]
+  },
+  "KingsSquire": {
+    "weaponKey": "KingsSquire",
+    "displayName": "King's Squire",
+    "weaponType": "Bow",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "ScorchingMight",
+    "eliteEnemyDropFamilyKey": "state_shifted_fungus_materials",
+    "commonEnemyDropFamilyKey": "hilichurl_shooter_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "King's Squire"
+    ]
+  },
+  "KitainCrossSpear": {
+    "weaponKey": "KitainCrossSpear",
+    "displayName": "Kitain Cross Spear",
+    "weaponType": "Polearm",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "Mask",
+    "eliteEnemyDropFamilyKey": "ruin_sentinel_materials",
+    "commonEnemyDropFamilyKey": "treasure_hoarder_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Kitain Cross Spear"
+    ]
+  },
+  "LightbearingMoonshard": {
+    "weaponKey": "LightbearingMoonshard",
+    "displayName": "Lightbearing Moonshard",
+    "weaponType": "Sword",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "Aerosiderite",
+    "eliteEnemyDropFamilyKey": "wasteland_wild_hunt_materials",
+    "commonEnemyDropFamilyKey": "landcruiser_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Lightbearing Moonshard"
+    ]
+  },
+  "LightOfFoliarIncision": {
+    "weaponKey": "LightOfFoliarIncision",
+    "displayName": "Light of Foliar Incision",
+    "weaponType": "Sword",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "ForestDew",
+    "eliteEnemyDropFamilyKey": "consecrated_beast_materials",
+    "commonEnemyDropFamilyKey": "eremite_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Light of Foliar Incision"
+    ]
+  },
+  "LionsRoar": {
+    "weaponKey": "LionsRoar",
+    "displayName": "Lion's Roar",
+    "weaponType": "Sword",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "Guyun",
+    "eliteEnemyDropFamilyKey": "fatui_pyro_agent_materials",
+    "commonEnemyDropFamilyKey": "treasure_hoarder_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Lion's Roar"
+    ]
+  },
+  "LithicBlade": {
+    "weaponKey": "LithicBlade",
+    "displayName": "Lithic Blade",
+    "weaponType": "Claymore",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "Guyun",
+    "eliteEnemyDropFamilyKey": "fatui_pyro_agent_materials",
+    "commonEnemyDropFamilyKey": "hilichurl_shooter_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Lithic Blade"
+    ]
+  },
+  "LithicSpear": {
+    "weaponKey": "LithicSpear",
+    "displayName": "Lithic Spear",
+    "weaponType": "Polearm",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "Aerosiderite",
+    "eliteEnemyDropFamilyKey": "vishap_materials",
+    "commonEnemyDropFamilyKey": "hilichurl_shooter_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Lithic Spear"
+    ]
+  },
+  "LostPrayerToTheSacredWinds": {
+    "weaponKey": "LostPrayerToTheSacredWinds",
+    "displayName": "Lost Prayer to the Sacred Winds",
+    "weaponType": "Catalyst",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "DandelionGladiator",
+    "eliteEnemyDropFamilyKey": "humanoid_ruin_machine_materials",
+    "commonEnemyDropFamilyKey": "slime_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Lost Prayer to the Sacred Winds"
+    ]
+  },
+  "LumidouceElegy": {
+    "weaponKey": "LumidouceElegy",
+    "displayName": "Lumidouce Elegy",
+    "weaponType": "Polearm",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "PristineSea",
+    "eliteEnemyDropFamilyKey": "praetorian_golem_materials",
+    "commonEnemyDropFamilyKey": "whopperflower_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Lumidouce Elegy"
+    ]
+  },
+  "LuxuriousSeaLord": {
+    "weaponKey": "LuxuriousSeaLord",
+    "displayName": "Luxurious Sea-Lord",
+    "weaponType": "Claymore",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "Aerosiderite",
+    "eliteEnemyDropFamilyKey": "vishap_materials",
+    "commonEnemyDropFamilyKey": "slime_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Luxurious Sea-Lord"
+    ]
+  },
+  "MagicGuide": {
+    "weaponKey": "MagicGuide",
+    "displayName": "Magic Guide",
+    "weaponType": "Catalyst",
+    "rarity": 3,
+    "weaponAscensionMaterialFamilyKey": "Decarabian",
+    "eliteEnemyDropFamilyKey": "mitachurl_materials",
+    "commonEnemyDropFamilyKey": "slime_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Magic Guide"
+    ]
+  },
+  "MailedFlower": {
+    "weaponKey": "MailedFlower",
+    "displayName": "Mailed Flower",
+    "weaponType": "Claymore",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "DandelionGladiator",
+    "eliteEnemyDropFamilyKey": "consecrated_beast_materials",
+    "commonEnemyDropFamilyKey": "specter_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Mailed Flower"
+    ]
+  },
+  "MakhairaAquamarine": {
+    "weaponKey": "MakhairaAquamarine",
+    "displayName": "Makhaira Aquamarine",
+    "weaponType": "Claymore",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "ScorchingMight",
+    "eliteEnemyDropFamilyKey": "ruin_drake_materials",
+    "commonEnemyDropFamilyKey": "treasure_hoarder_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Makhaira Aquamarine"
+    ]
+  },
+  "MappaMare": {
+    "weaponKey": "MappaMare",
+    "displayName": "Mappa Mare",
+    "weaponType": "Catalyst",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "Aerosiderite",
+    "eliteEnemyDropFamilyKey": "vishap_materials",
+    "commonEnemyDropFamilyKey": "slime_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Mappa Mare"
+    ]
+  },
+  "MasterKey": {
+    "weaponKey": "MasterKey",
+    "displayName": "Master Key",
+    "weaponType": "Claymore",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "FarNorthScions",
+    "eliteEnemyDropFamilyKey": "radiant_beast_materials",
+    "commonEnemyDropFamilyKey": "landcruiser_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Master Key"
+    ]
+  },
+  "MemoryOfDust": {
+    "weaponKey": "MemoryOfDust",
+    "displayName": "Memory of Dust",
+    "weaponType": "Catalyst",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "Aerosiderite",
+    "eliteEnemyDropFamilyKey": "vishap_materials",
+    "commonEnemyDropFamilyKey": "hilichurl_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Memory of Dust"
+    ]
+  },
+  "Messenger": {
+    "weaponKey": "Messenger",
+    "displayName": "Messenger",
+    "weaponType": "Bow",
+    "rarity": 3,
+    "weaponAscensionMaterialFamilyKey": "MistVeiledElixir",
+    "eliteEnemyDropFamilyKey": "fatui_cicin_mage_materials",
+    "commonEnemyDropFamilyKey": "treasure_hoarder_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Messenger"
+    ]
+  },
+  "MissiveWindspear": {
+    "weaponKey": "MissiveWindspear",
+    "displayName": "Missive Windspear",
+    "weaponType": "Polearm",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "BorealWolf",
+    "eliteEnemyDropFamilyKey": "black_serpent_materials",
+    "commonEnemyDropFamilyKey": "slime_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Missive Windspear"
+    ]
+  },
+  "MistsplitterReforged": {
+    "weaponKey": "MistsplitterReforged",
+    "displayName": "Mistsplitter Reforged",
+    "weaponType": "Sword",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "DistantSea",
+    "eliteEnemyDropFamilyKey": "ruin_sentinel_materials",
+    "commonEnemyDropFamilyKey": "nobushi_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Mistsplitter Reforged"
+    ]
+  },
+  "MitternachtsWaltz": {
+    "weaponKey": "MitternachtsWaltz",
+    "displayName": "Mitternachts Waltz",
+    "weaponType": "Bow",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "Decarabian",
+    "eliteEnemyDropFamilyKey": "mitachurl_materials",
+    "commonEnemyDropFamilyKey": "treasure_hoarder_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Mitternachts Waltz"
+    ]
+  },
+  "Moonpiercer": {
+    "weaponKey": "Moonpiercer",
+    "displayName": "Moonpiercer",
+    "weaponType": "Polearm",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "OasisGarden",
+    "eliteEnemyDropFamilyKey": "ruin_drake_materials",
+    "commonEnemyDropFamilyKey": "fatui_skirmisher_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Moonpiercer"
+    ]
+  },
+  "MoonweaversDawn": {
+    "weaponKey": "MoonweaversDawn",
+    "displayName": "Moonweaver's Dawn",
+    "weaponType": "Sword",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "FarNorthScions",
+    "eliteEnemyDropFamilyKey": "radiant_beast_materials",
+    "commonEnemyDropFamilyKey": "landcruiser_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Moonweaver's Dawn"
+    ]
+  },
+  "MountainBracingBolt": {
+    "weaponKey": "MountainBracingBolt",
+    "displayName": "Mountain-Bracing Bolt",
+    "weaponType": "Polearm",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "SacredLord",
+    "eliteEnemyDropFamilyKey": "avatar_of_lava_materials",
+    "commonEnemyDropFamilyKey": "whopperflower_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Mountain-Bracing Bolt"
+    ]
+  },
+  "MouunsMoon": {
+    "weaponKey": "MouunsMoon",
+    "displayName": "Mouun's Moon",
+    "weaponType": "Bow",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "Narukami",
+    "eliteEnemyDropFamilyKey": "mirror_maiden_materials",
+    "commonEnemyDropFamilyKey": "specter_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Mouun's Moon"
+    ]
+  },
+  "NightweaversLookingGlass": {
+    "weaponKey": "NightweaversLookingGlass",
+    "displayName": "Nightweaver's Looking Glass",
+    "weaponType": "Catalyst",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "ArtfulDevice",
+    "eliteEnemyDropFamilyKey": "frostnight_scion_materials",
+    "commonEnemyDropFamilyKey": "landcruiser_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Nightweaver's Looking Glass"
+    ]
+  },
+  "NocturnesCurtainCall": {
+    "weaponKey": "NocturnesCurtainCall",
+    "displayName": "Nocturne's Curtain Call",
+    "weaponType": "Catalyst",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "FarNorthScions",
+    "eliteEnemyDropFamilyKey": "fisher_of_hidden_depths_materials",
+    "commonEnemyDropFamilyKey": "fatui_oprichniki_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Nocturne's Curtain Call"
+    ]
+  },
+  "OathswornEye": {
+    "weaponKey": "OathswornEye",
+    "displayName": "Oathsworn Eye",
+    "weaponType": "Catalyst",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "DistantSea",
+    "eliteEnemyDropFamilyKey": "riftwolf_materials",
+    "commonEnemyDropFamilyKey": "specter_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Oathsworn Eye"
+    ]
+  },
+  "OtherworldlyStory": {
+    "weaponKey": "OtherworldlyStory",
+    "displayName": "Otherworldly Story",
+    "weaponType": "Catalyst",
+    "rarity": 3,
+    "weaponAscensionMaterialFamilyKey": "DandelionGladiator",
+    "eliteEnemyDropFamilyKey": "humanoid_ruin_machine_materials",
+    "commonEnemyDropFamilyKey": "hilichurl_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Otherworldly Story"
+    ]
+  },
+  "PeakPatrolSong": {
+    "weaponKey": "PeakPatrolSong",
+    "displayName": "Peak Patrol Song",
+    "weaponType": "Sword",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "NightWind",
+    "eliteEnemyDropFamilyKey": "secret_source_automaton_hunter_seeker_materials",
+    "commonEnemyDropFamilyKey": "natlan_saurian_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Peak Patrol Song"
+    ]
+  },
+  "PolarStar": {
+    "weaponKey": "PolarStar",
+    "displayName": "Polar Star",
+    "weaponType": "Bow",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "Mask",
+    "eliteEnemyDropFamilyKey": "riftwolf_materials",
+    "commonEnemyDropFamilyKey": "specter_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Polar Star"
+    ]
+  },
+  "PortablePowerSaw": {
+    "weaponKey": "PortablePowerSaw",
+    "displayName": "Portable Power Saw",
+    "weaponType": "Claymore",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "PristineSea",
+    "eliteEnemyDropFamilyKey": "breacher_primus_materials",
+    "commonEnemyDropFamilyKey": "clockwork_meka_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Portable Power Saw"
+    ]
+  },
+  "Predator": {
+    "weaponKey": "Predator",
+    "displayName": "Predator",
+    "weaponType": "Bow",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "Narukami",
+    "eliteEnemyDropFamilyKey": "mirror_maiden_materials",
+    "commonEnemyDropFamilyKey": "hilichurl_shooter_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Predator"
+    ]
+  },
+  "PrimordialJadeCutter": {
+    "weaponKey": "PrimordialJadeCutter",
+    "displayName": "Primordial Jade Cutter",
+    "weaponType": "Sword",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "MistVeiledElixir",
+    "eliteEnemyDropFamilyKey": "fatui_cicin_mage_materials",
+    "commonEnemyDropFamilyKey": "treasure_hoarder_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Primordial Jade Cutter"
+    ]
+  },
+  "PrimordialJadeWingedSpear": {
+    "weaponKey": "PrimordialJadeWingedSpear",
+    "displayName": "Primordial Jade Winged-Spear",
+    "weaponType": "Polearm",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "Guyun",
+    "eliteEnemyDropFamilyKey": "fatui_pyro_agent_materials",
+    "commonEnemyDropFamilyKey": "fatui_skirmisher_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Primordial Jade Winged-Spear"
+    ]
+  },
+  "PrizedIsshinBlade_i_n11419": {
+    "weaponKey": "PrizedIsshinBlade_i_n11419",
+    "displayName": "Prized Isshin Blade",
+    "weaponType": "Sword",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "",
+    "eliteEnemyDropFamilyKey": "",
+    "commonEnemyDropFamilyKey": "",
+    "releaseState": "live",
+    "status": "unresolved",
+    "plannerEligible": false,
+    "notes": [],
+    "aliases": [
+      "Prized Isshin Blade"
+    ]
+  },
+  "PrizedIsshinBlade_i_n11420": {
+    "weaponKey": "PrizedIsshinBlade_i_n11420",
+    "displayName": "Prized Isshin Blade",
+    "weaponType": "Sword",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "",
+    "eliteEnemyDropFamilyKey": "",
+    "commonEnemyDropFamilyKey": "",
+    "releaseState": "live",
+    "status": "unresolved",
+    "plannerEligible": false,
+    "notes": [],
+    "aliases": [
+      "Prized Isshin Blade"
+    ]
+  },
+  "PrizedIsshinBlade_i_n11421": {
+    "weaponKey": "PrizedIsshinBlade_i_n11421",
+    "displayName": "Prized Isshin Blade",
+    "weaponType": "Sword",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "",
+    "eliteEnemyDropFamilyKey": "",
+    "commonEnemyDropFamilyKey": "",
+    "releaseState": "live",
+    "status": "unresolved",
+    "plannerEligible": false,
+    "notes": [],
+    "aliases": [
+      "Prized Isshin Blade"
+    ]
+  },
+  "ProspectorsDrill": {
+    "weaponKey": "ProspectorsDrill",
+    "displayName": "Prospector's Drill",
+    "weaponType": "Polearm",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "AncientChord",
+    "eliteEnemyDropFamilyKey": "fatui_operative_materials",
+    "commonEnemyDropFamilyKey": "clockwork_meka_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Prospector's Drill"
+    ]
+  },
+  "ProspectorsShovel": {
+    "weaponKey": "ProspectorsShovel",
+    "displayName": "Prospector's Shovel",
+    "weaponType": "Polearm",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "LongNightFlint",
+    "eliteEnemyDropFamilyKey": "wasteland_wild_hunt_materials",
+    "commonEnemyDropFamilyKey": "landcruiser_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Prospector's Shovel"
+    ]
+  },
+  "PrototypeAmber": {
+    "weaponKey": "PrototypeAmber",
+    "displayName": "Prototype Amber",
+    "weaponType": "Catalyst",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "MistVeiledElixir",
+    "eliteEnemyDropFamilyKey": "fatui_cicin_mage_materials",
+    "commonEnemyDropFamilyKey": "hilichurl_shooter_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Prototype Amber"
+    ]
+  },
+  "PrototypeArchaic": {
+    "weaponKey": "PrototypeArchaic",
+    "displayName": "Prototype Archaic",
+    "weaponType": "Claymore",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "Aerosiderite",
+    "eliteEnemyDropFamilyKey": "vishap_materials",
+    "commonEnemyDropFamilyKey": "hilichurl_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Prototype Archaic"
+    ]
+  },
+  "PrototypeCrescent": {
+    "weaponKey": "PrototypeCrescent",
+    "displayName": "Prototype Crescent",
+    "weaponType": "Bow",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "MistVeiledElixir",
+    "eliteEnemyDropFamilyKey": "fatui_cicin_mage_materials",
+    "commonEnemyDropFamilyKey": "treasure_hoarder_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Prototype Crescent"
+    ]
+  },
+  "PrototypeRancour": {
+    "weaponKey": "PrototypeRancour",
+    "displayName": "Prototype Rancour",
+    "weaponType": "Sword",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "MistVeiledElixir",
+    "eliteEnemyDropFamilyKey": "fatui_cicin_mage_materials",
+    "commonEnemyDropFamilyKey": "fatui_skirmisher_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Prototype Rancour"
+    ]
+  },
+  "PrototypeStarglitter": {
+    "weaponKey": "PrototypeStarglitter",
+    "displayName": "Prototype Starglitter",
+    "weaponType": "Polearm",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "Aerosiderite",
+    "eliteEnemyDropFamilyKey": "vishap_materials",
+    "commonEnemyDropFamilyKey": "hilichurl_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Prototype Starglitter"
+    ]
+  },
+  "Quartz": {
+    "weaponKey": "Quartz",
+    "displayName": "Quartz",
+    "weaponType": "Claymore",
+    "rarity": 3,
+    "weaponAscensionMaterialFamilyKey": "",
+    "eliteEnemyDropFamilyKey": "",
+    "commonEnemyDropFamilyKey": "",
+    "releaseState": "live",
+    "status": "unresolved",
+    "plannerEligible": false,
+    "notes": [],
+    "aliases": [
+      "Quartz"
+    ]
+  },
+  "RainbowSerpentsRainBow": {
+    "weaponKey": "RainbowSerpentsRainBow",
+    "displayName": "Rainbow Serpent's Rain Bow",
+    "weaponType": "Bow",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "NightWind",
+    "eliteEnemyDropFamilyKey": "tenebrous_mimesis_materials",
+    "commonEnemyDropFamilyKey": "fatui_oprichniki_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Rainbow Serpent's Rain Bow"
+    ]
+  },
+  "Rainslasher": {
+    "weaponKey": "Rainslasher",
+    "displayName": "Rainslasher",
+    "weaponType": "Claymore",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "MistVeiledElixir",
+    "eliteEnemyDropFamilyKey": "fatui_cicin_mage_materials",
+    "commonEnemyDropFamilyKey": "samachurl_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Rainslasher"
+    ]
+  },
+  "RangeGauge": {
+    "weaponKey": "RangeGauge",
+    "displayName": "Range Gauge",
+    "weaponType": "Bow",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "AncientChord",
+    "eliteEnemyDropFamilyKey": "tainted_hydro_phantasm_materials",
+    "commonEnemyDropFamilyKey": "fontemer_aberrant_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Range Gauge"
+    ]
+  },
+  "RavenBow": {
+    "weaponKey": "RavenBow",
+    "displayName": "Raven Bow",
+    "weaponType": "Bow",
+    "rarity": 3,
+    "weaponAscensionMaterialFamilyKey": "Decarabian",
+    "eliteEnemyDropFamilyKey": "mitachurl_materials",
+    "commonEnemyDropFamilyKey": "hilichurl_shooter_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Raven Bow"
+    ]
+  },
+  "RecurveBow": {
+    "weaponKey": "RecurveBow",
+    "displayName": "Recurve Bow",
+    "weaponType": "Bow",
+    "rarity": 3,
+    "weaponAscensionMaterialFamilyKey": "DandelionGladiator",
+    "eliteEnemyDropFamilyKey": "humanoid_ruin_machine_materials",
+    "commonEnemyDropFamilyKey": "samachurl_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Recurve Bow"
+    ]
+  },
+  "RedhornStonethresher": {
+    "weaponKey": "RedhornStonethresher",
+    "displayName": "Redhorn Stonethresher",
+    "weaponType": "Claymore",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "Narukami",
+    "eliteEnemyDropFamilyKey": "riftwolf_materials",
+    "commonEnemyDropFamilyKey": "nobushi_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Redhorn Stonethresher"
+    ]
+  },
+  "ReliquaryOfTruth": {
+    "weaponKey": "ReliquaryOfTruth",
+    "displayName": "Reliquary of Truth",
+    "weaponType": "Catalyst",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "OasisGarden",
+    "eliteEnemyDropFamilyKey": "radiant_beast_materials",
+    "commonEnemyDropFamilyKey": "fungus_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Reliquary of Truth"
+    ]
+  },
+  "RightfulReward": {
+    "weaponKey": "RightfulReward",
+    "displayName": "Rightful Reward",
+    "weaponType": "Polearm",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "PristineSea",
+    "eliteEnemyDropFamilyKey": "breacher_primus_materials",
+    "commonEnemyDropFamilyKey": "clockwork_meka_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Rightful Reward"
+    ]
+  },
+  "RingOfYaxche": {
+    "weaponKey": "RingOfYaxche",
+    "displayName": "Ring of Yaxche",
+    "weaponType": "Catalyst",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "SacredLord",
+    "eliteEnemyDropFamilyKey": "wayob_manifestation_materials",
+    "commonEnemyDropFamilyKey": "hilichurl_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Ring of Yaxche"
+    ]
+  },
+  "RoyalBow": {
+    "weaponKey": "RoyalBow",
+    "displayName": "Royal Bow",
+    "weaponType": "Bow",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "DandelionGladiator",
+    "eliteEnemyDropFamilyKey": "humanoid_ruin_machine_materials",
+    "commonEnemyDropFamilyKey": "samachurl_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Royal Bow"
+    ]
+  },
+  "RoyalGreatsword": {
+    "weaponKey": "RoyalGreatsword",
+    "displayName": "Royal Greatsword",
+    "weaponType": "Claymore",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "DandelionGladiator",
+    "eliteEnemyDropFamilyKey": "humanoid_ruin_machine_materials",
+    "commonEnemyDropFamilyKey": "slime_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Royal Greatsword"
+    ]
+  },
+  "RoyalGrimoire": {
+    "weaponKey": "RoyalGrimoire",
+    "displayName": "Royal Grimoire",
+    "weaponType": "Catalyst",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "Decarabian",
+    "eliteEnemyDropFamilyKey": "mitachurl_materials",
+    "commonEnemyDropFamilyKey": "fatui_skirmisher_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Royal Grimoire"
+    ]
+  },
+  "RoyalLongsword": {
+    "weaponKey": "RoyalLongsword",
+    "displayName": "Royal Longsword",
+    "weaponType": "Sword",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "Decarabian",
+    "eliteEnemyDropFamilyKey": "mitachurl_materials",
+    "commonEnemyDropFamilyKey": "hilichurl_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Royal Longsword"
+    ]
+  },
+  "RoyalSpear": {
+    "weaponKey": "RoyalSpear",
+    "displayName": "Royal Spear",
+    "weaponType": "Polearm",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "MistVeiledElixir",
+    "eliteEnemyDropFamilyKey": "fatui_cicin_mage_materials",
+    "commonEnemyDropFamilyKey": "fatui_skirmisher_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Royal Spear"
+    ]
+  },
+  "Rust": {
+    "weaponKey": "Rust",
+    "displayName": "Rust",
+    "weaponType": "Bow",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "Guyun",
+    "eliteEnemyDropFamilyKey": "fatui_pyro_agent_materials",
+    "commonEnemyDropFamilyKey": "hilichurl_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Rust"
+    ]
+  },
+  "SacrificersStaff": {
+    "weaponKey": "SacrificersStaff",
+    "displayName": "Sacrificer's Staff",
+    "weaponType": "Polearm",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "LongNightFlint",
+    "eliteEnemyDropFamilyKey": "wasteland_wild_hunt_materials",
+    "commonEnemyDropFamilyKey": "landcruiser_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Sacrificer's Staff"
+    ]
+  },
+  "SacrificialBow": {
+    "weaponKey": "SacrificialBow",
+    "displayName": "Sacrificial Bow",
+    "weaponType": "Bow",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "BorealWolf",
+    "eliteEnemyDropFamilyKey": "abyss_mage_materials",
+    "commonEnemyDropFamilyKey": "slime_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Sacrificial Bow"
+    ]
+  },
+  "SacrificialFragments": {
+    "weaponKey": "SacrificialFragments",
+    "displayName": "Sacrificial Fragments",
+    "weaponType": "Catalyst",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "DandelionGladiator",
+    "eliteEnemyDropFamilyKey": "humanoid_ruin_machine_materials",
+    "commonEnemyDropFamilyKey": "treasure_hoarder_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Sacrificial Fragments"
+    ]
+  },
+  "SacrificialGreatsword": {
+    "weaponKey": "SacrificialGreatsword",
+    "displayName": "Sacrificial Greatsword",
+    "weaponType": "Claymore",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "BorealWolf",
+    "eliteEnemyDropFamilyKey": "abyss_mage_materials",
+    "commonEnemyDropFamilyKey": "hilichurl_shooter_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Sacrificial Greatsword"
+    ]
+  },
+  "SacrificialJade": {
+    "weaponKey": "SacrificialJade",
+    "displayName": "Sacrificial Jade",
+    "weaponType": "Catalyst",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "Guyun",
+    "eliteEnemyDropFamilyKey": "fatui_cicin_mage_materials",
+    "commonEnemyDropFamilyKey": "samachurl_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Sacrificial Jade"
+    ]
+  },
+  "SacrificialSword": {
+    "weaponKey": "SacrificialSword",
+    "displayName": "Sacrificial Sword",
+    "weaponType": "Sword",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "DandelionGladiator",
+    "eliteEnemyDropFamilyKey": "humanoid_ruin_machine_materials",
+    "commonEnemyDropFamilyKey": "samachurl_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Sacrificial Sword"
+    ]
+  },
+  "SapwoodBlade": {
+    "weaponKey": "SapwoodBlade",
+    "displayName": "Sapwood Blade",
+    "weaponType": "Sword",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "ForestDew",
+    "eliteEnemyDropFamilyKey": "ruin_drake_materials",
+    "commonEnemyDropFamilyKey": "eremite_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Sapwood Blade"
+    ]
+  },
+  "ScionOfTheBlazingSun": {
+    "weaponKey": "ScionOfTheBlazingSun",
+    "displayName": "Scion of the Blazing Sun",
+    "weaponType": "Bow",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "ScorchingMight",
+    "eliteEnemyDropFamilyKey": "hilichurl_rogue_materials",
+    "commonEnemyDropFamilyKey": "fungus_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Scion of the Blazing Sun"
+    ]
+  },
+  "SequenceOfSolitude": {
+    "weaponKey": "SequenceOfSolitude",
+    "displayName": "Sequence of Solitude",
+    "weaponType": "Bow",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "AncientChord",
+    "eliteEnemyDropFamilyKey": "furnace_shell_mountain_weasel_materials",
+    "commonEnemyDropFamilyKey": "clockwork_meka_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Sequence of Solitude"
+    ]
+  },
+  "SerenitysCall": {
+    "weaponKey": "SerenitysCall",
+    "displayName": "Serenity's Call",
+    "weaponType": "Sword",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "ArtfulDevice",
+    "eliteEnemyDropFamilyKey": "frostnight_scion_materials",
+    "commonEnemyDropFamilyKey": "fatui_oprichniki_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Serenity's Call"
+    ]
+  },
+  "SerpentSpine": {
+    "weaponKey": "SerpentSpine",
+    "displayName": "Serpent Spine",
+    "weaponType": "Claymore",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "Aerosiderite",
+    "eliteEnemyDropFamilyKey": "vishap_materials",
+    "commonEnemyDropFamilyKey": "whopperflower_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Serpent Spine"
+    ]
+  },
+  "SevenEdictsOfDustAndLight": {
+    "weaponKey": "SevenEdictsOfDustAndLight",
+    "displayName": "Seven Edicts of Dust and Light",
+    "weaponType": "Catalyst",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "ArtfulDevice",
+    "eliteEnemyDropFamilyKey": "domain_keeper_materials",
+    "commonEnemyDropFamilyKey": "landcruiser_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Seven Edicts of Dust and Light"
+    ]
+  },
+  "SharpshootersOath": {
+    "weaponKey": "SharpshootersOath",
+    "displayName": "Sharpshooter's Oath",
+    "weaponType": "Bow",
+    "rarity": 3,
+    "weaponAscensionMaterialFamilyKey": "BorealWolf",
+    "eliteEnemyDropFamilyKey": "abyss_mage_materials",
+    "commonEnemyDropFamilyKey": "slime_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Sharpshooter's Oath"
+    ]
+  },
+  "SilvershowerHeartstrings": {
+    "weaponKey": "SilvershowerHeartstrings",
+    "displayName": "Silvershower Heartstrings",
+    "weaponType": "Bow",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "PureSacredDewdrop",
+    "eliteEnemyDropFamilyKey": "xuanwen_beast_materials",
+    "commonEnemyDropFamilyKey": "fontemer_aberrant_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Silvershower Heartstrings"
+    ]
+  },
+  "SkyriderGreatsword": {
+    "weaponKey": "SkyriderGreatsword",
+    "displayName": "Skyrider Greatsword",
+    "weaponType": "Claymore",
+    "rarity": 3,
+    "weaponAscensionMaterialFamilyKey": "Aerosiderite",
+    "eliteEnemyDropFamilyKey": "vishap_materials",
+    "commonEnemyDropFamilyKey": "treasure_hoarder_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Skyrider Greatsword"
+    ]
+  },
+  "SkyriderSword": {
+    "weaponKey": "SkyriderSword",
+    "displayName": "Skyrider Sword",
+    "weaponType": "Sword",
+    "rarity": 3,
+    "weaponAscensionMaterialFamilyKey": "Aerosiderite",
+    "eliteEnemyDropFamilyKey": "vishap_materials",
+    "commonEnemyDropFamilyKey": "fatui_skirmisher_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Skyrider Sword"
+    ]
+  },
+  "SkywardAtlas": {
+    "weaponKey": "SkywardAtlas",
+    "displayName": "Skyward Atlas",
+    "weaponType": "Catalyst",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "BorealWolf",
+    "eliteEnemyDropFamilyKey": "abyss_mage_materials",
+    "commonEnemyDropFamilyKey": "hilichurl_shooter_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Skyward Atlas"
+    ]
+  },
+  "SkywardBlade": {
+    "weaponKey": "SkywardBlade",
+    "displayName": "Skyward Blade",
+    "weaponType": "Sword",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "BorealWolf",
+    "eliteEnemyDropFamilyKey": "abyss_mage_materials",
+    "commonEnemyDropFamilyKey": "slime_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Skyward Blade"
+    ]
+  },
+  "SkywardHarp": {
+    "weaponKey": "SkywardHarp",
+    "displayName": "Skyward Harp",
+    "weaponType": "Bow",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "BorealWolf",
+    "eliteEnemyDropFamilyKey": "abyss_mage_materials",
+    "commonEnemyDropFamilyKey": "hilichurl_shooter_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Skyward Harp"
+    ]
+  },
+  "SkywardPride": {
+    "weaponKey": "SkywardPride",
+    "displayName": "Skyward Pride",
+    "weaponType": "Claymore",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "BorealWolf",
+    "eliteEnemyDropFamilyKey": "abyss_mage_materials",
+    "commonEnemyDropFamilyKey": "slime_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Skyward Pride"
+    ]
+  },
+  "SkywardSpine": {
+    "weaponKey": "SkywardSpine",
+    "displayName": "Skyward Spine",
+    "weaponType": "Polearm",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "DandelionGladiator",
+    "eliteEnemyDropFamilyKey": "humanoid_ruin_machine_materials",
+    "commonEnemyDropFamilyKey": "samachurl_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Skyward Spine"
+    ]
+  },
+  "Slingshot": {
+    "weaponKey": "Slingshot",
+    "displayName": "Slingshot",
+    "weaponType": "Bow",
+    "rarity": 3,
+    "weaponAscensionMaterialFamilyKey": "Guyun",
+    "eliteEnemyDropFamilyKey": "fatui_pyro_agent_materials",
+    "commonEnemyDropFamilyKey": "hilichurl_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Slingshot"
+    ]
+  },
+  "SnareHook": {
+    "weaponKey": "SnareHook",
+    "displayName": "Snare Hook",
+    "weaponType": "Bow",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "LongNightFlint",
+    "eliteEnemyDropFamilyKey": "wasteland_wild_hunt_materials",
+    "commonEnemyDropFamilyKey": "hilichurl_shooter_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Snare Hook"
+    ]
+  },
+  "SnowTombedStarsilver": {
+    "weaponKey": "SnowTombedStarsilver",
+    "displayName": "Snow-Tombed Starsilver",
+    "weaponType": "Claymore",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "Decarabian",
+    "eliteEnemyDropFamilyKey": "mitachurl_materials",
+    "commonEnemyDropFamilyKey": "slime_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Snow-Tombed Starsilver"
+    ]
+  },
+  "SolarPearl": {
+    "weaponKey": "SolarPearl",
+    "displayName": "Solar Pearl",
+    "weaponType": "Catalyst",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "Guyun",
+    "eliteEnemyDropFamilyKey": "fatui_pyro_agent_materials",
+    "commonEnemyDropFamilyKey": "whopperflower_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Solar Pearl"
+    ]
+  },
+  "SongOfBrokenPines": {
+    "weaponKey": "SongOfBrokenPines",
+    "displayName": "Song of Broken Pines",
+    "weaponType": "Claymore",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "Decarabian",
+    "eliteEnemyDropFamilyKey": "mitachurl_materials",
+    "commonEnemyDropFamilyKey": "hilichurl_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Song of Broken Pines"
+    ]
+  },
+  "SongOfStillness": {
+    "weaponKey": "SongOfStillness",
+    "displayName": "Song of Stillness",
+    "weaponType": "Bow",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "AncientChord",
+    "eliteEnemyDropFamilyKey": "tainted_hydro_phantasm_materials",
+    "commonEnemyDropFamilyKey": "hilichurl_shooter_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Song of Stillness"
+    ]
+  },
+  "SplendorOfTranquilWaters": {
+    "weaponKey": "SplendorOfTranquilWaters",
+    "displayName": "Splendor of Tranquil Waters",
+    "weaponType": "Sword",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "PureSacredDewdrop",
+    "eliteEnemyDropFamilyKey": "tainted_hydro_phantasm_materials",
+    "commonEnemyDropFamilyKey": "fontemer_aberrant_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Splendor of Tranquil Waters"
+    ]
+  },
+  "StaffOfHoma": {
+    "weaponKey": "StaffOfHoma",
+    "displayName": "Staff of Homa",
+    "weaponType": "Polearm",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "Aerosiderite",
+    "eliteEnemyDropFamilyKey": "abyss_mage_materials",
+    "commonEnemyDropFamilyKey": "slime_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Staff of Homa"
+    ]
+  },
+  "StaffOfTheScarletSands": {
+    "weaponKey": "StaffOfTheScarletSands",
+    "displayName": "Staff of the Scarlet Sands",
+    "weaponType": "Polearm",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "OasisGarden",
+    "eliteEnemyDropFamilyKey": "ruin_drake_materials",
+    "commonEnemyDropFamilyKey": "fungus_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Staff of the Scarlet Sands"
+    ]
+  },
+  "StarcallersWatch": {
+    "weaponKey": "StarcallersWatch",
+    "displayName": "Starcaller's Watch",
+    "weaponType": "Catalyst",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "SacredLord",
+    "eliteEnemyDropFamilyKey": "wayob_manifestation_materials",
+    "commonEnemyDropFamilyKey": "sauroform_tribal_warrior_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Starcaller's Watch"
+    ]
+  },
+  "SturdyBone": {
+    "weaponKey": "SturdyBone",
+    "displayName": "Sturdy Bone",
+    "weaponType": "Sword",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "BlazingSacrificialHeart",
+    "eliteEnemyDropFamilyKey": "wayob_manifestation_materials",
+    "commonEnemyDropFamilyKey": "sauroform_tribal_warrior_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Sturdy Bone"
+    ]
+  },
+  "SummitShaper": {
+    "weaponKey": "SummitShaper",
+    "displayName": "Summit Shaper",
+    "weaponType": "Sword",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "Guyun",
+    "eliteEnemyDropFamilyKey": "fatui_pyro_agent_materials",
+    "commonEnemyDropFamilyKey": "hilichurl_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Summit Shaper"
+    ]
+  },
+  "SunnyMorningSleepIn": {
+    "weaponKey": "SunnyMorningSleepIn",
+    "displayName": "Sunny Morning Sleep-In",
+    "weaponType": "Catalyst",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "Narukami",
+    "eliteEnemyDropFamilyKey": "avatar_of_lava_materials",
+    "commonEnemyDropFamilyKey": "specter_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Sunny Morning Sleep-In"
+    ]
+  },
+  "SurfsUp": {
+    "weaponKey": "SurfsUp",
+    "displayName": "Surf's Up",
+    "weaponType": "Catalyst",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "BlazingSacrificialHeart",
+    "eliteEnemyDropFamilyKey": "wayob_manifestation_materials",
+    "commonEnemyDropFamilyKey": "natlan_saurian_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Surf's Up"
+    ]
+  },
+  "SwordOfDescension": {
+    "weaponKey": "SwordOfDescension",
+    "displayName": "Sword of Descension",
+    "weaponType": "Sword",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "BorealWolf",
+    "eliteEnemyDropFamilyKey": "abyss_mage_materials",
+    "commonEnemyDropFamilyKey": "treasure_hoarder_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Sword of Descension"
+    ]
+  },
+  "SwordOfNarzissenkreuz": {
+    "weaponKey": "SwordOfNarzissenkreuz",
+    "displayName": "Sword Of Narzissenkreuz",
+    "weaponType": "Sword",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "AncientChord",
+    "eliteEnemyDropFamilyKey": "fatui_operative_materials",
+    "commonEnemyDropFamilyKey": "fontemer_aberrant_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [
+      "Canonicalized from discovered GOOD catalog coverage during the database cutover."
+    ],
+    "aliases": [
+      "Sword Of Narzissenkreuz",
+      "Sword of Narzissenkreuz"
+    ]
+  },
+  "SwordOfNarzissenkreuz_i_n11428": {
+    "weaponKey": "SwordOfNarzissenkreuz_i_n11428",
+    "displayName": "Sword of Narzissenkreuz",
+    "weaponType": "Sword",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "AncientChord",
+    "eliteEnemyDropFamilyKey": "fatui_operative_materials",
+    "commonEnemyDropFamilyKey": "fontemer_aberrant_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Sword of Narzissenkreuz"
+    ]
+  },
+  "SymphonistOfScents": {
+    "weaponKey": "SymphonistOfScents",
+    "displayName": "Symphonist of Scents",
+    "weaponType": "Polearm",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "PureSacredDewdrop",
+    "eliteEnemyDropFamilyKey": "tainted_hydro_phantasm_materials",
+    "commonEnemyDropFamilyKey": "fontemer_aberrant_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Symphonist of Scents"
+    ]
+  },
+  "TalkingStick": {
+    "weaponKey": "TalkingStick",
+    "displayName": "Talking Stick",
+    "weaponType": "Claymore",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "OasisGarden",
+    "eliteEnemyDropFamilyKey": "consecrated_beast_materials",
+    "commonEnemyDropFamilyKey": "slime_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Talking Stick"
+    ]
+  },
+  "TamayurateiNoOhanashi": {
+    "weaponKey": "TamayurateiNoOhanashi",
+    "displayName": "Tamayuratei no Ohanashi",
+    "weaponType": "Polearm",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "Mask",
+    "eliteEnemyDropFamilyKey": "tenebrous_mimesis_materials",
+    "commonEnemyDropFamilyKey": "nobushi_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Tamayuratei no Ohanashi"
+    ]
+  },
+  "TheAlleyFlash": {
+    "weaponKey": "TheAlleyFlash",
+    "displayName": "The Alley Flash",
+    "weaponType": "Sword",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "Decarabian",
+    "eliteEnemyDropFamilyKey": "mitachurl_materials",
+    "commonEnemyDropFamilyKey": "samachurl_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "The Alley Flash"
+    ]
+  },
+  "TheBell": {
+    "weaponKey": "TheBell",
+    "displayName": "The Bell",
+    "weaponType": "Claymore",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "Decarabian",
+    "eliteEnemyDropFamilyKey": "mitachurl_materials",
+    "commonEnemyDropFamilyKey": "whopperflower_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "The Bell"
+    ]
+  },
+  "TheBlackSword": {
+    "weaponKey": "TheBlackSword",
+    "displayName": "The Black Sword",
+    "weaponType": "Sword",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "BorealWolf",
+    "eliteEnemyDropFamilyKey": "abyss_mage_materials",
+    "commonEnemyDropFamilyKey": "slime_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "The Black Sword"
+    ]
+  },
+  "TheCatch": {
+    "weaponKey": "TheCatch",
+    "displayName": "The Catch",
+    "weaponType": "Polearm",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "Mask",
+    "eliteEnemyDropFamilyKey": "ruin_sentinel_materials",
+    "commonEnemyDropFamilyKey": "specter_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "The Catch"
+    ]
+  },
+  "TheDaybreakChronicles": {
+    "weaponKey": "TheDaybreakChronicles",
+    "displayName": "The Daybreak Chronicles",
+    "weaponType": "Bow",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "DandelionGladiator",
+    "eliteEnemyDropFamilyKey": "mitachurl_materials",
+    "commonEnemyDropFamilyKey": "treasure_hoarder_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "The Daybreak Chronicles"
+    ]
+  },
+  "TheDockhandsAssistant": {
+    "weaponKey": "TheDockhandsAssistant",
+    "displayName": "The Dockhand's Assistant",
+    "weaponType": "Sword",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "PureSacredDewdrop",
+    "eliteEnemyDropFamilyKey": "fatui_operative_materials",
+    "commonEnemyDropFamilyKey": "fontemer_aberrant_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "The Dockhand's Assistant"
+    ]
+  },
+  "TheFirstGreatMagic": {
+    "weaponKey": "TheFirstGreatMagic",
+    "displayName": "The First Great Magic",
+    "weaponType": "Bow",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "AncientChord",
+    "eliteEnemyDropFamilyKey": "tainted_hydro_phantasm_materials",
+    "commonEnemyDropFamilyKey": "fontemer_aberrant_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "The First Great Magic"
+    ]
+  },
+  "TheFlute": {
+    "weaponKey": "TheFlute",
+    "displayName": "The Flute",
+    "weaponType": "Sword",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "BorealWolf",
+    "eliteEnemyDropFamilyKey": "abyss_mage_materials",
+    "commonEnemyDropFamilyKey": "slime_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "The Flute"
+    ]
+  },
+  "TheStringless": {
+    "weaponKey": "TheStringless",
+    "displayName": "The Stringless",
+    "weaponType": "Bow",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "Decarabian",
+    "eliteEnemyDropFamilyKey": "mitachurl_materials",
+    "commonEnemyDropFamilyKey": "hilichurl_shooter_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "The Stringless"
+    ]
+  },
+  "TheUnforged": {
+    "weaponKey": "TheUnforged",
+    "displayName": "The Unforged",
+    "weaponType": "Claymore",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "MistVeiledElixir",
+    "eliteEnemyDropFamilyKey": "fatui_cicin_mage_materials",
+    "commonEnemyDropFamilyKey": "treasure_hoarder_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "The Unforged"
+    ]
+  },
+  "TheViridescentHunt": {
+    "weaponKey": "TheViridescentHunt",
+    "displayName": "The Viridescent Hunt",
+    "weaponType": "Bow",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "Decarabian",
+    "eliteEnemyDropFamilyKey": "mitachurl_materials",
+    "commonEnemyDropFamilyKey": "hilichurl_shooter_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "The Viridescent Hunt"
+    ]
+  },
+  "TheWidsith": {
+    "weaponKey": "TheWidsith",
+    "displayName": "The Widsith",
+    "weaponType": "Catalyst",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "BorealWolf",
+    "eliteEnemyDropFamilyKey": "abyss_mage_materials",
+    "commonEnemyDropFamilyKey": "hilichurl_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "The Widsith"
+    ]
+  },
+  "ThrillingTalesOfDragonSlayers": {
+    "weaponKey": "ThrillingTalesOfDragonSlayers",
+    "displayName": "Thrilling Tales of Dragon Slayers",
+    "weaponType": "Catalyst",
+    "rarity": 3,
+    "weaponAscensionMaterialFamilyKey": "BorealWolf",
+    "eliteEnemyDropFamilyKey": "abyss_mage_materials",
+    "commonEnemyDropFamilyKey": "samachurl_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Thrilling Tales of Dragon Slayers"
+    ]
+  },
+  "ThunderingPulse": {
+    "weaponKey": "ThunderingPulse",
+    "displayName": "Thundering Pulse",
+    "weaponType": "Bow",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "Narukami",
+    "eliteEnemyDropFamilyKey": "mirror_maiden_materials",
+    "commonEnemyDropFamilyKey": "hilichurl_shooter_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Thundering Pulse"
+    ]
+  },
+  "TidalShadow": {
+    "weaponKey": "TidalShadow",
+    "displayName": "Tidal Shadow",
+    "weaponType": "Claymore",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "PristineSea",
+    "eliteEnemyDropFamilyKey": "breacher_primus_materials",
+    "commonEnemyDropFamilyKey": "clockwork_meka_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Tidal Shadow"
+    ]
+  },
+  "TomeOfTheEternalFlow": {
+    "weaponKey": "TomeOfTheEternalFlow",
+    "displayName": "Tome of the Eternal Flow",
+    "weaponType": "Catalyst",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "PureSacredDewdrop",
+    "eliteEnemyDropFamilyKey": "breacher_primus_materials",
+    "commonEnemyDropFamilyKey": "clockwork_meka_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Tome of the Eternal Flow"
+    ]
+  },
+  "ToukabouShigure": {
+    "weaponKey": "ToukabouShigure",
+    "displayName": "Toukabou Shigure",
+    "weaponType": "Sword",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "Narukami",
+    "eliteEnemyDropFamilyKey": "primal_construct_materials",
+    "commonEnemyDropFamilyKey": "nobushi_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Toukabou Shigure"
+    ]
+  },
+  "TravelersHandySword": {
+    "weaponKey": "TravelersHandySword",
+    "displayName": "Traveler's Handy Sword",
+    "weaponType": "Sword",
+    "rarity": 3,
+    "weaponAscensionMaterialFamilyKey": "DandelionGladiator",
+    "eliteEnemyDropFamilyKey": "humanoid_ruin_machine_materials",
+    "commonEnemyDropFamilyKey": "samachurl_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Traveler's Handy Sword"
+    ]
+  },
+  "TulaytullahsRemembrance": {
+    "weaponKey": "TulaytullahsRemembrance",
+    "displayName": "Tulaytullah's Remembrance",
+    "weaponType": "Catalyst",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "ScorchingMight",
+    "eliteEnemyDropFamilyKey": "state_shifted_fungus_materials",
+    "commonEnemyDropFamilyKey": "fungus_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Tulaytullah's Remembrance"
+    ]
+  },
+  "TwinNephrite": {
+    "weaponKey": "TwinNephrite",
+    "displayName": "Twin Nephrite",
+    "weaponType": "Catalyst",
+    "rarity": 3,
+    "weaponAscensionMaterialFamilyKey": "MistVeiledElixir",
+    "eliteEnemyDropFamilyKey": "fatui_cicin_mage_materials",
+    "commonEnemyDropFamilyKey": "fatui_skirmisher_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Twin Nephrite"
+    ]
+  },
+  "UltimateOverlordsMegaMagicSword": {
+    "weaponKey": "UltimateOverlordsMegaMagicSword",
+    "displayName": "Ultimate Overlord's Mega Magic Sword",
+    "weaponType": "Claymore",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "PristineSea",
+    "eliteEnemyDropFamilyKey": "fatui_operative_materials",
+    "commonEnemyDropFamilyKey": "clockwork_meka_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Ultimate Overlord's Mega Magic Sword"
+    ]
+  },
+  "UrakuMisugiri": {
+    "weaponKey": "UrakuMisugiri",
+    "displayName": "Uraku Misugiri",
+    "weaponType": "Sword",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "DistantSea",
+    "eliteEnemyDropFamilyKey": "ruin_sentinel_materials",
+    "commonEnemyDropFamilyKey": "nobushi_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Uraku Misugiri"
+    ]
+  },
+  "Verdict": {
+    "weaponKey": "Verdict",
+    "displayName": "Verdict",
+    "weaponType": "Claymore",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "AncientChord",
+    "eliteEnemyDropFamilyKey": "breacher_primus_materials",
+    "commonEnemyDropFamilyKey": "clockwork_meka_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Verdict"
+    ]
+  },
+  "VividNotions": {
+    "weaponKey": "VividNotions",
+    "displayName": "Vivid Notions",
+    "weaponType": "Catalyst",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "SacredLord",
+    "eliteEnemyDropFamilyKey": "furnace_shell_mountain_weasel_materials",
+    "commonEnemyDropFamilyKey": "natlan_saurian_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Vivid Notions"
+    ]
+  },
+  "VortexVanquisher": {
+    "weaponKey": "VortexVanquisher",
+    "displayName": "Vortex Vanquisher",
+    "weaponType": "Polearm",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "Aerosiderite",
+    "eliteEnemyDropFamilyKey": "vishap_materials",
+    "commonEnemyDropFamilyKey": "treasure_hoarder_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Vortex Vanquisher"
+    ]
+  },
+  "WanderingEvenstar": {
+    "weaponKey": "WanderingEvenstar",
+    "displayName": "Wandering Evenstar",
+    "weaponType": "Catalyst",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "OasisGarden",
+    "eliteEnemyDropFamilyKey": "state_shifted_fungus_materials",
+    "commonEnemyDropFamilyKey": "fungus_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Wandering Evenstar"
+    ]
+  },
+  "WavebreakersFin": {
+    "weaponKey": "WavebreakersFin",
+    "displayName": "Wavebreaker's Fin",
+    "weaponType": "Polearm",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "Mask",
+    "eliteEnemyDropFamilyKey": "riftwolf_materials",
+    "commonEnemyDropFamilyKey": "nobushi_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Wavebreaker's Fin"
+    ]
+  },
+  "WaveridingWhirl": {
+    "weaponKey": "WaveridingWhirl",
+    "displayName": "Waveriding Whirl",
+    "weaponType": "Catalyst",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "BlazingSacrificialHeart",
+    "eliteEnemyDropFamilyKey": "wayob_manifestation_materials",
+    "commonEnemyDropFamilyKey": "natlan_saurian_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Waveriding Whirl"
+    ]
+  },
+  "Whiteblind": {
+    "weaponKey": "Whiteblind",
+    "displayName": "Whiteblind",
+    "weaponType": "Claymore",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "Guyun",
+    "eliteEnemyDropFamilyKey": "fatui_pyro_agent_materials",
+    "commonEnemyDropFamilyKey": "treasure_hoarder_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Whiteblind"
+    ]
+  },
+  "WhiteIronGreatsword": {
+    "weaponKey": "WhiteIronGreatsword",
+    "displayName": "White Iron Greatsword",
+    "weaponType": "Claymore",
+    "rarity": 3,
+    "weaponAscensionMaterialFamilyKey": "DandelionGladiator",
+    "eliteEnemyDropFamilyKey": "humanoid_ruin_machine_materials",
+    "commonEnemyDropFamilyKey": "slime_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "White Iron Greatsword"
+    ]
+  },
+  "WhiteTassel": {
+    "weaponKey": "WhiteTassel",
+    "displayName": "White Tassel",
+    "weaponType": "Polearm",
+    "rarity": 3,
+    "weaponAscensionMaterialFamilyKey": "Guyun",
+    "eliteEnemyDropFamilyKey": "fatui_pyro_agent_materials",
+    "commonEnemyDropFamilyKey": "fatui_skirmisher_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "White Tassel"
+    ]
+  },
+  "WindblumeOde": {
+    "weaponKey": "WindblumeOde",
+    "displayName": "Windblume Ode",
+    "weaponType": "Bow",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "DandelionGladiator",
+    "eliteEnemyDropFamilyKey": "abyss_mage_materials",
+    "commonEnemyDropFamilyKey": "whopperflower_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Windblume Ode"
+    ]
+  },
+  "WineAndSong": {
+    "weaponKey": "WineAndSong",
+    "displayName": "Wine and Song",
+    "weaponType": "Catalyst",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "BorealWolf",
+    "eliteEnemyDropFamilyKey": "abyss_mage_materials",
+    "commonEnemyDropFamilyKey": "treasure_hoarder_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Wine and Song"
+    ]
+  },
+  "WolfFang": {
+    "weaponKey": "WolfFang",
+    "displayName": "Wolf-Fang",
+    "weaponType": "Sword",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "Decarabian",
+    "eliteEnemyDropFamilyKey": "humanoid_ruin_machine_materials",
+    "commonEnemyDropFamilyKey": "hilichurl_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Wolf-Fang"
+    ]
+  },
+  "WolfsGravestone": {
+    "weaponKey": "WolfsGravestone",
+    "displayName": "Wolf's Gravestone",
+    "weaponType": "Claymore",
+    "rarity": 5,
+    "weaponAscensionMaterialFamilyKey": "DandelionGladiator",
+    "eliteEnemyDropFamilyKey": "humanoid_ruin_machine_materials",
+    "commonEnemyDropFamilyKey": "samachurl_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Wolf's Gravestone"
+    ]
+  },
+  "XiphosMoonlight": {
+    "weaponKey": "XiphosMoonlight",
+    "displayName": "Xiphos' Moonlight",
+    "weaponType": "Sword",
+    "rarity": 4,
+    "weaponAscensionMaterialFamilyKey": "ForestDew",
+    "eliteEnemyDropFamilyKey": "primal_construct_materials",
+    "commonEnemyDropFamilyKey": "eremite_materials",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "notes": [],
+    "aliases": [
+      "Xiphos' Moonlight"
+    ]
+  }
+}

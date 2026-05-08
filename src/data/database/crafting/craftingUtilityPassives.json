@@ -1,0 +1,134 @@
+{
+  "Albedo": {
+    "key": "Albedo",
+    "characterName": "Albedo",
+    "talentName": "Flash of Genius",
+    "appliesTo": [
+      "weapon_ascension_material"
+    ],
+    "effectType": "double_product",
+    "chance": 0.1,
+    "description": "When Albedo crafts Weapon Ascension Materials, he has a 10% chance to receive double the product."
+  },
+  "Alhaitham": {
+    "key": "Alhaitham",
+    "characterName": "Alhaitham",
+    "talentName": "Law of Reductive Overdetermination",
+    "appliesTo": [
+      "weapon_ascension_material"
+    ],
+    "effectType": "double_product",
+    "chance": 0.1,
+    "description": "When Alhaitham crafts Weapon Ascension Materials, he has a 10% chance to receive double the product."
+  },
+  "Dori": {
+    "key": "Dori",
+    "characterName": "Dori",
+    "talentName": "Unexpected Order",
+    "appliesTo": [
+      "character_weapon_enhancement_material"
+    ],
+    "effectType": "refund_one_input",
+    "chance": 0.25,
+    "description": "Has a 25% chance to recover some of the materials used when crafting Character and Weapon Materials."
+  },
+  "Eula": {
+    "key": "Eula",
+    "characterName": "Eula",
+    "talentName": "Aristocratic Introspection",
+    "appliesTo": [
+      "character_talent_material"
+    ],
+    "effectType": "double_product",
+    "chance": 0.1,
+    "description": "When Eula crafts Character Talent Materials, she has a 10% chance to receive double the product."
+  },
+  "KamisatoAyaka": {
+    "key": "KamisatoAyaka",
+    "characterName": "Kamisato Ayaka",
+    "talentName": "Fruits of Shinsa",
+    "appliesTo": [
+      "weapon_ascension_material"
+    ],
+    "effectType": "double_product",
+    "chance": 0.1,
+    "description": "When Ayaka crafts Weapon Ascension Materials, she has a 10% chance to receive double the product."
+  },
+  "Layla": {
+    "key": "Layla",
+    "characterName": "Layla",
+    "talentName": "Shadowy Dream-Signs",
+    "appliesTo": [
+      "character_talent_material"
+    ],
+    "effectType": "double_product",
+    "chance": 0.1,
+    "description": "When Layla crafts Character Talent Materials, she has a 10% chance to receive double the product."
+  },
+  "Lisa": {
+    "key": "Lisa",
+    "characterName": "Lisa",
+    "talentName": "General Pharmaceutics",
+    "appliesTo": [
+      "potion"
+    ],
+    "effectType": "refund_one_input",
+    "chance": 0.2,
+    "description": "When Lisa crafts a potion, she has a 20% chance to refund a portion of the crafting materials used."
+  },
+  "Mona": {
+    "key": "Mona",
+    "characterName": "Mona",
+    "talentName": "Principium of Astrology",
+    "appliesTo": [
+      "weapon_ascension_material"
+    ],
+    "effectType": "refund_one_input",
+    "chance": 0.25,
+    "description": "When Mona crafts Weapon Ascension Materials, she has a 25% chance to refund a portion of the crafting materials used."
+  },
+  "Sucrose": {
+    "key": "Sucrose",
+    "characterName": "Sucrose",
+    "talentName": "Astable Invention",
+    "appliesTo": [
+      "character_weapon_enhancement_material"
+    ],
+    "effectType": "double_product",
+    "chance": 0.1,
+    "description": "When Sucrose crafts Character and Weapon Enhancement Materials, she has a 10% chance to obtain double the product."
+  },
+  "Wriothesley": {
+    "key": "Wriothesley",
+    "characterName": "Wriothesley",
+    "talentName": "The Duke's Grace",
+    "appliesTo": [
+      "weapon_ascension_material"
+    ],
+    "effectType": "double_product",
+    "chance": 0.1,
+    "description": "When Wriothesley crafts Weapon Ascension Materials, he has a 10% chance to receive double the product."
+  },
+  "Xingqiu": {
+    "key": "Xingqiu",
+    "characterName": "Xingqiu",
+    "talentName": "Flash of Genius",
+    "appliesTo": [
+      "character_talent_material"
+    ],
+    "effectType": "refund_one_input",
+    "chance": 0.25,
+    "description": "When Xingqiu crafts Character Talent Materials, he has a 25% chance to refund a portion of the crafting materials used."
+  },
+  "YaeMiko": {
+    "key": "YaeMiko",
+    "characterName": "Yae Miko",
+    "talentName": "Meditations of a Yako",
+    "appliesTo": [
+      "character_talent_material"
+    ],
+    "effectType": "regional_extra_same_rarity_talent_material",
+    "chance": 0.25,
+    "description": "Has a 25% chance to get 1 regional Character Talent Material, base material excluded, when crafting. The rarity is that of the base material."
+  }
+}

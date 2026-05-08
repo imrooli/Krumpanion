@@ -1,0 +1,128 @@
+{
+  "resinRules": {
+    "version": 1,
+    "originalResinCap": 200,
+    "regenMinutesPerResin": 8,
+    "naturalResinPerDay": 180,
+    "naturalResinPerWeek": 1260,
+    "costs": {
+      "domain": 20,
+      "leyLine": 20,
+      "normalBoss": 40,
+      "weeklyBossDiscounted": 30,
+      "weeklyBossFull": 60,
+      "condensedResinCraft": 60
+    },
+    "fragileResinRestores": 60,
+    "transientResinRestores": 60
+  },
+  "resinSystem": {
+    "originalResin": {
+      "softCap": 200,
+      "hardCapAfterManualRefill": 2000,
+      "regenMinutesPerResin": 8,
+      "resinPerHour": 7.5,
+      "resinPerDay": 180,
+      "resinPerWeek": 1260,
+      "fullRechargeFromZeroMinutes": 1600,
+      "fullRechargeFromZeroHours": 26.666666666666668
+    },
+    "adventureExpRatio": {
+      "resinToAdventureExp": 5,
+      "note": "Any Original Resin spent, excluding conversion into Condensed Resin, awards Adventure EXP at a 1:5 ratio. Example: 20 Resin -> 100 Adventure EXP."
+    },
+    "manualRefill": {
+      "resinPerUse": 60,
+      "canExceedSoftCap": true,
+      "cannotRefillAbove": 1940,
+      "maxAfterRefill": 2000,
+      "fragileResinRestores": 60,
+      "transientResinRestores": 60,
+      "primogemRefillsPerDay": 6,
+      "primogemRefillSchedule": [
+        {
+          "refillNumber": 1,
+          "primogems": 50,
+          "totalPrimogems": 50,
+          "maxTotalResin": 60,
+          "resinPerPrimogemTotal": 1.2
+        },
+        {
+          "refillNumber": 2,
+          "primogems": 100,
+          "totalPrimogems": 150,
+          "maxTotalResin": 120,
+          "resinPerPrimogemTotal": 0.8
+        },
+        {
+          "refillNumber": 3,
+          "primogems": 100,
+          "totalPrimogems": 250,
+          "maxTotalResin": 180,
+          "resinPerPrimogemTotal": 0.72
+        },
+        {
+          "refillNumber": 4,
+          "primogems": 150,
+          "totalPrimogems": 400,
+          "maxTotalResin": 240,
+          "resinPerPrimogemTotal": 0.6
+        },
+        {
+          "refillNumber": 5,
+          "primogems": 200,
+          "totalPrimogems": 600,
+          "maxTotalResin": 300,
+          "resinPerPrimogemTotal": 0.5
+        },
+        {
+          "refillNumber": 6,
+          "primogems": 200,
+          "totalPrimogems": 800,
+          "maxTotalResin": 360,
+          "resinPerPrimogemTotal": 0.45
+        }
+      ]
+    }
+  },
+  "resinActivityCosts": {
+    "leyLineOutcrop": {
+      "resin": 20,
+      "condensedResinAllowed": true,
+      "condensedResinEquivalentResin": 40,
+      "adventureExpPer20ResinClaim": 100
+    },
+    "domain": {
+      "resin": 20,
+      "condensedResinAllowed": true,
+      "condensedResinEquivalentResin": 40,
+      "adventureExpPer20ResinClaim": 100
+    },
+    "normalBoss": {
+      "resin": 40,
+      "condensedResinAllowed": false,
+      "adventureExpPerClaim": 200
+    },
+    "weeklyBoss": {
+      "firstThreePerWeekResin": 30,
+      "afterFirstThreePerWeekResin": 60,
+      "condensedResinAllowed": false,
+      "adventureExpPerDiscountedClaim": 150,
+      "adventureExpPerFullCostClaim": 300,
+      "rewardLimitPerBossPerWeek": 1,
+      "weeklyDiscountedClaims": 3
+    }
+  },
+  "plannerDefaults": {
+    "worldLevel": 8,
+    "domainLevel": "IV",
+    "useHighestUnlockedDomain": true,
+    "craftAwareEstimates": true,
+    "naturalResinPerDay": 180,
+    "naturalResinPerWeek": 1260,
+    "assumeCondensedResinEquivalentForDomains": true,
+    "weeklyBossDiscountedClaimsAvailable": 3,
+    "includeAdventureExpEstimate": true,
+    "estimateOpenWorldEnemyDrops": false
+  }
+}

@@ -1,0 +1,2572 @@
+{
+  "Aino": {
+    "characterKey": "Aino",
+    "displayName": "Aino",
+    "element": "Hydro",
+    "elementGemFamilyKey": "Hydro",
+    "localSpecialtyKey": "PortableBearing",
+    "commonEnemyDropFamilyKey": "landcruiser_materials",
+    "talentBookFamilyKey": "Elysium",
+    "normalBossMaterialKey": "PrecisionKuuvahkiStampingDie",
+    "weeklyBossMaterialKey": "SilkenFeather",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Nod-Krai",
+    "notes": [],
+    "aliases": [
+      "Aino"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Albedo": {
+    "characterKey": "Albedo",
+    "displayName": "Albedo",
+    "element": "Geo",
+    "elementGemFamilyKey": "Geo",
+    "localSpecialtyKey": "Cecilia",
+    "commonEnemyDropFamilyKey": "samachurl_materials",
+    "talentBookFamilyKey": "Ballad",
+    "normalBossMaterialKey": "BasaltPillar",
+    "weeklyBossMaterialKey": "TuskOfMonocerosCaeli",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Mondstadt",
+    "notes": [],
+    "aliases": [
+      "Albedo"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Alhaitham": {
+    "characterKey": "Alhaitham",
+    "displayName": "Alhaitham",
+    "element": "Dendro",
+    "elementGemFamilyKey": "Dendro",
+    "localSpecialtyKey": "SandGreasePupa",
+    "commonEnemyDropFamilyKey": "eremite_materials",
+    "talentBookFamilyKey": "Ingenuity",
+    "normalBossMaterialKey": "PseudoStamens",
+    "weeklyBossMaterialKey": "MirrorOfMushin",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Sumeru",
+    "notes": [],
+    "aliases": [
+      "Alhaitham"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Aloy": {
+    "characterKey": "Aloy",
+    "displayName": "Aloy",
+    "element": "Cryo",
+    "elementGemFamilyKey": "Cryo",
+    "localSpecialtyKey": "CrystalMarrow",
+    "commonEnemyDropFamilyKey": "specter_materials",
+    "talentBookFamilyKey": "Freedom",
+    "normalBossMaterialKey": "CrystallineBloom",
+    "weeklyBossMaterialKey": "MoltenMoment",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Mondstadt",
+    "notes": [],
+    "aliases": [
+      "Aloy"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Amber": {
+    "characterKey": "Amber",
+    "displayName": "Amber",
+    "element": "Pyro",
+    "elementGemFamilyKey": "Pyro",
+    "localSpecialtyKey": "SmallLampGrass",
+    "commonEnemyDropFamilyKey": "hilichurl_shooter_materials",
+    "talentBookFamilyKey": "Freedom",
+    "normalBossMaterialKey": "EverflameSeed",
+    "weeklyBossMaterialKey": "DvalinsSigh",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Mondstadt",
+    "notes": [],
+    "aliases": [
+      "Amber"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "AratakiItto": {
+    "characterKey": "AratakiItto",
+    "displayName": "AratakiItto",
+    "element": "Geo",
+    "elementGemFamilyKey": "Geo",
+    "localSpecialtyKey": "Onikabuto",
+    "commonEnemyDropFamilyKey": "slime_materials",
+    "talentBookFamilyKey": "Elegance",
+    "normalBossMaterialKey": "RiftbornRegalia",
+    "weeklyBossMaterialKey": "AshenHeart",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Inazuma",
+    "notes": [],
+    "aliases": [
+      "AratakiItto"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Arlecchino": {
+    "characterKey": "Arlecchino",
+    "displayName": "Arlecchino",
+    "element": "Pyro",
+    "elementGemFamilyKey": "Pyro",
+    "localSpecialtyKey": "RainbowRose",
+    "commonEnemyDropFamilyKey": "fatui_skirmisher_materials",
+    "talentBookFamilyKey": "Order",
+    "normalBossMaterialKey": "FragmentOfAGoldenMelody",
+    "weeklyBossMaterialKey": "FadingCandle",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Fontaine",
+    "notes": [],
+    "aliases": [
+      "Arlecchino"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Baizhu": {
+    "characterKey": "Baizhu",
+    "displayName": "Baizhu",
+    "element": "Dendro",
+    "elementGemFamilyKey": "Dendro",
+    "localSpecialtyKey": "Violetgrass",
+    "commonEnemyDropFamilyKey": "fungus_materials",
+    "talentBookFamilyKey": "Gold",
+    "normalBossMaterialKey": "EvergloomRing",
+    "weeklyBossMaterialKey": "WorldspanFern",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Liyue",
+    "notes": [],
+    "aliases": [
+      "Baizhu"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Barbara": {
+    "characterKey": "Barbara",
+    "displayName": "Barbara",
+    "element": "Hydro",
+    "elementGemFamilyKey": "Hydro",
+    "localSpecialtyKey": "PhilanemoMushroom",
+    "commonEnemyDropFamilyKey": "samachurl_materials",
+    "talentBookFamilyKey": "Freedom",
+    "normalBossMaterialKey": "CleansingHeart",
+    "weeklyBossMaterialKey": "RingOfBoreas",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Mondstadt",
+    "notes": [],
+    "aliases": [
+      "Barbara"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Beidou": {
+    "characterKey": "Beidou",
+    "displayName": "Beidou",
+    "element": "Electro",
+    "elementGemFamilyKey": "Electro",
+    "localSpecialtyKey": "NoctilucousJade",
+    "commonEnemyDropFamilyKey": "treasure_hoarder_materials",
+    "talentBookFamilyKey": "Gold",
+    "normalBossMaterialKey": "LightningPrism",
+    "weeklyBossMaterialKey": "DvalinsSigh",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Liyue",
+    "notes": [],
+    "aliases": [
+      "Beidou"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Bennett": {
+    "characterKey": "Bennett",
+    "displayName": "Bennett",
+    "weaponType": "Sword",
+    "element": "Pyro",
+    "elementGemFamilyKey": "Pyro",
+    "localSpecialtyKey": "WindwheelAster",
+    "commonEnemyDropFamilyKey": "treasure_hoarder_materials",
+    "talentBookFamilyKey": "Resistance",
+    "normalBossMaterialKey": "EverflameSeed",
+    "weeklyBossMaterialKey": "DvalinsPlume",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Mondstadt",
+    "notes": [],
+    "aliases": [
+      "Bennett"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Candace": {
+    "characterKey": "Candace",
+    "displayName": "Candace",
+    "element": "Hydro",
+    "elementGemFamilyKey": "Hydro",
+    "localSpecialtyKey": "HennaBerry",
+    "commonEnemyDropFamilyKey": "eremite_materials",
+    "talentBookFamilyKey": "Admonition",
+    "normalBossMaterialKey": "LightGuidingTetrahedron",
+    "weeklyBossMaterialKey": "TearsOfTheCalamitousGod",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Sumeru",
+    "notes": [],
+    "aliases": [
+      "Candace"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Charlotte": {
+    "characterKey": "Charlotte",
+    "displayName": "Charlotte",
+    "element": "Cryo",
+    "elementGemFamilyKey": "Cryo",
+    "localSpecialtyKey": "BerylConch",
+    "commonEnemyDropFamilyKey": "clockwork_meka_materials",
+    "talentBookFamilyKey": "Justice",
+    "normalBossMaterialKey": "TourbillonDevice",
+    "weeklyBossMaterialKey": "LightlessSilkString",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Fontaine",
+    "notes": [],
+    "aliases": [
+      "Charlotte"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Chasca": {
+    "characterKey": "Chasca",
+    "displayName": "Chasca",
+    "element": "Anemo",
+    "elementGemFamilyKey": "Anemo",
+    "localSpecialtyKey": "WitheringPurpurbloom",
+    "commonEnemyDropFamilyKey": "natlan_saurian_materials",
+    "talentBookFamilyKey": "Conflict",
+    "normalBossMaterialKey": "EnsnaringGaze",
+    "weeklyBossMaterialKey": "SilkenFeather",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Natlan",
+    "notes": [],
+    "aliases": [
+      "Chasca"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Chevreuse": {
+    "characterKey": "Chevreuse",
+    "displayName": "Chevreuse",
+    "element": "Pyro",
+    "elementGemFamilyKey": "Pyro",
+    "localSpecialtyKey": "LumidouceBell",
+    "commonEnemyDropFamilyKey": "clockwork_meka_materials",
+    "talentBookFamilyKey": "Order",
+    "normalBossMaterialKey": "FontemerUnihorn",
+    "weeklyBossMaterialKey": "LightlessEyeOfTheMaelstrom",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Fontaine",
+    "notes": [],
+    "aliases": [
+      "Chevreuse"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Chiori": {
+    "characterKey": "Chiori",
+    "displayName": "Chiori",
+    "element": "Geo",
+    "elementGemFamilyKey": "Geo",
+    "localSpecialtyKey": "Dendrobium",
+    "commonEnemyDropFamilyKey": "specter_materials",
+    "talentBookFamilyKey": "Light",
+    "normalBossMaterialKey": "ArtificedSpareClockworkComponentCoppelia",
+    "weeklyBossMaterialKey": "LightlessSilkString",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Inazuma",
+    "notes": [],
+    "aliases": [
+      "Chiori"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Chongyun": {
+    "characterKey": "Chongyun",
+    "displayName": "Chongyun",
+    "element": "Cryo",
+    "elementGemFamilyKey": "Cryo",
+    "localSpecialtyKey": "CorLapis",
+    "commonEnemyDropFamilyKey": "hilichurl_materials",
+    "talentBookFamilyKey": "Diligence",
+    "normalBossMaterialKey": "HoarfrostCore",
+    "weeklyBossMaterialKey": "DvalinsSigh",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Liyue",
+    "notes": [],
+    "aliases": [
+      "Chongyun"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Citlali": {
+    "characterKey": "Citlali",
+    "displayName": "Citlali",
+    "element": "Cryo",
+    "elementGemFamilyKey": "Cryo",
+    "localSpecialtyKey": "QuenepaBerry",
+    "commonEnemyDropFamilyKey": "natlan_saurian_materials",
+    "talentBookFamilyKey": "Kindling",
+    "normalBossMaterialKey": "TalismanOfTheEnigmaticLand",
+    "weeklyBossMaterialKey": "DenialAndJudgment",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Natlan",
+    "notes": [],
+    "aliases": [
+      "Citlali"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Clorinde": {
+    "characterKey": "Clorinde",
+    "displayName": "Clorinde",
+    "element": "Electro",
+    "elementGemFamilyKey": "Electro",
+    "localSpecialtyKey": "Lumitoile",
+    "commonEnemyDropFamilyKey": "fontemer_aberrant_materials",
+    "talentBookFamilyKey": "Justice",
+    "normalBossMaterialKey": "FontemerUnihorn",
+    "weeklyBossMaterialKey": "Everamber",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Fontaine",
+    "notes": [],
+    "aliases": [
+      "Clorinde"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Collei": {
+    "characterKey": "Collei",
+    "displayName": "Collei",
+    "element": "Dendro",
+    "elementGemFamilyKey": "Dendro",
+    "localSpecialtyKey": "RukkhashavaMushrooms",
+    "commonEnemyDropFamilyKey": "hilichurl_shooter_materials",
+    "talentBookFamilyKey": "Praxis",
+    "normalBossMaterialKey": "MajesticHookedBeak",
+    "weeklyBossMaterialKey": "TearsOfTheCalamitousGod",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Sumeru",
+    "notes": [],
+    "aliases": [
+      "Collei"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Columbina": {
+    "characterKey": "Columbina",
+    "displayName": "Columbina",
+    "element": "Hydro",
+    "elementGemFamilyKey": "Hydro",
+    "localSpecialtyKey": "WinterIcelea",
+    "commonEnemyDropFamilyKey": "slime_materials",
+    "talentBookFamilyKey": "Moonlight",
+    "normalBossMaterialKey": "RadiantAntler",
+    "weeklyBossMaterialKey": "MaskOfTheVirtuousDoctor",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Nod-Krai",
+    "notes": [],
+    "aliases": [
+      "Columbina"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Cyno": {
+    "characterKey": "Cyno",
+    "displayName": "Cyno",
+    "element": "Electro",
+    "elementGemFamilyKey": "Electro",
+    "localSpecialtyKey": "Scarab",
+    "commonEnemyDropFamilyKey": "samachurl_materials",
+    "talentBookFamilyKey": "Admonition",
+    "normalBossMaterialKey": "ThunderclapFruitcore",
+    "weeklyBossMaterialKey": "MudraOfTheMaleficGeneral",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Sumeru",
+    "notes": [],
+    "aliases": [
+      "Cyno"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Dahlia": {
+    "characterKey": "Dahlia",
+    "displayName": "Dahlia",
+    "element": "Hydro",
+    "elementGemFamilyKey": "Hydro",
+    "localSpecialtyKey": "CallaLily",
+    "commonEnemyDropFamilyKey": "hilichurl_shooter_materials",
+    "talentBookFamilyKey": "Ballad",
+    "normalBossMaterialKey": "SecretSourceAirflowAccumulator",
+    "weeklyBossMaterialKey": "ErodedScaleFeather",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Mondstadt",
+    "notes": [],
+    "aliases": [
+      "Dahlia"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Dehya": {
+    "characterKey": "Dehya",
+    "displayName": "Dehya",
+    "element": "Pyro",
+    "elementGemFamilyKey": "Pyro",
+    "localSpecialtyKey": "SandGreasePupa",
+    "commonEnemyDropFamilyKey": "eremite_materials",
+    "talentBookFamilyKey": "Praxis",
+    "normalBossMaterialKey": "LightGuidingTetrahedron",
+    "weeklyBossMaterialKey": "PuppetStrings",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Sumeru",
+    "notes": [],
+    "aliases": [
+      "Dehya"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Diluc": {
+    "characterKey": "Diluc",
+    "displayName": "Diluc",
+    "element": "Pyro",
+    "elementGemFamilyKey": "Pyro",
+    "localSpecialtyKey": "SmallLampGrass",
+    "commonEnemyDropFamilyKey": "fatui_skirmisher_materials",
+    "talentBookFamilyKey": "Resistance",
+    "normalBossMaterialKey": "EverflameSeed",
+    "weeklyBossMaterialKey": "DvalinsPlume",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Mondstadt",
+    "notes": [],
+    "aliases": [
+      "Diluc"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Diona": {
+    "characterKey": "Diona",
+    "displayName": "Diona",
+    "element": "Cryo",
+    "elementGemFamilyKey": "Cryo",
+    "localSpecialtyKey": "CallaLily",
+    "commonEnemyDropFamilyKey": "hilichurl_shooter_materials",
+    "talentBookFamilyKey": "Freedom",
+    "normalBossMaterialKey": "HoarfrostCore",
+    "weeklyBossMaterialKey": "ShardOfAFoulLegacy",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Mondstadt",
+    "notes": [],
+    "aliases": [
+      "Diona"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Dori": {
+    "characterKey": "Dori",
+    "displayName": "Dori",
+    "element": "Electro",
+    "elementGemFamilyKey": "Electro",
+    "localSpecialtyKey": "KalpalataLotus",
+    "commonEnemyDropFamilyKey": "eremite_materials",
+    "talentBookFamilyKey": "Ingenuity",
+    "normalBossMaterialKey": "ThunderclapFruitcore",
+    "weeklyBossMaterialKey": "BloodjadeBranch",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Sumeru",
+    "notes": [],
+    "aliases": [
+      "Dori"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Durin": {
+    "characterKey": "Durin",
+    "displayName": "Durin",
+    "element": "Pyro",
+    "elementGemFamilyKey": "Pyro",
+    "localSpecialtyKey": "FrostlampFlower",
+    "commonEnemyDropFamilyKey": "fatui_oprichniki_materials",
+    "talentBookFamilyKey": "Ballad",
+    "normalBossMaterialKey": "CyclicMilitaryKuuvahkiCore",
+    "weeklyBossMaterialKey": "ErodedSunfire",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Mondstadt",
+    "notes": [],
+    "aliases": [
+      "Durin"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Emilie": {
+    "characterKey": "Emilie",
+    "displayName": "Emilie",
+    "element": "Dendro",
+    "elementGemFamilyKey": "Dendro",
+    "localSpecialtyKey": "LakelightLily",
+    "commonEnemyDropFamilyKey": "clockwork_meka_materials",
+    "talentBookFamilyKey": "Order",
+    "normalBossMaterialKey": "FragmentOfAGoldenMelody",
+    "weeklyBossMaterialKey": "SilkenFeather",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Fontaine",
+    "notes": [],
+    "aliases": [
+      "Emilie"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Escoffier": {
+    "characterKey": "Escoffier",
+    "displayName": "Escoffier",
+    "element": "Cryo",
+    "elementGemFamilyKey": "Cryo",
+    "localSpecialtyKey": "BerylConch",
+    "commonEnemyDropFamilyKey": "clockwork_meka_materials",
+    "talentBookFamilyKey": "Justice",
+    "normalBossMaterialKey": "SecretSourceAirflowAccumulator",
+    "weeklyBossMaterialKey": "ErodedHorn",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Fontaine",
+    "notes": [],
+    "aliases": [
+      "Escoffier"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Eula": {
+    "characterKey": "Eula",
+    "displayName": "Eula",
+    "element": "Cryo",
+    "elementGemFamilyKey": "Cryo",
+    "localSpecialtyKey": "DandelionSeed",
+    "commonEnemyDropFamilyKey": "hilichurl_materials",
+    "talentBookFamilyKey": "Resistance",
+    "normalBossMaterialKey": "CrystallineBloom",
+    "weeklyBossMaterialKey": "DragonLordsCrown",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Mondstadt",
+    "notes": [],
+    "aliases": [
+      "Eula"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Faruzan": {
+    "characterKey": "Faruzan",
+    "displayName": "Faruzan",
+    "element": "Anemo",
+    "elementGemFamilyKey": "Anemo",
+    "localSpecialtyKey": "HennaBerry",
+    "commonEnemyDropFamilyKey": "eremite_materials",
+    "talentBookFamilyKey": "Admonition",
+    "normalBossMaterialKey": "LightGuidingTetrahedron",
+    "weeklyBossMaterialKey": "PuppetStrings",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Sumeru",
+    "notes": [],
+    "aliases": [
+      "Faruzan"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Fischl": {
+    "characterKey": "Fischl",
+    "displayName": "Fischl",
+    "element": "Electro",
+    "elementGemFamilyKey": "Electro",
+    "localSpecialtyKey": "SmallLampGrass",
+    "commonEnemyDropFamilyKey": "hilichurl_shooter_materials",
+    "talentBookFamilyKey": "Ballad",
+    "normalBossMaterialKey": "LightningPrism",
+    "weeklyBossMaterialKey": "SpiritLocketOfBoreas",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Mondstadt",
+    "notes": [],
+    "aliases": [
+      "Fischl"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Flins": {
+    "characterKey": "Flins",
+    "displayName": "Flins",
+    "element": "Electro",
+    "elementGemFamilyKey": "Electro",
+    "localSpecialtyKey": "FrostlampFlower",
+    "commonEnemyDropFamilyKey": "landcruiser_materials",
+    "talentBookFamilyKey": "Vagrancy",
+    "normalBossMaterialKey": "PrecisionKuuvahkiStampingDie",
+    "weeklyBossMaterialKey": "AscendedSampleQueen",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Nod-Krai",
+    "notes": [],
+    "aliases": [
+      "Flins"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Freminet": {
+    "characterKey": "Freminet",
+    "displayName": "Freminet",
+    "element": "Cryo",
+    "elementGemFamilyKey": "Cryo",
+    "localSpecialtyKey": "RomaritimeFlower",
+    "commonEnemyDropFamilyKey": "fontemer_aberrant_materials",
+    "talentBookFamilyKey": "Justice",
+    "normalBossMaterialKey": "ArtificedSpareClockworkComponentCoppelius",
+    "weeklyBossMaterialKey": "WorldspanFern",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Fontaine",
+    "notes": [],
+    "aliases": [
+      "Freminet"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Furina": {
+    "characterKey": "Furina",
+    "displayName": "Furina",
+    "weaponType": "Sword",
+    "element": "Hydro",
+    "elementGemFamilyKey": "Hydro",
+    "localSpecialtyKey": "LakelightLily",
+    "commonEnemyDropFamilyKey": "whopperflower_materials",
+    "talentBookFamilyKey": "Justice",
+    "normalBossMaterialKey": "WaterThatFailedToTranscend",
+    "weeklyBossMaterialKey": "LightlessMass",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Fontaine",
+    "notes": [],
+    "aliases": [
+      "Furina"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Gaming": {
+    "characterKey": "Gaming",
+    "displayName": "Gaming",
+    "element": "Pyro",
+    "elementGemFamilyKey": "Pyro",
+    "localSpecialtyKey": "Starconch",
+    "commonEnemyDropFamilyKey": "slime_materials",
+    "talentBookFamilyKey": "Prosperity",
+    "normalBossMaterialKey": "EmperorsResolution",
+    "weeklyBossMaterialKey": "LightlessMass",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Liyue",
+    "notes": [],
+    "aliases": [
+      "Gaming"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Ganyu": {
+    "characterKey": "Ganyu",
+    "displayName": "Ganyu",
+    "element": "Cryo",
+    "elementGemFamilyKey": "Cryo",
+    "localSpecialtyKey": "Qingxin",
+    "commonEnemyDropFamilyKey": "whopperflower_materials",
+    "talentBookFamilyKey": "Diligence",
+    "normalBossMaterialKey": "HoarfrostCore",
+    "weeklyBossMaterialKey": "ShadowOfTheWarrior",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Liyue",
+    "notes": [],
+    "aliases": [
+      "Ganyu"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Gorou": {
+    "characterKey": "Gorou",
+    "displayName": "Gorou",
+    "element": "Geo",
+    "elementGemFamilyKey": "Geo",
+    "localSpecialtyKey": "SangoPearl",
+    "commonEnemyDropFamilyKey": "specter_materials",
+    "talentBookFamilyKey": "Light",
+    "normalBossMaterialKey": "PerpetualHeart",
+    "weeklyBossMaterialKey": "MoltenMoment",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Inazuma",
+    "notes": [],
+    "aliases": [
+      "Gorou"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "HuTao": {
+    "characterKey": "HuTao",
+    "displayName": "HuTao",
+    "element": "Pyro",
+    "elementGemFamilyKey": "Pyro",
+    "localSpecialtyKey": "SilkFlower",
+    "commonEnemyDropFamilyKey": "whopperflower_materials",
+    "talentBookFamilyKey": "Diligence",
+    "normalBossMaterialKey": "JuvenileJade",
+    "weeklyBossMaterialKey": "ShardOfAFoulLegacy",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Liyue",
+    "notes": [],
+    "aliases": [
+      "HuTao"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Iansan": {
+    "characterKey": "Iansan",
+    "displayName": "Iansan",
+    "element": "Electro",
+    "elementGemFamilyKey": "Electro",
+    "localSpecialtyKey": "Dracolite",
+    "commonEnemyDropFamilyKey": "sauroform_tribal_warrior_materials",
+    "talentBookFamilyKey": "Contention",
+    "normalBossMaterialKey": "EnsnaringGaze",
+    "weeklyBossMaterialKey": "DenialAndJudgment",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Natlan",
+    "notes": [],
+    "aliases": [
+      "Iansan"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Ifa": {
+    "characterKey": "Ifa",
+    "displayName": "Ifa",
+    "element": "Anemo",
+    "elementGemFamilyKey": "Anemo",
+    "localSpecialtyKey": "SaurianClawSucculent",
+    "commonEnemyDropFamilyKey": "natlan_saurian_materials",
+    "talentBookFamilyKey": "Conflict",
+    "normalBossMaterialKey": "SparklessStatueCore",
+    "weeklyBossMaterialKey": "AscendedSampleRook",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Natlan",
+    "notes": [],
+    "aliases": [
+      "Ifa"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Illuga": {
+    "characterKey": "Illuga",
+    "displayName": "Illuga",
+    "element": "Geo",
+    "elementGemFamilyKey": "Geo",
+    "localSpecialtyKey": "PineAmber",
+    "commonEnemyDropFamilyKey": "landcruiser_materials",
+    "talentBookFamilyKey": "Elysium",
+    "normalBossMaterialKey": "CyclicMilitaryKuuvahkiCore",
+    "weeklyBossMaterialKey": "ErodedHorn",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Nod-Krai",
+    "notes": [],
+    "aliases": [
+      "Illuga"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Ineffa": {
+    "characterKey": "Ineffa",
+    "displayName": "Ineffa",
+    "element": "Electro",
+    "elementGemFamilyKey": "Electro",
+    "localSpecialtyKey": "GlowingHornshroom",
+    "commonEnemyDropFamilyKey": "sauroform_tribal_warrior_materials",
+    "talentBookFamilyKey": "Conflict",
+    "normalBossMaterialKey": "SecretSourceAirflowAccumulator",
+    "weeklyBossMaterialKey": "ErodedSunfire",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Natlan",
+    "notes": [],
+    "aliases": [
+      "Ineffa"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Jahoda": {
+    "characterKey": "Jahoda",
+    "displayName": "Jahoda",
+    "element": "Anemo",
+    "elementGemFamilyKey": "Anemo",
+    "localSpecialtyKey": "PortableBearing",
+    "commonEnemyDropFamilyKey": "landcruiser_materials",
+    "talentBookFamilyKey": "Vagrancy",
+    "normalBossMaterialKey": "LightbearingScaleFeather",
+    "weeklyBossMaterialKey": "AscendedSampleKnight",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Nod-Krai",
+    "notes": [],
+    "aliases": [
+      "Jahoda"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Jean": {
+    "characterKey": "Jean",
+    "displayName": "Jean",
+    "element": "Anemo",
+    "elementGemFamilyKey": "Anemo",
+    "localSpecialtyKey": "DandelionSeed",
+    "commonEnemyDropFamilyKey": "hilichurl_materials",
+    "talentBookFamilyKey": "Resistance",
+    "normalBossMaterialKey": "HurricaneSeed",
+    "weeklyBossMaterialKey": "DvalinsPlume",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Mondstadt",
+    "notes": [],
+    "aliases": [
+      "Jean"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Kachina": {
+    "characterKey": "Kachina",
+    "displayName": "Kachina",
+    "element": "Geo",
+    "elementGemFamilyKey": "Geo",
+    "localSpecialtyKey": "QuenepaBerry",
+    "commonEnemyDropFamilyKey": "sauroform_tribal_warrior_materials",
+    "talentBookFamilyKey": "Conflict",
+    "normalBossMaterialKey": "OverripeFlamegranate",
+    "weeklyBossMaterialKey": "FadingCandle",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Natlan",
+    "notes": [],
+    "aliases": [
+      "Kachina"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "KaedeharaKazuha": {
+    "characterKey": "KaedeharaKazuha",
+    "displayName": "KaedeharaKazuha",
+    "element": "Anemo",
+    "elementGemFamilyKey": "Anemo",
+    "localSpecialtyKey": "SeaGanoderma",
+    "commonEnemyDropFamilyKey": "treasure_hoarder_materials",
+    "talentBookFamilyKey": "Diligence",
+    "normalBossMaterialKey": "MarionetteCore",
+    "weeklyBossMaterialKey": "GildedScale",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Liyue",
+    "notes": [],
+    "aliases": [
+      "KaedeharaKazuha"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Kaeya": {
+    "characterKey": "Kaeya",
+    "displayName": "Kaeya",
+    "element": "Cryo",
+    "elementGemFamilyKey": "Cryo",
+    "localSpecialtyKey": "CallaLily",
+    "commonEnemyDropFamilyKey": "treasure_hoarder_materials",
+    "talentBookFamilyKey": "Ballad",
+    "normalBossMaterialKey": "HoarfrostCore",
+    "weeklyBossMaterialKey": "SpiritLocketOfBoreas",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Mondstadt",
+    "notes": [],
+    "aliases": [
+      "Kaeya"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "KamisatoAyaka": {
+    "characterKey": "KamisatoAyaka",
+    "displayName": "KamisatoAyaka",
+    "element": "Cryo",
+    "elementGemFamilyKey": "Cryo",
+    "localSpecialtyKey": "SakuraBloom",
+    "commonEnemyDropFamilyKey": "nobushi_materials",
+    "talentBookFamilyKey": "Elegance",
+    "normalBossMaterialKey": "PerpetualHeart",
+    "weeklyBossMaterialKey": "BloodjadeBranch",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Inazuma",
+    "notes": [],
+    "aliases": [
+      "KamisatoAyaka"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "KamisatoAyato": {
+    "characterKey": "KamisatoAyato",
+    "displayName": "KamisatoAyato",
+    "element": "Hydro",
+    "elementGemFamilyKey": "Hydro",
+    "localSpecialtyKey": "SakuraBloom",
+    "commonEnemyDropFamilyKey": "nobushi_materials",
+    "talentBookFamilyKey": "Elegance",
+    "normalBossMaterialKey": "DewOfRepudiation",
+    "weeklyBossMaterialKey": "MudraOfTheMaleficGeneral",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Inazuma",
+    "notes": [],
+    "aliases": [
+      "KamisatoAyato"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Kaveh": {
+    "characterKey": "Kaveh",
+    "displayName": "Kaveh",
+    "element": "Dendro",
+    "elementGemFamilyKey": "Dendro",
+    "localSpecialtyKey": "MourningFlower",
+    "commonEnemyDropFamilyKey": "fungus_materials",
+    "talentBookFamilyKey": "Ingenuity",
+    "normalBossMaterialKey": "QuelledCreeper",
+    "weeklyBossMaterialKey": "PrimordialGreenbloom",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Sumeru",
+    "notes": [],
+    "aliases": [
+      "Kaveh"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Keqing": {
+    "characterKey": "Keqing",
+    "displayName": "Keqing",
+    "element": "Electro",
+    "elementGemFamilyKey": "Electro",
+    "localSpecialtyKey": "CorLapis",
+    "commonEnemyDropFamilyKey": "whopperflower_materials",
+    "talentBookFamilyKey": "Prosperity",
+    "normalBossMaterialKey": "LightningPrism",
+    "weeklyBossMaterialKey": "RingOfBoreas",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Liyue",
+    "notes": [],
+    "aliases": [
+      "Keqing"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Kinich": {
+    "characterKey": "Kinich",
+    "displayName": "Kinich",
+    "element": "Dendro",
+    "elementGemFamilyKey": "Dendro",
+    "localSpecialtyKey": "SaurianClawSucculent",
+    "commonEnemyDropFamilyKey": "natlan_saurian_materials",
+    "talentBookFamilyKey": "Kindling",
+    "normalBossMaterialKey": "OverripeFlamegranate",
+    "weeklyBossMaterialKey": "DenialAndJudgment",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Natlan",
+    "notes": [],
+    "aliases": [
+      "Kinich"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Kirara": {
+    "characterKey": "Kirara",
+    "displayName": "Kirara",
+    "element": "Dendro",
+    "elementGemFamilyKey": "Dendro",
+    "localSpecialtyKey": "AmakumoFruit",
+    "commonEnemyDropFamilyKey": "specter_materials",
+    "talentBookFamilyKey": "Transience",
+    "normalBossMaterialKey": "EvergloomRing",
+    "weeklyBossMaterialKey": "Everamber",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Inazuma",
+    "notes": [],
+    "aliases": [
+      "Kirara"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Klee": {
+    "characterKey": "Klee",
+    "displayName": "Klee",
+    "element": "Pyro",
+    "elementGemFamilyKey": "Pyro",
+    "localSpecialtyKey": "PhilanemoMushroom",
+    "commonEnemyDropFamilyKey": "samachurl_materials",
+    "talentBookFamilyKey": "Freedom",
+    "normalBossMaterialKey": "EverflameSeed",
+    "weeklyBossMaterialKey": "RingOfBoreas",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Mondstadt",
+    "notes": [],
+    "aliases": [
+      "Klee"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "KujouSara": {
+    "characterKey": "KujouSara",
+    "displayName": "KujouSara",
+    "element": "Electro",
+    "elementGemFamilyKey": "Electro",
+    "localSpecialtyKey": "Dendrobium",
+    "commonEnemyDropFamilyKey": "hilichurl_materials",
+    "talentBookFamilyKey": "Elegance",
+    "normalBossMaterialKey": "StormBeads",
+    "weeklyBossMaterialKey": "AshenHeart",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Inazuma",
+    "notes": [],
+    "aliases": [
+      "KujouSara"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "KukiShinobu": {
+    "characterKey": "KukiShinobu",
+    "displayName": "KukiShinobu",
+    "element": "Electro",
+    "elementGemFamilyKey": "Electro",
+    "localSpecialtyKey": "NakuWeed",
+    "commonEnemyDropFamilyKey": "specter_materials",
+    "talentBookFamilyKey": "Elegance",
+    "normalBossMaterialKey": "RunicFang",
+    "weeklyBossMaterialKey": "TearsOfTheCalamitousGod",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Inazuma",
+    "notes": [],
+    "aliases": [
+      "KukiShinobu"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "LanYan": {
+    "characterKey": "LanYan",
+    "displayName": "LanYan",
+    "element": "Anemo",
+    "elementGemFamilyKey": "Anemo",
+    "localSpecialtyKey": "ClearwaterJade",
+    "commonEnemyDropFamilyKey": "whopperflower_materials",
+    "talentBookFamilyKey": "Diligence",
+    "normalBossMaterialKey": "GoldInscribedSecretSourceCore",
+    "weeklyBossMaterialKey": "ErodedSunfire",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Liyue",
+    "notes": [],
+    "aliases": [
+      "LanYan"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Lauma": {
+    "characterKey": "Lauma",
+    "displayName": "Lauma",
+    "element": "Dendro",
+    "elementGemFamilyKey": "Dendro",
+    "localSpecialtyKey": "MoonfallSilver",
+    "commonEnemyDropFamilyKey": "fatui_oprichniki_materials",
+    "talentBookFamilyKey": "Moonlight",
+    "normalBossMaterialKey": "LightbearingScaleFeather",
+    "weeklyBossMaterialKey": "ErodedScaleFeather",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Nod-Krai",
+    "notes": [],
+    "aliases": [
+      "Lauma"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Layla": {
+    "characterKey": "Layla",
+    "displayName": "Layla",
+    "element": "Cryo",
+    "elementGemFamilyKey": "Cryo",
+    "localSpecialtyKey": "NilotpalaLotus",
+    "commonEnemyDropFamilyKey": "samachurl_materials",
+    "talentBookFamilyKey": "Ingenuity",
+    "normalBossMaterialKey": "PerpetualCaliber",
+    "weeklyBossMaterialKey": "MirrorOfMushin",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Sumeru",
+    "notes": [],
+    "aliases": [
+      "Layla"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Linnea": {
+    "characterKey": "Linnea",
+    "displayName": "Linnea",
+    "element": "Geo",
+    "elementGemFamilyKey": "Geo",
+    "localSpecialtyKey": "EtherwingMoth",
+    "commonEnemyDropFamilyKey": "fatui_oprichniki_materials",
+    "talentBookFamilyKey": "Vagrancy",
+    "normalBossMaterialKey": "PlumeOfTheFallenWatcher",
+    "weeklyBossMaterialKey": "ElixirOfTheHeretic",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Nod-Krai",
+    "notes": [],
+    "aliases": [
+      "Linnea"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Lisa": {
+    "characterKey": "Lisa",
+    "displayName": "Lisa",
+    "element": "Electro",
+    "elementGemFamilyKey": "Electro",
+    "localSpecialtyKey": "Valberry",
+    "commonEnemyDropFamilyKey": "slime_materials",
+    "talentBookFamilyKey": "Ballad",
+    "normalBossMaterialKey": "LightningPrism",
+    "weeklyBossMaterialKey": "DvalinsClaw",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Mondstadt",
+    "notes": [],
+    "aliases": [
+      "Lisa"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Lohen": {
+    "characterKey": "Lohen",
+    "displayName": "Lohen",
+    "element": "Cryo",
+    "elementGemFamilyKey": "Cryo",
+    "localSpecialtyKey": "EtherwingMoth",
+    "commonEnemyDropFamilyKey": "hilichurl_shooter_materials",
+    "talentBookFamilyKey": "Resistance",
+    "normalBossMaterialKey": "PrismaticSeveredTail",
+    "weeklyBossMaterialKey": "AscendedSampleKnight",
+    "releaseState": "beta",
+    "status": "beta",
+    "plannerEligible": false,
+    "region": "Mondstadt",
+    "notes": [],
+    "aliases": [
+      "Lohen"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Lynette": {
+    "characterKey": "Lynette",
+    "displayName": "Lynette",
+    "element": "Anemo",
+    "elementGemFamilyKey": "Anemo",
+    "localSpecialtyKey": "LumidouceBell",
+    "commonEnemyDropFamilyKey": "clockwork_meka_materials",
+    "talentBookFamilyKey": "Order",
+    "normalBossMaterialKey": "ArtificedSpareClockworkComponentCoppelia",
+    "weeklyBossMaterialKey": "Everamber",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Fontaine",
+    "notes": [],
+    "aliases": [
+      "Lynette"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Lyney": {
+    "characterKey": "Lyney",
+    "displayName": "Lyney",
+    "element": "Pyro",
+    "elementGemFamilyKey": "Pyro",
+    "localSpecialtyKey": "RainbowRose",
+    "commonEnemyDropFamilyKey": "fatui_skirmisher_materials",
+    "talentBookFamilyKey": "Equity",
+    "normalBossMaterialKey": "EmperorsResolution",
+    "weeklyBossMaterialKey": "PrimordialGreenbloom",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Fontaine",
+    "notes": [],
+    "aliases": [
+      "Lyney"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Manekin": {
+    "characterKey": "Manekin",
+    "displayName": "Manekin",
+    "elementGemFamilyKey": "",
+    "localSpecialtyKey": "",
+    "commonEnemyDropFamilyKey": "",
+    "talentBookFamilyKey": "",
+    "normalBossMaterialKey": "",
+    "weeklyBossMaterialKey": "",
+    "releaseState": "ignored",
+    "status": "ignored",
+    "plannerEligible": false,
+    "region": null,
+    "notes": [],
+    "aliases": [
+      "Manekin"
+    ],
+    "sourceRefs": []
+  },
+  "Manekina": {
+    "characterKey": "Manekina",
+    "displayName": "Manekina",
+    "elementGemFamilyKey": "",
+    "localSpecialtyKey": "",
+    "commonEnemyDropFamilyKey": "",
+    "talentBookFamilyKey": "",
+    "normalBossMaterialKey": "",
+    "weeklyBossMaterialKey": "",
+    "releaseState": "ignored",
+    "status": "ignored",
+    "plannerEligible": false,
+    "region": null,
+    "notes": [],
+    "aliases": [
+      "Manekina"
+    ],
+    "sourceRefs": []
+  },
+  "Mavuika": {
+    "characterKey": "Mavuika",
+    "displayName": "Mavuika",
+    "element": "Pyro",
+    "elementGemFamilyKey": "Pyro",
+    "localSpecialtyKey": "WitheringPurpurbloom",
+    "commonEnemyDropFamilyKey": "sauroform_tribal_warrior_materials",
+    "talentBookFamilyKey": "Contention",
+    "normalBossMaterialKey": "GoldInscribedSecretSourceCore",
+    "weeklyBossMaterialKey": "ErodedHorn",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Natlan",
+    "notes": [],
+    "aliases": [
+      "Mavuika"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Mika": {
+    "characterKey": "Mika",
+    "displayName": "Mika",
+    "element": "Cryo",
+    "elementGemFamilyKey": "Cryo",
+    "localSpecialtyKey": "Wolfhook",
+    "commonEnemyDropFamilyKey": "fatui_skirmisher_materials",
+    "talentBookFamilyKey": "Ballad",
+    "normalBossMaterialKey": "PseudoStamens",
+    "weeklyBossMaterialKey": "MirrorOfMushin",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Mondstadt",
+    "notes": [],
+    "aliases": [
+      "Mika"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Mona": {
+    "characterKey": "Mona",
+    "displayName": "Mona",
+    "element": "Hydro",
+    "elementGemFamilyKey": "Hydro",
+    "localSpecialtyKey": "PhilanemoMushroom",
+    "commonEnemyDropFamilyKey": "whopperflower_materials",
+    "talentBookFamilyKey": "Resistance",
+    "normalBossMaterialKey": "CleansingHeart",
+    "weeklyBossMaterialKey": "RingOfBoreas",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Mondstadt",
+    "notes": [],
+    "aliases": [
+      "Mona"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Mualani": {
+    "characterKey": "Mualani",
+    "displayName": "Mualani",
+    "element": "Hydro",
+    "elementGemFamilyKey": "Hydro",
+    "localSpecialtyKey": "SprayfeatherGill",
+    "commonEnemyDropFamilyKey": "sauroform_tribal_warrior_materials",
+    "talentBookFamilyKey": "Contention",
+    "normalBossMaterialKey": "MarkOfTheBindingBlessing",
+    "weeklyBossMaterialKey": "LightlessMass",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Natlan",
+    "notes": [],
+    "aliases": [
+      "Mualani"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Nahida": {
+    "characterKey": "Nahida",
+    "displayName": "Nahida",
+    "element": "Dendro",
+    "elementGemFamilyKey": "Dendro",
+    "localSpecialtyKey": "KalpalataLotus",
+    "commonEnemyDropFamilyKey": "fungus_materials",
+    "talentBookFamilyKey": "Ingenuity",
+    "normalBossMaterialKey": "QuelledCreeper",
+    "weeklyBossMaterialKey": "PuppetStrings",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Sumeru",
+    "notes": [],
+    "aliases": [
+      "Nahida"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Navia": {
+    "characterKey": "Navia",
+    "displayName": "Navia",
+    "element": "Geo",
+    "elementGemFamilyKey": "Geo",
+    "localSpecialtyKey": "SpringOfTheFirstDewdrop",
+    "commonEnemyDropFamilyKey": "fontemer_aberrant_materials",
+    "talentBookFamilyKey": "Equity",
+    "normalBossMaterialKey": "ArtificedSpareClockworkComponentCoppelius",
+    "weeklyBossMaterialKey": "LightlessSilkString",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Fontaine",
+    "notes": [],
+    "aliases": [
+      "Navia"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Nefer": {
+    "characterKey": "Nefer",
+    "displayName": "Nefer",
+    "element": "Dendro",
+    "elementGemFamilyKey": "Dendro",
+    "localSpecialtyKey": "MoonfallSilver",
+    "commonEnemyDropFamilyKey": "fatui_oprichniki_materials",
+    "talentBookFamilyKey": "Elysium",
+    "normalBossMaterialKey": "RadiantAntler",
+    "weeklyBossMaterialKey": "AscendedSampleRook",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Nod-Krai",
+    "notes": [],
+    "aliases": [
+      "Nefer"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Neuvillette": {
+    "characterKey": "Neuvillette",
+    "displayName": "Neuvillette",
+    "element": "Hydro",
+    "elementGemFamilyKey": "Hydro",
+    "localSpecialtyKey": "Lumitoile",
+    "commonEnemyDropFamilyKey": "fontemer_aberrant_materials",
+    "talentBookFamilyKey": "Equity",
+    "normalBossMaterialKey": "FontemerUnihorn",
+    "weeklyBossMaterialKey": "Everamber",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Fontaine",
+    "notes": [],
+    "aliases": [
+      "Neuvillette"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Nicole": {
+    "characterKey": "Nicole",
+    "displayName": "Nicole",
+    "element": "Pyro",
+    "elementGemFamilyKey": "Pyro",
+    "localSpecialtyKey": "PineAmber",
+    "commonEnemyDropFamilyKey": "fatui_oprichniki_materials",
+    "talentBookFamilyKey": "Elysium",
+    "normalBossMaterialKey": "RemnantOfTheDreadwing",
+    "weeklyBossMaterialKey": "",
+    "releaseState": "beta",
+    "status": "beta",
+    "plannerEligible": false,
+    "region": "Nod-Krai",
+    "notes": [],
+    "aliases": [
+      "Nicole"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Nilou": {
+    "characterKey": "Nilou",
+    "displayName": "Nilou",
+    "element": "Hydro",
+    "elementGemFamilyKey": "Hydro",
+    "localSpecialtyKey": "Padisarah",
+    "commonEnemyDropFamilyKey": "fungus_materials",
+    "talentBookFamilyKey": "Praxis",
+    "normalBossMaterialKey": "PerpetualCaliber",
+    "weeklyBossMaterialKey": "TearsOfTheCalamitousGod",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Sumeru",
+    "notes": [],
+    "aliases": [
+      "Nilou"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Ningguang": {
+    "characterKey": "Ningguang",
+    "displayName": "Ningguang",
+    "element": "Geo",
+    "elementGemFamilyKey": "Geo",
+    "localSpecialtyKey": "GlazeLily",
+    "commonEnemyDropFamilyKey": "fatui_skirmisher_materials",
+    "talentBookFamilyKey": "Prosperity",
+    "normalBossMaterialKey": "BasaltPillar",
+    "weeklyBossMaterialKey": "SpiritLocketOfBoreas",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Liyue",
+    "notes": [],
+    "aliases": [
+      "Ningguang"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Noelle": {
+    "characterKey": "Noelle",
+    "displayName": "Noelle",
+    "element": "Geo",
+    "elementGemFamilyKey": "Geo",
+    "localSpecialtyKey": "Valberry",
+    "commonEnemyDropFamilyKey": "hilichurl_materials",
+    "talentBookFamilyKey": "Resistance",
+    "normalBossMaterialKey": "BasaltPillar",
+    "weeklyBossMaterialKey": "DvalinsClaw",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Mondstadt",
+    "notes": [],
+    "aliases": [
+      "Noelle"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Ororon": {
+    "characterKey": "Ororon",
+    "displayName": "Ororon",
+    "element": "Electro",
+    "elementGemFamilyKey": "Electro",
+    "localSpecialtyKey": "GlowingHornshroom",
+    "commonEnemyDropFamilyKey": "natlan_saurian_materials",
+    "talentBookFamilyKey": "Kindling",
+    "normalBossMaterialKey": "MarkOfTheBindingBlessing",
+    "weeklyBossMaterialKey": "LightlessSilkString",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Natlan",
+    "notes": [],
+    "aliases": [
+      "Ororon"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Prune": {
+    "characterKey": "Prune",
+    "displayName": "Prune",
+    "element": "Anemo",
+    "elementGemFamilyKey": "Anemo",
+    "localSpecialtyKey": "WinterIcelea",
+    "commonEnemyDropFamilyKey": "treasure_hoarder_materials",
+    "talentBookFamilyKey": "Resistance",
+    "normalBossMaterialKey": "RadiantAntler",
+    "weeklyBossMaterialKey": "MaskOfTheVirtuousDoctor",
+    "releaseState": "beta",
+    "status": "beta",
+    "plannerEligible": false,
+    "region": "Nod-Krai",
+    "notes": [],
+    "aliases": [
+      "Prune"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Qiqi": {
+    "characterKey": "Qiqi",
+    "displayName": "Qiqi",
+    "element": "Cryo",
+    "elementGemFamilyKey": "Cryo",
+    "localSpecialtyKey": "Violetgrass",
+    "commonEnemyDropFamilyKey": "samachurl_materials",
+    "talentBookFamilyKey": "Prosperity",
+    "normalBossMaterialKey": "HoarfrostCore",
+    "weeklyBossMaterialKey": "TailOfBoreas",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Liyue",
+    "notes": [],
+    "aliases": [
+      "Qiqi"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "RaidenShogun": {
+    "characterKey": "RaidenShogun",
+    "displayName": "RaidenShogun",
+    "element": "Electro",
+    "elementGemFamilyKey": "Electro",
+    "localSpecialtyKey": "AmakumoFruit",
+    "commonEnemyDropFamilyKey": "nobushi_materials",
+    "talentBookFamilyKey": "Light",
+    "normalBossMaterialKey": "StormBeads",
+    "weeklyBossMaterialKey": "MoltenMoment",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Inazuma",
+    "notes": [],
+    "aliases": [
+      "RaidenShogun"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Razor": {
+    "characterKey": "Razor",
+    "displayName": "Razor",
+    "element": "Electro",
+    "elementGemFamilyKey": "Electro",
+    "localSpecialtyKey": "Wolfhook",
+    "commonEnemyDropFamilyKey": "hilichurl_materials",
+    "talentBookFamilyKey": "Resistance",
+    "normalBossMaterialKey": "LightningPrism",
+    "weeklyBossMaterialKey": "DvalinsClaw",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Mondstadt",
+    "notes": [],
+    "aliases": [
+      "Razor"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Rosaria": {
+    "characterKey": "Rosaria",
+    "displayName": "Rosaria",
+    "element": "Cryo",
+    "elementGemFamilyKey": "Cryo",
+    "localSpecialtyKey": "Valberry",
+    "commonEnemyDropFamilyKey": "fatui_skirmisher_materials",
+    "talentBookFamilyKey": "Ballad",
+    "normalBossMaterialKey": "HoarfrostCore",
+    "weeklyBossMaterialKey": "ShadowOfTheWarrior",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Mondstadt",
+    "notes": [],
+    "aliases": [
+      "Rosaria"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "SangonomiyaKokomi": {
+    "characterKey": "SangonomiyaKokomi",
+    "displayName": "SangonomiyaKokomi",
+    "element": "Hydro",
+    "elementGemFamilyKey": "Hydro",
+    "localSpecialtyKey": "SangoPearl",
+    "commonEnemyDropFamilyKey": "specter_materials",
+    "talentBookFamilyKey": "Transience",
+    "normalBossMaterialKey": "DewOfRepudiation",
+    "weeklyBossMaterialKey": "HellfireButterfly",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Inazuma",
+    "notes": [],
+    "aliases": [
+      "SangonomiyaKokomi"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Sayu": {
+    "characterKey": "Sayu",
+    "displayName": "Sayu",
+    "element": "Anemo",
+    "elementGemFamilyKey": "Anemo",
+    "localSpecialtyKey": "CrystalMarrow",
+    "commonEnemyDropFamilyKey": "whopperflower_materials",
+    "talentBookFamilyKey": "Light",
+    "normalBossMaterialKey": "MarionetteCore",
+    "weeklyBossMaterialKey": "GildedScale",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Inazuma",
+    "notes": [],
+    "aliases": [
+      "Sayu"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Sethos": {
+    "characterKey": "Sethos",
+    "displayName": "Sethos",
+    "element": "Electro",
+    "elementGemFamilyKey": "Electro",
+    "localSpecialtyKey": "Trishiraite",
+    "commonEnemyDropFamilyKey": "eremite_materials",
+    "talentBookFamilyKey": "Praxis",
+    "normalBossMaterialKey": "CloudseamScale",
+    "weeklyBossMaterialKey": "DakasBell",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Sumeru",
+    "notes": [],
+    "aliases": [
+      "Sethos"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Shenhe": {
+    "characterKey": "Shenhe",
+    "displayName": "Shenhe",
+    "element": "Cryo",
+    "elementGemFamilyKey": "Cryo",
+    "localSpecialtyKey": "Qingxin",
+    "commonEnemyDropFamilyKey": "whopperflower_materials",
+    "talentBookFamilyKey": "Prosperity",
+    "normalBossMaterialKey": "DragonheirsFalseFin",
+    "weeklyBossMaterialKey": "HellfireButterfly",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Liyue",
+    "notes": [],
+    "aliases": [
+      "Shenhe"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "ShikanoinHeizou": {
+    "characterKey": "ShikanoinHeizou",
+    "displayName": "ShikanoinHeizou",
+    "element": "Anemo",
+    "elementGemFamilyKey": "Anemo",
+    "localSpecialtyKey": "Onikabuto",
+    "commonEnemyDropFamilyKey": "treasure_hoarder_materials",
+    "talentBookFamilyKey": "Transience",
+    "normalBossMaterialKey": "RunicFang",
+    "weeklyBossMaterialKey": "TheMeaningOfAeons",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Inazuma",
+    "notes": [],
+    "aliases": [
+      "ShikanoinHeizou"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Sigewinne": {
+    "characterKey": "Sigewinne",
+    "displayName": "Sigewinne",
+    "element": "Hydro",
+    "elementGemFamilyKey": "Hydro",
+    "localSpecialtyKey": "RomaritimeFlower",
+    "commonEnemyDropFamilyKey": "fontemer_aberrant_materials",
+    "talentBookFamilyKey": "Equity",
+    "normalBossMaterialKey": "WaterThatFailedToTranscend",
+    "weeklyBossMaterialKey": "LightlessEyeOfTheMaelstrom",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Fontaine",
+    "notes": [],
+    "aliases": [
+      "Sigewinne"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Skirk": {
+    "characterKey": "Skirk",
+    "displayName": "Skirk",
+    "element": "Cryo",
+    "elementGemFamilyKey": "Cryo",
+    "localSpecialtyKey": "SkysplitGembloom",
+    "commonEnemyDropFamilyKey": "clockwork_meka_materials",
+    "talentBookFamilyKey": "Contention",
+    "normalBossMaterialKey": "EnsnaringGaze",
+    "weeklyBossMaterialKey": "AscendedSampleKnight",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Natlan",
+    "notes": [],
+    "aliases": [
+      "Skirk"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Sucrose": {
+    "characterKey": "Sucrose",
+    "displayName": "Sucrose",
+    "element": "Anemo",
+    "elementGemFamilyKey": "Anemo",
+    "localSpecialtyKey": "WindwheelAster",
+    "commonEnemyDropFamilyKey": "whopperflower_materials",
+    "talentBookFamilyKey": "Freedom",
+    "normalBossMaterialKey": "HurricaneSeed",
+    "weeklyBossMaterialKey": "SpiritLocketOfBoreas",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Mondstadt",
+    "notes": [],
+    "aliases": [
+      "Sucrose"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Tartaglia": {
+    "characterKey": "Tartaglia",
+    "displayName": "Tartaglia",
+    "element": "Hydro",
+    "elementGemFamilyKey": "Hydro",
+    "localSpecialtyKey": "Starconch",
+    "commonEnemyDropFamilyKey": "fatui_skirmisher_materials",
+    "talentBookFamilyKey": "Freedom",
+    "normalBossMaterialKey": "CleansingHeart",
+    "weeklyBossMaterialKey": "ShardOfAFoulLegacy",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Mondstadt",
+    "notes": [],
+    "aliases": [
+      "Tartaglia"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Thoma": {
+    "characterKey": "Thoma",
+    "displayName": "Thoma",
+    "element": "Pyro",
+    "elementGemFamilyKey": "Pyro",
+    "localSpecialtyKey": "FluorescentFungus",
+    "commonEnemyDropFamilyKey": "treasure_hoarder_materials",
+    "talentBookFamilyKey": "Transience",
+    "normalBossMaterialKey": "SmolderingPearl",
+    "weeklyBossMaterialKey": "HellfireButterfly",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Inazuma",
+    "notes": [],
+    "aliases": [
+      "Thoma"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Tighnari": {
+    "characterKey": "Tighnari",
+    "displayName": "Tighnari",
+    "element": "Dendro",
+    "elementGemFamilyKey": "Dendro",
+    "localSpecialtyKey": "NilotpalaLotus",
+    "commonEnemyDropFamilyKey": "fungus_materials",
+    "talentBookFamilyKey": "Admonition",
+    "normalBossMaterialKey": "MajesticHookedBeak",
+    "weeklyBossMaterialKey": "TheMeaningOfAeons",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Sumeru",
+    "notes": [],
+    "aliases": [
+      "Tighnari"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Varesa": {
+    "characterKey": "Varesa",
+    "displayName": "Varesa",
+    "element": "Electro",
+    "elementGemFamilyKey": "Electro",
+    "localSpecialtyKey": "SkysplitGembloom",
+    "commonEnemyDropFamilyKey": "natlan_saurian_materials",
+    "talentBookFamilyKey": "Conflict",
+    "normalBossMaterialKey": "SparklessStatueCore",
+    "weeklyBossMaterialKey": "ErodedScaleFeather",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Natlan",
+    "notes": [],
+    "aliases": [
+      "Varesa"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Varka": {
+    "characterKey": "Varka",
+    "displayName": "Varka",
+    "element": "Anemo",
+    "elementGemFamilyKey": "Anemo",
+    "localSpecialtyKey": "Wolfhook",
+    "commonEnemyDropFamilyKey": "landcruiser_materials",
+    "talentBookFamilyKey": "Freedom",
+    "normalBossMaterialKey": "PrismaticSeveredTail",
+    "weeklyBossMaterialKey": "AscendedSampleRook",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Mondstadt",
+    "notes": [],
+    "aliases": [
+      "Varka"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Venti": {
+    "characterKey": "Venti",
+    "displayName": "Venti",
+    "element": "Anemo",
+    "elementGemFamilyKey": "Anemo",
+    "localSpecialtyKey": "Cecilia",
+    "commonEnemyDropFamilyKey": "slime_materials",
+    "talentBookFamilyKey": "Ballad",
+    "normalBossMaterialKey": "HurricaneSeed",
+    "weeklyBossMaterialKey": "TailOfBoreas",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Mondstadt",
+    "notes": [],
+    "aliases": [
+      "Venti"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Wanderer": {
+    "characterKey": "Wanderer",
+    "displayName": "Wanderer",
+    "element": "Anemo",
+    "elementGemFamilyKey": "Anemo",
+    "localSpecialtyKey": "RukkhashavaMushrooms",
+    "commonEnemyDropFamilyKey": "nobushi_materials",
+    "talentBookFamilyKey": "Praxis",
+    "normalBossMaterialKey": "PerpetualCaliber",
+    "weeklyBossMaterialKey": "DakasBell",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Sumeru",
+    "notes": [],
+    "aliases": [
+      "Wanderer"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Wriothesley": {
+    "characterKey": "Wriothesley",
+    "displayName": "Wriothesley",
+    "element": "Cryo",
+    "elementGemFamilyKey": "Cryo",
+    "localSpecialtyKey": "SubdetectionUnit",
+    "commonEnemyDropFamilyKey": "clockwork_meka_materials",
+    "talentBookFamilyKey": "Order",
+    "normalBossMaterialKey": "TourbillonDevice",
+    "weeklyBossMaterialKey": "PrimordialGreenbloom",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Fontaine",
+    "notes": [],
+    "aliases": [
+      "Wriothesley"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Xiangling": {
+    "characterKey": "Xiangling",
+    "displayName": "Xiangling",
+    "element": "Pyro",
+    "elementGemFamilyKey": "Pyro",
+    "localSpecialtyKey": "JueyunChili",
+    "commonEnemyDropFamilyKey": "slime_materials",
+    "talentBookFamilyKey": "Diligence",
+    "normalBossMaterialKey": "EverflameSeed",
+    "weeklyBossMaterialKey": "DvalinsClaw",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Liyue",
+    "notes": [],
+    "aliases": [
+      "Xiangling"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Xianyun": {
+    "characterKey": "Xianyun",
+    "displayName": "Xianyun",
+    "element": "Anemo",
+    "elementGemFamilyKey": "Anemo",
+    "localSpecialtyKey": "ClearwaterJade",
+    "commonEnemyDropFamilyKey": "samachurl_materials",
+    "talentBookFamilyKey": "Gold",
+    "normalBossMaterialKey": "CloudseamScale",
+    "weeklyBossMaterialKey": "LightlessEyeOfTheMaelstrom",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Liyue",
+    "notes": [],
+    "aliases": [
+      "Xianyun"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Xiao": {
+    "characterKey": "Xiao",
+    "displayName": "Xiao",
+    "element": "Anemo",
+    "elementGemFamilyKey": "Anemo",
+    "localSpecialtyKey": "Qingxin",
+    "commonEnemyDropFamilyKey": "slime_materials",
+    "talentBookFamilyKey": "Prosperity",
+    "normalBossMaterialKey": "JuvenileJade",
+    "weeklyBossMaterialKey": "ShadowOfTheWarrior",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Liyue",
+    "notes": [],
+    "aliases": [
+      "Xiao"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Xilonen": {
+    "characterKey": "Xilonen",
+    "displayName": "Xilonen",
+    "element": "Geo",
+    "elementGemFamilyKey": "Geo",
+    "localSpecialtyKey": "BrilliantChrysanthemum",
+    "commonEnemyDropFamilyKey": "sauroform_tribal_warrior_materials",
+    "talentBookFamilyKey": "Kindling",
+    "normalBossMaterialKey": "GoldInscribedSecretSourceCore",
+    "weeklyBossMaterialKey": "MirrorOfMushin",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Natlan",
+    "notes": [],
+    "aliases": [
+      "Xilonen"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Xingqiu": {
+    "characterKey": "Xingqiu",
+    "displayName": "Xingqiu",
+    "element": "Hydro",
+    "elementGemFamilyKey": "Hydro",
+    "localSpecialtyKey": "SilkFlower",
+    "commonEnemyDropFamilyKey": "hilichurl_materials",
+    "talentBookFamilyKey": "Gold",
+    "normalBossMaterialKey": "CleansingHeart",
+    "weeklyBossMaterialKey": "TailOfBoreas",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Liyue",
+    "notes": [],
+    "aliases": [
+      "Xingqiu"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Xinyan": {
+    "characterKey": "Xinyan",
+    "displayName": "Xinyan",
+    "element": "Pyro",
+    "elementGemFamilyKey": "Pyro",
+    "localSpecialtyKey": "Violetgrass",
+    "commonEnemyDropFamilyKey": "treasure_hoarder_materials",
+    "talentBookFamilyKey": "Gold",
+    "normalBossMaterialKey": "EverflameSeed",
+    "weeklyBossMaterialKey": "TuskOfMonocerosCaeli",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Liyue",
+    "notes": [],
+    "aliases": [
+      "Xinyan"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "YaeMiko": {
+    "characterKey": "YaeMiko",
+    "displayName": "YaeMiko",
+    "element": "Electro",
+    "elementGemFamilyKey": "Electro",
+    "localSpecialtyKey": "SeaGanoderma",
+    "commonEnemyDropFamilyKey": "nobushi_materials",
+    "talentBookFamilyKey": "Light",
+    "normalBossMaterialKey": "DragonheirsFalseFin",
+    "weeklyBossMaterialKey": "TheMeaningOfAeons",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Inazuma",
+    "notes": [],
+    "aliases": [
+      "YaeMiko"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Yanfei": {
+    "characterKey": "Yanfei",
+    "displayName": "Yanfei",
+    "element": "Pyro",
+    "elementGemFamilyKey": "Pyro",
+    "localSpecialtyKey": "NoctilucousJade",
+    "commonEnemyDropFamilyKey": "treasure_hoarder_materials",
+    "talentBookFamilyKey": "Gold",
+    "normalBossMaterialKey": "JuvenileJade",
+    "weeklyBossMaterialKey": "BloodjadeBranch",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Liyue",
+    "notes": [],
+    "aliases": [
+      "Yanfei"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Yaoyao": {
+    "characterKey": "Yaoyao",
+    "displayName": "Yaoyao",
+    "element": "Dendro",
+    "elementGemFamilyKey": "Dendro",
+    "localSpecialtyKey": "JueyunChili",
+    "commonEnemyDropFamilyKey": "slime_materials",
+    "talentBookFamilyKey": "Diligence",
+    "normalBossMaterialKey": "QuelledCreeper",
+    "weeklyBossMaterialKey": "DakasBell",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Liyue",
+    "notes": [],
+    "aliases": [
+      "Yaoyao"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Yelan": {
+    "characterKey": "Yelan",
+    "displayName": "Yelan",
+    "element": "Hydro",
+    "elementGemFamilyKey": "Hydro",
+    "localSpecialtyKey": "Starconch",
+    "commonEnemyDropFamilyKey": "fatui_skirmisher_materials",
+    "talentBookFamilyKey": "Prosperity",
+    "normalBossMaterialKey": "RunicFang",
+    "weeklyBossMaterialKey": "GildedScale",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Liyue",
+    "notes": [],
+    "aliases": [
+      "Yelan"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Yoimiya": {
+    "characterKey": "Yoimiya",
+    "displayName": "Yoimiya",
+    "element": "Pyro",
+    "elementGemFamilyKey": "Pyro",
+    "localSpecialtyKey": "NakuWeed",
+    "commonEnemyDropFamilyKey": "samachurl_materials",
+    "talentBookFamilyKey": "Transience",
+    "normalBossMaterialKey": "SmolderingPearl",
+    "weeklyBossMaterialKey": "DragonLordsCrown",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Inazuma",
+    "notes": [],
+    "aliases": [
+      "Yoimiya"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "YumemizukiMizuki": {
+    "characterKey": "YumemizukiMizuki",
+    "displayName": "YumemizukiMizuki",
+    "element": "Anemo",
+    "elementGemFamilyKey": "Anemo",
+    "localSpecialtyKey": "SeaGanoderma",
+    "commonEnemyDropFamilyKey": "nobushi_materials",
+    "talentBookFamilyKey": "Transience",
+    "normalBossMaterialKey": "TalismanOfTheEnigmaticLand",
+    "weeklyBossMaterialKey": "FadingCandle",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Inazuma",
+    "notes": [],
+    "aliases": [
+      "YumemizukiMizuki"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "YunJin": {
+    "characterKey": "YunJin",
+    "displayName": "YunJin",
+    "element": "Geo",
+    "elementGemFamilyKey": "Geo",
+    "localSpecialtyKey": "GlazeLily",
+    "commonEnemyDropFamilyKey": "hilichurl_materials",
+    "talentBookFamilyKey": "Diligence",
+    "normalBossMaterialKey": "RiftbornRegalia",
+    "weeklyBossMaterialKey": "AshenHeart",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Liyue",
+    "notes": [],
+    "aliases": [
+      "YunJin"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Zhongli": {
+    "characterKey": "Zhongli",
+    "displayName": "Zhongli",
+    "element": "Geo",
+    "elementGemFamilyKey": "Geo",
+    "localSpecialtyKey": "CorLapis",
+    "commonEnemyDropFamilyKey": "slime_materials",
+    "talentBookFamilyKey": "Gold",
+    "normalBossMaterialKey": "BasaltPillar",
+    "weeklyBossMaterialKey": "TuskOfMonocerosCaeli",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Liyue",
+    "notes": [],
+    "aliases": [
+      "Zhongli"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Zibai": {
+    "characterKey": "Zibai",
+    "displayName": "Zibai",
+    "element": "Geo",
+    "elementGemFamilyKey": "Geo",
+    "localSpecialtyKey": "GlazeLily",
+    "commonEnemyDropFamilyKey": "fatui_oprichniki_materials",
+    "talentBookFamilyKey": "Gold",
+    "normalBossMaterialKey": "RemnantOfTheDreadwing",
+    "weeklyBossMaterialKey": "AscendedSampleQueen",
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
+    "region": "Liyue",
+    "notes": [],
+    "aliases": [
+      "Zibai"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  }
+}

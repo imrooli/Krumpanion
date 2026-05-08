@@ -1,0 +1,804 @@
+{
+  "domainsOfForgery": {
+    "LostMooncourt": {
+      "name": "Lost Mooncourt",
+      "region": "Nod-Krai",
+      "location": "Hiisi Island, Nod-Krai",
+      "activityType": "domain_of_forgery",
+      "resinCost": 20,
+      "condensedResinAllowed": true,
+      "adventureRankRequirements": [
+        15,
+        21,
+        30,
+        40
+      ],
+      "partyLevelRecommendations": [
+        15,
+        36,
+        59,
+        80
+      ],
+      "elements": [
+        "Dendro",
+        "Hydro",
+        "Electro",
+        "Pyro"
+      ],
+      "weaponAscensionFamilies": [
+        "ArtfulDevice",
+        "LongNightFlint",
+        "FarNorthScions"
+      ],
+      "listedRewards": [
+        "Artful Device Fragment",
+        "Afterglow of Long Night Flint",
+        "Oblation of the Far-North Scions"
+      ]
+    },
+    "AncientWatchtower": {
+      "name": "Ancient Watchtower",
+      "region": "Natlan",
+      "location": "Coatepec Mountain, Natlan",
+      "activityType": "domain_of_forgery",
+      "resinCost": 20,
+      "condensedResinAllowed": true,
+      "adventureRankRequirements": [
+        16,
+        21,
+        30,
+        40
+      ],
+      "partyLevelRecommendations": [
+        15,
+        36,
+        59,
+        80
+      ],
+      "elements": [
+        "Hydro",
+        "Electro",
+        "Pyro",
+        "Cryo"
+      ],
+      "weaponAscensionFamilies": [
+        "BlazingSacrificialHeart",
+        "SacredLord",
+        "NightWind"
+      ],
+      "listedRewards": [
+        "Blazing Sacrificial Heart's Terror",
+        "Delirious Desolation of the Sacred Lord",
+        "Night-Wind's Mystic Augury"
+      ]
+    },
+    "CeciliaGarden": {
+      "name": "Cecilia Garden",
+      "region": "Mondstadt",
+      "location": "Wolvendom, Windwail Highland, Mondstadt",
+      "activityType": "domain_of_forgery",
+      "resinCost": 20,
+      "condensedResinAllowed": true,
+      "adventureRankRequirements": [
+        16,
+        21,
+        30,
+        40
+      ],
+      "partyLevelRecommendations": [
+        15,
+        36,
+        59,
+        80
+      ],
+      "elements": [
+        "Electro"
+      ],
+      "weaponAscensionFamilies": [
+        "Decarabian",
+        "BorealWolf",
+        "DandelionGladiator"
+      ],
+      "listedRewards": [
+        "Tile of Decarabian's Tower",
+        "Boreal Wolf's Cracked Tooth",
+        "Shackles of the Dandelion Gladiator"
+      ]
+    },
+    "CourtOfFlowingSand": {
+      "name": "Court of Flowing Sand",
+      "region": "Inazuma",
+      "location": "Mt. Yougou, Narukami Island, Inazuma",
+      "activityType": "domain_of_forgery",
+      "resinCost": 20,
+      "condensedResinAllowed": true,
+      "adventureRankRequirements": [
+        16,
+        21,
+        30,
+        40
+      ],
+      "partyLevelRecommendations": [
+        15,
+        36,
+        59,
+        80
+      ],
+      "elements": [
+        "Geo",
+        "Cryo"
+      ],
+      "weaponAscensionFamilies": [
+        "DistantSea",
+        "Narukami",
+        "Mask"
+      ],
+      "listedRewards": [
+        "Coral Branch of a Distant Sea",
+        "Narukami's Joy",
+        "Mask of the One-Horned"
+      ]
+    },
+    "EchoesOfTheDeepTides": {
+      "name": "Echoes of the Deep Tides",
+      "region": "Fontaine",
+      "location": "Court of Fontaine Region, Fontaine",
+      "activityType": "domain_of_forgery",
+      "resinCost": 20,
+      "condensedResinAllowed": true,
+      "adventureRankRequirements": [
+        16,
+        21,
+        30,
+        40
+      ],
+      "partyLevelRecommendations": [
+        15,
+        36,
+        59,
+        80
+      ],
+      "elements": [
+        "Hydro",
+        "Pyro",
+        "Cryo",
+        "Anemo"
+      ],
+      "weaponAscensionFamilies": [
+        "AncientChord",
+        "PureSacredDewdrop",
+        "PristineSea"
+      ],
+      "listedRewards": [
+        "Fragment of an Ancient Chord",
+        "Sublimation of Pure Sacred Dewdrop",
+        "Silver Goblet of the Pristine Sea"
+      ]
+    },
+    "HiddenPalaceOfLianshanFormula": {
+      "name": "Hidden Palace of Lianshan Formula",
+      "region": "Liyue",
+      "location": "Mingyun Village, Qiongji Estuary, Liyue",
+      "activityType": "domain_of_forgery",
+      "resinCost": 20,
+      "condensedResinAllowed": true,
+      "adventureRankRequirements": [
+        16,
+        21,
+        30,
+        40
+      ],
+      "partyLevelRecommendations": [
+        15,
+        36,
+        59,
+        80
+      ],
+      "elements": [
+        "Cryo"
+      ],
+      "weaponAscensionFamilies": [
+        "Guyun",
+        "MistVeiledElixir",
+        "Aerosiderite"
+      ],
+      "listedRewards": [
+        "Luminous Sands from Guyun",
+        "Mist Veiled Mercury Elixir",
+        "Bit of Aerosiderite"
+      ]
+    },
+    "TowerOfAbjectPride": {
+      "name": "Tower of Abject Pride",
+      "region": "Sumeru",
+      "location": "Apam Woods, Ashavan Realm, Sumeru",
+      "activityType": "domain_of_forgery",
+      "resinCost": 20,
+      "condensedResinAllowed": true,
+      "adventureRankRequirements": [
+        16,
+        21,
+        30,
+        40
+      ],
+      "partyLevelRecommendations": [
+        15,
+        36,
+        59,
+        80
+      ],
+      "elements": [
+        "Dendro",
+        "Electro"
+      ],
+      "weaponAscensionFamilies": [
+        "ForestDew",
+        "OasisGarden",
+        "ScorchingMight"
+      ],
+      "listedRewards": [
+        "Copper Talisman of the Forest Dew",
+        "Oasis Garden's Kindness",
+        "Dream of Scorching Might"
+      ]
+    }
+  },
+  "domainsOfMastery": {
+    "LightlessCapital": {
+      "name": "Lightless Capital",
+      "region": "Nod-Krai",
+      "location": "Lempo Isle, Nod-Krai",
+      "activityType": "domain_of_mastery",
+      "resinCost": 20,
+      "condensedResinAllowed": true,
+      "adventureRankRequirements": [],
+      "partyLevelRecommendations": [
+        38,
+        54,
+        71,
+        88
+      ],
+      "elements": [
+        "Hydro",
+        "Electro"
+      ],
+      "talentFamilies": [
+        "Moonlight",
+        "Elysium",
+        "Vagrancy"
+      ],
+      "listedRewards": [
+        "Teachings of Moonlight",
+        "Guide to Elysium",
+        "Philosophies of Vagrancy"
+      ]
+    },
+    "BlazingRuins": {
+      "name": "Blazing Ruins",
+      "region": "Natlan",
+      "location": "Coatepec Mountain, Natlan",
+      "activityType": "domain_of_mastery",
+      "resinCost": 20,
+      "condensedResinAllowed": true,
+      "adventureRankRequirements": [
+        27,
+        28,
+        36,
+        45
+      ],
+      "partyLevelRecommendations": [
+        38,
+        54,
+        71,
+        88
+      ],
+      "elements": [
+        "Dendro",
+        "Electro",
+        "Anemo",
+        "Hydro"
+      ],
+      "talentFamilies": [
+        "Contention",
+        "Kindling",
+        "Conflict"
+      ],
+      "listedRewards": [
+        "Teachings of Contention",
+        "Guide to Kindling",
+        "Philosophies of Conflict"
+      ]
+    },
+    "ForsakenRift": {
+      "name": "Forsaken Rift",
+      "region": "Mondstadt",
+      "location": "Springvale, Windwail Highland, Mondstadt",
+      "activityType": "domain_of_mastery",
+      "resinCost": 20,
+      "condensedResinAllowed": true,
+      "adventureRankRequirements": [
+        27,
+        28,
+        36,
+        45
+      ],
+      "partyLevelRecommendations": [
+        38,
+        54,
+        71,
+        88
+      ],
+      "elements": [
+        "Pyro"
+      ],
+      "talentFamilies": [
+        "Freedom",
+        "Resistance",
+        "Ballad"
+      ],
+      "listedRewards": [
+        "Teachings of Freedom",
+        "Guide to Resistance",
+        "Philosophies of Ballad"
+      ]
+    },
+    "PaleForgottenGlory": {
+      "name": "Pale Forgotten Glory",
+      "region": "Fontaine",
+      "location": "Salacia Plain, Court of Fontaine Region, Fontaine",
+      "activityType": "domain_of_mastery",
+      "resinCost": 20,
+      "condensedResinAllowed": true,
+      "adventureRankRequirements": [
+        27,
+        28,
+        36,
+        45
+      ],
+      "partyLevelRecommendations": [
+        38,
+        54,
+        71,
+        88
+      ],
+      "elements": [
+        "Geo",
+        "Hydro",
+        "Pyro",
+        "Cryo",
+        "Electro"
+      ],
+      "talentFamilies": [
+        "Equity",
+        "Justice",
+        "Order"
+      ],
+      "listedRewards": [
+        "Teachings of Equity",
+        "Guide to Justice",
+        "Philosophies of Order"
+      ]
+    },
+    "SteepleOfIgnorance": {
+      "name": "Steeple of Ignorance",
+      "region": "Sumeru",
+      "location": "Chatrakam Cave, Lokapala Jungle, Sumeru",
+      "activityType": "domain_of_mastery",
+      "resinCost": 20,
+      "condensedResinAllowed": true,
+      "adventureRankRequirements": [
+        27,
+        28,
+        36,
+        45
+      ],
+      "partyLevelRecommendations": [
+        38,
+        54,
+        71,
+        88
+      ],
+      "elements": [
+        "Dendro",
+        "Electro",
+        "Pyro",
+        "Hydro"
+      ],
+      "talentFamilies": [
+        "Admonition",
+        "Ingenuity",
+        "Praxis"
+      ],
+      "listedRewards": [
+        "Teachings of Admonition",
+        "Guide to Ingenuity",
+        "Philosophies of Praxis"
+      ]
+    },
+    "TaishanMansion": {
+      "name": "Taishan Mansion",
+      "region": "Liyue",
+      "location": "Jueyun Karst, Minlin, Liyue",
+      "activityType": "domain_of_mastery",
+      "resinCost": 20,
+      "condensedResinAllowed": true,
+      "adventureRankRequirements": [
+        27,
+        28,
+        36,
+        45
+      ],
+      "partyLevelRecommendations": [
+        38,
+        54,
+        71,
+        88
+      ],
+      "elements": [
+        "Hydro",
+        "Cryo",
+        "Electro"
+      ],
+      "talentFamilies": [
+        "Prosperity",
+        "Diligence",
+        "Gold"
+      ],
+      "listedRewards": [
+        "Teachings of Prosperity",
+        "Guide to Diligence",
+        "Philosophies of Gold"
+      ]
+    },
+    "VioletCourt": {
+      "name": "Violet Court",
+      "region": "Inazuma",
+      "location": "Kannazuka, Inazuma",
+      "activityType": "domain_of_mastery",
+      "resinCost": 20,
+      "condensedResinAllowed": true,
+      "adventureRankRequirements": [
+        27,
+        28,
+        36,
+        45
+      ],
+      "partyLevelRecommendations": [
+        38,
+        54,
+        71,
+        88
+      ],
+      "elements": [
+        "Electro"
+      ],
+      "talentFamilies": [
+        "Transience",
+        "Elegance",
+        "Light"
+      ],
+      "listedRewards": [
+        "Teachings of Transience",
+        "Guide to Elegance",
+        "Philosophies of Light"
+      ]
+    }
+  },
+  "trounceDomains": {
+    "ConfrontStormterror": {
+      "name": "Confront Stormterror",
+      "region": "Mondstadt",
+      "location": "Stormterror's Lair, Brightcrown Mountains, Mondstadt",
+      "activityType": "trounce_domain",
+      "resinCostFirstThreeWeekly": 30,
+      "resinCostAfterFirstThreeWeekly": 60,
+      "rewardLimit": "once_per_boss_per_week",
+      "adventureRankRequirements": [
+        25,
+        30,
+        35,
+        40,
+        45,
+        50
+      ],
+      "partyLevelRecommendations": [
+        40,
+        50,
+        60,
+        70,
+        80,
+        90
+      ],
+      "weeklyTalentMaterials": [
+        "Dvalin's Plume",
+        "Dvalin's Claw",
+        "Dvalin's Sigh"
+      ]
+    },
+    "BeneathTheDragonQueller": {
+      "name": "Beneath the Dragon-Queller",
+      "region": "Liyue",
+      "location": "Nantianmen, Minlin, Liyue",
+      "activityType": "trounce_domain",
+      "resinCostFirstThreeWeekly": 30,
+      "resinCostAfterFirstThreeWeekly": 60,
+      "rewardLimit": "once_per_boss_per_week",
+      "adventureRankRequirements": [
+        35,
+        40,
+        45,
+        50
+      ],
+      "partyLevelRecommendations": [
+        60,
+        70,
+        80,
+        90
+      ],
+      "weeklyTalentMaterials": [
+        "Dragon Lord's Crown",
+        "Bloodjade Branch",
+        "Gilded Scale"
+      ]
+    },
+    "EndOfTheOneiricEuthymia": {
+      "name": "End of the Oneiric Euthymia",
+      "region": "Inazuma",
+      "location": "Mt. Yougou, Narukami Island, Inazuma",
+      "activityType": "trounce_domain",
+      "resinCostFirstThreeWeekly": 30,
+      "resinCostAfterFirstThreeWeekly": 60,
+      "rewardLimit": "once_per_boss_per_week",
+      "adventureRankRequirements": [
+        35,
+        40,
+        45,
+        50
+      ],
+      "partyLevelRecommendations": [
+        60,
+        70,
+        80,
+        90
+      ],
+      "weeklyTalentMaterials": [
+        "Mudra of the Malefic General",
+        "Tears of the Calamitous God",
+        "The Meaning of Aeons"
+      ]
+    },
+    "EnterTheGoldenHouse": {
+      "name": "Enter the Golden House",
+      "region": "Liyue",
+      "location": "Mt. Tianheng, Sea of Clouds, Liyue",
+      "activityType": "trounce_domain",
+      "resinCostFirstThreeWeekly": 30,
+      "resinCostAfterFirstThreeWeekly": 60,
+      "rewardLimit": "once_per_boss_per_week",
+      "adventureRankRequirements": [
+        35,
+        40,
+        45,
+        50
+      ],
+      "partyLevelRecommendations": [
+        60,
+        70,
+        80,
+        90
+      ],
+      "weeklyTalentMaterials": [
+        "Tusk of Monoceros Caeli",
+        "Shard of a Foul Legacy",
+        "Shadow of the Warrior"
+      ]
+    },
+    "FalseMoonInstitute": {
+      "name": "False Moon Institute",
+      "region": "Nod-Krai",
+      "location": "Special Territory Research Institute, Ashveil Peak, Nod-Krai",
+      "activityType": "trounce_domain",
+      "resinCostFirstThreeWeekly": 30,
+      "resinCostAfterFirstThreeWeekly": 60,
+      "rewardLimit": "once_per_boss_per_week",
+      "adventureRankRequirements": [
+        35,
+        40,
+        45,
+        50
+      ],
+      "partyLevelRecommendations": [
+        60,
+        70,
+        80,
+        90
+      ],
+      "weeklyTalentMaterials": [
+        "Mask of the Virtuous Doctor",
+        "Madman's Restraint",
+        "Elixir of the Heretic"
+      ]
+    },
+    "JoururiWorkshop": {
+      "name": "Joururi Workshop",
+      "region": "Sumeru",
+      "location": "Chinvat Ravine, Avidya Forest, Sumeru",
+      "activityType": "trounce_domain",
+      "resinCostFirstThreeWeekly": 30,
+      "resinCostAfterFirstThreeWeekly": 60,
+      "rewardLimit": "once_per_boss_per_week",
+      "adventureRankRequirements": [
+        35,
+        40,
+        45,
+        50
+      ],
+      "partyLevelRecommendations": [
+        60,
+        70,
+        80,
+        90
+      ],
+      "weeklyTalentMaterials": [
+        "Puppet Strings",
+        "Mirror of Mushin",
+        "Daka's Bell"
+      ]
+    },
+    "NarukamiIslandTenshukaku": {
+      "name": "Narukami Island: Tenshukaku",
+      "region": "Inazuma",
+      "location": "Inazuma City, Narukami Island, Inazuma",
+      "activityType": "trounce_domain",
+      "resinCostFirstThreeWeekly": 30,
+      "resinCostAfterFirstThreeWeekly": 60,
+      "rewardLimit": "once_per_boss_per_week",
+      "adventureRankRequirements": [
+        35,
+        40,
+        45,
+        50
+      ],
+      "partyLevelRecommendations": [
+        60,
+        70,
+        80,
+        90
+      ],
+      "weeklyTalentMaterials": [
+        "Molten Moment",
+        "Hellfire Butterfly",
+        "Ashen Heart"
+      ]
+    },
+    "ShadowOfAnotherWorld": {
+      "name": "Shadow of Another World",
+      "region": "Fontaine",
+      "location": "Salacia Plain, Court of Fontaine Region, Fontaine",
+      "activityType": "trounce_domain",
+      "resinCostFirstThreeWeekly": 30,
+      "resinCostAfterFirstThreeWeekly": 60,
+      "rewardLimit": "once_per_boss_per_week",
+      "adventureRankRequirements": [
+        35,
+        40,
+        45,
+        50
+      ],
+      "partyLevelRecommendations": [
+        60,
+        70,
+        80,
+        90
+      ],
+      "weeklyTalentMaterials": [
+        "Lightless Silk String",
+        "Lightless Eye of the Maelstrom",
+        "Lightless Mass"
+      ]
+    },
+    "StoneSteleRecords": {
+      "name": "Stone Stele Records",
+      "region": "Natlan",
+      "location": "Tezcatepetonco Range, Natlan",
+      "activityType": "trounce_domain",
+      "resinCostFirstThreeWeekly": 30,
+      "resinCostAfterFirstThreeWeekly": 60,
+      "rewardLimit": "once_per_boss_per_week",
+      "adventureRankRequirements": [
+        35,
+        40,
+        45,
+        50
+      ],
+      "partyLevelRecommendations": [
+        60,
+        70,
+        80,
+        90
+      ],
+      "weeklyTalentMaterials": [
+        "Eroded Horn",
+        "Eroded Sunfire",
+        "Eroded Scale-Feather"
+      ]
+    },
+    "TheRealmOfBeginnings": {
+      "name": "The Realm of Beginnings",
+      "region": "Sumeru",
+      "location": "Apep's Resort, Desert of Hadramaveth, Sumeru",
+      "activityType": "trounce_domain",
+      "resinCostFirstThreeWeekly": 30,
+      "resinCostAfterFirstThreeWeekly": 60,
+      "rewardLimit": "once_per_boss_per_week",
+      "adventureRankRequirements": [
+        35,
+        40,
+        45,
+        50
+      ],
+      "partyLevelRecommendations": [
+        60,
+        70,
+        80,
+        90
+      ],
+      "weeklyTalentMaterials": [
+        "Worldspan Fern",
+        "Primordial Greenbloom",
+        "Everamber"
+      ]
+    },
+    "UnresolvedChessGame": {
+      "name": "Unresolved Chess Game",
+      "region": "Mondstadt",
+      "location": "Falcon Coast, Galesong Hill, Mondstadt",
+      "activityType": "trounce_domain",
+      "resinCostFirstThreeWeekly": 30,
+      "resinCostAfterFirstThreeWeekly": 60,
+      "rewardLimit": "once_per_boss_per_week",
+      "adventureRankRequirements": [
+        35,
+        40,
+        45,
+        50
+      ],
+      "partyLevelRecommendations": [
+        60,
+        70,
+        80,
+        90
+      ],
+      "weeklyTalentMaterials": [
+        "Ascended Sample Knight",
+        "Ascended Sample Rook",
+        "Ascended Sample Queen"
+      ]
+    },
+    "ScatteredRuins": {
+      "name": "Scattered Ruins",
+      "region": "Fontaine",
+      "location": "Mont Esus East, Liffey Region, Fontaine",
+      "activityType": "trounce_domain",
+      "resinCostFirstThreeWeekly": 30,
+      "resinCostAfterFirstThreeWeekly": 60,
+      "rewardLimit": "once_per_boss_per_week",
+      "adventureRankRequirements": [
+        40,
+        45,
+        50
+      ],
+      "partyLevelRecommendations": [
+        60,
+        70,
+        80,
+        90
+      ],
+      "weeklyTalentMaterials": [
+        "Fading Candle",
+        "Silken Feather",
+        "Denial and Judgment"
+      ]
+    }
+  }
+}

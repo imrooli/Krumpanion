@@ -1,0 +1,3958 @@
+{
+  "AberrantCoreOfTheDeepShadow": {
+    "materialKey": "AberrantCoreOfTheDeepShadow",
+    "familyKey": "fisher_of_hidden_depths_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "FracturedEyeOfTheDeepShadow",
+      "AberrantCoreOfTheDeepShadow",
+      "HookedBeakOfTheDeepShadow"
+    ]
+  },
+  "AFlowerYetToBloom": {
+    "materialKey": "AFlowerYetToBloom",
+    "familyKey": "hilichurl_rogue_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "AFlowerYetToBloom",
+      "TreasuredFlower",
+      "WanderersBloomingFlower"
+    ]
+  },
+  "AfterglowOfLongNightFlint": {
+    "materialKey": "AfterglowOfLongNightFlint",
+    "familyKey": "LongNightFlint",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 1,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "EmberOfLongNightFlint",
+      "AfterglowOfLongNightFlint",
+      "FlareOfLongNightFlint",
+      "BlazeOfLongNightFlint"
+    ]
+  },
+  "AgentsSacrificialKnife": {
+    "materialKey": "AgentsSacrificialKnife",
+    "familyKey": "fatui_pyro_agent_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "HuntersSacrificialKnife",
+      "AgentsSacrificialKnife",
+      "InspectorsSacrificialKnife"
+    ]
+  },
+  "AgnidusAgateChunk": {
+    "materialKey": "AgnidusAgateChunk",
+    "familyKey": "Pyro",
+    "familyType": "element_gem_family",
+    "tierIndex": 2,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "AgnidusAgateSliver",
+      "AgnidusAgateFragment",
+      "AgnidusAgateChunk",
+      "AgnidusAgateGemstone"
+    ]
+  },
+  "AgnidusAgateFragment": {
+    "materialKey": "AgnidusAgateFragment",
+    "familyKey": "Pyro",
+    "familyType": "element_gem_family",
+    "tierIndex": 1,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "AgnidusAgateSliver",
+      "AgnidusAgateFragment",
+      "AgnidusAgateChunk",
+      "AgnidusAgateGemstone"
+    ]
+  },
+  "AgnidusAgateGemstone": {
+    "materialKey": "AgnidusAgateGemstone",
+    "familyKey": "Pyro",
+    "familyType": "element_gem_family",
+    "tierIndex": 3,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "AgnidusAgateSliver",
+      "AgnidusAgateFragment",
+      "AgnidusAgateChunk",
+      "AgnidusAgateGemstone"
+    ]
+  },
+  "AgnidusAgateSliver": {
+    "materialKey": "AgnidusAgateSliver",
+    "familyKey": "Pyro",
+    "familyType": "element_gem_family",
+    "tierIndex": 0,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "AgnidusAgateSliver",
+      "AgnidusAgateFragment",
+      "AgnidusAgateChunk",
+      "AgnidusAgateGemstone"
+    ]
+  },
+  "AlienLifeCore": {
+    "materialKey": "AlienLifeCore",
+    "familyKey": "breacher_primus_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "RiftCore",
+      "ForeignSynapse",
+      "AlienLifeCore"
+    ]
+  },
+  "ArtfulDeviceFragment": {
+    "materialKey": "ArtfulDeviceFragment",
+    "familyKey": "ArtfulDevice",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 0,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "ArtfulDeviceFragment",
+      "ArtfulDeviceReplica",
+      "ArtfulDeviceInheritance",
+      "ArtfulDeviceWish"
+    ]
+  },
+  "ArtfulDeviceInheritance": {
+    "materialKey": "ArtfulDeviceInheritance",
+    "familyKey": "ArtfulDevice",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 2,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "ArtfulDeviceFragment",
+      "ArtfulDeviceReplica",
+      "ArtfulDeviceInheritance",
+      "ArtfulDeviceWish"
+    ]
+  },
+  "ArtfulDeviceReplica": {
+    "materialKey": "ArtfulDeviceReplica",
+    "familyKey": "ArtfulDevice",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 1,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "ArtfulDeviceFragment",
+      "ArtfulDeviceReplica",
+      "ArtfulDeviceInheritance",
+      "ArtfulDeviceWish"
+    ]
+  },
+  "ArtfulDeviceWish": {
+    "materialKey": "ArtfulDeviceWish",
+    "familyKey": "ArtfulDevice",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 3,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "ArtfulDeviceFragment",
+      "ArtfulDeviceReplica",
+      "ArtfulDeviceInheritance",
+      "ArtfulDeviceWish"
+    ]
+  },
+  "ArtificedDynamicGear": {
+    "materialKey": "ArtificedDynamicGear",
+    "familyKey": "clockwork_meka_materials",
+    "familyType": "general_enemy_drop_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "MeshingGear",
+      "MechanicalSpurGear",
+      "ArtificedDynamicGear"
+    ]
+  },
+  "AureateRadianceOfTheFarNorthScions": {
+    "materialKey": "AureateRadianceOfTheFarNorthScions",
+    "familyKey": "FarNorthScions",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 3,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "SunderedGloryOfTheFarNorthScions",
+      "UnyieldingDelusionOfTheFarNorthScions",
+      "OblationOfTheFarNorthScions",
+      "AureateRadianceOfTheFarNorthScions"
+    ]
+  },
+  "AxisOfTheSecretSource": {
+    "materialKey": "AxisOfTheSecretSource",
+    "familyKey": "secret_source_automaton_hunter_seeker_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "AxisOfTheSecretSource",
+      "SheathOfTheSecretSource",
+      "HeartOfTheSecretSource"
+    ]
+  },
+  "BewilderingBroadleaf": {
+    "materialKey": "BewilderingBroadleaf",
+    "familyKey": "tenebrous_mimesis_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "RefractiveBud",
+      "BewilderingBroadleaf",
+      "IllusoryLeafcoil"
+    ]
+  },
+  "BitOfAerosiderite": {
+    "materialKey": "BitOfAerosiderite",
+    "familyKey": "Aerosiderite",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 2,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "GrainOfAerosiderite",
+      "PieceOfAerosiderite",
+      "BitOfAerosiderite",
+      "ChunkOfAerosiderite"
+    ]
+  },
+  "BlackBronzeHorn": {
+    "materialKey": "BlackBronzeHorn",
+    "familyKey": "mitachurl_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "HeavyHorn",
+      "BlackBronzeHorn",
+      "BlackCrystalHorn"
+    ]
+  },
+  "BlackCrystalHorn": {
+    "materialKey": "BlackCrystalHorn",
+    "familyKey": "mitachurl_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "HeavyHorn",
+      "BlackBronzeHorn",
+      "BlackCrystalHorn"
+    ]
+  },
+  "BlazeOfLongNightFlint": {
+    "materialKey": "BlazeOfLongNightFlint",
+    "familyKey": "LongNightFlint",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 3,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "EmberOfLongNightFlint",
+      "AfterglowOfLongNightFlint",
+      "FlareOfLongNightFlint",
+      "BlazeOfLongNightFlint"
+    ]
+  },
+  "BlazingPrismshell": {
+    "materialKey": "BlazingPrismshell",
+    "familyKey": "furnace_shell_mountain_weasel_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "ColdCrackedShellshard",
+      "WarmBackShell",
+      "BlazingPrismshell"
+    ]
+  },
+  "BlazingSacrificialHeartsHesitance": {
+    "materialKey": "BlazingSacrificialHeartsHesitance",
+    "familyKey": "BlazingSacrificialHeart",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 1,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "BlazingSacrificialHeartsTerror",
+      "BlazingSacrificialHeartsHesitance",
+      "BlazingSacrificialHeartsResolve",
+      "BlazingSacrificialHeartsSplendor"
+    ]
+  },
+  "BlazingSacrificialHeartsResolve": {
+    "materialKey": "BlazingSacrificialHeartsResolve",
+    "familyKey": "BlazingSacrificialHeart",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 2,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "BlazingSacrificialHeartsTerror",
+      "BlazingSacrificialHeartsHesitance",
+      "BlazingSacrificialHeartsResolve",
+      "BlazingSacrificialHeartsSplendor"
+    ]
+  },
+  "BlazingSacrificialHeartsSplendor": {
+    "materialKey": "BlazingSacrificialHeartsSplendor",
+    "familyKey": "BlazingSacrificialHeart",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 3,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "BlazingSacrificialHeartsTerror",
+      "BlazingSacrificialHeartsHesitance",
+      "BlazingSacrificialHeartsResolve",
+      "BlazingSacrificialHeartsSplendor"
+    ]
+  },
+  "BlazingSacrificialHeartsTerror": {
+    "materialKey": "BlazingSacrificialHeartsTerror",
+    "familyKey": "BlazingSacrificialHeart",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 0,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "BlazingSacrificialHeartsTerror",
+      "BlazingSacrificialHeartsHesitance",
+      "BlazingSacrificialHeartsResolve",
+      "BlazingSacrificialHeartsSplendor"
+    ]
+  },
+  "BorealWolfsBrokenFang": {
+    "materialKey": "BorealWolfsBrokenFang",
+    "familyKey": "BorealWolf",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 2,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "BorealWolfsMilkTooth",
+      "BorealWolfsCrackedTooth",
+      "BorealWolfsBrokenFang",
+      "BorealWolfsNostalgia"
+    ]
+  },
+  "BorealWolfsCrackedTooth": {
+    "materialKey": "BorealWolfsCrackedTooth",
+    "familyKey": "BorealWolf",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 1,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "BorealWolfsMilkTooth",
+      "BorealWolfsCrackedTooth",
+      "BorealWolfsBrokenFang",
+      "BorealWolfsNostalgia"
+    ]
+  },
+  "BorealWolfsMilkTooth": {
+    "materialKey": "BorealWolfsMilkTooth",
+    "familyKey": "BorealWolf",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 0,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "BorealWolfsMilkTooth",
+      "BorealWolfsCrackedTooth",
+      "BorealWolfsBrokenFang",
+      "BorealWolfsNostalgia"
+    ]
+  },
+  "BorealWolfsNostalgia": {
+    "materialKey": "BorealWolfsNostalgia",
+    "familyKey": "BorealWolf",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 3,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "BorealWolfsMilkTooth",
+      "BorealWolfsCrackedTooth",
+      "BorealWolfsBrokenFang",
+      "BorealWolfsNostalgia"
+    ]
+  },
+  "BrilliantDiamondChunk": {
+    "materialKey": "BrilliantDiamondChunk",
+    "familyKey": "Traveler",
+    "familyType": "element_gem_family",
+    "tierIndex": 2,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "BrilliantDiamondSliver",
+      "BrilliantDiamondFragment",
+      "BrilliantDiamondChunk",
+      "BrilliantDiamondGemstone"
+    ]
+  },
+  "BrilliantDiamondFragment": {
+    "materialKey": "BrilliantDiamondFragment",
+    "familyKey": "Traveler",
+    "familyType": "element_gem_family",
+    "tierIndex": 1,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "BrilliantDiamondSliver",
+      "BrilliantDiamondFragment",
+      "BrilliantDiamondChunk",
+      "BrilliantDiamondGemstone"
+    ]
+  },
+  "BrilliantDiamondGemstone": {
+    "materialKey": "BrilliantDiamondGemstone",
+    "familyKey": "Traveler",
+    "familyType": "element_gem_family",
+    "tierIndex": 3,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "BrilliantDiamondSliver",
+      "BrilliantDiamondFragment",
+      "BrilliantDiamondChunk",
+      "BrilliantDiamondGemstone"
+    ]
+  },
+  "BrilliantDiamondSliver": {
+    "materialKey": "BrilliantDiamondSliver",
+    "familyKey": "Traveler",
+    "familyType": "element_gem_family",
+    "tierIndex": 0,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "BrilliantDiamondSliver",
+      "BrilliantDiamondFragment",
+      "BrilliantDiamondChunk",
+      "BrilliantDiamondGemstone"
+    ]
+  },
+  "BrokenDriveShaft": {
+    "materialKey": "BrokenDriveShaft",
+    "familyKey": "landcruiser_materials",
+    "familyType": "general_enemy_drop_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "BrokenDriveShaft",
+      "ReinforcedDriveShaft",
+      "PrecisionDriveShaft"
+    ]
+  },
+  "BrokenGobletOfThePristineSea": {
+    "materialKey": "BrokenGobletOfThePristineSea",
+    "familyKey": "PristineSea",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 0,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "BrokenGobletOfThePristineSea",
+      "WineGobletOfThePristineSea",
+      "SilverGobletOfThePristineSea",
+      "GoldenGobletOfThePristineSea"
+    ]
+  },
+  "ChainsOfTheDandelionGladiator": {
+    "materialKey": "ChainsOfTheDandelionGladiator",
+    "familyKey": "DandelionGladiator",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 1,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "FettersOfTheDandelionGladiator",
+      "ChainsOfTheDandelionGladiator",
+      "ShacklesOfTheDandelionGladiator",
+      "DreamOfTheDandelionGladiator"
+    ]
+  },
+  "ChaosAxis": {
+    "materialKey": "ChaosAxis",
+    "familyKey": "ruin_sentinel_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "ChaosGear",
+      "ChaosAxis",
+      "ChaosOculus"
+    ]
+  },
+  "ChaosBolt": {
+    "materialKey": "ChaosBolt",
+    "familyKey": "ruin_drake_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "ChaosStorage",
+      "ChaosModule",
+      "ChaosBolt"
+    ]
+  },
+  "ChaosCircuit": {
+    "materialKey": "ChaosCircuit",
+    "familyKey": "humanoid_ruin_machine_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "ChaosDevice",
+      "ChaosCircuit",
+      "ChaosCore"
+    ]
+  },
+  "ChaosCore": {
+    "materialKey": "ChaosCore",
+    "familyKey": "humanoid_ruin_machine_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "ChaosDevice",
+      "ChaosCircuit",
+      "ChaosCore"
+    ]
+  },
+  "ChaosDevice": {
+    "materialKey": "ChaosDevice",
+    "familyKey": "humanoid_ruin_machine_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "ChaosDevice",
+      "ChaosCircuit",
+      "ChaosCore"
+    ]
+  },
+  "ChaosGear": {
+    "materialKey": "ChaosGear",
+    "familyKey": "ruin_sentinel_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "ChaosGear",
+      "ChaosAxis",
+      "ChaosOculus"
+    ]
+  },
+  "ChaosModule": {
+    "materialKey": "ChaosModule",
+    "familyKey": "ruin_drake_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "ChaosStorage",
+      "ChaosModule",
+      "ChaosBolt"
+    ]
+  },
+  "ChaosOculus": {
+    "materialKey": "ChaosOculus",
+    "familyKey": "ruin_sentinel_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "ChaosGear",
+      "ChaosAxis",
+      "ChaosOculus"
+    ]
+  },
+  "ChaosStorage": {
+    "materialKey": "ChaosStorage",
+    "familyKey": "ruin_drake_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "ChaosStorage",
+      "ChaosModule",
+      "ChaosBolt"
+    ]
+  },
+  "ChapterOfAnAncientChord": {
+    "materialKey": "ChapterOfAnAncientChord",
+    "familyKey": "AncientChord",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 1,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "FragmentOfAnAncientChord",
+      "ChapterOfAnAncientChord",
+      "MovementOfAnAncientChord",
+      "EchoOfAnAncientChord"
+    ]
+  },
+  "ChasmlightFin": {
+    "materialKey": "ChasmlightFin",
+    "familyKey": "xuanwen_beast_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "FeatheryFin",
+      "LunarFin",
+      "ChasmlightFin"
+    ]
+  },
+  "ChunkOfAerosiderite": {
+    "materialKey": "ChunkOfAerosiderite",
+    "familyKey": "Aerosiderite",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 3,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "GrainOfAerosiderite",
+      "PieceOfAerosiderite",
+      "BitOfAerosiderite",
+      "ChunkOfAerosiderite"
+    ]
+  },
+  "ColdCrackedShellshard": {
+    "materialKey": "ColdCrackedShellshard",
+    "familyKey": "furnace_shell_mountain_weasel_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "ColdCrackedShellshard",
+      "WarmBackShell",
+      "BlazingPrismshell"
+    ]
+  },
+  "ConcealedClaw": {
+    "materialKey": "ConcealedClaw",
+    "familyKey": "riftwolf_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "ConcealedClaw",
+      "ConcealedUnguis",
+      "ConcealedTalon"
+    ]
+  },
+  "ConcealedTalon": {
+    "materialKey": "ConcealedTalon",
+    "familyKey": "riftwolf_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "ConcealedClaw",
+      "ConcealedUnguis",
+      "ConcealedTalon"
+    ]
+  },
+  "ConcealedUnguis": {
+    "materialKey": "ConcealedUnguis",
+    "familyKey": "riftwolf_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "ConcealedClaw",
+      "ConcealedUnguis",
+      "ConcealedTalon"
+    ]
+  },
+  "CopperTalismanOfTheForestDew": {
+    "materialKey": "CopperTalismanOfTheForestDew",
+    "familyKey": "ForestDew",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 0,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "CopperTalismanOfTheForestDew",
+      "IronTalismanOfTheForestDew",
+      "SilverTalismanOfTheForestDew",
+      "GoldenTalismanOfTheForestDew"
+    ]
+  },
+  "CoralBranchOfADistantSea": {
+    "materialKey": "CoralBranchOfADistantSea",
+    "familyKey": "DistantSea",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 0,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "CoralBranchOfADistantSea",
+      "JeweledBranchOfADistantSea",
+      "JadeBranchOfADistantSea",
+      "GoldenBranchOfADistantSea"
+    ]
+  },
+  "CrystallineCystDust": {
+    "materialKey": "CrystallineCystDust",
+    "familyKey": "fungus_materials",
+    "familyType": "general_enemy_drop_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "FungalSpores",
+      "LuminescentPollen",
+      "CrystallineCystDust"
+    ]
+  },
+  "CrystalPrism": {
+    "materialKey": "CrystalPrism",
+    "familyKey": "mirror_maiden_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "DismalPrism",
+      "CrystalPrism",
+      "PolarizingPrism"
+    ]
+  },
+  "DamagedMask": {
+    "materialKey": "DamagedMask",
+    "familyKey": "hilichurl_materials",
+    "familyType": "general_enemy_drop_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "DamagedMask",
+      "StainedMask",
+      "OminousMask"
+    ]
+  },
+  "DamagedPrism": {
+    "materialKey": "DamagedPrism",
+    "familyKey": "primal_construct_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "DamagedPrism",
+      "TurbidPrism",
+      "RadiantPrism"
+    ]
+  },
+  "DarkStatuette": {
+    "materialKey": "DarkStatuette",
+    "familyKey": "black_serpent_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "GloomyStatuette",
+      "DarkStatuette",
+      "DeathlyStatuette"
+    ]
+  },
+  "DeadLeyLineBranch": {
+    "materialKey": "DeadLeyLineBranch",
+    "familyKey": "abyss_mage_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "DeadLeyLineBranch",
+      "DeadLeyLineLeaves",
+      "LeyLineSprout"
+    ]
+  },
+  "DeadLeyLineLeaves": {
+    "materialKey": "DeadLeyLineLeaves",
+    "familyKey": "abyss_mage_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "DeadLeyLineBranch",
+      "DeadLeyLineLeaves",
+      "LeyLineSprout"
+    ]
+  },
+  "DeathlyStatuette": {
+    "materialKey": "DeathlyStatuette",
+    "familyKey": "black_serpent_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "GloomyStatuette",
+      "DarkStatuette",
+      "DeathlyStatuette"
+    ]
+  },
+  "DebrisOfDecarabiansCity": {
+    "materialKey": "DebrisOfDecarabiansCity",
+    "familyKey": "Decarabian",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 1,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "TileOfDecarabiansTower",
+      "DebrisOfDecarabiansCity",
+      "FragmentOfDecarabiansEpic",
+      "ScatteredPieceOfDecarabiansDream"
+    ]
+  },
+  "DeliriousDecadenceOfTheSacredLord": {
+    "materialKey": "DeliriousDecadenceOfTheSacredLord",
+    "familyKey": "SacredLord",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 0,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "DeliriousDecadenceOfTheSacredLord",
+      "DeliriousDesolationOfTheSacredLord",
+      "DeliriousDemeanorOfTheSacredLord",
+      "DeliriousDivinityOfTheSacredLord"
+    ]
+  },
+  "DeliriousDemeanorOfTheSacredLord": {
+    "materialKey": "DeliriousDemeanorOfTheSacredLord",
+    "familyKey": "SacredLord",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 2,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "DeliriousDecadenceOfTheSacredLord",
+      "DeliriousDesolationOfTheSacredLord",
+      "DeliriousDemeanorOfTheSacredLord",
+      "DeliriousDivinityOfTheSacredLord"
+    ]
+  },
+  "DeliriousDesolationOfTheSacredLord": {
+    "materialKey": "DeliriousDesolationOfTheSacredLord",
+    "familyKey": "SacredLord",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 1,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "DeliriousDecadenceOfTheSacredLord",
+      "DeliriousDesolationOfTheSacredLord",
+      "DeliriousDemeanorOfTheSacredLord",
+      "DeliriousDivinityOfTheSacredLord"
+    ]
+  },
+  "DeliriousDivinityOfTheSacredLord": {
+    "materialKey": "DeliriousDivinityOfTheSacredLord",
+    "familyKey": "SacredLord",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 3,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "DeliriousDecadenceOfTheSacredLord",
+      "DeliriousDesolationOfTheSacredLord",
+      "DeliriousDemeanorOfTheSacredLord",
+      "DeliriousDivinityOfTheSacredLord"
+    ]
+  },
+  "DesiccatedShell": {
+    "materialKey": "DesiccatedShell",
+    "familyKey": "consecrated_beast_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "DesiccatedShell",
+      "SturdyShell",
+      "MarkedShell"
+    ]
+  },
+  "DismalPrism": {
+    "materialKey": "DismalPrism",
+    "familyKey": "mirror_maiden_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "DismalPrism",
+      "CrystalPrism",
+      "PolarizingPrism"
+    ]
+  },
+  "DivineBodyFromGuyun": {
+    "materialKey": "DivineBodyFromGuyun",
+    "familyKey": "Guyun",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 3,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "LuminousSandsFromGuyun",
+      "LustrousStoneFromGuyun",
+      "RelicFromGuyun",
+      "DivineBodyFromGuyun"
+    ]
+  },
+  "DiviningScroll": {
+    "materialKey": "DiviningScroll",
+    "familyKey": "samachurl_materials",
+    "familyType": "general_enemy_drop_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "DiviningScroll",
+      "SealedScroll",
+      "ForbiddenCurseScroll"
+    ]
+  },
+  "DormantFungalNucleus": {
+    "materialKey": "DormantFungalNucleus",
+    "familyKey": "state_shifted_fungus_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "InactivatedFungalNucleus",
+      "DormantFungalNucleus",
+      "RobustFungalNucleus"
+    ]
+  },
+  "DreamOfScorchingMight": {
+    "materialKey": "DreamOfScorchingMight",
+    "familyKey": "ScorchingMight",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 2,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "EchoOfScorchingMight",
+      "RemnantGlowOfScorchingMight",
+      "DreamOfScorchingMight",
+      "OldenDaysOfScorchingMight"
+    ]
+  },
+  "DreamOfTheDandelionGladiator": {
+    "materialKey": "DreamOfTheDandelionGladiator",
+    "familyKey": "DandelionGladiator",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 3,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "FettersOfTheDandelionGladiator",
+      "ChainsOfTheDandelionGladiator",
+      "ShacklesOfTheDandelionGladiator",
+      "DreamOfTheDandelionGladiator"
+    ]
+  },
+  "DropOfTaintedWater": {
+    "materialKey": "DropOfTaintedWater",
+    "familyKey": "tainted_hydro_phantasm_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "DropOfTaintedWater",
+      "ScoopOfTaintedWater",
+      "NewbornTaintedHydroPhantasm"
+    ]
+  },
+  "DrossOfPureSacredDewdrop": {
+    "materialKey": "DrossOfPureSacredDewdrop",
+    "familyKey": "PureSacredDewdrop",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 0,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "DrossOfPureSacredDewdrop",
+      "SublimationOfPureSacredDewdrop",
+      "SpringOfPureSacredDewdrop",
+      "EssenceOfPureSacredDewdrop"
+    ]
+  },
+  "EchoOfAnAncientChord": {
+    "materialKey": "EchoOfAnAncientChord",
+    "familyKey": "AncientChord",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 3,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "FragmentOfAnAncientChord",
+      "ChapterOfAnAncientChord",
+      "MovementOfAnAncientChord",
+      "EchoOfAnAncientChord"
+    ]
+  },
+  "EchoOfScorchingMight": {
+    "materialKey": "EchoOfScorchingMight",
+    "familyKey": "ScorchingMight",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 0,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "EchoOfScorchingMight",
+      "RemnantGlowOfScorchingMight",
+      "DreamOfScorchingMight",
+      "OldenDaysOfScorchingMight"
+    ]
+  },
+  "EmberOfLongNightFlint": {
+    "materialKey": "EmberOfLongNightFlint",
+    "familyKey": "LongNightFlint",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 0,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "EmberOfLongNightFlint",
+      "AfterglowOfLongNightFlint",
+      "FlareOfLongNightFlint",
+      "BlazeOfLongNightFlint"
+    ]
+  },
+  "EnergyNectar": {
+    "materialKey": "EnergyNectar",
+    "familyKey": "whopperflower_materials",
+    "familyType": "general_enemy_drop_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "WhopperflowerNectar",
+      "ShimmeringNectar",
+      "EnergyNectar"
+    ]
+  },
+  "EssenceOfPureSacredDewdrop": {
+    "materialKey": "EssenceOfPureSacredDewdrop",
+    "familyKey": "PureSacredDewdrop",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 3,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "DrossOfPureSacredDewdrop",
+      "SublimationOfPureSacredDewdrop",
+      "SpringOfPureSacredDewdrop",
+      "EssenceOfPureSacredDewdrop"
+    ]
+  },
+  "FadedFlamingHilt": {
+    "materialKey": "FadedFlamingHilt",
+    "familyKey": "domain_keeper_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "FadedFlamingHilt",
+      "FracturedFlamingHilt",
+      "JeweledFlamingHilt"
+    ]
+  },
+  "FadedRedSatin": {
+    "materialKey": "FadedRedSatin",
+    "familyKey": "eremite_materials",
+    "familyType": "general_enemy_drop_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "FadedRedSatin",
+      "TrimmedRedSilk",
+      "RichRedBrocade"
+    ]
+  },
+  "FamedHandguard": {
+    "materialKey": "FamedHandguard",
+    "familyKey": "nobushi_materials",
+    "familyType": "general_enemy_drop_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "OldHandguard",
+      "KageuchiHandguard",
+      "FamedHandguard"
+    ]
+  },
+  "FeatheryFin": {
+    "materialKey": "FeatheryFin",
+    "familyKey": "xuanwen_beast_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "FeatheryFin",
+      "LunarFin",
+      "ChasmlightFin"
+    ]
+  },
+  "FettersOfTheDandelionGladiator": {
+    "materialKey": "FettersOfTheDandelionGladiator",
+    "familyKey": "DandelionGladiator",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 0,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "FettersOfTheDandelionGladiator",
+      "ChainsOfTheDandelionGladiator",
+      "ShacklesOfTheDandelionGladiator",
+      "DreamOfTheDandelionGladiator"
+    ]
+  },
+  "FirmArrowhead": {
+    "materialKey": "FirmArrowhead",
+    "familyKey": "hilichurl_shooter_materials",
+    "familyType": "general_enemy_drop_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "FirmArrowhead",
+      "SharpArrowhead",
+      "WeatheredArrowhead"
+    ]
+  },
+  "FlareOfLongNightFlint": {
+    "materialKey": "FlareOfLongNightFlint",
+    "familyKey": "LongNightFlint",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 2,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "EmberOfLongNightFlint",
+      "AfterglowOfLongNightFlint",
+      "FlareOfLongNightFlint",
+      "BlazeOfLongNightFlint"
+    ]
+  },
+  "ForbiddenCurseScroll": {
+    "materialKey": "ForbiddenCurseScroll",
+    "familyKey": "samachurl_materials",
+    "familyType": "general_enemy_drop_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "DiviningScroll",
+      "SealedScroll",
+      "ForbiddenCurseScroll"
+    ]
+  },
+  "ForeignSynapse": {
+    "materialKey": "ForeignSynapse",
+    "familyKey": "breacher_primus_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "RiftCore",
+      "ForeignSynapse",
+      "AlienLifeCore"
+    ]
+  },
+  "FossilizedBoneShard": {
+    "materialKey": "FossilizedBoneShard",
+    "familyKey": "vishap_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "FragileBoneShard",
+      "SturdyBoneShard",
+      "FossilizedBoneShard"
+    ]
+  },
+  "FracturedEyeOfTheDeepShadow": {
+    "materialKey": "FracturedEyeOfTheDeepShadow",
+    "familyKey": "fisher_of_hidden_depths_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "FracturedEyeOfTheDeepShadow",
+      "AberrantCoreOfTheDeepShadow",
+      "HookedBeakOfTheDeepShadow"
+    ]
+  },
+  "FracturedFlamingHilt": {
+    "materialKey": "FracturedFlamingHilt",
+    "familyKey": "domain_keeper_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "FadedFlamingHilt",
+      "FracturedFlamingHilt",
+      "JeweledFlamingHilt"
+    ]
+  },
+  "FragileBoneShard": {
+    "materialKey": "FragileBoneShard",
+    "familyKey": "vishap_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "FragileBoneShard",
+      "SturdyBoneShard",
+      "FossilizedBoneShard"
+    ]
+  },
+  "FragmentOfAnAncientChord": {
+    "materialKey": "FragmentOfAnAncientChord",
+    "familyKey": "AncientChord",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 0,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "FragmentOfAnAncientChord",
+      "ChapterOfAnAncientChord",
+      "MovementOfAnAncientChord",
+      "EchoOfAnAncientChord"
+    ]
+  },
+  "FragmentOfDecarabiansEpic": {
+    "materialKey": "FragmentOfDecarabiansEpic",
+    "familyKey": "Decarabian",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 2,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "TileOfDecarabiansTower",
+      "DebrisOfDecarabiansCity",
+      "FragmentOfDecarabiansEpic",
+      "ScatteredPieceOfDecarabiansDream"
+    ]
+  },
+  "FrostEtchedWarrant": {
+    "materialKey": "FrostEtchedWarrant",
+    "familyKey": "fatui_oprichniki_materials",
+    "familyType": "general_enemy_drop_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TatteredWarrant",
+      "ImmaculateWarrant",
+      "FrostEtchedWarrant"
+    ]
+  },
+  "FrostnightsGlimmer": {
+    "materialKey": "FrostnightsGlimmer",
+    "familyKey": "frostnight_scion_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "FrostnightsGlimmer",
+      "FrostnightsGlow",
+      "FrostnightsGlory"
+    ]
+  },
+  "FrostnightsGlory": {
+    "materialKey": "FrostnightsGlory",
+    "familyKey": "frostnight_scion_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "FrostnightsGlimmer",
+      "FrostnightsGlow",
+      "FrostnightsGlory"
+    ]
+  },
+  "FrostnightsGlow": {
+    "materialKey": "FrostnightsGlow",
+    "familyKey": "frostnight_scion_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "FrostnightsGlimmer",
+      "FrostnightsGlow",
+      "FrostnightsGlory"
+    ]
+  },
+  "FungalSpores": {
+    "materialKey": "FungalSpores",
+    "familyKey": "fungus_materials",
+    "familyType": "general_enemy_drop_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "FungalSpores",
+      "LuminescentPollen",
+      "CrystallineCystDust"
+    ]
+  },
+  "GloomyStatuette": {
+    "materialKey": "GloomyStatuette",
+    "familyKey": "black_serpent_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "GloomyStatuette",
+      "DarkStatuette",
+      "DeathlyStatuette"
+    ]
+  },
+  "GlowingRemains": {
+    "materialKey": "GlowingRemains",
+    "familyKey": "radiant_beast_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "LightlessBone",
+      "GlowingRemains",
+      "RadiantExoskeleton"
+    ]
+  },
+  "GoldenBranchOfADistantSea": {
+    "materialKey": "GoldenBranchOfADistantSea",
+    "familyKey": "DistantSea",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 3,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "CoralBranchOfADistantSea",
+      "JeweledBranchOfADistantSea",
+      "JadeBranchOfADistantSea",
+      "GoldenBranchOfADistantSea"
+    ]
+  },
+  "GoldenGobletOfThePristineSea": {
+    "materialKey": "GoldenGobletOfThePristineSea",
+    "familyKey": "PristineSea",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 3,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "BrokenGobletOfThePristineSea",
+      "WineGobletOfThePristineSea",
+      "SilverGobletOfThePristineSea",
+      "GoldenGobletOfThePristineSea"
+    ]
+  },
+  "GoldenRavenInsignia": {
+    "materialKey": "GoldenRavenInsignia",
+    "familyKey": "treasure_hoarder_materials",
+    "familyType": "general_enemy_drop_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TreasureHoarderInsignia",
+      "SilverRavenInsignia",
+      "GoldenRavenInsignia"
+    ]
+  },
+  "GoldenTalismanOfTheForestDew": {
+    "materialKey": "GoldenTalismanOfTheForestDew",
+    "familyKey": "ForestDew",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 3,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "CopperTalismanOfTheForestDew",
+      "IronTalismanOfTheForestDew",
+      "SilverTalismanOfTheForestDew",
+      "GoldenTalismanOfTheForestDew"
+    ]
+  },
+  "GrainOfAerosiderite": {
+    "materialKey": "GrainOfAerosiderite",
+    "familyKey": "Aerosiderite",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 0,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "GrainOfAerosiderite",
+      "PieceOfAerosiderite",
+      "BitOfAerosiderite",
+      "ChunkOfAerosiderite"
+    ]
+  },
+  "GuideToAdmonition": {
+    "materialKey": "GuideToAdmonition",
+    "familyKey": "Admonition",
+    "familyType": "talent_book_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfAdmonition",
+      "GuideToAdmonition",
+      "PhilosophiesOfAdmonition"
+    ]
+  },
+  "GuideToBallad": {
+    "materialKey": "GuideToBallad",
+    "familyKey": "Ballad",
+    "familyType": "talent_book_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfBallad",
+      "GuideToBallad",
+      "PhilosophiesOfBallad"
+    ]
+  },
+  "GuideToConflict": {
+    "materialKey": "GuideToConflict",
+    "familyKey": "Conflict",
+    "familyType": "talent_book_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfConflict",
+      "GuideToConflict",
+      "PhilosophiesOfConflict"
+    ]
+  },
+  "GuideToContention": {
+    "materialKey": "GuideToContention",
+    "familyKey": "Contention",
+    "familyType": "talent_book_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfContention",
+      "GuideToContention",
+      "PhilosophiesOfContention"
+    ]
+  },
+  "GuideToDiligence": {
+    "materialKey": "GuideToDiligence",
+    "familyKey": "Diligence",
+    "familyType": "talent_book_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfDiligence",
+      "GuideToDiligence",
+      "PhilosophiesOfDiligence"
+    ]
+  },
+  "GuideToElegance": {
+    "materialKey": "GuideToElegance",
+    "familyKey": "Elegance",
+    "familyType": "talent_book_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfElegance",
+      "GuideToElegance",
+      "PhilosophiesOfElegance"
+    ]
+  },
+  "GuideToElysium": {
+    "materialKey": "GuideToElysium",
+    "familyKey": "Elysium",
+    "familyType": "talent_book_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfElysium",
+      "GuideToElysium",
+      "PhilosophiesOfElysium"
+    ]
+  },
+  "GuideToEquity": {
+    "materialKey": "GuideToEquity",
+    "familyKey": "Equity",
+    "familyType": "talent_book_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfEquity",
+      "GuideToEquity",
+      "PhilosophiesOfEquity"
+    ]
+  },
+  "GuideToFreedom": {
+    "materialKey": "GuideToFreedom",
+    "familyKey": "Freedom",
+    "familyType": "talent_book_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfFreedom",
+      "GuideToFreedom",
+      "PhilosophiesOfFreedom"
+    ]
+  },
+  "GuideToGold": {
+    "materialKey": "GuideToGold",
+    "familyKey": "Gold",
+    "familyType": "talent_book_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfGold",
+      "GuideToGold",
+      "PhilosophiesOfGold"
+    ]
+  },
+  "GuideToIngenuity": {
+    "materialKey": "GuideToIngenuity",
+    "familyKey": "Ingenuity",
+    "familyType": "talent_book_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfIngenuity",
+      "GuideToIngenuity",
+      "PhilosophiesOfIngenuity"
+    ]
+  },
+  "GuideToJustice": {
+    "materialKey": "GuideToJustice",
+    "familyKey": "Justice",
+    "familyType": "talent_book_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfJustice",
+      "GuideToJustice",
+      "PhilosophiesOfJustice"
+    ]
+  },
+  "GuideToKindling": {
+    "materialKey": "GuideToKindling",
+    "familyKey": "Kindling",
+    "familyType": "talent_book_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfKindling",
+      "GuideToKindling",
+      "PhilosophiesOfKindling"
+    ]
+  },
+  "GuideToLight": {
+    "materialKey": "GuideToLight",
+    "familyKey": "Light",
+    "familyType": "talent_book_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfLight",
+      "GuideToLight",
+      "PhilosophiesOfLight"
+    ]
+  },
+  "GuideToMoonlight": {
+    "materialKey": "GuideToMoonlight",
+    "familyKey": "Moonlight",
+    "familyType": "talent_book_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfMoonlight",
+      "GuideToMoonlight",
+      "PhilosophiesOfMoonlight"
+    ]
+  },
+  "GuideToOrder": {
+    "materialKey": "GuideToOrder",
+    "familyKey": "Order",
+    "familyType": "talent_book_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfOrder",
+      "GuideToOrder",
+      "PhilosophiesOfOrder"
+    ]
+  },
+  "GuideToPraxis": {
+    "materialKey": "GuideToPraxis",
+    "familyKey": "Praxis",
+    "familyType": "talent_book_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfPraxis",
+      "GuideToPraxis",
+      "PhilosophiesOfPraxis"
+    ]
+  },
+  "GuideToProsperity": {
+    "materialKey": "GuideToProsperity",
+    "familyKey": "Prosperity",
+    "familyType": "talent_book_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfProsperity",
+      "GuideToProsperity",
+      "PhilosophiesOfProsperity"
+    ]
+  },
+  "GuideToResistance": {
+    "materialKey": "GuideToResistance",
+    "familyKey": "Resistance",
+    "familyType": "talent_book_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfResistance",
+      "GuideToResistance",
+      "PhilosophiesOfResistance"
+    ]
+  },
+  "GuideToTransience": {
+    "materialKey": "GuideToTransience",
+    "familyKey": "Transience",
+    "familyType": "talent_book_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfTransience",
+      "GuideToTransience",
+      "PhilosophiesOfTransience"
+    ]
+  },
+  "GuideToVagrancy": {
+    "materialKey": "GuideToVagrancy",
+    "familyKey": "Vagrancy",
+    "familyType": "talent_book_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfVagrancy",
+      "GuideToVagrancy",
+      "PhilosophiesOfVagrancy"
+    ]
+  },
+  "HeartOfTheSecretSource": {
+    "materialKey": "HeartOfTheSecretSource",
+    "familyKey": "secret_source_automaton_hunter_seeker_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "AxisOfTheSecretSource",
+      "SheathOfTheSecretSource",
+      "HeartOfTheSecretSource"
+    ]
+  },
+  "HeavyHorn": {
+    "materialKey": "HeavyHorn",
+    "familyKey": "mitachurl_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "HeavyHorn",
+      "BlackBronzeHorn",
+      "BlackCrystalHorn"
+    ]
+  },
+  "HookedBeakOfTheDeepShadow": {
+    "materialKey": "HookedBeakOfTheDeepShadow",
+    "familyKey": "fisher_of_hidden_depths_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "FracturedEyeOfTheDeepShadow",
+      "AberrantCoreOfTheDeepShadow",
+      "HookedBeakOfTheDeepShadow"
+    ]
+  },
+  "HuntersSacrificialKnife": {
+    "materialKey": "HuntersSacrificialKnife",
+    "familyKey": "fatui_pyro_agent_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "HuntersSacrificialKnife",
+      "AgentsSacrificialKnife",
+      "InspectorsSacrificialKnife"
+    ]
+  },
+  "IgnitedSeedOfLife": {
+    "materialKey": "IgnitedSeedOfLife",
+    "familyKey": "avatar_of_lava_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "IgnitedStone",
+      "IgnitedSeedOfLife",
+      "IgnitedSeeingEye"
+    ]
+  },
+  "IgnitedSeeingEye": {
+    "materialKey": "IgnitedSeeingEye",
+    "familyKey": "avatar_of_lava_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "IgnitedStone",
+      "IgnitedSeedOfLife",
+      "IgnitedSeeingEye"
+    ]
+  },
+  "IgnitedStone": {
+    "materialKey": "IgnitedStone",
+    "familyKey": "avatar_of_lava_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "IgnitedStone",
+      "IgnitedSeedOfLife",
+      "IgnitedSeeingEye"
+    ]
+  },
+  "IllusoryLeafcoil": {
+    "materialKey": "IllusoryLeafcoil",
+    "familyKey": "tenebrous_mimesis_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "RefractiveBud",
+      "BewilderingBroadleaf",
+      "IllusoryLeafcoil"
+    ]
+  },
+  "ImmaculateWarrant": {
+    "materialKey": "ImmaculateWarrant",
+    "familyKey": "fatui_oprichniki_materials",
+    "familyType": "general_enemy_drop_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TatteredWarrant",
+      "ImmaculateWarrant",
+      "FrostEtchedWarrant"
+    ]
+  },
+  "InactivatedFungalNucleus": {
+    "materialKey": "InactivatedFungalNucleus",
+    "familyKey": "state_shifted_fungus_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "InactivatedFungalNucleus",
+      "DormantFungalNucleus",
+      "RobustFungalNucleus"
+    ]
+  },
+  "InspectorsSacrificialKnife": {
+    "materialKey": "InspectorsSacrificialKnife",
+    "familyKey": "fatui_pyro_agent_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "HuntersSacrificialKnife",
+      "AgentsSacrificialKnife",
+      "InspectorsSacrificialKnife"
+    ]
+  },
+  "IronTalismanOfTheForestDew": {
+    "materialKey": "IronTalismanOfTheForestDew",
+    "familyKey": "ForestDew",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 1,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "CopperTalismanOfTheForestDew",
+      "IronTalismanOfTheForestDew",
+      "SilverTalismanOfTheForestDew",
+      "GoldenTalismanOfTheForestDew"
+    ]
+  },
+  "JadeBranchOfADistantSea": {
+    "materialKey": "JadeBranchOfADistantSea",
+    "familyKey": "DistantSea",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 2,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "CoralBranchOfADistantSea",
+      "JeweledBranchOfADistantSea",
+      "JadeBranchOfADistantSea",
+      "GoldenBranchOfADistantSea"
+    ]
+  },
+  "JeweledBranchOfADistantSea": {
+    "materialKey": "JeweledBranchOfADistantSea",
+    "familyKey": "DistantSea",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 1,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "CoralBranchOfADistantSea",
+      "JeweledBranchOfADistantSea",
+      "JadeBranchOfADistantSea",
+      "GoldenBranchOfADistantSea"
+    ]
+  },
+  "JeweledFlamingHilt": {
+    "materialKey": "JeweledFlamingHilt",
+    "familyKey": "domain_keeper_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "FadedFlamingHilt",
+      "FracturedFlamingHilt",
+      "JeweledFlamingHilt"
+    ]
+  },
+  "JuvenileFang": {
+    "materialKey": "JuvenileFang",
+    "familyKey": "natlan_saurian_materials",
+    "familyType": "general_enemy_drop_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "JuvenileFang",
+      "SeasonedFang",
+      "TyrantsFang"
+    ]
+  },
+  "KageuchiHandguard": {
+    "materialKey": "KageuchiHandguard",
+    "familyKey": "nobushi_materials",
+    "familyType": "general_enemy_drop_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "OldHandguard",
+      "KageuchiHandguard",
+      "FamedHandguard"
+    ]
+  },
+  "LeyLineSprout": {
+    "materialKey": "LeyLineSprout",
+    "familyKey": "abyss_mage_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "DeadLeyLineBranch",
+      "DeadLeyLineLeaves",
+      "LeyLineSprout"
+    ]
+  },
+  "LieutenantsInsignia": {
+    "materialKey": "LieutenantsInsignia",
+    "familyKey": "fatui_skirmisher_materials",
+    "familyType": "general_enemy_drop_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "RecruitsInsignia",
+      "SergeantsInsignia",
+      "LieutenantsInsignia"
+    ]
+  },
+  "LightlessBone": {
+    "materialKey": "LightlessBone",
+    "familyKey": "radiant_beast_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "LightlessBone",
+      "GlowingRemains",
+      "RadiantExoskeleton"
+    ]
+  },
+  "LocusOfAClearWill": {
+    "materialKey": "LocusOfAClearWill",
+    "familyKey": "wayob_manifestation_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "ShardOfAShatteredWill",
+      "LocusOfAClearWill",
+      "SigilOfAStridingWill"
+    ]
+  },
+  "LuminescentPollen": {
+    "materialKey": "LuminescentPollen",
+    "familyKey": "fungus_materials",
+    "familyType": "general_enemy_drop_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "FungalSpores",
+      "LuminescentPollen",
+      "CrystallineCystDust"
+    ]
+  },
+  "LuminousSandsFromGuyun": {
+    "materialKey": "LuminousSandsFromGuyun",
+    "familyKey": "Guyun",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 0,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "LuminousSandsFromGuyun",
+      "LustrousStoneFromGuyun",
+      "RelicFromGuyun",
+      "DivineBodyFromGuyun"
+    ]
+  },
+  "LunarFin": {
+    "materialKey": "LunarFin",
+    "familyKey": "xuanwen_beast_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "FeatheryFin",
+      "LunarFin",
+      "ChasmlightFin"
+    ]
+  },
+  "LustrousStoneFromGuyun": {
+    "materialKey": "LustrousStoneFromGuyun",
+    "familyKey": "Guyun",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 1,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "LuminousSandsFromGuyun",
+      "LustrousStoneFromGuyun",
+      "RelicFromGuyun",
+      "DivineBodyFromGuyun"
+    ]
+  },
+  "MarkedShell": {
+    "materialKey": "MarkedShell",
+    "familyKey": "consecrated_beast_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "DesiccatedShell",
+      "SturdyShell",
+      "MarkedShell"
+    ]
+  },
+  "MaskOfTheKijin": {
+    "materialKey": "MaskOfTheKijin",
+    "familyKey": "Mask",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 3,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "MaskOfTheWickedLieutenant",
+      "MaskOfTheTigersBite",
+      "MaskOfTheOneHorned",
+      "MaskOfTheKijin"
+    ]
+  },
+  "MaskOfTheOneHorned": {
+    "materialKey": "MaskOfTheOneHorned",
+    "familyKey": "Mask",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 2,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "MaskOfTheWickedLieutenant",
+      "MaskOfTheTigersBite",
+      "MaskOfTheOneHorned",
+      "MaskOfTheKijin"
+    ]
+  },
+  "MaskOfTheTigersBite": {
+    "materialKey": "MaskOfTheTigersBite",
+    "familyKey": "Mask",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 1,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "MaskOfTheWickedLieutenant",
+      "MaskOfTheTigersBite",
+      "MaskOfTheOneHorned",
+      "MaskOfTheKijin"
+    ]
+  },
+  "MaskOfTheWickedLieutenant": {
+    "materialKey": "MaskOfTheWickedLieutenant",
+    "familyKey": "Mask",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 0,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "MaskOfTheWickedLieutenant",
+      "MaskOfTheTigersBite",
+      "MaskOfTheOneHorned",
+      "MaskOfTheKijin"
+    ]
+  },
+  "MechanicalSpurGear": {
+    "materialKey": "MechanicalSpurGear",
+    "familyKey": "clockwork_meka_materials",
+    "familyType": "general_enemy_drop_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "MeshingGear",
+      "MechanicalSpurGear",
+      "ArtificedDynamicGear"
+    ]
+  },
+  "MeshingGear": {
+    "materialKey": "MeshingGear",
+    "familyKey": "clockwork_meka_materials",
+    "familyType": "general_enemy_drop_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "MeshingGear",
+      "MechanicalSpurGear",
+      "ArtificedDynamicGear"
+    ]
+  },
+  "MistGrass": {
+    "materialKey": "MistGrass",
+    "familyKey": "fatui_cicin_mage_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "MistGrassPollen",
+      "MistGrass",
+      "MistGrassWick"
+    ]
+  },
+  "MistGrassPollen": {
+    "materialKey": "MistGrassPollen",
+    "familyKey": "fatui_cicin_mage_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "MistGrassPollen",
+      "MistGrass",
+      "MistGrassWick"
+    ]
+  },
+  "MistGrassWick": {
+    "materialKey": "MistGrassWick",
+    "familyKey": "fatui_cicin_mage_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "MistGrassPollen",
+      "MistGrass",
+      "MistGrassWick"
+    ]
+  },
+  "MistshroudHelmet": {
+    "materialKey": "MistshroudHelmet",
+    "familyKey": "wasteland_wild_hunt_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "MistshroudManifestation",
+      "MistshroudPlate",
+      "MistshroudHelmet"
+    ]
+  },
+  "MistshroudManifestation": {
+    "materialKey": "MistshroudManifestation",
+    "familyKey": "wasteland_wild_hunt_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "MistshroudManifestation",
+      "MistshroudPlate",
+      "MistshroudHelmet"
+    ]
+  },
+  "MistshroudPlate": {
+    "materialKey": "MistshroudPlate",
+    "familyKey": "wasteland_wild_hunt_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "MistshroudManifestation",
+      "MistshroudPlate",
+      "MistshroudHelmet"
+    ]
+  },
+  "MistVeiledGoldElixir": {
+    "materialKey": "MistVeiledGoldElixir",
+    "familyKey": "MistVeiledElixir",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 2,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "MistVeiledLeadElixir",
+      "MistVeiledMercuryElixir",
+      "MistVeiledGoldElixir",
+      "MistVeiledPrimoElixir"
+    ]
+  },
+  "MistVeiledLeadElixir": {
+    "materialKey": "MistVeiledLeadElixir",
+    "familyKey": "MistVeiledElixir",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 0,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "MistVeiledLeadElixir",
+      "MistVeiledMercuryElixir",
+      "MistVeiledGoldElixir",
+      "MistVeiledPrimoElixir"
+    ]
+  },
+  "MistVeiledMercuryElixir": {
+    "materialKey": "MistVeiledMercuryElixir",
+    "familyKey": "MistVeiledElixir",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 1,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "MistVeiledLeadElixir",
+      "MistVeiledMercuryElixir",
+      "MistVeiledGoldElixir",
+      "MistVeiledPrimoElixir"
+    ]
+  },
+  "MistVeiledPrimoElixir": {
+    "materialKey": "MistVeiledPrimoElixir",
+    "familyKey": "MistVeiledElixir",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 3,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "MistVeiledLeadElixir",
+      "MistVeiledMercuryElixir",
+      "MistVeiledGoldElixir",
+      "MistVeiledPrimoElixir"
+    ]
+  },
+  "MovementOfAnAncientChord": {
+    "materialKey": "MovementOfAnAncientChord",
+    "familyKey": "AncientChord",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 2,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "FragmentOfAnAncientChord",
+      "ChapterOfAnAncientChord",
+      "MovementOfAnAncientChord",
+      "EchoOfAnAncientChord"
+    ]
+  },
+  "NagadusEmeraldChunk": {
+    "materialKey": "NagadusEmeraldChunk",
+    "familyKey": "Dendro",
+    "familyType": "element_gem_family",
+    "tierIndex": 2,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "NagadusEmeraldSliver",
+      "NagadusEmeraldFragment",
+      "NagadusEmeraldChunk",
+      "NagadusEmeraldGemstone"
+    ]
+  },
+  "NagadusEmeraldFragment": {
+    "materialKey": "NagadusEmeraldFragment",
+    "familyKey": "Dendro",
+    "familyType": "element_gem_family",
+    "tierIndex": 1,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "NagadusEmeraldSliver",
+      "NagadusEmeraldFragment",
+      "NagadusEmeraldChunk",
+      "NagadusEmeraldGemstone"
+    ]
+  },
+  "NagadusEmeraldGemstone": {
+    "materialKey": "NagadusEmeraldGemstone",
+    "familyKey": "Dendro",
+    "familyType": "element_gem_family",
+    "tierIndex": 3,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "NagadusEmeraldSliver",
+      "NagadusEmeraldFragment",
+      "NagadusEmeraldChunk",
+      "NagadusEmeraldGemstone"
+    ]
+  },
+  "NagadusEmeraldSliver": {
+    "materialKey": "NagadusEmeraldSliver",
+    "familyKey": "Dendro",
+    "familyType": "element_gem_family",
+    "tierIndex": 0,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "NagadusEmeraldSliver",
+      "NagadusEmeraldFragment",
+      "NagadusEmeraldChunk",
+      "NagadusEmeraldGemstone"
+    ]
+  },
+  "NarukamisAffection": {
+    "materialKey": "NarukamisAffection",
+    "familyKey": "Narukami",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 2,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "NarukamisWisdom",
+      "NarukamisJoy",
+      "NarukamisAffection",
+      "NarukamisValor"
+    ]
+  },
+  "NarukamisJoy": {
+    "materialKey": "NarukamisJoy",
+    "familyKey": "Narukami",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 1,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "NarukamisWisdom",
+      "NarukamisJoy",
+      "NarukamisAffection",
+      "NarukamisValor"
+    ]
+  },
+  "NarukamisValor": {
+    "materialKey": "NarukamisValor",
+    "familyKey": "Narukami",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 3,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "NarukamisWisdom",
+      "NarukamisJoy",
+      "NarukamisAffection",
+      "NarukamisValor"
+    ]
+  },
+  "NarukamisWisdom": {
+    "materialKey": "NarukamisWisdom",
+    "familyKey": "Narukami",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 0,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "NarukamisWisdom",
+      "NarukamisJoy",
+      "NarukamisAffection",
+      "NarukamisValor"
+    ]
+  },
+  "NewbornTaintedHydroPhantasm": {
+    "materialKey": "NewbornTaintedHydroPhantasm",
+    "familyKey": "tainted_hydro_phantasm_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "DropOfTaintedWater",
+      "ScoopOfTaintedWater",
+      "NewbornTaintedHydroPhantasm"
+    ]
+  },
+  "NightWindsMysticAugury": {
+    "materialKey": "NightWindsMysticAugury",
+    "familyKey": "NightWind",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 2,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "NightWindsMysticConsideration",
+      "NightWindsMysticPremonition",
+      "NightWindsMysticAugury",
+      "NightWindsMysticRevelation"
+    ]
+  },
+  "NightWindsMysticConsideration": {
+    "materialKey": "NightWindsMysticConsideration",
+    "familyKey": "NightWind",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 0,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "NightWindsMysticConsideration",
+      "NightWindsMysticPremonition",
+      "NightWindsMysticAugury",
+      "NightWindsMysticRevelation"
+    ]
+  },
+  "NightWindsMysticPremonition": {
+    "materialKey": "NightWindsMysticPremonition",
+    "familyKey": "NightWind",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 1,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "NightWindsMysticConsideration",
+      "NightWindsMysticPremonition",
+      "NightWindsMysticAugury",
+      "NightWindsMysticRevelation"
+    ]
+  },
+  "NightWindsMysticRevelation": {
+    "materialKey": "NightWindsMysticRevelation",
+    "familyKey": "NightWind",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 3,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "NightWindsMysticConsideration",
+      "NightWindsMysticPremonition",
+      "NightWindsMysticAugury",
+      "NightWindsMysticRevelation"
+    ]
+  },
+  "OasisGardensKindness": {
+    "materialKey": "OasisGardensKindness",
+    "familyKey": "OasisGarden",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 1,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "OasisGardensReminiscence",
+      "OasisGardensKindness",
+      "OasisGardensMourning",
+      "OasisGardensTruth"
+    ]
+  },
+  "OasisGardensMourning": {
+    "materialKey": "OasisGardensMourning",
+    "familyKey": "OasisGarden",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 2,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "OasisGardensReminiscence",
+      "OasisGardensKindness",
+      "OasisGardensMourning",
+      "OasisGardensTruth"
+    ]
+  },
+  "OasisGardensReminiscence": {
+    "materialKey": "OasisGardensReminiscence",
+    "familyKey": "OasisGarden",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 0,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "OasisGardensReminiscence",
+      "OasisGardensKindness",
+      "OasisGardensMourning",
+      "OasisGardensTruth"
+    ]
+  },
+  "OasisGardensTruth": {
+    "materialKey": "OasisGardensTruth",
+    "familyKey": "OasisGarden",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 3,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "OasisGardensReminiscence",
+      "OasisGardensKindness",
+      "OasisGardensMourning",
+      "OasisGardensTruth"
+    ]
+  },
+  "OblationOfTheFarNorthScions": {
+    "materialKey": "OblationOfTheFarNorthScions",
+    "familyKey": "FarNorthScions",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 2,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "SunderedGloryOfTheFarNorthScions",
+      "UnyieldingDelusionOfTheFarNorthScions",
+      "OblationOfTheFarNorthScions",
+      "AureateRadianceOfTheFarNorthScions"
+    ]
+  },
+  "OldenDaysOfScorchingMight": {
+    "materialKey": "OldenDaysOfScorchingMight",
+    "familyKey": "ScorchingMight",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 3,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "EchoOfScorchingMight",
+      "RemnantGlowOfScorchingMight",
+      "DreamOfScorchingMight",
+      "OldenDaysOfScorchingMight"
+    ]
+  },
+  "OldHandguard": {
+    "materialKey": "OldHandguard",
+    "familyKey": "nobushi_materials",
+    "familyType": "general_enemy_drop_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "OldHandguard",
+      "KageuchiHandguard",
+      "FamedHandguard"
+    ]
+  },
+  "OldOperativesPocketWatch": {
+    "materialKey": "OldOperativesPocketWatch",
+    "familyKey": "fatui_operative_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "OldOperativesPocketWatch",
+      "OperativesStandardPocketWatch",
+      "OperativesConstancy"
+    ]
+  },
+  "OminousMask": {
+    "materialKey": "OminousMask",
+    "familyKey": "hilichurl_materials",
+    "familyType": "general_enemy_drop_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "DamagedMask",
+      "StainedMask",
+      "OminousMask"
+    ]
+  },
+  "OperativesConstancy": {
+    "materialKey": "OperativesConstancy",
+    "familyKey": "fatui_operative_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "OldOperativesPocketWatch",
+      "OperativesStandardPocketWatch",
+      "OperativesConstancy"
+    ]
+  },
+  "OperativesStandardPocketWatch": {
+    "materialKey": "OperativesStandardPocketWatch",
+    "familyKey": "fatui_operative_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "OldOperativesPocketWatch",
+      "OperativesStandardPocketWatch",
+      "OperativesConstancy"
+    ]
+  },
+  "PhilosophiesOfAdmonition": {
+    "materialKey": "PhilosophiesOfAdmonition",
+    "familyKey": "Admonition",
+    "familyType": "talent_book_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfAdmonition",
+      "GuideToAdmonition",
+      "PhilosophiesOfAdmonition"
+    ]
+  },
+  "PhilosophiesOfBallad": {
+    "materialKey": "PhilosophiesOfBallad",
+    "familyKey": "Ballad",
+    "familyType": "talent_book_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfBallad",
+      "GuideToBallad",
+      "PhilosophiesOfBallad"
+    ]
+  },
+  "PhilosophiesOfConflict": {
+    "materialKey": "PhilosophiesOfConflict",
+    "familyKey": "Conflict",
+    "familyType": "talent_book_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfConflict",
+      "GuideToConflict",
+      "PhilosophiesOfConflict"
+    ]
+  },
+  "PhilosophiesOfContention": {
+    "materialKey": "PhilosophiesOfContention",
+    "familyKey": "Contention",
+    "familyType": "talent_book_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfContention",
+      "GuideToContention",
+      "PhilosophiesOfContention"
+    ]
+  },
+  "PhilosophiesOfDiligence": {
+    "materialKey": "PhilosophiesOfDiligence",
+    "familyKey": "Diligence",
+    "familyType": "talent_book_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfDiligence",
+      "GuideToDiligence",
+      "PhilosophiesOfDiligence"
+    ]
+  },
+  "PhilosophiesOfElegance": {
+    "materialKey": "PhilosophiesOfElegance",
+    "familyKey": "Elegance",
+    "familyType": "talent_book_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfElegance",
+      "GuideToElegance",
+      "PhilosophiesOfElegance"
+    ]
+  },
+  "PhilosophiesOfElysium": {
+    "materialKey": "PhilosophiesOfElysium",
+    "familyKey": "Elysium",
+    "familyType": "talent_book_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfElysium",
+      "GuideToElysium",
+      "PhilosophiesOfElysium"
+    ]
+  },
+  "PhilosophiesOfEquity": {
+    "materialKey": "PhilosophiesOfEquity",
+    "familyKey": "Equity",
+    "familyType": "talent_book_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfEquity",
+      "GuideToEquity",
+      "PhilosophiesOfEquity"
+    ]
+  },
+  "PhilosophiesOfFreedom": {
+    "materialKey": "PhilosophiesOfFreedom",
+    "familyKey": "Freedom",
+    "familyType": "talent_book_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfFreedom",
+      "GuideToFreedom",
+      "PhilosophiesOfFreedom"
+    ]
+  },
+  "PhilosophiesOfGold": {
+    "materialKey": "PhilosophiesOfGold",
+    "familyKey": "Gold",
+    "familyType": "talent_book_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfGold",
+      "GuideToGold",
+      "PhilosophiesOfGold"
+    ]
+  },
+  "PhilosophiesOfIngenuity": {
+    "materialKey": "PhilosophiesOfIngenuity",
+    "familyKey": "Ingenuity",
+    "familyType": "talent_book_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfIngenuity",
+      "GuideToIngenuity",
+      "PhilosophiesOfIngenuity"
+    ]
+  },
+  "PhilosophiesOfJustice": {
+    "materialKey": "PhilosophiesOfJustice",
+    "familyKey": "Justice",
+    "familyType": "talent_book_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfJustice",
+      "GuideToJustice",
+      "PhilosophiesOfJustice"
+    ]
+  },
+  "PhilosophiesOfKindling": {
+    "materialKey": "PhilosophiesOfKindling",
+    "familyKey": "Kindling",
+    "familyType": "talent_book_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfKindling",
+      "GuideToKindling",
+      "PhilosophiesOfKindling"
+    ]
+  },
+  "PhilosophiesOfLight": {
+    "materialKey": "PhilosophiesOfLight",
+    "familyKey": "Light",
+    "familyType": "talent_book_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfLight",
+      "GuideToLight",
+      "PhilosophiesOfLight"
+    ]
+  },
+  "PhilosophiesOfMoonlight": {
+    "materialKey": "PhilosophiesOfMoonlight",
+    "familyKey": "Moonlight",
+    "familyType": "talent_book_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfMoonlight",
+      "GuideToMoonlight",
+      "PhilosophiesOfMoonlight"
+    ]
+  },
+  "PhilosophiesOfOrder": {
+    "materialKey": "PhilosophiesOfOrder",
+    "familyKey": "Order",
+    "familyType": "talent_book_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfOrder",
+      "GuideToOrder",
+      "PhilosophiesOfOrder"
+    ]
+  },
+  "PhilosophiesOfPraxis": {
+    "materialKey": "PhilosophiesOfPraxis",
+    "familyKey": "Praxis",
+    "familyType": "talent_book_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfPraxis",
+      "GuideToPraxis",
+      "PhilosophiesOfPraxis"
+    ]
+  },
+  "PhilosophiesOfProsperity": {
+    "materialKey": "PhilosophiesOfProsperity",
+    "familyKey": "Prosperity",
+    "familyType": "talent_book_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfProsperity",
+      "GuideToProsperity",
+      "PhilosophiesOfProsperity"
+    ]
+  },
+  "PhilosophiesOfResistance": {
+    "materialKey": "PhilosophiesOfResistance",
+    "familyKey": "Resistance",
+    "familyType": "talent_book_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfResistance",
+      "GuideToResistance",
+      "PhilosophiesOfResistance"
+    ]
+  },
+  "PhilosophiesOfTransience": {
+    "materialKey": "PhilosophiesOfTransience",
+    "familyKey": "Transience",
+    "familyType": "talent_book_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfTransience",
+      "GuideToTransience",
+      "PhilosophiesOfTransience"
+    ]
+  },
+  "PhilosophiesOfVagrancy": {
+    "materialKey": "PhilosophiesOfVagrancy",
+    "familyKey": "Vagrancy",
+    "familyType": "talent_book_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfVagrancy",
+      "GuideToVagrancy",
+      "PhilosophiesOfVagrancy"
+    ]
+  },
+  "PieceOfAerosiderite": {
+    "materialKey": "PieceOfAerosiderite",
+    "familyKey": "Aerosiderite",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 1,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "GrainOfAerosiderite",
+      "PieceOfAerosiderite",
+      "BitOfAerosiderite",
+      "ChunkOfAerosiderite"
+    ]
+  },
+  "PolarizingPrism": {
+    "materialKey": "PolarizingPrism",
+    "familyKey": "mirror_maiden_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "DismalPrism",
+      "CrystalPrism",
+      "PolarizingPrism"
+    ]
+  },
+  "PrecisionDriveShaft": {
+    "materialKey": "PrecisionDriveShaft",
+    "familyKey": "landcruiser_materials",
+    "familyType": "general_enemy_drop_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "BrokenDriveShaft",
+      "ReinforcedDriveShaft",
+      "PrecisionDriveShaft"
+    ]
+  },
+  "PrithivaTopazChunk": {
+    "materialKey": "PrithivaTopazChunk",
+    "familyKey": "Geo",
+    "familyType": "element_gem_family",
+    "tierIndex": 2,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "PrithivaTopazSliver",
+      "PrithivaTopazFragment",
+      "PrithivaTopazChunk",
+      "PrithivaTopazGemstone"
+    ]
+  },
+  "PrithivaTopazFragment": {
+    "materialKey": "PrithivaTopazFragment",
+    "familyKey": "Geo",
+    "familyType": "element_gem_family",
+    "tierIndex": 1,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "PrithivaTopazSliver",
+      "PrithivaTopazFragment",
+      "PrithivaTopazChunk",
+      "PrithivaTopazGemstone"
+    ]
+  },
+  "PrithivaTopazGemstone": {
+    "materialKey": "PrithivaTopazGemstone",
+    "familyKey": "Geo",
+    "familyType": "element_gem_family",
+    "tierIndex": 3,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "PrithivaTopazSliver",
+      "PrithivaTopazFragment",
+      "PrithivaTopazChunk",
+      "PrithivaTopazGemstone"
+    ]
+  },
+  "PrithivaTopazSliver": {
+    "materialKey": "PrithivaTopazSliver",
+    "familyKey": "Geo",
+    "familyType": "element_gem_family",
+    "tierIndex": 0,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "PrithivaTopazSliver",
+      "PrithivaTopazFragment",
+      "PrithivaTopazChunk",
+      "PrithivaTopazGemstone"
+    ]
+  },
+  "RadiantExoskeleton": {
+    "materialKey": "RadiantExoskeleton",
+    "familyKey": "radiant_beast_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "LightlessBone",
+      "GlowingRemains",
+      "RadiantExoskeleton"
+    ]
+  },
+  "RadiantPrism": {
+    "materialKey": "RadiantPrism",
+    "familyKey": "primal_construct_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "DamagedPrism",
+      "TurbidPrism",
+      "RadiantPrism"
+    ]
+  },
+  "RecruitsInsignia": {
+    "materialKey": "RecruitsInsignia",
+    "familyKey": "fatui_skirmisher_materials",
+    "familyType": "general_enemy_drop_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "RecruitsInsignia",
+      "SergeantsInsignia",
+      "LieutenantsInsignia"
+    ]
+  },
+  "RefractiveBud": {
+    "materialKey": "RefractiveBud",
+    "familyKey": "tenebrous_mimesis_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "RefractiveBud",
+      "BewilderingBroadleaf",
+      "IllusoryLeafcoil"
+    ]
+  },
+  "ReinforcedDriveShaft": {
+    "materialKey": "ReinforcedDriveShaft",
+    "familyKey": "landcruiser_materials",
+    "familyType": "general_enemy_drop_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "BrokenDriveShaft",
+      "ReinforcedDriveShaft",
+      "PrecisionDriveShaft"
+    ]
+  },
+  "RelicFromGuyun": {
+    "materialKey": "RelicFromGuyun",
+    "familyKey": "Guyun",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 2,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "LuminousSandsFromGuyun",
+      "LustrousStoneFromGuyun",
+      "RelicFromGuyun",
+      "DivineBodyFromGuyun"
+    ]
+  },
+  "RemnantGlowOfScorchingMight": {
+    "materialKey": "RemnantGlowOfScorchingMight",
+    "familyKey": "ScorchingMight",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 1,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "EchoOfScorchingMight",
+      "RemnantGlowOfScorchingMight",
+      "DreamOfScorchingMight",
+      "OldenDaysOfScorchingMight"
+    ]
+  },
+  "RichRedBrocade": {
+    "materialKey": "RichRedBrocade",
+    "familyKey": "eremite_materials",
+    "familyType": "general_enemy_drop_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "FadedRedSatin",
+      "TrimmedRedSilk",
+      "RichRedBrocade"
+    ]
+  },
+  "RiftCore": {
+    "materialKey": "RiftCore",
+    "familyKey": "breacher_primus_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "RiftCore",
+      "ForeignSynapse",
+      "AlienLifeCore"
+    ]
+  },
+  "RobustFungalNucleus": {
+    "materialKey": "RobustFungalNucleus",
+    "familyKey": "state_shifted_fungus_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "InactivatedFungalNucleus",
+      "DormantFungalNucleus",
+      "RobustFungalNucleus"
+    ]
+  },
+  "RuinedHilt": {
+    "materialKey": "RuinedHilt",
+    "familyKey": "praetorian_golem_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "RuinedHilt",
+      "SplinteredHilt",
+      "StillSmolderingHilt"
+    ]
+  },
+  "SaurianCrownedWarriorsGoldenWhistle": {
+    "materialKey": "SaurianCrownedWarriorsGoldenWhistle",
+    "familyKey": "sauroform_tribal_warrior_materials",
+    "familyType": "general_enemy_drop_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "SentrysWoodenWhistle",
+      "WarriorsMetalWhistle",
+      "SaurianCrownedWarriorsGoldenWhistle"
+    ]
+  },
+  "ScatteredPieceOfDecarabiansDream": {
+    "materialKey": "ScatteredPieceOfDecarabiansDream",
+    "familyKey": "Decarabian",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 3,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "TileOfDecarabiansTower",
+      "DebrisOfDecarabiansCity",
+      "FragmentOfDecarabiansEpic",
+      "ScatteredPieceOfDecarabiansDream"
+    ]
+  },
+  "ScoopOfTaintedWater": {
+    "materialKey": "ScoopOfTaintedWater",
+    "familyKey": "tainted_hydro_phantasm_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "DropOfTaintedWater",
+      "ScoopOfTaintedWater",
+      "NewbornTaintedHydroPhantasm"
+    ]
+  },
+  "SealedScroll": {
+    "materialKey": "SealedScroll",
+    "familyKey": "samachurl_materials",
+    "familyType": "general_enemy_drop_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "DiviningScroll",
+      "SealedScroll",
+      "ForbiddenCurseScroll"
+    ]
+  },
+  "SeasonedFang": {
+    "materialKey": "SeasonedFang",
+    "familyKey": "natlan_saurian_materials",
+    "familyType": "general_enemy_drop_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "JuvenileFang",
+      "SeasonedFang",
+      "TyrantsFang"
+    ]
+  },
+  "SentrysWoodenWhistle": {
+    "materialKey": "SentrysWoodenWhistle",
+    "familyKey": "sauroform_tribal_warrior_materials",
+    "familyType": "general_enemy_drop_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "SentrysWoodenWhistle",
+      "WarriorsMetalWhistle",
+      "SaurianCrownedWarriorsGoldenWhistle"
+    ]
+  },
+  "SergeantsInsignia": {
+    "materialKey": "SergeantsInsignia",
+    "familyKey": "fatui_skirmisher_materials",
+    "familyType": "general_enemy_drop_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "RecruitsInsignia",
+      "SergeantsInsignia",
+      "LieutenantsInsignia"
+    ]
+  },
+  "ShacklesOfTheDandelionGladiator": {
+    "materialKey": "ShacklesOfTheDandelionGladiator",
+    "familyKey": "DandelionGladiator",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 2,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "FettersOfTheDandelionGladiator",
+      "ChainsOfTheDandelionGladiator",
+      "ShacklesOfTheDandelionGladiator",
+      "DreamOfTheDandelionGladiator"
+    ]
+  },
+  "ShardOfAShatteredWill": {
+    "materialKey": "ShardOfAShatteredWill",
+    "familyKey": "wayob_manifestation_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "ShardOfAShatteredWill",
+      "LocusOfAClearWill",
+      "SigilOfAStridingWill"
+    ]
+  },
+  "SharpArrowhead": {
+    "materialKey": "SharpArrowhead",
+    "familyKey": "hilichurl_shooter_materials",
+    "familyType": "general_enemy_drop_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "FirmArrowhead",
+      "SharpArrowhead",
+      "WeatheredArrowhead"
+    ]
+  },
+  "SheathOfTheSecretSource": {
+    "materialKey": "SheathOfTheSecretSource",
+    "familyKey": "secret_source_automaton_hunter_seeker_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "AxisOfTheSecretSource",
+      "SheathOfTheSecretSource",
+      "HeartOfTheSecretSource"
+    ]
+  },
+  "ShimmeringNectar": {
+    "materialKey": "ShimmeringNectar",
+    "familyKey": "whopperflower_materials",
+    "familyType": "general_enemy_drop_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "WhopperflowerNectar",
+      "ShimmeringNectar",
+      "EnergyNectar"
+    ]
+  },
+  "ShivadaJadeChunk": {
+    "materialKey": "ShivadaJadeChunk",
+    "familyKey": "Cryo",
+    "familyType": "element_gem_family",
+    "tierIndex": 2,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "ShivadaJadeSliver",
+      "ShivadaJadeFragment",
+      "ShivadaJadeChunk",
+      "ShivadaJadeGemstone"
+    ]
+  },
+  "ShivadaJadeFragment": {
+    "materialKey": "ShivadaJadeFragment",
+    "familyKey": "Cryo",
+    "familyType": "element_gem_family",
+    "tierIndex": 1,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "ShivadaJadeSliver",
+      "ShivadaJadeFragment",
+      "ShivadaJadeChunk",
+      "ShivadaJadeGemstone"
+    ]
+  },
+  "ShivadaJadeGemstone": {
+    "materialKey": "ShivadaJadeGemstone",
+    "familyKey": "Cryo",
+    "familyType": "element_gem_family",
+    "tierIndex": 3,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "ShivadaJadeSliver",
+      "ShivadaJadeFragment",
+      "ShivadaJadeChunk",
+      "ShivadaJadeGemstone"
+    ]
+  },
+  "ShivadaJadeSliver": {
+    "materialKey": "ShivadaJadeSliver",
+    "familyKey": "Cryo",
+    "familyType": "element_gem_family",
+    "tierIndex": 0,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "ShivadaJadeSliver",
+      "ShivadaJadeFragment",
+      "ShivadaJadeChunk",
+      "ShivadaJadeGemstone"
+    ]
+  },
+  "SigilOfAStridingWill": {
+    "materialKey": "SigilOfAStridingWill",
+    "familyKey": "wayob_manifestation_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "ShardOfAShatteredWill",
+      "LocusOfAClearWill",
+      "SigilOfAStridingWill"
+    ]
+  },
+  "SilverGobletOfThePristineSea": {
+    "materialKey": "SilverGobletOfThePristineSea",
+    "familyKey": "PristineSea",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 2,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "BrokenGobletOfThePristineSea",
+      "WineGobletOfThePristineSea",
+      "SilverGobletOfThePristineSea",
+      "GoldenGobletOfThePristineSea"
+    ]
+  },
+  "SilverRavenInsignia": {
+    "materialKey": "SilverRavenInsignia",
+    "familyKey": "treasure_hoarder_materials",
+    "familyType": "general_enemy_drop_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TreasureHoarderInsignia",
+      "SilverRavenInsignia",
+      "GoldenRavenInsignia"
+    ]
+  },
+  "SilverTalismanOfTheForestDew": {
+    "materialKey": "SilverTalismanOfTheForestDew",
+    "familyKey": "ForestDew",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 2,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "CopperTalismanOfTheForestDew",
+      "IronTalismanOfTheForestDew",
+      "SilverTalismanOfTheForestDew",
+      "GoldenTalismanOfTheForestDew"
+    ]
+  },
+  "SlimeConcentrate": {
+    "materialKey": "SlimeConcentrate",
+    "familyKey": "slime_materials",
+    "familyType": "general_enemy_drop_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "SlimeCondensate",
+      "SlimeSecretions",
+      "SlimeConcentrate"
+    ]
+  },
+  "SlimeCondensate": {
+    "materialKey": "SlimeCondensate",
+    "familyKey": "slime_materials",
+    "familyType": "general_enemy_drop_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "SlimeCondensate",
+      "SlimeSecretions",
+      "SlimeConcentrate"
+    ]
+  },
+  "SlimeSecretions": {
+    "materialKey": "SlimeSecretions",
+    "familyKey": "slime_materials",
+    "familyType": "general_enemy_drop_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "SlimeCondensate",
+      "SlimeSecretions",
+      "SlimeConcentrate"
+    ]
+  },
+  "SpectralHeart": {
+    "materialKey": "SpectralHeart",
+    "familyKey": "specter_materials",
+    "familyType": "general_enemy_drop_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "SpectralHusk",
+      "SpectralHeart",
+      "SpectralNucleus"
+    ]
+  },
+  "SpectralHusk": {
+    "materialKey": "SpectralHusk",
+    "familyKey": "specter_materials",
+    "familyType": "general_enemy_drop_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "SpectralHusk",
+      "SpectralHeart",
+      "SpectralNucleus"
+    ]
+  },
+  "SpectralNucleus": {
+    "materialKey": "SpectralNucleus",
+    "familyKey": "specter_materials",
+    "familyType": "general_enemy_drop_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "SpectralHusk",
+      "SpectralHeart",
+      "SpectralNucleus"
+    ]
+  },
+  "SplinteredHilt": {
+    "materialKey": "SplinteredHilt",
+    "familyKey": "praetorian_golem_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "RuinedHilt",
+      "SplinteredHilt",
+      "StillSmolderingHilt"
+    ]
+  },
+  "SpringOfPureSacredDewdrop": {
+    "materialKey": "SpringOfPureSacredDewdrop",
+    "familyKey": "PureSacredDewdrop",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 2,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "DrossOfPureSacredDewdrop",
+      "SublimationOfPureSacredDewdrop",
+      "SpringOfPureSacredDewdrop",
+      "EssenceOfPureSacredDewdrop"
+    ]
+  },
+  "StainedMask": {
+    "materialKey": "StainedMask",
+    "familyKey": "hilichurl_materials",
+    "familyType": "general_enemy_drop_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "DamagedMask",
+      "StainedMask",
+      "OminousMask"
+    ]
+  },
+  "StillSmolderingHilt": {
+    "materialKey": "StillSmolderingHilt",
+    "familyKey": "praetorian_golem_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "RuinedHilt",
+      "SplinteredHilt",
+      "StillSmolderingHilt"
+    ]
+  },
+  "SturdyBoneShard": {
+    "materialKey": "SturdyBoneShard",
+    "familyKey": "vishap_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "FragileBoneShard",
+      "SturdyBoneShard",
+      "FossilizedBoneShard"
+    ]
+  },
+  "SturdyShell": {
+    "materialKey": "SturdyShell",
+    "familyKey": "consecrated_beast_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "DesiccatedShell",
+      "SturdyShell",
+      "MarkedShell"
+    ]
+  },
+  "SublimationOfPureSacredDewdrop": {
+    "materialKey": "SublimationOfPureSacredDewdrop",
+    "familyKey": "PureSacredDewdrop",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 1,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "DrossOfPureSacredDewdrop",
+      "SublimationOfPureSacredDewdrop",
+      "SpringOfPureSacredDewdrop",
+      "EssenceOfPureSacredDewdrop"
+    ]
+  },
+  "SunderedGloryOfTheFarNorthScions": {
+    "materialKey": "SunderedGloryOfTheFarNorthScions",
+    "familyKey": "FarNorthScions",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 0,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "SunderedGloryOfTheFarNorthScions",
+      "UnyieldingDelusionOfTheFarNorthScions",
+      "OblationOfTheFarNorthScions",
+      "AureateRadianceOfTheFarNorthScions"
+    ]
+  },
+  "TatteredWarrant": {
+    "materialKey": "TatteredWarrant",
+    "familyKey": "fatui_oprichniki_materials",
+    "familyType": "general_enemy_drop_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TatteredWarrant",
+      "ImmaculateWarrant",
+      "FrostEtchedWarrant"
+    ]
+  },
+  "TeachingsOfAdmonition": {
+    "materialKey": "TeachingsOfAdmonition",
+    "familyKey": "Admonition",
+    "familyType": "talent_book_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfAdmonition",
+      "GuideToAdmonition",
+      "PhilosophiesOfAdmonition"
+    ]
+  },
+  "TeachingsOfBallad": {
+    "materialKey": "TeachingsOfBallad",
+    "familyKey": "Ballad",
+    "familyType": "talent_book_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfBallad",
+      "GuideToBallad",
+      "PhilosophiesOfBallad"
+    ]
+  },
+  "TeachingsOfConflict": {
+    "materialKey": "TeachingsOfConflict",
+    "familyKey": "Conflict",
+    "familyType": "talent_book_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfConflict",
+      "GuideToConflict",
+      "PhilosophiesOfConflict"
+    ]
+  },
+  "TeachingsOfContention": {
+    "materialKey": "TeachingsOfContention",
+    "familyKey": "Contention",
+    "familyType": "talent_book_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfContention",
+      "GuideToContention",
+      "PhilosophiesOfContention"
+    ]
+  },
+  "TeachingsOfDiligence": {
+    "materialKey": "TeachingsOfDiligence",
+    "familyKey": "Diligence",
+    "familyType": "talent_book_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfDiligence",
+      "GuideToDiligence",
+      "PhilosophiesOfDiligence"
+    ]
+  },
+  "TeachingsOfElegance": {
+    "materialKey": "TeachingsOfElegance",
+    "familyKey": "Elegance",
+    "familyType": "talent_book_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfElegance",
+      "GuideToElegance",
+      "PhilosophiesOfElegance"
+    ]
+  },
+  "TeachingsOfElysium": {
+    "materialKey": "TeachingsOfElysium",
+    "familyKey": "Elysium",
+    "familyType": "talent_book_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfElysium",
+      "GuideToElysium",
+      "PhilosophiesOfElysium"
+    ]
+  },
+  "TeachingsOfEquity": {
+    "materialKey": "TeachingsOfEquity",
+    "familyKey": "Equity",
+    "familyType": "talent_book_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfEquity",
+      "GuideToEquity",
+      "PhilosophiesOfEquity"
+    ]
+  },
+  "TeachingsOfFreedom": {
+    "materialKey": "TeachingsOfFreedom",
+    "familyKey": "Freedom",
+    "familyType": "talent_book_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfFreedom",
+      "GuideToFreedom",
+      "PhilosophiesOfFreedom"
+    ]
+  },
+  "TeachingsOfGold": {
+    "materialKey": "TeachingsOfGold",
+    "familyKey": "Gold",
+    "familyType": "talent_book_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfGold",
+      "GuideToGold",
+      "PhilosophiesOfGold"
+    ]
+  },
+  "TeachingsOfIngenuity": {
+    "materialKey": "TeachingsOfIngenuity",
+    "familyKey": "Ingenuity",
+    "familyType": "talent_book_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfIngenuity",
+      "GuideToIngenuity",
+      "PhilosophiesOfIngenuity"
+    ]
+  },
+  "TeachingsOfJustice": {
+    "materialKey": "TeachingsOfJustice",
+    "familyKey": "Justice",
+    "familyType": "talent_book_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfJustice",
+      "GuideToJustice",
+      "PhilosophiesOfJustice"
+    ]
+  },
+  "TeachingsOfKindling": {
+    "materialKey": "TeachingsOfKindling",
+    "familyKey": "Kindling",
+    "familyType": "talent_book_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfKindling",
+      "GuideToKindling",
+      "PhilosophiesOfKindling"
+    ]
+  },
+  "TeachingsOfLight": {
+    "materialKey": "TeachingsOfLight",
+    "familyKey": "Light",
+    "familyType": "talent_book_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfLight",
+      "GuideToLight",
+      "PhilosophiesOfLight"
+    ]
+  },
+  "TeachingsOfMoonlight": {
+    "materialKey": "TeachingsOfMoonlight",
+    "familyKey": "Moonlight",
+    "familyType": "talent_book_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfMoonlight",
+      "GuideToMoonlight",
+      "PhilosophiesOfMoonlight"
+    ]
+  },
+  "TeachingsOfOrder": {
+    "materialKey": "TeachingsOfOrder",
+    "familyKey": "Order",
+    "familyType": "talent_book_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfOrder",
+      "GuideToOrder",
+      "PhilosophiesOfOrder"
+    ]
+  },
+  "TeachingsOfPraxis": {
+    "materialKey": "TeachingsOfPraxis",
+    "familyKey": "Praxis",
+    "familyType": "talent_book_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfPraxis",
+      "GuideToPraxis",
+      "PhilosophiesOfPraxis"
+    ]
+  },
+  "TeachingsOfProsperity": {
+    "materialKey": "TeachingsOfProsperity",
+    "familyKey": "Prosperity",
+    "familyType": "talent_book_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfProsperity",
+      "GuideToProsperity",
+      "PhilosophiesOfProsperity"
+    ]
+  },
+  "TeachingsOfResistance": {
+    "materialKey": "TeachingsOfResistance",
+    "familyKey": "Resistance",
+    "familyType": "talent_book_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfResistance",
+      "GuideToResistance",
+      "PhilosophiesOfResistance"
+    ]
+  },
+  "TeachingsOfTransience": {
+    "materialKey": "TeachingsOfTransience",
+    "familyKey": "Transience",
+    "familyType": "talent_book_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfTransience",
+      "GuideToTransience",
+      "PhilosophiesOfTransience"
+    ]
+  },
+  "TeachingsOfVagrancy": {
+    "materialKey": "TeachingsOfVagrancy",
+    "familyKey": "Vagrancy",
+    "familyType": "talent_book_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TeachingsOfVagrancy",
+      "GuideToVagrancy",
+      "PhilosophiesOfVagrancy"
+    ]
+  },
+  "TileOfDecarabiansTower": {
+    "materialKey": "TileOfDecarabiansTower",
+    "familyKey": "Decarabian",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 0,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "TileOfDecarabiansTower",
+      "DebrisOfDecarabiansCity",
+      "FragmentOfDecarabiansEpic",
+      "ScatteredPieceOfDecarabiansDream"
+    ]
+  },
+  "TransoceanicChunk": {
+    "materialKey": "TransoceanicChunk",
+    "familyKey": "fontemer_aberrant_materials",
+    "familyType": "general_enemy_drop_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TransoceanicPearl",
+      "TransoceanicChunk",
+      "XenochromaticCrystal"
+    ]
+  },
+  "TransoceanicPearl": {
+    "materialKey": "TransoceanicPearl",
+    "familyKey": "fontemer_aberrant_materials",
+    "familyType": "general_enemy_drop_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TransoceanicPearl",
+      "TransoceanicChunk",
+      "XenochromaticCrystal"
+    ]
+  },
+  "TreasuredFlower": {
+    "materialKey": "TreasuredFlower",
+    "familyKey": "hilichurl_rogue_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "AFlowerYetToBloom",
+      "TreasuredFlower",
+      "WanderersBloomingFlower"
+    ]
+  },
+  "TreasureHoarderInsignia": {
+    "materialKey": "TreasureHoarderInsignia",
+    "familyKey": "treasure_hoarder_materials",
+    "familyType": "general_enemy_drop_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TreasureHoarderInsignia",
+      "SilverRavenInsignia",
+      "GoldenRavenInsignia"
+    ]
+  },
+  "TrimmedRedSilk": {
+    "materialKey": "TrimmedRedSilk",
+    "familyKey": "eremite_materials",
+    "familyType": "general_enemy_drop_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "FadedRedSatin",
+      "TrimmedRedSilk",
+      "RichRedBrocade"
+    ]
+  },
+  "TurbidPrism": {
+    "materialKey": "TurbidPrism",
+    "familyKey": "primal_construct_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "DamagedPrism",
+      "TurbidPrism",
+      "RadiantPrism"
+    ]
+  },
+  "TyrantsFang": {
+    "materialKey": "TyrantsFang",
+    "familyKey": "natlan_saurian_materials",
+    "familyType": "general_enemy_drop_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "JuvenileFang",
+      "SeasonedFang",
+      "TyrantsFang"
+    ]
+  },
+  "UnyieldingDelusionOfTheFarNorthScions": {
+    "materialKey": "UnyieldingDelusionOfTheFarNorthScions",
+    "familyKey": "FarNorthScions",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 1,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "SunderedGloryOfTheFarNorthScions",
+      "UnyieldingDelusionOfTheFarNorthScions",
+      "OblationOfTheFarNorthScions",
+      "AureateRadianceOfTheFarNorthScions"
+    ]
+  },
+  "VajradaAmethystChunk": {
+    "materialKey": "VajradaAmethystChunk",
+    "familyKey": "Electro",
+    "familyType": "element_gem_family",
+    "tierIndex": 2,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "VajradaAmethystSliver",
+      "VajradaAmethystFragment",
+      "VajradaAmethystChunk",
+      "VajradaAmethystGemstone"
+    ]
+  },
+  "VajradaAmethystFragment": {
+    "materialKey": "VajradaAmethystFragment",
+    "familyKey": "Electro",
+    "familyType": "element_gem_family",
+    "tierIndex": 1,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "VajradaAmethystSliver",
+      "VajradaAmethystFragment",
+      "VajradaAmethystChunk",
+      "VajradaAmethystGemstone"
+    ]
+  },
+  "VajradaAmethystGemstone": {
+    "materialKey": "VajradaAmethystGemstone",
+    "familyKey": "Electro",
+    "familyType": "element_gem_family",
+    "tierIndex": 3,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "VajradaAmethystSliver",
+      "VajradaAmethystFragment",
+      "VajradaAmethystChunk",
+      "VajradaAmethystGemstone"
+    ]
+  },
+  "VajradaAmethystSliver": {
+    "materialKey": "VajradaAmethystSliver",
+    "familyKey": "Electro",
+    "familyType": "element_gem_family",
+    "tierIndex": 0,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "VajradaAmethystSliver",
+      "VajradaAmethystFragment",
+      "VajradaAmethystChunk",
+      "VajradaAmethystGemstone"
+    ]
+  },
+  "VarunadaLazuriteChunk": {
+    "materialKey": "VarunadaLazuriteChunk",
+    "familyKey": "Hydro",
+    "familyType": "element_gem_family",
+    "tierIndex": 2,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "VarunadaLazuriteSliver",
+      "VarunadaLazuriteFragment",
+      "VarunadaLazuriteChunk",
+      "VarunadaLazuriteGemstone"
+    ]
+  },
+  "VarunadaLazuriteFragment": {
+    "materialKey": "VarunadaLazuriteFragment",
+    "familyKey": "Hydro",
+    "familyType": "element_gem_family",
+    "tierIndex": 1,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "VarunadaLazuriteSliver",
+      "VarunadaLazuriteFragment",
+      "VarunadaLazuriteChunk",
+      "VarunadaLazuriteGemstone"
+    ]
+  },
+  "VarunadaLazuriteGemstone": {
+    "materialKey": "VarunadaLazuriteGemstone",
+    "familyKey": "Hydro",
+    "familyType": "element_gem_family",
+    "tierIndex": 3,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "VarunadaLazuriteSliver",
+      "VarunadaLazuriteFragment",
+      "VarunadaLazuriteChunk",
+      "VarunadaLazuriteGemstone"
+    ]
+  },
+  "VarunadaLazuriteSliver": {
+    "materialKey": "VarunadaLazuriteSliver",
+    "familyKey": "Hydro",
+    "familyType": "element_gem_family",
+    "tierIndex": 0,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "VarunadaLazuriteSliver",
+      "VarunadaLazuriteFragment",
+      "VarunadaLazuriteChunk",
+      "VarunadaLazuriteGemstone"
+    ]
+  },
+  "VayudaTurquoiseChunk": {
+    "materialKey": "VayudaTurquoiseChunk",
+    "familyKey": "Anemo",
+    "familyType": "element_gem_family",
+    "tierIndex": 2,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "VayudaTurquoiseSliver",
+      "VayudaTurquoiseFragment",
+      "VayudaTurquoiseChunk",
+      "VayudaTurquoiseGemstone"
+    ]
+  },
+  "VayudaTurquoiseFragment": {
+    "materialKey": "VayudaTurquoiseFragment",
+    "familyKey": "Anemo",
+    "familyType": "element_gem_family",
+    "tierIndex": 1,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "VayudaTurquoiseSliver",
+      "VayudaTurquoiseFragment",
+      "VayudaTurquoiseChunk",
+      "VayudaTurquoiseGemstone"
+    ]
+  },
+  "VayudaTurquoiseGemstone": {
+    "materialKey": "VayudaTurquoiseGemstone",
+    "familyKey": "Anemo",
+    "familyType": "element_gem_family",
+    "tierIndex": 3,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "VayudaTurquoiseSliver",
+      "VayudaTurquoiseFragment",
+      "VayudaTurquoiseChunk",
+      "VayudaTurquoiseGemstone"
+    ]
+  },
+  "VayudaTurquoiseSliver": {
+    "materialKey": "VayudaTurquoiseSliver",
+    "familyKey": "Anemo",
+    "familyType": "element_gem_family",
+    "tierIndex": 0,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "VayudaTurquoiseSliver",
+      "VayudaTurquoiseFragment",
+      "VayudaTurquoiseChunk",
+      "VayudaTurquoiseGemstone"
+    ]
+  },
+  "WanderersBloomingFlower": {
+    "materialKey": "WanderersBloomingFlower",
+    "familyKey": "hilichurl_rogue_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "AFlowerYetToBloom",
+      "TreasuredFlower",
+      "WanderersBloomingFlower"
+    ]
+  },
+  "WarmBackShell": {
+    "materialKey": "WarmBackShell",
+    "familyKey": "furnace_shell_mountain_weasel_materials",
+    "familyType": "elite_enemy_drop_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "ColdCrackedShellshard",
+      "WarmBackShell",
+      "BlazingPrismshell"
+    ]
+  },
+  "WarriorsMetalWhistle": {
+    "materialKey": "WarriorsMetalWhistle",
+    "familyKey": "sauroform_tribal_warrior_materials",
+    "familyType": "general_enemy_drop_family",
+    "tierIndex": 1,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "SentrysWoodenWhistle",
+      "WarriorsMetalWhistle",
+      "SaurianCrownedWarriorsGoldenWhistle"
+    ]
+  },
+  "WeatheredArrowhead": {
+    "materialKey": "WeatheredArrowhead",
+    "familyKey": "hilichurl_shooter_materials",
+    "familyType": "general_enemy_drop_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "FirmArrowhead",
+      "SharpArrowhead",
+      "WeatheredArrowhead"
+    ]
+  },
+  "WhopperflowerNectar": {
+    "materialKey": "WhopperflowerNectar",
+    "familyKey": "whopperflower_materials",
+    "familyType": "general_enemy_drop_family",
+    "tierIndex": 0,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "WhopperflowerNectar",
+      "ShimmeringNectar",
+      "EnergyNectar"
+    ]
+  },
+  "WineGobletOfThePristineSea": {
+    "materialKey": "WineGobletOfThePristineSea",
+    "familyKey": "PristineSea",
+    "familyType": "weapon_ascension_material_family",
+    "tierIndex": 1,
+    "maxTierIndex": 3,
+    "tierKeys": [
+      "BrokenGobletOfThePristineSea",
+      "WineGobletOfThePristineSea",
+      "SilverGobletOfThePristineSea",
+      "GoldenGobletOfThePristineSea"
+    ]
+  },
+  "XenochromaticCrystal": {
+    "materialKey": "XenochromaticCrystal",
+    "familyKey": "fontemer_aberrant_materials",
+    "familyType": "general_enemy_drop_family",
+    "tierIndex": 2,
+    "maxTierIndex": 2,
+    "tierKeys": [
+      "TransoceanicPearl",
+      "TransoceanicChunk",
+      "XenochromaticCrystal"
+    ]
+  }
+}

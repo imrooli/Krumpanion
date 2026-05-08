@@ -1,0 +1,224 @@
+{
+  "0": {
+    "enemyLevel": "12",
+    "adventureExp": 100,
+    "companionshipExp": 10,
+    "revelation": {
+      "characterExpMaterials": {
+        "WanderersAdvice": {
+          "min": 7,
+          "max": 8
+        },
+        "AdventurersExperience": {
+          "min": 3,
+          "max": 4
+        }
+      },
+      "averageCharacterExp": 25000,
+      "averageEfficiencyPercent": 20.4
+    },
+    "wealth": {
+      "mora": 12000,
+      "efficiencyPercent": 20
+    }
+  },
+  "1": {
+    "enemyLevel": "25",
+    "adventureExp": 100,
+    "companionshipExp": 15,
+    "revelation": {
+      "characterExpMaterials": {
+        "WanderersAdvice": {
+          "min": 10,
+          "max": 12
+        },
+        "AdventurersExperience": {
+          "min": 5,
+          "max": 6
+        }
+      },
+      "averageCharacterExp": 38500,
+      "averageEfficiencyPercent": 31.4
+    },
+    "wealth": {
+      "mora": 20000,
+      "efficiencyPercent": 33.3
+    }
+  },
+  "2": {
+    "enemyLevel": "34",
+    "adventureExp": 100,
+    "companionshipExp": 15,
+    "revelation": {
+      "characterExpMaterials": {
+        "AdventurersExperience": {
+          "min": 10,
+          "max": 11
+        }
+      },
+      "averageCharacterExp": 52500,
+      "averageEfficiencyPercent": 42.9
+    },
+    "wealth": {
+      "mora": 28000,
+      "efficiencyPercent": 46.7
+    }
+  },
+  "3": {
+    "enemyLevel": "46",
+    "adventureExp": 100,
+    "companionshipExp": 15,
+    "revelation": {
+      "characterExpMaterials": {
+        "AdventurersExperience": {
+          "min": 13,
+          "max": 14
+        }
+      },
+      "averageCharacterExp": 67500,
+      "averageEfficiencyPercent": 55.1
+    },
+    "wealth": {
+      "mora": 36000,
+      "efficiencyPercent": 60
+    }
+  },
+  "4": {
+    "enemyLevel": "61",
+    "adventureExp": 100,
+    "companionshipExp": 15,
+    "revelation": {
+      "characterExpMaterials": {
+        "AdventurersExperience": {
+          "min": 6,
+          "max": 7
+        },
+        "HerosWit": {
+          "min": 2,
+          "max": 3
+        }
+      },
+      "averageCharacterExp": 82500,
+      "averageEfficiencyPercent": 67.3
+    },
+    "wealth": {
+      "mora": 44000,
+      "efficiencyPercent": 73.3
+    }
+  },
+  "5": {
+    "enemyLevel": "71",
+    "adventureExp": 100,
+    "companionshipExp": 20,
+    "revelation": {
+      "characterExpMaterials": {
+        "AdventurersExperience": {
+          "min": 6,
+          "max": 7
+        },
+        "HerosWit": {
+          "min": 3,
+          "max": 4
+        }
+      },
+      "averageCharacterExp": 102500,
+      "averageEfficiencyPercent": 83.7
+    },
+    "wealth": {
+      "mora": 52000,
+      "efficiencyPercent": 86.7
+    }
+  },
+  "6": {
+    "enemyLevel": "78",
+    "adventureExp": 100,
+    "companionshipExp": 20,
+    "revelation": {
+      "characterExpMaterials": {
+        "AdventurersExperience": {
+          "min": 6,
+          "max": 7
+        },
+        "HerosWit": {
+          "min": 4,
+          "max": 5
+        }
+      },
+      "averageCharacterExp": 122500,
+      "averageEfficiencyPercent": null
+    },
+    "wealth": {
+      "mora": 60000,
+      "efficiencyPercent": null
+    }
+  },
+  "7": {
+    "enemyLevel": "84",
+    "adventureExp": 100,
+    "companionshipExp": 20,
+    "revelation": {
+      "characterExpMaterials": {
+        "AdventurersExperience": {
+          "min": 6,
+          "max": 7
+        },
+        "HerosWit": {
+          "min": 4,
+          "max": 5
+        }
+      },
+      "averageCharacterExp": 122500,
+      "averageEfficiencyPercent": null
+    },
+    "wealth": {
+      "mora": 60000,
+      "efficiencyPercent": null
+    }
+  },
+  "8": {
+    "enemyLevel": "85-86",
+    "adventureExp": 100,
+    "companionshipExp": 20,
+    "revelation": {
+      "characterExpMaterials": {
+        "AdventurersExperience": {
+          "min": 6,
+          "max": 7
+        },
+        "HerosWit": {
+          "min": 4,
+          "max": 5
+        }
+      },
+      "averageCharacterExp": 122500,
+      "averageEfficiencyPercent": null
+    },
+    "wealth": {
+      "mora": 60000,
+      "efficiencyPercent": null
+    }
+  },
+  "9": {
+    "enemyLevel": "95",
+    "adventureExp": 100,
+    "companionshipExp": 20,
+    "revelation": {
+      "characterExpMaterials": {
+        "AdventurersExperience": {
+          "min": 6,
+          "max": 7
+        },
+        "HerosWit": {
+          "min": 4,
+          "max": 5
+        }
+      },
+      "averageCharacterExp": 122500,
+      "averageEfficiencyPercent": null
+    },
+    "wealth": {
+      "mora": 60000,
+      "efficiencyPercent": null
+    }
+  }
+}

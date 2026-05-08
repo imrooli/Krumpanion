@@ -1,0 +1,68 @@
+{
+  "characterKey": "Traveler",
+  "displayName": "Traveler",
+  "status": "special_case",
+  "releaseState": "special_case",
+  "plannerEligible": true,
+  "sharedCharacterLevel": true,
+  "sharedAscension": true,
+  "rarity": 5,
+  "weaponType": "Sword",
+  "localSpecialtyKey": "WindwheelAster",
+  "commonEnemyDropFamilyKey": "hilichurl_materials",
+  "notes": [
+    "Traveler shared level and ascension are modeled separately from Traveler elemental talent goals."
+  ],
+  "elementVariants": {
+    "Anemo": {
+      "element": "Anemo",
+      "talentBookFamilyKey": "Freedom",
+      "commonEnemyDropFamilyKey": "samachurl_materials",
+      "weeklyBossMaterialKey": "DvalinsSigh",
+      "status": "verified",
+      "notes": []
+    },
+    "Dendro": {
+      "element": "Dendro",
+      "talentBookFamilyKey": "Admonition",
+      "commonEnemyDropFamilyKey": "fungus_materials",
+      "weeklyBossMaterialKey": "MudraOfTheMaleficGeneral",
+      "status": "verified",
+      "notes": []
+    },
+    "Electro": {
+      "element": "Electro",
+      "talentBookFamilyKey": "Transience",
+      "commonEnemyDropFamilyKey": "nobushi_materials",
+      "weeklyBossMaterialKey": "DragonLordsCrown",
+      "status": "verified",
+      "notes": []
+    },
+    "Geo": {
+      "element": "Geo",
+      "talentBookFamilyKey": "Gold",
+      "commonEnemyDropFamilyKey": "hilichurl_shooter_materials",
+      "weeklyBossMaterialKey": "TailOfBoreas",
+      "status": "verified",
+      "notes": [
+        "Traveler talent materials vary by element and should be reviewed if override data disagrees."
+      ]
+    },
+    "Hydro": {
+      "element": "Hydro",
+      "talentBookFamilyKey": "Equity",
+      "commonEnemyDropFamilyKey": "fontemer_aberrant_materials",
+      "weeklyBossMaterialKey": "WorldspanFern",
+      "status": "verified",
+      "notes": []
+    },
+    "Pyro": {
+      "element": "Pyro",
+      "talentBookFamilyKey": "Contention",
+      "commonEnemyDropFamilyKey": "sauroform_tribal_warrior_materials",
+      "weeklyBossMaterialKey": "TheCornerstoneOfStarsAndFlames",
+      "status": "verified",
+      "notes": []
+    }
+  }
+}

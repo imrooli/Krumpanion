@@ -1,0 +1,634 @@
+{
+  "normalBossAscensionGemDropsByWorldLevel": {
+    "0": {
+      "enemyLevel": 36,
+      "twoStar": {
+        "range": "2-3",
+        "average": 2.1057
+      },
+      "threeStar": null,
+      "fourStar": null,
+      "fiveStar": null
+    },
+    "1": {
+      "enemyLevel": 37,
+      "twoStar": {
+        "range": "2-3",
+        "average": 2.1057
+      },
+      "threeStar": null,
+      "fourStar": null,
+      "fiveStar": null
+    },
+    "2": {
+      "enemyLevel": 41,
+      "twoStar": {
+        "range": "0-2",
+        "average": 1.0323
+      },
+      "threeStar": {
+        "range": "1-4",
+        "average": 1.2954
+      },
+      "fourStar": null,
+      "fiveStar": null
+    },
+    "3": {
+      "enemyLevel": 50,
+      "twoStar": {
+        "range": "0-2",
+        "average": 1.2579
+      },
+      "threeStar": {
+        "range": "1-4",
+        "average": 1.3554
+      },
+      "fourStar": null,
+      "fiveStar": null
+    },
+    "4": {
+      "enemyLevel": 62,
+      "twoStar": {
+        "range": "0-2",
+        "average": 1.4835
+      },
+      "threeStar": {
+        "range": "1-4",
+        "average": 1.4157
+      },
+      "fourStar": {
+        "range": "0-2",
+        "average": 0.099
+      },
+      "fiveStar": null
+    },
+    "5": {
+      "enemyLevel": 72,
+      "twoStar": {
+        "range": "0-3",
+        "average": 1.7091
+      },
+      "threeStar": {
+        "range": "1-5",
+        "average": 1.4757
+      },
+      "fourStar": {
+        "range": "0-3",
+        "average": 0.114
+      },
+      "fiveStar": null
+    },
+    "6": {
+      "enemyLevel": 83,
+      "twoStar": {
+        "range": "0-3",
+        "average": 1.9354
+      },
+      "threeStar": {
+        "range": "1-5",
+        "average": 1.5358
+      },
+      "fourStar": {
+        "range": "0-3",
+        "average": 0.1287
+      },
+      "fiveStar": {
+        "range": "0-3",
+        "average": 0.0129
+      }
+    },
+    "7": {
+      "enemyLevel": 91,
+      "twoStar": {
+        "range": "0-3",
+        "average": 2.1607
+      },
+      "threeStar": {
+        "range": "1-5",
+        "average": 1.5961
+      },
+      "fourStar": {
+        "range": "0-3",
+        "average": 0.144
+      },
+      "fiveStar": {
+        "range": "0-3",
+        "average": 0.0141
+      }
+    },
+    "8": {
+      "enemyLevel": 93,
+      "twoStar": {
+        "range": "0-3",
+        "average": 2.1607
+      },
+      "threeStar": {
+        "range": "1-5",
+        "average": 1.5961
+      },
+      "fourStar": {
+        "range": "0-3",
+        "average": 0.144
+      },
+      "fiveStar": {
+        "range": "0-3",
+        "average": 0.0141
+      }
+    }
+  },
+  "weeklyBossAscensionGemDropsByWorldLevel": {
+    "1": {
+      "enemyLevel": 37,
+      "twoStar": {
+        "range": "3-4",
+        "average": 3.1584
+      },
+      "threeStar": null,
+      "fourStar": null,
+      "fiveStar": null
+    },
+    "2": {
+      "enemyLevel": 41,
+      "twoStar": {
+        "range": "0-3",
+        "average": 2.1416
+      },
+      "threeStar": {
+        "range": "1-5",
+        "average": 1.5913
+      },
+      "fourStar": null,
+      "fiveStar": null
+    },
+    "3": {
+      "enemyLevel": 50,
+      "twoStar": {
+        "range": "0-4",
+        "average": 2.4803
+      },
+      "threeStar": {
+        "range": "1-6",
+        "average": 1.6813
+      },
+      "fourStar": null,
+      "fiveStar": null
+    },
+    "4": {
+      "enemyLevel": 62,
+      "twoStar": {
+        "range": "0-4",
+        "average": 2.8181
+      },
+      "threeStar": {
+        "range": "1-6",
+        "average": 1.7717
+      },
+      "fourStar": {
+        "range": "0-4",
+        "average": 0.1881
+      },
+      "fiveStar": null
+    },
+    "5": {
+      "enemyLevel": 72,
+      "twoStar": {
+        "range": "0-5",
+        "average": 3.157
+      },
+      "threeStar": {
+        "range": "1-7",
+        "average": 1.8617
+      },
+      "fourStar": {
+        "range": "0-5",
+        "average": 0.2106
+      },
+      "fiveStar": null
+    },
+    "6": {
+      "enemyLevel": 83,
+      "twoStar": {
+        "range": "0-5",
+        "average": 3.4963
+      },
+      "threeStar": {
+        "range": "1-7",
+        "average": 1.9518
+      },
+      "fourStar": {
+        "range": "0-5",
+        "average": 0.2325
+      },
+      "fiveStar": {
+        "range": "0-5",
+        "average": 0.0233
+      }
+    },
+    "7": {
+      "enemyLevel": 91,
+      "twoStar": {
+        "range": "0-6",
+        "average": 3.8343
+      },
+      "threeStar": {
+        "range": "1-8",
+        "average": 2.0423
+      },
+      "fourStar": {
+        "range": "0-6",
+        "average": 0.2556
+      },
+      "fiveStar": {
+        "range": "0-6",
+        "average": 0.025
+      }
+    },
+    "8": {
+      "enemyLevel": 93,
+      "twoStar": {
+        "range": "0-6",
+        "average": 3.8343
+      },
+      "threeStar": {
+        "range": "1-8",
+        "average": 2.0423
+      },
+      "fourStar": {
+        "range": "0-6",
+        "average": 0.2556
+      },
+      "fiveStar": {
+        "range": "0-6",
+        "average": 0.025
+      }
+    }
+  },
+  "normalBossUniqueMaterialDropMeanByWorldLevel": {
+    "0": {
+      "bossLevel": "36",
+      "rewardTier": 7,
+      "dropMean": 1.6185
+    },
+    "1": {
+      "bossLevel": "37/39",
+      "rewardTier": 7,
+      "dropMean": 1.6185
+    },
+    "2": {
+      "bossLevel": "41/42",
+      "rewardTier": 8,
+      "dropMean": 1.7037
+    },
+    "3": {
+      "bossLevel": "50/51",
+      "rewardTier": 10,
+      "dropMean": 1.8741
+    },
+    "4": {
+      "bossLevel": "62/63",
+      "rewardTier": 12,
+      "dropMean": 2.0445
+    },
+    "5": {
+      "bossLevel": "72/73",
+      "rewardTier": 14,
+      "dropMean": 2.2149
+    },
+    "6": {
+      "bossLevel": "83/84",
+      "rewardTier": 16,
+      "dropMean": 2.3852
+    },
+    "7": {
+      "bossLevel": "91/92",
+      "rewardTier": 18,
+      "dropMean": 2.5556
+    },
+    "8": {
+      "bossLevel": "93/94",
+      "rewardTier": 18,
+      "dropMean": 2.5556
+    }
+  },
+  "weeklyTalentMaterialDropMeanByWorldLevel": {
+    "5": {
+      "enemyLevel": 73,
+      "dropMean": 1
+    },
+    "6": {
+      "enemyLevel": 84,
+      "dropMean": 1.55
+    },
+    "7": {
+      "enemyLevel": 92,
+      "dropMean": 2.1
+    },
+    "8": {
+      "enemyLevel": 94,
+      "dropMean": 2.4
+    }
+  },
+  "bossGemThreeStarRollMean": {
+    "normalBoss": 1.02,
+    "weeklyBoss": 1.02,
+    "appliesFromRewardLevel": 8
+  },
+  "bossGemDropPackMeanByRewardLevel": [
+    {
+      "enemyLevel": "1-4",
+      "rewardLevel": 0,
+      "normalBoss": 1.3386,
+      "weeklyBoss": 2.0079
+    },
+    {
+      "enemyLevel": "5-9",
+      "rewardLevel": 1,
+      "normalBoss": 1.4289,
+      "weeklyBoss": 2.1432
+    },
+    {
+      "enemyLevel": "10-14",
+      "rewardLevel": 2,
+      "normalBoss": 1.5417,
+      "weeklyBoss": 2.3124
+    },
+    {
+      "enemyLevel": "15-19",
+      "rewardLevel": 3,
+      "normalBoss": 1.6545,
+      "weeklyBoss": 2.4816
+    },
+    {
+      "enemyLevel": "20-24",
+      "rewardLevel": 4,
+      "normalBoss": 1.7673,
+      "weeklyBoss": 2.6508
+    },
+    {
+      "enemyLevel": "25-29",
+      "rewardLevel": 5,
+      "normalBoss": 1.8801,
+      "weeklyBoss": 2.82
+    },
+    {
+      "enemyLevel": "30-34",
+      "rewardLevel": 6,
+      "normalBoss": 1.9929,
+      "weeklyBoss": 2.9892
+    },
+    {
+      "enemyLevel": "35-39",
+      "rewardLevel": 7,
+      "normalBoss": 2.1057,
+      "weeklyBoss": 3.1584
+    },
+    {
+      "enemyLevel": "40-44",
+      "rewardLevel": 8,
+      "normalBoss": 1.3077,
+      "weeklyBoss": 2.7129
+    },
+    {
+      "enemyLevel": "45-49",
+      "rewardLevel": 9,
+      "normalBoss": 1.4505,
+      "weeklyBoss": 2.9271
+    },
+    {
+      "enemyLevel": "50-54",
+      "rewardLevel": 10,
+      "normalBoss": 1.5933,
+      "weeklyBoss": 3.1416
+    },
+    {
+      "enemyLevel": "55-59",
+      "rewardLevel": 11,
+      "normalBoss": 1.7364,
+      "weeklyBoss": 3.3558
+    },
+    {
+      "enemyLevel": "60-64",
+      "rewardLevel": 12,
+      "normalBoss": 1.9782,
+      "weeklyBoss": 3.7578
+    },
+    {
+      "enemyLevel": "65-69",
+      "rewardLevel": 13,
+      "normalBoss": 2.1285,
+      "weeklyBoss": 3.9837
+    },
+    {
+      "enemyLevel": "70-74",
+      "rewardLevel": 14,
+      "normalBoss": 2.2788,
+      "weeklyBoss": 4.2093
+    },
+    {
+      "enemyLevel": "75-79",
+      "rewardLevel": 15,
+      "normalBoss": 2.4414,
+      "weeklyBoss": 4.4571
+    },
+    {
+      "enemyLevel": "80-84",
+      "rewardLevel": 16,
+      "normalBoss": 2.5929,
+      "weeklyBoss": 4.6839
+    },
+    {
+      "enemyLevel": "85-89",
+      "rewardLevel": 17,
+      "normalBoss": 2.7441,
+      "weeklyBoss": 4.9101
+    },
+    {
+      "enemyLevel": "90-92",
+      "rewardLevel": 18,
+      "normalBoss": 2.895,
+      "weeklyBoss": 5.1372
+    },
+    {
+      "enemyLevel": "93-99",
+      "rewardLevel": 19,
+      "normalBoss": 2.895,
+      "weeklyBoss": 5.1372
+    },
+    {
+      "enemyLevel": "100-104",
+      "rewardLevel": 20,
+      "normalBoss": 2.895,
+      "weeklyBoss": 5.1372
+    }
+  ],
+  "bossGemDropPackRarityDistribution": [
+    {
+      "enemyLevel": "1-4",
+      "rewardLevel": 0,
+      "twoStar": 1,
+      "threeStar": 0,
+      "fourStar": 0,
+      "fiveStar": 0
+    },
+    {
+      "enemyLevel": "5-9",
+      "rewardLevel": 1,
+      "twoStar": 1,
+      "threeStar": 0,
+      "fourStar": 0,
+      "fiveStar": 0
+    },
+    {
+      "enemyLevel": "10-14",
+      "rewardLevel": 2,
+      "twoStar": 1,
+      "threeStar": 0,
+      "fourStar": 0,
+      "fiveStar": 0
+    },
+    {
+      "enemyLevel": "15-19",
+      "rewardLevel": 3,
+      "twoStar": 1,
+      "threeStar": 0,
+      "fourStar": 0,
+      "fiveStar": 0
+    },
+    {
+      "enemyLevel": "20-24",
+      "rewardLevel": 4,
+      "twoStar": 1,
+      "threeStar": 0,
+      "fourStar": 0,
+      "fiveStar": 0
+    },
+    {
+      "enemyLevel": "25-29",
+      "rewardLevel": 5,
+      "twoStar": 1,
+      "threeStar": 0,
+      "fourStar": 0,
+      "fiveStar": 0
+    },
+    {
+      "enemyLevel": "30-34",
+      "rewardLevel": 6,
+      "twoStar": 1,
+      "threeStar": 0,
+      "fourStar": 0,
+      "fiveStar": 0
+    },
+    {
+      "enemyLevel": "35-39",
+      "rewardLevel": 7,
+      "twoStar": 1,
+      "threeStar": 0,
+      "fourStar": 0,
+      "fiveStar": 0
+    },
+    {
+      "enemyLevel": "40-44",
+      "rewardLevel": 8,
+      "twoStar": 0.789,
+      "threeStar": 0.211,
+      "fourStar": 0,
+      "fiveStar": 0
+    },
+    {
+      "enemyLevel": "45-49",
+      "rewardLevel": 9,
+      "twoStar": 0.789,
+      "threeStar": 0.211,
+      "fourStar": 0,
+      "fiveStar": 0
+    },
+    {
+      "enemyLevel": "50-54",
+      "rewardLevel": 10,
+      "twoStar": 0.789,
+      "threeStar": 0.211,
+      "fourStar": 0,
+      "fiveStar": 0
+    },
+    {
+      "enemyLevel": "55-59",
+      "rewardLevel": 11,
+      "twoStar": 0.789,
+      "threeStar": 0.211,
+      "fourStar": 0,
+      "fiveStar": 0
+    },
+    {
+      "enemyLevel": "60-64",
+      "rewardLevel": 12,
+      "twoStar": 0.75,
+      "threeStar": 0.2,
+      "fourStar": 0.05,
+      "fiveStar": 0
+    },
+    {
+      "enemyLevel": "65-69",
+      "rewardLevel": 13,
+      "twoStar": 0.75,
+      "threeStar": 0.2,
+      "fourStar": 0.05,
+      "fiveStar": 0
+    },
+    {
+      "enemyLevel": "70-74",
+      "rewardLevel": 14,
+      "twoStar": 0.75,
+      "threeStar": 0.2,
+      "fourStar": 0.05,
+      "fiveStar": 0
+    },
+    {
+      "enemyLevel": "75-79",
+      "rewardLevel": 15,
+      "twoStar": 0.746,
+      "threeStar": 0.199,
+      "fourStar": 0.05,
+      "fiveStar": 0.005
+    },
+    {
+      "enemyLevel": "80-84",
+      "rewardLevel": 16,
+      "twoStar": 0.746,
+      "threeStar": 0.199,
+      "fourStar": 0.05,
+      "fiveStar": 0.005
+    },
+    {
+      "enemyLevel": "85-89",
+      "rewardLevel": 17,
+      "twoStar": 0.746,
+      "threeStar": 0.199,
+      "fourStar": 0.05,
+      "fiveStar": 0.005
+    },
+    {
+      "enemyLevel": "90-92",
+      "rewardLevel": 18,
+      "twoStar": 0.746,
+      "threeStar": 0.199,
+      "fourStar": 0.05,
+      "fiveStar": 0.005
+    },
+    {
+      "enemyLevel": "93-99",
+      "rewardLevel": 19,
+      "twoStar": 0.746,
+      "threeStar": 0.199,
+      "fourStar": 0.05,
+      "fiveStar": 0.005
+    },
+    {
+      "enemyLevel": "100-104",
+      "rewardLevel": 20,
+      "twoStar": 0.746,
+      "threeStar": 0.199,
+      "fourStar": 0.05,
+      "fiveStar": 0.005
+    }
+  ]
+}

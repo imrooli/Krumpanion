@@ -1,0 +1,1172 @@
+{
+  "Aerosiderite": {
+    "key": "Aerosiderite",
+    "displayName": "Aerosiderite",
+    "tiers": {
+      "twoStar": "GrainOfAerosiderite",
+      "threeStar": "PieceOfAerosiderite",
+      "fourStar": "BitOfAerosiderite",
+      "fiveStar": "ChunkOfAerosiderite"
+    },
+    "tierDisplayNames": {
+      "twoStar": "Grain of Aerosiderite",
+      "threeStar": "Piece of Aerosiderite",
+      "fourStar": "Bit of Aerosiderite",
+      "fiveStar": "Chunk of Aerosiderite"
+    },
+    "usedByWeapons": [
+      "Skyrider Sword",
+      "Iron Sting",
+      "Skyrider Greatsword",
+      "Prototype Archaic",
+      "Serpent Spine",
+      "Luxurious Sea-Lord",
+      "Black Tassel",
+      "Prototype Starglitter",
+      "Lithic Spear",
+      "Staff of Homa",
+      "Vortex Vanquisher",
+      "Mappa Mare",
+      "Memory of Dust",
+      "Compound Bow",
+      "Fading Twilight",
+      "Cloudforged",
+      "Lightbearing Moonshard"
+    ],
+    "category": "weapon_ascension_material_family",
+    "source": {
+      "type": "domain_of_forgery",
+      "region": "Liyue",
+      "domainName": "Hidden Palace of Lianshan Formula",
+      "availableDays": [
+        "Wednesday",
+        "Saturday",
+        "Sunday"
+      ]
+    },
+    "usedByWeaponKeys": [
+      "SkyriderSword",
+      "IronSting",
+      "SkyriderGreatsword",
+      "PrototypeArchaic",
+      "SerpentSpine",
+      "LuxuriousSeaLord",
+      "BlackTassel",
+      "PrototypeStarglitter",
+      "LithicSpear",
+      "StaffOfHoma",
+      "VortexVanquisher",
+      "MappaMare",
+      "MemoryOfDust",
+      "CompoundBow",
+      "FadingTwilight",
+      "Cloudforged",
+      "LightbearingMoonshard"
+    ],
+    "craftable": true,
+    "conversionRatio": 3,
+    "status": "verified"
+  },
+  "AncientChord": {
+    "key": "AncientChord",
+    "displayName": "Ancient Chord",
+    "tiers": {
+      "twoStar": "FragmentOfAnAncientChord",
+      "threeStar": "ChapterOfAnAncientChord",
+      "fourStar": "MovementOfAnAncientChord",
+      "fiveStar": "EchoOfAnAncientChord"
+    },
+    "tierDisplayNames": {
+      "twoStar": "Fragment of an Ancient Chord",
+      "threeStar": "Chapter of an Ancient Chord",
+      "fourStar": "Movement of an Ancient Chord",
+      "fiveStar": "Echo of an Ancient Chord"
+    },
+    "usedByWeapons": [
+      "Fleuve Cendre Ferryman",
+      "Song of Stillness",
+      "The First Great Magic",
+      "Prospector's Drill",
+      "Range Gauge",
+      "Sword of Narzissenkreuz",
+      "Verdict",
+      "Absolution",
+      "Sequence of Solitude"
+    ],
+    "category": "weapon_ascension_material_family",
+    "source": {
+      "type": "domain_of_forgery",
+      "region": "Fontaine",
+      "domainName": "Echoes of the Deep Tides",
+      "availableDays": [
+        "Monday",
+        "Thursday",
+        "Sunday"
+      ]
+    },
+    "usedByWeaponKeys": [
+      "FleuveCendreFerryman",
+      "SongOfStillness",
+      "TheFirstGreatMagic",
+      "ProspectorsDrill",
+      "RangeGauge",
+      "SwordOfNarzissenkreuz",
+      "Verdict",
+      "Absolution",
+      "SequenceOfSolitude"
+    ],
+    "craftable": true,
+    "conversionRatio": 3,
+    "status": "verified"
+  },
+  "ArtfulDevice": {
+    "key": "ArtfulDevice",
+    "displayName": "Artful Device",
+    "tiers": {
+      "twoStar": "ArtfulDeviceFragment",
+      "threeStar": "ArtfulDeviceReplica",
+      "fourStar": "ArtfulDeviceInheritance",
+      "fiveStar": "ArtfulDeviceWish"
+    },
+    "tierDisplayNames": {
+      "twoStar": "Artful Device Fragment",
+      "threeStar": "Artful Device Replica",
+      "fourStar": "Artful Device Inheritance",
+      "fiveStar": "Artful Device Wish"
+    },
+    "usedByWeapons": [
+      "Serenity's Call",
+      "Blackmarrow Lantern",
+      "Nightweaver's Looking Glass",
+      "Dawning Frost",
+      "Seven Edicts of Dust and Light"
+    ],
+    "category": "weapon_ascension_material_family",
+    "source": {
+      "type": "domain_of_forgery",
+      "region": "Nod-Krai",
+      "domainName": "Lost Mooncourt",
+      "availableDays": [
+        "Monday",
+        "Thursday",
+        "Sunday"
+      ]
+    },
+    "usedByWeaponKeys": [
+      "SerenitysCall",
+      "BlackmarrowLantern",
+      "NightweaversLookingGlass",
+      "DawningFrost",
+      "SevenEdictsOfDustAndLight"
+    ],
+    "craftable": true,
+    "conversionRatio": 3,
+    "status": "verified"
+  },
+  "BlazingSacrificialHeart": {
+    "key": "BlazingSacrificialHeart",
+    "displayName": "Blazing Sacrificial Heart",
+    "tiers": {
+      "twoStar": "BlazingSacrificialHeartsTerror",
+      "threeStar": "BlazingSacrificialHeartsHesitance",
+      "fourStar": "BlazingSacrificialHeartsResolve",
+      "fiveStar": "BlazingSacrificialHeartsSplendor"
+    },
+    "tierDisplayNames": {
+      "twoStar": "Blazing Sacrificial Heart's Terror",
+      "threeStar": "Blazing Sacrificial Heart's Hesitance",
+      "fourStar": "Blazing Sacrificial Heart's Resolve",
+      "fiveStar": "Blazing Sacrificial Heart's Splendor"
+    },
+    "usedByWeapons": [
+      "Flute of Ezpitzal",
+      "Earth Shaker",
+      "Surf's Up",
+      "Sturdy Bone",
+      "Waveriding Whirl",
+      "A Thousand Blazing Suns",
+      "Fractured Halo"
+    ],
+    "category": "weapon_ascension_material_family",
+    "source": {
+      "type": "domain_of_forgery",
+      "region": "Natlan",
+      "domainName": "Ancient Watchtower",
+      "availableDays": [
+        "Monday",
+        "Thursday",
+        "Sunday"
+      ]
+    },
+    "usedByWeaponKeys": [
+      "FluteOfEzpitzal",
+      "EarthShaker",
+      "SurfsUp",
+      "SturdyBone",
+      "WaveridingWhirl",
+      "AThousandBlazingSuns",
+      "FracturedHalo"
+    ],
+    "craftable": true,
+    "conversionRatio": 3,
+    "status": "verified"
+  },
+  "BorealWolf": {
+    "key": "BorealWolf",
+    "displayName": "Boreal Wolf",
+    "tiers": {
+      "twoStar": "BorealWolfsMilkTooth",
+      "threeStar": "BorealWolfsCrackedTooth",
+      "fourStar": "BorealWolfsBrokenFang",
+      "fiveStar": "BorealWolfsNostalgia"
+    },
+    "tierDisplayNames": {
+      "twoStar": "Boreal Wolf's Milk Tooth",
+      "threeStar": "Boreal Wolf's Cracked Tooth",
+      "fourStar": "Boreal Wolf's Broken Fang",
+      "fiveStar": "Boreal Wolf's Nostalgia"
+    },
+    "usedByWeapons": [
+      "Harbinger of Dawn",
+      "The Flute",
+      "The Black Sword",
+      "Sword of Descension",
+      "Skyward Blade",
+      "Waster Greatsword",
+      "Old Merc's Pal",
+      "Bloodtainted Greatsword",
+      "Sacrificial Greatsword",
+      "Skyward Pride",
+      "Deathmatch",
+      "Dragonspine Spear",
+      "Missive Windspear",
+      "Thrilling Tales of Dragon Slayers",
+      "The Widsith",
+      "Wine and Song",
+      "Dodoco Tales",
+      "Skyward Atlas",
+      "Hunter's Bow",
+      "Seasoned Hunter's Bow",
+      "Sharpshooter's Oath",
+      "Sacrificial Bow",
+      "Skyward Harp",
+      "Elegy for the End",
+      "Ballad of the Boundless Blue",
+      "Gest of the Mighty Wolf"
+    ],
+    "category": "weapon_ascension_material_family",
+    "source": {
+      "type": "domain_of_forgery",
+      "region": "Mondstadt",
+      "domainName": "Cecilia Garden",
+      "availableDays": [
+        "Tuesday",
+        "Friday",
+        "Sunday"
+      ]
+    },
+    "usedByWeaponKeys": [
+      "HarbingerOfDawn",
+      "TheFlute",
+      "TheBlackSword",
+      "SwordOfDescension",
+      "SkywardBlade",
+      "BloodtaintedGreatsword",
+      "SacrificialGreatsword",
+      "SkywardPride",
+      "Deathmatch",
+      "DragonspineSpear",
+      "MissiveWindspear",
+      "ThrillingTalesOfDragonSlayers",
+      "TheWidsith",
+      "WineAndSong",
+      "DodocoTales",
+      "SkywardAtlas",
+      "SharpshootersOath",
+      "SacrificialBow",
+      "SkywardHarp",
+      "ElegyForTheEnd",
+      "BalladOfTheBoundlessBlue",
+      "GestOfTheMightyWolf"
+    ],
+    "craftable": true,
+    "conversionRatio": 3,
+    "status": "verified"
+  },
+  "DandelionGladiator": {
+    "key": "DandelionGladiator",
+    "displayName": "Dandelion Gladiator",
+    "tiers": {
+      "twoStar": "FettersOfTheDandelionGladiator",
+      "threeStar": "ChainsOfTheDandelionGladiator",
+      "fourStar": "ShacklesOfTheDandelionGladiator",
+      "fiveStar": "DreamOfTheDandelionGladiator"
+    },
+    "tierDisplayNames": {
+      "twoStar": "Fetters of the Dandelion Gladiator",
+      "threeStar": "Chains of the Dandelion Gladiator",
+      "fourStar": "Shackles of the Dandelion Gladiator",
+      "fiveStar": "Dream of the Dandelion Gladiator"
+    },
+    "usedByWeapons": [
+      "Traveler's Handy Sword",
+      "Sacrificial Sword",
+      "Festering Desire",
+      "Freedom-Sworn",
+      "White Iron Greatsword",
+      "Favonius Greatsword",
+      "Royal Greatsword",
+      "Mailed Flower",
+      "Wolf's Gravestone",
+      "Beginner's Protector",
+      "Iron Point",
+      "Favonius Lance",
+      "Skyward Spine",
+      "Otherworldly Story",
+      "Sacrificial Fragments",
+      "Frostbearer",
+      "Lost Prayer to the Sacred Winds",
+      "Recurve Bow",
+      "Favonius Warbow",
+      "Royal Bow",
+      "Alley Hunter",
+      "Windblume Ode",
+      "Amos' Bow",
+      "The Daybreak Chronicles"
+    ],
+    "category": "weapon_ascension_material_family",
+    "source": {
+      "type": "domain_of_forgery",
+      "region": "Mondstadt",
+      "domainName": "Cecilia Garden",
+      "availableDays": [
+        "Wednesday",
+        "Saturday",
+        "Sunday"
+      ]
+    },
+    "usedByWeaponKeys": [
+      "TravelersHandySword",
+      "SacrificialSword",
+      "FesteringDesire",
+      "FreedomSworn",
+      "WhiteIronGreatsword",
+      "FavoniusGreatsword",
+      "RoyalGreatsword",
+      "MailedFlower",
+      "WolfsGravestone",
+      "FavoniusLance",
+      "SkywardSpine",
+      "OtherworldlyStory",
+      "SacrificialFragments",
+      "Frostbearer",
+      "LostPrayerToTheSacredWinds",
+      "RecurveBow",
+      "FavoniusWarbow",
+      "RoyalBow",
+      "AlleyHunter",
+      "WindblumeOde",
+      "AmosBow",
+      "TheDaybreakChronicles"
+    ],
+    "craftable": true,
+    "conversionRatio": 3,
+    "status": "verified"
+  },
+  "Decarabian": {
+    "key": "Decarabian",
+    "displayName": "Decarabian",
+    "tiers": {
+      "twoStar": "TileOfDecarabiansTower",
+      "threeStar": "DebrisOfDecarabiansCity",
+      "fourStar": "FragmentOfDecarabiansEpic",
+      "fiveStar": "ScatteredPieceOfDecarabiansDream"
+    },
+    "tierDisplayNames": {
+      "twoStar": "Tile of Decarabian's Tower",
+      "threeStar": "Debris of Decarabian's City",
+      "fourStar": "Fragment of Decarabian's Epic",
+      "fiveStar": "Scattered Piece of Decarabian's Dream"
+    },
+    "usedByWeapons": [
+      "Dull Blade",
+      "Silver Sword",
+      "Cool Steel",
+      "Favonius Sword",
+      "Royal Longsword",
+      "The Alley Flash",
+      "Cinnabar Spindle",
+      "Wolf-Fang",
+      "Aquila Favonia",
+      "Ferrous Shadow",
+      "The Bell",
+      "Snow-Tombed Starsilver",
+      "Song of Broken Pines",
+      "Apprentice's Notes",
+      "Pocket Grimoire",
+      "Magic Guide",
+      "Favonius Codex",
+      "Royal Grimoire",
+      "Raven Bow",
+      "The Stringless",
+      "The Viridescent Hunt",
+      "Mitternachts Waltz",
+      "Athame Artis",
+      "Disaster and Remorse"
+    ],
+    "category": "weapon_ascension_material_family",
+    "source": {
+      "type": "domain_of_forgery",
+      "region": "Mondstadt",
+      "domainName": "Cecilia Garden",
+      "availableDays": [
+        "Monday",
+        "Thursday",
+        "Sunday"
+      ]
+    },
+    "usedByWeaponKeys": [
+      "CoolSteel",
+      "FavoniusSword",
+      "RoyalLongsword",
+      "TheAlleyFlash",
+      "CinnabarSpindle",
+      "WolfFang",
+      "AquilaFavonia",
+      "FerrousShadow",
+      "TheBell",
+      "SnowTombedStarsilver",
+      "SongOfBrokenPines",
+      "MagicGuide",
+      "FavoniusCodex",
+      "RoyalGrimoire",
+      "RavenBow",
+      "TheStringless",
+      "TheViridescentHunt",
+      "MitternachtsWaltz",
+      "AthameArtis",
+      "DisasterAndRemorse"
+    ],
+    "craftable": true,
+    "conversionRatio": 3,
+    "status": "verified"
+  },
+  "DistantSea": {
+    "key": "DistantSea",
+    "displayName": "Distant Sea",
+    "tiers": {
+      "twoStar": "CoralBranchOfADistantSea",
+      "threeStar": "JeweledBranchOfADistantSea",
+      "fourStar": "JadeBranchOfADistantSea",
+      "fiveStar": "GoldenBranchOfADistantSea"
+    },
+    "tierDisplayNames": {
+      "twoStar": "Coral Branch of a Distant Sea",
+      "threeStar": "Jeweled Branch of a Distant Sea",
+      "fourStar": "Jade Branch of a Distant Sea",
+      "fiveStar": "Golden Branch of a Distant Sea"
+    },
+    "usedByWeapons": [
+      "Amenoma Kageuchi",
+      "Mistsplitter Reforged",
+      "Akuoumaru",
+      "Hakushin Ring",
+      "Oathsworn Eye",
+      "Everlasting Moonglow",
+      "Uraku Misugiri"
+    ],
+    "category": "weapon_ascension_material_family",
+    "source": {
+      "type": "domain_of_forgery",
+      "region": "Inazuma",
+      "domainName": "Court of Flowing Sand",
+      "availableDays": [
+        "Monday",
+        "Thursday",
+        "Sunday"
+      ]
+    },
+    "usedByWeaponKeys": [
+      "AmenomaKageuchi",
+      "MistsplitterReforged",
+      "Akuoumaru",
+      "HakushinRing",
+      "OathswornEye",
+      "EverlastingMoonglow",
+      "UrakuMisugiri"
+    ],
+    "craftable": true,
+    "conversionRatio": 3,
+    "status": "verified"
+  },
+  "FarNorthScions": {
+    "key": "FarNorthScions",
+    "displayName": "Far-North Scions",
+    "tiers": {
+      "twoStar": "SunderedGloryOfTheFarNorthScions",
+      "threeStar": "UnyieldingDelusionOfTheFarNorthScions",
+      "fourStar": "OblationOfTheFarNorthScions",
+      "fiveStar": "AureateRadianceOfTheFarNorthScions"
+    },
+    "tierDisplayNames": {
+      "twoStar": "Sundered Glory of the Far-North Scions",
+      "threeStar": "Unyielding Delusion of the Far-North Scions",
+      "fourStar": "Oblation of the Far-North Scions",
+      "fiveStar": "Aureate Radiance of the Far-North Scions"
+    },
+    "usedByWeapons": [
+      "Moonweaver's Dawn",
+      "Master Key",
+      "Etherlight Spindlelute",
+      "Nocturne's Curtain Call"
+    ],
+    "category": "weapon_ascension_material_family",
+    "source": {
+      "type": "domain_of_forgery",
+      "region": "Nod-Krai",
+      "domainName": "Lost Mooncourt",
+      "availableDays": [
+        "Wednesday",
+        "Saturday",
+        "Sunday"
+      ]
+    },
+    "usedByWeaponKeys": [
+      "MoonweaversDawn",
+      "MasterKey",
+      "EtherlightSpindlelute",
+      "NocturnesCurtainCall"
+    ],
+    "craftable": true,
+    "conversionRatio": 3,
+    "status": "verified"
+  },
+  "ForestDew": {
+    "key": "ForestDew",
+    "displayName": "Forest Dew",
+    "tiers": {
+      "twoStar": "CopperTalismanOfTheForestDew",
+      "threeStar": "IronTalismanOfTheForestDew",
+      "fourStar": "SilverTalismanOfTheForestDew",
+      "fiveStar": "GoldenTalismanOfTheForestDew"
+    },
+    "tierDisplayNames": {
+      "twoStar": "Copper Talisman of the Forest Dew",
+      "threeStar": "Iron Talisman of the Forest Dew",
+      "fourStar": "Silver Talisman of the Forest Dew",
+      "fiveStar": "Golden Talisman of the Forest Dew"
+    },
+    "usedByWeapons": [
+      "Sapwood Blade",
+      "Xiphos' Moonlight",
+      "Key of Khaj-Nisut",
+      "Light of Foliar Incision",
+      "Forest Regalia",
+      "Ibis Piercer",
+      "Dialogues of the Desert Sages"
+    ],
+    "category": "weapon_ascension_material_family",
+    "source": {
+      "type": "domain_of_forgery",
+      "region": "Sumeru",
+      "domainName": "Tower of Abject Pride",
+      "availableDays": [
+        "Monday",
+        "Thursday",
+        "Sunday"
+      ]
+    },
+    "usedByWeaponKeys": [
+      "SapwoodBlade",
+      "XiphosMoonlight",
+      "KeyOfKhajNisut",
+      "LightOfFoliarIncision",
+      "ForestRegalia",
+      "IbisPiercer",
+      "DialoguesOfTheDesertSages"
+    ],
+    "craftable": true,
+    "conversionRatio": 3,
+    "status": "verified"
+  },
+  "Guyun": {
+    "key": "Guyun",
+    "displayName": "Guyun",
+    "tiers": {
+      "twoStar": "LuminousSandsFromGuyun",
+      "threeStar": "LustrousStoneFromGuyun",
+      "fourStar": "RelicFromGuyun",
+      "fiveStar": "DivineBodyFromGuyun"
+    },
+    "tierDisplayNames": {
+      "twoStar": "Luminous Sands from Guyun",
+      "threeStar": "Lustrous Stone from Guyun",
+      "fourStar": "Relic from Guyun",
+      "fiveStar": "Divine Body from Guyun"
+    },
+    "usedByWeapons": [
+      "Dark Iron Sword",
+      "Lion's Roar",
+      "Blackcliff Longsword",
+      "Summit Shaper",
+      "Whiteblind",
+      "Lithic Blade",
+      "White Tassel",
+      "Crescent Pike",
+      "Primordial Jade Winged-Spear",
+      "Emerald Orb",
+      "Solar Pearl",
+      "Blackcliff Agate",
+      "Sacrificial Jade",
+      "Jadefall's Splendor",
+      "Slingshot",
+      "Rust",
+      "Blackcliff Warbow",
+      "Aqua Simulacra"
+    ],
+    "category": "weapon_ascension_material_family",
+    "source": {
+      "type": "domain_of_forgery",
+      "region": "Liyue",
+      "domainName": "Hidden Palace of Lianshan Formula",
+      "availableDays": [
+        "Monday",
+        "Thursday",
+        "Sunday"
+      ]
+    },
+    "usedByWeaponKeys": [
+      "DarkIronSword",
+      "LionsRoar",
+      "BlackcliffLongsword",
+      "SummitShaper",
+      "Whiteblind",
+      "LithicBlade",
+      "WhiteTassel",
+      "CrescentPike",
+      "PrimordialJadeWingedSpear",
+      "EmeraldOrb",
+      "SolarPearl",
+      "BlackcliffAgate",
+      "SacrificialJade",
+      "JadefallsSplendor",
+      "Slingshot",
+      "Rust",
+      "BlackcliffWarbow",
+      "AquaSimulacra"
+    ],
+    "craftable": true,
+    "conversionRatio": 3,
+    "status": "verified"
+  },
+  "LongNightFlint": {
+    "key": "LongNightFlint",
+    "displayName": "Long Night Flint",
+    "tiers": {
+      "twoStar": "EmberOfLongNightFlint",
+      "threeStar": "AfterglowOfLongNightFlint",
+      "fourStar": "FlareOfLongNightFlint",
+      "fiveStar": "BlazeOfLongNightFlint"
+    },
+    "tierDisplayNames": {
+      "twoStar": "Ember of Long Night Flint",
+      "threeStar": "Afterglow of Long Night Flint",
+      "fourStar": "Flare of Long Night Flint",
+      "fiveStar": "Blaze of Long Night Flint"
+    },
+    "usedByWeapons": [
+      "Prospector's Shovel",
+      "Bloodsoaked Ruins",
+      "Snare Hook",
+      "Sacrificer's Staff",
+      "Golden Frostbound Oath"
+    ],
+    "category": "weapon_ascension_material_family",
+    "source": {
+      "type": "domain_of_forgery",
+      "region": "Nod-Krai",
+      "domainName": "Lost Mooncourt",
+      "availableDays": [
+        "Tuesday",
+        "Friday",
+        "Sunday"
+      ]
+    },
+    "usedByWeaponKeys": [
+      "ProspectorsShovel",
+      "BloodsoakedRuins",
+      "SnareHook",
+      "SacrificersStaff",
+      "GoldenFrostboundOath"
+    ],
+    "craftable": true,
+    "conversionRatio": 3,
+    "status": "verified"
+  },
+  "Mask": {
+    "key": "Mask",
+    "displayName": "Mask",
+    "tiers": {
+      "twoStar": "MaskOfTheWickedLieutenant",
+      "threeStar": "MaskOfTheTigersBite",
+      "fourStar": "MaskOfTheOneHorned",
+      "fiveStar": "MaskOfTheKijin"
+    },
+    "tierDisplayNames": {
+      "twoStar": "Mask of the Wicked Lieutenant",
+      "threeStar": "Mask of the Tiger's Bite",
+      "fourStar": "Mask of the One-Horned",
+      "fiveStar": "Mask of the Kijin"
+    },
+    "usedByWeapons": [
+      "Kagotsurube Isshin",
+      "Kitain Cross Spear",
+      "The Catch",
+      "Wavebreaker's Fin",
+      "Engulfing Lightning",
+      "Kagura's Verity",
+      "Polar Star",
+      "Tamayuratei no Ohanashi"
+    ],
+    "category": "weapon_ascension_material_family",
+    "source": {
+      "type": "domain_of_forgery",
+      "region": "Inazuma",
+      "domainName": "Court of Flowing Sand",
+      "availableDays": [
+        "Wednesday",
+        "Saturday",
+        "Sunday"
+      ]
+    },
+    "usedByWeaponKeys": [
+      "KagotsurubeIsshin",
+      "KitainCrossSpear",
+      "TheCatch",
+      "WavebreakersFin",
+      "EngulfingLightning",
+      "KagurasVerity",
+      "PolarStar",
+      "TamayurateiNoOhanashi"
+    ],
+    "craftable": true,
+    "conversionRatio": 3,
+    "status": "verified"
+  },
+  "MistVeiledElixir": {
+    "key": "MistVeiledElixir",
+    "displayName": "Mist Veiled Elixir",
+    "tiers": {
+      "twoStar": "MistVeiledLeadElixir",
+      "threeStar": "MistVeiledMercuryElixir",
+      "fourStar": "MistVeiledGoldElixir",
+      "fiveStar": "MistVeiledPrimoElixir"
+    },
+    "tierDisplayNames": {
+      "twoStar": "Mist Veiled Lead Elixir",
+      "threeStar": "Mist Veiled Mercury Elixir",
+      "fourStar": "Mist Veiled Gold Elixir",
+      "fiveStar": "Mist Veiled Primo Elixir"
+    },
+    "usedByWeapons": [
+      "Fillet Blade",
+      "Prototype Rancour",
+      "Primordial Jade Cutter",
+      "Debate Club",
+      "Rainslasher",
+      "Blackcliff Slasher",
+      "The Unforged",
+      "Halberd",
+      "Dragon's Bane",
+      "Blackcliff Pole",
+      "Royal Spear",
+      "Calamity Queller",
+      "Twin Nephrite",
+      "Prototype Amber",
+      "Eye of Perception",
+      "Messenger",
+      "Prototype Crescent",
+      "Crane's Echoing Call"
+    ],
+    "category": "weapon_ascension_material_family",
+    "source": {
+      "type": "domain_of_forgery",
+      "region": "Liyue",
+      "domainName": "Hidden Palace of Lianshan Formula",
+      "availableDays": [
+        "Tuesday",
+        "Friday",
+        "Sunday"
+      ]
+    },
+    "usedByWeaponKeys": [
+      "FilletBlade",
+      "PrototypeRancour",
+      "PrimordialJadeCutter",
+      "DebateClub",
+      "Rainslasher",
+      "BlackcliffSlasher",
+      "TheUnforged",
+      "Halberd",
+      "DragonsBane",
+      "BlackcliffPole",
+      "RoyalSpear",
+      "CalamityQueller",
+      "TwinNephrite",
+      "PrototypeAmber",
+      "EyeOfPerception",
+      "Messenger",
+      "PrototypeCrescent",
+      "CranesEchoingCall"
+    ],
+    "craftable": true,
+    "conversionRatio": 3,
+    "status": "verified"
+  },
+  "Narukami": {
+    "key": "Narukami",
+    "displayName": "Narukami",
+    "tiers": {
+      "twoStar": "NarukamisWisdom",
+      "threeStar": "NarukamisJoy",
+      "fourStar": "NarukamisAffection",
+      "fiveStar": "NarukamisValor"
+    },
+    "tierDisplayNames": {
+      "twoStar": "Narukami's Wisdom",
+      "threeStar": "Narukami's Joy",
+      "fourStar": "Narukami's Affection",
+      "fiveStar": "Narukami's Valor"
+    },
+    "usedByWeapons": [
+      "Toukabou Shigure",
+      "Haran Geppaku Futsu",
+      "Katsuragikiri Nagamasa",
+      "Redhorn Stonethresher",
+      "Hamayumi",
+      "Predator",
+      "Mouun's Moon",
+      "Thundering Pulse",
+      "Sunny Morning Sleep-In"
+    ],
+    "category": "weapon_ascension_material_family",
+    "source": {
+      "type": "domain_of_forgery",
+      "region": "Inazuma",
+      "domainName": "Court of Flowing Sand",
+      "availableDays": [
+        "Tuesday",
+        "Friday",
+        "Sunday"
+      ]
+    },
+    "usedByWeaponKeys": [
+      "ToukabouShigure",
+      "HaranGeppakuFutsu",
+      "KatsuragikiriNagamasa",
+      "RedhornStonethresher",
+      "Hamayumi",
+      "Predator",
+      "MouunsMoon",
+      "ThunderingPulse",
+      "SunnyMorningSleepIn"
+    ],
+    "craftable": true,
+    "conversionRatio": 3,
+    "status": "verified"
+  },
+  "NightWind": {
+    "key": "NightWind",
+    "displayName": "Night-Wind",
+    "tiers": {
+      "twoStar": "NightWindsMysticConsideration",
+      "threeStar": "NightWindsMysticPremonition",
+      "fourStar": "NightWindsMysticAugury",
+      "fiveStar": "NightWindsMysticRevelation"
+    },
+    "tierDisplayNames": {
+      "twoStar": "Night-Wind's Mystic Consideration",
+      "threeStar": "Night-Wind's Mystic Premonition",
+      "fourStar": "Night-Wind's Mystic Augury",
+      "fiveStar": "Night-Wind's Mystic Revelation"
+    },
+    "usedByWeapons": [
+      "Ash-Graven Drinking Horn",
+      "Chain Breaker",
+      "Fruitful Hook",
+      "Peak Patrol Song",
+      "Flower-Wreathed Feathers",
+      "Astral Vulture's Crimson Plumage",
+      "Azurelight",
+      "Rainbow Serpent's Rain Bow"
+    ],
+    "category": "weapon_ascension_material_family",
+    "source": {
+      "type": "domain_of_forgery",
+      "region": "Natlan",
+      "domainName": "Ancient Watchtower",
+      "availableDays": [
+        "Wednesday",
+        "Saturday",
+        "Sunday"
+      ]
+    },
+    "usedByWeaponKeys": [
+      "AshGravenDrinkingHorn",
+      "ChainBreaker",
+      "FruitfulHook",
+      "PeakPatrolSong",
+      "FlowerWreathedFeathers",
+      "AstralVulturesCrimsonPlumage",
+      "Azurelight",
+      "RainbowSerpentsRainBow"
+    ],
+    "craftable": true,
+    "conversionRatio": 3,
+    "status": "verified"
+  },
+  "OasisGarden": {
+    "key": "OasisGarden",
+    "displayName": "Oasis Garden",
+    "tiers": {
+      "twoStar": "OasisGardensReminiscence",
+      "threeStar": "OasisGardensKindness",
+      "fourStar": "OasisGardensMourning",
+      "fiveStar": "OasisGardensTruth"
+    },
+    "tierDisplayNames": {
+      "twoStar": "Oasis Garden's Reminiscence",
+      "threeStar": "Oasis Garden's Kindness",
+      "fourStar": "Oasis Garden's Mourning",
+      "fiveStar": "Oasis Garden's Truth"
+    },
+    "usedByWeapons": [
+      "Talking Stick",
+      "Moonpiercer",
+      "Staff of the Scarlet Sands",
+      "Wandering Evenstar",
+      "Fruit of Fulfillment",
+      "A Thousand Floating Dreams",
+      "Reliquary of Truth"
+    ],
+    "category": "weapon_ascension_material_family",
+    "source": {
+      "type": "domain_of_forgery",
+      "region": "Sumeru",
+      "domainName": "Tower of Abject Pride",
+      "availableDays": [
+        "Tuesday",
+        "Friday",
+        "Sunday"
+      ]
+    },
+    "usedByWeaponKeys": [
+      "TalkingStick",
+      "Moonpiercer",
+      "StaffOfTheScarletSands",
+      "WanderingEvenstar",
+      "FruitOfFulfillment",
+      "AThousandFloatingDreams",
+      "ReliquaryOfTruth"
+    ],
+    "craftable": true,
+    "conversionRatio": 3,
+    "status": "verified"
+  },
+  "PristineSea": {
+    "key": "PristineSea",
+    "displayName": "Pristine Sea",
+    "tiers": {
+      "twoStar": "BrokenGobletOfThePristineSea",
+      "threeStar": "WineGobletOfThePristineSea",
+      "fourStar": "SilverGobletOfThePristineSea",
+      "fiveStar": "GoldenGobletOfThePristineSea"
+    },
+    "tierDisplayNames": {
+      "twoStar": "Broken Goblet of the Pristine Sea",
+      "threeStar": "Wine Goblet of the Pristine Sea",
+      "fourStar": "Silver Goblet of the Pristine Sea",
+      "fiveStar": "Golden Goblet of the Pristine Sea"
+    },
+    "usedByWeapons": [
+      "Tidal Shadow",
+      "Ballad of the Fjords",
+      "Rightful Reward",
+      "Portable Power Saw",
+      "Cashflow Supervision",
+      "Ultimate Overlord's Mega Magic Sword",
+      "Crimson Moon's Semblance",
+      "Lumidouce Elegy"
+    ],
+    "category": "weapon_ascension_material_family",
+    "source": {
+      "type": "domain_of_forgery",
+      "region": "Fontaine",
+      "domainName": "Echoes of the Deep Tides",
+      "availableDays": [
+        "Wednesday",
+        "Saturday",
+        "Sunday"
+      ]
+    },
+    "usedByWeaponKeys": [
+      "TidalShadow",
+      "BalladOfTheFjords",
+      "RightfulReward",
+      "PortablePowerSaw",
+      "CashflowSupervision",
+      "UltimateOverlordsMegaMagicSword",
+      "CrimsonMoonsSemblance",
+      "LumidouceElegy"
+    ],
+    "craftable": true,
+    "conversionRatio": 3,
+    "status": "verified"
+  },
+  "PureSacredDewdrop": {
+    "key": "PureSacredDewdrop",
+    "displayName": "Pure Sacred Dewdrop",
+    "tiers": {
+      "twoStar": "DrossOfPureSacredDewdrop",
+      "threeStar": "SublimationOfPureSacredDewdrop",
+      "fourStar": "SpringOfPureSacredDewdrop",
+      "fiveStar": "EssenceOfPureSacredDewdrop"
+    },
+    "tierDisplayNames": {
+      "twoStar": "Dross of Pure Sacred Dewdrop",
+      "threeStar": "Sublimation of Pure Sacred Dewdrop",
+      "fourStar": "Spring of Pure Sacred Dewdrop",
+      "fiveStar": "Essence of Pure Sacred Dewdrop"
+    },
+    "usedByWeapons": [
+      "Finale of the Deep",
+      "Flowing Purity",
+      "The Dockhand's Assistant",
+      "Tome of the Eternal Flow",
+      "Splendor of Tranquil Waters",
+      "Silvershower Heartstrings",
+      "Symphonist of Scents"
+    ],
+    "category": "weapon_ascension_material_family",
+    "source": {
+      "type": "domain_of_forgery",
+      "region": "Fontaine",
+      "domainName": "Echoes of the Deep Tides",
+      "availableDays": [
+        "Tuesday",
+        "Friday",
+        "Sunday"
+      ]
+    },
+    "usedByWeaponKeys": [
+      "FinaleOfTheDeep",
+      "FlowingPurity",
+      "TheDockhandsAssistant",
+      "TomeOfTheEternalFlow",
+      "SplendorOfTranquilWaters",
+      "SilvershowerHeartstrings",
+      "SymphonistOfScents"
+    ],
+    "craftable": true,
+    "conversionRatio": 3,
+    "status": "verified"
+  },
+  "SacredLord": {
+    "key": "SacredLord",
+    "displayName": "Sacred Lord",
+    "tiers": {
+      "twoStar": "DeliriousDecadenceOfTheSacredLord",
+      "threeStar": "DeliriousDesolationOfTheSacredLord",
+      "fourStar": "DeliriousDemeanorOfTheSacredLord",
+      "fiveStar": "DeliriousDivinityOfTheSacredLord"
+    },
+    "tierDisplayNames": {
+      "twoStar": "Delirious Decadence of the Sacred Lord",
+      "threeStar": "Delirious Desolation of the Sacred Lord",
+      "fourStar": "Delirious Demeanor of the Sacred Lord",
+      "fiveStar": "Delirious Divinity of the Sacred Lord"
+    },
+    "usedByWeapons": [
+      "Fang of the Mountain King",
+      "Footprint of the Rainbow",
+      "Ring of Yaxche",
+      "Mountain-Bracing Bolt",
+      "Calamity of Eshu",
+      "Starcaller's Watch",
+      "Vivid Notions",
+      "Flame-Forged Insight"
+    ],
+    "category": "weapon_ascension_material_family",
+    "source": {
+      "type": "domain_of_forgery",
+      "region": "Natlan",
+      "domainName": "Ancient Watchtower",
+      "availableDays": [
+        "Tuesday",
+        "Friday",
+        "Sunday"
+      ]
+    },
+    "usedByWeaponKeys": [
+      "FangOfTheMountainKing",
+      "FootprintOfTheRainbow",
+      "RingOfYaxche",
+      "MountainBracingBolt",
+      "CalamityOfEshu",
+      "StarcallersWatch",
+      "VividNotions",
+      "FlameForgedInsight"
+    ],
+    "craftable": true,
+    "conversionRatio": 3,
+    "status": "verified"
+  },
+  "ScorchingMight": {
+    "key": "ScorchingMight",
+    "displayName": "Scorching Might",
+    "tiers": {
+      "twoStar": "EchoOfScorchingMight",
+      "threeStar": "RemnantGlowOfScorchingMight",
+      "fourStar": "DreamOfScorchingMight",
+      "fiveStar": "OldenDaysOfScorchingMight"
+    },
+    "tierDisplayNames": {
+      "twoStar": "Echo of Scorching Might",
+      "threeStar": "Remnant Glow of Scorching Might",
+      "fourStar": "Dream of Scorching Might",
+      "fiveStar": "Olden Days of Scorching Might"
+    },
+    "usedByWeapons": [
+      "Makhaira Aquamarine",
+      "Beacon of the Reed Sea",
+      "Tulaytullah's Remembrance",
+      "King's Squire",
+      "End of the Line",
+      "Scion of the Blazing Sun",
+      "Hunter's Path"
+    ],
+    "category": "weapon_ascension_material_family",
+    "source": {
+      "type": "domain_of_forgery",
+      "region": "Sumeru",
+      "domainName": "Tower of Abject Pride",
+      "availableDays": [
+        "Wednesday",
+        "Saturday",
+        "Sunday"
+      ]
+    },
+    "usedByWeaponKeys": [
+      "MakhairaAquamarine",
+      "BeaconOfTheReedSea",
+      "TulaytullahsRemembrance",
+      "KingsSquire",
+      "EndOfTheLine",
+      "ScionOfTheBlazingSun",
+      "HuntersPath"
+    ],
+    "craftable": true,
+    "conversionRatio": 3,
+    "status": "verified"
+  }
+}

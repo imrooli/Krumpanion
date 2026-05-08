@@ -1,0 +1,66 @@
+{
+  "Anemo": {
+    "key": "Anemo",
+    "element": "Anemo",
+    "sliver": "VayudaTurquoiseSliver",
+    "fragment": "VayudaTurquoiseFragment",
+    "chunk": "VayudaTurquoiseChunk",
+    "gemstone": "VayudaTurquoiseGemstone"
+  },
+  "Cryo": {
+    "key": "Cryo",
+    "element": "Cryo",
+    "sliver": "ShivadaJadeSliver",
+    "fragment": "ShivadaJadeFragment",
+    "chunk": "ShivadaJadeChunk",
+    "gemstone": "ShivadaJadeGemstone"
+  },
+  "Dendro": {
+    "key": "Dendro",
+    "element": "Dendro",
+    "sliver": "NagadusEmeraldSliver",
+    "fragment": "NagadusEmeraldFragment",
+    "chunk": "NagadusEmeraldChunk",
+    "gemstone": "NagadusEmeraldGemstone"
+  },
+  "Electro": {
+    "key": "Electro",
+    "element": "Electro",
+    "sliver": "VajradaAmethystSliver",
+    "fragment": "VajradaAmethystFragment",
+    "chunk": "VajradaAmethystChunk",
+    "gemstone": "VajradaAmethystGemstone"
+  },
+  "Geo": {
+    "key": "Geo",
+    "element": "Geo",
+    "sliver": "PrithivaTopazSliver",
+    "fragment": "PrithivaTopazFragment",
+    "chunk": "PrithivaTopazChunk",
+    "gemstone": "PrithivaTopazGemstone"
+  },
+  "Hydro": {
+    "key": "Hydro",
+    "element": "Hydro",
+    "sliver": "VarunadaLazuriteSliver",
+    "fragment": "VarunadaLazuriteFragment",
+    "chunk": "VarunadaLazuriteChunk",
+    "gemstone": "VarunadaLazuriteGemstone"
+  },
+  "Pyro": {
+    "key": "Pyro",
+    "element": "Pyro",
+    "sliver": "AgnidusAgateSliver",
+    "fragment": "AgnidusAgateFragment",
+    "chunk": "AgnidusAgateChunk",
+    "gemstone": "AgnidusAgateGemstone"
+  },
+  "Traveler": {
+    "key": "Traveler",
+    "element": "Traveler",
+    "sliver": "BrilliantDiamondSliver",
+    "fragment": "BrilliantDiamondFragment",
+    "chunk": "BrilliantDiamondChunk",
+    "gemstone": "BrilliantDiamondGemstone"
+  }
+}

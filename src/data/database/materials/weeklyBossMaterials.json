@@ -1,0 +1,604 @@
+{
+  "AscendedSampleKnight": {
+    "key": "AscendedSampleKnight",
+    "displayName": "Ascended Sample: Knight",
+    "category": "weekly_boss_material",
+    "source": {
+      "type": "unresolved",
+      "reason": "Weekly boss source requires verification from allowed sources."
+    },
+    "usedFor": [
+      "talent_leveling"
+    ],
+    "craftable": false,
+    "status": "beta"
+  },
+  "AscendedSampleQueen": {
+    "key": "AscendedSampleQueen",
+    "displayName": "Ascended Sample: Queen",
+    "category": "weekly_boss_material",
+    "source": {
+      "type": "unresolved",
+      "reason": "Weekly boss source requires verification from allowed sources."
+    },
+    "usedFor": [
+      "talent_leveling"
+    ],
+    "craftable": false,
+    "status": "beta"
+  },
+  "AscendedSampleRook": {
+    "key": "AscendedSampleRook",
+    "displayName": "Ascended Sample: Rook",
+    "category": "weekly_boss_material",
+    "source": {
+      "type": "unresolved",
+      "reason": "Weekly boss source requires verification from allowed sources."
+    },
+    "usedFor": [
+      "talent_leveling"
+    ],
+    "craftable": false,
+    "status": "beta"
+  },
+  "AshenHeart": {
+    "key": "AshenHeart",
+    "displayName": "Ashen Heart",
+    "category": "weekly_boss_material",
+    "source": {
+      "type": "weekly_boss",
+      "bossKey": "NarukamiIslandTenshukaku",
+      "bossName": "Narukami Island: Tenshukaku",
+      "domainName": "Narukami Island: Tenshukaku"
+    },
+    "usedFor": [
+      "talent_leveling"
+    ],
+    "craftable": false,
+    "status": "verified"
+  },
+  "BloodjadeBranch": {
+    "key": "BloodjadeBranch",
+    "displayName": "Bloodjade Branch",
+    "category": "weekly_boss_material",
+    "source": {
+      "type": "weekly_boss",
+      "bossKey": "BeneathTheDragonQueller",
+      "bossName": "Beneath the Dragon-Queller",
+      "domainName": "Beneath the Dragon-Queller"
+    },
+    "usedFor": [
+      "talent_leveling"
+    ],
+    "craftable": false,
+    "status": "verified"
+  },
+  "DakasBell": {
+    "key": "DakasBell",
+    "displayName": "Daka's Bell",
+    "category": "weekly_boss_material",
+    "source": {
+      "type": "weekly_boss",
+      "bossKey": "JoururiWorkshop",
+      "bossName": "Joururi Workshop",
+      "domainName": "Joururi Workshop"
+    },
+    "usedFor": [
+      "talent_leveling"
+    ],
+    "craftable": false,
+    "status": "verified"
+  },
+  "DenialAndJudgment": {
+    "key": "DenialAndJudgment",
+    "displayName": "Denial and Judgment",
+    "category": "weekly_boss_material",
+    "source": {
+      "type": "weekly_boss",
+      "bossKey": "ScatteredRuins",
+      "bossName": "Scattered Ruins",
+      "domainName": "Scattered Ruins"
+    },
+    "usedFor": [
+      "talent_leveling"
+    ],
+    "craftable": false,
+    "status": "verified"
+  },
+  "DragonLordsCrown": {
+    "key": "DragonLordsCrown",
+    "displayName": "Dragon Lord's Crown",
+    "category": "weekly_boss_material",
+    "source": {
+      "type": "weekly_boss",
+      "bossKey": "BeneathTheDragonQueller",
+      "bossName": "Beneath the Dragon-Queller",
+      "domainName": "Beneath the Dragon-Queller"
+    },
+    "usedFor": [
+      "talent_leveling"
+    ],
+    "craftable": false,
+    "status": "verified"
+  },
+  "DvalinsClaw": {
+    "key": "DvalinsClaw",
+    "displayName": "Dvalin's Claw",
+    "category": "weekly_boss_material",
+    "source": {
+      "type": "weekly_boss",
+      "bossKey": "ConfrontStormterror",
+      "bossName": "Confront Stormterror",
+      "domainName": "Confront Stormterror"
+    },
+    "usedFor": [
+      "talent_leveling"
+    ],
+    "craftable": false,
+    "status": "verified"
+  },
+  "DvalinsPlume": {
+    "key": "DvalinsPlume",
+    "displayName": "Dvalin's Plume",
+    "category": "weekly_boss_material",
+    "source": {
+      "type": "weekly_boss",
+      "bossKey": "ConfrontStormterror",
+      "bossName": "Confront Stormterror",
+      "domainName": "Confront Stormterror"
+    },
+    "usedFor": [
+      "talent_leveling"
+    ],
+    "craftable": false,
+    "status": "verified"
+  },
+  "DvalinsSigh": {
+    "key": "DvalinsSigh",
+    "displayName": "Dvalin's Sigh",
+    "category": "weekly_boss_material",
+    "source": {
+      "type": "weekly_boss",
+      "bossKey": "ConfrontStormterror",
+      "bossName": "Confront Stormterror",
+      "domainName": "Confront Stormterror"
+    },
+    "usedFor": [
+      "talent_leveling"
+    ],
+    "craftable": false,
+    "status": "verified"
+  },
+  "ElixirOfTheHeretic": {
+    "key": "ElixirOfTheHeretic",
+    "displayName": "Elixir of the Heretic",
+    "category": "weekly_boss_material",
+    "source": {
+      "type": "weekly_boss",
+      "bossKey": "FalseMoonInstitute",
+      "bossName": "False Moon Institute",
+      "domainName": "False Moon Institute"
+    },
+    "usedFor": [
+      "talent_leveling"
+    ],
+    "craftable": false,
+    "status": "verified"
+  },
+  "ErodedHorn": {
+    "key": "ErodedHorn",
+    "displayName": "Eroded Horn",
+    "category": "weekly_boss_material",
+    "source": {
+      "type": "weekly_boss",
+      "bossKey": "StoneSteleRecords",
+      "bossName": "Stone Stele Records",
+      "domainName": "Stone Stele Records"
+    },
+    "usedFor": [
+      "talent_leveling"
+    ],
+    "craftable": false,
+    "status": "verified"
+  },
+  "ErodedScaleFeather": {
+    "key": "ErodedScaleFeather",
+    "displayName": "Eroded Scale-Feather",
+    "category": "weekly_boss_material",
+    "source": {
+      "type": "weekly_boss",
+      "bossKey": "StoneSteleRecords",
+      "bossName": "Stone Stele Records",
+      "domainName": "Stone Stele Records"
+    },
+    "usedFor": [
+      "talent_leveling"
+    ],
+    "craftable": false,
+    "status": "verified"
+  },
+  "ErodedSunfire": {
+    "key": "ErodedSunfire",
+    "displayName": "Eroded Sunfire",
+    "category": "weekly_boss_material",
+    "source": {
+      "type": "weekly_boss",
+      "bossKey": "StoneSteleRecords",
+      "bossName": "Stone Stele Records",
+      "domainName": "Stone Stele Records"
+    },
+    "usedFor": [
+      "talent_leveling"
+    ],
+    "craftable": false,
+    "status": "verified"
+  },
+  "Everamber": {
+    "key": "Everamber",
+    "displayName": "Everamber",
+    "category": "weekly_boss_material",
+    "source": {
+      "type": "weekly_boss",
+      "bossKey": "TheRealmOfBeginnings",
+      "bossName": "The Realm of Beginnings",
+      "domainName": "The Realm of Beginnings"
+    },
+    "usedFor": [
+      "talent_leveling"
+    ],
+    "craftable": false,
+    "status": "verified"
+  },
+  "FadingCandle": {
+    "key": "FadingCandle",
+    "displayName": "Fading Candle",
+    "category": "weekly_boss_material",
+    "source": {
+      "type": "weekly_boss",
+      "bossKey": "ScatteredRuins",
+      "bossName": "Scattered Ruins",
+      "domainName": "Scattered Ruins"
+    },
+    "usedFor": [
+      "talent_leveling"
+    ],
+    "craftable": false,
+    "status": "verified"
+  },
+  "GildedScale": {
+    "key": "GildedScale",
+    "displayName": "Gilded Scale",
+    "category": "weekly_boss_material",
+    "source": {
+      "type": "weekly_boss",
+      "bossKey": "BeneathTheDragonQueller",
+      "bossName": "Beneath the Dragon-Queller",
+      "domainName": "Beneath the Dragon-Queller"
+    },
+    "usedFor": [
+      "talent_leveling"
+    ],
+    "craftable": false,
+    "status": "verified"
+  },
+  "HellfireButterfly": {
+    "key": "HellfireButterfly",
+    "displayName": "Hellfire Butterfly",
+    "category": "weekly_boss_material",
+    "source": {
+      "type": "weekly_boss",
+      "bossKey": "NarukamiIslandTenshukaku",
+      "bossName": "Narukami Island: Tenshukaku",
+      "domainName": "Narukami Island: Tenshukaku"
+    },
+    "usedFor": [
+      "talent_leveling"
+    ],
+    "craftable": false,
+    "status": "verified"
+  },
+  "LightlessEyeOfTheMaelstrom": {
+    "key": "LightlessEyeOfTheMaelstrom",
+    "displayName": "Lightless Eye of the Maelstrom",
+    "category": "weekly_boss_material",
+    "source": {
+      "type": "weekly_boss",
+      "bossKey": "ShadowOfAnotherWorld",
+      "bossName": "Shadow of Another World",
+      "domainName": "Shadow of Another World"
+    },
+    "usedFor": [
+      "talent_leveling"
+    ],
+    "craftable": false,
+    "status": "verified"
+  },
+  "LightlessMass": {
+    "key": "LightlessMass",
+    "displayName": "Lightless Mass",
+    "category": "weekly_boss_material",
+    "source": {
+      "type": "weekly_boss",
+      "bossKey": "ShadowOfAnotherWorld",
+      "bossName": "Shadow of Another World",
+      "domainName": "Shadow of Another World"
+    },
+    "usedFor": [
+      "talent_leveling"
+    ],
+    "craftable": false,
+    "status": "verified"
+  },
+  "LightlessSilkString": {
+    "key": "LightlessSilkString",
+    "displayName": "Lightless Silk String",
+    "category": "weekly_boss_material",
+    "source": {
+      "type": "weekly_boss",
+      "bossKey": "ShadowOfAnotherWorld",
+      "bossName": "Shadow of Another World",
+      "domainName": "Shadow of Another World"
+    },
+    "usedFor": [
+      "talent_leveling"
+    ],
+    "craftable": false,
+    "status": "verified"
+  },
+  "MaskOfTheVirtuousDoctor": {
+    "key": "MaskOfTheVirtuousDoctor",
+    "displayName": "Mask of the Virtuous Doctor",
+    "category": "weekly_boss_material",
+    "source": {
+      "type": "weekly_boss",
+      "bossKey": "FalseMoonInstitute",
+      "bossName": "False Moon Institute",
+      "domainName": "False Moon Institute"
+    },
+    "usedFor": [
+      "talent_leveling"
+    ],
+    "craftable": false,
+    "status": "verified"
+  },
+  "MirrorOfMushin": {
+    "key": "MirrorOfMushin",
+    "displayName": "Mirror of Mushin",
+    "category": "weekly_boss_material",
+    "source": {
+      "type": "weekly_boss",
+      "bossKey": "JoururiWorkshop",
+      "bossName": "Joururi Workshop",
+      "domainName": "Joururi Workshop"
+    },
+    "usedFor": [
+      "talent_leveling"
+    ],
+    "craftable": false,
+    "status": "verified"
+  },
+  "MoltenMoment": {
+    "key": "MoltenMoment",
+    "displayName": "Molten Moment",
+    "category": "weekly_boss_material",
+    "source": {
+      "type": "weekly_boss",
+      "bossKey": "NarukamiIslandTenshukaku",
+      "bossName": "Narukami Island: Tenshukaku",
+      "domainName": "Narukami Island: Tenshukaku"
+    },
+    "usedFor": [
+      "talent_leveling"
+    ],
+    "craftable": false,
+    "status": "verified"
+  },
+  "MudraOfTheMaleficGeneral": {
+    "key": "MudraOfTheMaleficGeneral",
+    "displayName": "Mudra of the Malefic General",
+    "category": "weekly_boss_material",
+    "source": {
+      "type": "weekly_boss",
+      "bossKey": "EndOfTheOneiricEuthymia",
+      "bossName": "End of the Oneiric Euthymia",
+      "domainName": "End of the Oneiric Euthymia"
+    },
+    "usedFor": [
+      "talent_leveling"
+    ],
+    "craftable": false,
+    "status": "verified"
+  },
+  "PrimordialGreenbloom": {
+    "key": "PrimordialGreenbloom",
+    "displayName": "Primordial Greenbloom",
+    "category": "weekly_boss_material",
+    "source": {
+      "type": "weekly_boss",
+      "bossKey": "TheRealmOfBeginnings",
+      "bossName": "The Realm of Beginnings",
+      "domainName": "The Realm of Beginnings"
+    },
+    "usedFor": [
+      "talent_leveling"
+    ],
+    "craftable": false,
+    "status": "verified"
+  },
+  "PuppetStrings": {
+    "key": "PuppetStrings",
+    "displayName": "Puppet Strings",
+    "category": "weekly_boss_material",
+    "source": {
+      "type": "weekly_boss",
+      "bossKey": "JoururiWorkshop",
+      "bossName": "Joururi Workshop",
+      "domainName": "Joururi Workshop"
+    },
+    "usedFor": [
+      "talent_leveling"
+    ],
+    "craftable": false,
+    "status": "verified"
+  },
+  "RingOfBoreas": {
+    "key": "RingOfBoreas",
+    "displayName": "Ring of Boreas",
+    "category": "weekly_boss_material",
+    "source": {
+      "type": "weekly_boss",
+      "bossKey": "LupusBoreas",
+      "bossName": "Lupus Boreas",
+      "domainName": "Wolf of the North Challenge"
+    },
+    "usedFor": [
+      "talent_leveling"
+    ],
+    "craftable": false,
+    "status": "verified"
+  },
+  "ShadowOfTheWarrior": {
+    "key": "ShadowOfTheWarrior",
+    "displayName": "Shadow of the Warrior",
+    "category": "weekly_boss_material",
+    "source": {
+      "type": "weekly_boss",
+      "bossKey": "EnterTheGoldenHouse",
+      "bossName": "Enter the Golden House",
+      "domainName": "Enter the Golden House"
+    },
+    "usedFor": [
+      "talent_leveling"
+    ],
+    "craftable": false,
+    "status": "verified"
+  },
+  "ShardOfAFoulLegacy": {
+    "key": "ShardOfAFoulLegacy",
+    "displayName": "Shard of a Foul Legacy",
+    "category": "weekly_boss_material",
+    "source": {
+      "type": "weekly_boss",
+      "bossKey": "EnterTheGoldenHouse",
+      "bossName": "Enter the Golden House",
+      "domainName": "Enter the Golden House"
+    },
+    "usedFor": [
+      "talent_leveling"
+    ],
+    "craftable": false,
+    "status": "verified"
+  },
+  "SilkenFeather": {
+    "key": "SilkenFeather",
+    "displayName": "Silken Feather",
+    "category": "weekly_boss_material",
+    "source": {
+      "type": "weekly_boss",
+      "bossKey": "ScatteredRuins",
+      "bossName": "Scattered Ruins",
+      "domainName": "Scattered Ruins"
+    },
+    "usedFor": [
+      "talent_leveling"
+    ],
+    "craftable": false,
+    "status": "verified"
+  },
+  "SpiritLocketOfBoreas": {
+    "key": "SpiritLocketOfBoreas",
+    "displayName": "Spirit Locket of Boreas",
+    "category": "weekly_boss_material",
+    "source": {
+      "type": "weekly_boss",
+      "bossKey": "LupusBoreas",
+      "bossName": "Lupus Boreas",
+      "domainName": "Wolf of the North Challenge"
+    },
+    "usedFor": [
+      "talent_leveling"
+    ],
+    "craftable": false,
+    "status": "verified"
+  },
+  "TailOfBoreas": {
+    "key": "TailOfBoreas",
+    "displayName": "Tail of Boreas",
+    "category": "weekly_boss_material",
+    "source": {
+      "type": "weekly_boss",
+      "bossKey": "LupusBoreas",
+      "bossName": "Lupus Boreas",
+      "domainName": "Wolf of the North Challenge"
+    },
+    "usedFor": [
+      "talent_leveling"
+    ],
+    "craftable": false,
+    "status": "verified"
+  },
+  "TearsOfTheCalamitousGod": {
+    "key": "TearsOfTheCalamitousGod",
+    "displayName": "Tears of the Calamitous God",
+    "category": "weekly_boss_material",
+    "source": {
+      "type": "weekly_boss",
+      "bossKey": "EndOfTheOneiricEuthymia",
+      "bossName": "End of the Oneiric Euthymia",
+      "domainName": "End of the Oneiric Euthymia"
+    },
+    "usedFor": [
+      "talent_leveling"
+    ],
+    "craftable": false,
+    "status": "verified"
+  },
+  "TheMeaningOfAeons": {
+    "key": "TheMeaningOfAeons",
+    "displayName": "The Meaning of Aeons",
+    "category": "weekly_boss_material",
+    "source": {
+      "type": "weekly_boss",
+      "bossKey": "EndOfTheOneiricEuthymia",
+      "bossName": "End of the Oneiric Euthymia",
+      "domainName": "End of the Oneiric Euthymia"
+    },
+    "usedFor": [
+      "talent_leveling"
+    ],
+    "craftable": false,
+    "status": "verified"
+  },
+  "TuskOfMonocerosCaeli": {
+    "key": "TuskOfMonocerosCaeli",
+    "displayName": "Tusk of Monoceros Caeli",
+    "category": "weekly_boss_material",
+    "source": {
+      "type": "weekly_boss",
+      "bossKey": "EnterTheGoldenHouse",
+      "bossName": "Enter the Golden House",
+      "domainName": "Enter the Golden House"
+    },
+    "usedFor": [
+      "talent_leveling"
+    ],
+    "craftable": false,
+    "status": "verified"
+  },
+  "WorldspanFern": {
+    "key": "WorldspanFern",
+    "displayName": "Worldspan Fern",
+    "category": "weekly_boss_material",
+    "source": {
+      "type": "weekly_boss",
+      "bossKey": "TheRealmOfBeginnings",
+      "bossName": "The Realm of Beginnings",
+      "domainName": "The Realm of Beginnings"
+    },
+    "usedFor": [
+      "talent_leveling"
+    ],
+    "craftable": false,
+    "status": "verified"
+  }
+}

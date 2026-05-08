@@ -1,0 +1,394 @@
+{
+  "weaponAscensionPhaseCaps": {
+    "0": {
+      "phaseName": "None",
+      "maxLevel": 20,
+      "requiredAdventureRank": null
+    },
+    "1": {
+      "phaseName": "1st Ascension",
+      "maxLevel": 40,
+      "requiredAdventureRank": 15
+    },
+    "2": {
+      "phaseName": "2nd Ascension",
+      "maxLevel": 50,
+      "requiredAdventureRank": 25
+    },
+    "3": {
+      "phaseName": "3rd Ascension",
+      "maxLevel": 60,
+      "requiredAdventureRank": 30
+    },
+    "4": {
+      "phaseName": "4th Ascension",
+      "maxLevel": 70,
+      "requiredAdventureRank": 35
+    },
+    "5": {
+      "phaseName": "5th Ascension",
+      "maxLevel": 80,
+      "requiredAdventureRank": 40
+    },
+    "6": {
+      "phaseName": "6th Ascension",
+      "maxLevel": 90,
+      "requiredAdventureRank": 50
+    }
+  },
+  "weaponAscensionCosts": {
+    "5-Star": {
+      "1": {
+        "maxLevelAfter": 40,
+        "requiredAdventureRank": 15,
+        "mora": 10000,
+        "weaponAscensionMaterial": {
+          "tier": "2-Star",
+          "amount": 5
+        },
+        "eliteEnemyMaterial": {
+          "tier": "2-Star",
+          "amount": 5
+        },
+        "commonEnemyMaterial": {
+          "tier": "1-Star",
+          "amount": 3
+        }
+      },
+      "2": {
+        "maxLevelAfter": 50,
+        "requiredAdventureRank": 25,
+        "mora": 20000,
+        "weaponAscensionMaterial": {
+          "tier": "3-Star",
+          "amount": 5
+        },
+        "eliteEnemyMaterial": {
+          "tier": "2-Star",
+          "amount": 18
+        },
+        "commonEnemyMaterial": {
+          "tier": "1-Star",
+          "amount": 12
+        }
+      },
+      "3": {
+        "maxLevelAfter": 60,
+        "requiredAdventureRank": 30,
+        "mora": 30000,
+        "weaponAscensionMaterial": {
+          "tier": "3-Star",
+          "amount": 9
+        },
+        "eliteEnemyMaterial": {
+          "tier": "3-Star",
+          "amount": 9
+        },
+        "commonEnemyMaterial": {
+          "tier": "2-Star",
+          "amount": 9
+        }
+      },
+      "4": {
+        "maxLevelAfter": 70,
+        "requiredAdventureRank": 35,
+        "mora": 45000,
+        "weaponAscensionMaterial": {
+          "tier": "4-Star",
+          "amount": 5
+        },
+        "eliteEnemyMaterial": {
+          "tier": "3-Star",
+          "amount": 18
+        },
+        "commonEnemyMaterial": {
+          "tier": "2-Star",
+          "amount": 14
+        }
+      },
+      "5": {
+        "maxLevelAfter": 80,
+        "requiredAdventureRank": 40,
+        "mora": 55000,
+        "weaponAscensionMaterial": {
+          "tier": "4-Star",
+          "amount": 9
+        },
+        "eliteEnemyMaterial": {
+          "tier": "4-Star",
+          "amount": 14
+        },
+        "commonEnemyMaterial": {
+          "tier": "3-Star",
+          "amount": 9
+        }
+      },
+      "6": {
+        "maxLevelAfter": 90,
+        "requiredAdventureRank": 50,
+        "mora": 65000,
+        "weaponAscensionMaterial": {
+          "tier": "5-Star",
+          "amount": 6
+        },
+        "eliteEnemyMaterial": {
+          "tier": "4-Star",
+          "amount": 27
+        },
+        "commonEnemyMaterial": {
+          "tier": "3-Star",
+          "amount": 18
+        }
+      }
+    },
+    "4-Star": {
+      "1": {
+        "maxLevelAfter": 40,
+        "requiredAdventureRank": 15,
+        "mora": 5000,
+        "weaponAscensionMaterial": {
+          "tier": "2-Star",
+          "amount": 3
+        },
+        "eliteEnemyMaterial": {
+          "tier": "2-Star",
+          "amount": 3
+        },
+        "commonEnemyMaterial": {
+          "tier": "1-Star",
+          "amount": 2
+        }
+      },
+      "2": {
+        "maxLevelAfter": 50,
+        "requiredAdventureRank": 25,
+        "mora": 15000,
+        "weaponAscensionMaterial": {
+          "tier": "3-Star",
+          "amount": 3
+        },
+        "eliteEnemyMaterial": {
+          "tier": "2-Star",
+          "amount": 12
+        },
+        "commonEnemyMaterial": {
+          "tier": "1-Star",
+          "amount": 8
+        }
+      },
+      "3": {
+        "maxLevelAfter": 60,
+        "requiredAdventureRank": 30,
+        "mora": 20000,
+        "weaponAscensionMaterial": {
+          "tier": "3-Star",
+          "amount": 6
+        },
+        "eliteEnemyMaterial": {
+          "tier": "3-Star",
+          "amount": 6
+        },
+        "commonEnemyMaterial": {
+          "tier": "2-Star",
+          "amount": 6
+        }
+      },
+      "4": {
+        "maxLevelAfter": 70,
+        "requiredAdventureRank": 35,
+        "mora": 30000,
+        "weaponAscensionMaterial": {
+          "tier": "4-Star",
+          "amount": 3
+        },
+        "eliteEnemyMaterial": {
+          "tier": "3-Star",
+          "amount": 12
+        },
+        "commonEnemyMaterial": {
+          "tier": "2-Star",
+          "amount": 9
+        }
+      },
+      "5": {
+        "maxLevelAfter": 80,
+        "requiredAdventureRank": 40,
+        "mora": 35000,
+        "weaponAscensionMaterial": {
+          "tier": "4-Star",
+          "amount": 6
+        },
+        "eliteEnemyMaterial": {
+          "tier": "4-Star",
+          "amount": 9
+        },
+        "commonEnemyMaterial": {
+          "tier": "3-Star",
+          "amount": 6
+        }
+      },
+      "6": {
+        "maxLevelAfter": 90,
+        "requiredAdventureRank": 50,
+        "mora": 45000,
+        "weaponAscensionMaterial": {
+          "tier": "5-Star",
+          "amount": 4
+        },
+        "eliteEnemyMaterial": {
+          "tier": "4-Star",
+          "amount": 18
+        },
+        "commonEnemyMaterial": {
+          "tier": "3-Star",
+          "amount": 12
+        }
+      }
+    },
+    "3-Star": {
+      "1": {
+        "maxLevelAfter": 40,
+        "requiredAdventureRank": 15,
+        "mora": 5000,
+        "weaponAscensionMaterial": {
+          "tier": "2-Star",
+          "amount": 2
+        },
+        "eliteEnemyMaterial": {
+          "tier": "2-Star",
+          "amount": 2
+        },
+        "commonEnemyMaterial": {
+          "tier": "1-Star",
+          "amount": 1
+        }
+      },
+      "2": {
+        "maxLevelAfter": 50,
+        "requiredAdventureRank": 25,
+        "mora": 10000,
+        "weaponAscensionMaterial": {
+          "tier": "3-Star",
+          "amount": 2
+        },
+        "eliteEnemyMaterial": {
+          "tier": "2-Star",
+          "amount": 8
+        },
+        "commonEnemyMaterial": {
+          "tier": "1-Star",
+          "amount": 5
+        }
+      },
+      "3": {
+        "maxLevelAfter": 60,
+        "requiredAdventureRank": 30,
+        "mora": 15000,
+        "weaponAscensionMaterial": {
+          "tier": "3-Star",
+          "amount": 4
+        },
+        "eliteEnemyMaterial": {
+          "tier": "3-Star",
+          "amount": 4
+        },
+        "commonEnemyMaterial": {
+          "tier": "2-Star",
+          "amount": 4
+        }
+      },
+      "4": {
+        "maxLevelAfter": 70,
+        "requiredAdventureRank": 35,
+        "mora": 20000,
+        "weaponAscensionMaterial": {
+          "tier": "4-Star",
+          "amount": 2
+        },
+        "eliteEnemyMaterial": {
+          "tier": "3-Star",
+          "amount": 8
+        },
+        "commonEnemyMaterial": {
+          "tier": "2-Star",
+          "amount": 6
+        }
+      },
+      "5": {
+        "maxLevelAfter": 80,
+        "requiredAdventureRank": 40,
+        "mora": 25000,
+        "weaponAscensionMaterial": {
+          "tier": "4-Star",
+          "amount": 4
+        },
+        "eliteEnemyMaterial": {
+          "tier": "4-Star",
+          "amount": 6
+        },
+        "commonEnemyMaterial": {
+          "tier": "3-Star",
+          "amount": 4
+        }
+      },
+      "6": {
+        "maxLevelAfter": 90,
+        "requiredAdventureRank": 50,
+        "mora": 30000,
+        "weaponAscensionMaterial": {
+          "tier": "5-Star",
+          "amount": 3
+        },
+        "eliteEnemyMaterial": {
+          "tier": "4-Star",
+          "amount": 12
+        },
+        "commonEnemyMaterial": {
+          "tier": "3-Star",
+          "amount": 8
+        }
+      }
+    }
+  },
+  "weaponAscensionTotals20To90": {
+    "5-Star": {
+      "Mora": 225000,
+      "WeaponAscension2Star": 5,
+      "WeaponAscension3Star": 14,
+      "WeaponAscension4Star": 14,
+      "WeaponAscension5Star": 6,
+      "EliteEnemy2Star": 23,
+      "EliteEnemy3Star": 27,
+      "EliteEnemy4Star": 41,
+      "CommonEnemy1Star": 15,
+      "CommonEnemy2Star": 23,
+      "CommonEnemy3Star": 27
+    },
+    "4-Star": {
+      "Mora": 150000,
+      "WeaponAscension2Star": 3,
+      "WeaponAscension3Star": 9,
+      "WeaponAscension4Star": 9,
+      "WeaponAscension5Star": 4,
+      "EliteEnemy2Star": 15,
+      "EliteEnemy3Star": 18,
+      "EliteEnemy4Star": 27,
+      "CommonEnemy1Star": 10,
+      "CommonEnemy2Star": 15,
+      "CommonEnemy3Star": 18
+    },
+    "3-Star": {
+      "Mora": 105000,
+      "WeaponAscension2Star": 2,
+      "WeaponAscension3Star": 6,
+      "WeaponAscension4Star": 6,
+      "WeaponAscension5Star": 3,
+      "EliteEnemy2Star": 10,
+      "EliteEnemy3Star": 12,
+      "EliteEnemy4Star": 18,
+      "CommonEnemy1Star": 6,
+      "CommonEnemy2Star": 10,
+      "CommonEnemy3Star": 12
+    }
+  }
+}

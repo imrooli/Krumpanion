@@ -1,0 +1,328 @@
+{
+  "schemaVersion": 1,
+  "mode": "cumulative",
+  "notes": [
+    "Level totals are cumulative Character EXP and recommended-book Mora estimates.",
+    "Ascension totals are cumulative totals to reach each ascension phase.",
+    "Ascension step costs define the universal material pattern for every character.",
+    "Generic material buckets must be resolved through character material profiles.",
+    "Post-90 level cap extensions are separate from normal ascension phases."
+  ],
+  "levelCapByAscension": {
+    "0": 20,
+    "1": 40,
+    "2": 50,
+    "3": 60,
+    "4": 70,
+    "5": 80,
+    "6": 90
+  },
+  "ascensionCosts": [
+    {
+      "fromPhase": 0,
+      "toPhase": 1,
+      "resultingMaxLevel": 40,
+      "requiredAdventureRank": 15,
+      "mora": 20000,
+      "gemTier": "sliver",
+      "gemCount": 1,
+      "localSpecialtyCount": 3,
+      "commonEnemyTier": 1,
+      "commonEnemyCount": 3,
+      "unlocks": [
+        "1st Ascension Passive Talent"
+      ],
+      "rewards": [
+        {
+          "key": "AcquaintFate",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "fromPhase": 1,
+      "toPhase": 2,
+      "resultingMaxLevel": 50,
+      "requiredAdventureRank": 25,
+      "mora": 40000,
+      "gemTier": "fragment",
+      "gemCount": 3,
+      "normalBossMaterialCount": 2,
+      "localSpecialtyCount": 10,
+      "commonEnemyTier": 1,
+      "commonEnemyCount": 15,
+      "unlocks": [
+        "Combat Talent Leveling up to Lv. 2",
+        "Character Bonus Attribute"
+      ]
+    },
+    {
+      "fromPhase": 2,
+      "toPhase": 3,
+      "resultingMaxLevel": 60,
+      "requiredAdventureRank": 30,
+      "mora": 60000,
+      "gemTier": "fragment",
+      "gemCount": 6,
+      "normalBossMaterialCount": 4,
+      "localSpecialtyCount": 20,
+      "commonEnemyTier": 2,
+      "commonEnemyCount": 12,
+      "unlocks": [
+        "Combat Talent Leveling up to Lv. 4",
+        "Character Bonus Attribute Increase"
+      ],
+      "rewards": [
+        {
+          "key": "AcquaintFate",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "fromPhase": 3,
+      "toPhase": 4,
+      "resultingMaxLevel": 70,
+      "requiredAdventureRank": 35,
+      "mora": 80000,
+      "gemTier": "chunk",
+      "gemCount": 3,
+      "normalBossMaterialCount": 8,
+      "localSpecialtyCount": 30,
+      "commonEnemyTier": 2,
+      "commonEnemyCount": 18,
+      "unlocks": [
+        "4th Ascension Passive Talent",
+        "Combat Talent Leveling up to Lv. 6"
+      ]
+    },
+    {
+      "fromPhase": 4,
+      "toPhase": 5,
+      "resultingMaxLevel": 80,
+      "requiredAdventureRank": 40,
+      "mora": 100000,
+      "gemTier": "chunk",
+      "gemCount": 6,
+      "normalBossMaterialCount": 12,
+      "localSpecialtyCount": 45,
+      "commonEnemyTier": 3,
+      "commonEnemyCount": 12,
+      "unlocks": [
+        "Combat Talent Leveling up to Lv. 8",
+        "Character Bonus Attribute Increase"
+      ],
+      "rewards": [
+        {
+          "key": "AcquaintFate",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "fromPhase": 5,
+      "toPhase": 6,
+      "resultingMaxLevel": 90,
+      "requiredAdventureRank": 50,
+      "mora": 120000,
+      "gemTier": "gemstone",
+      "gemCount": 6,
+      "normalBossMaterialCount": 20,
+      "localSpecialtyCount": 60,
+      "commonEnemyTier": 3,
+      "commonEnemyCount": 24,
+      "unlocks": [
+        "Combat Talent Leveling up to Lv. 10",
+        "Character Bonus Attribute Increase"
+      ]
+    }
+  ],
+  "post90LevelCapExtensionCosts": [
+    {
+      "fromMaxLevel": 90,
+      "toMaxLevel": 95,
+      "materialKey": "MasterlessStellaFortuna",
+      "materialCount": 1
+    },
+    {
+      "fromMaxLevel": 95,
+      "toMaxLevel": 100,
+      "materialKey": "MasterlessStellaFortuna",
+      "materialCount": 2
+    }
+  ],
+  "levelTotals": {
+    "1": {
+      "exp": 0,
+      "moraUsingRecommendedBooks": 0
+    },
+    "20": {
+      "exp": 120175,
+      "moraUsingRecommendedBooks": 24200
+    },
+    "40": {
+      "exp": 698500,
+      "moraUsingRecommendedBooks": 140000
+    },
+    "50": {
+      "exp": 1277600,
+      "moraUsingRecommendedBooks": 256000
+    },
+    "60": {
+      "exp": 2131725,
+      "moraUsingRecommendedBooks": 427200
+    },
+    "70": {
+      "exp": 3327650,
+      "moraUsingRecommendedBooks": 666200
+    },
+    "80": {
+      "exp": 4939525,
+      "moraUsingRecommendedBooks": 988600
+    },
+    "90": {
+      "exp": 8362650,
+      "moraUsingRecommendedBooks": 1673400,
+      "recommendedBooks": {
+        "HerosWit": 415,
+        "AdventurersExperience": 11,
+        "WanderersAdvice": 12
+      }
+    }
+  },
+  "ascensionTotals": {
+    "0": {
+      "mora": 0,
+      "gem": {},
+      "localSpecialty": 0,
+      "normalBossMaterial": 0,
+      "enemyDrop": {},
+      "unlocks": []
+    },
+    "1": {
+      "maxLevelAfter": 40,
+      "requiredAdventureRank": 15,
+      "mora": 20000,
+      "gem": {
+        "sliver": 1
+      },
+      "localSpecialty": 3,
+      "normalBossMaterial": 0,
+      "enemyDrop": {
+        "low": 3
+      },
+      "unlocks": [
+        "1st Ascension Passive Talent"
+      ],
+      "rewards": {
+        "AcquaintFate": 1
+      }
+    },
+    "2": {
+      "maxLevelAfter": 50,
+      "requiredAdventureRank": 25,
+      "mora": 60000,
+      "gem": {
+        "sliver": 1,
+        "fragment": 3
+      },
+      "localSpecialty": 13,
+      "normalBossMaterial": 2,
+      "enemyDrop": {
+        "low": 18
+      },
+      "unlocks": [
+        "Combat Talent Leveling up to Lv. 2",
+        "Character Bonus Attribute"
+      ]
+    },
+    "3": {
+      "maxLevelAfter": 60,
+      "requiredAdventureRank": 30,
+      "mora": 120000,
+      "gem": {
+        "sliver": 1,
+        "fragment": 9
+      },
+      "localSpecialty": 33,
+      "normalBossMaterial": 6,
+      "enemyDrop": {
+        "low": 18,
+        "mid": 12
+      },
+      "unlocks": [
+        "Combat Talent Leveling up to Lv. 4",
+        "Character Bonus Attribute Increase"
+      ],
+      "rewards": {
+        "AcquaintFate": 1
+      }
+    },
+    "4": {
+      "maxLevelAfter": 70,
+      "requiredAdventureRank": 35,
+      "mora": 200000,
+      "gem": {
+        "sliver": 1,
+        "fragment": 9,
+        "chunk": 3
+      },
+      "localSpecialty": 63,
+      "normalBossMaterial": 14,
+      "enemyDrop": {
+        "low": 18,
+        "mid": 30
+      },
+      "unlocks": [
+        "4th Ascension Passive Talent",
+        "Combat Talent Leveling up to Lv. 6"
+      ]
+    },
+    "5": {
+      "maxLevelAfter": 80,
+      "requiredAdventureRank": 40,
+      "mora": 300000,
+      "gem": {
+        "sliver": 1,
+        "fragment": 9,
+        "chunk": 9
+      },
+      "localSpecialty": 108,
+      "normalBossMaterial": 26,
+      "enemyDrop": {
+        "low": 18,
+        "mid": 30,
+        "high": 12
+      },
+      "unlocks": [
+        "Combat Talent Leveling up to Lv. 8",
+        "Character Bonus Attribute Increase"
+      ],
+      "rewards": {
+        "AcquaintFate": 1
+      }
+    },
+    "6": {
+      "maxLevelAfter": 90,
+      "requiredAdventureRank": 50,
+      "mora": 420000,
+      "gem": {
+        "sliver": 1,
+        "fragment": 9,
+        "chunk": 9,
+        "gemstone": 6
+      },
+      "localSpecialty": 168,
+      "normalBossMaterial": 46,
+      "enemyDrop": {
+        "low": 18,
+        "mid": 30,
+        "high": 36
+      },
+      "unlocks": [
+        "Combat Talent Leveling up to Lv. 10",
+        "Character Bonus Attribute Increase"
+      ]
+    }
+  }
+}
