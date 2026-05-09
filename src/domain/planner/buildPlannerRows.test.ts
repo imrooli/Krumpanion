@@ -979,4 +979,83 @@ describe("buildPlannerOutput", () => {
     expect(planner.totalMissingByMaterial.some((row) => row.materialKey === "ThreeStarWeaponFodder")).toBe(false);
     expect(planner.weaponExpSummary.notes.some((note) => note.includes("Low-rarity weapon fodder"))).toBe(true);
   });
+
+  it("includes normal boss and weekly boss resin in the planner summary for real character goals, including world level 9", () => {
+    const planner = buildPlannerOutput({
+      ...buildPlannerInput({
+        importMeta: {
+          format: "GOOD",
+          version: 1,
+          importedAt: new Date("2026-05-02T00:00:00.000Z").toISOString(),
+        },
+        characters: [
+          {
+            characterId: "Zhongli",
+            currentLevel: 1,
+            currentAscension: 0,
+            currentTalents: {
+              normal: 1,
+              skill: 1,
+              burst: 1,
+            },
+          },
+        ],
+        weapons: [],
+        artifacts: [],
+        inventory: {},
+        warnings: [],
+      }),
+      goals: {
+        ...exampleGoals,
+        characterGoals: {
+          Zhongli: {
+            characterKey: "Zhongli",
+            enabled: true,
+            priority: 3,
+            targetLevel: 90,
+            targetAscension: 6,
+            talents: {
+              auto: 10,
+              skill: 10,
+              burst: 10,
+            },
+          },
+        },
+        weaponGoals: {},
+        artifactGoals: [],
+      } as unknown as KrumpanionGoals,
+      staticData: loadStaticData(),
+      today: "Monday",
+      resinSettings: {
+        ...exampleGoals.plannerSettings,
+        worldLevel: 9,
+      },
+    });
+
+    const normalBossEstimate = planner.farmingEstimates.find((estimate) => estimate.sourceType === "normal_boss");
+    const weeklyBossEstimate = planner.farmingEstimates.find((estimate) => estimate.sourceType === "weekly_boss");
+    const goalPlan = planner.byCharacter.find((plan) => plan.characterKey === "Zhongli");
+    const bossRecommendations = planner.recommendationSections
+      .find((section) => section.key === "resin_gated")
+      ?.rows.filter((row) => row.category === "boss" || row.category === "weekly_boss");
+
+    expect(normalBossEstimate).toMatchObject({
+      sourceName: "Geo Hypostasis",
+      estimatedRuns: 18,
+      estimatedResin: 720,
+    });
+    expect(weeklyBossEstimate).toMatchObject({
+      sourceName: "Enter the Golden House",
+      estimatedRuns: 8,
+      estimatedResin: 240,
+    });
+    expect(planner.resinSummary.totalEstimatedResin).toBeGreaterThanOrEqual(960);
+    expect(goalPlan?.estimatedResin).toBeGreaterThanOrEqual(960);
+    expect(bossRecommendations).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({ title: "Farm Geo Hypostasis", totalEstimatedResin: 720, resinPerRun: 40 }),
+        expect.objectContaining({ title: "Farm Enter the Golden House", totalEstimatedResin: 240 }),
+      ]),
+    );
+  });
 });

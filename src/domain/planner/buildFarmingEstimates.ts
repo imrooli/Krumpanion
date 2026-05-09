@@ -59,6 +59,27 @@ function sumValues(values: Record<string, number>): number {
   return Object.values(values).reduce((sum, value) => sum + value, 0);
 }
 
+function getWorldLevelRecord<T>(records: Record<string, T>, worldLevel: number): { value: T | null; resolvedWorldLevel: number | null } {
+  const exact = records[String(worldLevel)];
+  if (exact) {
+    return { value: exact, resolvedWorldLevel: worldLevel };
+  }
+
+  const fallbackWorldLevel = Object.keys(records)
+    .map((key) => Number(key))
+    .filter((key) => Number.isFinite(key) && key <= worldLevel)
+    .sort((left, right) => right - left)[0];
+
+  if (typeof fallbackWorldLevel !== "number") {
+    return { value: null, resolvedWorldLevel: null };
+  }
+
+  return {
+    value: records[String(fallbackWorldLevel)] ?? null,
+    resolvedWorldLevel: fallbackWorldLevel,
+  };
+}
+
 export function normalizePlannerEstimationSettings(
   settings: PlannerSettings | undefined,
   staticData: StaticGameData,
@@ -286,7 +307,11 @@ function estimateMora(
   staticData: StaticGameData,
   today: DayOfWeek,
 ): FarmingEstimateDetail {
-  const reward = staticData.leyLineRewardsByWorldLevel[String(settings.worldLevel)]?.wealth.mora ?? 0;
+  const { value: rewardRecord, resolvedWorldLevel } = getWorldLevelRecord(
+    staticData.leyLineRewardsByWorldLevel,
+    settings.worldLevel,
+  );
+  const reward = rewardRecord?.wealth.mora ?? 0;
   const missingMora = sumValues(group.remainingDeficitsByMaterial);
   const estimatedRuns = reward > 0 ? Math.ceil(missingMora / reward) : null;
   const estimatedResin = estimatedRuns === null ? null : estimatedRuns * staticData.resinActivityCosts.leyLineOutcrop.resin;
@@ -299,6 +324,9 @@ function estimateMora(
     assumptions: unique([
       ...base.assumptions,
       `World Level ${settings.worldLevel} Blossom of Wealth rewards ${reward} Mora per claim.`,
+      resolvedWorldLevel !== null && resolvedWorldLevel !== settings.worldLevel
+        ? `World Level ${settings.worldLevel} is using World Level ${resolvedWorldLevel} Ley Line reward data because no exact record is defined.`
+        : "",
       "All missing progression Mora and crafting Mora are grouped into one Blossom of Wealth estimate.",
     ]),
     warnings: reward > 0 ? base.warnings : [...base.warnings, "Missing Ley Line reward data for the selected World Level."],
@@ -311,8 +339,11 @@ function estimateCharacterExp(
   staticData: StaticGameData,
   today: DayOfWeek,
 ): FarmingEstimateDetail {
-  const averageCharacterExp =
-    staticData.leyLineRewardsByWorldLevel[String(settings.worldLevel)]?.revelation.averageCharacterExp ?? 0;
+  const { value: rewardRecord, resolvedWorldLevel } = getWorldLevelRecord(
+    staticData.leyLineRewardsByWorldLevel,
+    settings.worldLevel,
+  );
+  const averageCharacterExp = rewardRecord?.revelation.averageCharacterExp ?? 0;
   const missingExp = Object.entries(group.remainingDeficitsByMaterial).reduce(
     (sum, [materialKey, quantity]) => sum + quantity * resolveCharacterExpValue(staticData, materialKey),
     0,
@@ -328,6 +359,9 @@ function estimateCharacterExp(
     assumptions: unique([
       ...base.assumptions,
       `World Level ${settings.worldLevel} Blossom of Revelation averages ${averageCharacterExp} character EXP per claim.`,
+      resolvedWorldLevel !== null && resolvedWorldLevel !== settings.worldLevel
+        ? `World Level ${settings.worldLevel} is using World Level ${resolvedWorldLevel} Ley Line reward data because no exact record is defined.`
+        : "",
       "Character EXP book deficits are converted into total EXP value before estimating Ley Line runs.",
     ]),
     warnings:
@@ -437,7 +471,11 @@ function estimateNormalBoss(
     };
   }
 
-  const perRun = staticData.normalBossUniqueMaterialDropMeanByWorldLevel[String(settings.worldLevel)]?.dropMean ?? 0;
+  const { value: dropRecord, resolvedWorldLevel } = getWorldLevelRecord(
+    staticData.normalBossUniqueMaterialDropMeanByWorldLevel,
+    settings.worldLevel,
+  );
+  const perRun = dropRecord?.dropMean ?? 0;
   const estimatedRuns = perRun > 0 ? Math.ceil(uniqueBossMaterialDeficit / perRun) : null;
   const estimatedResin = estimatedRuns === null ? null : estimatedRuns * staticData.resinActivityCosts.normalBoss.resin;
   const primaryAssignment = uniqueAssignments[0] ?? group.assignments[0];
@@ -459,6 +497,9 @@ function estimateNormalBoss(
       assumptions: unique([
         ...base.assumptions,
         `World Level ${settings.worldLevel} normal boss unique materials average ${perRun} per claim.`,
+        resolvedWorldLevel !== null && resolvedWorldLevel !== settings.worldLevel
+          ? `World Level ${settings.worldLevel} is using World Level ${resolvedWorldLevel} normal boss drop data because no exact record is defined.`
+          : "",
         gemAssignments.length > 0
           ? "Ascension Gem deficits from this boss are treated as incidental while farming the unique boss material and do not increase boss runs."
           : "Normal boss runs are driven only by the unique boss material deficit.",
@@ -475,7 +516,11 @@ function estimateWeeklyBoss(
   staticData: StaticGameData,
   today: DayOfWeek,
 ): FarmingEstimateDetail {
-  const totalMean = staticData.weeklyTalentMaterialDropMeanByWorldLevel[String(settings.worldLevel)]?.dropMean ?? 0;
+  const { value: dropRecord, resolvedWorldLevel } = getWorldLevelRecord(
+    staticData.weeklyTalentMaterialDropMeanByWorldLevel,
+    settings.worldLevel,
+  );
+  const totalMean = dropRecord?.dropMean ?? 0;
   const targetSpecificMean = totalMean > 0 ? totalMean / 3 : 0;
   const estimatedRuns =
     targetSpecificMean > 0
@@ -492,10 +537,15 @@ function estimateWeeklyBoss(
       isWeeklyGated: true,
       estimatedWeeks: estimatedRuns,
       rewardLimit: "once_per_boss_per_week",
+      discountedClaims: 0,
+      fullCostClaims: 0,
     },
     assumptions: unique([
       ...base.assumptions,
       `World Level ${settings.worldLevel} weekly talent materials average ${totalMean} total drops per claim, modeled as ${targetSpecificMean.toFixed(3)} target-specific drops for each material.`,
+      resolvedWorldLevel !== null && resolvedWorldLevel !== settings.worldLevel
+        ? `World Level ${settings.worldLevel} is using World Level ${resolvedWorldLevel} weekly boss drop data because no exact record is defined.`
+        : "",
       "The same weekly boss can only be claimed once per week.",
     ]),
     warnings: targetSpecificMean > 0 ? base.warnings : [...base.warnings, "Missing weekly boss drop-rate data for the selected World Level."],
@@ -561,6 +611,8 @@ function applyWeeklyBossDiscountSchedule(
   const remainingClaims = new Map(weeklyEstimates.map((estimate) => [estimate.sourceKey, estimate.estimatedRuns ?? 0]));
   const resinSpent = new Map<string, number>(weeklyEstimates.map((estimate) => [estimate.sourceKey, 0]));
   const weeksUsed = new Map<string, number>(weeklyEstimates.map((estimate) => [estimate.sourceKey, 0]));
+  const discountedClaimsUsed = new Map<string, number>(weeklyEstimates.map((estimate) => [estimate.sourceKey, 0]));
+  const fullCostClaimsUsed = new Map<string, number>(weeklyEstimates.map((estimate) => [estimate.sourceKey, 0]));
   const firstWeekDiscountSlots = Math.max(
     0,
     staticData.plannerDefaults.weeklyBossDiscountedClaimsAvailable - settings.weeklyBossDiscountClaimsUsed,
@@ -582,10 +634,16 @@ function applyWeeklyBossDiscountSchedule(
         discountsRemaining > 0
           ? staticData.resinActivityCosts.weeklyBoss.firstThreePerWeekResin
           : staticData.resinActivityCosts.weeklyBoss.afterFirstThreePerWeekResin;
+      const usesDiscount = discountsRemaining > 0;
       discountsRemaining = Math.max(0, discountsRemaining - 1);
       remainingClaims.set(estimate.sourceKey, claimsLeft - 1);
       resinSpent.set(estimate.sourceKey, (resinSpent.get(estimate.sourceKey) ?? 0) + resinForClaim);
       weeksUsed.set(estimate.sourceKey, activeWeek);
+      if (usesDiscount) {
+        discountedClaimsUsed.set(estimate.sourceKey, (discountedClaimsUsed.get(estimate.sourceKey) ?? 0) + 1);
+      } else {
+        fullCostClaimsUsed.set(estimate.sourceKey, (fullCostClaimsUsed.get(estimate.sourceKey) ?? 0) + 1);
+      }
     }
   }
 
@@ -596,6 +654,8 @@ function applyWeeklyBossDiscountSchedule(
 
     const estimatedResin = resinSpent.get(estimate.sourceKey) ?? null;
     const estimatedWeeks = weeksUsed.get(estimate.sourceKey) ?? null;
+    const discountedClaims = discountedClaimsUsed.get(estimate.sourceKey) ?? 0;
+    const fullCostClaims = fullCostClaimsUsed.get(estimate.sourceKey) ?? 0;
     return {
       ...estimate,
       estimatedResin,
@@ -604,10 +664,13 @@ function applyWeeklyBossDiscountSchedule(
         isWeeklyGated: true,
         estimatedWeeks,
         rewardLimit: "once_per_boss_per_week",
+        discountedClaims,
+        fullCostClaims,
       },
       assumptions: unique([
         ...estimate.assumptions,
         `Weekly boss discount scheduling assumes ${firstWeekDiscountSlots} discounted claim(s) remain this week, then ${laterWeekDiscountSlots} discounted claim(s) reset each following week.`,
+        "Weekly boss rewards reset on Mondays at 02:00 AM PST.",
       ]),
     };
   });

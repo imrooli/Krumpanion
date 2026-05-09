@@ -738,6 +738,7 @@ export const NORMAL_BOSS_ASCENSION_GEM_DROPS_BY_WORLD_LEVEL: Record<string, Boss
   "6": { enemyLevel: 83, twoStar: { range: "0-3", average: 1.9354 }, threeStar: { range: "1-5", average: 1.5358 }, fourStar: { range: "0-3", average: 0.1287 }, fiveStar: { range: "0-3", average: 0.0129 } },
   "7": { enemyLevel: 91, twoStar: { range: "0-3", average: 2.1607 }, threeStar: { range: "1-5", average: 1.5961 }, fourStar: { range: "0-3", average: 0.144 }, fiveStar: { range: "0-3", average: 0.0141 } },
   "8": { enemyLevel: 93, twoStar: { range: "0-3", average: 2.1607 }, threeStar: { range: "1-5", average: 1.5961 }, fourStar: { range: "0-3", average: 0.144 }, fiveStar: { range: "0-3", average: 0.0141 } },
+  "9": { enemyLevel: 95, twoStar: { range: "0-3", average: 2.1607 }, threeStar: { range: "1-5", average: 1.5961 }, fourStar: { range: "0-3", average: 0.144 }, fiveStar: { range: "0-3", average: 0.0141 } },
 };
 
 export const WEEKLY_BOSS_ASCENSION_GEM_DROPS_BY_WORLD_LEVEL: Record<string, BossGemWorldLevelDropRecord> = {
@@ -749,6 +750,7 @@ export const WEEKLY_BOSS_ASCENSION_GEM_DROPS_BY_WORLD_LEVEL: Record<string, Boss
   "6": { enemyLevel: 83, twoStar: { range: "0-5", average: 3.4963 }, threeStar: { range: "1-7", average: 1.9518 }, fourStar: { range: "0-5", average: 0.2325 }, fiveStar: { range: "0-5", average: 0.0233 } },
   "7": { enemyLevel: 91, twoStar: { range: "0-6", average: 3.8343 }, threeStar: { range: "1-8", average: 2.0423 }, fourStar: { range: "0-6", average: 0.2556 }, fiveStar: { range: "0-6", average: 0.025 } },
   "8": { enemyLevel: 93, twoStar: { range: "0-6", average: 3.8343 }, threeStar: { range: "1-8", average: 2.0423 }, fourStar: { range: "0-6", average: 0.2556 }, fiveStar: { range: "0-6", average: 0.025 } },
+  "9": { enemyLevel: 95, twoStar: { range: "0-6", average: 3.8343 }, threeStar: { range: "1-8", average: 2.0423 }, fourStar: { range: "0-6", average: 0.2556 }, fiveStar: { range: "0-6", average: 0.025 } },
 };
 
 export const NORMAL_BOSS_UNIQUE_MATERIAL_DROP_MEAN_BY_WORLD_LEVEL: Record<string, NormalBossUniqueMaterialDropRecord> = {
@@ -761,6 +763,7 @@ export const NORMAL_BOSS_UNIQUE_MATERIAL_DROP_MEAN_BY_WORLD_LEVEL: Record<string
   "6": { bossLevel: "83/84", rewardTier: 16, dropMean: 2.3852 },
   "7": { bossLevel: "91/92", rewardTier: 18, dropMean: 2.5556 },
   "8": { bossLevel: "93/94", rewardTier: 18, dropMean: 2.5556 },
+  "9": { bossLevel: "95", rewardTier: 18, dropMean: 2.5556 },
 };
 
 export const WEEKLY_TALENT_MATERIAL_DROP_MEAN_BY_WORLD_LEVEL: Record<string, WeeklyTalentMaterialDropRecord> = {
@@ -768,6 +771,7 @@ export const WEEKLY_TALENT_MATERIAL_DROP_MEAN_BY_WORLD_LEVEL: Record<string, Wee
   "6": { enemyLevel: 84, dropMean: 1.55 },
   "7": { enemyLevel: 92, dropMean: 2.1 },
   "8": { enemyLevel: 94, dropMean: 2.4 },
+  "9": { enemyLevel: 95, dropMean: 2.4 },
 };
 
 export const BOSS_GEM_THREE_STAR_ROLL_MEAN = {

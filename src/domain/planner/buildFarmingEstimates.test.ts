@@ -243,6 +243,37 @@ describe("planner farming estimates", () => {
     expect(estimate?.assumptions.some((line) => line.includes("incidental"))).toBe(true);
   });
 
+  it("supports world level 9 normal boss resin estimates", () => {
+    const staticData = loadStaticData();
+    const result = buildFarmingEstimates({
+      sourceAssignments: [
+        assignment({
+          materialKey: "BasaltPillar",
+          materialName: "Basalt Pillar",
+          requiredAmount: 5,
+          missingAmount: 5,
+          kind: "normal_boss_material",
+          sourceType: "normal_boss",
+          sourceName: "Geo Hypostasis",
+          targetTierIndex: 0,
+          normalBossMaterialKey: "BasaltPillar",
+        }),
+      ],
+      staticData,
+      resinSettings: {
+        ...DEFAULT_GOALS.plannerSettings,
+        worldLevel: 9,
+      },
+      today: "Monday",
+    });
+
+    expect(result.farmingEstimates[0]).toMatchObject({
+      sourceType: "normal_boss",
+      estimatedRuns: 2,
+      estimatedResin: 80,
+    });
+  });
+
   it("does not create a normal boss resin estimate for gem-only deficits", () => {
     const staticData = loadStaticData();
     const result = buildFarmingEstimates({
@@ -304,6 +335,38 @@ describe("planner farming estimates", () => {
     expect(result.farmingEstimates[0]?.weeklyGate?.estimatedWeeks).toBe(8);
     expect(result.farmingEstimates[0]?.estimatedResin).toBe(240);
     expect(result.farmingEstimates[0]?.assumptions.some((line) => line.includes("0.800"))).toBe(true);
+  });
+
+  it("supports world level 9 weekly boss resin estimates", () => {
+    const staticData = loadStaticData();
+    const result = buildFarmingEstimates({
+      sourceAssignments: [
+        assignment({
+          materialKey: "DvalinsPlume",
+          materialName: "Dvalin's Plume",
+          requiredAmount: 6,
+          missingAmount: 6,
+          kind: "weekly_boss_material",
+          sourceType: "weekly_boss",
+          sourceName: "Confront Stormterror",
+          availability: "WEEKLY",
+          weeklyBossMaterialKey: "DvalinsPlume",
+        }),
+      ],
+      staticData,
+      resinSettings: {
+        ...DEFAULT_GOALS.plannerSettings,
+        worldLevel: 9,
+        weeklyBossDiscountClaimsUsed: 0,
+      },
+      today: "Monday",
+    });
+
+    expect(result.farmingEstimates[0]).toMatchObject({
+      sourceType: "weekly_boss",
+      estimatedRuns: 8,
+      estimatedResin: 240,
+    });
   });
 
   it("does not duplicate weekly scheduling for multiple material goals from the same boss", () => {

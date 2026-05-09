@@ -146,6 +146,40 @@ describe("buildPlannerReport helpers", () => {
     );
   });
 
+  it("reports weekly boss resin using the exact discounted/full-cost schedule instead of an averaged per-run cost", () => {
+    const rows = buildMaterialRecommendations(buildPlannerInput(), [
+      estimate({
+        estimateKey: "stormterror",
+        sourceKey: "ConfrontStormterror",
+        sourceType: "weekly_boss",
+        sourceName: "Confront Stormterror",
+        materialKey: "DvalinsPlume",
+        materialName: "Dvalin's Plume",
+        missingAmount: 6,
+        deterministicRequirement: 6,
+        remainingDeficitsByMaterial: { DvalinsPlume: 6 },
+        estimatedRuns: 6,
+        estimatedResin: 270,
+        weeklyGate: {
+          isWeeklyGated: true,
+          estimatedWeeks: 3,
+          rewardLimit: "once_per_boss_per_week",
+          discountedClaims: 3,
+          fullCostClaims: 3,
+        },
+      }),
+    ]);
+
+    expect(rows[0]).toMatchObject({
+      title: "Farm Confront Stormterror",
+      totalEstimatedResin: 270,
+      resinLabel: "270",
+      resinPerRun: null,
+    });
+    expect(rows[0]?.reason).toContain("3 discounted claim(s) and 3 full-cost claim(s)");
+    expect(rows[0]?.reason).toContain("Monday 2:00 AM PST reset");
+  });
+
   it("marks known non-resin source recommendations as No resin", () => {
     const rows = buildMaterialRecommendations(buildPlannerInput(), [
       estimate({

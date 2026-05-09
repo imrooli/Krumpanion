@@ -146,6 +146,23 @@ function inferActionGroupFromEstimate(estimate: FarmingEstimateDetail): PlannerR
   }
 }
 
+function resolveResinPerRun(input: PlannerInput, estimate: FarmingEstimateDetail): number | null {
+  switch (estimate.sourceType) {
+    case "ley_line_wealth":
+    case "ley_line_revelation":
+      return input.staticData.resinActivityCosts.leyLineOutcrop.resin;
+    case "domain_of_mastery":
+    case "domain_of_forgery":
+      return input.staticData.resinActivityCosts.domain.resin;
+    case "normal_boss":
+      return input.staticData.resinActivityCosts.normalBoss.resin;
+    case "weekly_boss":
+      return estimate.weeklyGate?.fullCostClaims ? null : input.staticData.resinActivityCosts.weeklyBoss.firstThreePerWeekResin;
+    default:
+      return null;
+  }
+}
+
 function formatResinLabel(totalEstimatedResin: number | null, _resinPerRun: number | null): string {
   if (totalEstimatedResin === null) {
     return "No resin";
@@ -194,7 +211,13 @@ function buildEstimateReason(estimate: FarmingEstimateDetail): string {
   }
 
   if (estimate.sourceType === "weekly_boss") {
-    return `Need ${materialSummary}. Estimated ${estimate.estimatedRuns ?? 0} weekly claim(s), about ${estimate.estimatedResin ?? 0} resin, with once-per-boss-per-week scheduling.`;
+    const discountedClaims = estimate.weeklyGate?.discountedClaims ?? 0;
+    const fullCostClaims = estimate.weeklyGate?.fullCostClaims ?? 0;
+    const pricingDetail =
+      fullCostClaims > 0
+        ? `${discountedClaims} discounted claim(s) and ${fullCostClaims} full-cost claim(s)`
+        : `${discountedClaims} discounted claim(s)`;
+    return `Need ${materialSummary}. Estimated ${estimate.estimatedRuns ?? 0} weekly claim(s), about ${estimate.estimatedResin ?? 0} resin (${pricingDetail}), with once-per-boss-per-week scheduling and a Monday 2:00 AM PST reset.`;
   }
 
   if (estimate.sourceType === "open_world_enemy") {
@@ -234,7 +257,7 @@ export function buildMaterialRecommendations(input: PlannerInput, farmingEstimat
       return !relatedCategories.every((category) => category === "weapon_exp_material");
     })
     .map((estimate) => {
-      const resinPerRun = estimate.estimatedRuns && estimate.estimatedResin !== null ? estimate.estimatedResin / estimate.estimatedRuns : null;
+      const resinPerRun = resolveResinPerRun(input, estimate);
       const totalEstimatedResin = estimate.estimatedResin;
       const actionGroup = inferActionGroupFromEstimate(estimate);
       const priority =

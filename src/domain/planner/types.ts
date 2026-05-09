@@ -112,6 +112,8 @@ export interface FarmingEstimate {
     isWeeklyGated: boolean;
     estimatedWeeks: number | null;
     rewardLimit: string | null;
+    discountedClaims?: number;
+    fullCostClaims?: number;
   };
   availability?: AvailabilityGroupKey;
   relatedGoalKeys?: string[];

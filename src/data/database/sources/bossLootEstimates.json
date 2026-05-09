@@ -134,6 +134,25 @@
         "range": "0-3",
         "average": 0.0141
       }
+    },
+    "9": {
+      "enemyLevel": 95,
+      "twoStar": {
+        "range": "0-3",
+        "average": 2.1607
+      },
+      "threeStar": {
+        "range": "1-5",
+        "average": 1.5961
+      },
+      "fourStar": {
+        "range": "0-3",
+        "average": 0.144
+      },
+      "fiveStar": {
+        "range": "0-3",
+        "average": 0.0141
+      }
     }
   },
   "weeklyBossAscensionGemDropsByWorldLevel": {
@@ -261,6 +280,25 @@
         "range": "0-6",
         "average": 0.025
       }
+    },
+    "9": {
+      "enemyLevel": 95,
+      "twoStar": {
+        "range": "0-6",
+        "average": 3.8343
+      },
+      "threeStar": {
+        "range": "1-8",
+        "average": 2.0423
+      },
+      "fourStar": {
+        "range": "0-6",
+        "average": 0.2556
+      },
+      "fiveStar": {
+        "range": "0-6",
+        "average": 0.025
+      }
     }
   },
   "normalBossUniqueMaterialDropMeanByWorldLevel": {
@@ -308,6 +346,11 @@
       "bossLevel": "93/94",
       "rewardTier": 18,
       "dropMean": 2.5556
+    },
+    "9": {
+      "bossLevel": "95",
+      "rewardTier": 18,
+      "dropMean": 2.5556
     }
   },
   "weeklyTalentMaterialDropMeanByWorldLevel": {
@@ -325,6 +368,10 @@
     },
     "8": {
       "enemyLevel": 94,
+      "dropMean": 2.4
+    },
+    "9": {
+      "enemyLevel": 95,
       "dropMean": 2.4
     }
   },
