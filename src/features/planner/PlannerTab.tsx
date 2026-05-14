@@ -22,6 +22,21 @@ const VIEW_OPTIONS = [
   { key: "source", label: "By Domain/Boss" },
 ] as const;
 
+const ACTIVITY_LABELS: Record<string, string> = {
+  weekly_resin: "Weekly Resin Activities",
+  domains: "Domains",
+  bosses: "Bosses",
+  ley_lines: "Ley Lines",
+  forging: "Forging",
+  crafting: "Crafting / Conversion",
+  local_specialty: "Local Specialties",
+  open_world: "Open-World Enemy Farming",
+  unknown_estimates: "Unknown / Missing Estimate Data",
+  passive_incidental: "Passive / Incidental",
+  resin_gated: "Resin Activities",
+  time_gated_non_resin: "Time-Gated Non-Resin",
+};
+
 export function PlannerTab({ plannerOutput }: PlannerTabProps) {
   const plannerView = useAppStore((state) => state.settings.plannerView);
   const setPlannerView = useAppStore((state) => state.setPlannerView);
@@ -47,23 +62,29 @@ export function PlannerTab({ plannerOutput }: PlannerTabProps) {
               value: plannerOutput.resinSummary.totalEstimatedNaturalResinDays.toFixed(2),
             },
             {
-              label: "Natural weeks",
-              value: plannerOutput.resinSummary.totalEstimatedNaturalResinWeeks.toFixed(2),
+              label: "No-resin tasks",
+              value: String(plannerOutput.resinSummary.noResinTaskCount),
+              tone: plannerOutput.resinSummary.noResinTaskCount ? "accent" : "default",
             },
             {
               label: "Weekly-gated rows",
               value: String(plannerOutput.resinSummary.weeklyGatedEstimateCount),
               tone: plannerOutput.resinSummary.weeklyGatedEstimateCount ? "warning" : "success",
             },
+            {
+              label: "Missing estimates",
+              value: String(plannerOutput.resinSummary.unknownEstimateCount),
+              tone: plannerOutput.resinSummary.unknownEstimateCount ? "warning" : "success",
+            },
             { label: "Crafting Mora", value: String(plannerOutput.summary.craftingMora), tone: "accent" },
           ]}
         />
       }
     >
-      {!!plannerOutput.warnings.length ? (
+      {plannerOutput.warnings.length > 0 ? (
         <WarningPanel title="Planner assumptions and warnings" tone="warning">
           <ul className="warning-list">
-            {plannerOutput.warnings.slice(0, 4).map((warning) => (
+            {plannerOutput.warnings.slice(0, 6).map((warning) => (
               <li key={`${warning.type}-${warning.message}`}>{warning.message}</li>
             ))}
           </ul>
@@ -72,206 +93,206 @@ export function PlannerTab({ plannerOutput }: PlannerTabProps) {
 
       <SectionCard title="Planner assumptions" description="Adjust account-scoped world and resin assumptions here before reviewing grouped deficit outputs.">
         <div className="planner-controls">
-        <label>
-          World Level
-          <input
-            type="number"
-            min={0}
-            max={9}
-            value={plannerSettings.worldLevel ?? 8}
-            onChange={(event) => void updatePlannerSettings({ worldLevel: Number(event.target.value) })}
-          />
-        </label>
-        <label>
-          Domain Level
-          <select
-            value={plannerSettings.domainLevel ?? "IV"}
-            onChange={(event) => void updatePlannerSettings({ domainLevel: event.target.value as "I" | "II" | "III" | "IV" })}
-          >
-            {["I", "II", "III", "IV"].map((value) => (
-              <option key={value} value={value}>
-                {value}
-              </option>
-            ))}
-          </select>
-        </label>
-        <label>
-          Daily Resin Budget
-          <input
-            type="number"
-            min={0}
-            value={plannerSettings.dailyResinBudget}
-            onChange={(event) => void updatePlannerSettings({ dailyResinBudget: Number(event.target.value) })}
-          />
-        </label>
-        <label>
-          Current Resin
-          <input
-            type="number"
-            min={0}
-            value={plannerSettings.currentResin ?? 0}
-            onChange={(event) => void updatePlannerSettings({ currentResin: Number(event.target.value) })}
-          />
-        </label>
-        <label>
-          Condensed Resin
-          <input
-            type="number"
-            min={0}
-            value={plannerSettings.condensedResinOwned ?? 0}
-            onChange={(event) => void updatePlannerSettings({ condensedResinOwned: Number(event.target.value) })}
-          />
-        </label>
-        <label>
-          Fragile Resin
-          <input
-            type="number"
-            min={0}
-            value={plannerSettings.fragileResinOwned ?? 0}
-            onChange={(event) => void updatePlannerSettings({ fragileResinOwned: Number(event.target.value) })}
-          />
-        </label>
-        <label>
-          Transient Resin
-          <input
-            type="number"
-            min={0}
-            value={plannerSettings.transientResinOwned ?? 0}
-            onChange={(event) => void updatePlannerSettings({ transientResinOwned: Number(event.target.value) })}
-          />
-        </label>
-        <label>
-          Weekly discounts used
-          <input
-            type="number"
-            min={0}
-            max={3}
-            value={plannerSettings.weeklyBossDiscountClaimsUsed ?? 0}
-            onChange={(event) => void updatePlannerSettings({ weeklyBossDiscountClaimsUsed: Number(event.target.value) })}
-          />
-        </label>
-        <label className="checkbox-row">
-          <input
-            type="checkbox"
-            checked={plannerSettings.craftAwareEstimates ?? true}
-            onChange={(event) => void updatePlannerSettings({ craftAwareEstimates: event.target.checked })}
-          />
-          Craft-aware estimates
-        </label>
-        <label className="checkbox-row">
-          <input
-            type="checkbox"
-            checked={plannerSettings.allowDustOfAzothConversion ?? false}
-            onChange={(event) => void updatePlannerSettings({ allowDustOfAzothConversion: event.target.checked })}
-          />
-          Allow Dust of Azoth conversion
-        </label>
-        <label className="checkbox-row">
-          <input
-            type="checkbox"
-            checked={plannerSettings.showCraftingVarianceWarning ?? true}
-            onChange={(event) => void updatePlannerSettings({ showCraftingVarianceWarning: event.target.checked })}
-          />
-          Show crafting RNG warnings
-        </label>
-        <label className="checkbox-row">
-          <input
-            type="checkbox"
-            checked={plannerSettings.assumeCondensedResinEquivalentForDomains ?? true}
-            onChange={(event) => void updatePlannerSettings({ assumeCondensedResinEquivalentForDomains: event.target.checked })}
-          />
-          Count condensed-resin equivalent
-        </label>
-        <label className="checkbox-row">
-          <input
-            type="checkbox"
-            checked={plannerSettings.useHighestUnlockedDomain ?? true}
-            onChange={(event) => void updatePlannerSettings({ useHighestUnlockedDomain: event.target.checked })}
-          />
-          Use highest unlocked domain
-        </label>
-        <label className="checkbox-row">
-          <input
-            type="checkbox"
-            checked={plannerSettings.includePrimogemRefillPlanning ?? false}
-            onChange={(event) => void updatePlannerSettings({ includePrimogemRefillPlanning: event.target.checked })}
-          />
-          Include Primogem refill planning
-        </label>
-        <label className="checkbox-row">
-          <input
-            type="checkbox"
-            checked={plannerSettings.estimateOpenWorldEnemyDrops ?? false}
-            onChange={(event) => void updatePlannerSettings({ estimateOpenWorldEnemyDrops: event.target.checked })}
-          />
-          Estimate open-world enemy drops
-        </label>
-        <label className="checkbox-row">
-          <input
-            type="checkbox"
-          checked={plannerSettings.includeArtifactGoals}
-          onChange={(event) => void updatePlannerSettings({ includeArtifactGoals: event.target.checked })}
-        />
-          Include artifact goals
-        </label>
-        <label>
-          Requirement crafting mode
-          <select
-            value={plannerSettings.craftingModeForRequirementSatisfaction ?? "guaranteed"}
-            onChange={(event) =>
+          <label>
+            World Level
+            <input
+              type="number"
+              min={0}
+              max={9}
+              value={plannerSettings.worldLevel ?? 8}
+              onChange={(event) => void updatePlannerSettings({ worldLevel: Number(event.target.value) })}
+            />
+          </label>
+          <label>
+            Domain Level
+            <select
+              value={plannerSettings.domainLevel ?? "IV"}
+              onChange={(event) => void updatePlannerSettings({ domainLevel: event.target.value as "I" | "II" | "III" | "IV" })}
+            >
+              {["I", "II", "III", "IV"].map((value) => (
+                <option key={value} value={value}>
+                  {value}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label>
+            Daily Resin Budget
+            <input
+              type="number"
+              min={0}
+              value={plannerSettings.dailyResinBudget}
+              onChange={(event) => void updatePlannerSettings({ dailyResinBudget: Number(event.target.value) })}
+            />
+          </label>
+          <label>
+            Current Resin
+            <input
+              type="number"
+              min={0}
+              value={plannerSettings.currentResin ?? 0}
+              onChange={(event) => void updatePlannerSettings({ currentResin: Number(event.target.value) })}
+            />
+          </label>
+          <label>
+            Condensed Resin
+            <input
+              type="number"
+              min={0}
+              value={plannerSettings.condensedResinOwned ?? 0}
+              onChange={(event) => void updatePlannerSettings({ condensedResinOwned: Number(event.target.value) })}
+            />
+          </label>
+          <label>
+            Fragile Resin
+            <input
+              type="number"
+              min={0}
+              value={plannerSettings.fragileResinOwned ?? 0}
+              onChange={(event) => void updatePlannerSettings({ fragileResinOwned: Number(event.target.value) })}
+            />
+          </label>
+          <label>
+            Transient Resin
+            <input
+              type="number"
+              min={0}
+              value={plannerSettings.transientResinOwned ?? 0}
+              onChange={(event) => void updatePlannerSettings({ transientResinOwned: Number(event.target.value) })}
+            />
+          </label>
+          <label>
+            Weekly discounts used
+            <input
+              type="number"
+              min={0}
+              max={3}
+              value={plannerSettings.weeklyBossDiscountClaimsUsed ?? 0}
+              onChange={(event) => void updatePlannerSettings({ weeklyBossDiscountClaimsUsed: Number(event.target.value) })}
+            />
+          </label>
+          <label className="checkbox-row">
+            <input
+              type="checkbox"
+              checked={plannerSettings.craftAwareEstimates ?? true}
+              onChange={(event) => void updatePlannerSettings({ craftAwareEstimates: event.target.checked })}
+            />
+            Craft-aware estimates
+          </label>
+          <label className="checkbox-row">
+            <input
+              type="checkbox"
+              checked={plannerSettings.allowDustOfAzothConversion ?? false}
+              onChange={(event) => void updatePlannerSettings({ allowDustOfAzothConversion: event.target.checked })}
+            />
+            Allow Dust of Azoth conversion
+          </label>
+          <label className="checkbox-row">
+            <input
+              type="checkbox"
+              checked={plannerSettings.showCraftingVarianceWarning ?? true}
+              onChange={(event) => void updatePlannerSettings({ showCraftingVarianceWarning: event.target.checked })}
+            />
+            Show crafting RNG warnings
+          </label>
+          <label className="checkbox-row">
+            <input
+              type="checkbox"
+              checked={plannerSettings.assumeCondensedResinEquivalentForDomains ?? true}
+              onChange={(event) => void updatePlannerSettings({ assumeCondensedResinEquivalentForDomains: event.target.checked })}
+            />
+            Count condensed-resin equivalent
+          </label>
+          <label className="checkbox-row">
+            <input
+              type="checkbox"
+              checked={plannerSettings.useHighestUnlockedDomain ?? true}
+              onChange={(event) => void updatePlannerSettings({ useHighestUnlockedDomain: event.target.checked })}
+            />
+            Use highest unlocked domain
+          </label>
+          <label className="checkbox-row">
+            <input
+              type="checkbox"
+              checked={plannerSettings.includePrimogemRefillPlanning ?? false}
+              onChange={(event) => void updatePlannerSettings({ includePrimogemRefillPlanning: event.target.checked })}
+            />
+            Include Primogem refill planning
+          </label>
+          <label className="checkbox-row">
+            <input
+              type="checkbox"
+              checked={plannerSettings.estimateOpenWorldEnemyDrops ?? false}
+              onChange={(event) => void updatePlannerSettings({ estimateOpenWorldEnemyDrops: event.target.checked })}
+            />
+            Estimate open-world enemy drops
+          </label>
+          <label className="checkbox-row">
+            <input
+              type="checkbox"
+              checked={plannerSettings.includeArtifactGoals}
+              onChange={(event) => void updatePlannerSettings({ includeArtifactGoals: event.target.checked })}
+            />
+            Include artifact goals
+          </label>
+          <label>
+            Requirement crafting mode
+            <select
+              value={plannerSettings.craftingModeForRequirementSatisfaction ?? "guaranteed"}
+              onChange={(event) =>
+                void updatePlannerSettings({
+                  craftingModeForRequirementSatisfaction: event.target.value as "guaranteed" | "expected_value",
+                })
+              }
+            >
+              <option value="guaranteed">Guaranteed</option>
+              <option value="expected_value">Expected value</option>
+            </select>
+          </label>
+          <label>
+            Resin crafting mode
+            <select
+              value={plannerSettings.craftingModeForResinEstimate ?? "expected_value"}
+              onChange={(event) =>
+                void updatePlannerSettings({
+                  craftingModeForResinEstimate: event.target.value as "guaranteed" | "expected_value",
+                })
+              }
+            >
+              <option value="guaranteed">Guaranteed</option>
+              <option value="expected_value">Expected value</option>
+            </select>
+          </label>
+          <PassiveOverrideSelect
+            label="Talent passive"
+            value={plannerSettings.craftingPassiveOverrides?.talentMaterials ?? ""}
+            options={Object.values(staticData.craftingUtilityPassives)
+              .filter((passive) => passive.appliesTo.includes("character_talent_material"))
+              .map((passive) => ({ value: passive.key, label: passive.characterName }))}
+            onChange={(value) =>
               void updatePlannerSettings({
-                craftingModeForRequirementSatisfaction: event.target.value as "guaranteed" | "expected_value",
+                craftingPassiveOverrides: {
+                  ...(plannerSettings.craftingPassiveOverrides ?? {}),
+                  talentMaterials: value || null,
+                },
               })
             }
-          >
-            <option value="guaranteed">Guaranteed</option>
-            <option value="expected_value">Expected value</option>
-          </select>
-        </label>
-        <label>
-          Resin crafting mode
-          <select
-            value={plannerSettings.craftingModeForResinEstimate ?? "expected_value"}
-            onChange={(event) =>
+          />
+          <PassiveOverrideSelect
+            label="Weapon passive"
+            value={plannerSettings.craftingPassiveOverrides?.weaponAscensionMaterials ?? ""}
+            options={Object.values(staticData.craftingUtilityPassives)
+              .filter((passive) => passive.appliesTo.includes("weapon_ascension_material"))
+              .map((passive) => ({ value: passive.key, label: passive.characterName }))}
+            onChange={(value) =>
               void updatePlannerSettings({
-                craftingModeForResinEstimate: event.target.value as "guaranteed" | "expected_value",
+                craftingPassiveOverrides: {
+                  ...(plannerSettings.craftingPassiveOverrides ?? {}),
+                  weaponAscensionMaterials: value || null,
+                },
               })
             }
-          >
-            <option value="guaranteed">Guaranteed</option>
-            <option value="expected_value">Expected value</option>
-          </select>
-        </label>
-        <PassiveOverrideSelect
-          label="Talent passive"
-          value={plannerSettings.craftingPassiveOverrides?.talentMaterials ?? ""}
-          options={Object.values(staticData.craftingUtilityPassives)
-            .filter((passive) => passive.appliesTo.includes("character_talent_material"))
-            .map((passive) => ({ value: passive.key, label: passive.characterName }))}
-          onChange={(value) =>
-            void updatePlannerSettings({
-              craftingPassiveOverrides: {
-                ...(plannerSettings.craftingPassiveOverrides ?? {}),
-                talentMaterials: value || null,
-              },
-            })
-          }
-        />
-        <PassiveOverrideSelect
-          label="Weapon passive"
-          value={plannerSettings.craftingPassiveOverrides?.weaponAscensionMaterials ?? ""}
-          options={Object.values(staticData.craftingUtilityPassives)
-            .filter((passive) => passive.appliesTo.includes("weapon_ascension_material"))
-            .map((passive) => ({ value: passive.key, label: passive.characterName }))}
-          onChange={(value) =>
-            void updatePlannerSettings({
-              craftingPassiveOverrides: {
-                ...(plannerSettings.craftingPassiveOverrides ?? {}),
-                weaponAscensionMaterials: value || null,
-              },
-            })
-          }
-        />
+          />
         </div>
       </SectionCard>
 
@@ -354,7 +375,7 @@ export function PlannerTab({ plannerOutput }: PlannerTabProps) {
       {plannerView === "today" ? (
         <SectionCard
           title="Priority actions"
-          description="The fastest answer to what you should farm next, based on today’s availability and the current active-account plan."
+          description="The fastest answer to what you should farm next, based on today's availability and the current active-account plan."
         >
           <ActivityTable rows={plannerOutput.today} />
         </SectionCard>
@@ -385,33 +406,29 @@ export function PlannerTab({ plannerOutput }: PlannerTabProps) {
 
 function ActivityTable({ rows }: { rows: PlannerOutput["today"] }) {
   const grouped = new Map<string, PlannerOutput["today"]>();
-  const labels: Record<string, string> = {
-    resin_gated: "Resin-Gated Activities",
-    time_gated_non_resin: "Time-Gated / Daily-Capped Non-Resin",
-    crafting: "Crafting Actions",
-    open_world: "Open-World Farming",
-    passive_incidental: "Passive / Incidental / Conversion",
-  };
 
   for (const row of rows) {
-    grouped.set(row.actionGroup, [...(grouped.get(row.actionGroup) ?? []), row]);
+    const key = row.actionSubgroup ?? row.actionGroup;
+    grouped.set(key, [...(grouped.get(key) ?? []), row]);
   }
 
   return (
     <div className="stack">
       {[...grouped.entries()].map(([groupKey, groupRows]) => (
         <article key={groupKey} className="availability-group">
-          <h3>{labels[groupKey] ?? groupKey}</h3>
+          <h3>{ACTIVITY_LABELS[groupKey] ?? groupKey}</h3>
           <div className="table-wrapper">
             <table className="data-table">
               <thead>
                 <tr>
                   <th>Recommendation</th>
                   <th>Source</th>
-                  <th>Reason</th>
+                  <th>Details</th>
                   <th>Related goals</th>
-                  <th>Runs</th>
-                  <th>Resin</th>
+                  <th>Estimated</th>
+                  <th>Actionable</th>
+                  <th>Resin / run</th>
+                  <th>Total resin</th>
                 </tr>
               </thead>
               <tbody>
@@ -421,14 +438,19 @@ function ActivityTable({ rows }: { rows: PlannerOutput["today"] }) {
                     <td>{row.sourceName ?? row.category}</td>
                     <td>
                       <div>{row.reason}</div>
-                      {row.resinPerRun != null && row.estimatedRuns != null ? (
+                      {row.priorityLabel ? <div className="muted">Priority: {row.priorityLabel}</div> : null}
+                      {row.estimateBasis ? <div className="muted">Basis: {row.estimateBasis}</div> : null}
+                      {row.resinPerRun != null && row.actionableRuns != null ? (
                         <div className="muted">
-                          {row.estimatedRuns} run(s) × {row.resinPerRun} resin
+                          {row.actionableRuns} run(s) x {row.resinPerRun} resin
                         </div>
                       ) : null}
+                      {row.warnings?.length ? <div className="muted">{row.warnings[0]}</div> : null}
                     </td>
-                    <td>{row.relatedGoalKeys.join(", ") || "General"}</td>
-                    <td>{row.estimatedRuns ?? "—"}</td>
+                    <td>{row.relatedGoalLabels?.join(", ") || row.relatedGoalKeys.join(", ") || "General"}</td>
+                    <td>{row.estimatedRuns != null ? row.estimatedRuns.toFixed(2) : "-"}</td>
+                    <td>{row.actionableRuns ?? "-"}</td>
+                    <td>{row.resinPerRun ?? "No resin"}</td>
                     <td>{row.resinLabel ?? (row.totalEstimatedResin != null ? String(row.totalEstimatedResin) : "No resin")}</td>
                   </tr>
                 ))}
@@ -493,38 +515,39 @@ function MaterialTable({ plannerOutput }: { plannerOutput: PlannerOutput }) {
         </thead>
         <tbody>
           {plannerOutput.totalMissingByMaterial.map((row) => {
-                  const estimate = plannerOutput.farmingEstimates.find(
-                    (item) => item.materialKey === row.materialKey || item.relatedMaterialKeys?.includes(row.materialKey),
-                  );
+            const estimate = plannerOutput.farmingEstimates.find(
+              (item) => item.materialKey === row.materialKey || item.relatedMaterialKeys?.includes(row.materialKey),
+            );
             const report = row.craftingReport;
             return (
-            <tr key={row.materialKey}>
-              <td>
-                <strong>{row.displayName}</strong>
-                {row.region ? <div className="muted">{row.region}</div> : null}
-              </td>
-              <td>{row.materialKey}</td>
-              <td>{row.familyDisplayName ?? "—"}</td>
-              <td>{row.sourceEnemyFamily ?? "—"}</td>
-              <td>{row.owned}</td>
-              <td>{row.craftableQuantity}</td>
-              <td>{report?.guaranteedCrafting.moraCost ?? "—"}</td>
-              <td>{report?.recommendedPassive?.characterName ?? "Auto"}</td>
-              <td>{row.effectiveOwned}</td>
-              <td>{row.needed}</td>
-              <td>{row.effectiveDeficit}</td>
-              <td>{estimate?.sourceType ?? "unknown"}</td>
-              <td>{estimate?.estimatedRuns ?? "—"}</td>
-              <td>{estimate?.estimatedResin ?? "—"}</td>
-              <td>{estimate?.estimatedDaysNaturalResin?.toFixed(2) ?? "—"}</td>
-              <td>{estimate?.weeklyGate?.estimatedWeeks ?? estimate?.estimatedWeeksNaturalResin?.toFixed(2) ?? "—"}</td>
-              <td>
-                <div>{row.sources[0]?.sourceName ?? "Unknown"}</div>
-                {row.purchaseVendors?.length ? <div className="muted">Vendors: {row.purchaseVendors.join(", ")}</div> : null}
-                {row.searchHint ? <div className="muted">{row.searchHint}</div> : null}
-                {report?.warnings?.length ? <div className="muted">{report.warnings[0]}</div> : null}
-              </td>
-            </tr>
+              <tr key={row.materialKey}>
+                <td>
+                  <strong>{row.displayName}</strong>
+                  {row.region ? <div className="muted">{row.region}</div> : null}
+                </td>
+                <td>{row.materialKey}</td>
+                <td>{row.familyDisplayName ?? "-"}</td>
+                <td>{row.sourceEnemyFamily ?? "-"}</td>
+                <td>{row.owned}</td>
+                <td>{row.craftableQuantity}</td>
+                <td>{report?.guaranteedCrafting.moraCost ?? "-"}</td>
+                <td>{report?.recommendedPassive?.characterName ?? "Auto"}</td>
+                <td>{row.effectiveOwned}</td>
+                <td>{row.needed}</td>
+                <td>{row.effectiveDeficit}</td>
+                <td>{estimate?.sourceType ?? "unknown"}</td>
+                <td>{estimate?.estimatedRuns?.toFixed(2) ?? "-"}</td>
+                <td>{estimate?.estimatedResin ?? (estimate?.sourceType === "unknown" ? "Missing estimate data" : "No resin")}</td>
+                <td>{estimate?.estimatedDaysNaturalResin?.toFixed(2) ?? "-"}</td>
+                <td>{estimate?.weeklyGate?.estimatedWeeks ?? estimate?.estimatedWeeksNaturalResin?.toFixed(2) ?? "-"}</td>
+                <td>
+                  <div>{row.sources[0]?.sourceName ?? "Unknown"}</div>
+                  {row.purchaseVendors?.length ? <div className="muted">Vendors: {row.purchaseVendors.join(", ")}</div> : null}
+                  {row.searchHint ? <div className="muted">{row.searchHint}</div> : null}
+                  {report?.warnings?.length ? <div className="muted">{report.warnings[0]}</div> : null}
+                  {estimate?.warnings?.length ? <div className="muted">{estimate.warnings[0]}</div> : null}
+                </td>
+              </tr>
             );
           })}
         </tbody>
@@ -535,16 +558,16 @@ function MaterialTable({ plannerOutput }: { plannerOutput: PlannerOutput }) {
 
 function CharacterPlans({ plannerOutput }: { plannerOutput: PlannerOutput }) {
   return (
-      <div className="stack">
+    <div className="stack">
       <article className="availability-group">
         <h3>Crafting recommendations</h3>
         <ul className="ranked-list">
-            {plannerOutput.craftingPlan.suggestions.map((suggestion) => (
-              <li key={suggestion.outputMaterialKey}>
-                <strong>{suggestion.outputDisplayName}</strong>
-                <span>{suggestion.reason}</span>
-              </li>
-            ))}
+          {plannerOutput.craftingPlan.suggestions.map((suggestion) => (
+            <li key={suggestion.outputMaterialKey}>
+              <strong>{suggestion.outputDisplayName}</strong>
+              <span>{suggestion.reason}</span>
+            </li>
+          ))}
           {plannerOutput.craftingPlan.suggestions.length === 0 ? <li>No craftable upgrades right now.</li> : null}
         </ul>
       </article>

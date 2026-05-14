@@ -1,15 +1,16 @@
 # Static Data Health Report
 
-Generated: 2026-05-08T13:42:30.087Z
+Generated: 2026-05-14T17:26:06.173Z
 
 ## Summary
-- Characters: catalog 124, profiles 122, complete 102, incomplete 20
-- Weapons: catalog 231, profiles 224, complete 223, incomplete 7, manual review 7
-- Materials: descriptors 1744, material records 471, source rows 476, missing sources 3
+- Characters: catalog 124, profiles 124, complete 119, incomplete 3
+- Weapons: catalog 230, profiles 230, complete 224, incomplete 0
+- Materials: descriptors 1744, material records 472, source rows 480, missing sources 0
 - Families: gem validated, talent validated, general enemy validated, elite enemy validated, weapon ascension validated
 - Crafting: recipes 223, invalid recipe errors 0
-- Generated Data: source version Live updated to 6.5.0. Beta updated to 6.6(6.5.52), unresolved character material refs 3, unresolved character refs 0, unresolved weapon refs 20
-- Issue counts: errors 0, warnings 290, info 15
+- Runtime unresolved references: character material refs 1, character refs 0, weapon refs 20
+- Legacy generated bundles: maintenance-only
+- Issue counts: errors 0, warnings 491, info 8
 
 ## Blocking Errors
 - None
@@ -79,6 +80,7 @@ Generated: 2026-05-08T13:42:30.087Z
 - `character_profile:invalid_rarity:Layla` Character Layla is missing valid catalog rarity metadata.
 - `character_profile:invalid_rarity:Linnea` Character Linnea is missing valid catalog rarity metadata.
 - `character_profile:invalid_rarity:Lisa` Character Lisa is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Lohen` Character Lohen is missing valid catalog rarity metadata.
 - `character_profile:invalid_rarity:Lynette` Character Lynette is missing valid catalog rarity metadata.
 - `character_profile:invalid_rarity:Lyney` Character Lyney is missing valid catalog rarity metadata.
 - `character_profile:invalid_rarity:Mavuika` Character Mavuika is missing valid catalog rarity metadata.
@@ -89,10 +91,12 @@ Generated: 2026-05-08T13:42:30.087Z
 - `character_profile:invalid_rarity:Navia` Character Navia is missing valid catalog rarity metadata.
 - `character_profile:invalid_rarity:Nefer` Character Nefer is missing valid catalog rarity metadata.
 - `character_profile:invalid_rarity:Neuvillette` Character Neuvillette is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Nicole` Character Nicole is missing valid catalog rarity metadata.
 - `character_profile:invalid_rarity:Nilou` Character Nilou is missing valid catalog rarity metadata.
 - `character_profile:invalid_rarity:Ningguang` Character Ningguang is missing valid catalog rarity metadata.
 - `character_profile:invalid_rarity:Noelle` Character Noelle is missing valid catalog rarity metadata.
 - `character_profile:invalid_rarity:Ororon` Character Ororon is missing valid catalog rarity metadata.
+- `character_profile:invalid_rarity:Prune` Character Prune is missing valid catalog rarity metadata.
 - `character_profile:invalid_rarity:Qiqi` Character Qiqi is missing valid catalog rarity metadata.
 - `character_profile:invalid_rarity:RaidenShogun` Character RaidenShogun is missing valid catalog rarity metadata.
 - `character_profile:invalid_rarity:Razor` Character Razor is missing valid catalog rarity metadata.
@@ -189,6 +193,7 @@ Generated: 2026-05-08T13:42:30.087Z
 - `character_profile:invalid_weapon_type:Layla` Character Layla is missing valid catalog weapon-type metadata.
 - `character_profile:invalid_weapon_type:Linnea` Character Linnea is missing valid catalog weapon-type metadata.
 - `character_profile:invalid_weapon_type:Lisa` Character Lisa is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Lohen` Character Lohen is missing valid catalog weapon-type metadata.
 - `character_profile:invalid_weapon_type:Lynette` Character Lynette is missing valid catalog weapon-type metadata.
 - `character_profile:invalid_weapon_type:Lyney` Character Lyney is missing valid catalog weapon-type metadata.
 - `character_profile:invalid_weapon_type:Mavuika` Character Mavuika is missing valid catalog weapon-type metadata.
@@ -199,10 +204,12 @@ Generated: 2026-05-08T13:42:30.087Z
 - `character_profile:invalid_weapon_type:Navia` Character Navia is missing valid catalog weapon-type metadata.
 - `character_profile:invalid_weapon_type:Nefer` Character Nefer is missing valid catalog weapon-type metadata.
 - `character_profile:invalid_weapon_type:Neuvillette` Character Neuvillette is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Nicole` Character Nicole is missing valid catalog weapon-type metadata.
 - `character_profile:invalid_weapon_type:Nilou` Character Nilou is missing valid catalog weapon-type metadata.
 - `character_profile:invalid_weapon_type:Ningguang` Character Ningguang is missing valid catalog weapon-type metadata.
 - `character_profile:invalid_weapon_type:Noelle` Character Noelle is missing valid catalog weapon-type metadata.
 - `character_profile:invalid_weapon_type:Ororon` Character Ororon is missing valid catalog weapon-type metadata.
+- `character_profile:invalid_weapon_type:Prune` Character Prune is missing valid catalog weapon-type metadata.
 - `character_profile:invalid_weapon_type:Qiqi` Character Qiqi is missing valid catalog weapon-type metadata.
 - `character_profile:invalid_weapon_type:RaidenShogun` Character RaidenShogun is missing valid catalog weapon-type metadata.
 - `character_profile:invalid_weapon_type:Razor` Character Razor is missing valid catalog weapon-type metadata.
@@ -238,89 +245,280 @@ Generated: 2026-05-08T13:42:30.087Z
 - `character_profile:invalid_weapon_type:YunJin` Character YunJin is missing valid catalog weapon-type metadata.
 - `character_profile:invalid_weapon_type:Zhongli` Character Zhongli is missing valid catalog weapon-type metadata.
 - `character_profile:invalid_weapon_type:Zibai` Character Zibai is missing valid catalog weapon-type metadata.
-- `character_profile:missing_normal_boss_material:Charlotte` Character profile Charlotte does not resolve a valid normal boss material.
-- `character_profile:missing_normal_boss_material:Wriothesley` Character profile Wriothesley does not resolve a valid normal boss material.
+- `character_profile:profile_status_lags_resolution:Lohen` Character profile Lohen looks complete but is still marked beta.
+- `character_profile:profile_status_lags_resolution:Prune` Character profile Prune looks complete but is still marked beta.
+- `character_profile:unresolved_character_material_reference:Nicole:weeklyBossMaterial` Nicole still has an unresolved weeklyBossMaterial reference (???).
+
+### family
+- `family:unresolved_weapon_reference:ApprenticesNotes` Derived family references still point to unknown weapon Apprentice's Notes.
+- `family:unresolved_weapon_reference:ApprenticesNotes#2` Derived family references still point to unknown weapon Apprentice's Notes.
+- `family:unresolved_weapon_reference:BeginnersProtector` Derived family references still point to unknown weapon Beginner's Protector.
+- `family:unresolved_weapon_reference:BeginnersProtector#2` Derived family references still point to unknown weapon Beginner's Protector.
+- `family:unresolved_weapon_reference:DullBlade` Derived family references still point to unknown weapon Dull Blade.
+- `family:unresolved_weapon_reference:DullBlade#2` Derived family references still point to unknown weapon Dull Blade.
+- `family:unresolved_weapon_reference:HuntersBow` Derived family references still point to unknown weapon Hunter's Bow.
+- `family:unresolved_weapon_reference:HuntersBow#2` Derived family references still point to unknown weapon Hunter's Bow.
+- `family:unresolved_weapon_reference:IronPoint` Derived family references still point to unknown weapon Iron Point.
+- `family:unresolved_weapon_reference:IronPoint#2` Derived family references still point to unknown weapon Iron Point.
+- `family:unresolved_weapon_reference:OldMercsPal` Derived family references still point to unknown weapon Old Merc's Pal.
+- `family:unresolved_weapon_reference:OldMercsPal#2` Derived family references still point to unknown weapon Old Merc's Pal.
+- `family:unresolved_weapon_reference:PocketGrimoire` Derived family references still point to unknown weapon Pocket Grimoire.
+- `family:unresolved_weapon_reference:PocketGrimoire#2` Derived family references still point to unknown weapon Pocket Grimoire.
+- `family:unresolved_weapon_reference:SeasonedHuntersBow` Derived family references still point to unknown weapon Seasoned Hunter's Bow.
+- `family:unresolved_weapon_reference:SeasonedHuntersBow#2` Derived family references still point to unknown weapon Seasoned Hunter's Bow.
+- `family:unresolved_weapon_reference:SilverSword` Derived family references still point to unknown weapon Silver Sword.
+- `family:unresolved_weapon_reference:SilverSword#2` Derived family references still point to unknown weapon Silver Sword.
+- `family:unresolved_weapon_reference:WasterGreatsword` Derived family references still point to unknown weapon Waster Greatsword.
+- `family:unresolved_weapon_reference:WasterGreatsword#2` Derived family references still point to unknown weapon Waster Greatsword.
 
 ### generated_data
-- `generated_data:profile_status_lags_resolution:Albedo` Character profile Albedo looks complete but is still marked unresolved.
-- `generated_data:profile_status_lags_resolution:Chiori` Character profile Chiori looks complete but is still marked unresolved.
-- `generated_data:profile_status_lags_resolution:Cyno` Character profile Cyno looks complete but is still marked unresolved.
-- `generated_data:profile_status_lags_resolution:Dori` Character profile Dori looks complete but is still marked unresolved.
-- `generated_data:profile_status_lags_resolution:KujouSara` Character profile KujouSara looks complete but is still marked unresolved.
-- `generated_data:profile_status_lags_resolution:Lohen` Character profile Lohen looks complete but is still marked beta.
-- `generated_data:profile_status_lags_resolution:Navia` Character profile Navia looks complete but is still marked unresolved.
-- `generated_data:profile_status_lags_resolution:Ningguang` Character profile Ningguang looks complete but is still marked unresolved.
-- `generated_data:profile_status_lags_resolution:Noelle` Character profile Noelle looks complete but is still marked unresolved.
-- `generated_data:profile_status_lags_resolution:Ororon` Character profile Ororon looks complete but is still marked unresolved.
-- `generated_data:profile_status_lags_resolution:Prune` Character profile Prune looks complete but is still marked beta.
-- `generated_data:profile_status_lags_resolution:RaidenShogun` Character profile RaidenShogun looks complete but is still marked unresolved.
-- `generated_data:profile_status_lags_resolution:Shenhe` Character profile Shenhe looks complete but is still marked unresolved.
-- `generated_data:profile_status_lags_resolution:Thoma` Character profile Thoma looks complete but is still marked unresolved.
-- `generated_data:profile_status_lags_resolution:YaeMiko` Character profile YaeMiko looks complete but is still marked unresolved.
-- `generated_data:profile_status_lags_resolution:Yoimiya` Character profile Yoimiya looks complete but is still marked unresolved.
-- `generated_data:profile_status_lags_resolution:Zhongli` Character profile Zhongli looks complete but is still marked unresolved.
-- `generated_data:unresolved_character_material_reference:Charlotte:normalBossMaterial` Charlotte still has an unresolved normalBossMaterial reference (empty).
-- `generated_data:unresolved_character_material_reference:Nicole:weeklyBossMaterial` Nicole still has an unresolved weeklyBossMaterial reference (???).
-- `generated_data:unresolved_character_material_reference:Wriothesley:normalBossMaterial` Wriothesley still has an unresolved normalBossMaterial reference (empty).
-- `generated_data:unresolved_reference_now_resolves:Albedo:normalBossMaterial` Albedo still has an unresolved generated reference for BasaltPillar, but that key now exists in the canonical material registry.
-- `generated_data:unresolved_reference_now_resolves:Charlotte:weeklyBossMaterial` Charlotte still has an unresolved generated reference for LightlessSilkString, but that key now exists in the canonical material registry.
-- `generated_data:unresolved_reference_now_resolves:Chiori:weeklyBossMaterial` Chiori still has an unresolved generated reference for LightlessSilkString, but that key now exists in the canonical material registry.
-- `generated_data:unresolved_reference_now_resolves:Cyno:normalBossMaterial` Cyno still has an unresolved generated reference for ThunderclapFruitcore, but that key now exists in the canonical material registry.
-- `generated_data:unresolved_reference_now_resolves:Dori:normalBossMaterial` Dori still has an unresolved generated reference for ThunderclapFruitcore, but that key now exists in the canonical material registry.
-- `generated_data:unresolved_reference_now_resolves:KujouSara:normalBossMaterial` Kujou Sara still has an unresolved generated reference for StormBeads, but that key now exists in the canonical material registry.
-- `generated_data:unresolved_reference_now_resolves:Navia:weeklyBossMaterial` Navia still has an unresolved generated reference for LightlessSilkString, but that key now exists in the canonical material registry.
-- `generated_data:unresolved_reference_now_resolves:Ningguang:normalBossMaterial` Ningguang still has an unresolved generated reference for BasaltPillar, but that key now exists in the canonical material registry.
-- `generated_data:unresolved_reference_now_resolves:Noelle:normalBossMaterial` Noelle still has an unresolved generated reference for BasaltPillar, but that key now exists in the canonical material registry.
-- `generated_data:unresolved_reference_now_resolves:Ororon:weeklyBossMaterial` Ororon still has an unresolved generated reference for LightlessSilkString, but that key now exists in the canonical material registry.
-- `generated_data:unresolved_reference_now_resolves:RaidenShogun:normalBossMaterial` Raiden Shogun still has an unresolved generated reference for StormBeads, but that key now exists in the canonical material registry.
-- `generated_data:unresolved_reference_now_resolves:Thoma:normalBossMaterial` Thoma still has an unresolved generated reference for SmolderingPearl, but that key now exists in the canonical material registry.
-- `generated_data:unresolved_reference_now_resolves:Yoimiya:normalBossMaterial` Yoimiya still has an unresolved generated reference for SmolderingPearl, but that key now exists in the canonical material registry.
-- `generated_data:unresolved_reference_now_resolves:Zhongli:normalBossMaterial` Zhongli still has an unresolved generated reference for BasaltPillar, but that key now exists in the canonical material registry.
-- `generated_data:unresolved_weapon_reference:ApprenticesNotes` Generated family references still point to unknown weapon Apprentice's Notes.
-- `generated_data:unresolved_weapon_reference:ApprenticesNotes#2` Generated family references still point to unknown weapon Apprentice's Notes.
-- `generated_data:unresolved_weapon_reference:BeginnersProtector` Generated family references still point to unknown weapon Beginner's Protector.
-- `generated_data:unresolved_weapon_reference:BeginnersProtector#2` Generated family references still point to unknown weapon Beginner's Protector.
-- `generated_data:unresolved_weapon_reference:DullBlade` Generated family references still point to unknown weapon Dull Blade.
-- `generated_data:unresolved_weapon_reference:DullBlade#2` Generated family references still point to unknown weapon Dull Blade.
-- `generated_data:unresolved_weapon_reference:HuntersBow` Generated family references still point to unknown weapon Hunter's Bow.
-- `generated_data:unresolved_weapon_reference:HuntersBow#2` Generated family references still point to unknown weapon Hunter's Bow.
-- `generated_data:unresolved_weapon_reference:IronPoint` Generated family references still point to unknown weapon Iron Point.
-- `generated_data:unresolved_weapon_reference:IronPoint#2` Generated family references still point to unknown weapon Iron Point.
-- `generated_data:unresolved_weapon_reference:OldMercsPal` Generated family references still point to unknown weapon Old Merc's Pal.
-- `generated_data:unresolved_weapon_reference:OldMercsPal#2` Generated family references still point to unknown weapon Old Merc's Pal.
-- `generated_data:unresolved_weapon_reference:PocketGrimoire` Generated family references still point to unknown weapon Pocket Grimoire.
-- `generated_data:unresolved_weapon_reference:PocketGrimoire#2` Generated family references still point to unknown weapon Pocket Grimoire.
-- `generated_data:unresolved_weapon_reference:SeasonedHuntersBow` Generated family references still point to unknown weapon Seasoned Hunter's Bow.
-- `generated_data:unresolved_weapon_reference:SeasonedHuntersBow#2` Generated family references still point to unknown weapon Seasoned Hunter's Bow.
-- `generated_data:unresolved_weapon_reference:SilverSword` Generated family references still point to unknown weapon Silver Sword.
-- `generated_data:unresolved_weapon_reference:SilverSword#2` Generated family references still point to unknown weapon Silver Sword.
-- `generated_data:unresolved_weapon_reference:WasterGreatsword` Generated family references still point to unknown weapon Waster Greatsword.
-- `generated_data:unresolved_weapon_reference:WasterGreatsword#2` Generated family references still point to unknown weapon Waster Greatsword.
-
-### material_source
-- `material_source:missing_source_rows:AscendedSampleKnight` Planner-facing material Ascended Sample: Knight does not have any material source rows.
-- `material_source:missing_source_rows:AscendedSampleQueen` Planner-facing material Ascended Sample: Queen does not have any material source rows.
-- `material_source:missing_source_rows:AscendedSampleRook` Planner-facing material Ascended Sample: Rook does not have any material source rows.
+- `generated_data:legacy_unresolved_reference_now_canonical:Albedo:normalBossMaterial` Albedo still has a legacy generated unresolved normalBossMaterial reference for BasaltPillar, but that key now exists in canonical static data.
+- `generated_data:legacy_unresolved_reference_now_canonical:Charlotte:weeklyBossMaterial` Charlotte still has a legacy generated unresolved weeklyBossMaterial reference for LightlessSilkString, but that key now exists in canonical static data.
+- `generated_data:legacy_unresolved_reference_now_canonical:Chiori:weeklyBossMaterial` Chiori still has a legacy generated unresolved weeklyBossMaterial reference for LightlessSilkString, but that key now exists in canonical static data.
+- `generated_data:legacy_unresolved_reference_now_canonical:Cyno:normalBossMaterial` Cyno still has a legacy generated unresolved normalBossMaterial reference for ThunderclapFruitcore, but that key now exists in canonical static data.
+- `generated_data:legacy_unresolved_reference_now_canonical:Dori:normalBossMaterial` Dori still has a legacy generated unresolved normalBossMaterial reference for ThunderclapFruitcore, but that key now exists in canonical static data.
+- `generated_data:legacy_unresolved_reference_now_canonical:KujouSara:normalBossMaterial` Kujou Sara still has a legacy generated unresolved normalBossMaterial reference for StormBeads, but that key now exists in canonical static data.
+- `generated_data:legacy_unresolved_reference_now_canonical:Navia:weeklyBossMaterial` Navia still has a legacy generated unresolved weeklyBossMaterial reference for LightlessSilkString, but that key now exists in canonical static data.
+- `generated_data:legacy_unresolved_reference_now_canonical:Ningguang:normalBossMaterial` Ningguang still has a legacy generated unresolved normalBossMaterial reference for BasaltPillar, but that key now exists in canonical static data.
+- `generated_data:legacy_unresolved_reference_now_canonical:Noelle:normalBossMaterial` Noelle still has a legacy generated unresolved normalBossMaterial reference for BasaltPillar, but that key now exists in canonical static data.
+- `generated_data:legacy_unresolved_reference_now_canonical:Ororon:weeklyBossMaterial` Ororon still has a legacy generated unresolved weeklyBossMaterial reference for LightlessSilkString, but that key now exists in canonical static data.
+- `generated_data:legacy_unresolved_reference_now_canonical:RaidenShogun:normalBossMaterial` Raiden Shogun still has a legacy generated unresolved normalBossMaterial reference for StormBeads, but that key now exists in canonical static data.
+- `generated_data:legacy_unresolved_reference_now_canonical:Thoma:normalBossMaterial` Thoma still has a legacy generated unresolved normalBossMaterial reference for SmolderingPearl, but that key now exists in canonical static data.
+- `generated_data:legacy_unresolved_reference_now_canonical:Traveler:ascensionGem` Traveler still has a legacy generated unresolved ascensionGem reference for BrilliantDiamondChunk, but that key now exists in canonical static data.
+- `generated_data:legacy_unresolved_reference_now_canonical:Yoimiya:normalBossMaterial` Yoimiya still has a legacy generated unresolved normalBossMaterial reference for SmolderingPearl, but that key now exists in canonical static data.
+- `generated_data:legacy_unresolved_reference_now_canonical:Zhongli:normalBossMaterial` Zhongli still has a legacy generated unresolved normalBossMaterial reference for BasaltPillar, but that key now exists in canonical static data.
 
 ### repository_hygiene
+- `repository_hygiene:canonical_database_character:Aino` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Aino#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Albedo` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Albedo#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Alhaitham` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Alhaitham#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Aloy` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Aloy#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Amber` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Amber#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:AratakiItto` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:AratakiItto#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Arlecchino` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Arlecchino#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Baizhu` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Baizhu#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Barbara` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Barbara#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Beidou` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Beidou#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Bennett` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Candace` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Candace#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Charlotte` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Charlotte#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Chasca` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Chasca#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Chevreuse` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Chevreuse#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Chiori` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Chiori#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Chongyun` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Chongyun#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Citlali` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Citlali#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Clorinde` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Clorinde#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Collei` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Collei#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Columbina` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Columbina#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Cyno` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Cyno#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Dahlia` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Dahlia#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Dehya` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Dehya#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Diluc` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Diluc#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Diona` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Diona#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Dori` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Dori#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Durin` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Durin#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Emilie` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Emilie#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Escoffier` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Escoffier#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Eula` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Eula#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Faruzan` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Faruzan#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Fischl` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Fischl#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Flins` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Flins#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Freminet` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Freminet#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Furina` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Gaming` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Gaming#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Ganyu` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Ganyu#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Gorou` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Gorou#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:HuTao` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:HuTao#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Iansan` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Iansan#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Ifa` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Ifa#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Illuga` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Illuga#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Ineffa` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Ineffa#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Jahoda` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Jahoda#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Jean` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Jean#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Kachina` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Kachina#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:KaedeharaKazuha` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:KaedeharaKazuha#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Kaeya` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Kaeya#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:KamisatoAyaka` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:KamisatoAyaka#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:KamisatoAyato` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:KamisatoAyato#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Kaveh` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Kaveh#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Keqing` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Keqing#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Kinich` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Kinich#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Kirara` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Kirara#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Klee` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Klee#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:KujouSara` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:KujouSara#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:KukiShinobu` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:KukiShinobu#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:LanYan` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:LanYan#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Lauma` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Lauma#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Layla` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Layla#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Linnea` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Linnea#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Lisa` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Lisa#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Lynette` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Lynette#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Lyney` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Lyney#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Mavuika` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Mavuika#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Mika` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Mika#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Mona` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Mona#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Mualani` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Mualani#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Nahida` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Nahida#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Navia` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Navia#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Nefer` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Nefer#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Neuvillette` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Neuvillette#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Nilou` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Nilou#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Ningguang` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Ningguang#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Noelle` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Noelle#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Ororon` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Ororon#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Qiqi` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Qiqi#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:RaidenShogun` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:RaidenShogun#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Razor` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Razor#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Rosaria` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Rosaria#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:SangonomiyaKokomi` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:SangonomiyaKokomi#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Sayu` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Sayu#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Sethos` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Sethos#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Shenhe` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Shenhe#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:ShikanoinHeizou` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:ShikanoinHeizou#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Sigewinne` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Sigewinne#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Skirk` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Skirk#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Sucrose` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Sucrose#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Tartaglia` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Tartaglia#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Thoma` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Thoma#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Tighnari` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Tighnari#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Varesa` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Varesa#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Varka` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Varka#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Venti` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Venti#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Wanderer` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Wanderer#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Wriothesley` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Wriothesley#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Xiangling` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Xiangling#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Xianyun` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Xianyun#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Xiao` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Xiao#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Xilonen` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Xilonen#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Xingqiu` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Xingqiu#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Xinyan` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Xinyan#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:YaeMiko` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:YaeMiko#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Yanfei` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Yanfei#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Yaoyao` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Yaoyao#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Yelan` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Yelan#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Yoimiya` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Yoimiya#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:YumemizukiMizuki` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:YumemizukiMizuki#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:YunJin` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:YunJin#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Zhongli` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Zhongli#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_character:Zibai` Verified character is missing weaponType metadata.
+- `repository_hygiene:canonical_database_character:Zibai#2` Verified character is missing rarity metadata.
+- `repository_hygiene:canonical_database_weapon:Prized_Isshin_Blade` Duplicate weapon display name used by PrizedIsshinBlade_i_n11419, PrizedIsshinBlade_i_n11420, PrizedIsshinBlade_i_n11421.
 - `repository_hygiene:dist_present:dist` dist is present in the repository working tree.
 - `repository_hygiene:tsbuildinfo_present:tsconfig.tsbuildinfo` tsconfig.tsbuildinfo is present in the repository working tree.
 
-### weapon_profile
-- `weapon_profile:missing_profile:AmberBead` Goal-trackable weapon Amber Bead does not have a planner-ready weapon profile.
-- `weapon_profile:missing_profile:EbonyBow` Goal-trackable weapon Ebony Bow does not have a planner-ready weapon profile.
-- `weapon_profile:missing_profile:PrizedIsshinBlade_i_n11419` Goal-trackable weapon Prized Isshin Blade does not have a planner-ready weapon profile.
-- `weapon_profile:missing_profile:PrizedIsshinBlade_i_n11420` Goal-trackable weapon Prized Isshin Blade does not have a planner-ready weapon profile.
-- `weapon_profile:missing_profile:PrizedIsshinBlade_i_n11421` Goal-trackable weapon Prized Isshin Blade does not have a planner-ready weapon profile.
-- `weapon_profile:missing_profile:Quartz` Goal-trackable weapon Quartz does not have a planner-ready weapon profile.
-- `weapon_profile:missing_profile:SwordOfNarzissenkreuz_i_n11429` Goal-trackable weapon Sword of Narzissenkreuz does not have a planner-ready weapon profile.
-
 ## Suggested Fix Queue
-1. Resolve character profile gaps and generated unresolved references that are already canonical.
-2. Resolve goal-trackable weapon profile gaps and verify any manual-review weapon exclusions.
-3. Add or normalize source metadata for planner-facing materials that still lack source rows.
-4. Reassess legacy compatibility tables and document whether they remain necessary fallbacks.
-5. Clean repository hygiene findings such as generated build output, node_modules, or missing ignore rules.
+1. Resolve canonical character profile gaps and unresolved material references.
+2. Reassess legacy compatibility tables and document whether they remain necessary fallbacks.
+3. Clean repository hygiene findings such as generated build output, node_modules, or missing ignore rules.
 
 ## Machine-Readable Issue IDs
 - `character_profile:invalid_rarity:Aino`
@@ -386,6 +584,7 @@ Generated: 2026-05-08T13:42:30.087Z
 - `character_profile:invalid_rarity:Layla`
 - `character_profile:invalid_rarity:Linnea`
 - `character_profile:invalid_rarity:Lisa`
+- `character_profile:invalid_rarity:Lohen`
 - `character_profile:invalid_rarity:Lynette`
 - `character_profile:invalid_rarity:Lyney`
 - `character_profile:invalid_rarity:Mavuika`
@@ -396,10 +595,12 @@ Generated: 2026-05-08T13:42:30.087Z
 - `character_profile:invalid_rarity:Navia`
 - `character_profile:invalid_rarity:Nefer`
 - `character_profile:invalid_rarity:Neuvillette`
+- `character_profile:invalid_rarity:Nicole`
 - `character_profile:invalid_rarity:Nilou`
 - `character_profile:invalid_rarity:Ningguang`
 - `character_profile:invalid_rarity:Noelle`
 - `character_profile:invalid_rarity:Ororon`
+- `character_profile:invalid_rarity:Prune`
 - `character_profile:invalid_rarity:Qiqi`
 - `character_profile:invalid_rarity:RaidenShogun`
 - `character_profile:invalid_rarity:Razor`
@@ -496,6 +697,7 @@ Generated: 2026-05-08T13:42:30.087Z
 - `character_profile:invalid_weapon_type:Layla`
 - `character_profile:invalid_weapon_type:Linnea`
 - `character_profile:invalid_weapon_type:Lisa`
+- `character_profile:invalid_weapon_type:Lohen`
 - `character_profile:invalid_weapon_type:Lynette`
 - `character_profile:invalid_weapon_type:Lyney`
 - `character_profile:invalid_weapon_type:Mavuika`
@@ -506,10 +708,12 @@ Generated: 2026-05-08T13:42:30.087Z
 - `character_profile:invalid_weapon_type:Navia`
 - `character_profile:invalid_weapon_type:Nefer`
 - `character_profile:invalid_weapon_type:Neuvillette`
+- `character_profile:invalid_weapon_type:Nicole`
 - `character_profile:invalid_weapon_type:Nilou`
 - `character_profile:invalid_weapon_type:Ningguang`
 - `character_profile:invalid_weapon_type:Noelle`
 - `character_profile:invalid_weapon_type:Ororon`
+- `character_profile:invalid_weapon_type:Prune`
 - `character_profile:invalid_weapon_type:Qiqi`
 - `character_profile:invalid_weapon_type:RaidenShogun`
 - `character_profile:invalid_weapon_type:Razor`
@@ -545,86 +749,274 @@ Generated: 2026-05-08T13:42:30.087Z
 - `character_profile:invalid_weapon_type:YunJin`
 - `character_profile:invalid_weapon_type:Zhongli`
 - `character_profile:invalid_weapon_type:Zibai`
-- `character_profile:missing_normal_boss_material:Charlotte`
-- `character_profile:missing_normal_boss_material:Wriothesley`
-- `generated_data:profile_status_lags_resolution:Albedo`
-- `generated_data:profile_status_lags_resolution:Chiori`
-- `generated_data:profile_status_lags_resolution:Cyno`
-- `generated_data:profile_status_lags_resolution:Dori`
-- `generated_data:profile_status_lags_resolution:KujouSara`
-- `generated_data:profile_status_lags_resolution:Lohen`
-- `generated_data:profile_status_lags_resolution:Navia`
-- `generated_data:profile_status_lags_resolution:Ningguang`
-- `generated_data:profile_status_lags_resolution:Noelle`
-- `generated_data:profile_status_lags_resolution:Ororon`
-- `generated_data:profile_status_lags_resolution:Prune`
-- `generated_data:profile_status_lags_resolution:RaidenShogun`
-- `generated_data:profile_status_lags_resolution:Shenhe`
-- `generated_data:profile_status_lags_resolution:Thoma`
-- `generated_data:profile_status_lags_resolution:YaeMiko`
-- `generated_data:profile_status_lags_resolution:Yoimiya`
-- `generated_data:profile_status_lags_resolution:Zhongli`
-- `generated_data:unresolved_character_material_reference:Charlotte:normalBossMaterial`
-- `generated_data:unresolved_character_material_reference:Nicole:weeklyBossMaterial`
-- `generated_data:unresolved_character_material_reference:Wriothesley:normalBossMaterial`
-- `generated_data:unresolved_reference_now_resolves:Albedo:normalBossMaterial`
-- `generated_data:unresolved_reference_now_resolves:Charlotte:weeklyBossMaterial`
-- `generated_data:unresolved_reference_now_resolves:Chiori:weeklyBossMaterial`
-- `generated_data:unresolved_reference_now_resolves:Cyno:normalBossMaterial`
-- `generated_data:unresolved_reference_now_resolves:Dori:normalBossMaterial`
-- `generated_data:unresolved_reference_now_resolves:KujouSara:normalBossMaterial`
-- `generated_data:unresolved_reference_now_resolves:Navia:weeklyBossMaterial`
-- `generated_data:unresolved_reference_now_resolves:Ningguang:normalBossMaterial`
-- `generated_data:unresolved_reference_now_resolves:Noelle:normalBossMaterial`
-- `generated_data:unresolved_reference_now_resolves:Ororon:weeklyBossMaterial`
-- `generated_data:unresolved_reference_now_resolves:RaidenShogun:normalBossMaterial`
-- `generated_data:unresolved_reference_now_resolves:Thoma:normalBossMaterial`
-- `generated_data:unresolved_reference_now_resolves:Yoimiya:normalBossMaterial`
-- `generated_data:unresolved_reference_now_resolves:Zhongli:normalBossMaterial`
-- `generated_data:unresolved_weapon_reference:ApprenticesNotes`
-- `generated_data:unresolved_weapon_reference:ApprenticesNotes#2`
-- `generated_data:unresolved_weapon_reference:BeginnersProtector`
-- `generated_data:unresolved_weapon_reference:BeginnersProtector#2`
-- `generated_data:unresolved_weapon_reference:DullBlade`
-- `generated_data:unresolved_weapon_reference:DullBlade#2`
-- `generated_data:unresolved_weapon_reference:HuntersBow`
-- `generated_data:unresolved_weapon_reference:HuntersBow#2`
-- `generated_data:unresolved_weapon_reference:IronPoint`
-- `generated_data:unresolved_weapon_reference:IronPoint#2`
-- `generated_data:unresolved_weapon_reference:OldMercsPal`
-- `generated_data:unresolved_weapon_reference:OldMercsPal#2`
-- `generated_data:unresolved_weapon_reference:PocketGrimoire`
-- `generated_data:unresolved_weapon_reference:PocketGrimoire#2`
-- `generated_data:unresolved_weapon_reference:SeasonedHuntersBow`
-- `generated_data:unresolved_weapon_reference:SeasonedHuntersBow#2`
-- `generated_data:unresolved_weapon_reference:SilverSword`
-- `generated_data:unresolved_weapon_reference:SilverSword#2`
-- `generated_data:unresolved_weapon_reference:WasterGreatsword`
-- `generated_data:unresolved_weapon_reference:WasterGreatsword#2`
-- `material_source:missing_source_rows:AscendedSampleKnight`
-- `material_source:missing_source_rows:AscendedSampleQueen`
-- `material_source:missing_source_rows:AscendedSampleRook`
+- `character_profile:profile_status_lags_resolution:Lohen`
+- `character_profile:profile_status_lags_resolution:Prune`
+- `character_profile:unresolved_character_material_reference:Nicole:weeklyBossMaterial`
+- `family:unresolved_weapon_reference:ApprenticesNotes`
+- `family:unresolved_weapon_reference:ApprenticesNotes#2`
+- `family:unresolved_weapon_reference:BeginnersProtector`
+- `family:unresolved_weapon_reference:BeginnersProtector#2`
+- `family:unresolved_weapon_reference:DullBlade`
+- `family:unresolved_weapon_reference:DullBlade#2`
+- `family:unresolved_weapon_reference:HuntersBow`
+- `family:unresolved_weapon_reference:HuntersBow#2`
+- `family:unresolved_weapon_reference:IronPoint`
+- `family:unresolved_weapon_reference:IronPoint#2`
+- `family:unresolved_weapon_reference:OldMercsPal`
+- `family:unresolved_weapon_reference:OldMercsPal#2`
+- `family:unresolved_weapon_reference:PocketGrimoire`
+- `family:unresolved_weapon_reference:PocketGrimoire#2`
+- `family:unresolved_weapon_reference:SeasonedHuntersBow`
+- `family:unresolved_weapon_reference:SeasonedHuntersBow#2`
+- `family:unresolved_weapon_reference:SilverSword`
+- `family:unresolved_weapon_reference:SilverSword#2`
+- `family:unresolved_weapon_reference:WasterGreatsword`
+- `family:unresolved_weapon_reference:WasterGreatsword#2`
+- `generated_data:legacy_unresolved_reference_now_canonical:Albedo:normalBossMaterial`
+- `generated_data:legacy_unresolved_reference_now_canonical:Charlotte:weeklyBossMaterial`
+- `generated_data:legacy_unresolved_reference_now_canonical:Chiori:weeklyBossMaterial`
+- `generated_data:legacy_unresolved_reference_now_canonical:Cyno:normalBossMaterial`
+- `generated_data:legacy_unresolved_reference_now_canonical:Dori:normalBossMaterial`
+- `generated_data:legacy_unresolved_reference_now_canonical:KujouSara:normalBossMaterial`
+- `generated_data:legacy_unresolved_reference_now_canonical:Navia:weeklyBossMaterial`
+- `generated_data:legacy_unresolved_reference_now_canonical:Ningguang:normalBossMaterial`
+- `generated_data:legacy_unresolved_reference_now_canonical:Noelle:normalBossMaterial`
+- `generated_data:legacy_unresolved_reference_now_canonical:Ororon:weeklyBossMaterial`
+- `generated_data:legacy_unresolved_reference_now_canonical:RaidenShogun:normalBossMaterial`
+- `generated_data:legacy_unresolved_reference_now_canonical:Thoma:normalBossMaterial`
+- `generated_data:legacy_unresolved_reference_now_canonical:Traveler:ascensionGem`
+- `generated_data:legacy_unresolved_reference_now_canonical:Yoimiya:normalBossMaterial`
+- `generated_data:legacy_unresolved_reference_now_canonical:Zhongli:normalBossMaterial`
+- `repository_hygiene:canonical_database_character:Aino`
+- `repository_hygiene:canonical_database_character:Aino#2`
+- `repository_hygiene:canonical_database_character:Albedo`
+- `repository_hygiene:canonical_database_character:Albedo#2`
+- `repository_hygiene:canonical_database_character:Alhaitham`
+- `repository_hygiene:canonical_database_character:Alhaitham#2`
+- `repository_hygiene:canonical_database_character:Aloy`
+- `repository_hygiene:canonical_database_character:Aloy#2`
+- `repository_hygiene:canonical_database_character:Amber`
+- `repository_hygiene:canonical_database_character:Amber#2`
+- `repository_hygiene:canonical_database_character:AratakiItto`
+- `repository_hygiene:canonical_database_character:AratakiItto#2`
+- `repository_hygiene:canonical_database_character:Arlecchino`
+- `repository_hygiene:canonical_database_character:Arlecchino#2`
+- `repository_hygiene:canonical_database_character:Baizhu`
+- `repository_hygiene:canonical_database_character:Baizhu#2`
+- `repository_hygiene:canonical_database_character:Barbara`
+- `repository_hygiene:canonical_database_character:Barbara#2`
+- `repository_hygiene:canonical_database_character:Beidou`
+- `repository_hygiene:canonical_database_character:Beidou#2`
+- `repository_hygiene:canonical_database_character:Bennett`
+- `repository_hygiene:canonical_database_character:Candace`
+- `repository_hygiene:canonical_database_character:Candace#2`
+- `repository_hygiene:canonical_database_character:Charlotte`
+- `repository_hygiene:canonical_database_character:Charlotte#2`
+- `repository_hygiene:canonical_database_character:Chasca`
+- `repository_hygiene:canonical_database_character:Chasca#2`
+- `repository_hygiene:canonical_database_character:Chevreuse`
+- `repository_hygiene:canonical_database_character:Chevreuse#2`
+- `repository_hygiene:canonical_database_character:Chiori`
+- `repository_hygiene:canonical_database_character:Chiori#2`
+- `repository_hygiene:canonical_database_character:Chongyun`
+- `repository_hygiene:canonical_database_character:Chongyun#2`
+- `repository_hygiene:canonical_database_character:Citlali`
+- `repository_hygiene:canonical_database_character:Citlali#2`
+- `repository_hygiene:canonical_database_character:Clorinde`
+- `repository_hygiene:canonical_database_character:Clorinde#2`
+- `repository_hygiene:canonical_database_character:Collei`
+- `repository_hygiene:canonical_database_character:Collei#2`
+- `repository_hygiene:canonical_database_character:Columbina`
+- `repository_hygiene:canonical_database_character:Columbina#2`
+- `repository_hygiene:canonical_database_character:Cyno`
+- `repository_hygiene:canonical_database_character:Cyno#2`
+- `repository_hygiene:canonical_database_character:Dahlia`
+- `repository_hygiene:canonical_database_character:Dahlia#2`
+- `repository_hygiene:canonical_database_character:Dehya`
+- `repository_hygiene:canonical_database_character:Dehya#2`
+- `repository_hygiene:canonical_database_character:Diluc`
+- `repository_hygiene:canonical_database_character:Diluc#2`
+- `repository_hygiene:canonical_database_character:Diona`
+- `repository_hygiene:canonical_database_character:Diona#2`
+- `repository_hygiene:canonical_database_character:Dori`
+- `repository_hygiene:canonical_database_character:Dori#2`
+- `repository_hygiene:canonical_database_character:Durin`
+- `repository_hygiene:canonical_database_character:Durin#2`
+- `repository_hygiene:canonical_database_character:Emilie`
+- `repository_hygiene:canonical_database_character:Emilie#2`
+- `repository_hygiene:canonical_database_character:Escoffier`
+- `repository_hygiene:canonical_database_character:Escoffier#2`
+- `repository_hygiene:canonical_database_character:Eula`
+- `repository_hygiene:canonical_database_character:Eula#2`
+- `repository_hygiene:canonical_database_character:Faruzan`
+- `repository_hygiene:canonical_database_character:Faruzan#2`
+- `repository_hygiene:canonical_database_character:Fischl`
+- `repository_hygiene:canonical_database_character:Fischl#2`
+- `repository_hygiene:canonical_database_character:Flins`
+- `repository_hygiene:canonical_database_character:Flins#2`
+- `repository_hygiene:canonical_database_character:Freminet`
+- `repository_hygiene:canonical_database_character:Freminet#2`
+- `repository_hygiene:canonical_database_character:Furina`
+- `repository_hygiene:canonical_database_character:Gaming`
+- `repository_hygiene:canonical_database_character:Gaming#2`
+- `repository_hygiene:canonical_database_character:Ganyu`
+- `repository_hygiene:canonical_database_character:Ganyu#2`
+- `repository_hygiene:canonical_database_character:Gorou`
+- `repository_hygiene:canonical_database_character:Gorou#2`
+- `repository_hygiene:canonical_database_character:HuTao`
+- `repository_hygiene:canonical_database_character:HuTao#2`
+- `repository_hygiene:canonical_database_character:Iansan`
+- `repository_hygiene:canonical_database_character:Iansan#2`
+- `repository_hygiene:canonical_database_character:Ifa`
+- `repository_hygiene:canonical_database_character:Ifa#2`
+- `repository_hygiene:canonical_database_character:Illuga`
+- `repository_hygiene:canonical_database_character:Illuga#2`
+- `repository_hygiene:canonical_database_character:Ineffa`
+- `repository_hygiene:canonical_database_character:Ineffa#2`
+- `repository_hygiene:canonical_database_character:Jahoda`
+- `repository_hygiene:canonical_database_character:Jahoda#2`
+- `repository_hygiene:canonical_database_character:Jean`
+- `repository_hygiene:canonical_database_character:Jean#2`
+- `repository_hygiene:canonical_database_character:Kachina`
+- `repository_hygiene:canonical_database_character:Kachina#2`
+- `repository_hygiene:canonical_database_character:KaedeharaKazuha`
+- `repository_hygiene:canonical_database_character:KaedeharaKazuha#2`
+- `repository_hygiene:canonical_database_character:Kaeya`
+- `repository_hygiene:canonical_database_character:Kaeya#2`
+- `repository_hygiene:canonical_database_character:KamisatoAyaka`
+- `repository_hygiene:canonical_database_character:KamisatoAyaka#2`
+- `repository_hygiene:canonical_database_character:KamisatoAyato`
+- `repository_hygiene:canonical_database_character:KamisatoAyato#2`
+- `repository_hygiene:canonical_database_character:Kaveh`
+- `repository_hygiene:canonical_database_character:Kaveh#2`
+- `repository_hygiene:canonical_database_character:Keqing`
+- `repository_hygiene:canonical_database_character:Keqing#2`
+- `repository_hygiene:canonical_database_character:Kinich`
+- `repository_hygiene:canonical_database_character:Kinich#2`
+- `repository_hygiene:canonical_database_character:Kirara`
+- `repository_hygiene:canonical_database_character:Kirara#2`
+- `repository_hygiene:canonical_database_character:Klee`
+- `repository_hygiene:canonical_database_character:Klee#2`
+- `repository_hygiene:canonical_database_character:KujouSara`
+- `repository_hygiene:canonical_database_character:KujouSara#2`
+- `repository_hygiene:canonical_database_character:KukiShinobu`
+- `repository_hygiene:canonical_database_character:KukiShinobu#2`
+- `repository_hygiene:canonical_database_character:LanYan`
+- `repository_hygiene:canonical_database_character:LanYan#2`
+- `repository_hygiene:canonical_database_character:Lauma`
+- `repository_hygiene:canonical_database_character:Lauma#2`
+- `repository_hygiene:canonical_database_character:Layla`
+- `repository_hygiene:canonical_database_character:Layla#2`
+- `repository_hygiene:canonical_database_character:Linnea`
+- `repository_hygiene:canonical_database_character:Linnea#2`
+- `repository_hygiene:canonical_database_character:Lisa`
+- `repository_hygiene:canonical_database_character:Lisa#2`
+- `repository_hygiene:canonical_database_character:Lynette`
+- `repository_hygiene:canonical_database_character:Lynette#2`
+- `repository_hygiene:canonical_database_character:Lyney`
+- `repository_hygiene:canonical_database_character:Lyney#2`
+- `repository_hygiene:canonical_database_character:Mavuika`
+- `repository_hygiene:canonical_database_character:Mavuika#2`
+- `repository_hygiene:canonical_database_character:Mika`
+- `repository_hygiene:canonical_database_character:Mika#2`
+- `repository_hygiene:canonical_database_character:Mona`
+- `repository_hygiene:canonical_database_character:Mona#2`
+- `repository_hygiene:canonical_database_character:Mualani`
+- `repository_hygiene:canonical_database_character:Mualani#2`
+- `repository_hygiene:canonical_database_character:Nahida`
+- `repository_hygiene:canonical_database_character:Nahida#2`
+- `repository_hygiene:canonical_database_character:Navia`
+- `repository_hygiene:canonical_database_character:Navia#2`
+- `repository_hygiene:canonical_database_character:Nefer`
+- `repository_hygiene:canonical_database_character:Nefer#2`
+- `repository_hygiene:canonical_database_character:Neuvillette`
+- `repository_hygiene:canonical_database_character:Neuvillette#2`
+- `repository_hygiene:canonical_database_character:Nilou`
+- `repository_hygiene:canonical_database_character:Nilou#2`
+- `repository_hygiene:canonical_database_character:Ningguang`
+- `repository_hygiene:canonical_database_character:Ningguang#2`
+- `repository_hygiene:canonical_database_character:Noelle`
+- `repository_hygiene:canonical_database_character:Noelle#2`
+- `repository_hygiene:canonical_database_character:Ororon`
+- `repository_hygiene:canonical_database_character:Ororon#2`
+- `repository_hygiene:canonical_database_character:Qiqi`
+- `repository_hygiene:canonical_database_character:Qiqi#2`
+- `repository_hygiene:canonical_database_character:RaidenShogun`
+- `repository_hygiene:canonical_database_character:RaidenShogun#2`
+- `repository_hygiene:canonical_database_character:Razor`
+- `repository_hygiene:canonical_database_character:Razor#2`
+- `repository_hygiene:canonical_database_character:Rosaria`
+- `repository_hygiene:canonical_database_character:Rosaria#2`
+- `repository_hygiene:canonical_database_character:SangonomiyaKokomi`
+- `repository_hygiene:canonical_database_character:SangonomiyaKokomi#2`
+- `repository_hygiene:canonical_database_character:Sayu`
+- `repository_hygiene:canonical_database_character:Sayu#2`
+- `repository_hygiene:canonical_database_character:Sethos`
+- `repository_hygiene:canonical_database_character:Sethos#2`
+- `repository_hygiene:canonical_database_character:Shenhe`
+- `repository_hygiene:canonical_database_character:Shenhe#2`
+- `repository_hygiene:canonical_database_character:ShikanoinHeizou`
+- `repository_hygiene:canonical_database_character:ShikanoinHeizou#2`
+- `repository_hygiene:canonical_database_character:Sigewinne`
+- `repository_hygiene:canonical_database_character:Sigewinne#2`
+- `repository_hygiene:canonical_database_character:Skirk`
+- `repository_hygiene:canonical_database_character:Skirk#2`
+- `repository_hygiene:canonical_database_character:Sucrose`
+- `repository_hygiene:canonical_database_character:Sucrose#2`
+- `repository_hygiene:canonical_database_character:Tartaglia`
+- `repository_hygiene:canonical_database_character:Tartaglia#2`
+- `repository_hygiene:canonical_database_character:Thoma`
+- `repository_hygiene:canonical_database_character:Thoma#2`
+- `repository_hygiene:canonical_database_character:Tighnari`
+- `repository_hygiene:canonical_database_character:Tighnari#2`
+- `repository_hygiene:canonical_database_character:Varesa`
+- `repository_hygiene:canonical_database_character:Varesa#2`
+- `repository_hygiene:canonical_database_character:Varka`
+- `repository_hygiene:canonical_database_character:Varka#2`
+- `repository_hygiene:canonical_database_character:Venti`
+- `repository_hygiene:canonical_database_character:Venti#2`
+- `repository_hygiene:canonical_database_character:Wanderer`
+- `repository_hygiene:canonical_database_character:Wanderer#2`
+- `repository_hygiene:canonical_database_character:Wriothesley`
+- `repository_hygiene:canonical_database_character:Wriothesley#2`
+- `repository_hygiene:canonical_database_character:Xiangling`
+- `repository_hygiene:canonical_database_character:Xiangling#2`
+- `repository_hygiene:canonical_database_character:Xianyun`
+- `repository_hygiene:canonical_database_character:Xianyun#2`
+- `repository_hygiene:canonical_database_character:Xiao`
+- `repository_hygiene:canonical_database_character:Xiao#2`
+- `repository_hygiene:canonical_database_character:Xilonen`
+- `repository_hygiene:canonical_database_character:Xilonen#2`
+- `repository_hygiene:canonical_database_character:Xingqiu`
+- `repository_hygiene:canonical_database_character:Xingqiu#2`
+- `repository_hygiene:canonical_database_character:Xinyan`
+- `repository_hygiene:canonical_database_character:Xinyan#2`
+- `repository_hygiene:canonical_database_character:YaeMiko`
+- `repository_hygiene:canonical_database_character:YaeMiko#2`
+- `repository_hygiene:canonical_database_character:Yanfei`
+- `repository_hygiene:canonical_database_character:Yanfei#2`
+- `repository_hygiene:canonical_database_character:Yaoyao`
+- `repository_hygiene:canonical_database_character:Yaoyao#2`
+- `repository_hygiene:canonical_database_character:Yelan`
+- `repository_hygiene:canonical_database_character:Yelan#2`
+- `repository_hygiene:canonical_database_character:Yoimiya`
+- `repository_hygiene:canonical_database_character:Yoimiya#2`
+- `repository_hygiene:canonical_database_character:YumemizukiMizuki`
+- `repository_hygiene:canonical_database_character:YumemizukiMizuki#2`
+- `repository_hygiene:canonical_database_character:YunJin`
+- `repository_hygiene:canonical_database_character:YunJin#2`
+- `repository_hygiene:canonical_database_character:Zhongli`
+- `repository_hygiene:canonical_database_character:Zhongli#2`
+- `repository_hygiene:canonical_database_character:Zibai`
+- `repository_hygiene:canonical_database_character:Zibai#2`
+- `repository_hygiene:canonical_database_weapon:Prized_Isshin_Blade`
 - `repository_hygiene:dist_present:dist`
 - `repository_hygiene:tsbuildinfo_present:tsconfig.tsbuildinfo`
-- `weapon_profile:missing_profile:AmberBead`
-- `weapon_profile:missing_profile:EbonyBow`
-- `weapon_profile:missing_profile:PrizedIsshinBlade_i_n11419`
-- `weapon_profile:missing_profile:PrizedIsshinBlade_i_n11420`
-- `weapon_profile:missing_profile:PrizedIsshinBlade_i_n11421`
-- `weapon_profile:missing_profile:Quartz`
-- `weapon_profile:missing_profile:SwordOfNarzissenkreuz_i_n11429`
 - `character_profile:ignored_non_playable_character:Manekin`
 - `character_profile:ignored_non_playable_character:Manekina`
-- `character_profile:invalid_rarity:Lohen`
-- `character_profile:invalid_rarity:Nicole`
-- `character_profile:invalid_rarity:Prune`
-- `character_profile:invalid_weapon_type:Lohen`
-- `character_profile:invalid_weapon_type:Nicole`
-- `character_profile:invalid_weapon_type:Prune`
 - `character_profile:missing_weekly_boss_material:Nicole`
-- `generated_data:character_source_version:generatedCharacters`
-- `generated_data:generated_bundle_counts:generatedSummary`
-- `generated_data:weapon_source_version:generatedWeapons`
+- `generated_data:legacy_generated_bundle_counts:src/data/runtime/generated`
+- `generated_data:legacy_generated_bundle_versions:src/data/runtime/generated`
 - `legacy_compatibility:legacy_character_progressions_loaded:legacyCharacterProgressions`
 - `legacy_compatibility:legacy_weapon_progressions_loaded:legacyWeaponProgressions`
 - `repository_hygiene:node_modules_present:node_modules`

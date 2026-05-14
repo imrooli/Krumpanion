@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import "fake-indexeddb/auto";
 import { describe, expect, it } from "vitest";
+import { loadStaticData } from "../domain/staticData/loadStaticData";
 import { IndexedDbPersistenceAdapter } from "./persistence";
 import { importGoodAccountFromText } from "./goodImport";
 import { createDefaultSaveFile } from "../domain/save/types";
@@ -24,11 +25,12 @@ function collectGoodFiles(root: string): string[] {
 describe("GOOD corpus readiness", () => {
   const examplesRoot = path.resolve(process.cwd(), "..", "GOOD_examples");
   const files = collectGoodFiles(examplesRoot);
+  const staticData = loadStaticData();
 
   it("parses every example GOOD file into account state", () => {
     for (const file of files) {
       const text = fs.readFileSync(file, "utf8");
-      const result = importGoodAccountFromText(text);
+      const result = importGoodAccountFromText(text, staticData);
       expect(result.errors, path.basename(file)).toEqual([]);
       expect(result.account, path.basename(file)).not.toBeNull();
     }
@@ -40,7 +42,7 @@ describe("GOOD corpus readiness", () => {
 
     for (const file of sampleFiles) {
       const text = fs.readFileSync(file, "utf8");
-      const result = importGoodAccountFromText(text);
+      const result = importGoodAccountFromText(text, staticData);
       expect(result.account, path.basename(file)).not.toBeNull();
 
       const saveFile = {

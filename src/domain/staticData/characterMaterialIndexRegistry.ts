@@ -1,3 +1,10 @@
+/**
+ * Deprecated maintenance-only helper.
+ *
+ * This registry reads runtime-era generated bundles so tooling and compatibility
+ * tests can inspect them, but normal app runtime must load from src/data/database
+ * through loadStaticData()/assembleBaseStaticData() instead.
+ */
 import generatedBetaMaterials from "../../data/runtime/generated/betaMaterials.generated.json";
 import generatedCharacterProfiles from "../../data/runtime/generated/characterMaterialProfiles.generated.json";
 import generatedCharacters from "../../data/runtime/generated/generatedCharacters.generated.json";

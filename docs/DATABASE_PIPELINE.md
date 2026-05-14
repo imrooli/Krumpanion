@@ -15,6 +15,11 @@ Runtime startup path:
 
 Normal runtime must not rebuild truth from copied tables, discovered catalogs, or generated scrape-like bundles.
 
+Normal app/runtime consumers should enter through:
+- `src/data/database/index.ts`
+- `src/domain/staticData/loadStaticData.ts`
+- `src/domain/staticData/assembleBaseStaticData.ts`
+
 ## Canonical categories
 
 - `characters/`
@@ -50,11 +55,15 @@ Deprecated as runtime truth:
 - `src/data/runtime/generated/generatedCharacters.generated.json`
 - `src/data/runtime/generated/betaMaterials.generated.json`
 - `src/data/runtime/generated/unresolvedCharacterMaterialReferences.generated.json`
+- `src/data/runtime/generated/weaponGoalProfiles.generated.json`
 - `src/data/runtime/progressionCore/*`
 
 Maintenance or migration-only:
 - `tools/data/build-character-material-index.ts`
 - `tools/data/build-canonical-database.ts`
+- `src/domain/staticData/characterMaterialIndexRegistry.ts`
+- `src/domain/staticData/weaponGoalProfileRegistry.ts`
+- `src/domain/staticData/resolveGeneratedCharacterMaterialReferences.ts`
 - raw copied table inputs under `data_sources/`
 
 ## Validation
@@ -76,6 +85,10 @@ Canonical validation checks:
 - progression constants such as weapon EXP item values
 
 Runtime also fails loudly if canonical validation reports errors.
+
+Maintenance diagnostics:
+- `validateStaticData()` now validates the assembled canonical-backed runtime shape and override effects.
+- `npm run data:validate` may still report legacy generated-bundle drift, but those bundles are diagnostics only and not runtime truth.
 
 ## Overrides
 
@@ -129,7 +142,17 @@ Add a new material or family:
 ```bash
 npm ci
 npm run typecheck
+npm run lint
 npm run test
 npm run build
 npm run data:validate
 ```
+
+## Deferred work
+
+Patch 1 intentionally does not include:
+- planner resin math refactor
+- loot model improvements
+- planner UI restructuring
+- weapon refinement tracker
+- database editor UX polish

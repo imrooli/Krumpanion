@@ -1,16 +1,16 @@
 # Architecture Smell Scan
 
-Found 39 potential issue(s).
+Found 40 potential issue(s).
 
 ## good-schema-outside-adapter
 
-- File: `src\app\AppShell.tsx:26`
+- File: `src\app\AppShell.tsx:27`
 - Description: GOOD-specific logic should usually live in import/export adapters.
 - Match: `GOOD`
 
 ## good-schema-outside-adapter
 
-- File: `src\app\navigationRegistry.tsx:3`
+- File: `src\app\navigationRegistry.tsx:2`
 - Description: GOOD-specific logic should usually live in import/export adapters.
 - Match: `good`
 
@@ -28,7 +28,7 @@ Found 39 potential issue(s).
 
 ## hardcoded-material-cost-array
 
-- File: `src\domain\planner\buildFarmingEstimates.ts:157`
+- File: `src\domain\planner\buildFarmingEstimates.ts:197`
 - Description: Potential hard-coded material cost table outside game-data/core.
 - Match: `Mora",         materialName: "Mora",       };     case "ley_line_revelation":       return {         estimateKey: "ley_line_revelation|BlossomOfRevelation",    `
 
@@ -94,7 +94,7 @@ Found 39 potential issue(s).
 
 ## good-schema-outside-adapter
 
-- File: `src\features\characters\CharactersTab.tsx:449`
+- File: `src\features\characters\CharactersTab.tsx:452`
 - Description: GOOD-specific logic should usually live in import/export adapters.
 - Match: `GOOD`
 
@@ -214,7 +214,13 @@ Found 39 potential issue(s).
 
 ## good-schema-outside-adapter
 
-- File: `src\features\weapons\WeaponsTab.tsx:318`
+- File: `src\features\weapons\WeaponsTab.test.tsx:42`
+- Description: GOOD-specific logic should usually live in import/export adapters.
+- Match: `GOOD`
+
+## good-schema-outside-adapter
+
+- File: `src\features\weapons\WeaponsTab.tsx:335`
 - Description: GOOD-specific logic should usually live in import/export adapters.
 - Match: `GOOD`
 
@@ -232,7 +238,7 @@ Found 39 potential issue(s).
 
 ## good-schema-outside-adapter
 
-- File: `src\store\useAppStore.ts:477`
+- File: `src\store\useAppStore.ts:478`
 - Description: GOOD-specific logic should usually live in import/export adapters.
 - Match: `GoodFormat`
 

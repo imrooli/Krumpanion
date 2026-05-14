@@ -36,9 +36,10 @@ import type { OverrideDataPack, StaticGameData } from "../domain/staticData/type
 import type { DayOfWeek } from "../domain/planner/types";
 import { createDefaultAccountExport } from "../domain/save/types";
 import { defaultSave, persistCurrentSnapshot, toSaveInfo, type SaveInfo } from "./persistenceHelpers";
+import { getGenshinResetDay } from "../utils/days";
 
 function getToday(): DayOfWeek {
-  return new Intl.DateTimeFormat("en-US", { weekday: "long" }).format(new Date()) as DayOfWeek;
+  return getGenshinResetDay(new Date());
 }
 
 function createBlankArtifactGoal(): ArtifactGoal {
@@ -614,6 +615,7 @@ export interface AppState {
   overrideText: string;
   saveInfo: SaveInfo;
   isHydrated: boolean;
+  refreshToday: () => void;
   hydrate: () => Promise<void>;
   importGoodText: (text: string, options?: ImportGoodTextOptions) => Promise<void>;
   importOverrideText: (text: string) => Promise<void>;
@@ -685,6 +687,12 @@ export const useAppStore = create<AppState>((set, get) => ({
     updatedAt: defaultSave.updatedAt,
   },
   isHydrated: false,
+  refreshToday: () => {
+    set((state) => {
+      const nextToday = getToday();
+      return state.today === nextToday ? state : { today: nextToday };
+    });
+  },
   hydrate: async () => {
     const saveFile = await persistenceAdapter.loadSaveFile();
     const user = ensureUserState(saveFile.user);
@@ -698,6 +706,7 @@ export const useAppStore = create<AppState>((set, get) => ({
       saveInfo: toSaveInfo(saveFile),
       importErrors: [],
       importWarnings: activeAccount.importState.importWarnings ?? [],
+      today: getToday(),
       isHydrated: true,
     });
   },

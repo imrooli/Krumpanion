@@ -1,3 +1,11 @@
+/**
+ * Deprecated legacy migration helper.
+ *
+ * Verified runtime data should resolve through canonical database records and
+ * fail validation when required references are missing. This helper is retained
+ * only for legacy/generated data migration workflows and must not be added back
+ * into the normal loadStaticData() runtime path.
+ */
 import { resolveExistingMaterialKey } from "./materialKeyMapping";
 import { isTravelerSharedKey } from "./travelerRegistry";
 import type { CharacterMaterialProfile, StaticGameData, UnresolvedCharacterMaterialReference } from "./types";

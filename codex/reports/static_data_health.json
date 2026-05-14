@@ -1,31 +1,31 @@
 {
-  "generatedAt": "2026-05-08T13:42:30.087Z",
+  "generatedAt": "2026-05-14T17:26:06.173Z",
   "summary": {
-    "totalIssues": 305,
+    "totalIssues": 499,
     "errorCount": 0,
-    "warningCount": 290,
-    "infoCount": 15,
+    "warningCount": 491,
+    "infoCount": 8,
     "characterCount": 124,
-    "characterProfileCount": 122,
-    "completeCharacterProfileCount": 102,
-    "incompleteCharacterProfileCount": 20,
-    "weaponCount": 231,
-    "weaponProfileCount": 224,
-    "completeWeaponProfileCount": 223,
-    "incompleteWeaponProfileCount": 7,
+    "characterProfileCount": 124,
+    "completeCharacterProfileCount": 119,
+    "incompleteCharacterProfileCount": 3,
+    "weaponCount": 230,
+    "weaponProfileCount": 230,
+    "completeWeaponProfileCount": 224,
+    "incompleteWeaponProfileCount": 0,
     "materialCount": 1744,
-    "materialRecordCount": 471,
-    "materialSourceCount": 476,
-    "missingMaterialSourceCount": 3,
+    "materialRecordCount": 472,
+    "materialSourceCount": 480,
+    "missingMaterialSourceCount": 0,
     "craftingRecipeCount": 223,
     "invalidCraftingRecipeCount": 0,
     "unresolvedCharacterReferenceCount": 0,
     "unresolvedWeaponReferenceCount": 20,
-    "unresolvedCharacterMaterialReferenceCount": 3,
+    "unresolvedCharacterMaterialReferenceCount": 1,
     "generatedBetaMaterialCount": 0,
-    "generatedManualReviewWeaponProfileCount": 7,
-    "generatedCharacterSourceVersion": "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)",
-    "generatedWeaponSourceVersion": "1"
+    "generatedManualReviewWeaponProfileCount": 0,
+    "generatedCharacterSourceVersion": "maintenance-only",
+    "generatedWeaponSourceVersion": "maintenance-only"
   },
   "issues": [
     {
@@ -848,6 +848,19 @@
       "suggestedFix": "Add verified catalog metadata for rarity instead of blocking the material profile."
     },
     {
+      "id": "character_profile:invalid_rarity:Lohen",
+      "severity": "warning",
+      "category": "character_profile",
+      "subCategory": "character_catalog_metadata",
+      "plannerImpact": "low",
+      "actionGroup": "character_catalog_metadata",
+      "recordType": "character",
+      "entityKey": "Lohen",
+      "entityName": "Lohen",
+      "message": "Character Lohen is missing valid catalog rarity metadata.",
+      "suggestedFix": "Add verified catalog metadata for rarity instead of blocking the material profile."
+    },
+    {
       "id": "character_profile:invalid_rarity:Lynette",
       "severity": "warning",
       "category": "character_profile",
@@ -978,6 +991,19 @@
       "suggestedFix": "Add verified catalog metadata for rarity instead of blocking the material profile."
     },
     {
+      "id": "character_profile:invalid_rarity:Nicole",
+      "severity": "warning",
+      "category": "character_profile",
+      "subCategory": "character_catalog_metadata",
+      "plannerImpact": "low",
+      "actionGroup": "character_catalog_metadata",
+      "recordType": "character",
+      "entityKey": "Nicole",
+      "entityName": "Nicole",
+      "message": "Character Nicole is missing valid catalog rarity metadata.",
+      "suggestedFix": "Add verified catalog metadata for rarity instead of blocking the material profile."
+    },
+    {
       "id": "character_profile:invalid_rarity:Nilou",
       "severity": "warning",
       "category": "character_profile",
@@ -1027,6 +1053,19 @@
       "entityKey": "Ororon",
       "entityName": "Ororon",
       "message": "Character Ororon is missing valid catalog rarity metadata.",
+      "suggestedFix": "Add verified catalog metadata for rarity instead of blocking the material profile."
+    },
+    {
+      "id": "character_profile:invalid_rarity:Prune",
+      "severity": "warning",
+      "category": "character_profile",
+      "subCategory": "character_catalog_metadata",
+      "plannerImpact": "low",
+      "actionGroup": "character_catalog_metadata",
+      "recordType": "character",
+      "entityKey": "Prune",
+      "entityName": "Prune",
+      "message": "Character Prune is missing valid catalog rarity metadata.",
       "suggestedFix": "Add verified catalog metadata for rarity instead of blocking the material profile."
     },
     {
@@ -2278,6 +2317,19 @@
       "suggestedFix": "Add verified catalog metadata for the character weapon type."
     },
     {
+      "id": "character_profile:invalid_weapon_type:Lohen",
+      "severity": "warning",
+      "category": "character_profile",
+      "subCategory": "character_catalog_metadata",
+      "plannerImpact": "low",
+      "actionGroup": "character_catalog_metadata",
+      "recordType": "character",
+      "entityKey": "Lohen",
+      "entityName": "Lohen",
+      "message": "Character Lohen is missing valid catalog weapon-type metadata.",
+      "suggestedFix": "Add verified catalog metadata for the character weapon type."
+    },
+    {
       "id": "character_profile:invalid_weapon_type:Lynette",
       "severity": "warning",
       "category": "character_profile",
@@ -2408,6 +2460,19 @@
       "suggestedFix": "Add verified catalog metadata for the character weapon type."
     },
     {
+      "id": "character_profile:invalid_weapon_type:Nicole",
+      "severity": "warning",
+      "category": "character_profile",
+      "subCategory": "character_catalog_metadata",
+      "plannerImpact": "low",
+      "actionGroup": "character_catalog_metadata",
+      "recordType": "character",
+      "entityKey": "Nicole",
+      "entityName": "Nicole",
+      "message": "Character Nicole is missing valid catalog weapon-type metadata.",
+      "suggestedFix": "Add verified catalog metadata for the character weapon type."
+    },
+    {
       "id": "character_profile:invalid_weapon_type:Nilou",
       "severity": "warning",
       "category": "character_profile",
@@ -2457,6 +2522,19 @@
       "entityKey": "Ororon",
       "entityName": "Ororon",
       "message": "Character Ororon is missing valid catalog weapon-type metadata.",
+      "suggestedFix": "Add verified catalog metadata for the character weapon type."
+    },
+    {
+      "id": "character_profile:invalid_weapon_type:Prune",
+      "severity": "warning",
+      "category": "character_profile",
+      "subCategory": "character_catalog_metadata",
+      "plannerImpact": "low",
+      "actionGroup": "character_catalog_metadata",
+      "recordType": "character",
+      "entityKey": "Prune",
+      "entityName": "Prune",
+      "message": "Character Prune is missing valid catalog weapon-type metadata.",
       "suggestedFix": "Add verified catalog metadata for the character weapon type."
     },
     {
@@ -2915,634 +2993,1993 @@
       "suggestedFix": "Add verified catalog metadata for the character weapon type."
     },
     {
-      "id": "character_profile:missing_normal_boss_material:Charlotte",
+      "id": "character_profile:profile_status_lags_resolution:Lohen",
       "severity": "warning",
       "category": "character_profile",
-      "entityKey": "Charlotte",
-      "entityName": "Charlotte",
-      "message": "Character profile Charlotte does not resolve a valid normal boss material.",
-      "suggestedFix": "Align the profile with a canonical normal boss material key or mark it manual review.",
-      "relatedKeys": []
-    },
-    {
-      "id": "character_profile:missing_normal_boss_material:Wriothesley",
-      "severity": "warning",
-      "category": "character_profile",
-      "entityKey": "Wriothesley",
-      "entityName": "Wriothesley",
-      "message": "Character profile Wriothesley does not resolve a valid normal boss material.",
-      "suggestedFix": "Align the profile with a canonical normal boss material key or mark it manual review.",
-      "relatedKeys": []
-    },
-    {
-      "id": "generated_data:profile_status_lags_resolution:Albedo",
-      "severity": "warning",
-      "category": "generated_data",
-      "entityKey": "Albedo",
-      "entityName": "Albedo",
-      "message": "Character profile Albedo looks complete but is still marked unresolved.",
-      "suggestedFix": "Regenerate or review the generated character material profile status."
-    },
-    {
-      "id": "generated_data:profile_status_lags_resolution:Chiori",
-      "severity": "warning",
-      "category": "generated_data",
-      "entityKey": "Chiori",
-      "entityName": "Chiori",
-      "message": "Character profile Chiori looks complete but is still marked unresolved.",
-      "suggestedFix": "Regenerate or review the generated character material profile status."
-    },
-    {
-      "id": "generated_data:profile_status_lags_resolution:Cyno",
-      "severity": "warning",
-      "category": "generated_data",
-      "entityKey": "Cyno",
-      "entityName": "Cyno",
-      "message": "Character profile Cyno looks complete but is still marked unresolved.",
-      "suggestedFix": "Regenerate or review the generated character material profile status."
-    },
-    {
-      "id": "generated_data:profile_status_lags_resolution:Dori",
-      "severity": "warning",
-      "category": "generated_data",
-      "entityKey": "Dori",
-      "entityName": "Dori",
-      "message": "Character profile Dori looks complete but is still marked unresolved.",
-      "suggestedFix": "Regenerate or review the generated character material profile status."
-    },
-    {
-      "id": "generated_data:profile_status_lags_resolution:KujouSara",
-      "severity": "warning",
-      "category": "generated_data",
-      "entityKey": "KujouSara",
-      "entityName": "KujouSara",
-      "message": "Character profile KujouSara looks complete but is still marked unresolved.",
-      "suggestedFix": "Regenerate or review the generated character material profile status."
-    },
-    {
-      "id": "generated_data:profile_status_lags_resolution:Lohen",
-      "severity": "warning",
-      "category": "generated_data",
       "entityKey": "Lohen",
       "entityName": "Lohen",
       "message": "Character profile Lohen looks complete but is still marked beta.",
-      "suggestedFix": "Regenerate or review the generated character material profile status."
+      "suggestedFix": "Review the canonical character profile status and promote it only when the record is planner-safe."
     },
     {
-      "id": "generated_data:profile_status_lags_resolution:Navia",
+      "id": "character_profile:profile_status_lags_resolution:Prune",
       "severity": "warning",
-      "category": "generated_data",
-      "entityKey": "Navia",
-      "entityName": "Navia",
-      "message": "Character profile Navia looks complete but is still marked unresolved.",
-      "suggestedFix": "Regenerate or review the generated character material profile status."
-    },
-    {
-      "id": "generated_data:profile_status_lags_resolution:Ningguang",
-      "severity": "warning",
-      "category": "generated_data",
-      "entityKey": "Ningguang",
-      "entityName": "Ningguang",
-      "message": "Character profile Ningguang looks complete but is still marked unresolved.",
-      "suggestedFix": "Regenerate or review the generated character material profile status."
-    },
-    {
-      "id": "generated_data:profile_status_lags_resolution:Noelle",
-      "severity": "warning",
-      "category": "generated_data",
-      "entityKey": "Noelle",
-      "entityName": "Noelle",
-      "message": "Character profile Noelle looks complete but is still marked unresolved.",
-      "suggestedFix": "Regenerate or review the generated character material profile status."
-    },
-    {
-      "id": "generated_data:profile_status_lags_resolution:Ororon",
-      "severity": "warning",
-      "category": "generated_data",
-      "entityKey": "Ororon",
-      "entityName": "Ororon",
-      "message": "Character profile Ororon looks complete but is still marked unresolved.",
-      "suggestedFix": "Regenerate or review the generated character material profile status."
-    },
-    {
-      "id": "generated_data:profile_status_lags_resolution:Prune",
-      "severity": "warning",
-      "category": "generated_data",
+      "category": "character_profile",
       "entityKey": "Prune",
       "entityName": "Prune",
       "message": "Character profile Prune looks complete but is still marked beta.",
-      "suggestedFix": "Regenerate or review the generated character material profile status."
+      "suggestedFix": "Review the canonical character profile status and promote it only when the record is planner-safe."
     },
     {
-      "id": "generated_data:profile_status_lags_resolution:RaidenShogun",
+      "id": "character_profile:unresolved_character_material_reference:Nicole:weeklyBossMaterial",
       "severity": "warning",
-      "category": "generated_data",
-      "entityKey": "RaidenShogun",
-      "entityName": "RaidenShogun",
-      "message": "Character profile RaidenShogun looks complete but is still marked unresolved.",
-      "suggestedFix": "Regenerate or review the generated character material profile status."
-    },
-    {
-      "id": "generated_data:profile_status_lags_resolution:Shenhe",
-      "severity": "warning",
-      "category": "generated_data",
-      "entityKey": "Shenhe",
-      "entityName": "Shenhe",
-      "message": "Character profile Shenhe looks complete but is still marked unresolved.",
-      "suggestedFix": "Regenerate or review the generated character material profile status."
-    },
-    {
-      "id": "generated_data:profile_status_lags_resolution:Thoma",
-      "severity": "warning",
-      "category": "generated_data",
-      "entityKey": "Thoma",
-      "entityName": "Thoma",
-      "message": "Character profile Thoma looks complete but is still marked unresolved.",
-      "suggestedFix": "Regenerate or review the generated character material profile status."
-    },
-    {
-      "id": "generated_data:profile_status_lags_resolution:YaeMiko",
-      "severity": "warning",
-      "category": "generated_data",
-      "entityKey": "YaeMiko",
-      "entityName": "YaeMiko",
-      "message": "Character profile YaeMiko looks complete but is still marked unresolved.",
-      "suggestedFix": "Regenerate or review the generated character material profile status."
-    },
-    {
-      "id": "generated_data:profile_status_lags_resolution:Yoimiya",
-      "severity": "warning",
-      "category": "generated_data",
-      "entityKey": "Yoimiya",
-      "entityName": "Yoimiya",
-      "message": "Character profile Yoimiya looks complete but is still marked unresolved.",
-      "suggestedFix": "Regenerate or review the generated character material profile status."
-    },
-    {
-      "id": "generated_data:profile_status_lags_resolution:Zhongli",
-      "severity": "warning",
-      "category": "generated_data",
-      "entityKey": "Zhongli",
-      "entityName": "Zhongli",
-      "message": "Character profile Zhongli looks complete but is still marked unresolved.",
-      "suggestedFix": "Regenerate or review the generated character material profile status."
-    },
-    {
-      "id": "generated_data:unresolved_character_material_reference:Charlotte:normalBossMaterial",
-      "severity": "warning",
-      "category": "generated_data",
-      "entityKey": "Charlotte:normalBossMaterial",
-      "entityName": "Charlotte",
-      "message": "Charlotte still has an unresolved normalBossMaterial reference (empty).",
-      "suggestedFix": "Normal boss material is missing from the source row.",
-      "relatedKeys": []
-    },
-    {
-      "id": "generated_data:unresolved_character_material_reference:Nicole:weeklyBossMaterial",
-      "severity": "warning",
-      "category": "generated_data",
+      "category": "character_profile",
       "entityKey": "Nicole:weeklyBossMaterial",
       "entityName": "Nicole",
       "message": "Nicole still has an unresolved weeklyBossMaterial reference (???).",
-      "suggestedFix": "Weekly boss material is a placeholder and requires manual confirmation.",
+      "suggestedFix": "Canonical weeklyBossMaterialKey is unresolved.",
       "relatedKeys": []
     },
     {
-      "id": "generated_data:unresolved_character_material_reference:Wriothesley:normalBossMaterial",
+      "id": "family:unresolved_weapon_reference:ApprenticesNotes",
       "severity": "warning",
-      "category": "generated_data",
-      "entityKey": "Wriothesley:normalBossMaterial",
-      "entityName": "Wriothesley",
-      "message": "Wriothesley still has an unresolved normalBossMaterial reference (empty).",
-      "suggestedFix": "Normal boss material is missing from the source row.",
-      "relatedKeys": []
+      "category": "family",
+      "entityKey": "ApprenticesNotes",
+      "entityName": "Apprentice's Notes",
+      "message": "Derived family references still point to unknown weapon Apprentice's Notes.",
+      "relatedKeys": [
+        "hilichurl_materials"
+      ]
     },
     {
-      "id": "generated_data:unresolved_reference_now_resolves:Albedo:normalBossMaterial",
+      "id": "family:unresolved_weapon_reference:ApprenticesNotes#2",
+      "severity": "warning",
+      "category": "family",
+      "entityKey": "ApprenticesNotes",
+      "entityName": "Apprentice's Notes",
+      "message": "Derived family references still point to unknown weapon Apprentice's Notes.",
+      "relatedKeys": [
+        "mitachurl_materials"
+      ]
+    },
+    {
+      "id": "family:unresolved_weapon_reference:BeginnersProtector",
+      "severity": "warning",
+      "category": "family",
+      "entityKey": "BeginnersProtector",
+      "entityName": "Beginner's Protector",
+      "message": "Derived family references still point to unknown weapon Beginner's Protector.",
+      "relatedKeys": [
+        "samachurl_materials"
+      ]
+    },
+    {
+      "id": "family:unresolved_weapon_reference:BeginnersProtector#2",
+      "severity": "warning",
+      "category": "family",
+      "entityKey": "BeginnersProtector",
+      "entityName": "Beginner's Protector",
+      "message": "Derived family references still point to unknown weapon Beginner's Protector.",
+      "relatedKeys": [
+        "humanoid_ruin_machine_materials"
+      ]
+    },
+    {
+      "id": "family:unresolved_weapon_reference:DullBlade",
+      "severity": "warning",
+      "category": "family",
+      "entityKey": "DullBlade",
+      "entityName": "Dull Blade",
+      "message": "Derived family references still point to unknown weapon Dull Blade.",
+      "relatedKeys": [
+        "hilichurl_shooter_materials"
+      ]
+    },
+    {
+      "id": "family:unresolved_weapon_reference:DullBlade#2",
+      "severity": "warning",
+      "category": "family",
+      "entityKey": "DullBlade",
+      "entityName": "Dull Blade",
+      "message": "Derived family references still point to unknown weapon Dull Blade.",
+      "relatedKeys": [
+        "mitachurl_materials"
+      ]
+    },
+    {
+      "id": "family:unresolved_weapon_reference:HuntersBow",
+      "severity": "warning",
+      "category": "family",
+      "entityKey": "HuntersBow",
+      "entityName": "Hunter's Bow",
+      "message": "Derived family references still point to unknown weapon Hunter's Bow.",
+      "relatedKeys": [
+        "treasure_hoarder_materials"
+      ]
+    },
+    {
+      "id": "family:unresolved_weapon_reference:HuntersBow#2",
+      "severity": "warning",
+      "category": "family",
+      "entityKey": "HuntersBow",
+      "entityName": "Hunter's Bow",
+      "message": "Derived family references still point to unknown weapon Hunter's Bow.",
+      "relatedKeys": [
+        "abyss_mage_materials"
+      ]
+    },
+    {
+      "id": "family:unresolved_weapon_reference:IronPoint",
+      "severity": "warning",
+      "category": "family",
+      "entityKey": "IronPoint",
+      "entityName": "Iron Point",
+      "message": "Derived family references still point to unknown weapon Iron Point.",
+      "relatedKeys": [
+        "samachurl_materials"
+      ]
+    },
+    {
+      "id": "family:unresolved_weapon_reference:IronPoint#2",
+      "severity": "warning",
+      "category": "family",
+      "entityKey": "IronPoint",
+      "entityName": "Iron Point",
+      "message": "Derived family references still point to unknown weapon Iron Point.",
+      "relatedKeys": [
+        "humanoid_ruin_machine_materials"
+      ]
+    },
+    {
+      "id": "family:unresolved_weapon_reference:OldMercsPal",
+      "severity": "warning",
+      "category": "family",
+      "entityKey": "OldMercsPal",
+      "entityName": "Old Merc's Pal",
+      "message": "Derived family references still point to unknown weapon Old Merc's Pal.",
+      "relatedKeys": [
+        "slime_materials"
+      ]
+    },
+    {
+      "id": "family:unresolved_weapon_reference:OldMercsPal#2",
+      "severity": "warning",
+      "category": "family",
+      "entityKey": "OldMercsPal",
+      "entityName": "Old Merc's Pal",
+      "message": "Derived family references still point to unknown weapon Old Merc's Pal.",
+      "relatedKeys": [
+        "abyss_mage_materials"
+      ]
+    },
+    {
+      "id": "family:unresolved_weapon_reference:PocketGrimoire",
+      "severity": "warning",
+      "category": "family",
+      "entityKey": "PocketGrimoire",
+      "entityName": "Pocket Grimoire",
+      "message": "Derived family references still point to unknown weapon Pocket Grimoire.",
+      "relatedKeys": [
+        "hilichurl_materials"
+      ]
+    },
+    {
+      "id": "family:unresolved_weapon_reference:PocketGrimoire#2",
+      "severity": "warning",
+      "category": "family",
+      "entityKey": "PocketGrimoire",
+      "entityName": "Pocket Grimoire",
+      "message": "Derived family references still point to unknown weapon Pocket Grimoire.",
+      "relatedKeys": [
+        "mitachurl_materials"
+      ]
+    },
+    {
+      "id": "family:unresolved_weapon_reference:SeasonedHuntersBow",
+      "severity": "warning",
+      "category": "family",
+      "entityKey": "SeasonedHuntersBow",
+      "entityName": "Seasoned Hunter's Bow",
+      "message": "Derived family references still point to unknown weapon Seasoned Hunter's Bow.",
+      "relatedKeys": [
+        "treasure_hoarder_materials"
+      ]
+    },
+    {
+      "id": "family:unresolved_weapon_reference:SeasonedHuntersBow#2",
+      "severity": "warning",
+      "category": "family",
+      "entityKey": "SeasonedHuntersBow",
+      "entityName": "Seasoned Hunter's Bow",
+      "message": "Derived family references still point to unknown weapon Seasoned Hunter's Bow.",
+      "relatedKeys": [
+        "abyss_mage_materials"
+      ]
+    },
+    {
+      "id": "family:unresolved_weapon_reference:SilverSword",
+      "severity": "warning",
+      "category": "family",
+      "entityKey": "SilverSword",
+      "entityName": "Silver Sword",
+      "message": "Derived family references still point to unknown weapon Silver Sword.",
+      "relatedKeys": [
+        "hilichurl_shooter_materials"
+      ]
+    },
+    {
+      "id": "family:unresolved_weapon_reference:SilverSword#2",
+      "severity": "warning",
+      "category": "family",
+      "entityKey": "SilverSword",
+      "entityName": "Silver Sword",
+      "message": "Derived family references still point to unknown weapon Silver Sword.",
+      "relatedKeys": [
+        "mitachurl_materials"
+      ]
+    },
+    {
+      "id": "family:unresolved_weapon_reference:WasterGreatsword",
+      "severity": "warning",
+      "category": "family",
+      "entityKey": "WasterGreatsword",
+      "entityName": "Waster Greatsword",
+      "message": "Derived family references still point to unknown weapon Waster Greatsword.",
+      "relatedKeys": [
+        "slime_materials"
+      ]
+    },
+    {
+      "id": "family:unresolved_weapon_reference:WasterGreatsword#2",
+      "severity": "warning",
+      "category": "family",
+      "entityKey": "WasterGreatsword",
+      "entityName": "Waster Greatsword",
+      "message": "Derived family references still point to unknown weapon Waster Greatsword.",
+      "relatedKeys": [
+        "abyss_mage_materials"
+      ]
+    },
+    {
+      "id": "generated_data:legacy_unresolved_reference_now_canonical:Albedo:normalBossMaterial",
       "severity": "warning",
       "category": "generated_data",
       "entityKey": "Albedo:normalBossMaterial",
       "entityName": "Albedo",
-      "message": "Albedo still has an unresolved generated reference for BasaltPillar, but that key now exists in the canonical material registry.",
-      "suggestedFix": "Regenerate the character material bundle so this now-canonical key can be adopted.",
+      "message": "Albedo still has a legacy generated unresolved normalBossMaterial reference for BasaltPillar, but that key now exists in canonical static data.",
+      "suggestedFix": "Refresh or retire the generated maintenance bundle so it no longer lags behind canonical data.",
       "relatedKeys": [
         "BasaltPillar"
       ]
     },
     {
-      "id": "generated_data:unresolved_reference_now_resolves:Charlotte:weeklyBossMaterial",
+      "id": "generated_data:legacy_unresolved_reference_now_canonical:Charlotte:weeklyBossMaterial",
       "severity": "warning",
       "category": "generated_data",
       "entityKey": "Charlotte:weeklyBossMaterial",
       "entityName": "Charlotte",
-      "message": "Charlotte still has an unresolved generated reference for LightlessSilkString, but that key now exists in the canonical material registry.",
-      "suggestedFix": "Regenerate the character material bundle so this now-canonical key can be adopted.",
+      "message": "Charlotte still has a legacy generated unresolved weeklyBossMaterial reference for LightlessSilkString, but that key now exists in canonical static data.",
+      "suggestedFix": "Refresh or retire the generated maintenance bundle so it no longer lags behind canonical data.",
       "relatedKeys": [
         "LightlessSilkString"
       ]
     },
     {
-      "id": "generated_data:unresolved_reference_now_resolves:Chiori:weeklyBossMaterial",
+      "id": "generated_data:legacy_unresolved_reference_now_canonical:Chiori:weeklyBossMaterial",
       "severity": "warning",
       "category": "generated_data",
       "entityKey": "Chiori:weeklyBossMaterial",
       "entityName": "Chiori",
-      "message": "Chiori still has an unresolved generated reference for LightlessSilkString, but that key now exists in the canonical material registry.",
-      "suggestedFix": "Regenerate the character material bundle so this now-canonical key can be adopted.",
+      "message": "Chiori still has a legacy generated unresolved weeklyBossMaterial reference for LightlessSilkString, but that key now exists in canonical static data.",
+      "suggestedFix": "Refresh or retire the generated maintenance bundle so it no longer lags behind canonical data.",
       "relatedKeys": [
         "LightlessSilkString"
       ]
     },
     {
-      "id": "generated_data:unresolved_reference_now_resolves:Cyno:normalBossMaterial",
+      "id": "generated_data:legacy_unresolved_reference_now_canonical:Cyno:normalBossMaterial",
       "severity": "warning",
       "category": "generated_data",
       "entityKey": "Cyno:normalBossMaterial",
       "entityName": "Cyno",
-      "message": "Cyno still has an unresolved generated reference for ThunderclapFruitcore, but that key now exists in the canonical material registry.",
-      "suggestedFix": "Regenerate the character material bundle so this now-canonical key can be adopted.",
+      "message": "Cyno still has a legacy generated unresolved normalBossMaterial reference for ThunderclapFruitcore, but that key now exists in canonical static data.",
+      "suggestedFix": "Refresh or retire the generated maintenance bundle so it no longer lags behind canonical data.",
       "relatedKeys": [
         "ThunderclapFruitcore"
       ]
     },
     {
-      "id": "generated_data:unresolved_reference_now_resolves:Dori:normalBossMaterial",
+      "id": "generated_data:legacy_unresolved_reference_now_canonical:Dori:normalBossMaterial",
       "severity": "warning",
       "category": "generated_data",
       "entityKey": "Dori:normalBossMaterial",
       "entityName": "Dori",
-      "message": "Dori still has an unresolved generated reference for ThunderclapFruitcore, but that key now exists in the canonical material registry.",
-      "suggestedFix": "Regenerate the character material bundle so this now-canonical key can be adopted.",
+      "message": "Dori still has a legacy generated unresolved normalBossMaterial reference for ThunderclapFruitcore, but that key now exists in canonical static data.",
+      "suggestedFix": "Refresh or retire the generated maintenance bundle so it no longer lags behind canonical data.",
       "relatedKeys": [
         "ThunderclapFruitcore"
       ]
     },
     {
-      "id": "generated_data:unresolved_reference_now_resolves:KujouSara:normalBossMaterial",
+      "id": "generated_data:legacy_unresolved_reference_now_canonical:KujouSara:normalBossMaterial",
       "severity": "warning",
       "category": "generated_data",
       "entityKey": "KujouSara:normalBossMaterial",
       "entityName": "Kujou Sara",
-      "message": "Kujou Sara still has an unresolved generated reference for StormBeads, but that key now exists in the canonical material registry.",
-      "suggestedFix": "Regenerate the character material bundle so this now-canonical key can be adopted.",
+      "message": "Kujou Sara still has a legacy generated unresolved normalBossMaterial reference for StormBeads, but that key now exists in canonical static data.",
+      "suggestedFix": "Refresh or retire the generated maintenance bundle so it no longer lags behind canonical data.",
       "relatedKeys": [
         "StormBeads"
       ]
     },
     {
-      "id": "generated_data:unresolved_reference_now_resolves:Navia:weeklyBossMaterial",
+      "id": "generated_data:legacy_unresolved_reference_now_canonical:Navia:weeklyBossMaterial",
       "severity": "warning",
       "category": "generated_data",
       "entityKey": "Navia:weeklyBossMaterial",
       "entityName": "Navia",
-      "message": "Navia still has an unresolved generated reference for LightlessSilkString, but that key now exists in the canonical material registry.",
-      "suggestedFix": "Regenerate the character material bundle so this now-canonical key can be adopted.",
+      "message": "Navia still has a legacy generated unresolved weeklyBossMaterial reference for LightlessSilkString, but that key now exists in canonical static data.",
+      "suggestedFix": "Refresh or retire the generated maintenance bundle so it no longer lags behind canonical data.",
       "relatedKeys": [
         "LightlessSilkString"
       ]
     },
     {
-      "id": "generated_data:unresolved_reference_now_resolves:Ningguang:normalBossMaterial",
+      "id": "generated_data:legacy_unresolved_reference_now_canonical:Ningguang:normalBossMaterial",
       "severity": "warning",
       "category": "generated_data",
       "entityKey": "Ningguang:normalBossMaterial",
       "entityName": "Ningguang",
-      "message": "Ningguang still has an unresolved generated reference for BasaltPillar, but that key now exists in the canonical material registry.",
-      "suggestedFix": "Regenerate the character material bundle so this now-canonical key can be adopted.",
+      "message": "Ningguang still has a legacy generated unresolved normalBossMaterial reference for BasaltPillar, but that key now exists in canonical static data.",
+      "suggestedFix": "Refresh or retire the generated maintenance bundle so it no longer lags behind canonical data.",
       "relatedKeys": [
         "BasaltPillar"
       ]
     },
     {
-      "id": "generated_data:unresolved_reference_now_resolves:Noelle:normalBossMaterial",
+      "id": "generated_data:legacy_unresolved_reference_now_canonical:Noelle:normalBossMaterial",
       "severity": "warning",
       "category": "generated_data",
       "entityKey": "Noelle:normalBossMaterial",
       "entityName": "Noelle",
-      "message": "Noelle still has an unresolved generated reference for BasaltPillar, but that key now exists in the canonical material registry.",
-      "suggestedFix": "Regenerate the character material bundle so this now-canonical key can be adopted.",
+      "message": "Noelle still has a legacy generated unresolved normalBossMaterial reference for BasaltPillar, but that key now exists in canonical static data.",
+      "suggestedFix": "Refresh or retire the generated maintenance bundle so it no longer lags behind canonical data.",
       "relatedKeys": [
         "BasaltPillar"
       ]
     },
     {
-      "id": "generated_data:unresolved_reference_now_resolves:Ororon:weeklyBossMaterial",
+      "id": "generated_data:legacy_unresolved_reference_now_canonical:Ororon:weeklyBossMaterial",
       "severity": "warning",
       "category": "generated_data",
       "entityKey": "Ororon:weeklyBossMaterial",
       "entityName": "Ororon",
-      "message": "Ororon still has an unresolved generated reference for LightlessSilkString, but that key now exists in the canonical material registry.",
-      "suggestedFix": "Regenerate the character material bundle so this now-canonical key can be adopted.",
+      "message": "Ororon still has a legacy generated unresolved weeklyBossMaterial reference for LightlessSilkString, but that key now exists in canonical static data.",
+      "suggestedFix": "Refresh or retire the generated maintenance bundle so it no longer lags behind canonical data.",
       "relatedKeys": [
         "LightlessSilkString"
       ]
     },
     {
-      "id": "generated_data:unresolved_reference_now_resolves:RaidenShogun:normalBossMaterial",
+      "id": "generated_data:legacy_unresolved_reference_now_canonical:RaidenShogun:normalBossMaterial",
       "severity": "warning",
       "category": "generated_data",
       "entityKey": "RaidenShogun:normalBossMaterial",
       "entityName": "Raiden Shogun",
-      "message": "Raiden Shogun still has an unresolved generated reference for StormBeads, but that key now exists in the canonical material registry.",
-      "suggestedFix": "Regenerate the character material bundle so this now-canonical key can be adopted.",
+      "message": "Raiden Shogun still has a legacy generated unresolved normalBossMaterial reference for StormBeads, but that key now exists in canonical static data.",
+      "suggestedFix": "Refresh or retire the generated maintenance bundle so it no longer lags behind canonical data.",
       "relatedKeys": [
         "StormBeads"
       ]
     },
     {
-      "id": "generated_data:unresolved_reference_now_resolves:Thoma:normalBossMaterial",
+      "id": "generated_data:legacy_unresolved_reference_now_canonical:Thoma:normalBossMaterial",
       "severity": "warning",
       "category": "generated_data",
       "entityKey": "Thoma:normalBossMaterial",
       "entityName": "Thoma",
-      "message": "Thoma still has an unresolved generated reference for SmolderingPearl, but that key now exists in the canonical material registry.",
-      "suggestedFix": "Regenerate the character material bundle so this now-canonical key can be adopted.",
+      "message": "Thoma still has a legacy generated unresolved normalBossMaterial reference for SmolderingPearl, but that key now exists in canonical static data.",
+      "suggestedFix": "Refresh or retire the generated maintenance bundle so it no longer lags behind canonical data.",
       "relatedKeys": [
         "SmolderingPearl"
       ]
     },
     {
-      "id": "generated_data:unresolved_reference_now_resolves:Yoimiya:normalBossMaterial",
+      "id": "generated_data:legacy_unresolved_reference_now_canonical:Traveler:ascensionGem",
+      "severity": "warning",
+      "category": "generated_data",
+      "entityKey": "Traveler:ascensionGem",
+      "entityName": "Traveler",
+      "message": "Traveler still has a legacy generated unresolved ascensionGem reference for BrilliantDiamondChunk, but that key now exists in canonical static data.",
+      "suggestedFix": "Refresh or retire the generated maintenance bundle so it no longer lags behind canonical data.",
+      "relatedKeys": [
+        "BrilliantDiamondChunk"
+      ]
+    },
+    {
+      "id": "generated_data:legacy_unresolved_reference_now_canonical:Yoimiya:normalBossMaterial",
       "severity": "warning",
       "category": "generated_data",
       "entityKey": "Yoimiya:normalBossMaterial",
       "entityName": "Yoimiya",
-      "message": "Yoimiya still has an unresolved generated reference for SmolderingPearl, but that key now exists in the canonical material registry.",
-      "suggestedFix": "Regenerate the character material bundle so this now-canonical key can be adopted.",
+      "message": "Yoimiya still has a legacy generated unresolved normalBossMaterial reference for SmolderingPearl, but that key now exists in canonical static data.",
+      "suggestedFix": "Refresh or retire the generated maintenance bundle so it no longer lags behind canonical data.",
       "relatedKeys": [
         "SmolderingPearl"
       ]
     },
     {
-      "id": "generated_data:unresolved_reference_now_resolves:Zhongli:normalBossMaterial",
+      "id": "generated_data:legacy_unresolved_reference_now_canonical:Zhongli:normalBossMaterial",
       "severity": "warning",
       "category": "generated_data",
       "entityKey": "Zhongli:normalBossMaterial",
       "entityName": "Zhongli",
-      "message": "Zhongli still has an unresolved generated reference for BasaltPillar, but that key now exists in the canonical material registry.",
-      "suggestedFix": "Regenerate the character material bundle so this now-canonical key can be adopted.",
+      "message": "Zhongli still has a legacy generated unresolved normalBossMaterial reference for BasaltPillar, but that key now exists in canonical static data.",
+      "suggestedFix": "Refresh or retire the generated maintenance bundle so it no longer lags behind canonical data.",
       "relatedKeys": [
         "BasaltPillar"
       ]
     },
     {
-      "id": "generated_data:unresolved_weapon_reference:ApprenticesNotes",
+      "id": "repository_hygiene:canonical_database_character:Aino",
       "severity": "warning",
-      "category": "generated_data",
-      "entityKey": "ApprenticesNotes",
-      "entityName": "Apprentice's Notes",
-      "message": "Generated family references still point to unknown weapon Apprentice's Notes.",
-      "relatedKeys": [
-        "hilichurl_materials"
-      ]
+      "category": "repository_hygiene",
+      "entityKey": "Aino",
+      "message": "Verified character is missing weaponType metadata."
     },
     {
-      "id": "generated_data:unresolved_weapon_reference:ApprenticesNotes#2",
+      "id": "repository_hygiene:canonical_database_character:Aino#2",
       "severity": "warning",
-      "category": "generated_data",
-      "entityKey": "ApprenticesNotes",
-      "entityName": "Apprentice's Notes",
-      "message": "Generated family references still point to unknown weapon Apprentice's Notes.",
-      "relatedKeys": [
-        "mitachurl_materials"
-      ]
+      "category": "repository_hygiene",
+      "entityKey": "Aino",
+      "message": "Verified character is missing rarity metadata."
     },
     {
-      "id": "generated_data:unresolved_weapon_reference:BeginnersProtector",
+      "id": "repository_hygiene:canonical_database_character:Albedo",
       "severity": "warning",
-      "category": "generated_data",
-      "entityKey": "BeginnersProtector",
-      "entityName": "Beginner's Protector",
-      "message": "Generated family references still point to unknown weapon Beginner's Protector.",
-      "relatedKeys": [
-        "samachurl_materials"
-      ]
+      "category": "repository_hygiene",
+      "entityKey": "Albedo",
+      "message": "Verified character is missing weaponType metadata."
     },
     {
-      "id": "generated_data:unresolved_weapon_reference:BeginnersProtector#2",
+      "id": "repository_hygiene:canonical_database_character:Albedo#2",
       "severity": "warning",
-      "category": "generated_data",
-      "entityKey": "BeginnersProtector",
-      "entityName": "Beginner's Protector",
-      "message": "Generated family references still point to unknown weapon Beginner's Protector.",
-      "relatedKeys": [
-        "humanoid_ruin_machine_materials"
-      ]
+      "category": "repository_hygiene",
+      "entityKey": "Albedo",
+      "message": "Verified character is missing rarity metadata."
     },
     {
-      "id": "generated_data:unresolved_weapon_reference:DullBlade",
+      "id": "repository_hygiene:canonical_database_character:Alhaitham",
       "severity": "warning",
-      "category": "generated_data",
-      "entityKey": "DullBlade",
-      "entityName": "Dull Blade",
-      "message": "Generated family references still point to unknown weapon Dull Blade.",
-      "relatedKeys": [
-        "hilichurl_shooter_materials"
-      ]
+      "category": "repository_hygiene",
+      "entityKey": "Alhaitham",
+      "message": "Verified character is missing weaponType metadata."
     },
     {
-      "id": "generated_data:unresolved_weapon_reference:DullBlade#2",
+      "id": "repository_hygiene:canonical_database_character:Alhaitham#2",
       "severity": "warning",
-      "category": "generated_data",
-      "entityKey": "DullBlade",
-      "entityName": "Dull Blade",
-      "message": "Generated family references still point to unknown weapon Dull Blade.",
-      "relatedKeys": [
-        "mitachurl_materials"
-      ]
+      "category": "repository_hygiene",
+      "entityKey": "Alhaitham",
+      "message": "Verified character is missing rarity metadata."
     },
     {
-      "id": "generated_data:unresolved_weapon_reference:HuntersBow",
+      "id": "repository_hygiene:canonical_database_character:Aloy",
       "severity": "warning",
-      "category": "generated_data",
-      "entityKey": "HuntersBow",
-      "entityName": "Hunter's Bow",
-      "message": "Generated family references still point to unknown weapon Hunter's Bow.",
-      "relatedKeys": [
-        "treasure_hoarder_materials"
-      ]
+      "category": "repository_hygiene",
+      "entityKey": "Aloy",
+      "message": "Verified character is missing weaponType metadata."
     },
     {
-      "id": "generated_data:unresolved_weapon_reference:HuntersBow#2",
+      "id": "repository_hygiene:canonical_database_character:Aloy#2",
       "severity": "warning",
-      "category": "generated_data",
-      "entityKey": "HuntersBow",
-      "entityName": "Hunter's Bow",
-      "message": "Generated family references still point to unknown weapon Hunter's Bow.",
-      "relatedKeys": [
-        "abyss_mage_materials"
-      ]
+      "category": "repository_hygiene",
+      "entityKey": "Aloy",
+      "message": "Verified character is missing rarity metadata."
     },
     {
-      "id": "generated_data:unresolved_weapon_reference:IronPoint",
+      "id": "repository_hygiene:canonical_database_character:Amber",
       "severity": "warning",
-      "category": "generated_data",
-      "entityKey": "IronPoint",
-      "entityName": "Iron Point",
-      "message": "Generated family references still point to unknown weapon Iron Point.",
-      "relatedKeys": [
-        "samachurl_materials"
-      ]
+      "category": "repository_hygiene",
+      "entityKey": "Amber",
+      "message": "Verified character is missing weaponType metadata."
     },
     {
-      "id": "generated_data:unresolved_weapon_reference:IronPoint#2",
+      "id": "repository_hygiene:canonical_database_character:Amber#2",
       "severity": "warning",
-      "category": "generated_data",
-      "entityKey": "IronPoint",
-      "entityName": "Iron Point",
-      "message": "Generated family references still point to unknown weapon Iron Point.",
-      "relatedKeys": [
-        "humanoid_ruin_machine_materials"
-      ]
+      "category": "repository_hygiene",
+      "entityKey": "Amber",
+      "message": "Verified character is missing rarity metadata."
     },
     {
-      "id": "generated_data:unresolved_weapon_reference:OldMercsPal",
+      "id": "repository_hygiene:canonical_database_character:AratakiItto",
       "severity": "warning",
-      "category": "generated_data",
-      "entityKey": "OldMercsPal",
-      "entityName": "Old Merc's Pal",
-      "message": "Generated family references still point to unknown weapon Old Merc's Pal.",
-      "relatedKeys": [
-        "slime_materials"
-      ]
+      "category": "repository_hygiene",
+      "entityKey": "AratakiItto",
+      "message": "Verified character is missing weaponType metadata."
     },
     {
-      "id": "generated_data:unresolved_weapon_reference:OldMercsPal#2",
+      "id": "repository_hygiene:canonical_database_character:AratakiItto#2",
       "severity": "warning",
-      "category": "generated_data",
-      "entityKey": "OldMercsPal",
-      "entityName": "Old Merc's Pal",
-      "message": "Generated family references still point to unknown weapon Old Merc's Pal.",
-      "relatedKeys": [
-        "abyss_mage_materials"
-      ]
+      "category": "repository_hygiene",
+      "entityKey": "AratakiItto",
+      "message": "Verified character is missing rarity metadata."
     },
     {
-      "id": "generated_data:unresolved_weapon_reference:PocketGrimoire",
+      "id": "repository_hygiene:canonical_database_character:Arlecchino",
       "severity": "warning",
-      "category": "generated_data",
-      "entityKey": "PocketGrimoire",
-      "entityName": "Pocket Grimoire",
-      "message": "Generated family references still point to unknown weapon Pocket Grimoire.",
-      "relatedKeys": [
-        "hilichurl_materials"
-      ]
+      "category": "repository_hygiene",
+      "entityKey": "Arlecchino",
+      "message": "Verified character is missing weaponType metadata."
     },
     {
-      "id": "generated_data:unresolved_weapon_reference:PocketGrimoire#2",
+      "id": "repository_hygiene:canonical_database_character:Arlecchino#2",
       "severity": "warning",
-      "category": "generated_data",
-      "entityKey": "PocketGrimoire",
-      "entityName": "Pocket Grimoire",
-      "message": "Generated family references still point to unknown weapon Pocket Grimoire.",
-      "relatedKeys": [
-        "mitachurl_materials"
-      ]
+      "category": "repository_hygiene",
+      "entityKey": "Arlecchino",
+      "message": "Verified character is missing rarity metadata."
     },
     {
-      "id": "generated_data:unresolved_weapon_reference:SeasonedHuntersBow",
+      "id": "repository_hygiene:canonical_database_character:Baizhu",
       "severity": "warning",
-      "category": "generated_data",
-      "entityKey": "SeasonedHuntersBow",
-      "entityName": "Seasoned Hunter's Bow",
-      "message": "Generated family references still point to unknown weapon Seasoned Hunter's Bow.",
-      "relatedKeys": [
-        "treasure_hoarder_materials"
-      ]
+      "category": "repository_hygiene",
+      "entityKey": "Baizhu",
+      "message": "Verified character is missing weaponType metadata."
     },
     {
-      "id": "generated_data:unresolved_weapon_reference:SeasonedHuntersBow#2",
+      "id": "repository_hygiene:canonical_database_character:Baizhu#2",
       "severity": "warning",
-      "category": "generated_data",
-      "entityKey": "SeasonedHuntersBow",
-      "entityName": "Seasoned Hunter's Bow",
-      "message": "Generated family references still point to unknown weapon Seasoned Hunter's Bow.",
-      "relatedKeys": [
-        "abyss_mage_materials"
-      ]
+      "category": "repository_hygiene",
+      "entityKey": "Baizhu",
+      "message": "Verified character is missing rarity metadata."
     },
     {
-      "id": "generated_data:unresolved_weapon_reference:SilverSword",
+      "id": "repository_hygiene:canonical_database_character:Barbara",
       "severity": "warning",
-      "category": "generated_data",
-      "entityKey": "SilverSword",
-      "entityName": "Silver Sword",
-      "message": "Generated family references still point to unknown weapon Silver Sword.",
-      "relatedKeys": [
-        "hilichurl_shooter_materials"
-      ]
+      "category": "repository_hygiene",
+      "entityKey": "Barbara",
+      "message": "Verified character is missing weaponType metadata."
     },
     {
-      "id": "generated_data:unresolved_weapon_reference:SilverSword#2",
+      "id": "repository_hygiene:canonical_database_character:Barbara#2",
       "severity": "warning",
-      "category": "generated_data",
-      "entityKey": "SilverSword",
-      "entityName": "Silver Sword",
-      "message": "Generated family references still point to unknown weapon Silver Sword.",
-      "relatedKeys": [
-        "mitachurl_materials"
-      ]
+      "category": "repository_hygiene",
+      "entityKey": "Barbara",
+      "message": "Verified character is missing rarity metadata."
     },
     {
-      "id": "generated_data:unresolved_weapon_reference:WasterGreatsword",
+      "id": "repository_hygiene:canonical_database_character:Beidou",
       "severity": "warning",
-      "category": "generated_data",
-      "entityKey": "WasterGreatsword",
-      "entityName": "Waster Greatsword",
-      "message": "Generated family references still point to unknown weapon Waster Greatsword.",
-      "relatedKeys": [
-        "slime_materials"
-      ]
+      "category": "repository_hygiene",
+      "entityKey": "Beidou",
+      "message": "Verified character is missing weaponType metadata."
     },
     {
-      "id": "generated_data:unresolved_weapon_reference:WasterGreatsword#2",
+      "id": "repository_hygiene:canonical_database_character:Beidou#2",
       "severity": "warning",
-      "category": "generated_data",
-      "entityKey": "WasterGreatsword",
-      "entityName": "Waster Greatsword",
-      "message": "Generated family references still point to unknown weapon Waster Greatsword.",
-      "relatedKeys": [
-        "abyss_mage_materials"
-      ]
+      "category": "repository_hygiene",
+      "entityKey": "Beidou",
+      "message": "Verified character is missing rarity metadata."
     },
     {
-      "id": "material_source:missing_source_rows:AscendedSampleKnight",
+      "id": "repository_hygiene:canonical_database_character:Bennett",
       "severity": "warning",
-      "category": "material_source",
-      "subCategory": "material_source",
-      "plannerImpact": "high",
-      "actionGroup": "material_sources",
-      "recordType": "material",
-      "entityKey": "AscendedSampleKnight",
-      "entityName": "Ascended Sample: Knight",
-      "message": "Planner-facing material Ascended Sample: Knight does not have any material source rows.",
-      "suggestedFix": "Add at least one source row or document why this material is intentionally source-less."
+      "category": "repository_hygiene",
+      "entityKey": "Bennett",
+      "message": "Verified character is missing rarity metadata."
     },
     {
-      "id": "material_source:missing_source_rows:AscendedSampleQueen",
+      "id": "repository_hygiene:canonical_database_character:Candace",
       "severity": "warning",
-      "category": "material_source",
-      "subCategory": "material_source",
-      "plannerImpact": "high",
-      "actionGroup": "material_sources",
-      "recordType": "material",
-      "entityKey": "AscendedSampleQueen",
-      "entityName": "Ascended Sample: Queen",
-      "message": "Planner-facing material Ascended Sample: Queen does not have any material source rows.",
-      "suggestedFix": "Add at least one source row or document why this material is intentionally source-less."
+      "category": "repository_hygiene",
+      "entityKey": "Candace",
+      "message": "Verified character is missing weaponType metadata."
     },
     {
-      "id": "material_source:missing_source_rows:AscendedSampleRook",
+      "id": "repository_hygiene:canonical_database_character:Candace#2",
       "severity": "warning",
-      "category": "material_source",
-      "subCategory": "material_source",
-      "plannerImpact": "high",
-      "actionGroup": "material_sources",
-      "recordType": "material",
-      "entityKey": "AscendedSampleRook",
-      "entityName": "Ascended Sample: Rook",
-      "message": "Planner-facing material Ascended Sample: Rook does not have any material source rows.",
-      "suggestedFix": "Add at least one source row or document why this material is intentionally source-less."
+      "category": "repository_hygiene",
+      "entityKey": "Candace",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Charlotte",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Charlotte",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Charlotte#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Charlotte",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Chasca",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Chasca",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Chasca#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Chasca",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Chevreuse",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Chevreuse",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Chevreuse#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Chevreuse",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Chiori",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Chiori",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Chiori#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Chiori",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Chongyun",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Chongyun",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Chongyun#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Chongyun",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Citlali",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Citlali",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Citlali#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Citlali",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Clorinde",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Clorinde",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Clorinde#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Clorinde",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Collei",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Collei",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Collei#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Collei",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Columbina",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Columbina",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Columbina#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Columbina",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Cyno",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Cyno",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Cyno#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Cyno",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Dahlia",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Dahlia",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Dahlia#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Dahlia",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Dehya",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Dehya",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Dehya#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Dehya",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Diluc",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Diluc",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Diluc#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Diluc",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Diona",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Diona",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Diona#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Diona",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Dori",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Dori",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Dori#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Dori",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Durin",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Durin",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Durin#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Durin",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Emilie",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Emilie",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Emilie#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Emilie",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Escoffier",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Escoffier",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Escoffier#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Escoffier",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Eula",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Eula",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Eula#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Eula",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Faruzan",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Faruzan",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Faruzan#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Faruzan",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Fischl",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Fischl",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Fischl#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Fischl",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Flins",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Flins",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Flins#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Flins",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Freminet",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Freminet",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Freminet#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Freminet",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Furina",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Furina",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Gaming",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Gaming",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Gaming#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Gaming",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Ganyu",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Ganyu",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Ganyu#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Ganyu",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Gorou",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Gorou",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Gorou#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Gorou",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:HuTao",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "HuTao",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:HuTao#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "HuTao",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Iansan",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Iansan",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Iansan#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Iansan",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Ifa",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Ifa",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Ifa#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Ifa",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Illuga",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Illuga",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Illuga#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Illuga",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Ineffa",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Ineffa",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Ineffa#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Ineffa",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Jahoda",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Jahoda",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Jahoda#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Jahoda",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Jean",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Jean",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Jean#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Jean",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Kachina",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Kachina",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Kachina#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Kachina",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:KaedeharaKazuha",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "KaedeharaKazuha",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:KaedeharaKazuha#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "KaedeharaKazuha",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Kaeya",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Kaeya",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Kaeya#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Kaeya",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:KamisatoAyaka",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "KamisatoAyaka",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:KamisatoAyaka#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "KamisatoAyaka",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:KamisatoAyato",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "KamisatoAyato",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:KamisatoAyato#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "KamisatoAyato",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Kaveh",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Kaveh",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Kaveh#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Kaveh",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Keqing",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Keqing",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Keqing#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Keqing",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Kinich",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Kinich",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Kinich#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Kinich",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Kirara",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Kirara",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Kirara#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Kirara",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Klee",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Klee",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Klee#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Klee",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:KujouSara",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "KujouSara",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:KujouSara#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "KujouSara",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:KukiShinobu",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "KukiShinobu",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:KukiShinobu#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "KukiShinobu",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:LanYan",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "LanYan",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:LanYan#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "LanYan",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Lauma",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Lauma",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Lauma#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Lauma",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Layla",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Layla",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Layla#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Layla",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Linnea",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Linnea",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Linnea#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Linnea",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Lisa",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Lisa",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Lisa#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Lisa",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Lynette",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Lynette",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Lynette#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Lynette",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Lyney",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Lyney",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Lyney#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Lyney",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Mavuika",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Mavuika",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Mavuika#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Mavuika",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Mika",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Mika",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Mika#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Mika",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Mona",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Mona",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Mona#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Mona",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Mualani",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Mualani",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Mualani#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Mualani",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Nahida",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Nahida",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Nahida#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Nahida",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Navia",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Navia",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Navia#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Navia",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Nefer",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Nefer",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Nefer#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Nefer",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Neuvillette",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Neuvillette",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Neuvillette#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Neuvillette",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Nilou",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Nilou",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Nilou#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Nilou",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Ningguang",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Ningguang",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Ningguang#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Ningguang",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Noelle",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Noelle",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Noelle#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Noelle",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Ororon",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Ororon",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Ororon#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Ororon",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Qiqi",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Qiqi",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Qiqi#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Qiqi",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:RaidenShogun",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "RaidenShogun",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:RaidenShogun#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "RaidenShogun",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Razor",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Razor",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Razor#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Razor",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Rosaria",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Rosaria",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Rosaria#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Rosaria",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:SangonomiyaKokomi",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "SangonomiyaKokomi",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:SangonomiyaKokomi#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "SangonomiyaKokomi",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Sayu",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Sayu",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Sayu#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Sayu",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Sethos",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Sethos",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Sethos#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Sethos",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Shenhe",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Shenhe",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Shenhe#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Shenhe",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:ShikanoinHeizou",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "ShikanoinHeizou",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:ShikanoinHeizou#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "ShikanoinHeizou",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Sigewinne",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Sigewinne",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Sigewinne#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Sigewinne",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Skirk",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Skirk",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Skirk#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Skirk",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Sucrose",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Sucrose",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Sucrose#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Sucrose",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Tartaglia",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Tartaglia",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Tartaglia#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Tartaglia",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Thoma",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Thoma",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Thoma#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Thoma",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Tighnari",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Tighnari",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Tighnari#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Tighnari",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Varesa",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Varesa",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Varesa#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Varesa",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Varka",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Varka",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Varka#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Varka",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Venti",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Venti",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Venti#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Venti",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Wanderer",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Wanderer",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Wanderer#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Wanderer",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Wriothesley",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Wriothesley",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Wriothesley#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Wriothesley",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Xiangling",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Xiangling",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Xiangling#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Xiangling",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Xianyun",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Xianyun",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Xianyun#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Xianyun",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Xiao",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Xiao",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Xiao#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Xiao",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Xilonen",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Xilonen",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Xilonen#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Xilonen",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Xingqiu",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Xingqiu",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Xingqiu#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Xingqiu",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Xinyan",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Xinyan",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Xinyan#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Xinyan",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:YaeMiko",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "YaeMiko",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:YaeMiko#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "YaeMiko",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Yanfei",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Yanfei",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Yanfei#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Yanfei",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Yaoyao",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Yaoyao",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Yaoyao#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Yaoyao",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Yelan",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Yelan",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Yelan#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Yelan",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Yoimiya",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Yoimiya",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Yoimiya#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Yoimiya",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:YumemizukiMizuki",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "YumemizukiMizuki",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:YumemizukiMizuki#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "YumemizukiMizuki",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:YunJin",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "YunJin",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:YunJin#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "YunJin",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Zhongli",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Zhongli",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Zhongli#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Zhongli",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Zibai",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Zibai",
+      "message": "Verified character is missing weaponType metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_character:Zibai#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Zibai",
+      "message": "Verified character is missing rarity metadata."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:Prized_Isshin_Blade",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Prized Isshin Blade",
+      "message": "Duplicate weapon display name used by PrizedIsshinBlade_i_n11419, PrizedIsshinBlade_i_n11420, PrizedIsshinBlade_i_n11421."
     },
     {
       "id": "repository_hygiene:dist_present:dist",
@@ -3559,97 +4996,6 @@
       "entityKey": "tsconfig.tsbuildinfo",
       "message": "tsconfig.tsbuildinfo is present in the repository working tree.",
       "suggestedFix": "Remove transient TypeScript build info files before preparing repository patches."
-    },
-    {
-      "id": "weapon_profile:missing_profile:AmberBead",
-      "severity": "warning",
-      "category": "weapon_profile",
-      "subCategory": "manual_review",
-      "plannerImpact": "low",
-      "actionGroup": "manual_review",
-      "recordType": "weapon",
-      "entityKey": "AmberBead",
-      "entityName": "Amber Bead",
-      "message": "Goal-trackable weapon Amber Bead does not have a planner-ready weapon profile.",
-      "suggestedFix": "Keep this weapon out of normal planning until a verified profile is added."
-    },
-    {
-      "id": "weapon_profile:missing_profile:EbonyBow",
-      "severity": "warning",
-      "category": "weapon_profile",
-      "subCategory": "manual_review",
-      "plannerImpact": "low",
-      "actionGroup": "manual_review",
-      "recordType": "weapon",
-      "entityKey": "EbonyBow",
-      "entityName": "Ebony Bow",
-      "message": "Goal-trackable weapon Ebony Bow does not have a planner-ready weapon profile.",
-      "suggestedFix": "Keep this weapon out of normal planning until a verified profile is added."
-    },
-    {
-      "id": "weapon_profile:missing_profile:PrizedIsshinBlade_i_n11419",
-      "severity": "warning",
-      "category": "weapon_profile",
-      "subCategory": "manual_review",
-      "plannerImpact": "low",
-      "actionGroup": "manual_review",
-      "recordType": "weapon",
-      "entityKey": "PrizedIsshinBlade_i_n11419",
-      "entityName": "Prized Isshin Blade",
-      "message": "Goal-trackable weapon Prized Isshin Blade does not have a planner-ready weapon profile.",
-      "suggestedFix": "Keep this weapon out of normal planning until a verified profile is added."
-    },
-    {
-      "id": "weapon_profile:missing_profile:PrizedIsshinBlade_i_n11420",
-      "severity": "warning",
-      "category": "weapon_profile",
-      "subCategory": "manual_review",
-      "plannerImpact": "low",
-      "actionGroup": "manual_review",
-      "recordType": "weapon",
-      "entityKey": "PrizedIsshinBlade_i_n11420",
-      "entityName": "Prized Isshin Blade",
-      "message": "Goal-trackable weapon Prized Isshin Blade does not have a planner-ready weapon profile.",
-      "suggestedFix": "Keep this weapon out of normal planning until a verified profile is added."
-    },
-    {
-      "id": "weapon_profile:missing_profile:PrizedIsshinBlade_i_n11421",
-      "severity": "warning",
-      "category": "weapon_profile",
-      "subCategory": "manual_review",
-      "plannerImpact": "low",
-      "actionGroup": "manual_review",
-      "recordType": "weapon",
-      "entityKey": "PrizedIsshinBlade_i_n11421",
-      "entityName": "Prized Isshin Blade",
-      "message": "Goal-trackable weapon Prized Isshin Blade does not have a planner-ready weapon profile.",
-      "suggestedFix": "Keep this weapon out of normal planning until a verified profile is added."
-    },
-    {
-      "id": "weapon_profile:missing_profile:Quartz",
-      "severity": "warning",
-      "category": "weapon_profile",
-      "subCategory": "manual_review",
-      "plannerImpact": "low",
-      "actionGroup": "manual_review",
-      "recordType": "weapon",
-      "entityKey": "Quartz",
-      "entityName": "Quartz",
-      "message": "Goal-trackable weapon Quartz does not have a planner-ready weapon profile.",
-      "suggestedFix": "Keep this weapon out of normal planning until a verified profile is added."
-    },
-    {
-      "id": "weapon_profile:missing_profile:SwordOfNarzissenkreuz_i_n11429",
-      "severity": "warning",
-      "category": "weapon_profile",
-      "subCategory": "manual_review",
-      "plannerImpact": "low",
-      "actionGroup": "manual_review",
-      "recordType": "weapon",
-      "entityKey": "SwordOfNarzissenkreuz_i_n11429",
-      "entityName": "Sword of Narzissenkreuz",
-      "message": "Goal-trackable weapon Sword of Narzissenkreuz does not have a planner-ready weapon profile.",
-      "suggestedFix": "Keep this weapon out of normal planning until a verified profile is added."
     },
     {
       "id": "character_profile:ignored_non_playable_character:Manekin",
@@ -3676,84 +5022,6 @@
       "message": "Character Manekina is intentionally ignored for progression planning."
     },
     {
-      "id": "character_profile:invalid_rarity:Lohen",
-      "severity": "info",
-      "category": "character_profile",
-      "subCategory": "character_catalog_metadata",
-      "plannerImpact": "low",
-      "actionGroup": "character_catalog_metadata",
-      "recordType": "character",
-      "entityKey": "Lohen",
-      "entityName": "Lohen",
-      "message": "Character Lohen is missing valid catalog rarity metadata.",
-      "suggestedFix": "Add verified catalog metadata for rarity instead of blocking the material profile."
-    },
-    {
-      "id": "character_profile:invalid_rarity:Nicole",
-      "severity": "info",
-      "category": "character_profile",
-      "subCategory": "character_catalog_metadata",
-      "plannerImpact": "low",
-      "actionGroup": "character_catalog_metadata",
-      "recordType": "character",
-      "entityKey": "Nicole",
-      "entityName": "Nicole",
-      "message": "Character Nicole is missing valid catalog rarity metadata.",
-      "suggestedFix": "Add verified catalog metadata for rarity instead of blocking the material profile."
-    },
-    {
-      "id": "character_profile:invalid_rarity:Prune",
-      "severity": "info",
-      "category": "character_profile",
-      "subCategory": "character_catalog_metadata",
-      "plannerImpact": "low",
-      "actionGroup": "character_catalog_metadata",
-      "recordType": "character",
-      "entityKey": "Prune",
-      "entityName": "Prune",
-      "message": "Character Prune is missing valid catalog rarity metadata.",
-      "suggestedFix": "Add verified catalog metadata for rarity instead of blocking the material profile."
-    },
-    {
-      "id": "character_profile:invalid_weapon_type:Lohen",
-      "severity": "info",
-      "category": "character_profile",
-      "subCategory": "character_catalog_metadata",
-      "plannerImpact": "low",
-      "actionGroup": "character_catalog_metadata",
-      "recordType": "character",
-      "entityKey": "Lohen",
-      "entityName": "Lohen",
-      "message": "Character Lohen is missing valid catalog weapon-type metadata.",
-      "suggestedFix": "Add verified catalog metadata for the character weapon type."
-    },
-    {
-      "id": "character_profile:invalid_weapon_type:Nicole",
-      "severity": "info",
-      "category": "character_profile",
-      "subCategory": "character_catalog_metadata",
-      "plannerImpact": "low",
-      "actionGroup": "character_catalog_metadata",
-      "recordType": "character",
-      "entityKey": "Nicole",
-      "entityName": "Nicole",
-      "message": "Character Nicole is missing valid catalog weapon-type metadata.",
-      "suggestedFix": "Add verified catalog metadata for the character weapon type."
-    },
-    {
-      "id": "character_profile:invalid_weapon_type:Prune",
-      "severity": "info",
-      "category": "character_profile",
-      "subCategory": "character_catalog_metadata",
-      "plannerImpact": "low",
-      "actionGroup": "character_catalog_metadata",
-      "recordType": "character",
-      "entityKey": "Prune",
-      "entityName": "Prune",
-      "message": "Character Prune is missing valid catalog weapon-type metadata.",
-      "suggestedFix": "Add verified catalog metadata for the character weapon type."
-    },
-    {
       "id": "character_profile:missing_weekly_boss_material:Nicole",
       "severity": "info",
       "category": "character_profile",
@@ -3763,25 +5031,19 @@
       "relatedKeys": []
     },
     {
-      "id": "generated_data:character_source_version:generatedCharacters",
+      "id": "generated_data:legacy_generated_bundle_counts:src/data/runtime/generated",
       "severity": "info",
       "category": "generated_data",
-      "entityKey": "generatedCharacters",
-      "message": "Generated character material bundle source version: Live updated to 6.5.0. Beta updated to 6.6(6.5.52)."
+      "entityKey": "src/data/runtime/generated",
+      "message": "Legacy generated bundles contain 0 beta materials, 22 unresolved character material references, and 7 manual-review weapon profiles."
     },
     {
-      "id": "generated_data:generated_bundle_counts:generatedSummary",
+      "id": "generated_data:legacy_generated_bundle_versions:src/data/runtime/generated",
       "severity": "info",
       "category": "generated_data",
-      "entityKey": "generatedSummary",
-      "message": "Generated runtime bundles include 0 beta materials, 22 unresolved character material references, and 7 manual-review weapon profiles."
-    },
-    {
-      "id": "generated_data:weapon_source_version:generatedWeapons",
-      "severity": "info",
-      "category": "generated_data",
-      "entityKey": "generatedWeapons",
-      "message": "Generated weapon goal profile bundle version: 1."
+      "entityKey": "src/data/runtime/generated",
+      "message": "Legacy generated bundles remain available for maintenance only (character source Live updated to 6.5.0. Beta updated to 6.6(6.5.52), weapon source 1).",
+      "suggestedFix": "Do not add new runtime consumers of generated bundles. Migrate any needed data into src/data/database instead."
     },
     {
       "id": "legacy_compatibility:legacy_character_progressions_loaded:legacyCharacterProgressions",

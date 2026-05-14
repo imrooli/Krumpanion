@@ -4,7 +4,12 @@ import { resolveCraftingPlan } from "../crafting/resolveCraftingPlan";
 import { validateGoalStateAgainstStaticData } from "../goals/goalState";
 import { getWeaponGoalId, resolveWeaponGoalCurrentState } from "../goals/goalState";
 import { buildFarmingEstimates, normalizePlannerEstimationSettings } from "./buildFarmingEstimates";
-import { buildMaterialRows } from "./compareInventory";
+import {
+  buildDeterministicRequirements,
+  buildInventoryCoverage,
+  buildMaterialDeficits,
+  buildMaterialRows,
+} from "./compareInventory";
 import { expandGoals } from "./expandGoals";
 import { buildSourceAssignments } from "./classifySources";
 import {
@@ -174,6 +179,11 @@ export function buildPlannerOutput(input: PlannerInput) {
   };
 
   const goalExpansion = expandGoals(normalizedInput);
+  const deterministicRequirementsStage = buildDeterministicRequirements(
+    goalExpansion.goalResolutions,
+    normalizedInput.staticData,
+  );
+  const exactInventoryCoverage = buildInventoryCoverage(normalizedInput, deterministicRequirementsStage.requirements);
   const exactInventoryComparison = buildMaterialRows(normalizedInput, goalExpansion.goalResolutions);
   const artifactFarmGoals = normalizedInput.goals.plannerSettings.includeArtifactGoals
     ? buildArtifactPlans(normalizedInput.goals.artifactGoals, normalizedInput.staticData)
@@ -236,6 +246,17 @@ export function buildPlannerOutput(input: PlannerInput) {
     craftingPlan,
     extraNeededByMaterial: craftingPlan.totalCraftingMora > 0 ? { Mora: craftingPlan.totalCraftingMora } : undefined,
   });
+  const effectiveInventoryCoverage = buildInventoryCoverage(
+    normalizedInput,
+    deterministicRequirementsStage.requirements,
+    craftingPlan.totalCraftingMora > 0 ? { Mora: craftingPlan.totalCraftingMora } : undefined,
+  );
+  const materialDeficitStage = buildMaterialDeficits({
+    input: normalizedInput,
+    requirements: deterministicRequirementsStage.requirements,
+    inventoryCoverage: effectiveInventoryCoverage,
+    craftingPlan,
+  });
 
   const weaponExpSummary = buildWeaponExpSummary(normalizedInput);
   const materialRecommendations = buildMaterialRecommendations(normalizedInput, farmingEstimates);
@@ -245,7 +266,12 @@ export function buildPlannerOutput(input: PlannerInput) {
     weaponExpSummary,
     Object.values(normalizedInput.goals.weaponGoals)
       .filter((goal) => goal.enabled)
-      .map((goal) => getWeaponGoalId(goal, goal.weaponKey)),
+      .map((goal) => ({
+        key: getWeaponGoalId(goal, goal.weaponKey),
+        label: normalizedInput.staticData.weapons[goal.weaponKey]?.displayName
+          ? `${normalizedInput.staticData.weapons[goal.weaponKey]?.displayName} weapon goal`
+          : goal.weaponKey,
+      })),
   );
   const recommendations = sortRecommendations([
     ...materialRecommendations,
@@ -279,7 +305,7 @@ export function buildPlannerOutput(input: PlannerInput) {
 
   const warnings = buildPlannerWarnings(
     [...goalValidation.warnings, ...goalExpansion.warnings],
-    [...exactInventoryComparison.warnings, ...calculatorInventoryComparison.warnings],
+    [...exactInventoryComparison.warnings, ...calculatorInventoryComparison.warnings, ...materialDeficitStage.warnings],
     estimateWarnings,
     craftingPlan.warnings,
   );
@@ -287,9 +313,17 @@ export function buildPlannerOutput(input: PlannerInput) {
     plannerGoals: goalCatalog.plannerGoals,
     plannerGoalGroups: goalCatalog.plannerGoalGroups,
     goalResolutions: [...enrichedGoals.byCharacter, ...enrichedGoals.byWeapon],
+    deterministicRequirements: deterministicRequirementsStage.requirements,
+    inventoryCoverage: exactInventoryCoverage,
+    materialDeficits: materialDeficitStage.deficits,
     exactRequirementsByMaterial: exactInventoryComparison.rows,
     totalMissingByMaterial: calculatorInventoryComparison.rows,
     farmingEstimates,
+    plannerReport: {
+      summary: resinSummary,
+      sections: reportSections.recommendationSections,
+      warnings,
+    },
     byCharacter: enrichedGoals.byCharacter,
     byWeapon: enrichedGoals.byWeapon,
     artifactFarmGoals,

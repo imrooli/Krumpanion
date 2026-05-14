@@ -33,6 +33,7 @@ function estimate(overrides: Partial<FarmingEstimateDetail>): FarmingEstimateDet
   return {
     estimateKey: "estimate",
     sourceKey: "source",
+    sourceDisplayName: "Source",
     materialKey: "Mora",
     materialName: "Mora",
     missingAmount: 1,
@@ -44,7 +45,11 @@ function estimate(overrides: Partial<FarmingEstimateDetail>): FarmingEstimateDet
     relatedMaterialDisplayNames: { Mora: "Mora" },
     deterministicRequirementsByMaterial: { Mora: 1 },
     remainingDeficitsByMaterial: { Mora: 1 },
+    affectedMaterialKeys: ["Mora"],
+    deficitsCovered: { Mora: 1 },
+    resinCostPerRun: 20,
     estimatedRuns: 1,
+    actionableRuns: 1,
     estimatedResin: 20,
     estimatedDaysNaturalResin: 20 / 180,
     estimatedWeeksNaturalResin: 20 / 1260,
@@ -146,6 +151,61 @@ describe("buildPlannerReport helpers", () => {
     );
   });
 
+  it("maps related goals to readable labels instead of exposing raw goal ids", () => {
+    const input = buildPlannerInput({
+      goals: {
+        ...DEFAULT_GOALS,
+        characterGoals: {},
+        weaponGoals: {
+          "prefarm:CoolSteel": {
+            id: "prefarm:CoolSteel",
+            weaponKey: "CoolSteel",
+            enabled: true,
+            priority: 3,
+            planningMode: "prefarm",
+            targetLevel: 40,
+            targetAscension: 1,
+          },
+        },
+        artifactGoals: [],
+      },
+    });
+
+    const rows = buildMaterialRecommendations(input, [
+      estimate({
+        estimateKey: "weapon-domain",
+        sourceKey: "Decarabian",
+        sourceDisplayName: "Cecilia Garden",
+        sourceType: "domain_of_forgery",
+        sourceName: "Cecilia Garden",
+        materialKey: "TileOfDecarabiansTower",
+        materialName: "Tile of Decarabian's Tower",
+        missingAmount: 6,
+        deterministicRequirement: 6,
+        relatedGoalKeys: ["prefarm:CoolSteel"],
+        relatedMaterialKeys: ["TileOfDecarabiansTower"],
+        relatedMaterialDisplayNames: {
+          TileOfDecarabiansTower: "Tile of Decarabian's Tower",
+        },
+        deterministicRequirementsByMaterial: {
+          TileOfDecarabiansTower: 6,
+        },
+        remainingDeficitsByMaterial: {
+          TileOfDecarabiansTower: 6,
+        },
+        affectedMaterialKeys: ["TileOfDecarabiansTower"],
+        deficitsCovered: { TileOfDecarabiansTower: 6 },
+        resinCostPerRun: 20,
+        estimatedRuns: 3,
+        actionableRuns: 3,
+        estimatedResin: 60,
+      }),
+    ]);
+
+    expect(rows[0]?.relatedGoalLabels).toEqual(["Cool Steel weapon goal"]);
+    expect(rows[0]?.relatedGoalLabels).not.toContain("prefarm:CoolSteel");
+  });
+
   it("reports weekly boss resin using the exact discounted/full-cost schedule instead of an averaged per-run cost", () => {
     const rows = buildMaterialRecommendations(buildPlannerInput(), [
       estimate({
@@ -200,7 +260,7 @@ describe("buildPlannerReport helpers", () => {
       totalEstimatedResin: null,
       resinLabel: "No resin",
     });
-    expect(rows[0]?.reason).toContain("No resin cost");
+    expect(rows[0]?.reason).toContain("No resin");
   });
 
   it("keeps crafting and grouped weapon EXP forging out of resin-gated rows", () => {
@@ -249,7 +309,7 @@ describe("buildPlannerReport helpers", () => {
         oreRespawnDays: 3,
         notes: [],
       },
-      ["weapon-1"],
+      [{ key: "weapon-1", label: "Test Weapon goal" }],
     );
 
     expect(craftingRows[0]).toMatchObject({
@@ -260,6 +320,7 @@ describe("buildPlannerReport helpers", () => {
       actionGroup: "time_gated_non_resin",
       resinLabel: "No resin",
       totalEstimatedResin: null,
+      relatedGoalLabels: ["Test Weapon goal"],
     });
   });
 

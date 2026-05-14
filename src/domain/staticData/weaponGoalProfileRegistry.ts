@@ -1,3 +1,10 @@
+/**
+ * Deprecated maintenance-only helper.
+ *
+ * The canonical runtime source of truth for weapons lives in src/data/database.
+ * This generated registry remains available for migration checks and legacy
+ * comparison tests only.
+ */
 import weaponGoalProfilesData from "../../data/runtime/generated/weaponGoalProfiles.generated.json";
 import type { CharacterWeaponType, MaterialStatus, WeaponCatalogEntry, WeaponMaterialProfile, WeaponRarity } from "./types";
 

@@ -46,6 +46,11 @@ export default [
         document: "readonly",
         crypto: "readonly",
         process: "readonly",
+        structuredClone: "readonly",
+        window: "readonly",
+        navigator: "readonly",
+        setInterval: "readonly",
+        clearInterval: "readonly",
       },
       parserOptions: {
         project: "./tsconfig.json",

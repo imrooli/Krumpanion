@@ -1,8 +1,3 @@
-import generatedBetaMaterials from "../../data/runtime/generated/betaMaterials.generated.json";
-import generatedCharacterProfiles from "../../data/runtime/generated/characterMaterialProfiles.generated.json";
-import generatedCharacters from "../../data/runtime/generated/generatedCharacters.generated.json";
-import generatedUnresolvedCharacterMaterialReferences from "../../data/runtime/generated/unresolvedCharacterMaterialReferences.generated.json";
-import generatedWeaponGoalProfiles from "../../data/runtime/generated/weaponGoalProfiles.generated.json";
 import { isLegacyCompatibilityMaterialKey, resolveInventoryMaterialKey } from "./materialKeyMapping";
 import { resolveEffectiveCharacterMetadata } from "./resolveEffectiveCharacterMetadata";
 import { isGoalTrackableWeaponRecord, isIgnoredCharacterKey, isPlayableGoalCharacter } from "./targetability";
@@ -25,6 +20,10 @@ import type {
   WeaponGoalTrackableRarity,
   WeaponMaterialProfile,
 } from "./types";
+
+// Runtime/static-data validation must speak about canonical-backed runtime state.
+// Legacy generated bundle comparisons belong in maintenance tooling, not in the
+// normal app loader or database UI contract.
 
 export type StaticDataIssueSeverity =
   | "error"
@@ -181,29 +180,7 @@ const PLANNER_FACING_CATEGORIES = new Set<MaterialCategory>([
   "gemstone",
 ]);
 
-const GENERATED_CHARACTER_SOURCE_VERSION = (generatedCharacterProfiles as { sourceVersion: string }).sourceVersion;
-const GENERATED_WEAPON_SOURCE_VERSION = String((generatedWeaponGoalProfiles as { version?: number }).version ?? "unknown");
-const GENERATED_BETA_MATERIAL_COUNT = Object.keys((generatedBetaMaterials as { materials: Record<string, unknown> }).materials ?? {}).length;
-const GENERATED_MANUAL_REVIEW_WEAPON_PROFILE_COUNT = Object.keys(
-  (generatedWeaponGoalProfiles as { manualReviewProfiles?: Record<string, unknown> }).manualReviewProfiles ?? {},
-).length;
-const GENERATED_BETA_CHARACTER_KEYS = new Set(
-  Object.keys((generatedCharacters as { characters: Record<string, CharacterCatalogEntry> }).characters ?? {}),
-);
-const GENERATED_MANUAL_REVIEW_WEAPON_KEYS = new Set(
-  Object.keys((generatedWeaponGoalProfiles as { manualReviewProfiles?: Record<string, unknown> }).manualReviewProfiles ?? {}),
-);
-const GENERATED_UNRESOLVED_REFERENCES = (generatedUnresolvedCharacterMaterialReferences as {
-  unresolvedReferences?: Array<{
-    characterKey: string;
-    displayName: string;
-    materialSlot: string;
-    rawName: string;
-    generatedKey: string;
-    reason: string;
-    status: string;
-  }>;
-}).unresolvedReferences ?? [];
+const LEGACY_GENERATED_SOURCE_VERSION = "maintenance-only";
 
 interface CompletenessCounters {
   completeCharacterProfileCount: number;
@@ -576,11 +553,10 @@ function validateCharacterProfiles(staticData: StaticGameData, issues: StaticDat
     const profile = staticData.characterMaterialProfiles[characterKey];
     if (!profile) {
       incompleteCharacterProfileCount += 1;
-      const severity = GENERATED_BETA_CHARACTER_KEYS.has(characterKey) ? "warning" : "error";
       pushIssue(
         issues,
         makeIssue(
-          severity,
+          "error",
           "character_profile",
           "missing_profile",
           `Character ${effectiveCharacter.displayName || characterKey} does not have a planner-ready material profile.`,
@@ -591,7 +567,7 @@ function validateCharacterProfiles(staticData: StaticGameData, issues: StaticDat
             plannerImpact: "high",
             actionGroup: "character_material_profile",
             recordType: "character",
-            suggestedFix: "Add or regenerate a character material profile before relying on this character in planning.",
+            suggestedFix: "Add or update the canonical character material profile before relying on this character in planning.",
           },
         ),
       );
@@ -622,7 +598,7 @@ function validateCharacterProfiles(staticData: StaticGameData, issues: StaticDat
       pushIssue(
         issues,
         makeIssue(
-          GENERATED_BETA_CHARACTER_KEYS.has(characterKey) ? "info" : "warning",
+          "warning",
           "character_profile",
           "invalid_weapon_type",
           `Character ${effectiveCharacter.displayName || characterKey} is missing valid catalog weapon-type metadata.`,
@@ -643,7 +619,7 @@ function validateCharacterProfiles(staticData: StaticGameData, issues: StaticDat
       pushIssue(
         issues,
         makeIssue(
-          GENERATED_BETA_CHARACTER_KEYS.has(characterKey) ? "info" : "warning",
+          "warning",
           "character_profile",
           "invalid_rarity",
           `Character ${effectiveCharacter.displayName || characterKey} is missing valid catalog rarity metadata.`,
@@ -665,7 +641,7 @@ function validateCharacterProfiles(staticData: StaticGameData, issues: StaticDat
       pushIssue(
         issues,
         makeIssue(
-          GENERATED_BETA_CHARACTER_KEYS.has(characterKey) ? "info" : "warning",
+          "warning",
           "character_profile",
           "invalid_element",
           `Character ${effectiveCharacter.displayName || characterKey} is missing valid catalog element metadata.`,
@@ -817,13 +793,13 @@ function validateCharacterProfiles(staticData: StaticGameData, issues: StaticDat
         issues,
         makeIssue(
           "warning",
-          "generated_data",
+          "character_profile",
           "profile_status_lags_resolution",
           `Character profile ${character.displayName || characterKey} looks complete but is still marked ${fields.status}.`,
           {
             entityKey: characterKey,
             entityName: character.displayName,
-            suggestedFix: "Regenerate or review the generated character material profile status.",
+            suggestedFix: "Review the canonical character profile status and promote it only when the record is planner-safe.",
           },
         ),
       );
@@ -855,7 +831,6 @@ function validateWeaponProfiles(staticData: StaticGameData, issues: StaticDataIs
     }
 
     const profile = staticData.weaponMaterialProfiles[weaponKey];
-    const isManualReviewQueueItem = GENERATED_MANUAL_REVIEW_WEAPON_KEYS.has(weaponKey);
     if ((rarity === 1 || rarity === 2) && profile?.goalTrackable) {
       pushIssue(
         issues,
@@ -882,19 +857,17 @@ function validateWeaponProfiles(staticData: StaticGameData, issues: StaticDataIs
       pushIssue(
         issues,
         makeIssue(
-          isManualReviewQueueItem ? "warning" : "error",
+          "error",
           "weapon_profile",
           "missing_profile",
           `Goal-trackable weapon ${weapon.displayName || weaponKey} does not have a planner-ready weapon profile.`,
           {
             entityKey: weaponKey,
             entityName: weapon.displayName,
-            suggestedFix: isManualReviewQueueItem
-              ? "Keep this weapon out of normal planning until a verified profile is added."
-              : "Add a weapon material profile with family-driven ascension and enemy-drop links.",
-            subCategory: isManualReviewQueueItem ? "manual_review" : "weapon_profile",
-            plannerImpact: isManualReviewQueueItem ? "low" : "high",
-            actionGroup: isManualReviewQueueItem ? "manual_review" : "weapon_profile",
+            suggestedFix: "Add a canonical weapon material profile with family-driven ascension and enemy-drop links.",
+            subCategory: "weapon_profile",
+            plannerImpact: "high",
+            actionGroup: "weapon_profile",
             recordType: "weapon",
           },
         ),
@@ -902,7 +875,7 @@ function validateWeaponProfiles(staticData: StaticGameData, issues: StaticDataIs
       continue;
     }
 
-    if (!isGoalTrackableWeaponRecord(staticData, weaponKey) && !isManualReviewQueueItem && !profile.goalTrackable) {
+    if (!isGoalTrackableWeaponRecord(staticData, weaponKey) && !profile.goalTrackable) {
       continue;
     }
 
@@ -1033,12 +1006,13 @@ function validateWeaponProfiles(staticData: StaticGameData, issues: StaticDataIs
         issues,
         makeIssue(
           "warning",
-          "generated_data",
+          "weapon_profile",
           "weapon_profile_status_lags_resolution",
           `Weapon profile ${weapon.displayName || weaponKey} looks complete but is still marked ${fields.status}.`,
           {
             entityKey: weaponKey,
             entityName: weapon.displayName,
+            suggestedFix: "Review the canonical weapon profile status and promote it only when the family mappings are verified.",
           },
         ),
       );
@@ -1729,51 +1703,20 @@ function validateProgression(staticData: StaticGameData, issues: StaticDataIssue
   validateWeaponExpSourceModel(staticData, issues);
 }
 
-function validateGeneratedData(staticData: StaticGameData, issues: StaticDataIssue[]): void {
-  pushIssue(
-    issues,
-    makeIssue(
-      "info",
-      "generated_data",
-      "character_source_version",
-      `Generated character material bundle source version: ${GENERATED_CHARACTER_SOURCE_VERSION}.`,
-      { entityKey: "generatedCharacters" },
-    ),
-  );
-  pushIssue(
-    issues,
-    makeIssue(
-      "info",
-      "generated_data",
-      "weapon_source_version",
-      `Generated weapon goal profile bundle version: ${GENERATED_WEAPON_SOURCE_VERSION}.`,
-      { entityKey: "generatedWeapons" },
-    ),
-  );
-  pushIssue(
-    issues,
-    makeIssue(
-      "info",
-      "generated_data",
-      "generated_bundle_counts",
-      `Generated runtime bundles include ${GENERATED_BETA_MATERIAL_COUNT} beta materials, ${GENERATED_UNRESOLVED_REFERENCES.length} unresolved character material references, and ${GENERATED_MANUAL_REVIEW_WEAPON_PROFILE_COUNT} manual-review weapon profiles.`,
-      { entityKey: "generatedSummary" },
-    ),
-  );
-
+function validateUnresolvedReferences(staticData: StaticGameData, issues: StaticDataIssue[]): void {
   for (const unresolved of staticData.unresolvedCharacterMaterialReferences) {
     if (isTravelerSharedKey(unresolved.characterKey)) {
       pushIssue(
         issues,
         makeIssue(
           "info",
-          "generated_data",
-          "traveler_generated_fallback_row",
-          "Generated Traveler fallback rows remain available for reference only; Traveler validation is driven by the dedicated Traveler registry.",
+          "character_profile",
+          "traveler_special_case_reference",
+          "Traveler shared progression keeps special-case reference rows for diagnostics only.",
           {
             entityKey: unresolved.characterKey,
             entityName: unresolved.displayName,
-            subCategory: "generated_data",
+            subCategory: "traveler_special_case",
             plannerImpact: "none",
             actionGroup: "manual_review",
             recordType: "character",
@@ -1786,7 +1729,7 @@ function validateGeneratedData(staticData: StaticGameData, issues: StaticDataIss
       issues,
       makeIssue(
         unresolved.status === "needs_manual_review" ? "info" : "warning",
-        "generated_data",
+        "character_profile",
         "unresolved_character_material_reference",
         `${unresolved.displayName} still has an unresolved ${unresolved.materialSlot} reference (${unresolved.rawName || "empty"}).`,
         {
@@ -1799,37 +1742,14 @@ function validateGeneratedData(staticData: StaticGameData, issues: StaticDataIss
     );
   }
 
-  for (const unresolved of GENERATED_UNRESOLVED_REFERENCES) {
-    if (isTravelerSharedKey(unresolved.characterKey)) {
-      continue;
-    }
-    if (unresolved.generatedKey && staticData.materials[unresolved.generatedKey]) {
-      pushIssue(
-        issues,
-        makeIssue(
-          "warning",
-          "generated_data",
-          "unresolved_reference_now_resolves",
-          `${unresolved.displayName} still has an unresolved generated reference for ${unresolved.generatedKey}, but that key now exists in the canonical material registry.`,
-          {
-            entityKey: `${unresolved.characterKey}:${unresolved.materialSlot}`,
-            entityName: unresolved.displayName,
-            relatedKeys: [unresolved.generatedKey],
-            suggestedFix: "Regenerate the character material bundle so this now-canonical key can be adopted.",
-          },
-        ),
-      );
-    }
-  }
-
   for (const unresolved of staticData.unresolvedCharacterReferences) {
     pushIssue(
       issues,
       makeIssue(
         "warning",
-        "generated_data",
+        "family",
         "unresolved_character_reference",
-        `Generated family references still point to unknown character ${unresolved.displayName}.`,
+        `Derived family references still point to unknown character ${unresolved.displayName}.`,
         {
           entityKey: unresolved.generatedKey,
           entityName: unresolved.displayName,
@@ -1843,10 +1763,10 @@ function validateGeneratedData(staticData: StaticGameData, issues: StaticDataIss
     pushIssue(
       issues,
       makeIssue(
-        GENERATED_MANUAL_REVIEW_WEAPON_KEYS.has(unresolved.generatedKey) ? "info" : "warning",
-        "generated_data",
+        "warning",
+        "family",
         "unresolved_weapon_reference",
-        `Generated family references still point to unknown weapon ${unresolved.weaponName}.`,
+        `Derived family references still point to unknown weapon ${unresolved.weaponName}.`,
         {
           entityKey: unresolved.generatedKey,
           entityName: unresolved.weaponName,
@@ -1936,10 +1856,10 @@ export function buildStaticDataHealthSummary(
     unresolvedCharacterReferenceCount: staticData.unresolvedCharacterReferences.length,
     unresolvedWeaponReferenceCount: staticData.unresolvedWeaponReferences.length,
     unresolvedCharacterMaterialReferenceCount: staticData.unresolvedCharacterMaterialReferences.length,
-    generatedBetaMaterialCount: GENERATED_BETA_MATERIAL_COUNT,
-    generatedManualReviewWeaponProfileCount: GENERATED_MANUAL_REVIEW_WEAPON_PROFILE_COUNT,
-    generatedCharacterSourceVersion: GENERATED_CHARACTER_SOURCE_VERSION,
-    generatedWeaponSourceVersion: GENERATED_WEAPON_SOURCE_VERSION,
+    generatedBetaMaterialCount: 0,
+    generatedManualReviewWeaponProfileCount: 0,
+    generatedCharacterSourceVersion: LEGACY_GENERATED_SOURCE_VERSION,
+    generatedWeaponSourceVersion: LEGACY_GENERATED_SOURCE_VERSION,
   };
 }
 
@@ -1974,8 +1894,8 @@ export function formatStaticDataHealthMarkdown(report: StaticDataHealthReport): 
   const prioritizedFixes = [
     {
       id: "resolve_character_profile_gaps",
-      label: "Resolve character profile gaps and generated unresolved references that are already canonical.",
-      active: report.issues.some((issue) => issue.category === "character_profile" || issue.id.includes("unresolved_reference_now_resolves")),
+      label: "Resolve canonical character profile gaps and unresolved material references.",
+      active: report.issues.some((issue) => issue.category === "character_profile"),
     },
     {
       id: "resolve_weapon_profile_gaps",
@@ -2031,11 +1951,12 @@ export function formatStaticDataHealthMarkdown(report: StaticDataHealthReport): 
     "",
     "## Summary",
     `- Characters: catalog ${report.summary.characterCount}, profiles ${report.summary.characterProfileCount}, complete ${report.summary.completeCharacterProfileCount}, incomplete ${report.summary.incompleteCharacterProfileCount}`,
-    `- Weapons: catalog ${report.summary.weaponCount}, profiles ${report.summary.weaponProfileCount}, complete ${report.summary.completeWeaponProfileCount}, incomplete ${report.summary.incompleteWeaponProfileCount}, manual review ${report.summary.generatedManualReviewWeaponProfileCount}`,
+    `- Weapons: catalog ${report.summary.weaponCount}, profiles ${report.summary.weaponProfileCount}, complete ${report.summary.completeWeaponProfileCount}, incomplete ${report.summary.incompleteWeaponProfileCount}`,
     `- Materials: descriptors ${report.summary.materialCount}, material records ${report.summary.materialRecordCount}, source rows ${report.summary.materialSourceCount}, missing sources ${report.summary.missingMaterialSourceCount}`,
-    `- Families: gem ${Object.keys((generatedCharacterProfiles as { profiles?: Record<string, unknown> }).profiles ?? {}).length ? "validated" : "validated"}, talent ${report.summary.materialRecordCount > 0 ? "validated" : "unknown"}, general enemy validated, elite enemy validated, weapon ascension validated`,
+    `- Families: gem validated, talent ${report.summary.materialRecordCount > 0 ? "validated" : "unknown"}, general enemy validated, elite enemy validated, weapon ascension validated`,
     `- Crafting: recipes ${report.summary.craftingRecipeCount}, invalid recipe errors ${report.summary.invalidCraftingRecipeCount}`,
-    `- Generated Data: source version ${report.summary.generatedCharacterSourceVersion}, unresolved character material refs ${report.summary.unresolvedCharacterMaterialReferenceCount}, unresolved character refs ${report.summary.unresolvedCharacterReferenceCount}, unresolved weapon refs ${report.summary.unresolvedWeaponReferenceCount}`,
+    `- Runtime unresolved references: character material refs ${report.summary.unresolvedCharacterMaterialReferenceCount}, character refs ${report.summary.unresolvedCharacterReferenceCount}, weapon refs ${report.summary.unresolvedWeaponReferenceCount}`,
+    `- Legacy generated bundles: ${report.summary.generatedCharacterSourceVersion}`,
     `- Issue counts: errors ${report.summary.errorCount}, warnings ${report.summary.warningCount}, info ${report.summary.infoCount}`,
     "",
     "## Blocking Errors",
@@ -2064,7 +1985,7 @@ export function validateStaticData(staticData: StaticGameData): StaticDataHealth
   validateRecipeRegistry("recipes", staticData.recipes, staticData, issues);
   validateRecipeRegistry("craftingRecipes", staticData.craftingRecipes, staticData, issues);
   validateProgression(staticData, issues);
-  validateGeneratedData(staticData, issues);
+  validateUnresolvedReferences(staticData, issues);
   validateLegacyAndOverrides(staticData, issues);
 
   const sortedIssues = ensureUniqueIssueIds(sortIssues(issues));

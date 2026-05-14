@@ -77,9 +77,14 @@ docs/
 docs\ARCHITECTURE_CHECKLIST.md
 docs\CODEX_PROMPT_SNIPPET.md
 docs\DATA_MODEL.md
+docs\DATABASE_PIPELINE.md
+docs\DEVELOPER_NOTES.md
+docs\GOOD_IMPORT.md
+docs\LOOT_MODELS.md
 docs\PERFORMANCE_PLAN.md
 docs\PLANNER_ENGINE.md
 docs\RESIN_AND_AVAILABILITY_NOTES.md
+docs\RESIN_CALCULATION.md
 docs\STACK_DECISION.md
 docs\UI_SPEC.md
 eslint.config.js
@@ -112,6 +117,7 @@ scripts\build-good-catalogs.mjs
 src/
 src\adapters/
 src\adapters\goodImport.corpus.test.ts
+src\adapters\goodImport.test.ts
 src\adapters\goodImport.ts
 src\adapters\persistence.test.ts
 src\adapters\persistence.ts
@@ -125,6 +131,18 @@ src\App.tsx
 src\components/
 src\components\ErrorBoundary.tsx
 src\data/
+src\data\database/
+src\data\database\artifacts/
+src\data\database\characters/
+src\data\database\crafting/
+src\data\database\index.test.ts
+src\data\database\index.ts
+src\data\database\materials/
+src\data\database\progression/
+src\data\database\schema.ts
+src\data\database\sources/
+src\data\database\validation/
+src\data\database\weapons/
 src\data\runtime/
 src\data\runtime\artifactDomains.json
 src\data\runtime\characterAscensionCosts.json
@@ -198,6 +216,7 @@ src\domain\staticData\eliteEnemyDropRegistry.test.ts
 src\domain\staticData\eliteEnemyDropRegistry.ts
 src\domain\staticData\generalEnemyDropRegistry.test.ts
 src\domain\staticData\generalEnemyDropRegistry.ts
+src\domain\staticData\loadStaticData.runtime-source.test.ts
 src\domain\staticData\loadStaticData.test.ts
 src\domain\staticData\loadStaticData.ts
 src\domain\staticData\localSpecialtyRegistry.test.ts
@@ -266,6 +285,7 @@ src\features\inventory\InventoryTab.tsx
 src\features\inventory\InventoryWorkspace.test.tsx
 src\features\inventory\InventoryWorkspace.tsx
 src\features\planner/
+src\features\planner\PlannerTab.test.tsx
 src\features\planner\PlannerTab.tsx
 src\features\planning/
 src\features\planning\PlannerAssumptionsPanel.tsx
@@ -275,6 +295,7 @@ src\features\settings\SettingsDataTab.tsx
 src\features\settings\SettingsWorkspace.tsx
 src\features\settings\WarningsWorkspace.tsx
 src\features\weapons/
+src\features\weapons\WeaponsTab.test.tsx
 src\features\weapons\WeaponsTab.tsx
 src\main.tsx
 src\store/
@@ -286,6 +307,7 @@ src\test/
 src\test\setup.ts
 src\utils/
 src\utils\collections.ts
+src\utils\days.test.ts
 src\utils\days.ts
 src\utils\memoizeLast.ts
 src\utils\stableIds.ts
@@ -293,6 +315,7 @@ src\vite-env.d.ts
 start-krumpanion.bat
 tools/
 tools\data/
+tools\data\build-canonical-database.ts
 tools\data\build-character-material-index.ts
 tools\data\validate-static-data.ts
 tsconfig.json

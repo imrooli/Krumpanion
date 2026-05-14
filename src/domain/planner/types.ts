@@ -80,6 +80,47 @@ export interface MaterialNeedRow {
   craftingReport?: import("../crafting/types").CraftingPlanReport;
 }
 
+export interface DeterministicRequirement {
+  materialKey: string;
+  displayName: string;
+  quantityRequired: number;
+  category: MaterialCategory | "other";
+  requiredByGoals: string[];
+  requirementType:
+    | "character_level"
+    | "character_ascension"
+    | "talent_level"
+    | "weapon_level"
+    | "weapon_ascension"
+    | "artifact_goal"
+    | "other";
+}
+
+export interface InventoryCoverage {
+  materialKey: string;
+  quantityRequired: number;
+  quantityOwned: number;
+  quantityReserved: number;
+  quantityUsable: number;
+  quantityConsumed: number;
+  remainingAfterInventory: number;
+  surplusAfterInventory: number;
+}
+
+export interface MaterialDeficit {
+  materialKey: string;
+  displayName: string;
+  category: MaterialCategory | "other";
+  missingQuantity: number;
+  sourceKeys: string[];
+  familyKey?: string;
+  requiredByGoals: string[];
+  canCraftFromLowerTiers: boolean;
+  noResin: boolean;
+  resinGated: boolean;
+  warnings: string[];
+}
+
 export type FarmingEstimateSourceType =
   | "ley_line_wealth"
   | "ley_line_revelation"
@@ -90,6 +131,22 @@ export type FarmingEstimateSourceType =
   | "open_world_enemy"
   | "local_specialty"
   | "unknown";
+
+export type LootModelDataQuality = "exact" | "observed_estimate" | "inferred" | "partial" | "unknown";
+
+export interface LootTableModel {
+  sourceKey: string;
+  activityType: FarmingEstimateSourceType;
+  resinCostPerClaim: number | null;
+  levelDimension: "world_level" | "domain_level" | "enemy_level" | "reward_tier" | "adventure_rank" | "none";
+  outputFamilies: string[];
+  outputMaterials: string[];
+  rolls: string[];
+  expectedOutputs: Record<string, number>;
+  knownDataQuality: LootModelDataQuality;
+  notes: string[];
+  warnings?: string[];
+}
 
 export interface FarmingEstimate {
   estimateKey?: string;
@@ -105,6 +162,7 @@ export interface FarmingEstimate {
   deterministicRequirementsByMaterial?: Record<string, number>;
   remainingDeficitsByMaterial?: Record<string, number>;
   estimatedRuns: number | null;
+  actionableRuns?: number | null;
   estimatedResin: number | null;
   estimatedDaysNaturalResin: number | null;
   estimatedWeeksNaturalResin: number | null;
@@ -117,9 +175,22 @@ export interface FarmingEstimate {
   };
   availability?: AvailabilityGroupKey;
   relatedGoalKeys?: string[];
+  relatedGoalLabels?: string[];
   isAvailableToday?: boolean;
   assumptions: string[];
   warnings: string[];
+  estimateBasis?: string;
+  dataQuality?: LootModelDataQuality;
+}
+
+export interface SourceEstimate extends FarmingEstimate {
+  sourceKey: string;
+  sourceDisplayName: string;
+  resinCostPerRun: number | null;
+  actionableRuns: number | null;
+  affectedMaterialKeys: string[];
+  deficitsCovered: Record<string, number>;
+  details?: Record<string, string | number | boolean | null>;
 }
 
 export interface PlanMaterialBreakdown {
@@ -230,7 +301,16 @@ export interface PlannerRecommendation {
     | "crafting"
     | "open_world"
     | "passive_incidental";
+  actionSubgroup?:
+    | "weekly_resin"
+    | "domains"
+    | "bosses"
+    | "ley_lines"
+    | "local_specialty"
+    | "forging"
+    | "unknown_estimates";
   priority: number;
+  priorityLabel?: "High" | "Medium" | "Low" | "Optional" | "Blocked";
   availability: AvailabilityGroupKey;
   sourceName?: string;
   resinCost?: number;
@@ -238,12 +318,17 @@ export interface PlannerRecommendation {
   totalEstimatedResin?: number | null;
   resinLabel?: string;
   estimatedRuns?: number | null;
+  actionableRuns?: number | null;
   relatedGoalKeys: string[];
+  relatedGoalLabels?: string[];
   requiredMaterials: MaterialQuantity[];
   expectedRewards?: MaterialQuantity[];
   reason: string;
   blockedBy?: string[];
   isAvailableToday: boolean;
+  warnings?: string[];
+  estimateBasis?: string;
+  dataQuality?: LootModelDataQuality;
 }
 
 export interface AvailabilityGroup {
@@ -268,6 +353,8 @@ export interface ResinSummary {
   weeklyGatedEstimateCount: number;
   resinGatedEstimateCount: number;
   openWorldEstimateCount: number;
+  noResinTaskCount: number;
+  unknownEstimateCount: number;
   dailyResinBudget: number;
   weeklyResinBudget: number;
   artifactBudget: number;
@@ -294,18 +381,41 @@ export interface WeaponExpPlannerSummary {
 }
 
 export interface PlannerRecommendationSection {
-  key: "resin_gated" | "time_gated_non_resin" | "crafting" | "open_world" | "passive_incidental";
+  key:
+    | "summary"
+    | "resin_gated"
+    | "weekly_resin"
+    | "domains"
+    | "bosses"
+    | "ley_lines"
+    | "time_gated_non_resin"
+    | "crafting"
+    | "forging"
+    | "open_world"
+    | "local_specialty"
+    | "passive_incidental"
+    | "unknown_estimates";
   label: string;
   rows: PlannerRecommendation[];
+}
+
+export interface PlannerReport {
+  summary: ResinSummary;
+  sections: PlannerRecommendationSection[];
+  warnings: PlannerWarning[];
 }
 
 export interface PlannerOutput {
   plannerGoals: PlannerGoal[];
   plannerGoalGroups: PlannerGoalGroup[];
   goalResolutions: GoalResolutionItem[];
+  deterministicRequirements: DeterministicRequirement[];
+  inventoryCoverage: InventoryCoverage[];
+  materialDeficits: MaterialDeficit[];
   exactRequirementsByMaterial: MaterialNeedRow[];
   totalMissingByMaterial: MaterialNeedRow[];
   farmingEstimates: FarmingEstimate[];
+  plannerReport: PlannerReport;
   byCharacter: CharacterPlan[];
   byWeapon: WeaponPlan[];
   artifactFarmGoals: ArtifactFarmPlan[];

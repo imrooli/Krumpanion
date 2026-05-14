@@ -3,14 +3,16 @@ import type {
   AvailabilityGroupKey,
   DayOfWeek,
   FarmingEstimate,
+  LootModelDataQuality,
   PlannerEstimationSettings,
   PlannerWarning,
+  SourceEstimate,
   SourceAssignment,
 } from "./types";
 import type { StaticGameData } from "../staticData/types";
 import { availabilityMatchesDay } from "../../utils/days";
 
-export interface FarmingEstimateDetail extends FarmingEstimate {
+export interface FarmingEstimateDetail extends SourceEstimate {
   estimateKey: string;
   sourceKey: string;
   availability: AvailabilityGroupKey;
@@ -57,6 +59,16 @@ function toActionableQuantity(value: number): number {
 
 function sumValues(values: Record<string, number>): number {
   return Object.values(values).reduce((sum, value) => sum + value, 0);
+}
+
+function safeFormatAverage(value: number): string {
+  if (!Number.isFinite(value)) {
+    return "0";
+  }
+  if (Math.abs(value - Math.round(value)) < 1e-9) {
+    return String(Math.round(value));
+  }
+  return value.toFixed(3).replace(/\.?0+$/, "");
 }
 
 function getWorldLevelRecord<T>(records: Record<string, T>, worldLevel: number): { value: T | null; resolvedWorldLevel: number | null } {
@@ -143,6 +155,7 @@ function buildEstimateBase(group: SourceEstimateGroup, today: DayOfWeek): Farmin
     sourceKey: group.sourceKey,
     materialKey: group.materialKey,
     materialName: group.materialName,
+    sourceDisplayName: group.sourceName ?? group.materialName,
     missingAmount: sumValues(remainingDeficitsByMaterial),
     sourceType: group.sourceType,
     sourceName: group.sourceName,
@@ -152,12 +165,18 @@ function buildEstimateBase(group: SourceEstimateGroup, today: DayOfWeek): Farmin
     relatedMaterialDisplayNames: { ...group.relatedMaterialDisplayNames },
     deterministicRequirementsByMaterial: { ...group.deterministicRequirementsByMaterial },
     remainingDeficitsByMaterial,
+    resinCostPerRun: null,
     estimatedRuns: null,
+    actionableRuns: null,
     estimatedResin: null,
     estimatedDaysNaturalResin: null,
     estimatedWeeksNaturalResin: null,
+    affectedMaterialKeys: unique(group.relatedMaterialKeys),
+    deficitsCovered: { ...remainingDeficitsByMaterial },
     assumptions: unique(group.assumptions),
     warnings: unique(group.warnings),
+    estimateBasis: undefined,
+    dataQuality: "unknown",
     availability: group.availability,
     isAvailableToday:
       availabilityMatchesDay(group.availability, today) || group.availability === "ALWAYS" || group.availability === "WEEKLY",
@@ -293,11 +312,18 @@ function buildNonResinEstimate(
   group: SourceEstimateGroup,
   today: DayOfWeek,
   assumptions: string[],
+  warnings: string[] = [],
+  dataQuality: LootModelDataQuality = "unknown",
+  estimateBasis = "No resin activity",
 ): FarmingEstimateDetail {
   const base = buildEstimateBase(group, today);
   return {
     ...base,
     assumptions: unique([...base.assumptions, ...assumptions]),
+    warnings: unique([...base.warnings, ...warnings]),
+    estimateBasis,
+    dataQuality,
+    details: {},
   };
 }
 
@@ -313,14 +339,19 @@ function estimateMora(
   );
   const reward = rewardRecord?.wealth.mora ?? 0;
   const missingMora = sumValues(group.remainingDeficitsByMaterial);
-  const estimatedRuns = reward > 0 ? Math.ceil(missingMora / reward) : null;
-  const estimatedResin = estimatedRuns === null ? null : estimatedRuns * staticData.resinActivityCosts.leyLineOutcrop.resin;
+  const estimatedRuns = reward > 0 ? missingMora / reward : null;
+  const actionableRuns = estimatedRuns === null ? null : Math.ceil(estimatedRuns);
+  const estimatedResin = actionableRuns === null ? null : actionableRuns * staticData.resinActivityCosts.leyLineOutcrop.resin;
   const base = buildEstimateBase(group, today);
   return {
     ...base,
+    resinCostPerRun: staticData.resinActivityCosts.leyLineOutcrop.resin,
     estimatedRuns,
+    actionableRuns,
     estimatedResin,
     ...buildDaysWeeks(estimatedResin, settings),
+    estimateBasis: `World Level ${resolvedWorldLevel ?? settings.worldLevel} Mora per claim`,
+    dataQuality: resolvedWorldLevel === settings.worldLevel ? "exact" : "observed_estimate",
     assumptions: unique([
       ...base.assumptions,
       `World Level ${settings.worldLevel} Blossom of Wealth rewards ${reward} Mora per claim.`,
@@ -330,6 +361,11 @@ function estimateMora(
       "All missing progression Mora and crafting Mora are grouped into one Blossom of Wealth estimate.",
     ]),
     warnings: reward > 0 ? base.warnings : [...base.warnings, "Missing Ley Line reward data for the selected World Level."],
+    details: {
+      worldLevel: resolvedWorldLevel ?? settings.worldLevel,
+      rewardPerClaim: reward,
+      missingMora,
+    },
   };
 }
 
@@ -348,14 +384,19 @@ function estimateCharacterExp(
     (sum, [materialKey, quantity]) => sum + quantity * resolveCharacterExpValue(staticData, materialKey),
     0,
   );
-  const estimatedRuns = averageCharacterExp > 0 ? Math.ceil(missingExp / averageCharacterExp) : null;
-  const estimatedResin = estimatedRuns === null ? null : estimatedRuns * staticData.resinActivityCosts.leyLineOutcrop.resin;
+  const estimatedRuns = averageCharacterExp > 0 ? missingExp / averageCharacterExp : null;
+  const actionableRuns = estimatedRuns === null ? null : Math.ceil(estimatedRuns);
+  const estimatedResin = actionableRuns === null ? null : actionableRuns * staticData.resinActivityCosts.leyLineOutcrop.resin;
   const base = buildEstimateBase(group, today);
   return {
     ...base,
+    resinCostPerRun: staticData.resinActivityCosts.leyLineOutcrop.resin,
     estimatedRuns,
+    actionableRuns,
     estimatedResin,
     ...buildDaysWeeks(estimatedResin, settings),
+    estimateBasis: `World Level ${resolvedWorldLevel ?? settings.worldLevel} character EXP per claim`,
+    dataQuality: resolvedWorldLevel === settings.worldLevel ? "exact" : "observed_estimate",
     assumptions: unique([
       ...base.assumptions,
       `World Level ${settings.worldLevel} Blossom of Revelation averages ${averageCharacterExp} character EXP per claim.`,
@@ -368,6 +409,11 @@ function estimateCharacterExp(
       averageCharacterExp > 0 && missingExp > 0
         ? base.warnings
         : [...base.warnings, "Missing character EXP conversion data for this estimate."],
+    details: {
+      worldLevel: resolvedWorldLevel ?? settings.worldLevel,
+      averageCharacterExp,
+      missingExp,
+    },
   };
 }
 
@@ -404,7 +450,7 @@ function estimateDomainMaterial(
       (sum, average, index) => sum + average * (weights[index] ?? 0),
       0,
     );
-    estimatedRuns = expectedEquivalentPerRun > 0 ? Math.ceil(deficitEquivalent / expectedEquivalentPerRun) : null;
+    estimatedRuns = expectedEquivalentPerRun > 0 ? deficitEquivalent / expectedEquivalentPerRun : null;
   } else {
     for (const assignment of group.assignments) {
       if (assignment.missingAmount <= 0) {
@@ -416,17 +462,22 @@ function estimateDomainMaterial(
         estimatedRuns = null;
         continue;
       }
-      const runsForTier = Math.ceil(assignment.missingAmount / average);
+      const runsForTier = assignment.missingAmount / average;
       estimatedRuns = estimatedRuns === null ? null : Math.max(estimatedRuns, runsForTier);
     }
   }
 
-  const estimatedResin = estimatedRuns === null ? null : estimatedRuns * staticData.resinActivityCosts.domain.resin;
+  const actionableRuns = estimatedRuns === null ? null : Math.ceil(estimatedRuns);
+  const estimatedResin = actionableRuns === null ? null : actionableRuns * staticData.resinActivityCosts.domain.resin;
   return {
     ...base,
+    resinCostPerRun: staticData.resinActivityCosts.domain.resin,
     estimatedRuns,
+    actionableRuns,
     estimatedResin,
     ...buildDaysWeeks(estimatedResin, settings),
+    estimateBasis: `Domain level ${settings.domainLevel} family loot model`,
+    dataQuality: "observed_estimate",
     assumptions: unique([
       ...base.assumptions,
       settings.craftAwareEstimates
@@ -437,6 +488,10 @@ function estimateDomainMaterial(
         : "Domain estimates assume normal 20-resin claims only.",
     ]),
     warnings,
+    details: {
+      domainLevel: settings.domainLevel,
+      craftAware: settings.craftAwareEstimates,
+    },
   };
 }
 
@@ -475,9 +530,13 @@ function estimateNormalBoss(
     staticData.normalBossUniqueMaterialDropMeanByWorldLevel,
     settings.worldLevel,
   );
-  const perRun = dropRecord?.dropMean ?? 0;
-  const estimatedRuns = perRun > 0 ? Math.ceil(uniqueBossMaterialDeficit / perRun) : null;
-  const estimatedResin = estimatedRuns === null ? null : estimatedRuns * staticData.resinActivityCosts.normalBoss.resin;
+  const perRun =
+    settings.worldLevel >= 9
+      ? 3
+      : dropRecord?.dropMean ?? 0;
+  const estimatedRuns = perRun > 0 ? uniqueBossMaterialDeficit / perRun : null;
+  const actionableRuns = estimatedRuns === null ? null : Math.ceil(estimatedRuns);
+  const estimatedResin = actionableRuns === null ? null : actionableRuns * staticData.resinActivityCosts.normalBoss.resin;
   const primaryAssignment = uniqueAssignments[0] ?? group.assignments[0];
   const base = buildEstimateBase(
     {
@@ -491,20 +550,46 @@ function estimateNormalBoss(
   return {
     estimate: {
       ...base,
+      resinCostPerRun: staticData.resinActivityCosts.normalBoss.resin,
       estimatedRuns,
+      actionableRuns,
       estimatedResin,
       ...buildDaysWeeks(estimatedResin, settings),
+      estimateBasis:
+        settings.worldLevel >= 9
+          ? "WL9 conservative normal boss model"
+          : `World Level ${resolvedWorldLevel ?? settings.worldLevel} normal boss mean`,
+      dataQuality:
+        settings.worldLevel >= 9
+          ? "partial"
+          : resolvedWorldLevel === settings.worldLevel
+            ? "observed_estimate"
+            : "observed_estimate",
       assumptions: unique([
         ...base.assumptions,
-        `World Level ${settings.worldLevel} normal boss unique materials average ${perRun} per claim.`,
-        resolvedWorldLevel !== null && resolvedWorldLevel !== settings.worldLevel
+        settings.worldLevel >= 9
+          ? "World Level 9 normal boss estimates use a conservative guaranteed 3 unique boss materials per claim; the chance of a 4th drop is not modeled."
+          : `World Level ${settings.worldLevel} normal boss unique materials average ${safeFormatAverage(perRun)} per claim.`,
+        settings.worldLevel < 9 && resolvedWorldLevel !== null && resolvedWorldLevel !== settings.worldLevel
           ? `World Level ${settings.worldLevel} is using World Level ${resolvedWorldLevel} normal boss drop data because no exact record is defined.`
           : "",
         gemAssignments.length > 0
           ? "Ascension Gem deficits from this boss are treated as incidental while farming the unique boss material and do not increase boss runs."
           : "Normal boss runs are driven only by the unique boss material deficit.",
       ]),
-      warnings: perRun > 0 ? base.warnings : [...base.warnings, "Missing normal boss drop-rate data for this estimate."],
+      warnings:
+        perRun > 0
+          ? unique([
+              ...base.warnings,
+              ...(settings.worldLevel >= 9
+              ? ["WL9 estimate: assumes guaranteed 3 boss materials per claim; actual average may be higher if a 4th drop occurs."]
+              : []),
+            ])
+          : [...base.warnings, "Missing normal boss drop-rate data for this estimate."],
+      details: {
+        worldLevel: settings.worldLevel,
+        expectedUniqueBossMaterialsPerClaim: perRun,
+      },
     },
     warnings: [],
   };
@@ -520,35 +605,61 @@ function estimateWeeklyBoss(
     staticData.weeklyTalentMaterialDropMeanByWorldLevel,
     settings.worldLevel,
   );
-  const totalMean = dropRecord?.dropMean ?? 0;
+  const totalMean =
+    settings.worldLevel >= 9
+      ? 2
+      : dropRecord?.dropMean ?? 0;
   const targetSpecificMean = totalMean > 0 ? totalMean / 3 : 0;
   const estimatedRuns =
     targetSpecificMean > 0
-      ? group.assignments.reduce((maxRuns, assignment) => Math.max(maxRuns, Math.ceil(assignment.missingAmount / targetSpecificMean)), 0)
+      ? group.assignments.reduce((maxRuns, assignment) => Math.max(maxRuns, assignment.missingAmount / targetSpecificMean), 0)
       : null;
+  const actionableRuns = estimatedRuns === null ? null : Math.ceil(estimatedRuns);
   const base = buildEstimateBase(group, today);
   return {
     ...base,
+    resinCostPerRun: null,
     estimatedRuns,
+    actionableRuns,
     estimatedResin: null,
     estimatedDaysNaturalResin: null,
     estimatedWeeksNaturalResin: null,
     weeklyGate: {
       isWeeklyGated: true,
-      estimatedWeeks: estimatedRuns,
+      estimatedWeeks: actionableRuns,
       rewardLimit: "once_per_boss_per_week",
       discountedClaims: 0,
       fullCostClaims: 0,
     },
+    estimateBasis:
+      settings.worldLevel >= 9
+        ? "WL9 conservative weekly boss target-material model"
+        : `World Level ${resolvedWorldLevel ?? settings.worldLevel} weekly boss mean`,
+    dataQuality: settings.worldLevel >= 9 ? "partial" : "observed_estimate",
     assumptions: unique([
       ...base.assumptions,
-      `World Level ${settings.worldLevel} weekly talent materials average ${totalMean} total drops per claim, modeled as ${targetSpecificMean.toFixed(3)} target-specific drops for each material.`,
-      resolvedWorldLevel !== null && resolvedWorldLevel !== settings.worldLevel
+      settings.worldLevel >= 9
+        ? "World Level 9 weekly talent estimates use a conservative total of 2 drops per claim and assume equal distribution across the boss's 3 possible talent materials."
+        : `World Level ${settings.worldLevel} weekly talent materials average ${safeFormatAverage(totalMean)} total drops per claim, modeled as ${safeFormatAverage(targetSpecificMean)} target-specific drops for each material.`,
+      settings.worldLevel < 9 && resolvedWorldLevel !== null && resolvedWorldLevel !== settings.worldLevel
         ? `World Level ${settings.worldLevel} is using World Level ${resolvedWorldLevel} weekly boss drop data because no exact record is defined.`
         : "",
       "The same weekly boss can only be claimed once per week.",
     ]),
-    warnings: targetSpecificMean > 0 ? base.warnings : [...base.warnings, "Missing weekly boss drop-rate data for the selected World Level."],
+    warnings:
+      targetSpecificMean > 0
+        ? unique([
+            ...base.warnings,
+            ...(settings.worldLevel >= 9
+              ? ["WL9 weekly estimate: assumes 2 total drops per claim and 2/3 expected target material with equal distribution across 3 weekly materials."]
+              : []),
+          ])
+        : [...base.warnings, "Missing weekly boss drop-rate data for the selected World Level."],
+    details: {
+      worldLevel: settings.worldLevel,
+      expectedTotalDropsPerClaim: totalMean,
+      expectedTargetMaterialPerClaim: targetSpecificMean,
+    },
   };
 }
 
@@ -575,12 +686,33 @@ function estimateGroup(
       return { estimate: estimateWeeklyBoss(group, settings, staticData, today), warnings: [] };
     case "open_world_enemy":
       return {
-        estimate: buildNonResinEstimate(group, today, ["Enemy drop estimates are not resin-modeled by default."]),
+        estimate: buildNonResinEstimate(
+          group,
+          today,
+          [
+            "Enemy drop estimates are not resin-modeled by default.",
+            settings.worldLevel >= 9
+              ? "World Level 9 enemy drop rates are not fully modeled; estimates use the World Level 8 baseline unless better data is added."
+              : "",
+          ],
+          settings.worldLevel >= 9
+            ? ["WL9 open-world enemy estimates currently use a World Level 8 baseline because exact WL9 rates are not fully modeled."]
+            : [],
+          settings.worldLevel >= 9 ? "partial" : "unknown",
+          settings.worldLevel >= 9 ? "WL8 baseline used for WL9 open-world route guidance" : "No-resin enemy route guidance",
+        ),
         warnings: [],
       };
     case "local_specialty":
       return {
-        estimate: buildNonResinEstimate(group, today, ["Local Specialties are open-world collection targets and are not resin-gated."]),
+        estimate: buildNonResinEstimate(
+          group,
+          today,
+          ["Local Specialties are open-world collection targets and are not resin-gated."],
+          [],
+          "exact",
+          "No-resin local specialty collection",
+        ),
         warnings: [],
       };
     case "unknown":
@@ -590,7 +722,7 @@ function estimateGroup(
           group.assignments.some((assignment) => assignment.kind === "weapon_exp")
             ? "Weapon EXP materials are tracked deterministically, but no resin-source estimator is enabled for them."
             : "No farming estimator is available for this material category yet.",
-        ]),
+        ], ["Missing estimate data for this source or category."], "unknown", "Missing estimate data"),
         warnings: [],
       };
   }
@@ -659,6 +791,7 @@ function applyWeeklyBossDiscountSchedule(
     return {
       ...estimate,
       estimatedResin,
+      actionableRuns: estimate.actionableRuns ?? estimate.estimatedRuns,
       ...buildDaysWeeks(estimatedResin, settings),
       weeklyGate: {
         isWeeklyGated: true,
@@ -672,6 +805,7 @@ function applyWeeklyBossDiscountSchedule(
         `Weekly boss discount scheduling assumes ${firstWeekDiscountSlots} discounted claim(s) remain this week, then ${laterWeekDiscountSlots} discounted claim(s) reset each following week.`,
         "Weekly boss rewards reset on Mondays at 02:00 AM PST.",
       ]),
+      estimateBasis: estimate.estimateBasis ?? "Weekly boss reward-claim schedule",
     };
   });
 }

@@ -49,13 +49,17 @@ The planner always reads from the active account. It must not read global invent
 
 ```ts
 type PlannerOutput = {
+  deterministicRequirements: DeterministicRequirement[];
+  inventoryCoverage: InventoryCoverage[];
+  materialDeficits: MaterialDeficit[];
   totalMissingByMaterial: MaterialNeedRow[];
   byCharacter: CharacterPlan[];
   byWeapon: WeaponPlan[];
   artifactFarmGoals: ArtifactFarmPlan[];
   byAvailability: AvailabilityGroup[];
-  today: PlannerActivityRow[];
+  today: PlannerRecommendation[];
   resinSummary: ResinSummary;
+  plannerReport: PlannerReport;
   warnings: PlannerWarning[];
 };
 ```
@@ -76,22 +80,23 @@ type PlannerOutput = {
 7. For each artifact goal:
    - add as a Resin-budgeted farming plan, not a deterministic material shortage
 8. Sum material requirements across all goals.
-9. Subtract owned material quantities from the active account inventory.
-10. Apply guaranteed or expected-value crafting coverage for estimation, without mutating deterministic requirements.
-11. Attach source metadata:
+9. Build deterministic inventory coverage from the active account inventory only.
+10. Apply guaranteed crafting coverage to exact deficits and expected-value crafting coverage only to estimate-side resin projections.
+11. Build exact non-negative material deficits.
+12. Attach source metadata:
    - domain
    - boss
    - ley line
    - weekly boss
    - day availability
    - Resin cost
-12. Build source-level farming estimates:
+13. Build source-level farming estimates:
    - deterministic requirements stay exact
    - inventory deficits stay exact
    - crafting-adjusted deficits feed the estimator
    - one activity claim can satisfy multiple related material deficits
-13. Group by availability.
-14. Build Planner tab rows.
+14. Group by availability and source section.
+15. Build Planner tab rows.
 
 ## Core rule
 
@@ -222,6 +227,23 @@ Krumpanion now keeps four layers separate:
 
 Changing world level, domain level, or estimate settings must never change deterministic requirements.
 
+Current planner typing is organized around these ideas:
+
+1. `DeterministicRequirement`
+   - Exact pre-inventory costs only.
+2. `InventoryCoverage`
+   - Exact account-scoped subtraction with zero-clamped remaining quantities.
+3. `MaterialDeficit`
+   - Exact post-inventory and post-guaranteed-crafting remaining material quantities.
+4. `LootTableModel`
+   - Canonical activity/source reward model with data-quality metadata.
+5. `SourceEstimate`
+   - Grouped runs, actionable runs, Resin, and warnings for one activity.
+6. `PlannerRecommendationSection`
+   - User-facing grouped sections for the Planner tab.
+7. `PlannerReport`
+   - Summary, grouped sections, and warnings built from source estimates.
+
 ## Resin estimates
 
 Krumpanion now uses local static drop tables and source-aware grouping for estimates.
@@ -245,6 +267,53 @@ Important estimator rules:
 - Gem-only deficits surface as passive/incidental/crafting advisories by default.
 - Weekly boss estimates use target-specific mean drops and once-per-boss-per-week scheduling.
 - Open-world enemy drops, local specialties, forging ores, and Mystic forging do not contribute to total estimated Resin.
+
+## World Level 9 handling
+
+World Level 9 is supported explicitly, but some sources still rely on conservative or inferred modeling:
+
+- Normal bosses:
+  - use a conservative estimate of `3` unique boss materials per claim
+  - do not reuse the WL8 mean of `2.5556`
+  - warn that the chance of a 4th drop is not modeled exactly
+- Weekly bosses:
+  - use a conservative total of `2` weekly talent drops per claim
+  - assume equal distribution across the boss's `3` weekly materials
+  - therefore estimate `2/3` target-specific material per claim unless better data is added
+- Open-world enemies:
+  - WL9 exact drop improvements are not fully modeled
+  - route guidance may use a WL8 baseline with a warning
+
+These warnings belong to the estimate layer and must remain visible in the Planner UI.
+
+## Planner UI grouping
+
+The Planner page preserves the existing views, but grouped recommendation rows now surface clearer activity buckets:
+
+- Resin Activities
+- Weekly Resin Activities
+- Domains
+- Bosses
+- Ley Lines
+- Crafting / Conversion
+- Forging
+- Open-World Enemy Farming
+- Local Specialties
+- Passive / Incidental
+- Unknown / Missing Estimate Data
+
+Displayed Resin semantics:
+
+- `estimatedRuns`
+  - decimal expected-value run estimate
+- `actionableRuns`
+  - rounded-up run or claim count the user can actually act on
+- `resinPerRun`
+  - one-claim Resin cost when applicable
+- `totalEstimatedResin`
+  - `actionableRuns * resinPerRun` for standard Resin-gated activities
+
+No-resin activities must display `No resin`, never `?`.
 
 ## Display normalization
 

@@ -44,7 +44,8 @@ describe("planner farming estimates", () => {
 
     expect(result.farmingEstimates).toHaveLength(1);
     expect(result.farmingEstimates[0]?.sourceType).toBe("ley_line_wealth");
-    expect(result.farmingEstimates[0]?.estimatedRuns).toBe(3);
+    expect(result.farmingEstimates[0]?.estimatedRuns).toBeCloseTo(2.0833333333333335);
+    expect(result.farmingEstimates[0]?.actionableRuns).toBe(3);
     expect(result.farmingEstimates[0]?.estimatedResin).toBe(60);
   });
 
@@ -81,7 +82,8 @@ describe("planner farming estimates", () => {
 
     expect(result.farmingEstimates).toHaveLength(1);
     expect(result.farmingEstimates[0]?.sourceType).toBe("ley_line_revelation");
-    expect(result.farmingEstimates[0]?.estimatedRuns).toBe(1);
+    expect(result.farmingEstimates[0]?.estimatedRuns).toBeCloseTo(0.7755102040816326);
+    expect(result.farmingEstimates[0]?.actionableRuns).toBe(1);
     expect(result.farmingEstimates[0]?.estimatedResin).toBe(20);
     expect(result.farmingEstimates[0]?.assumptions.some((line) => line.includes("122500"))).toBe(true);
   });
@@ -149,7 +151,7 @@ describe("planner farming estimates", () => {
       expect.arrayContaining(["TeachingsOfFreedom", "GuideToFreedom", "PhilosophiesOfFreedom"]),
     );
     expect(estimate?.estimatedRuns).toBeLessThan(naiveRuns);
-    expect(estimate?.estimatedResin).toBe((estimate?.estimatedRuns ?? 0) * 20);
+    expect(estimate?.estimatedResin).toBe((estimate?.actionableRuns ?? 0) * 20);
   });
 
   it("uses the max direct-tier runs when craft-aware estimates are disabled", () => {
@@ -195,8 +197,13 @@ describe("planner farming estimates", () => {
       Math.ceil(6 / (model.twoStar?.average ?? 1)),
       Math.ceil(2 / (model.threeStar?.average ?? 1)),
     );
+    const expectedEstimatedRuns = Math.max(
+      6 / (model.twoStar?.average ?? 1),
+      2 / (model.threeStar?.average ?? 1),
+    );
 
-    expect(result.farmingEstimates[0]?.estimatedRuns).toBe(expectedRuns);
+    expect(result.farmingEstimates[0]?.estimatedRuns).toBeCloseTo(expectedEstimatedRuns);
+    expect(result.farmingEstimates[0]?.actionableRuns).toBe(expectedRuns);
     expect(result.farmingEstimates[0]?.estimatedResin).toBe(expectedRuns * 20);
   });
 
@@ -237,7 +244,8 @@ describe("planner farming estimates", () => {
 
     const estimate = result.farmingEstimates[0];
     expect(estimate?.materialKey).toBe("BasaltPillar");
-    expect(estimate?.estimatedRuns).toBe(2);
+    expect(estimate?.estimatedRuns).toBeCloseTo(1.9564877132571608);
+    expect(estimate?.actionableRuns).toBe(2);
     expect(estimate?.estimatedResin).toBe(80);
     expect(estimate?.relatedMaterialKeys).toEqual(expect.arrayContaining(["BasaltPillar", "PrithivaTopazChunk"]));
     expect(estimate?.assumptions.some((line) => line.includes("incidental"))).toBe(true);
@@ -269,9 +277,11 @@ describe("planner farming estimates", () => {
 
     expect(result.farmingEstimates[0]).toMatchObject({
       sourceType: "normal_boss",
-      estimatedRuns: 2,
+      estimatedRuns: 5 / 3,
+      actionableRuns: 2,
       estimatedResin: 80,
     });
+    expect(result.farmingEstimates[0]?.warnings.some((warning) => warning.includes("guaranteed 3 boss materials"))).toBe(true);
   });
 
   it("does not create a normal boss resin estimate for gem-only deficits", () => {
@@ -331,10 +341,11 @@ describe("planner farming estimates", () => {
       today: "Monday",
     });
 
-    expect(result.farmingEstimates[0]?.estimatedRuns).toBe(8);
+    expect(result.farmingEstimates[0]?.estimatedRuns).toBeCloseTo(7.5);
+    expect(result.farmingEstimates[0]?.actionableRuns).toBe(8);
     expect(result.farmingEstimates[0]?.weeklyGate?.estimatedWeeks).toBe(8);
     expect(result.farmingEstimates[0]?.estimatedResin).toBe(240);
-    expect(result.farmingEstimates[0]?.assumptions.some((line) => line.includes("0.800"))).toBe(true);
+    expect(result.farmingEstimates[0]?.assumptions.some((line) => line.includes("0.8 target-specific"))).toBe(true);
   });
 
   it("supports world level 9 weekly boss resin estimates", () => {
@@ -364,9 +375,11 @@ describe("planner farming estimates", () => {
 
     expect(result.farmingEstimates[0]).toMatchObject({
       sourceType: "weekly_boss",
-      estimatedRuns: 8,
-      estimatedResin: 240,
+      estimatedRuns: 9,
+      actionableRuns: 9,
+      estimatedResin: 270,
     });
+    expect(result.farmingEstimates[0]?.warnings.some((warning) => warning.includes("2/3 expected target material"))).toBe(true);
   });
 
   it("does not duplicate weekly scheduling for multiple material goals from the same boss", () => {
@@ -403,7 +416,8 @@ describe("planner farming estimates", () => {
     });
 
     expect(result.farmingEstimates).toHaveLength(1);
-    expect(result.farmingEstimates[0]?.estimatedRuns).toBe(2);
+    expect(result.farmingEstimates[0]?.estimatedRuns).toBeCloseTo(1.25);
+    expect(result.farmingEstimates[0]?.actionableRuns).toBe(2);
     expect(result.farmingEstimates[0]?.estimatedResin).toBe(60);
   });
 

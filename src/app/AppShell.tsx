@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { APP_SECTIONS } from "./navigationRegistry";
 import { AccountSwitcher } from "../features/accounts/AccountSwitcher";
 import { selectActiveAccount, selectActiveGoals } from "../store/selectors";
@@ -10,6 +10,7 @@ export function AppShell() {
   const settings = useAppStore((state) => state.settings);
   const goals = useAppStore(selectActiveGoals);
   const today = useAppStore((state) => state.today);
+  const refreshToday = useAppStore((state) => state.refreshToday);
   const setActiveTab = useAppStore((state) => state.setActiveTab);
   const plannerOutput = useAppStore(selectPlannerOutput);
   const importWarnings = useAppStore(selectInventoryWarnings);
@@ -24,6 +25,17 @@ export function AppShell() {
   const importStatus = account?.importState.lastGoodImportAt
     ? `Imported ${new Date(account.importState.lastGoodImportAt).toLocaleDateString()}`
     : "No GOOD import";
+
+  useEffect(() => {
+    refreshToday();
+    const intervalId = window.setInterval(() => {
+      refreshToday();
+    }, 60_000);
+
+    return () => {
+      window.clearInterval(intervalId);
+    };
+  }, [refreshToday]);
 
   return (
     <div className={`app-shell app-shell-sidebar ${sidebarCollapsed ? "is-collapsed" : ""}`}>

@@ -4,8 +4,10 @@
     "displayName": "Ascended Sample: Knight",
     "category": "weekly_boss_material",
     "source": {
-      "type": "unresolved",
-      "reason": "Weekly boss source requires verification from allowed sources."
+      "type": "weekly_boss",
+      "bossKey": "UnresolvedChessGame",
+      "bossName": "Unresolved Chess Game",
+      "domainName": "Unresolved Chess Game"
     },
     "usedFor": [
       "talent_leveling"
@@ -18,8 +20,10 @@
     "displayName": "Ascended Sample: Queen",
     "category": "weekly_boss_material",
     "source": {
-      "type": "unresolved",
-      "reason": "Weekly boss source requires verification from allowed sources."
+      "type": "weekly_boss",
+      "bossKey": "UnresolvedChessGame",
+      "bossName": "Unresolved Chess Game",
+      "domainName": "Unresolved Chess Game"
     },
     "usedFor": [
       "talent_leveling"
@@ -32,8 +36,10 @@
     "displayName": "Ascended Sample: Rook",
     "category": "weekly_boss_material",
     "source": {
-      "type": "unresolved",
-      "reason": "Weekly boss source requires verification from allowed sources."
+      "type": "weekly_boss",
+      "bossKey": "UnresolvedChessGame",
+      "bossName": "Unresolved Chess Game",
+      "domainName": "Unresolved Chess Game"
     },
     "usedFor": [
       "talent_leveling"
@@ -338,6 +344,22 @@
       "bossKey": "ShadowOfAnotherWorld",
       "bossName": "Shadow of Another World",
       "domainName": "Shadow of Another World"
+    },
+    "usedFor": [
+      "talent_leveling"
+    ],
+    "craftable": false,
+    "status": "verified"
+  },
+  "MadmansRestraint": {
+    "key": "MadmansRestraint",
+    "displayName": "Madman's Restraint",
+    "category": "weekly_boss_material",
+    "source": {
+      "type": "weekly_boss",
+      "bossKey": "FalseMoonInstitute",
+      "bossName": "False Moon Institute",
+      "domainName": "False Moon Institute"
     },
     "usedFor": [
       "talent_leveling"

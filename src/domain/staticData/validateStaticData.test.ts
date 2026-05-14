@@ -110,11 +110,11 @@ describe("validateStaticData", () => {
     expect(report.issues.some((issue) => issue.id === `family:conflicting_family_membership:${duplicateMaterialKey}`)).toBe(true);
   });
 
-  it("unresolved generated references appear in the report", () => {
+  it("canonical unresolved character material references appear in the report", () => {
     const report = validateStaticData(loadStaticData());
 
     expect(report.summary.unresolvedCharacterMaterialReferenceCount).toBeGreaterThan(0);
-    expect(report.issues.some((issue) => issue.category === "generated_data" && issue.id.includes("unresolved_character_material_reference"))).toBe(true);
+    expect(report.issues.some((issue) => issue.category === "character_profile" && issue.id.includes("unresolved_character_material_reference"))).toBe(true);
   });
 
   it("manual-review profiles are reported but do not crash validation", () => {

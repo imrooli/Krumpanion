@@ -37,9 +37,79 @@ const ACTION_GROUP_ORDER: PlannerRecommendation["actionGroup"][] = [
   "passive_incidental",
 ];
 
+const ACTION_SUBGROUP_ORDER: Array<PlannerRecommendation["actionSubgroup"]> = [
+  "weekly_resin",
+  "domains",
+  "bosses",
+  "ley_lines",
+  "forging",
+  "local_specialty",
+  "unknown_estimates",
+  undefined,
+];
+
 function actionGroupRank(group: PlannerRecommendation["actionGroup"]): number {
   const index = ACTION_GROUP_ORDER.indexOf(group);
   return index === -1 ? ACTION_GROUP_ORDER.length : index;
+}
+
+export function getGoalDisplayName(goalKey: string, input: PlannerInput): string {
+  const characterGoal = input.goals.characterGoals[goalKey];
+  if (characterGoal) {
+    return (
+      getTravelerGoalLabel(characterGoal.characterKey) ??
+      input.staticData.characters[characterGoal.characterKey]?.displayName ??
+      characterGoal.characterKey
+    );
+  }
+
+  const weaponGoal = Object.values(input.goals.weaponGoals).find(
+    (goal) => getWeaponGoalId(goal, goal.weaponKey) === goalKey,
+  );
+  if (weaponGoal) {
+    return `${input.staticData.weapons[weaponGoal.weaponKey]?.displayName ?? weaponGoal.weaponKey} weapon goal`;
+  }
+
+  const artifactGoal = input.goals.artifactGoals.find((goal) => goal.id === goalKey);
+  if (artifactGoal) {
+    return artifactGoal.characterKey
+      ? `${artifactGoal.characterKey} artifact goal`
+      : artifactGoal.targetSetKeys.join(", ") || "Artifact goal";
+  }
+
+  return goalKey;
+}
+
+export function getGoalTypeLabel(goalKey: string, input: PlannerInput): string {
+  if (input.goals.characterGoals[goalKey]) {
+    return "Character goal";
+  }
+  if (Object.values(input.goals.weaponGoals).some((goal) => getWeaponGoalId(goal, goal.weaponKey) === goalKey)) {
+    return "Weapon goal";
+  }
+  if (input.goals.artifactGoals.some((goal) => goal.id === goalKey)) {
+    return "Artifact goal";
+  }
+  return "Goal";
+}
+
+export function getPlannerPriorityLabel(
+  priority: number,
+  blockedBy: string[] | undefined,
+): PlannerRecommendation["priorityLabel"] {
+  if (blockedBy?.length) {
+    return "Blocked";
+  }
+  if (priority >= 700) {
+    return "High";
+  }
+  if (priority >= 250) {
+    return "Medium";
+  }
+  if (priority >= 100) {
+    return "Low";
+  }
+  return "Optional";
 }
 
 export function sortRecommendations(rows: PlannerRecommendation[]): PlannerRecommendation[] {
@@ -49,9 +119,16 @@ export function sortRecommendations(rows: PlannerRecommendation[]): PlannerRecom
       return groupDelta;
     }
 
+    const subgroupDelta =
+      ACTION_SUBGROUP_ORDER.indexOf(left.actionSubgroup) - ACTION_SUBGROUP_ORDER.indexOf(right.actionSubgroup);
+    if (subgroupDelta !== 0) {
+      return subgroupDelta;
+    }
+
     if (left.actionGroup === "resin_gated") {
       return (
         (right.totalEstimatedResin ?? 0) - (left.totalEstimatedResin ?? 0) ||
+        (right.actionableRuns ?? 0) - (left.actionableRuns ?? 0) ||
         (right.estimatedRuns ?? 0) - (left.estimatedRuns ?? 0) ||
         left.title.localeCompare(right.title)
       );
@@ -146,6 +223,27 @@ function inferActionGroupFromEstimate(estimate: FarmingEstimateDetail): PlannerR
   }
 }
 
+function inferActionSubgroupFromEstimate(estimate: FarmingEstimateDetail): PlannerRecommendation["actionSubgroup"] {
+  switch (estimate.sourceType) {
+    case "weekly_boss":
+      return "weekly_resin";
+    case "domain_of_mastery":
+    case "domain_of_forgery":
+      return "domains";
+    case "normal_boss":
+      return "bosses";
+    case "ley_line_wealth":
+    case "ley_line_revelation":
+      return "ley_lines";
+    case "local_specialty":
+      return "local_specialty";
+    case "unknown":
+      return "unknown_estimates";
+    default:
+      return undefined;
+  }
+}
+
 function resolveResinPerRun(input: PlannerInput, estimate: FarmingEstimateDetail): number | null {
   switch (estimate.sourceType) {
     case "ley_line_wealth":
@@ -163,11 +261,17 @@ function resolveResinPerRun(input: PlannerInput, estimate: FarmingEstimateDetail
   }
 }
 
-function formatResinLabel(totalEstimatedResin: number | null, _resinPerRun: number | null): string {
+function formatResinLabel(totalEstimatedResin: number | null): string {
   if (totalEstimatedResin === null) {
     return "No resin";
   }
   return String(totalEstimatedResin);
+}
+
+function formatMaterialDetailList(estimate: FarmingEstimateDetail): string {
+  return Object.entries(estimate.remainingDeficitsByMaterial ?? {})
+    .map(([materialKey, quantity]) => `${quantity} ${estimate.relatedMaterialDisplayNames?.[materialKey] ?? materialKey}`)
+    .join(", ");
 }
 
 function buildMaterialRequirementList(estimate: FarmingEstimateDetail) {
@@ -194,20 +298,23 @@ function buildMaterialSummary(estimate: FarmingEstimateDetail): string {
 function buildEstimateReason(estimate: FarmingEstimateDetail): string {
   const sourceName = estimate.sourceName ?? "unknown source";
   const materialSummary = buildMaterialSummary(estimate);
+  const actionableRuns = estimate.actionableRuns ?? (estimate.estimatedRuns !== null ? Math.ceil(estimate.estimatedRuns) : null);
+  const basisSuffix = estimate.estimateBasis ? ` Basis: ${estimate.estimateBasis}.` : "";
+  const warningSuffix = estimate.warnings.length > 0 ? ` Warning: ${estimate.warnings[0]}.` : "";
   if (estimate.sourceType === "ley_line_wealth") {
-    return `Need ${estimate.missingAmount.toLocaleString()} Mora. Estimated ${estimate.estimatedRuns ?? 0} Blossom of Wealth claim(s), about ${estimate.estimatedResin ?? 0} resin.`;
+    return `Need ${estimate.missingAmount.toLocaleString()} Mora. Estimated ${estimate.estimatedRuns?.toFixed(2) ?? "0"} claim(s), actionable ${actionableRuns ?? 0}, about ${estimate.estimatedResin ?? 0} resin.${basisSuffix}${warningSuffix}`;
   }
 
   if (estimate.sourceType === "ley_line_revelation") {
-    return `Need approximately ${estimate.deterministicRequirement.toLocaleString()} Character EXP value across book deficits. Estimated ${estimate.estimatedRuns ?? 0} Blossom of Revelation claim(s), about ${estimate.estimatedResin ?? 0} resin.`;
+    return `Need approximately ${estimate.deterministicRequirement.toLocaleString()} Character EXP value across ${formatMaterialDetailList(estimate)}. Estimated ${estimate.estimatedRuns?.toFixed(2) ?? "0"} claim(s), actionable ${actionableRuns ?? 0}, about ${estimate.estimatedResin ?? 0} resin.${basisSuffix}${warningSuffix}`;
   }
 
   if (estimate.sourceType === "domain_of_mastery" || estimate.sourceType === "domain_of_forgery") {
-    return `Need ${materialSummary}. Estimated ${estimate.estimatedRuns ?? 0} domain claim(s), about ${estimate.estimatedResin ?? 0} resin.`;
+    return `Need ${materialSummary}. Estimated ${estimate.estimatedRuns?.toFixed(2) ?? "0"} domain claim(s), actionable ${actionableRuns ?? 0}, about ${estimate.estimatedResin ?? 0} resin.${basisSuffix}${warningSuffix}`;
   }
 
   if (estimate.sourceType === "normal_boss") {
-    return `Need ${materialSummary}. Estimated ${estimate.estimatedRuns ?? 0} ${sourceName} claim(s), about ${estimate.estimatedResin ?? 0} resin. Gem drops are incidental.`;
+    return `Need ${materialSummary}. Estimated ${estimate.estimatedRuns?.toFixed(2) ?? "0"} ${sourceName} claim(s), actionable ${actionableRuns ?? 0}, about ${estimate.estimatedResin ?? 0} resin. Gem drops are incidental.${basisSuffix}${warningSuffix}`;
   }
 
   if (estimate.sourceType === "weekly_boss") {
@@ -217,19 +324,19 @@ function buildEstimateReason(estimate: FarmingEstimateDetail): string {
       fullCostClaims > 0
         ? `${discountedClaims} discounted claim(s) and ${fullCostClaims} full-cost claim(s)`
         : `${discountedClaims} discounted claim(s)`;
-    return `Need ${materialSummary}. Estimated ${estimate.estimatedRuns ?? 0} weekly claim(s), about ${estimate.estimatedResin ?? 0} resin (${pricingDetail}), with once-per-boss-per-week scheduling and a Monday 2:00 AM PST reset.`;
+    return `Need ${materialSummary}. Estimated ${estimate.estimatedRuns?.toFixed(2) ?? "0"} weekly claim(s), actionable ${actionableRuns ?? 0}, about ${estimate.estimatedResin ?? 0} resin (${pricingDetail}), with once-per-boss-per-week scheduling and a Monday 2:00 AM PST reset.${basisSuffix}${warningSuffix}`;
   }
 
   if (estimate.sourceType === "open_world_enemy") {
-    return `Need ${materialSummary}. Farm ${sourceName} routes. No resin cost.`;
+    return `Need ${materialSummary}. Farm ${sourceName} routes. No resin.${basisSuffix}${warningSuffix}`;
   }
 
   if (estimate.sourceType === "local_specialty") {
-    return `Need ${materialSummary}. Collect local specialties from ${sourceName}. No resin cost.`;
+    return `Need ${materialSummary}. Collect local specialties from ${sourceName}. No resin.${basisSuffix}${warningSuffix}`;
   }
 
   if (estimate.sourceType === "unknown") {
-    return `Need ${materialSummary}. Track this source separately because Krumpanion does not have a source estimator yet.`;
+    return `Need ${materialSummary}. Missing estimate data for this source, so it is excluded from total resin.${basisSuffix}${warningSuffix}`;
   }
 
   const estimateSummary =
@@ -260,6 +367,8 @@ export function buildMaterialRecommendations(input: PlannerInput, farmingEstimat
       const resinPerRun = resolveResinPerRun(input, estimate);
       const totalEstimatedResin = estimate.estimatedResin;
       const actionGroup = inferActionGroupFromEstimate(estimate);
+      const actionSubgroup = inferActionSubgroupFromEstimate(estimate);
+      const relatedGoalLabels = (estimate.relatedGoalKeys ?? []).map((goalKey) => getGoalDisplayName(goalKey, input));
       const priority =
         estimate.relatedGoalKeys.length * priorityConfig.sharedMaterialWeight +
         (estimate.isAvailableToday ? priorityConfig.farmableTodayBonus : 0) +
@@ -277,19 +386,26 @@ export function buildMaterialRecommendations(input: PlannerInput, farmingEstimat
               : `Resolve ${estimate.materialName}`,
         category: inferRecommendationCategoryFromEstimate(estimate),
         actionGroup,
+        actionSubgroup,
         priority,
         availability: estimate.availability,
         sourceName: estimate.sourceName ?? undefined,
         resinCost: totalEstimatedResin ?? undefined,
         resinPerRun,
         totalEstimatedResin,
-        resinLabel: formatResinLabel(totalEstimatedResin, resinPerRun),
+        resinLabel: formatResinLabel(totalEstimatedResin),
         estimatedRuns: estimate.estimatedRuns,
+        actionableRuns: estimate.actionableRuns,
         relatedGoalKeys: estimate.relatedGoalKeys,
+        relatedGoalLabels,
+        priorityLabel: getPlannerPriorityLabel(priority, estimate.warnings),
         requiredMaterials: buildMaterialRequirementList(estimate),
         reason: buildEstimateReason(estimate),
         blockedBy: estimate.warnings.length > 0 ? estimate.warnings : [],
         isAvailableToday: estimate.isAvailableToday,
+        warnings: estimate.warnings,
+        estimateBasis: estimate.estimateBasis,
+        dataQuality: estimate.dataQuality,
       } satisfies PlannerRecommendation;
     });
 }
@@ -314,6 +430,8 @@ export function buildArtifactRecommendations(input: PlannerInput, artifactPlans:
       ? Math.ceil(artifactPlan.weeklyResinBudget / (input.staticData.artifactDomains[artifactPlan.targetSetKeys[0]]?.resinCost ?? 20))
       : null,
     relatedGoalKeys: artifactPlan.targetSetKeys,
+    relatedGoalLabels: artifactPlan.targetSetKeys,
+    priorityLabel: getPlannerPriorityLabel(artifactPlan.priority * 100, []),
     requiredMaterials: [],
     reason: `Farm ${artifactPlan.domainName} because ${artifactPlan.label} is an active artifact goal.`,
     blockedBy: [],
@@ -334,6 +452,8 @@ export function buildCraftingPlannerRecommendations(craftingPlan: PlannerOutput[
     totalEstimatedResin: null,
     resinLabel: "No resin",
     relatedGoalKeys: [suggestion.outputMaterialKey],
+    relatedGoalLabels: [suggestion.outputDisplayName],
+    priorityLabel: "Optional",
     requiredMaterials: Object.entries(suggestion.ingredientsConsumed).map(([materialId, quantity]) => ({
       materialId,
       quantity,
@@ -350,10 +470,16 @@ export function buildCraftingPlannerRecommendations(craftingPlan: PlannerOutput[
   }));
 }
 
-export function buildWeaponExpRecommendation(summary: WeaponExpPlannerSummary, relatedGoalKeys: string[]): PlannerRecommendation[] {
+export function buildWeaponExpRecommendation(
+  summary: WeaponExpPlannerSummary,
+  relatedGoals: Array<{ key: string; label: string }>,
+): PlannerRecommendation[] {
   if (summary.totalWeaponExpNeeded <= 0 || summary.remainingWeaponExpAfterOwnedOre <= 0) {
     return [];
   }
+
+  const relatedGoalKeys = relatedGoals.map((goal) => goal.key);
+  const relatedGoalLabels = relatedGoals.map((goal) => goal.label);
 
   return [
     {
@@ -361,6 +487,7 @@ export function buildWeaponExpRecommendation(summary: WeaponExpPlannerSummary, r
       title: "Forge Mystic Enhancement Ore",
       category: "forging",
       actionGroup: "time_gated_non_resin",
+      actionSubgroup: "forging",
       priority: 50 + summary.mysticEquivalentNeeded,
       availability: "ALWAYS",
       sourceName: "Mystic Enhancement Ore forging",
@@ -369,7 +496,10 @@ export function buildWeaponExpRecommendation(summary: WeaponExpPlannerSummary, r
       totalEstimatedResin: null,
       resinLabel: "No resin",
       estimatedRuns: summary.minimumDailyResetsRequired,
+      actionableRuns: summary.minimumDailyResetsRequired,
       relatedGoalKeys,
+      relatedGoalLabels,
+      priorityLabel: getPlannerPriorityLabel(50 + summary.mysticEquivalentNeeded, []),
       requiredMaterials: [
         { materialId: "MysticEnhancementOre", quantity: summary.mysticEquivalentNeeded },
       ],
@@ -377,6 +507,9 @@ export function buildWeaponExpRecommendation(summary: WeaponExpPlannerSummary, r
       reason: `Need ${summary.remainingWeaponExpAfterOwnedOre.toLocaleString()} Weapon EXP after owned ore, or about ${summary.mysticEquivalentNeeded.toLocaleString()} Mystic Enhancement Ore. Forge up to ${summary.dailyMysticForgeCap} Mystic per daily reset from supported crystals. ${summary.remainingMysticEquivalentUnforgeable > 0 ? `${summary.remainingMysticEquivalentUnforgeable.toLocaleString()} Mystic-equivalent still remains after current crystals.` : "Current crystals can cover the full remaining equivalent."}`,
       blockedBy: [],
       isAvailableToday: true,
+      warnings: [],
+      estimateBasis: "Daily forging cap and owned crystal conversion",
+      dataQuality: "exact",
     },
   ];
 }
@@ -406,28 +539,60 @@ function buildRecommendationSections(recommendations: PlannerRecommendation[]): 
   const groups: PlannerRecommendationSection[] = [
     {
       key: "resin_gated",
-      label: "Resin-Gated Activities",
+      label: "Resin Activities",
       rows: recommendations.filter((row) => row.actionGroup === "resin_gated"),
     },
     {
-      key: "time_gated_non_resin",
-      label: "Time-Gated / Daily-Capped Non-Resin",
-      rows: recommendations.filter((row) => row.actionGroup === "time_gated_non_resin"),
+      key: "weekly_resin",
+      label: "Weekly Resin Activities",
+      rows: recommendations.filter((row) => row.actionSubgroup === "weekly_resin"),
+    },
+    {
+      key: "domains",
+      label: "Domains",
+      rows: recommendations.filter((row) => row.actionSubgroup === "domains"),
+    },
+    {
+      key: "bosses",
+      label: "Bosses",
+      rows: recommendations.filter((row) => row.actionSubgroup === "bosses"),
+    },
+    {
+      key: "ley_lines",
+      label: "Ley Lines",
+      rows: recommendations.filter((row) => row.actionSubgroup === "ley_lines"),
     },
     {
       key: "crafting",
-      label: "Crafting Actions",
+      label: "Crafting / Conversion",
       rows: recommendations.filter((row) => row.actionGroup === "crafting"),
     },
     {
       key: "open_world",
-      label: "Open-World Farming",
-      rows: recommendations.filter((row) => row.actionGroup === "open_world"),
+      label: "Open-World Enemy Farming",
+      rows: recommendations.filter((row) => row.actionGroup === "open_world" && row.actionSubgroup !== "local_specialty"),
+    },
+    {
+      key: "local_specialty",
+      label: "Local Specialties",
+      rows: recommendations.filter((row) => row.actionSubgroup === "local_specialty"),
     },
     {
       key: "passive_incidental",
-      label: "Passive / Incidental / Conversion",
-      rows: recommendations.filter((row) => row.actionGroup === "passive_incidental"),
+      label: "Passive / Incidental Sources",
+      rows: recommendations.filter((row) => row.actionGroup === "passive_incidental" && row.actionSubgroup !== "unknown_estimates"),
+    },
+    {
+      key: "unknown_estimates",
+      label: "Unknown / Missing Estimate Data",
+      rows: recommendations.filter((row) => row.actionSubgroup === "unknown_estimates"),
+    },
+    {
+      key: "forging",
+      label: "Forging",
+      rows: recommendations.filter(
+        (row) => row.actionSubgroup === "forging" || row.actionGroup === "time_gated_non_resin",
+      ),
     },
   ];
 
@@ -655,6 +820,8 @@ export function buildResinSummary(params: {
     weeklyGatedEstimateCount: params.farmingEstimates.filter((estimate) => estimate.weeklyGate?.isWeeklyGated).length,
     resinGatedEstimateCount: params.farmingEstimates.filter((estimate) => estimate.estimatedResin !== null).length,
     openWorldEstimateCount: params.farmingEstimates.filter((estimate) => estimate.sourceType === "open_world_enemy").length,
+    noResinTaskCount: params.farmingEstimates.filter((estimate) => estimate.estimatedResin === null && estimate.sourceType !== "unknown").length,
+    unknownEstimateCount: params.farmingEstimates.filter((estimate) => estimate.sourceType === "unknown").length,
     dailyResinBudget: params.dailyResinBudget,
     weeklyResinBudget: params.weeklyResinBudget,
     artifactBudget: params.artifactBudget,

@@ -1,3 +1,10 @@
+/**
+ * Maintenance-only generator for legacy runtime bundles.
+ *
+ * The app runtime must not load these generated files as source truth. Review
+ * any useful output from this script and migrate it into src/data/database
+ * before relying on it in normal application behavior.
+ */
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";

@@ -14,6 +14,13 @@ Canonical records are stored there, mostly as JSON, with TypeScript only for:
 
 Deprecated runtime-era sources such as `src/data/runtime/**`, `src/data/runtime/generated/**`, and copied table outputs are no longer loaded as normal runtime truth.
 
+Runtime assembly order:
+1. `canonicalDatabase` from `src/data/database/index.ts`
+2. canonical validation
+3. canonical-to-`StaticGameData` normalization
+4. override application
+5. derived lookup indexes
+
 ## Canonical database shape
 
 Primary categories:
@@ -149,6 +156,8 @@ Observed top-level keys:
 
 Imported material, character, and weapon names are matched against canonical database keys and aliases. Unmatched records are reported, not silently discarded.
 
+The GOOD adapter does not read runtime-era discovered/generated catalogs directly. It matches against canonical-backed `StaticGameData`, which is assembled from `src/data/database/`.
+
 ## Multi-account user model
 
 Krumpanion persists user-owned progression data under a multi-account container:
@@ -194,6 +203,31 @@ type KrumpanionGoals = {
 ```
 
 Weapon goals are now structured and account-aware. They should not rely on fragile encoded IDs.
+
+## Planner estimate models
+
+Planner estimation is intentionally separate from deterministic cost calculation.
+
+Key planner-side models:
+
+- `DeterministicRequirement`
+  - exact required quantity per material before inventory
+- `InventoryCoverage`
+  - exact active-account subtraction with zero-clamped remaining quantities
+- `MaterialDeficit`
+  - non-negative integer remaining quantity after inventory and guaranteed crafting
+- `LootTableModel`
+  - source/activity reward model with level dimension, expected outputs, and data quality
+- `SourceEstimate`
+  - grouped runs, actionable runs, total Resin, affected materials, and warnings for one activity
+- `PlannerRecommendationSection`
+  - grouped UI section for user-facing planner rows
+- `PlannerReport`
+  - grouped planner sections plus summary and warnings built from source estimates
+
+Important rule:
+- deterministic requirements and deficits are not allowed to mutate based on estimate assumptions
+- farming estimates consume deficits, but do not rewrite them
 
 ## Inventory editing
 

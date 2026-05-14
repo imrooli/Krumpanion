@@ -18842,20 +18842,29 @@
   },
   "MadmansRestraint": {
     "materialKey": "MadmansRestraint",
-    "displayName": "Madmans Restraint",
-    "category": "other",
-    "legacyCategory": "other",
-    "recordCategory": null,
+    "displayName": "Madman's Restraint",
+    "category": "weekly_boss_material",
+    "legacyCategory": "weekly_boss",
+    "recordCategory": "weekly_boss_material",
     "rarity": null,
     "familyKey": null,
     "tier": null,
-    "sourceKeys": [],
+    "sourceKeys": [
+      "FalseMoonInstitute"
+    ],
     "status": "verified",
     "notes": [],
-    "usedFor": [],
+    "usedFor": [
+      "talent_leveling"
+    ],
     "craftable": false,
     "conversionRatio": null,
-    "source": null,
+    "source": {
+      "type": "weekly_boss",
+      "bossKey": "FalseMoonInstitute",
+      "bossName": "False Moon Institute",
+      "domainName": "False Moon Institute"
+    },
     "characterExpValue": null,
     "weaponExpValue": null
   },

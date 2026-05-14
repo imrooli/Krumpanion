@@ -58,6 +58,7 @@ function buildGoodWithWeapons(weapons: Array<{
 describe("useAppStore multi-account support", () => {
   beforeEach(() => {
     vi.restoreAllMocks();
+    vi.useRealTimers();
     vi.spyOn(persistenceAdapter, "saveSaveFile").mockResolvedValue();
     resetStore();
   });
@@ -515,5 +516,16 @@ describe("useAppStore multi-account support", () => {
     expect(useAppStore.getState().user.activeAccountId).toBe("missing-account");
     expect(selectActiveGoals(useAppStore.getState()).artifactGoals).toEqual([]);
     expect(selectPlannerOutput(useAppStore.getState()).plannerGoals).toBeDefined();
+  });
+
+  it("refreshes the planner day using the 2:00 AM Pacific reset instead of midnight", () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date("2026-05-09T08:30:00.000Z"));
+    useAppStore.getState().refreshToday();
+    expect(useAppStore.getState().today).toBe("Friday");
+
+    vi.setSystemTime(new Date("2026-05-09T09:30:00.000Z"));
+    useAppStore.getState().refreshToday();
+    expect(useAppStore.getState().today).toBe("Saturday");
   });
 });

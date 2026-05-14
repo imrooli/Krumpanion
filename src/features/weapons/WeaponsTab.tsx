@@ -153,7 +153,7 @@ export function WeaponsTab({ plannerOutput }: WeaponsTabProps) {
     [plannerOutput.byWeapon],
   );
 
-  const ownedWeapons = account?.weapons ?? [];
+  const ownedWeapons = useMemo(() => account?.weapons ?? [], [account?.weapons]);
   const staleGoals = useMemo(
     () =>
       Object.values(weaponGoals)

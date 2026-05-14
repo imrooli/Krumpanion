@@ -49,6 +49,73 @@ describe("buildPlannerOutput", () => {
     expect(planner.summary.totalMora).toBe(planner.summary.progressionMora + planner.summary.craftingMora);
   });
 
+  it("exposes deterministic requirements, inventory coverage, and exact deficits as separate planner stages", () => {
+    const planner = buildPlannerOutput({
+      ...buildPlannerInput({
+        importMeta: {
+          format: "GOOD",
+          version: 1,
+          importedAt: new Date("2026-05-02T00:00:00.000Z").toISOString(),
+        },
+        characters: [
+          {
+            characterId: "Zhongli",
+            currentLevel: 1,
+            currentAscension: 0,
+            currentTalents: {
+              normal: 1,
+              skill: 1,
+              burst: 1,
+            },
+          },
+        ],
+        weapons: [],
+        artifacts: [],
+        inventory: {
+          BasaltPillar: 5,
+          SlimeConcentrate: 3,
+        },
+        warnings: [],
+      }),
+      goals: {
+        ...exampleGoals,
+        characterGoals: {
+          Zhongli: {
+            characterKey: "Zhongli",
+            enabled: true,
+            priority: 3,
+            targetLevel: 90,
+            targetAscension: 6,
+          },
+        },
+        weaponGoals: {},
+        artifactGoals: [],
+      } as unknown as KrumpanionGoals,
+      staticData: loadStaticData(),
+      today: "Monday",
+      resinSettings: exampleGoals.plannerSettings,
+    });
+
+    expect(planner.deterministicRequirements.length).toBeGreaterThan(0);
+    expect(planner.inventoryCoverage.length).toBeGreaterThan(0);
+    expect(planner.materialDeficits.every((deficit) => deficit.missingQuantity >= 0)).toBe(true);
+    expect(
+      planner.materialDeficits.every((deficit) => Number.isInteger(deficit.missingQuantity)),
+    ).toBe(true);
+    expect(planner.plannerReport.summary.totalEstimatedResin).toBe(planner.resinSummary.totalEstimatedResin);
+
+    const deterministicBossMaterial = planner.deterministicRequirements.find(
+      (requirement) => requirement.materialKey === "BasaltPillar",
+    );
+    const inventoryCoverage = planner.inventoryCoverage.find((coverage) => coverage.materialKey === "BasaltPillar");
+    const deficit = planner.materialDeficits.find((item) => item.materialKey === "BasaltPillar");
+
+    expect(deterministicBossMaterial?.quantityRequired).toBe(46);
+    expect(inventoryCoverage?.quantityOwned).toBe(5);
+    expect(inventoryCoverage?.remainingAfterInventory).toBe(41);
+    expect(deficit?.missingQuantity).toBe(41);
+  });
+
   it("keeps deterministic rows separate from calculator rows and reports crafting resin impact", () => {
     const planner = buildPlannerOutput({
       ...buildPlannerInput(importGoodAccountFromText(JSON.stringify(exampleGood)).account),
@@ -1041,20 +1108,22 @@ describe("buildPlannerOutput", () => {
 
     expect(normalBossEstimate).toMatchObject({
       sourceName: "Geo Hypostasis",
-      estimatedRuns: 18,
-      estimatedResin: 720,
+      estimatedRuns: 46 / 3,
+      actionableRuns: 16,
+      estimatedResin: 640,
     });
     expect(weeklyBossEstimate).toMatchObject({
       sourceName: "Enter the Golden House",
-      estimatedRuns: 8,
-      estimatedResin: 240,
+      estimatedRuns: 9,
+      actionableRuns: 9,
+      estimatedResin: 270,
     });
-    expect(planner.resinSummary.totalEstimatedResin).toBeGreaterThanOrEqual(960);
-    expect(goalPlan?.estimatedResin).toBeGreaterThanOrEqual(960);
+    expect(planner.resinSummary.totalEstimatedResin).toBeGreaterThanOrEqual(910);
+    expect(goalPlan?.estimatedResin).toBeGreaterThanOrEqual(910);
     expect(bossRecommendations).toEqual(
       expect.arrayContaining([
-        expect.objectContaining({ title: "Farm Geo Hypostasis", totalEstimatedResin: 720, resinPerRun: 40 }),
-        expect.objectContaining({ title: "Farm Enter the Golden House", totalEstimatedResin: 240 }),
+        expect.objectContaining({ title: "Farm Geo Hypostasis", totalEstimatedResin: 640, resinPerRun: 40 }),
+        expect.objectContaining({ title: "Farm Enter the Golden House", totalEstimatedResin: 270 }),
       ]),
     );
   });

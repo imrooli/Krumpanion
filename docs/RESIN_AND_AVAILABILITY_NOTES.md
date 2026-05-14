@@ -41,6 +41,12 @@ type AvailabilityGroupKey =
 
 Rotating talent and weapon domain materials should be assigned to one of the three rotating day groups. Sunday should surface all rotating domain materials.
 
+Planner availability should use the in-game reset day, not raw local midnight:
+
+- Genshin's daily reset is `2:00 AM` Pacific time
+- before `2:00 AM` Pacific, Krumpanion should still treat the planner as the previous in-game day
+- after or at `2:00 AM` Pacific, the planner should switch to the new day
+
 ## Source record
 
 ```ts

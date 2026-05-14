@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { StatusBadge } from "../../app/layoutPrimitives";
 import { defaultPlanningMode, getGoalCurrentStateLabel, resolveCharacterGoalCurrentState } from "../../domain/goals/goalState";
 import type { CharacterGoal } from "../../domain/goals/types";
@@ -104,9 +104,12 @@ export function CharactersTab({ plannerOutput }: CharactersTabProps) {
     [ownership.characters],
   );
 
-  const isCharacterOwned = (characterKey: string) =>
-    ownedCharacterKeys.has(characterKey) ||
-    (isTravelerElementKey(characterKey) && ownedCharacterKeys.has(TRAVELER_SHARED_KEY));
+  const isCharacterOwned = useCallback(
+    (characterKey: string) =>
+      ownedCharacterKeys.has(characterKey) ||
+      (isTravelerElementKey(characterKey) && ownedCharacterKeys.has(TRAVELER_SHARED_KEY)),
+    [ownedCharacterKeys],
+  );
 
   const rows = useMemo(() => {
     return getGoalPickableCharacters(staticData).filter((character) => {
@@ -136,7 +139,7 @@ export function CharactersTab({ plannerOutput }: CharactersTabProps) {
       const rightTraveler = isTravelerGoalKey(right.key) ? 0 : 1;
       return leftTraveler - rightTraveler || (getTravelerGoalLabel(left.key) ?? left.displayName).localeCompare(getTravelerGoalLabel(right.key) ?? right.displayName);
     });
-  }, [elementFilter, goals, ownedCharacterKeys, ownershipFilter, profileFilter, rarityFilter, search, staticData, weaponTypeFilter]);
+  }, [elementFilter, goals, isCharacterOwned, ownershipFilter, profileFilter, rarityFilter, search, staticData, weaponTypeFilter]);
 
   const selectedVisibleCharacterKeys = selectedCharacterKeys.filter((characterKey) =>
     rows.some((row) => row.key === characterKey && Boolean(goals[characterKey])),

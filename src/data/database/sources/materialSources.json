@@ -189,6 +189,36 @@
       "notes": "Artificed Spare Clockwork Component — Coppelius"
     }
   ],
+    "AscendedSampleKnight": [
+    {
+      "materialKey": "AscendedSampleKnight",
+      "sourceType": "weekly_boss",
+      "sourceKey": "UnresolvedChessGame",
+      "sourceName": "UnresolvedChessGame",
+      "availability": "WEEKLY",
+      "notes": "Unresolved Chess Game"
+    }
+  ],
+    "AscendedSampleQueen": [
+    {
+      "materialKey": "AscendedSampleQueen",
+      "sourceType": "weekly_boss",
+      "sourceKey": "UnresolvedChessGame",
+      "sourceName": "UnresolvedChessGame",
+      "availability": "WEEKLY",
+      "notes": "Unresolved Chess Game"
+    }
+  ],
+    "AscendedSampleRook": [
+    {
+      "materialKey": "AscendedSampleRook",
+      "sourceType": "weekly_boss",
+      "sourceKey": "UnresolvedChessGame",
+      "sourceName": "UnresolvedChessGame",
+      "availability": "WEEKLY",
+      "notes": "Unresolved Chess Game"
+    }
+  ],
   "AshenHeart": [
     {
       "materialKey": "AshenHeart",
@@ -253,6 +283,7 @@
   ],
   "BitOfAerosiderite": [
     {
+      "materialKey": "BitOfAerosiderite",
       "materialKey": "BitOfAerosiderite",
       "sourceType": "domain_of_forgery",
       "sourceKey": "HiddenPalaceOfLianshanFormula",
@@ -2351,6 +2382,16 @@
       "availability": "MON_THU_SUN",
       "region": "Liyue",
       "notes": "Guyun drops in Hidden Palace of Lianshan Formula."
+    }
+  ],
+  "MadmansRestraint": [
+    {
+      "materialKey": "MadmansRestraint",
+      "sourceType": "weekly_boss",
+      "sourceKey": "FalseMoonInstitute",
+      "sourceName": "False Moon Institute",
+      "availability": "WEEKLY",
+      "notes": "False Moon Institute"
     }
   ],
   "MajesticHookedBeak": [

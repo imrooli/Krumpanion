@@ -28,3 +28,42 @@ export function availabilityMatchesDay(availability: AvailabilityGroupKey, day: 
       return false;
   }
 }
+
+const PACIFIC_TIME_ZONE = "America/Los_Angeles";
+const DAILY_RESET_HOUR_PACIFIC = 2;
+const DAY_SEQUENCE: DayOfWeek[] = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+function getPreviousDay(day: DayOfWeek): DayOfWeek {
+  const index = DAY_SEQUENCE.indexOf(day);
+  if (index <= 0) {
+    return "Saturday";
+  }
+  return DAY_SEQUENCE[index - 1] ?? "Saturday";
+}
+
+function getPacificDatePart(date: Date, type: Intl.DateTimeFormatPartTypes): string {
+  const formatter = new Intl.DateTimeFormat("en-US", {
+    timeZone: PACIFIC_TIME_ZONE,
+    weekday: "long",
+    hour: "2-digit",
+    hour12: false,
+  });
+
+  const value = formatter.formatToParts(date).find((part) => part.type === type)?.value;
+  return value ?? "";
+}
+
+export function getGenshinResetDay(date = new Date()): DayOfWeek {
+  const pacificWeekday = getPacificDatePart(date, "weekday") as DayOfWeek;
+  const pacificHour = Number.parseInt(getPacificDatePart(date, "hour"), 10);
+
+  if (!DAY_SEQUENCE.includes(pacificWeekday)) {
+    return new Intl.DateTimeFormat("en-US", { weekday: "long" }).format(date) as DayOfWeek;
+  }
+
+  if (Number.isFinite(pacificHour) && pacificHour < DAILY_RESET_HOUR_PACIFIC) {
+    return getPreviousDay(pacificWeekday);
+  }
+
+  return pacificWeekday;
+}

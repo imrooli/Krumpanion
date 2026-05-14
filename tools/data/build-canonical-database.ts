@@ -1,3 +1,10 @@
+/**
+ * Maintenance/export utility.
+ *
+ * This script can help rewrite canonical database files from the current
+ * assembled static-data view, but it is not part of normal runtime loading.
+ * Canonical application truth still starts at src/data/database/index.ts.
+ */
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";

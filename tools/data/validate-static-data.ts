@@ -3,6 +3,10 @@ import { existsSync } from "node:fs";
 import { mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import generatedBetaMaterials from "../../src/data/runtime/generated/betaMaterials.generated.json";
+import generatedCharacterProfiles from "../../src/data/runtime/generated/characterMaterialProfiles.generated.json";
+import generatedUnresolvedCharacterMaterialReferences from "../../src/data/runtime/generated/unresolvedCharacterMaterialReferences.generated.json";
+import generatedWeaponGoalProfiles from "../../src/data/runtime/generated/weaponGoalProfiles.generated.json";
 import { validateCanonicalDatabase } from "../../src/data/database/validation/validateDatabase.ts";
 import {
   extendStaticDataHealthReport,
@@ -116,6 +120,68 @@ function findGeneratedStatusWarnings(rootDir: string): StaticDataIssue[] {
   return [];
 }
 
+function buildGeneratedMaintenanceIssues(materialKeys: Set<string>): StaticDataIssue[] {
+  const issues: StaticDataIssue[] = [];
+  const generatedCharacterSourceVersion = (generatedCharacterProfiles as { sourceVersion?: string }).sourceVersion ?? "unknown";
+  const generatedWeaponSourceVersion = String((generatedWeaponGoalProfiles as { version?: number }).version ?? "unknown");
+  const unresolvedReferences = (
+    generatedUnresolvedCharacterMaterialReferences as {
+      unresolvedReferences?: Array<{ characterKey: string; displayName: string; materialSlot: string; generatedKey?: string; rawName: string; status: string }>;
+    }
+  ).unresolvedReferences ?? [];
+  const manualReviewWeaponProfiles = Object.keys(
+    (generatedWeaponGoalProfiles as { manualReviewProfiles?: Record<string, unknown> }).manualReviewProfiles ?? {},
+  );
+  const generatedBetaMaterialCount = Object.keys(
+    (generatedBetaMaterials as { materials?: Record<string, unknown> }).materials ?? {},
+  ).length;
+
+  issues.push(
+    createIssue(
+      "info",
+      "generated_data",
+      "legacy_generated_bundle_versions",
+      `Legacy generated bundles remain available for maintenance only (character source ${generatedCharacterSourceVersion}, weapon source ${generatedWeaponSourceVersion}).`,
+      {
+        entityKey: "src/data/runtime/generated",
+        suggestedFix: "Do not add new runtime consumers of generated bundles. Migrate any needed data into src/data/database instead.",
+      },
+    ),
+  );
+  issues.push(
+    createIssue(
+      "info",
+      "generated_data",
+      "legacy_generated_bundle_counts",
+      `Legacy generated bundles contain ${generatedBetaMaterialCount} beta materials, ${unresolvedReferences.length} unresolved character material references, and ${manualReviewWeaponProfiles.length} manual-review weapon profiles.`,
+      { entityKey: "src/data/runtime/generated" },
+    ),
+  );
+
+  for (const unresolved of unresolvedReferences) {
+    if (!unresolved.generatedKey || !materialKeys.has(unresolved.generatedKey)) {
+      continue;
+    }
+
+    issues.push(
+      createIssue(
+        "warning",
+        "generated_data",
+        "legacy_unresolved_reference_now_canonical",
+        `${unresolved.displayName} still has a legacy generated unresolved ${unresolved.materialSlot} reference for ${unresolved.generatedKey}, but that key now exists in canonical static data.`,
+        {
+          entityKey: `${unresolved.characterKey}:${unresolved.materialSlot}`,
+          entityName: unresolved.displayName,
+          relatedKeys: [unresolved.generatedKey],
+          suggestedFix: "Refresh or retire the generated maintenance bundle so it no longer lags behind canonical data.",
+        },
+      ),
+    );
+  }
+
+  return issues;
+}
+
 async function buildRepositoryHygieneIssues(rootDir: string): Promise<StaticDataIssue[]> {
   const issues: StaticDataIssue[] = [];
   const gitignoreText = await readFile(path.join(rootDir, ".gitignore"), "utf8");
@@ -206,17 +272,19 @@ async function main(): Promise<void> {
   const scriptDir = path.dirname(fileURLToPath(import.meta.url));
   const rootDir = path.resolve(scriptDir, "..", "..");
   const staticData = loadStaticData();
+  const materialKeys = new Set(Object.keys(staticData.materials));
   const report = validateStaticData(staticData);
   const canonicalReport = validateCanonicalDatabase();
   const hygieneIssues = await buildRepositoryHygieneIssues(rootDir);
+  const generatedMaintenanceIssues = buildGeneratedMaintenanceIssues(materialKeys);
   const canonicalIssues = canonicalReport.issues.map((item) =>
     createIssue(item.severity, "repository_hygiene", `canonical_database_${item.category}`, item.message, {
       entityKey: item.key,
     }),
   );
   const finalReport =
-    hygieneIssues.length > 0 || canonicalIssues.length > 0
-      ? extendStaticDataHealthReport(report, staticData, [...canonicalIssues, ...hygieneIssues])
+    hygieneIssues.length > 0 || canonicalIssues.length > 0 || generatedMaintenanceIssues.length > 0
+      ? extendStaticDataHealthReport(report, staticData, [...canonicalIssues, ...generatedMaintenanceIssues, ...hygieneIssues])
       : report;
   const reportDir = path.join(rootDir, "codex", "reports");
   const jsonPath = path.join(reportDir, "static_data_health.json");
