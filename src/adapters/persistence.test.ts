@@ -17,9 +17,15 @@ describe("IndexedDbPersistenceAdapter", () => {
     saveFile.user.accountsById[activeAccountId] = {
       ...saveFile.user.accountsById[activeAccountId],
       goals: {
-        version: 3,
+        version: 4,
         profileName: (exampleGoals as { profileName?: string }).profileName,
-        characterGoals: (exampleGoals as { characterGoals: Record<string, unknown> }).characterGoals as typeof saveFile.user.accountsById[typeof activeAccountId]["goals"]["characterGoals"],
+        characterGoals: {
+          ...((exampleGoals as { characterGoals: Record<string, unknown> }).characterGoals as typeof saveFile.user.accountsById[typeof activeAccountId]["goals"]["characterGoals"]),
+          Furina: {
+            ...((exampleGoals as { characterGoals: Record<string, unknown> }).characterGoals as typeof saveFile.user.accountsById[typeof activeAccountId]["goals"]["characterGoals"]).Furina,
+            paused: true,
+          },
+        },
         weaponGoals: (exampleGoals as { weaponGoals: Record<string, unknown> }).weaponGoals as typeof saveFile.user.accountsById[typeof activeAccountId]["goals"]["weaponGoals"],
         artifactGoals: (exampleGoals as { artifactGoals: Array<unknown> }).artifactGoals as typeof saveFile.user.accountsById[typeof activeAccountId]["goals"]["artifactGoals"],
       },
@@ -32,6 +38,9 @@ describe("IndexedDbPersistenceAdapter", () => {
       },
       inventory: {
         Mora: 1000,
+      },
+      importedInventory: {
+        Mora: 800,
       },
       materialEditState: {
         Mora: {
@@ -47,7 +56,9 @@ describe("IndexedDbPersistenceAdapter", () => {
     const importedAccount = imported.user.accountsById[imported.user.activeAccountId];
 
     expect(importedAccount.goals.characterGoals.Furina.targetLevel).toBe(90);
+    expect(importedAccount.goals.characterGoals.Furina.paused).toBe(true);
     expect(importedAccount.inventory.Mora).toBe(1000);
+    expect(importedAccount.importedInventory.Mora).toBe(800);
     expect(importedAccount.materialEditState.Mora?.source).toBe("manual");
   });
 
@@ -92,9 +103,16 @@ describe("IndexedDbPersistenceAdapter", () => {
     );
 
     const migratedAccount = migrated.user.accountsById[migrated.user.activeAccountId];
-    expect(migrated.schemaVersion).toBe(4);
+    expect(migrated.schemaVersion).toBe(9);
     expect(migrated.settings.activeTab).toBe("dashboard");
     expect(migratedAccount.plannerSettings.weeklyBossDiscountClaimsUsed).toBe(0);
+    expect(migratedAccount.importedInventory).toEqual(migratedAccount.inventory);
+    expect(migratedAccount.checklist.weeklyBossClaims.usedCount).toBe(0);
+    expect(migratedAccount.checklist.realmCurrency.realmLevel).toBe(10);
+    expect(migratedAccount.checklist.realmCurrency.trustRank).toBe(10);
+    expect(migratedAccount.goals.version).toBe(4);
+    expect(migratedAccount.goalProgressTracking).toEqual({});
+    expect(migratedAccount.goalMilestones).toEqual([]);
     expect(migrated.overridePack?.legacyExactCharacterProgressions?.LegacyCharacter.levelTotals?.["20"]?.Mora).toBe(1);
   });
 
@@ -113,6 +131,21 @@ describe("IndexedDbPersistenceAdapter", () => {
     expect(imported.settings.activeTab).toBe("crafting");
   });
 
+  it("keeps checklist as a valid persisted active tab during import", async () => {
+    const defaults = createDefaultSaveFile();
+    const imported = await adapter.importSaveFile(
+      JSON.stringify({
+        ...defaults,
+        settings: {
+          ...defaults.settings,
+          activeTab: "checklist",
+        },
+      }),
+    );
+
+    expect(imported.settings.activeTab).toBe("checklist");
+  });
+
   it("repairs an invalid active account id during import", async () => {
     const saveFile = createDefaultSaveFile(new Date("2026-05-02T00:00:00.000Z"));
     const validAccountId = saveFile.user.accountOrder[0];
@@ -129,5 +162,64 @@ describe("IndexedDbPersistenceAdapter", () => {
 
     expect(imported.user.activeAccountId).toBe(validAccountId);
     expect(imported.user.accountsById[validAccountId]).toBeDefined();
+  });
+
+  it("creates and prunes goal backups per account", async () => {
+    const backupSeed = createDefaultSaveFile();
+    const backupAccount = backupSeed.user.accountsById[backupSeed.user.activeAccountId];
+
+    for (let index = 0; index < 22; index += 1) {
+      await adapter.createGoalBackup(
+        "account-a",
+        {
+          accountId: "account-a",
+          accountName: "Account A",
+          goals: backupAccount.goals,
+          plannerSettings: backupAccount.plannerSettings,
+        },
+        "goal_edit",
+      );
+    }
+
+    await adapter.createGoalBackup(
+      "account-b",
+      {
+        accountId: "account-b",
+        accountName: "Account B",
+        goals: backupAccount.goals,
+        plannerSettings: backupAccount.plannerSettings,
+      },
+      "planner_settings_edit",
+    );
+
+    const accountABackups = await adapter.listGoalBackups("account-a");
+    const accountBBackups = await adapter.listGoalBackups("account-b");
+
+    expect(accountABackups).toHaveLength(20);
+    expect(accountBBackups).toHaveLength(1);
+    expect(accountABackups[0].createdAt >= accountABackups[19].createdAt).toBe(true);
+
+    const restored = await adapter.restoreGoalBackup(accountABackups[0].id);
+    expect(restored.accountId).toBe("account-a");
+    expect(restored.accountName).toBe("Account A");
+  });
+
+  it("creates and prunes full save recovery points", async () => {
+    const createdAtValues: string[] = [];
+
+    for (let index = 0; index < 7; index += 1) {
+      const saveFile = createDefaultSaveFile(new Date(`2026-05-${String(index + 1).padStart(2, "0")}T00:00:00.000Z`));
+      saveFile.updatedAt = `2026-05-${String(index + 1).padStart(2, "0")}T12:00:00.000Z`;
+      const record = await adapter.createSaveRecoveryPoint(saveFile, "save_import_preflight");
+      createdAtValues.push(record.createdAt);
+    }
+
+    const recoveryPoints = await adapter.listSaveRecoveryPoints();
+    expect(recoveryPoints).toHaveLength(5);
+
+    const restored = await adapter.restoreSaveRecoveryPoint(recoveryPoints[0].id);
+    expect(restored.updatedAt).toBeDefined();
+    expect(recoveryPoints[0].createdAt >= recoveryPoints[4].createdAt).toBe(true);
+    expect(createdAtValues).toHaveLength(7);
   });
 });

@@ -1,629 +1,958 @@
-import type { PlannerOutput, PlannerRecommendation } from "../../domain/planner/types";
+import { useMemo, useState, type ReactNode } from "react";
 import {
+  EmptyStateCard,
   MetricStrip,
   PageHeader,
   PageShell,
   SectionCard,
-  WarningPanel,
+  StatusBadge,
   WorkspaceTabs,
 } from "../../app/layoutPrimitives";
-import { selectActivePlannerSettings } from "../../store/selectors";
+import type { PlannerOutput } from "../../domain/planner/types";
+import {
+  selectActiveAccount,
+  selectActiveGoals,
+  selectActivePlannerSettings,
+  selectActivePlannerStatus,
+  selectActiveRecentChanges,
+  selectActiveRecentImports,
+  selectActiveWorldState,
+} from "../../store/selectors";
 import { useAppStore } from "../../store/useAppStore";
+import { formatDayCount, formatInteger } from "./plannerFormatting";
+import { buildPlannerProgressionModel, type PlannerProgressGoalRow } from "./plannerProgressionModel";
+import { buildPlannerUiModel, type PlannerUiSection, type PlannerWeekDomainGroup } from "./plannerUiModel";
+import { PlannerRecommendationCard } from "./PlannerRecommendationCard";
 
 interface PlannerTabProps {
   plannerOutput: PlannerOutput;
 }
 
-const VIEW_OPTIONS = [
-  { key: "today", label: "Today" },
-  { key: "week", label: "This Week" },
-  { key: "materials", label: "All Missing Materials" },
-  { key: "character", label: "By Character" },
-  { key: "source", label: "By Domain/Boss" },
-] as const;
+type PlannerWorkspaceTab = "today" | "week" | "no_resin" | "recent_changes";
+type WeekCalendarFilter = "needed" | "all" | "talent" | "weapon";
 
-const ACTIVITY_LABELS: Record<string, string> = {
-  weekly_resin: "Weekly Resin Activities",
-  domains: "Domains",
-  bosses: "Bosses",
-  ley_lines: "Ley Lines",
-  forging: "Forging",
-  crafting: "Crafting / Conversion",
-  local_specialty: "Local Specialties",
-  open_world: "Open-World Enemy Farming",
-  unknown_estimates: "Unknown / Missing Estimate Data",
-  passive_incidental: "Passive / Incidental",
-  resin_gated: "Resin Activities",
-  time_gated_non_resin: "Time-Gated Non-Resin",
-};
+function formatCraftingModeLabel(mode: string): string {
+  return mode === "expected_value" ? "Expected value" : "Guaranteed";
+}
 
-export function PlannerTab({ plannerOutput }: PlannerTabProps) {
-  const plannerView = useAppStore((state) => state.settings.plannerView);
-  const setPlannerView = useAppStore((state) => state.setPlannerView);
-  const plannerSettings = useAppStore(selectActivePlannerSettings);
-  const updatePlannerSettings = useAppStore((state) => state.updatePlannerSettings);
-  const staticData = useAppStore((state) => state.staticData);
+function formatTimestamp(value?: string): string {
+  return value ? new Date(value).toLocaleString() : "Not yet";
+}
+
+function formatPlannerStatus(status: string): string {
+  switch (status) {
+    case "recalculating":
+      return "Recalculating...";
+    case "recalculated":
+      return "Updated";
+    case "recalculatedWithWarnings":
+      return "Updated with warnings";
+    case "failed":
+      return "Recalculation failed";
+    case "idle":
+    default:
+      return "Idle";
+  }
+}
+
+function statusTone(status: string): "default" | "accent" | "warning" | "success" | "muted" {
+  switch (status) {
+    case "failed":
+    case "recalculatedWithWarnings":
+      return "warning";
+    case "recalculated":
+      return "success";
+    case "recalculating":
+      return "accent";
+    case "idle":
+    default:
+      return "muted";
+  }
+}
+
+function SectionList({
+  title,
+  description,
+  section,
+  staticData,
+  emptyMessage,
+  enableInlineQuantityEditing = false,
+}: {
+  title: string;
+  description?: string;
+  section: PlannerUiSection | null;
+  staticData: ReturnType<typeof useAppStore.getState>["staticData"];
+  emptyMessage: string;
+  enableInlineQuantityEditing?: boolean;
+}) {
+  return (
+    <SectionCard title={title} description={description} compact>
+      {section && section.rows.length > 0 ? (
+        <div className="planner-row-table">
+          {section.rows.map((row) => (
+            <PlannerRecommendationCard
+              key={row.id}
+              row={row}
+              staticData={staticData}
+              compact
+              enableInlineQuantityEditing={enableInlineQuantityEditing}
+            />
+          ))}
+        </div>
+      ) : (
+        <p className="planner-empty-state">{emptyMessage}</p>
+      )}
+    </SectionCard>
+  );
+}
+
+function RecentChangesList({
+  title,
+  description,
+  entries,
+}: {
+  title: string;
+  description?: string;
+  entries: ReactNode[];
+}) {
+  return (
+    <SectionCard title={title} description={description} compact>
+      {entries.length > 0 ? <div className="planner-recent-list">{entries}</div> : <p className="planner-empty-state">No recent entries yet.</p>}
+    </SectionCard>
+  );
+}
+
+function ProgressionList({
+  title,
+  description,
+  entries,
+  emptyMessage,
+}: {
+  title: string;
+  description?: string;
+  entries: ReturnType<typeof buildPlannerProgressionModel>["achievements"];
+  emptyMessage: string;
+}) {
+  return (
+    <SectionCard title={title} description={description} compact>
+      {entries.length > 0 ? (
+        <div className="planner-recent-list">
+          {entries.map((entry) => (
+            <article key={entry.id} className="planner-recent-item">
+              <div>
+                <strong>{entry.title}</strong>
+                <div className="muted">{entry.description}</div>
+              </div>
+              <div className="button-row wrap">
+                {entry.badge ? (
+                  <StatusBadge compact tone={entry.tone}>
+                    {entry.badge}
+                  </StatusBadge>
+                ) : null}
+                <span className="muted">{formatTimestamp(entry.changedAt)}</span>
+              </div>
+            </article>
+          ))}
+        </div>
+      ) : (
+        <p className="planner-empty-state">{emptyMessage}</p>
+      )}
+    </SectionCard>
+  );
+}
+
+function formatProgressStatusLabel(status: PlannerProgressGoalRow["status"]): string {
+  return status.replace(/_/g, " ");
+}
+
+function goalProgressTone(status: PlannerProgressGoalRow["status"]): "success" | "accent" | "warning" | "muted" {
+  switch (status) {
+    case "completed":
+      return "success";
+    case "craftable":
+      return "accent";
+    case "blocked":
+      return "warning";
+    case "in_progress":
+    default:
+      return "muted";
+  }
+}
+
+function readinessTone(state: PlannerProgressGoalRow["sharedReadinessState"]): "success" | "accent" | "warning" | "muted" {
+  switch (state) {
+    case "ready":
+      return "success";
+    case "contested":
+      return "warning";
+    case "blocked":
+    default:
+      return "muted";
+  }
+}
+
+function formatTrackedDuration(startedAt?: string, completedAt?: string): string | null {
+  if (!startedAt) {
+    return null;
+  }
+
+  const start = Date.parse(startedAt);
+  const end = Date.parse(completedAt ?? new Date().toISOString());
+  if (Number.isNaN(start) || Number.isNaN(end) || end < start) {
+    return null;
+  }
+
+  const days = Math.max(0, Math.floor((end - start) / (1000 * 60 * 60 * 24)));
+  return days === 0 ? "Started today" : `${formatInteger(days)} day${days === 1 ? "" : "s"} tracked`;
+}
+
+function GoalProgressBoard({
+  progression,
+}: {
+  progression: ReturnType<typeof buildPlannerProgressionModel>;
+}) {
+  return (
+    <SectionCard title="Goal Progress" description="All character and weapon goals at a glance." compact>
+      {progression.goalGroups.length > 0 ? (
+        <div className="planner-section-group">
+          {progression.goalGroups.map((group) => (
+            <div key={group.key} className="planner-section-group">
+              <div className="planner-section-group-heading">
+                <h3>{group.label}</h3>
+                <span className="muted">{group.rows.length} goals</span>
+              </div>
+              {group.rows.length > 0 ? (
+                <div className="planner-goal-progress-list">
+                  {group.rows.map((row) => (
+                    <details key={row.goalId} className={`planner-goal-progress-row is-${row.status}`}>
+                    <summary className="planner-goal-progress-summary">
+                      <div className="planner-goal-progress-main">
+                        <div className="planner-goal-progress-title-row">
+                          <strong>{row.goalLabel}</strong>
+                          <div className="button-row wrap">
+                            <StatusBadge compact tone={goalProgressTone(row.status)}>
+                              {formatProgressStatusLabel(row.status)}
+                            </StatusBadge>
+                            {row.recentMilestone ? (
+                              <StatusBadge compact tone={row.recentMilestone.tone}>
+                                {row.recentMilestone.label}
+                              </StatusBadge>
+                            ) : null}
+                            {row.warningCount > 0 ? (
+                              <StatusBadge compact tone="warning">
+                                {formatInteger(row.warningCount)} warning{row.warningCount === 1 ? "" : "s"}
+                              </StatusBadge>
+                            ) : null}
+                          </div>
+                        </div>
+                        <div className="muted">
+                          {row.currentSummary} {"->"} {row.targetSummary}
+                        </div>
+                        <div className="planner-goal-bar-list">
+                          {row.bars.map((bar) => (
+                            <div key={`${row.goalId}-${bar.key}`} className="planner-goal-bar-item">
+                              <div className="planner-goal-bar-meta">
+                                <span>{bar.label}</span>
+                                <span className="muted">{bar.progressLabel}</span>
+                              </div>
+                              <div className="planner-goal-progress-track-row">
+                                <div
+                                  className={`planner-goal-progress-track is-${bar.tone}`}
+                                  role="progressbar"
+                                  aria-label={`${row.goalLabel} ${bar.label} progress`}
+                                  aria-valuemin={0}
+                                  aria-valuemax={100}
+                                  aria-valuenow={bar.progressPercent}
+                                >
+                                  <div
+                                    className={`planner-goal-progress-fill is-${bar.tone}`}
+                                    style={{ width: `${bar.progressPercent}%` }}
+                                  />
+                                </div>
+                                <span className="planner-goal-progress-percent">{bar.progressPercent}%</span>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                        <div className="planner-goal-bar-item planner-goal-bar-item--readiness">
+                          <div className="planner-goal-bar-meta">
+                            <span>Account readiness</span>
+                            <span className="muted">
+                              {row.isAccountReady
+                                ? "Shared resources cover this goal."
+                                : row.isContested
+                                  ? "Shared resources are contested."
+                                  : "Shared resources still fall short."}
+                            </span>
+                          </div>
+                          <div className="planner-goal-progress-track-row">
+                            <div
+                              className={`planner-goal-readiness-track is-${row.sharedReadinessState}`}
+                              role="progressbar"
+                              aria-label={`${row.goalLabel} account readiness`}
+                              aria-valuemin={0}
+                              aria-valuemax={100}
+                              aria-valuenow={row.sharedReadinessPercent}
+                            >
+                              <div
+                                className={`planner-goal-readiness-fill is-${row.sharedReadinessState}`}
+                                style={{ width: `${row.sharedReadinessPercent}%` }}
+                              />
+                            </div>
+                            <span className="planner-goal-progress-percent">{row.sharedReadinessPercent}%</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="planner-compact-summary">
+                        <strong>{row.sharedReadinessLabel}</strong>
+                        <div className="muted">
+                          {formatInteger(row.shortageCount)} shortages {" | "} {formatInteger(row.estimatedResin)} resin
+                        </div>
+                        <div className="planner-inline-summary-row">
+                          <StatusBadge compact tone={readinessTone(row.sharedReadinessState)}>
+                            {row.sharedReadinessLabel}
+                          </StatusBadge>
+                          <span className={`planner-chip ${row.enoughSharedMora ? "is-success" : ""}`}>
+                            {row.enoughSharedMora ? "Shared Mora ready" : "Needs shared Mora"}
+                          </span>
+                          <span className={`planner-chip ${row.enoughSharedExperience ? "is-success" : ""}`}>
+                            {row.enoughSharedExperience ? "Shared EXP ready" : "Needs shared EXP"}
+                          </span>
+                          {row.isContested ? <span className="planner-chip">Contested materials</span> : null}
+                        </div>
+                      </div>
+                    </summary>
+                    <div className="planner-goal-progress-details">
+                      {row.startedAt ? (
+                        <p className="planner-inline-note">
+                          Tracking since {formatTimestamp(row.startedAt)}
+                          {formatTrackedDuration(row.startedAt, row.completedAt) ? ` | ${formatTrackedDuration(row.startedAt, row.completedAt)}` : ""}
+                        </p>
+                      ) : null}
+                      {row.completedAt ? <p className="planner-inline-note">Goal met: {formatTimestamp(row.completedAt)}</p> : null}
+                      {row.recentMilestone?.context ? (
+                        <p className="planner-inline-note">Recent change: {row.recentMilestone.context}</p>
+                      ) : null}
+                      {row.sharedShortages.length > 0 ? (
+                        <>
+                          <p className="planner-inline-note">
+                            Shared allocation: {row.sharedReadinessLabel.toLowerCase()}
+                            {row.isContested && row.contestedMaterialNames.length > 0
+                              ? ` | Contested: ${row.contestedMaterialNames.join(", ")}`
+                              : ""}
+                          </p>
+                          <div className="planner-inline-summary-row">
+                            {row.sharedShortages.map((shortage) => (
+                              <span key={`${row.goalId}-shared-${shortage.label}`} className="planner-chip">
+                                {shortage.label} x{formatInteger(shortage.missingQuantity)}
+                              </span>
+                            ))}
+                          </div>
+                        </>
+                      ) : null}
+                      {row.blocker ? <p className="planner-inline-note">Blocker: {row.blocker}</p> : null}
+                      {row.missingMaterials.length > 0 ? (
+                        <div className="planner-inline-summary-row">
+                          {row.missingMaterials.map((material) => (
+                            <span key={`${row.goalId}-${material.materialName}`} className="planner-chip">
+                              {material.materialName} x{formatInteger(material.missingQuantity)}
+                            </span>
+                          ))}
+                        </div>
+                      ) : (
+                          <p className="planner-inline-note">No unresolved missing materials for this goal.</p>
+                      )}
+                      {row.timeline.length > 0 ? (
+                        <div className="planner-goal-timeline">
+                          {row.timeline.map((entry, index) => (
+                            <article key={`${row.goalId}-timeline-${entry.label}-${entry.occurredAt ?? index}`} className="planner-goal-timeline-item">
+                              <div className="button-row wrap">
+                                <StatusBadge compact tone={entry.tone}>
+                                  {entry.label}
+                                </StatusBadge>
+                                {entry.occurredAt ? <span className="muted">{formatTimestamp(entry.occurredAt)}</span> : null}
+                              </div>
+                              {entry.context ? <div className="muted">{entry.context}</div> : null}
+                            </article>
+                          ))}
+                        </div>
+                      ) : null}
+                    </div>
+                    </details>
+                  ))}
+                </div>
+              ) : (
+                <p className="planner-empty-state">No active {group.label.toLowerCase()} goals.</p>
+              )}
+            </div>
+          ))}
+        </div>
+      ) : (
+        <p className="planner-empty-state">No incomplete character or weapon goals right now. Completed goals move into Recent Achievements.</p>
+      )}
+    </SectionCard>
+  );
+}
+
+function TodayPlannerTab({
+  uiModel,
+  staticData,
+  onOpenWarnings,
+}: {
+  uiModel: ReturnType<typeof buildPlannerUiModel>;
+  staticData: ReturnType<typeof useAppStore.getState>["staticData"];
+  onOpenWarnings: () => void;
+}) {
+  const todayBestActions = useMemo(
+    () =>
+      uiModel.todaySections
+        .flatMap((section) => section.rows)
+        .sort((left, right) => right.priority - left.priority)
+        .slice(0, 6),
+    [uiModel.todaySections],
+  );
+  const leyLineSection = uiModel.todaySections.find((section) => section.key === "ley_lines") ?? null;
+  const masterySection = uiModel.todaySections.find((section) => section.key === "today_domains_mastery") ?? null;
+  const forgerySection = uiModel.todaySections.find((section) => section.key === "today_domains_forgery") ?? null;
+  const bossSection = uiModel.todaySections.find((section) => section.key === "bosses") ?? null;
 
   return (
-    <PageShell
+    <div className="planner-tab-stack">
+      <SectionCard title="Today Summary" description="What is actionable right now." compact>
+        <MetricStrip
+          compact
+          items={[
+            { label: "Total resin remaining", value: formatInteger(uiModel.summary.totalEstimatedResin), tone: "warning" },
+            {
+              label: "Estimated days",
+              value:
+                uiModel.summary.totalEstimatedResinDays != null
+                  ? formatDayCount(uiModel.summary.totalEstimatedResinDays, "day")
+                  : "Unavailable",
+              tone: "accent",
+            },
+            {
+              label: "Available today",
+              value: `${formatInteger(uiModel.todayOverview.domainCount)} domains | ${formatInteger(uiModel.todayOverview.bossCount)} bosses`,
+              tone: "default",
+            },
+            {
+              label: "Weekly locked",
+              value: formatInteger(uiModel.summary.weeklyLimitedCount),
+              tone: uiModel.summary.weeklyLimitedCount ? "warning" : "success",
+            },
+            { label: "No-resin tasks", value: formatInteger(uiModel.summary.noResinCount), tone: "default" },
+          ]}
+        />
+        <div className="planner-inline-summary-row">
+          <span className="planner-chip">Requirement crafting: {formatCraftingModeLabel(uiModel.summary.requirementCraftingMode)}</span>
+          <span className="planner-chip">Resin crafting: {formatCraftingModeLabel(uiModel.summary.resinCraftingMode)}</span>
+        </div>
+      </SectionCard>
+
+      <SectionCard title="Best Next Actions" description="Top recommended actions for today." compact>
+        {todayBestActions.length > 0 ? (
+          <div className="planner-row-table">
+            {todayBestActions.map((row) => (
+              <PlannerRecommendationCard key={row.id} row={row} staticData={staticData} compact enableInlineQuantityEditing />
+            ))}
+          </div>
+        ) : (
+          <p className="planner-empty-state">No resin-gated actions are available today.</p>
+        )}
+      </SectionCard>
+
+      <SectionList
+        title="Today's Domains of Mastery"
+        description="Talent-book domains available today."
+        section={masterySection}
+        staticData={staticData}
+        emptyMessage="No talent-book domains are needed today."
+        enableInlineQuantityEditing
+      />
+      <SectionList
+        title="Today's Domains of Forgery"
+        description="Weapon ascension domains available today."
+        section={forgerySection}
+        staticData={staticData}
+        emptyMessage="No weapon ascension domains are needed today."
+        enableInlineQuantityEditing
+      />
+      <SectionList
+        title="Normal Bosses"
+        description="Unique boss-material deficits only."
+        section={bossSection}
+        staticData={staticData}
+        emptyMessage="No normal boss materials are missing right now."
+        enableInlineQuantityEditing
+      />
+      <SectionList
+        title="Ley Lines"
+        description="Mora and Character EXP claims only."
+        section={leyLineSection}
+        staticData={staticData}
+        emptyMessage="No Mora or Character EXP Ley Line work is needed today."
+      />
+
+      {uiModel.summary.warningCount > 0 ? (
+        <SectionCard title="Warnings" description="Compact review of planner assumptions that need attention." compact>
+          <div className="planner-status-strip">
+            <StatusBadge compact tone="warning">
+              {formatInteger(uiModel.summary.warningCount)} assumptions need review
+            </StatusBadge>
+            <button type="button" className="button-ghost planner-warning-summary-link" onClick={onOpenWarnings}>
+              Review in Data Health
+            </button>
+          </div>
+        </SectionCard>
+      ) : null}
+    </div>
+  );
+}
+
+function filterWeekGroups(groups: PlannerWeekDomainGroup[], filter: WeekCalendarFilter) {
+  if (filter === "all" || filter === "needed") {
+    return groups;
+  }
+
+  return groups
+    .map((group) => ({
+      ...group,
+      masteryRows: filter === "weapon" ? [] : group.masteryRows,
+      forgeryRows: filter === "talent" ? [] : group.forgeryRows,
+      rowCount: (filter === "weapon" ? 0 : group.masteryRows.length) + (filter === "talent" ? 0 : group.forgeryRows.length),
+    }))
+    .filter((group) => group.rowCount > 0);
+}
+
+function ThisWeekPlannerTab({
+  uiModel,
+  staticData,
+}: {
+  uiModel: ReturnType<typeof buildPlannerUiModel>;
+  staticData: ReturnType<typeof useAppStore.getState>["staticData"];
+}) {
+  const worldState = useAppStore(selectActiveWorldState);
+  const [calendarFilter, setCalendarFilter] = useState<WeekCalendarFilter>("needed");
+  const visibleWeekGroups = useMemo(() => filterWeekGroups(uiModel.weekDomainGroups, calendarFilter), [calendarFilter, uiModel.weekDomainGroups]);
+  const timeGatedRows = useMemo(
+    () =>
+      [...uiModel.weeklyBossSection.rows, ...uiModel.weekDomainGroups.flatMap((group) => [...group.masteryRows, ...group.forgeryRows])]
+        .filter((row) => row.earliestCompletionLabel || row.weeklyGate?.isWeeklyGated)
+        .slice(0, 10),
+    [uiModel.weekDomainGroups, uiModel.weeklyBossSection.rows],
+  );
+  const discountedWeeklyClaims = Math.max(0, 3 - (worldState.weeklyBossDiscountsUsed ?? 0));
+  const weeklyDomainResin = uiModel.weekDomainGroups.reduce((sum, group) => sum + (group.totalResin ?? 0), 0);
+
+  return (
+    <div className="planner-tab-stack">
+      <SectionCard title="Weekly Summary" description="What to plan around this week." compact>
+        <MetricStrip
+          compact
+          items={[
+            {
+              label: "Weekly boss claims",
+              value: formatInteger(uiModel.weeklyBossSection.rowCount),
+              tone: uiModel.weeklyBossSection.rowCount ? "warning" : "success",
+            },
+            { label: "Discounted claims", value: formatInteger(discountedWeeklyClaims), tone: "accent" },
+            {
+              label: "Time-gated families",
+              value: formatInteger(uiModel.weekDomainGroups.reduce((sum, group) => sum + group.rowCount, 0)),
+              tone: "default",
+            },
+            {
+              label: "Estimated weekly resin",
+              value: formatInteger((uiModel.weeklyBossSection.totalResin ?? 0) + (uiModel.otherResinSection?.totalResin ?? 0) + weeklyDomainResin),
+              tone: "warning",
+            },
+          ]}
+        />
+      </SectionCard>
+
+      <SectionList
+        title="Weekly Bosses"
+        description="Discount rules and weekly claim assumptions stay separate from daily resin."
+        section={uiModel.weeklyBossSection}
+        staticData={staticData}
+        emptyMessage="No weekly boss materials are currently missing."
+        enableInlineQuantityEditing
+      />
+
+      <SectionCard
+        title="Domain Calendar"
+        description="Only relevant weekly domain windows are shown by default."
+        compact
+        actions={
+          <div className="planner-inline-filter-row">
+            <button type="button" className={`button-ghost ${calendarFilter === "needed" ? "is-active" : ""}`} onClick={() => setCalendarFilter("needed")}>
+              Show only needed
+            </button>
+            <button type="button" className={`button-ghost ${calendarFilter === "all" ? "is-active" : ""}`} onClick={() => setCalendarFilter("all")}>
+              Show all available
+            </button>
+            <button type="button" className={`button-ghost ${calendarFilter === "talent" ? "is-active" : ""}`} onClick={() => setCalendarFilter("talent")}>
+              Talent only
+            </button>
+            <button type="button" className={`button-ghost ${calendarFilter === "weapon" ? "is-active" : ""}`} onClick={() => setCalendarFilter("weapon")}>
+              Weapon only
+            </button>
+          </div>
+        }
+      >
+        {visibleWeekGroups.length > 0 ? (
+          <div className="planner-section-group">
+            {visibleWeekGroups.map((group) => (
+              <div key={group.key} className="planner-section-group">
+                <div className="planner-section-group-heading">
+                  <h4>{group.label}</h4>
+                  <span className="muted">{group.rowCount} rows</span>
+                </div>
+                <div className="planner-row-table">
+                  {group.masteryRows.map((row) => (
+                    <PlannerRecommendationCard key={row.id} row={row} staticData={staticData} compact enableInlineQuantityEditing />
+                  ))}
+                  {group.forgeryRows.map((row) => (
+                    <PlannerRecommendationCard key={row.id} row={row} staticData={staticData} compact enableInlineQuantityEditing />
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p className="planner-empty-state">No weekly domain rows match the current filter.</p>
+        )}
+      </SectionCard>
+
+      <SectionCard title="Time-Gated Materials" description="Items that need future domain days or weekly resets." compact>
+        {timeGatedRows.length > 0 ? (
+          <div className="planner-recent-list">
+            {timeGatedRows.map((row) => (
+              <article key={`time-gated-${row.id}`} className="planner-recent-item">
+                <div>
+                  <strong>{row.sourceName ?? row.title}</strong>
+                  <div className="muted">{row.earliestCompletionLabel ?? "Weekly lockout applies."}</div>
+                </div>
+                <StatusBadge compact tone={row.weeklyGate?.isWeeklyGated ? "warning" : "accent"}>
+                  {row.weeklyGate?.isWeeklyGated ? "Weekly lock" : "Scheduled"}
+                </StatusBadge>
+              </article>
+            ))}
+          </div>
+        ) : (
+          <p className="planner-empty-state">No time-gated items are blocking this week’s plan.</p>
+        )}
+      </SectionCard>
+    </div>
+  );
+}
+
+function NoResinPlannerTab({
+  uiModel,
+  staticData,
+}: {
+  uiModel: ReturnType<typeof buildPlannerUiModel>;
+  staticData: ReturnType<typeof useAppStore.getState>["staticData"];
+}) {
+  const sectionMap = new Map(uiModel.standaloneSections.map((section) => [section.key, section]));
+
+  return (
+    <div className="planner-tab-stack">
+      <SectionList
+        title="Craftable Improvements"
+        description="Guaranteed conversions and craft-up options."
+        section={sectionMap.get("crafting") ?? null}
+        staticData={staticData}
+        emptyMessage="No deterministic crafting improvements are available."
+        enableInlineQuantityEditing
+      />
+      <SectionList
+        title="Local Specialties"
+        description="Regional gathering with no resin cost."
+        section={sectionMap.get("local_specialty") ?? null}
+        staticData={staticData}
+        emptyMessage="No local specialties are currently missing."
+        enableInlineQuantityEditing
+      />
+      <SectionList
+        title="Common Enemy Drops"
+        description="Common-enemy material deficits without resin cost."
+        section={sectionMap.get("open_world_common") ?? null}
+        staticData={staticData}
+        emptyMessage="No common enemy-drop materials are currently missing."
+        enableInlineQuantityEditing
+      />
+      <SectionList
+        title="Elite Enemy Drops"
+        description="Elite-enemy material deficits without resin cost."
+        section={sectionMap.get("open_world_elite") ?? null}
+        staticData={staticData}
+        emptyMessage="No elite enemy-drop materials are currently missing."
+        enableInlineQuantityEditing
+      />
+      <SectionList
+        title="Ley Line Enemy Drop Recommendations"
+        description="Incidental enemy drops only. No resin reward estimate is added here."
+        section={sectionMap.get("ley_line_enemy_drops") ?? null}
+        staticData={staticData}
+        emptyMessage="No Ley Line enemy-spawn recommendations are active."
+        enableInlineQuantityEditing
+      />
+      <SectionList
+        title="Forgeable Weapon EXP"
+        description="Forge-cap aware weapon EXP planning."
+        section={sectionMap.get("forging") ?? null}
+        staticData={staticData}
+        emptyMessage="No forgeable Weapon EXP work is currently needed."
+        enableInlineQuantityEditing
+      />
+    </div>
+  );
+}
+
+function ProgressionPlannerTab({ plannerOutput }: { plannerOutput: PlannerOutput }) {
+  const account = useAppStore(selectActiveAccount);
+  const plannerStatus = useAppStore(selectActivePlannerStatus);
+  const recentChanges = useAppStore(selectActiveRecentChanges);
+  const recentImports = useAppStore(selectActiveRecentImports);
+  const progression = useMemo(
+    () =>
+      plannerStatus
+        ? buildPlannerProgressionModel({
+            accountName: account?.name ?? "No account",
+            plannerStatus,
+            plannerOutput,
+            recentChanges,
+            recentImports,
+            goalProgressTracking: account?.goalProgressTracking ?? {},
+            goalMilestones: account?.goalMilestones ?? [],
+          })
+        : null,
+    [account?.goalMilestones, account?.goalProgressTracking, account?.name, plannerOutput, plannerStatus, recentChanges, recentImports],
+  );
+
+  if (!plannerStatus || !progression) {
+    return null;
+  }
+
+  return (
+    <div className="planner-tab-stack">
+      <SectionCard title="Progress Snapshot" description="Rolling account growth for the active planner." compact>
+        <div className="planner-status-strip">
+          <StatusBadge compact tone={statusTone(plannerStatus.status)}>
+            {formatPlannerStatus(plannerStatus.status)}
+          </StatusBadge>
+          <span className="muted">{progression.snapshot.accountName}</span>
+          <span className="muted">Updated: {formatTimestamp(progression.snapshot.lastUpdatedAt)}</span>
+        </div>
+        <MetricStrip
+          compact
+          items={[
+            { label: "Active goals", value: formatInteger(progression.snapshot.activeGoalCount), tone: "default" },
+            { label: "Recent wins", value: formatInteger(progression.snapshot.recentWinCount), tone: "success" },
+            { label: "Deficits remaining", value: formatInteger(progression.snapshot.materialDeficitCount), tone: "warning" },
+            { label: "Resin remaining", value: formatInteger(progression.snapshot.totalEstimatedResin), tone: "accent" },
+          ]}
+        />
+        <p className="planner-inline-note">{progression.snapshot.summary}</p>
+        {progression.snapshot.resourceBars.length > 0 ? (
+          <div className="planner-goal-bar-list planner-goal-bar-list--snapshot">
+            {progression.snapshot.resourceBars.map((bar) => (
+              <div key={bar.key} className="planner-goal-bar-item">
+                <div className="planner-goal-bar-meta">
+                  <span>{bar.label}</span>
+                  <span className="muted">{bar.progressLabel}</span>
+                </div>
+                <div className="planner-goal-progress-track-row">
+                  <div
+                    className={`planner-goal-progress-track is-${bar.tone}`}
+                    role="progressbar"
+                    aria-label={`${bar.label} progress`}
+                    aria-valuemin={0}
+                    aria-valuemax={100}
+                    aria-valuenow={bar.progressPercent}
+                  >
+                    <div className={`planner-goal-progress-fill is-${bar.tone}`} style={{ width: `${bar.progressPercent}%` }} />
+                  </div>
+                  <span className="planner-goal-progress-percent">{bar.progressPercent}%</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : null}
+        {plannerStatus.lastError ? <p className="planner-inline-note">Reason: {plannerStatus.lastError}</p> : null}
+      </SectionCard>
+
+      <GoalProgressBoard progression={progression} />
+
+      <ProgressionList
+        title="Recent Achievements"
+        description="Built characters and met goals over time."
+        entries={progression.achievements}
+        emptyMessage="No major milestones yet. Progress will appear here as goals move forward."
+      />
+
+      <ProgressionList
+        title="Momentum / Account Growth"
+        description="Wider account gains like lower resin, fewer deficits, and useful inventory increases."
+        entries={progression.momentum}
+        emptyMessage="No broad growth signals yet. Imports and edits that move the plan forward will show here."
+      />
+
+      <RecentChangesList
+        title="Recent Activity"
+        description="Imports, manual edits, resets, and planner refreshes for this account."
+        entries={progression.activity.map((entry) => (
+          <article key={entry.id} className="planner-recent-item">
+            <div>
+              <strong>{entry.title}</strong>
+              <div className="muted">{entry.description}</div>
+            </div>
+            <div className="button-row wrap">
+              {entry.badge ? (
+                <StatusBadge compact tone={entry.tone}>
+                  {entry.badge}
+                </StatusBadge>
+              ) : null}
+              <span className="muted">{formatTimestamp(entry.changedAt)}</span>
+            </div>
+          </article>
+        ))}
+      />
+
+      <ProgressionList
+        title="Needs Review"
+        description="New blockers, warnings, or setbacks that should stay visible without leading the page."
+        entries={progression.review}
+        emptyMessage="No setbacks to review right now."
+      />
+
+      {progression.artifactGoals.length > 0 ? (
+        <SectionCard title="Artifact Goals" description="Tracked separately from material-completion bars." compact>
+          <div className="planner-recent-list">
+            {progression.artifactGoals.map((goal) => (
+              <article key={goal.goalId} className="planner-recent-item">
+                <div>
+                  <strong>{goal.goalLabel}</strong>
+                  <div className="muted">
+                    {goal.domainSummary} {"->"} {goal.targetSummary}
+                  </div>
+                </div>
+                <div className="planner-compact-summary">
+                  <StatusBadge compact tone={goal.enabled ? "accent" : "muted"}>
+                    {goal.enabled ? "Tracking" : "Disabled"}
+                  </StatusBadge>
+                  <div className="muted">Weekly resin: {formatInteger(goal.weeklyResinBudget)}</div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </SectionCard>
+      ) : null}
+
+      {plannerOutput.warnings.length === 0 && recentChanges.length === 0 && recentImports.length === 0 ? (
+        <EmptyStateCard title="No progression yet" description="Milestones, imports, and goal updates will appear here once this account starts moving forward." />
+      ) : null}
+    </div>
+  );
+}
+
+export function PlannerTab({ plannerOutput }: PlannerTabProps) {
+  const account = useAppStore(selectActiveAccount);
+  const goals = useAppStore(selectActiveGoals);
+  const plannerSettings = useAppStore(selectActivePlannerSettings);
+  const plannerStatus = useAppStore(selectActivePlannerStatus);
+  const staticData = useAppStore((state) => state.staticData);
+  const today = useAppStore((state) => state.today);
+  const plannerView = useAppStore((state) => state.settings.plannerView) as PlannerWorkspaceTab;
+  const setPlannerView = useAppStore((state) => state.setPlannerView);
+  const setActiveTab = useAppStore((state) => state.setActiveTab);
+  const uiModel = buildPlannerUiModel({
+    plannerOutput,
+    account,
+    goals,
+    staticData,
+    plannerSettings,
+    today,
+  });
+
+  return (
+      <PageShell
       header={
         <PageHeader
+          compact
           eyebrow="Planner"
-          title="Review deficits, crafting impact, and farming effort"
-          description="This page keeps deterministic requirements separate from estimated farming effort so you can see what is exact, what is craftable, and what still needs resin."
+          title="Actionable farming dashboard"
+          description="A compact plan organized around what to do today, this week, without resin, and how this account is progressing."
         />
       }
       metrics={
         <MetricStrip
+          compact
           items={[
-            { label: "Estimated resin", value: String(plannerOutput.resinSummary.totalEstimatedResin), tone: "warning" },
+            { label: "Total resin", value: formatInteger(uiModel.summary.totalEstimatedResin), tone: "warning" },
             {
-              label: "Natural days",
-              value: plannerOutput.resinSummary.totalEstimatedNaturalResinDays.toFixed(2),
+              label: "Estimated days",
+              value:
+                uiModel.summary.totalEstimatedResinDays != null
+                  ? formatDayCount(uiModel.summary.totalEstimatedResinDays, "day")
+                  : "Unavailable",
+              tone: "accent",
             },
             {
-              label: "No-resin tasks",
-              value: String(plannerOutput.resinSummary.noResinTaskCount),
-              tone: plannerOutput.resinSummary.noResinTaskCount ? "accent" : "default",
+              label: "Weekly locks",
+              value: formatInteger(uiModel.summary.weeklyLimitedCount),
+              tone: uiModel.summary.weeklyLimitedCount ? "warning" : "success",
             },
+            { label: "No-resin tasks", value: formatInteger(uiModel.summary.noResinCount), tone: "default" },
             {
-              label: "Weekly-gated rows",
-              value: String(plannerOutput.resinSummary.weeklyGatedEstimateCount),
-              tone: plannerOutput.resinSummary.weeklyGatedEstimateCount ? "warning" : "success",
+              label: "Warnings",
+              value: formatInteger(uiModel.summary.warningCount),
+              tone: uiModel.summary.warningCount ? "warning" : "success",
             },
-            {
-              label: "Missing estimates",
-              value: String(plannerOutput.resinSummary.unknownEstimateCount),
-              tone: plannerOutput.resinSummary.unknownEstimateCount ? "warning" : "success",
-            },
-            { label: "Crafting Mora", value: String(plannerOutput.summary.craftingMora), tone: "accent" },
           ]}
         />
       }
     >
-      {plannerOutput.warnings.length > 0 ? (
-        <WarningPanel title="Planner assumptions and warnings" tone="warning">
-          <ul className="warning-list">
-            {plannerOutput.warnings.slice(0, 6).map((warning) => (
-              <li key={`${warning.type}-${warning.message}`}>{warning.message}</li>
-            ))}
-          </ul>
-        </WarningPanel>
+      <div className="planner-page">
+      {plannerStatus ? (
+        <SectionCard title="Planner Status" description="Latest refresh for the active account." compact>
+          <div className="planner-status-strip">
+            <StatusBadge compact tone={statusTone(plannerStatus.status)}>
+              {formatPlannerStatus(plannerStatus.status)}
+            </StatusBadge>
+            <span className="muted">{account?.name ?? "No account"}</span>
+            <span className="muted">Updated: {formatTimestamp(plannerStatus.lastRecalculatedAt)}</span>
+            {plannerStatus.warningCount ? (
+              <StatusBadge compact tone="warning">
+                {formatInteger(plannerStatus.warningCount)} warnings
+              </StatusBadge>
+            ) : null}
+          </div>
+        </SectionCard>
       ) : null}
 
-      <SectionCard title="Planner assumptions" description="Adjust account-scoped world and resin assumptions here before reviewing grouped deficit outputs.">
-        <div className="planner-controls">
-          <label>
-            World Level
-            <input
-              type="number"
-              min={0}
-              max={9}
-              value={plannerSettings.worldLevel ?? 8}
-              onChange={(event) => void updatePlannerSettings({ worldLevel: Number(event.target.value) })}
-            />
-          </label>
-          <label>
-            Domain Level
-            <select
-              value={plannerSettings.domainLevel ?? "IV"}
-              onChange={(event) => void updatePlannerSettings({ domainLevel: event.target.value as "I" | "II" | "III" | "IV" })}
-            >
-              {["I", "II", "III", "IV"].map((value) => (
-                <option key={value} value={value}>
-                  {value}
-                </option>
-              ))}
-            </select>
-          </label>
-          <label>
-            Daily Resin Budget
-            <input
-              type="number"
-              min={0}
-              value={plannerSettings.dailyResinBudget}
-              onChange={(event) => void updatePlannerSettings({ dailyResinBudget: Number(event.target.value) })}
-            />
-          </label>
-          <label>
-            Current Resin
-            <input
-              type="number"
-              min={0}
-              value={plannerSettings.currentResin ?? 0}
-              onChange={(event) => void updatePlannerSettings({ currentResin: Number(event.target.value) })}
-            />
-          </label>
-          <label>
-            Condensed Resin
-            <input
-              type="number"
-              min={0}
-              value={plannerSettings.condensedResinOwned ?? 0}
-              onChange={(event) => void updatePlannerSettings({ condensedResinOwned: Number(event.target.value) })}
-            />
-          </label>
-          <label>
-            Fragile Resin
-            <input
-              type="number"
-              min={0}
-              value={plannerSettings.fragileResinOwned ?? 0}
-              onChange={(event) => void updatePlannerSettings({ fragileResinOwned: Number(event.target.value) })}
-            />
-          </label>
-          <label>
-            Transient Resin
-            <input
-              type="number"
-              min={0}
-              value={plannerSettings.transientResinOwned ?? 0}
-              onChange={(event) => void updatePlannerSettings({ transientResinOwned: Number(event.target.value) })}
-            />
-          </label>
-          <label>
-            Weekly discounts used
-            <input
-              type="number"
-              min={0}
-              max={3}
-              value={plannerSettings.weeklyBossDiscountClaimsUsed ?? 0}
-              onChange={(event) => void updatePlannerSettings({ weeklyBossDiscountClaimsUsed: Number(event.target.value) })}
-            />
-          </label>
-          <label className="checkbox-row">
-            <input
-              type="checkbox"
-              checked={plannerSettings.craftAwareEstimates ?? true}
-              onChange={(event) => void updatePlannerSettings({ craftAwareEstimates: event.target.checked })}
-            />
-            Craft-aware estimates
-          </label>
-          <label className="checkbox-row">
-            <input
-              type="checkbox"
-              checked={plannerSettings.allowDustOfAzothConversion ?? false}
-              onChange={(event) => void updatePlannerSettings({ allowDustOfAzothConversion: event.target.checked })}
-            />
-            Allow Dust of Azoth conversion
-          </label>
-          <label className="checkbox-row">
-            <input
-              type="checkbox"
-              checked={plannerSettings.showCraftingVarianceWarning ?? true}
-              onChange={(event) => void updatePlannerSettings({ showCraftingVarianceWarning: event.target.checked })}
-            />
-            Show crafting RNG warnings
-          </label>
-          <label className="checkbox-row">
-            <input
-              type="checkbox"
-              checked={plannerSettings.assumeCondensedResinEquivalentForDomains ?? true}
-              onChange={(event) => void updatePlannerSettings({ assumeCondensedResinEquivalentForDomains: event.target.checked })}
-            />
-            Count condensed-resin equivalent
-          </label>
-          <label className="checkbox-row">
-            <input
-              type="checkbox"
-              checked={plannerSettings.useHighestUnlockedDomain ?? true}
-              onChange={(event) => void updatePlannerSettings({ useHighestUnlockedDomain: event.target.checked })}
-            />
-            Use highest unlocked domain
-          </label>
-          <label className="checkbox-row">
-            <input
-              type="checkbox"
-              checked={plannerSettings.includePrimogemRefillPlanning ?? false}
-              onChange={(event) => void updatePlannerSettings({ includePrimogemRefillPlanning: event.target.checked })}
-            />
-            Include Primogem refill planning
-          </label>
-          <label className="checkbox-row">
-            <input
-              type="checkbox"
-              checked={plannerSettings.estimateOpenWorldEnemyDrops ?? false}
-              onChange={(event) => void updatePlannerSettings({ estimateOpenWorldEnemyDrops: event.target.checked })}
-            />
-            Estimate open-world enemy drops
-          </label>
-          <label className="checkbox-row">
-            <input
-              type="checkbox"
-              checked={plannerSettings.includeArtifactGoals}
-              onChange={(event) => void updatePlannerSettings({ includeArtifactGoals: event.target.checked })}
-            />
-            Include artifact goals
-          </label>
-          <label>
-            Requirement crafting mode
-            <select
-              value={plannerSettings.craftingModeForRequirementSatisfaction ?? "guaranteed"}
-              onChange={(event) =>
-                void updatePlannerSettings({
-                  craftingModeForRequirementSatisfaction: event.target.value as "guaranteed" | "expected_value",
-                })
-              }
-            >
-              <option value="guaranteed">Guaranteed</option>
-              <option value="expected_value">Expected value</option>
-            </select>
-          </label>
-          <label>
-            Resin crafting mode
-            <select
-              value={plannerSettings.craftingModeForResinEstimate ?? "expected_value"}
-              onChange={(event) =>
-                void updatePlannerSettings({
-                  craftingModeForResinEstimate: event.target.value as "guaranteed" | "expected_value",
-                })
-              }
-            >
-              <option value="guaranteed">Guaranteed</option>
-              <option value="expected_value">Expected value</option>
-            </select>
-          </label>
-          <PassiveOverrideSelect
-            label="Talent passive"
-            value={plannerSettings.craftingPassiveOverrides?.talentMaterials ?? ""}
-            options={Object.values(staticData.craftingUtilityPassives)
-              .filter((passive) => passive.appliesTo.includes("character_talent_material"))
-              .map((passive) => ({ value: passive.key, label: passive.characterName }))}
-            onChange={(value) =>
-              void updatePlannerSettings({
-                craftingPassiveOverrides: {
-                  ...(plannerSettings.craftingPassiveOverrides ?? {}),
-                  talentMaterials: value || null,
-                },
-              })
-            }
-          />
-          <PassiveOverrideSelect
-            label="Weapon passive"
-            value={plannerSettings.craftingPassiveOverrides?.weaponAscensionMaterials ?? ""}
-            options={Object.values(staticData.craftingUtilityPassives)
-              .filter((passive) => passive.appliesTo.includes("weapon_ascension_material"))
-              .map((passive) => ({ value: passive.key, label: passive.characterName }))}
-            onChange={(value) =>
-              void updatePlannerSettings({
-                craftingPassiveOverrides: {
-                  ...(plannerSettings.craftingPassiveOverrides ?? {}),
-                  weaponAscensionMaterials: value || null,
-                },
-              })
-            }
-          />
-        </div>
-      </SectionCard>
-
-      <SectionCard
-        title="Weapon EXP planning"
-        description="Weapon leveling now plans around Enhancement Ore tiers and Mystic Enhancement Ore forging instead of low-rarity weapon fodder."
-      >
-        <div className="metric-strip">
-          <div className="metric-card">
-            <span className="metric-label">Weapon EXP needed</span>
-            <strong>{plannerOutput.weaponExpSummary.totalWeaponExpNeeded}</strong>
-          </div>
-          <div className="metric-card">
-            <span className="metric-label">Mystic equivalent</span>
-            <strong>{plannerOutput.weaponExpSummary.mysticEquivalentNeeded}</strong>
-          </div>
-          <div className="metric-card">
-            <span className="metric-label">Owned ore EXP</span>
-            <strong>{plannerOutput.weaponExpSummary.ownedWeaponExpValue}</strong>
-          </div>
-          <div className="metric-card">
-            <span className="metric-label">Forgeable Mystic</span>
-            <strong>{plannerOutput.weaponExpSummary.mysticForgeableFromCrystals}</strong>
-          </div>
-          <div className="metric-card">
-            <span className="metric-label">Daily cap</span>
-            <strong>{plannerOutput.weaponExpSummary.dailyMysticForgeCap}</strong>
-          </div>
-          <div className="metric-card">
-            <span className="metric-label">Min daily resets</span>
-            <strong>{plannerOutput.weaponExpSummary.minimumDailyResetsRequired}</strong>
-          </div>
-          <div className="metric-card">
-            <span className="metric-label">Weapon Mora</span>
-            <strong>{plannerOutput.weaponExpSummary.totalWeaponLevelingMoraNeeded}</strong>
-          </div>
-        </div>
-
-        <div className="planner-controls">
-          <div>
-            <strong>Owned ore</strong>
-            <div className="muted">
-              Enhancement {plannerOutput.weaponExpSummary.enhancementOreOwned}, Fine {plannerOutput.weaponExpSummary.fineEnhancementOreOwned}, Mystic {plannerOutput.weaponExpSummary.mysticEnhancementOreOwned}
-            </div>
-            <div className="muted">
-              Remaining after owned ore: {plannerOutput.weaponExpSummary.remainingWeaponExpAfterOwnedOre} Weapon EXP
-            </div>
-          </div>
-          <div>
-            <strong>Supported crystals</strong>
-            <div className="muted">
-              Crystal Chunk {plannerOutput.weaponExpSummary.crystalChunkOwned}, Rainbowdrop Crystal {plannerOutput.weaponExpSummary.rainbowdropCrystalOwned}, Condessence Crystal {plannerOutput.weaponExpSummary.condessenceCrystalOwned}
-            </div>
-            <div className="muted">
-              Unforgeable Mystic-equivalent remainder: {plannerOutput.weaponExpSummary.remainingMysticEquivalentUnforgeable}
-            </div>
-          </div>
-          <div>
-            <strong>Ore route note</strong>
-            <div className="muted">Ore veins respawn after {plannerOutput.weaponExpSummary.oreRespawnDays} days. Forging and ore gathering are non-resin.</div>
-          </div>
-        </div>
-
-        <ul className="warning-list">
-          {plannerOutput.weaponExpSummary.notes.map((note) => (
-            <li key={note}>{note}</li>
-          ))}
-        </ul>
-      </SectionCard>
-
       <WorkspaceTabs
+        compact
         label="Planner views"
+        tabs={[
+          { key: "today", label: "Today" },
+          { key: "week", label: "This Week" },
+          { key: "no_resin", label: "No Resin" },
+          { key: "recent_changes", label: "Progression" },
+        ]}
         activeTab={plannerView}
-        onChange={(value) => {
-          void setPlannerView(value);
-        }}
-        tabs={VIEW_OPTIONS.map((option) => ({ key: option.key, label: option.label }))}
+        onChange={(nextTab) => void setPlannerView(nextTab)}
       />
 
       {plannerView === "today" ? (
-        <SectionCard
-          title="Priority actions"
-          description="The fastest answer to what you should farm next, based on today's availability and the current active-account plan."
-        >
-          <ActivityTable rows={plannerOutput.today} />
-        </SectionCard>
+        <TodayPlannerTab uiModel={uiModel} staticData={staticData} onOpenWarnings={() => void setActiveTab("database")} />
       ) : null}
-      {plannerView === "week" ? (
-        <SectionCard title="Availability view" description="Group recommendations by what is available now versus what should wait for another day or reset.">
-          <AvailabilitySections groups={plannerOutput.byAvailability} />
-        </SectionCard>
-      ) : null}
-      {plannerView === "materials" ? (
-        <SectionCard title="Missing materials" description="Deterministic deficits first, with craft-aware and farming estimate details attached alongside them.">
-          <MaterialTable plannerOutput={plannerOutput} />
-        </SectionCard>
-      ) : null}
-      {plannerView === "character" ? (
-        <SectionCard title="Goal plans" description="Review the per-character and per-goal planning breakdown without leaving the main planner page.">
-          <CharacterPlans plannerOutput={plannerOutput} />
-        </SectionCard>
-      ) : null}
-      {plannerView === "source" ? (
-        <SectionCard title="By source" description="See domain, boss, ley line, and other farm groups as shared activity buckets instead of isolated material rows.">
-          <AvailabilitySections groups={plannerOutput.bySource} />
-        </SectionCard>
-      ) : null}
+      {plannerView === "week" ? <ThisWeekPlannerTab uiModel={uiModel} staticData={staticData} /> : null}
+      {plannerView === "no_resin" ? <NoResinPlannerTab uiModel={uiModel} staticData={staticData} /> : null}
+      {plannerView === "recent_changes" ? <ProgressionPlannerTab plannerOutput={plannerOutput} /> : null}
+      </div>
     </PageShell>
-  );
-}
-
-function ActivityTable({ rows }: { rows: PlannerOutput["today"] }) {
-  const grouped = new Map<string, PlannerOutput["today"]>();
-
-  for (const row of rows) {
-    const key = row.actionSubgroup ?? row.actionGroup;
-    grouped.set(key, [...(grouped.get(key) ?? []), row]);
-  }
-
-  return (
-    <div className="stack">
-      {[...grouped.entries()].map(([groupKey, groupRows]) => (
-        <article key={groupKey} className="availability-group">
-          <h3>{ACTIVITY_LABELS[groupKey] ?? groupKey}</h3>
-          <div className="table-wrapper">
-            <table className="data-table">
-              <thead>
-                <tr>
-                  <th>Recommendation</th>
-                  <th>Source</th>
-                  <th>Details</th>
-                  <th>Related goals</th>
-                  <th>Estimated</th>
-                  <th>Actionable</th>
-                  <th>Resin / run</th>
-                  <th>Total resin</th>
-                </tr>
-              </thead>
-              <tbody>
-                {groupRows.map((row) => (
-                  <tr key={row.id}>
-                    <td>{row.title}</td>
-                    <td>{row.sourceName ?? row.category}</td>
-                    <td>
-                      <div>{row.reason}</div>
-                      {row.priorityLabel ? <div className="muted">Priority: {row.priorityLabel}</div> : null}
-                      {row.estimateBasis ? <div className="muted">Basis: {row.estimateBasis}</div> : null}
-                      {row.resinPerRun != null && row.actionableRuns != null ? (
-                        <div className="muted">
-                          {row.actionableRuns} run(s) x {row.resinPerRun} resin
-                        </div>
-                      ) : null}
-                      {row.warnings?.length ? <div className="muted">{row.warnings[0]}</div> : null}
-                    </td>
-                    <td>{row.relatedGoalLabels?.join(", ") || row.relatedGoalKeys.join(", ") || "General"}</td>
-                    <td>{row.estimatedRuns != null ? row.estimatedRuns.toFixed(2) : "-"}</td>
-                    <td>{row.actionableRuns ?? "-"}</td>
-                    <td>{row.resinPerRun ?? "No resin"}</td>
-                    <td>{row.resinLabel ?? (row.totalEstimatedResin != null ? String(row.totalEstimatedResin) : "No resin")}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </article>
-      ))}
-      {rows.length === 0 ? <p className="muted">No planner rows yet. Import inventory and set goals first.</p> : null}
-    </div>
-  );
-}
-
-function AvailabilitySections({ groups }: { groups: Array<{ key: string; label: string; rows: PlannerRecommendation[] }> }) {
-  return (
-    <div className="stack">
-      {groups.map((group) => (
-        <article key={group.key} className="availability-group">
-          <h3>{group.label}</h3>
-          {group.rows.length ? (
-            <ul className="ranked-list">
-              {group.rows.map((row) => (
-                <li key={row.id}>
-                  <strong>{row.title}</strong>
-                  <span>{row.reason}</span>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p className="muted">No activities in this group.</p>
-          )}
-        </article>
-      ))}
-    </div>
-  );
-}
-
-function MaterialTable({ plannerOutput }: { plannerOutput: PlannerOutput }) {
-  return (
-    <div className="table-wrapper">
-      <table className="data-table">
-        <thead>
-          <tr>
-            <th>Material</th>
-            <th>Key</th>
-            <th>Family</th>
-            <th>Enemy source</th>
-            <th>Owned</th>
-            <th>Craftable</th>
-            <th>Craft Mora</th>
-            <th>Passive</th>
-            <th>Effective owned</th>
-            <th>Needed</th>
-            <th>Deficit</th>
-            <th>Estimate source</th>
-            <th>Runs</th>
-            <th>Resin</th>
-            <th>Days</th>
-            <th>Weeks</th>
-            <th>Source</th>
-          </tr>
-        </thead>
-        <tbody>
-          {plannerOutput.totalMissingByMaterial.map((row) => {
-            const estimate = plannerOutput.farmingEstimates.find(
-              (item) => item.materialKey === row.materialKey || item.relatedMaterialKeys?.includes(row.materialKey),
-            );
-            const report = row.craftingReport;
-            return (
-              <tr key={row.materialKey}>
-                <td>
-                  <strong>{row.displayName}</strong>
-                  {row.region ? <div className="muted">{row.region}</div> : null}
-                </td>
-                <td>{row.materialKey}</td>
-                <td>{row.familyDisplayName ?? "-"}</td>
-                <td>{row.sourceEnemyFamily ?? "-"}</td>
-                <td>{row.owned}</td>
-                <td>{row.craftableQuantity}</td>
-                <td>{report?.guaranteedCrafting.moraCost ?? "-"}</td>
-                <td>{report?.recommendedPassive?.characterName ?? "Auto"}</td>
-                <td>{row.effectiveOwned}</td>
-                <td>{row.needed}</td>
-                <td>{row.effectiveDeficit}</td>
-                <td>{estimate?.sourceType ?? "unknown"}</td>
-                <td>{estimate?.estimatedRuns?.toFixed(2) ?? "-"}</td>
-                <td>{estimate?.estimatedResin ?? (estimate?.sourceType === "unknown" ? "Missing estimate data" : "No resin")}</td>
-                <td>{estimate?.estimatedDaysNaturalResin?.toFixed(2) ?? "-"}</td>
-                <td>{estimate?.weeklyGate?.estimatedWeeks ?? estimate?.estimatedWeeksNaturalResin?.toFixed(2) ?? "-"}</td>
-                <td>
-                  <div>{row.sources[0]?.sourceName ?? "Unknown"}</div>
-                  {row.purchaseVendors?.length ? <div className="muted">Vendors: {row.purchaseVendors.join(", ")}</div> : null}
-                  {row.searchHint ? <div className="muted">{row.searchHint}</div> : null}
-                  {report?.warnings?.length ? <div className="muted">{report.warnings[0]}</div> : null}
-                  {estimate?.warnings?.length ? <div className="muted">{estimate.warnings[0]}</div> : null}
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
-    </div>
-  );
-}
-
-function CharacterPlans({ plannerOutput }: { plannerOutput: PlannerOutput }) {
-  return (
-    <div className="stack">
-      <article className="availability-group">
-        <h3>Crafting recommendations</h3>
-        <ul className="ranked-list">
-          {plannerOutput.craftingPlan.suggestions.map((suggestion) => (
-            <li key={suggestion.outputMaterialKey}>
-              <strong>{suggestion.outputDisplayName}</strong>
-              <span>{suggestion.reason}</span>
-            </li>
-          ))}
-          {plannerOutput.craftingPlan.suggestions.length === 0 ? <li>No craftable upgrades right now.</li> : null}
-        </ul>
-      </article>
-
-      {plannerOutput.byCharacter.map((plan) => (
-        <article key={plan.characterKey} className="availability-group">
-          <h3>{plan.displayName}</h3>
-          <p className="muted">Estimated Resin: {plan.estimatedResin}</p>
-          {plan.breakdown.length ? (
-            <ul className="ranked-list">
-              {plan.breakdown.map((entry) => (
-                <li key={`${plan.characterKey}-${entry.label}`}>
-                  <strong>{entry.label}</strong>
-                  <span>{Object.entries(entry.materialTotals).length} material type(s)</span>
-                </li>
-              ))}
-            </ul>
-          ) : null}
-          <ul className="ranked-list">
-            {plan.missingSummary.map((row) => (
-              <li key={row.materialKey}>
-                <strong>{row.displayName}</strong>
-                <span>{row.effectiveDeficit} deficit, {row.craftableQuantity} craftable</span>
-              </li>
-            ))}
-            {plan.missingSummary.length === 0 ? <li>No shortages for this goal.</li> : null}
-          </ul>
-        </article>
-      ))}
-      {plannerOutput.byCharacter.length === 0 ? <p>No character plans yet.</p> : null}
-    </div>
-  );
-}
-
-function PassiveOverrideSelect({
-  label,
-  value,
-  options,
-  onChange,
-}: {
-  label: string;
-  value: string;
-  options: Array<{ value: string; label: string }>;
-  onChange: (value: string) => void;
-}) {
-  return (
-    <label>
-      {label}
-      <select value={value} onChange={(event) => onChange(event.target.value)}>
-        <option value="">Auto-pick best</option>
-        {options.map((option) => (
-          <option key={option.value} value={option.value}>
-            {option.label}
-          </option>
-        ))}
-      </select>
-    </label>
   );
 }

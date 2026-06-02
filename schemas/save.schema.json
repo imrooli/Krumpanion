@@ -13,7 +13,7 @@
     "overridePack"
   ],
   "properties": {
-    "schemaVersion": { "const": 4 },
+    "schemaVersion": { "const": 9 },
     "appVersion": { "type": "string" },
     "createdAt": { "type": "string" },
     "updatedAt": { "type": "string" },
@@ -27,23 +27,30 @@
           "type": "object",
           "additionalProperties": {
             "type": "object",
-            "required": [
-              "id",
-              "name",
-              "createdAt",
-              "updatedAt",
-              "metadata",
-              "importMeta",
-              "characters",
-              "weapons",
-              "artifacts",
-              "inventory",
-              "warnings",
-              "goals",
-              "plannerSettings",
-              "worldState",
-              "importState"
-            ],
+              "required": [
+                "id",
+                "name",
+                "createdAt",
+                "updatedAt",
+                "metadata",
+                "importMeta",
+                "characters",
+                "weapons",
+                "artifacts",
+                "inventory",
+                "importedInventory",
+                "warnings",
+                "goals",
+                "plannerSettings",
+                "checklist",
+                "worldState",
+                "importState",
+                "plannerStatus",
+                "goalProgressTracking",
+                "goalMilestones",
+                "recentChanges",
+                "recentImports"
+              ],
             "properties": {
               "id": { "type": "string" },
               "name": { "type": "string" },
@@ -106,14 +113,20 @@
                   "properties": {
                     "weaponInstanceId": { "type": "string" },
                     "weaponKey": { "type": "string" },
-                    "weaponId": { "type": "string" },
-                    "importName": { "type": "string" },
+                    "accountId": { "type": "string" },
+                    "weaponId": { "type": ["string", "null"] },
+                    "importName": { "type": ["string", "null"] },
+                    "importedName": { "type": ["string", "null"] },
+                    "importSourceId": { "type": ["string", "null"] },
                     "currentLevel": { "type": "integer" },
                     "currentAscension": { "type": "integer" },
                     "refinement": { "type": "integer" },
-                    "equippedByCharacterId": { "type": "string" },
-                    "location": { "type": "string" },
-                    "lock": { "type": "boolean" }
+                    "equippedByCharacterId": { "type": ["string", "null"] },
+                    "equippedBy": { "type": ["string", "null"] },
+                    "location": { "type": ["string", "null"] },
+                    "lock": { "type": "boolean" },
+                    "locked": { "type": "boolean" },
+                    "lastImportedAt": { "type": "string" }
                   },
                   "additionalProperties": false
                 }
@@ -169,6 +182,10 @@
                 "type": "object",
                 "additionalProperties": { "type": "number" }
               },
+              "importedInventory": {
+                "type": "object",
+                "additionalProperties": { "type": "number" }
+              },
               "unmatchedWeapons": {
                 "type": "array",
                 "items": {
@@ -176,13 +193,19 @@
                   "required": ["weaponInstanceId", "importName", "currentLevel", "currentAscension"],
                   "properties": {
                     "weaponInstanceId": { "type": "string" },
-                    "importName": { "type": "string" },
+                    "importName": { "type": ["string", "null"] },
+                    "importedName": { "type": ["string", "null"] },
+                    "accountId": { "type": "string" },
+                    "importSourceId": { "type": ["string", "null"] },
                     "currentLevel": { "type": "integer" },
                     "currentAscension": { "type": "integer" },
                     "refinement": { "type": "integer" },
-                    "equippedByCharacterId": { "type": "string" },
-                    "location": { "type": "string" },
-                    "lock": { "type": "boolean" }
+                    "equippedByCharacterId": { "type": ["string", "null"] },
+                    "equippedBy": { "type": ["string", "null"] },
+                    "location": { "type": ["string", "null"] },
+                    "lock": { "type": "boolean" },
+                    "locked": { "type": "boolean" },
+                    "lastImportedAt": { "type": "string" }
                   },
                   "additionalProperties": false
                 }
@@ -216,7 +239,7 @@
                 "type": "object",
                 "required": ["version", "characterGoals", "weaponGoals", "artifactGoals"],
                 "properties": {
-                  "version": { "const": 3 },
+                  "version": { "const": 4 },
                   "profileName": { "type": "string" },
                   "characterGoals": {
                     "type": "object",
@@ -256,6 +279,7 @@
                           "additionalProperties": false
                         },
                         "enabled": { "type": "boolean" },
+                        "paused": { "type": "boolean" },
                         "notes": { "type": "string" }
                       },
                       "additionalProperties": false
@@ -295,6 +319,7 @@
                           "additionalProperties": false
                         },
                         "enabled": { "type": "boolean" },
+                        "paused": { "type": "boolean" },
                         "notes": { "type": "string" }
                       },
                       "additionalProperties": false
@@ -330,6 +355,107 @@
                 "additionalProperties": false
               },
               "plannerSettings": { "$ref": "https://krumpanion.local/schemas/goals.schema.json#/properties/plannerSettings" },
+              "checklist": {
+                "type": "object",
+                "required": [
+                  "dailyCommissions",
+                  "battlePassDailyClaims",
+                  "battlePassWeeklyClaims",
+                  "stardustExchange",
+                  "weeklyBossClaims",
+                  "artifactTransmuter",
+                  "realmDepot",
+                  "parametricTransformer",
+                  "crystalflyTrap",
+                  "expeditions",
+                  "realmCurrency"
+                ],
+                "properties": {
+                  "dailyCommissions": {
+                    "type": "object",
+                    "properties": {
+                      "completedAt": { "type": "string" }
+                    },
+                    "additionalProperties": false
+                  },
+                  "battlePassDailyClaims": {
+                    "type": "object",
+                    "properties": {
+                      "completedAt": { "type": "string" }
+                    },
+                    "additionalProperties": false
+                  },
+                  "battlePassWeeklyClaims": {
+                    "type": "object",
+                    "properties": {
+                      "completedAt": { "type": "string" }
+                    },
+                    "additionalProperties": false
+                  },
+                  "stardustExchange": {
+                    "type": "object",
+                    "properties": {
+                      "completedAt": { "type": "string" }
+                    },
+                    "additionalProperties": false
+                  },
+                  "weeklyBossClaims": {
+                    "type": "object",
+                    "required": ["usedCount"],
+                    "properties": {
+                      "usedCount": { "type": "integer", "minimum": 0, "maximum": 3 },
+                      "updatedAt": { "type": "string" }
+                    },
+                    "additionalProperties": false
+                  },
+                  "artifactTransmuter": {
+                    "type": "object",
+                    "properties": {
+                      "completedAt": { "type": "string" }
+                    },
+                    "additionalProperties": false
+                  },
+                  "realmDepot": {
+                    "type": "object",
+                    "properties": {
+                      "completedAt": { "type": "string" }
+                    },
+                    "additionalProperties": false
+                  },
+                  "parametricTransformer": {
+                    "type": "object",
+                    "properties": {
+                      "lastUsedAt": { "type": "string" }
+                    },
+                    "additionalProperties": false
+                  },
+                  "crystalflyTrap": {
+                    "type": "object",
+                    "properties": {
+                      "lastUsedAt": { "type": "string" }
+                    },
+                    "additionalProperties": false
+                  },
+                  "expeditions": {
+                    "type": "object",
+                    "properties": {
+                      "lastClaimedAt": { "type": "string" }
+                    },
+                    "additionalProperties": false
+                  },
+                  "realmCurrency": {
+                    "type": "object",
+                    "required": ["realmLevel", "trustRank"],
+                    "properties": {
+                      "lastClaimedAt": { "type": "string" },
+                      "realmLevel": { "type": "integer", "minimum": 1, "maximum": 10 },
+                      "trustRank": { "type": "integer", "minimum": 1, "maximum": 10 }
+                    },
+                    "additionalProperties": false
+                  }
+                },
+                "additionalProperties": false
+              },
               "worldState": {
                 "type": "object",
                 "properties": {
@@ -367,6 +493,134 @@
                   }
                 },
                 "additionalProperties": false
+              },
+              "plannerStatus": {
+                "type": "object",
+                "required": ["status", "activeGoalCount", "materialDeficitCount", "totalEstimatedResin", "warningCount"],
+                "properties": {
+                  "status": {
+                    "type": "string",
+                    "enum": ["idle", "recalculating", "recalculated", "recalculatedWithWarnings", "failed"]
+                  },
+                  "lastRecalculatedAt": { "type": "string" },
+                  "activeGoalCount": { "type": "integer" },
+                  "materialDeficitCount": { "type": "integer" },
+                  "totalEstimatedResin": { "type": "number" },
+                  "warningCount": { "type": "integer" },
+                  "lastError": { "type": "string" }
+                },
+                "additionalProperties": false
+              },
+              "goalProgressTracking": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "object",
+                  "required": ["goalId", "goalType", "goalLabel", "targetSignature", "startedAt", "baseline"],
+                  "properties": {
+                    "goalId": { "type": "string" },
+                    "goalType": { "type": "string", "enum": ["character", "weapon"] },
+                    "goalLabel": { "type": "string" },
+                    "targetSignature": { "type": "string" },
+                    "startedAt": { "type": "string" },
+                    "completedAt": { "type": "string" },
+                    "baseline": {
+                      "type": "object",
+                      "required": ["mora", "characterExp", "weaponExp", "materials"],
+                      "properties": {
+                        "mora": { "type": "number" },
+                        "characterExp": { "type": "number" },
+                        "weaponExp": { "type": "number" },
+                        "materials": { "type": "number" }
+                      },
+                      "additionalProperties": false
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "goalMilestones": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["id", "goalId", "goalType", "goalLabel", "milestoneType", "occurredAt"],
+                  "properties": {
+                    "id": { "type": "string" },
+                    "goalId": { "type": "string" },
+                    "goalType": { "type": "string", "enum": ["character", "weapon"] },
+                    "goalLabel": { "type": "string" },
+                    "milestoneType": { "type": "string", "enum": ["character_built", "weapon_goal_met"] },
+                    "occurredAt": { "type": "string" },
+                    "startedAt": { "type": "string" },
+                    "targetSummary": { "type": "string" }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "recentChanges": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["id", "changedAt", "kind"],
+                  "properties": {
+                    "id": { "type": "string" },
+                    "changedAt": { "type": "string" },
+                    "kind": { "type": "string", "enum": ["inventory", "goal_progress", "recalculation"] },
+                    "trigger": { "type": "string" },
+                    "materialKey": { "type": "string" },
+                    "materialName": { "type": "string" },
+                    "previousQuantity": { "type": "number" },
+                    "nextQuantity": { "type": "number" },
+                    "sourceStateAfter": { "type": "string" },
+                    "goalId": { "type": "string" },
+                    "goalType": { "type": "string" },
+                    "goalLabel": { "type": "string" },
+                    "previousStatus": { "type": "string" },
+                    "nextStatus": { "type": "string" },
+                    "previousSummary": { "type": "string" },
+                    "nextSummary": { "type": "string" },
+                    "blocker": { "type": "string" },
+                    "status": { "type": "string" },
+                    "activeGoalCount": { "type": "integer" },
+                    "materialDeficitCount": { "type": "integer" },
+                    "totalEstimatedResin": { "type": "number" },
+                    "warningCount": { "type": "integer" },
+                    "errorMessage": { "type": "string" }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "recentImports": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "id",
+                    "importedAt",
+                    "materialCount",
+                    "characterCount",
+                    "weaponCount",
+                    "unmatchedWeaponCount",
+                    "artifactCount",
+                    "warningCount",
+                    "changedMaterialCount",
+                    "overwrittenManualCount"
+                  ],
+                  "properties": {
+                    "id": { "type": "string" },
+                    "importedAt": { "type": "string" },
+                    "fileName": { "type": "string" },
+                    "source": { "type": "string" },
+                    "materialCount": { "type": "integer" },
+                    "characterCount": { "type": "integer" },
+                    "weaponCount": { "type": "integer" },
+                    "unmatchedWeaponCount": { "type": "integer" },
+                    "artifactCount": { "type": "integer" },
+                    "warningCount": { "type": "integer" },
+                    "changedMaterialCount": { "type": "integer" },
+                    "overwrittenManualCount": { "type": "integer" }
+                  },
+                  "additionalProperties": false
+                }
               }
             },
             "additionalProperties": false

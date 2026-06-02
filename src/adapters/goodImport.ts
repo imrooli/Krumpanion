@@ -65,12 +65,16 @@ function normalizeWeapons(
       unmatchedWeapons.push({
         weaponInstanceId: weapon.id,
         importName: weapon.key,
+        importedName: weapon.key,
+        importSourceId: weapon.id,
         currentLevel: weapon.level,
         currentAscension: weapon.ascension,
         refinement: weapon.refinement,
         equippedByCharacterId: weapon.location || undefined,
+        equippedBy: weapon.location || null,
         location: weapon.location,
         lock: weapon.lock,
+        locked: weapon.lock,
       });
       warnings.push({
         type: "unknown_weapon",
@@ -85,12 +89,16 @@ function normalizeWeapons(
       weaponKey: canonicalWeaponKey,
       weaponId: canonicalWeaponKey,
       importName: weapon.key,
+      importedName: weapon.key,
+      importSourceId: weapon.id,
       currentLevel: weapon.level,
       currentAscension: weapon.ascension,
       refinement: weapon.refinement,
       equippedByCharacterId: weapon.location || undefined,
+      equippedBy: weapon.location || null,
       location: weapon.location,
       lock: weapon.lock,
+      locked: weapon.lock,
     });
   }
 

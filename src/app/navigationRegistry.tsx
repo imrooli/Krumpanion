@@ -7,6 +7,7 @@ import { DatabaseTab } from "../features/database/DatabaseTab";
 import { GoalsWorkspace } from "../features/goals/GoalsWorkspace";
 import { HomeWorkspace } from "../features/home/HomeWorkspace";
 import { InventoryWorkspace } from "../features/inventory/InventoryWorkspace";
+import { ChecklistWorkspace } from "../features/checklist/ChecklistWorkspace";
 import { PlannerTab } from "../features/planner/PlannerTab";
 import { SettingsWorkspace } from "../features/settings/SettingsWorkspace";
 
@@ -33,6 +34,13 @@ export const APP_SECTIONS: AppSectionDefinition[] = [
     render: ({ plannerOutput, importWarnings, overrideWarnings }) => (
       <HomeWorkspace plannerOutput={plannerOutput} importWarnings={importWarnings} overrideWarnings={overrideWarnings} />
     ),
+  },
+  {
+    key: "checklist",
+    label: "Checklist",
+    shortLabel: "Check",
+    description: "Daily, weekly, monthly, and cooldown reminders for the active account.",
+    render: () => <ChecklistWorkspace />,
   },
   {
     key: "planner",

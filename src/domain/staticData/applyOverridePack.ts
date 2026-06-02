@@ -201,6 +201,11 @@ export function applyOverridePack(baseData: StaticGameData, overridePack?: Overr
       ...baseData.trounceDomains,
       ...(overridePack.trounceDomains ?? {}),
     },
+    leyLineOutcropLocations: {
+      ...baseData.leyLineOutcropLocations,
+      ...(overridePack.leyLineOutcropLocations ?? {}),
+    },
+    leyLineOutcropLocationList: baseData.leyLineOutcropLocationList,
     weaponAscensionDomainDropModel: {
       ...baseData.weaponAscensionDomainDropModel,
       ...(overridePack.weaponAscensionDomainDropModel ?? {}),
@@ -283,6 +288,7 @@ export function applyOverridePack(baseData: StaticGameData, overridePack?: Overr
       ...Object.keys(overridePack.domainsOfForgery ?? {}),
       ...Object.keys(overridePack.domainsOfMastery ?? {}),
       ...Object.keys(overridePack.trounceDomains ?? {}),
+      ...Object.keys(overridePack.leyLineOutcropLocations ?? {}),
       ...Object.keys(overridePack.weaponAscensionDomainDropModel ?? {}),
       ...Object.keys(overridePack.talentBookDomainDropModel ?? {}),
       ...Object.keys(overridePack.normalBossAscensionGemDropsByWorldLevel ?? {}),

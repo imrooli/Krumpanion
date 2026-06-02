@@ -19,7 +19,14 @@ function getGuaranteedReduction(report: PlannerOutput["craftingPlan"]["reports"]
 }
 
 function getDustReduction(report: PlannerOutput["craftingPlan"]["reports"][number]) {
-  return Math.min(report.dustOfAzothOption?.outputAmount ?? 0, report.dustOfAzothOption?.remainingMissing != null ? getDirectShortage(report) : 0);
+  return Math.min(
+    report.dustOfAzothOption?.outputAmount ?? 0,
+    report.dustOfAzothOption?.remainingMissing != null ? getDirectShortage(report) : 0,
+  );
+}
+
+function getRemainingDeficit(report: PlannerOutput["craftingPlan"]["reports"][number]) {
+  return Math.max(report.dustOfAzothOption?.remainingMissing ?? report.guaranteedCrafting.remainingMissing, 0);
 }
 
 function getIngredientSummary(report: PlannerOutput["craftingPlan"]["reports"][number]) {
@@ -100,13 +107,6 @@ export function CraftingTab({ plannerOutput }: CraftingTabProps) {
   }, [reports, selectedMaterialKey]);
 
   const selectedReport = reports.find((report) => report.targetMaterialKey === selectedMaterialKey) ?? reports[0];
-  const linkedShortage = useMemo(
-    () =>
-      selectedReport
-        ? plannerOutput.totalMissingByMaterial.find((row) => row.materialKey === selectedReport.targetMaterialKey)
-        : undefined,
-    [plannerOutput.totalMissingByMaterial, selectedReport],
-  );
 
   if (!reports.length) {
     return (
@@ -157,7 +157,10 @@ export function CraftingTab({ plannerOutput }: CraftingTabProps) {
             <div className="section-header">
               <div>
                 <h2>Doable now</h2>
-                <p className="muted">Choose an output material to inspect how much shortage it covers, what it costs, and who should craft it. Crafts are grouped by family so you can review the whole chain before spending materials.</p>
+                <p className="muted">
+                  Choose an output material to inspect how much shortage it covers, what it costs, and who should craft
+                  it. Crafts are grouped by family so you can review the whole chain before spending materials.
+                </p>
               </div>
             </div>
             <div className="catalog-list">
@@ -167,7 +170,8 @@ export function CraftingTab({ plannerOutput }: CraftingTabProps) {
                     <div>
                       <h3>{group.label}</h3>
                       <p className="muted">
-                        {group.reports.length} shortage-reducing craft{group.reports.length === 1 ? "" : "s"} in this family.
+                        {group.reports.length} shortage-reducing craft{group.reports.length === 1 ? "" : "s"} in this
+                        family.
                       </p>
                     </div>
                   </div>
@@ -175,7 +179,9 @@ export function CraftingTab({ plannerOutput }: CraftingTabProps) {
                     <button
                       key={report.targetMaterialKey}
                       type="button"
-                      className={`catalog-item ${selectedReport?.targetMaterialKey === report.targetMaterialKey ? "is-active" : ""}`}
+                      className={`catalog-item ${
+                        selectedReport?.targetMaterialKey === report.targetMaterialKey ? "is-active" : ""
+                      }`}
                       onClick={() => setSelectedMaterialKey(report.targetMaterialKey)}
                     >
                       <div>
@@ -203,7 +209,9 @@ export function CraftingTab({ plannerOutput }: CraftingTabProps) {
               <div className="section-header">
                 <div>
                   <h2>{selectedReport.targetMaterialName}</h2>
-                  <p className="muted">These are immediately doable, no-resin crafting actions that reduce a live planner shortage.</p>
+                  <p className="muted">
+                    These are immediately doable, no-resin crafting actions that reduce a live planner shortage.
+                  </p>
                 </div>
               </div>
 
@@ -230,7 +238,8 @@ export function CraftingTab({ plannerOutput }: CraftingTabProps) {
                 <div>
                   <h3>Why this craft matters</h3>
                   <p className="muted">
-                    Guaranteed crafting can cover {getGuaranteedReduction(selectedReport)} of the missing {selectedReport.targetMaterialName}.
+                    Guaranteed crafting can cover {getGuaranteedReduction(selectedReport)} of the missing{" "}
+                    {selectedReport.targetMaterialName}.
                   </p>
                 </div>
                 <div>
@@ -244,18 +253,21 @@ export function CraftingTab({ plannerOutput }: CraftingTabProps) {
                       <li key={`${step.outputMaterialKey}-${index}`}>
                         <strong>{step.inputName}</strong>
                         <span>
-                          x{step.inputQuantity * step.crafts} → {step.outputName} x{step.crafts}
+                          x{step.inputQuantity * step.crafts} -&gt; {step.outputName} x{step.crafts}
                         </span>
                       </li>
                     ))}
-                    {!selectedReport.guaranteedCrafting.steps.length ? <li>No guaranteed craft path recorded.</li> : null}
+                    {!selectedReport.guaranteedCrafting.steps.length ? (
+                      <li>No guaranteed craft path recorded.</li>
+                    ) : null}
                   </ul>
                 </div>
                 {selectedReport.dustOfAzothOption ? (
                   <div>
                     <h3>Dust of Azoth option</h3>
                     <p className="muted">
-                      Convert up to {selectedReport.dustOfAzothOption.outputAmount} same-tier gems using {selectedReport.dustOfAzothOption.dustRequired} Dust of Azoth.
+                      Convert up to {selectedReport.dustOfAzothOption.outputAmount} same-tier gems using{" "}
+                      {selectedReport.dustOfAzothOption.dustRequired} Dust of Azoth.
                     </p>
                   </div>
                 ) : null}
@@ -297,29 +309,46 @@ export function CraftingTab({ plannerOutput }: CraftingTabProps) {
                   </li>
                   <li>
                     <strong>Dust option</strong>
-                    <span>{selectedReport.dustOfAzothOption?.outputAmount ?? "—"}</span>
+                    <span>{selectedReport.dustOfAzothOption?.outputAmount ?? "-"}</span>
                   </li>
                   <li>
                     <strong>Remaining deficit</strong>
-                    <span>{selectedReport.guaranteedCrafting.remainingMissing}</span>
+                    <span>{getRemainingDeficit(selectedReport)}</span>
                   </li>
                   <li>
                     <strong>Expected passive savings</strong>
-                    <span>{selectedReport.expectedValue ? `${(selectedReport.expectedValue.expectedSavingsPercent * 100).toFixed(2)}%` : "—"}</span>
+                    <span>
+                      {selectedReport.expectedValue
+                        ? `${(selectedReport.expectedValue.expectedSavingsPercent * 100).toFixed(2)}%`
+                        : "-"}
+                    </span>
                   </li>
                 </ul>
               </div>
               <div>
                 <strong>Affected goals</strong>
                 <ul className="warning-list">
-                  {linkedShortage?.usedBy.map((goal) => (
-                    <li key={`${goal.goalType}-${goal.key}`}>
-                      {goal.goalType}: {goal.key}
+                  {selectedReport.affectedGoals.map((goal) => (
+                    <li key={`${goal.goalType}-${goal.goalKey}`}>
+                      {goal.displayName} - {goal.amount} needed
                     </li>
                   ))}
-                  {!linkedShortage?.usedBy.length ? <li>No linked goal details available.</li> : null}
+                  {!selectedReport.affectedGoals.length ? <li>No linked goal details available.</li> : null}
                 </ul>
               </div>
+              {selectedReport.affectedRequirementEntries.some((entry) => entry.requirementLabel) ? (
+                <div>
+                  <strong>Requirement details</strong>
+                  <ul className="warning-list">
+                    {selectedReport.affectedRequirementEntries.map((entry) => (
+                      <li key={`${entry.goalType}-${entry.goalKey}-${entry.requirementLabel ?? entry.materialKey}`}>
+                        {entry.displayName}
+                        {entry.requirementLabel ? ` - ${entry.requirementLabel}` : ""} - {entry.amount}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
             </InspectorPanel>
           ) : undefined
         }

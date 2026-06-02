@@ -275,11 +275,23 @@ function buildTravelerElementMaterialProfiles(profile: CanonicalTravelerProfile)
 }
 
 function buildWeaponCatalogEntry(profile: CanonicalWeaponProfile): WeaponCatalogEntry {
+  const refinementPolicy =
+    profile.refinementPolicy ??
+    (profile.refinementTrackable === false
+      ? "not_trackable"
+      : profile.rarity === 5
+        ? "manual_review"
+        : "normal");
   return {
     key: profile.weaponKey,
     displayName: profile.displayName,
     weaponType: profile.weaponType ?? undefined,
     rarity: profile.rarity,
+    acquisitionType: profile.acquisitionType ?? "unknown",
+    refinementTrackable: profile.refinementTrackable ?? profile.rarity >= 3,
+    refinementPolicy,
+    limited: profile.limited ?? false,
+    eventExclusive: profile.eventExclusive ?? false,
   };
 }
 
@@ -567,6 +579,16 @@ export function assembleBaseStaticData(): StaticGameData {
     domainsOfForgery: canonicalDatabase.sources.domainsOfForgery,
     domainsOfMastery: canonicalDatabase.sources.domainsOfMastery,
     trounceDomains: canonicalDatabase.sources.trounceDomains,
+    leyLineOutcropLocations: Object.fromEntries(
+      Object.entries(canonicalDatabase.sources.leyLineOutcropLocations).map(([locationKey, location]) => [
+        locationKey,
+        {
+          ...location,
+          derivedDropFamilies: [],
+        },
+      ]),
+    ),
+    leyLineOutcropLocationList: [],
     weaponAscensionDomainDropModel: canonicalDatabase.sources.weaponAscensionDomainDropModel,
     talentBookDomainDropModel: canonicalDatabase.sources.talentBookDomainDropModel,
     normalBossAscensionGemDropsByWorldLevel: canonicalDatabase.sources.normalBossAscensionGemDropsByWorldLevel,

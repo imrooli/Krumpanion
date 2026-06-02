@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState, type KeyboardEvent } from "react";
+import { useMemo, useState } from "react";
 import {
   DataTableShell,
   EmptyStateCard,
@@ -14,6 +14,7 @@ import { parseBulkInventoryText } from "../../domain/inventory/bulkInventory";
 import type { PlannerOutput } from "../../domain/planner/types";
 import { selectActiveAccount, selectInventoryRows } from "../../store/selectors";
 import { useAppStore } from "../../store/useAppStore";
+import { InlineMaterialQuantityEditor } from "./InlineMaterialQuantityEditor";
 
 interface InventoryTabProps {
   plannerOutput: PlannerOutput;
@@ -33,6 +34,8 @@ interface InventoryViewRow {
   sourceTypeSummary: string;
   sources: Array<{ sourceName: string; sourceType: string; region?: string; notes?: string }>;
   usedBy: string[];
+  importedQuantity?: number;
+  sourceState?: "manual" | "imported" | "missing_from_import" | "preview";
   manualEdit?: {
     editedAt: string;
     source: "manual" | "bulk";
@@ -72,80 +75,13 @@ function isPlannerFacingRow(row: InventoryViewRow): boolean {
   );
 }
 
-function MaterialQuantityInput({
-  materialKey,
-  quantity,
-  onCommit,
-}: {
-  materialKey: string;
-  quantity: number;
-  onCommit: (quantity: number) => void;
-}) {
-  const [draft, setDraft] = useState(String(quantity));
-
-  useEffect(() => {
-    setDraft(String(quantity));
-  }, [quantity]);
-
-  const trimmed = draft.trim();
-  const isInvalid = trimmed !== "" && !/^\d+$/.test(trimmed);
-
-  function commitValue() {
-    if (trimmed === "") {
-      onCommit(0);
-      setDraft("0");
-      return;
-    }
-
-    if (!/^\d+$/.test(trimmed)) {
-      setDraft(String(quantity));
-      return;
-    }
-
-    const value = Number(trimmed);
-    if (!Number.isSafeInteger(value) || value < 0) {
-      setDraft(String(quantity));
-      return;
-    }
-
-    if (value !== quantity) {
-      onCommit(value);
-    }
-    setDraft(String(value));
-  }
-
-  function handleKeyDown(event: KeyboardEvent<HTMLInputElement>) {
-    if (event.key === "Enter") {
-      event.preventDefault();
-      (event.currentTarget as HTMLInputElement).blur();
-    }
-    if (event.key === "Escape") {
-      event.preventDefault();
-      setDraft(String(quantity));
-      (event.currentTarget as HTMLInputElement).blur();
-    }
-  }
-
-  return (
-    <input
-      className="text-input inventory-quantity-input"
-      aria-label={`Quantity for ${materialKey}`}
-      inputMode="numeric"
-      value={draft}
-      onChange={(event) => setDraft(event.target.value)}
-      onBlur={commitValue}
-      onKeyDown={handleKeyDown}
-      aria-invalid={isInvalid}
-    />
-  );
-}
-
 export function InventoryTab({ plannerOutput, embedded = false }: InventoryTabProps) {
   const account = useAppStore(selectActiveAccount);
   const inventoryRows = useAppStore(selectInventoryRows);
   const staticData = useAppStore((state) => state.staticData);
   const setActiveMaterialQuantity = useAppStore((state) => state.setActiveMaterialQuantity);
   const bulkSetActiveMaterialQuantities = useAppStore((state) => state.bulkSetActiveMaterialQuantities);
+  const resetActiveMaterialToImported = useAppStore((state) => state.resetActiveMaterialToImported);
   const clearActiveMaterialQuantity = useAppStore((state) => state.clearActiveMaterialQuantity);
   const [search, setSearch] = useState("");
   const [categoryFilter, setCategoryFilter] = useState("all");
@@ -180,6 +116,8 @@ export function InventoryTab({ plannerOutput, embedded = false }: InventoryTabPr
           notes: source.notes,
         })),
         usedBy: [],
+        importedQuantity: row.importedQuantity,
+        sourceState: row.sourceState as InventoryViewRow["sourceState"],
         manualEdit: row.manualEdit,
       });
     }
@@ -205,6 +143,8 @@ export function InventoryTab({ plannerOutput, embedded = false }: InventoryTabPr
           notes: source.notes,
         })),
         usedBy: row.usedBy.map((goal) => `${goal.goalType}: ${goal.key}`),
+        importedQuantity: existing?.importedQuantity,
+        sourceState: existing?.sourceState,
         manualEdit: existing?.manualEdit,
       });
     }
@@ -419,7 +359,7 @@ export function InventoryTab({ plannerOutput, embedded = false }: InventoryTabPr
             >
               <div className="badge-row">
                 <StatusBadge tone="accent">{account?.name ?? "No account"}</StatusBadge>
-                <StatusBadge tone="warning">Re-import replaces current imported inventory</StatusBadge>
+                <StatusBadge tone="warning">GOOD import replaces imported and active quantities</StatusBadge>
               </div>
             </SectionCard>
 
@@ -586,15 +526,22 @@ export function InventoryTab({ plannerOutput, embedded = false }: InventoryTabPr
                               {row.manualEdit.source === "bulk" ? "Bulk edited" : "Manually edited"}
                             </StatusBadge>
                           ) : null}
+                          {!row.manualEdit && row.sourceState === "imported" ? <StatusBadge tone="success">Imported</StatusBadge> : null}
+                          {row.sourceState === "missing_from_import" ? <StatusBadge tone="muted">Missing from import</StatusBadge> : null}
                         </div>
                       </td>
                       <td>{row.category}</td>
                       <td>{buildFamilyTierLabel(row)}</td>
                       <td>
-                        <MaterialQuantityInput
+                        <InlineMaterialQuantityEditor
                           materialKey={row.materialKey}
+                          materialName={row.displayName}
                           quantity={row.owned}
+                          importedQuantity={row.importedQuantity}
                           onCommit={(quantity) => void setActiveMaterialQuantity(row.materialKey, quantity)}
+                          onResetToImported={
+                            typeof row.importedQuantity === "number" ? () => void resetActiveMaterialToImported(row.materialKey) : undefined
+                          }
                         />
                       </td>
                       <td>{row.needed}</td>
@@ -609,7 +556,7 @@ export function InventoryTab({ plannerOutput, embedded = false }: InventoryTabPr
                         <button
                           type="button"
                           className="button-ghost button-destructive"
-                          aria-label={`Clear quantity for ${row.displayName}`}
+                          aria-label={`${row.manualEdit ? "Clear" : "Remove"} quantity for ${row.displayName}`}
                           onClick={(event) => {
                             event.stopPropagation();
                             void clearActiveMaterialQuantity(row.materialKey);
@@ -650,6 +597,16 @@ export function InventoryTab({ plannerOutput, embedded = false }: InventoryTabPr
                   <span>Deficit</span>
                   <strong>{selectedRow.effectiveDeficit}</strong>
                 </article>
+              </div>
+              <div>
+                <strong>Inventory source</strong>
+                <div className="muted">
+                  {selectedRow.manualEdit
+                    ? "Manual override is active."
+                    : selectedRow.sourceState === "imported"
+                      ? `Imported baseline${typeof selectedRow.importedQuantity === "number" ? `: ${selectedRow.importedQuantity}` : ""}.`
+                      : "No imported baseline for this material."}
+                </div>
               </div>
               <div>
                 <strong>Manual edit status</strong>

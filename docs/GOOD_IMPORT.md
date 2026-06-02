@@ -23,12 +23,28 @@ Weapon matching currently prefers:
 
 Character and material import data should also resolve through canonical keys and canonical compatibility helpers, not runtime-era discovered catalogs.
 
+## Weapon inventory import
+
+GOOD weapon rows are imported as separate account-owned weapon instances.
+
+Rules:
+
+- every GOOD weapon row becomes one owned weapon instance
+- duplicate copies are preserved as distinct instances
+- refinement rank, level, ascension, lock, and equipped state are preserved when GOOD provides them
+- GOOD ids are retained through `importSourceId` when available
+- if GOOD has no stable weapon id, Krumpanion generates a deterministic local instance id
+- unknown weapon names are reported in warnings and moved into unmatched imported weapons
+
+Krumpanion must not collapse duplicate weapons into a count-only aggregate during import.
+
 ## Guarantees
 
 - importing one account does not modify another account
 - unmatched GOOD records are reported, not silently discarded
 - imported inventory continues to feed planner inputs
 - pre-farm goals remain independent from ownership state
+- imported weapon instances remain account-scoped and copy-specific
 
 ## When adding import aliases
 

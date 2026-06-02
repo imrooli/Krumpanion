@@ -5,11 +5,20 @@ import {
   getGoalCurrentStateLabel,
   getWeaponGoalId,
   getWeaponGoalTargetAscension,
+  isCharacterGoalPlannerActive,
+  isWeaponGoalPlannerActive,
   resolveCharacterGoalCurrentState,
   resolveWeaponGoalCurrentState,
 } from "../goals/goalState";
+import {
+  getArtifactGoalDisplayName,
+  getArtifactGoalSubtitle,
+  getCharacterGoalDisplayName,
+  getGoalDisplayName as getReadableGoalDisplayName,
+  getGoalTypeLabel as getReadableGoalTypeLabel,
+  getWeaponGoalDisplayName,
+} from "../goals/goalDisplay";
 import type { StaticGameData } from "../staticData/types";
-import { getTravelerGoalLabel } from "../staticData/travelerRegistry";
 import { availabilityMatchesDay } from "../../utils/days";
 import type {
   ArtifactFarmPlan,
@@ -42,6 +51,7 @@ const ACTION_SUBGROUP_ORDER: Array<PlannerRecommendation["actionSubgroup"]> = [
   "domains",
   "bosses",
   "ley_lines",
+  "ley_line_enemy_drops",
   "forging",
   "local_specialty",
   "unknown_estimates",
@@ -54,43 +64,11 @@ function actionGroupRank(group: PlannerRecommendation["actionGroup"]): number {
 }
 
 export function getGoalDisplayName(goalKey: string, input: PlannerInput): string {
-  const characterGoal = input.goals.characterGoals[goalKey];
-  if (characterGoal) {
-    return (
-      getTravelerGoalLabel(characterGoal.characterKey) ??
-      input.staticData.characters[characterGoal.characterKey]?.displayName ??
-      characterGoal.characterKey
-    );
-  }
-
-  const weaponGoal = Object.values(input.goals.weaponGoals).find(
-    (goal) => getWeaponGoalId(goal, goal.weaponKey) === goalKey,
-  );
-  if (weaponGoal) {
-    return `${input.staticData.weapons[weaponGoal.weaponKey]?.displayName ?? weaponGoal.weaponKey} weapon goal`;
-  }
-
-  const artifactGoal = input.goals.artifactGoals.find((goal) => goal.id === goalKey);
-  if (artifactGoal) {
-    return artifactGoal.characterKey
-      ? `${artifactGoal.characterKey} artifact goal`
-      : artifactGoal.targetSetKeys.join(", ") || "Artifact goal";
-  }
-
-  return goalKey;
+  return getReadableGoalDisplayName(goalKey, input.goals, input.staticData);
 }
 
 export function getGoalTypeLabel(goalKey: string, input: PlannerInput): string {
-  if (input.goals.characterGoals[goalKey]) {
-    return "Character goal";
-  }
-  if (Object.values(input.goals.weaponGoals).some((goal) => getWeaponGoalId(goal, goal.weaponKey) === goalKey)) {
-    return "Weapon goal";
-  }
-  if (input.goals.artifactGoals.some((goal) => goal.id === goalKey)) {
-    return "Artifact goal";
-  }
-  return "Goal";
+  return getReadableGoalTypeLabel(goalKey, input.goals);
 }
 
 export function getPlannerPriorityLabel(
@@ -175,7 +153,7 @@ export function buildArtifactPlans(goals: ArtifactGoal[], staticData: StaticGame
       const domain = setKey ? staticData.artifactDomains[setKey] : undefined;
       return {
         id: goal.id,
-        label: goal.characterKey ? `${goal.characterKey}: ${goal.targetSetKeys.join(", ")}` : goal.targetSetKeys.join(", "),
+        label: getArtifactGoalDisplayName(goal, staticData),
         domainKey: goal.domainKey,
         domainName: domain?.domainName ?? goal.domainKey,
         targetSetKeys: goal.targetSetKeys,
@@ -396,6 +374,9 @@ export function buildMaterialRecommendations(input: PlannerInput, farmingEstimat
         resinLabel: formatResinLabel(totalEstimatedResin),
         estimatedRuns: estimate.estimatedRuns,
         actionableRuns: estimate.actionableRuns,
+        estimatedDaysNaturalResin: estimate.estimatedDaysNaturalResin,
+        estimatedWeeksNaturalResin: estimate.estimatedWeeksNaturalResin,
+        weeklyGate: estimate.weeklyGate,
         relatedGoalKeys: estimate.relatedGoalKeys,
         relatedGoalLabels,
         priorityLabel: getPlannerPriorityLabel(priority, estimate.warnings),
@@ -429,8 +410,8 @@ export function buildArtifactRecommendations(input: PlannerInput, artifactPlans:
     estimatedRuns: artifactPlan.weeklyResinBudget
       ? Math.ceil(artifactPlan.weeklyResinBudget / (input.staticData.artifactDomains[artifactPlan.targetSetKeys[0]]?.resinCost ?? 20))
       : null,
-    relatedGoalKeys: artifactPlan.targetSetKeys,
-    relatedGoalLabels: artifactPlan.targetSetKeys,
+    relatedGoalKeys: [artifactPlan.id],
+    relatedGoalLabels: [artifactPlan.label],
     priorityLabel: getPlannerPriorityLabel(artifactPlan.priority * 100, []),
     requiredMaterials: [],
     reason: `Farm ${artifactPlan.domainName} because ${artifactPlan.label} is an active artifact goal.`,
@@ -494,11 +475,13 @@ export function buildWeaponExpRecommendation(
       resinCost: 0,
       resinPerRun: null,
       totalEstimatedResin: null,
-      resinLabel: "No resin",
-      estimatedRuns: summary.minimumDailyResetsRequired,
-      actionableRuns: summary.minimumDailyResetsRequired,
-      relatedGoalKeys,
-      relatedGoalLabels,
+    resinLabel: "No resin",
+    estimatedRuns: summary.minimumDailyResetsRequired,
+    actionableRuns: summary.minimumDailyResetsRequired,
+    estimatedDaysNaturalResin: null,
+    estimatedWeeksNaturalResin: null,
+    relatedGoalKeys,
+    relatedGoalLabels,
       priorityLabel: getPlannerPriorityLabel(50 + summary.mysticEquivalentNeeded, []),
       requiredMaterials: [
         { materialId: "MysticEnhancementOre", quantity: summary.mysticEquivalentNeeded },
@@ -568,9 +551,16 @@ function buildRecommendationSections(recommendations: PlannerRecommendation[]): 
       rows: recommendations.filter((row) => row.actionGroup === "crafting"),
     },
     {
+      key: "ley_line_enemy_drops",
+      label: "Ley Line Enemy Drop Recommendations",
+      rows: recommendations.filter((row) => row.actionSubgroup === "ley_line_enemy_drops"),
+    },
+    {
       key: "open_world",
       label: "Open-World Enemy Farming",
-      rows: recommendations.filter((row) => row.actionGroup === "open_world" && row.actionSubgroup !== "local_specialty"),
+      rows: recommendations.filter(
+        (row) => row.actionGroup === "open_world" && row.actionSubgroup !== "local_specialty" && row.actionSubgroup !== "ley_line_enemy_drops",
+      ),
     },
     {
       key: "local_specialty",
@@ -628,14 +618,12 @@ function buildPlannerGoalFromCharacter(
     goalType: "character",
     entityKey: characterGoal.characterKey,
     label:
-      getTravelerGoalLabel(characterGoal.characterKey) ??
-      staticData.characters[characterGoal.characterKey]?.displayName ??
-      characterGoal.characterKey,
+      getCharacterGoalDisplayName(characterGoal.characterKey, staticData),
     planningMode: characterGoal.planningMode,
     currentSummary,
     currentSource: getGoalCurrentStateLabel(resolvedCurrent.source),
     targetSummary: targetSummary || "Current",
-    enabled: characterGoal.enabled,
+    enabled: isCharacterGoalPlannerActive(characterGoal),
     priority: characterGoal.priority,
     shortageCount: plan?.missingSummary.length ?? 0,
     estimatedResin: plan?.estimatedResin ?? 0,
@@ -668,12 +656,12 @@ function buildPlannerGoalFromWeapon(
     id: getWeaponGoalId(weaponGoal, weaponGoal.weaponKey),
     goalType: "weapon",
     entityKey: weaponGoal.weaponKey,
-    label: staticData.weapons[weaponGoal.weaponKey]?.displayName ?? weaponGoal.weaponKey,
+    label: getWeaponGoalDisplayName(weaponGoal.weaponKey, staticData),
     planningMode: weaponGoal.planningMode,
     currentSummary,
     currentSource: getGoalCurrentStateLabel(resolvedCurrent.source),
     targetSummary: targetSummary || "Current",
-    enabled: weaponGoal.enabled,
+    enabled: isWeaponGoalPlannerActive(weaponGoal),
     priority: weaponGoal.priority,
     shortageCount: plan?.missingSummary.length ?? 0,
     estimatedResin: plan?.estimatedResin ?? 0,
@@ -682,14 +670,18 @@ function buildPlannerGoalFromWeapon(
   };
 }
 
-function buildPlannerGoalFromArtifact(goal: ArtifactGoal, plan: ArtifactFarmPlan | undefined): PlannerGoal {
+function buildPlannerGoalFromArtifact(
+  goal: ArtifactGoal,
+  plan: ArtifactFarmPlan | undefined,
+  staticData: StaticGameData,
+): PlannerGoal {
   return {
     id: goal.id,
     goalType: "artifact",
     entityKey: goal.domainKey,
-    label: goal.characterKey ? `${goal.characterKey} Artifact Goal` : "Artifact Goal",
+    label: getArtifactGoalDisplayName(goal, staticData),
     currentSummary: plan?.domainName ?? (goal.domainKey || "No domain"),
-    targetSummary: goal.targetSetKeys.join(", ") || "No sets",
+    targetSummary: getArtifactGoalSubtitle(goal, staticData) || "No sets",
     enabled: goal.enabled,
     priority: goal.priority,
     shortageCount: 0,
@@ -713,10 +705,10 @@ export function buildPlannerGoals(params: {
 
   const plannerGoals = [
     ...Object.values(params.goals.characterGoals)
-      .filter((goal) => goal.enabled)
+      .filter((goal) => isCharacterGoalPlannerActive(goal))
       .map((goal) => buildPlannerGoalFromCharacter(goal, characterPlansByKey.get(goal.characterKey), params.ownership, params.staticData)),
     ...Object.values(params.goals.weaponGoals)
-      .filter((goal) => goal.enabled)
+      .filter((goal) => isWeaponGoalPlannerActive(goal))
       .map((goal) =>
         buildPlannerGoalFromWeapon(
           goal,
@@ -727,7 +719,7 @@ export function buildPlannerGoals(params: {
       ),
     ...params.goals.artifactGoals
       .filter((goal) => goal.enabled)
-      .map((goal) => buildPlannerGoalFromArtifact(goal, artifactPlansById.get(goal.id))),
+      .map((goal) => buildPlannerGoalFromArtifact(goal, artifactPlansById.get(goal.id), params.staticData)),
   ].sort((left, right) => right.priority - left.priority || left.label.localeCompare(right.label));
 
   const plannerGoalGroups: PlannerGoalGroup[] = [

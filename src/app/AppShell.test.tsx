@@ -19,6 +19,7 @@ function resetStore() {
     user: structuredClone(saveFile.user),
     settings: structuredClone(saveFile.settings),
     today: "Monday",
+    timeSensitiveAt: FIXED_DATE.toISOString(),
     importErrors: [],
     importWarnings: [],
     overrideText: "",
@@ -44,6 +45,7 @@ describe("AppShell navigation", () => {
 
     const navigation = screen.getByRole("navigation", { name: /Primary sections/i });
     expect(within(navigation).getByRole("button", { name: /Dashboard/i })).toBeInTheDocument();
+    expect(within(navigation).getByRole("button", { name: /Checklist/i })).toBeInTheDocument();
     expect(within(navigation).getByRole("button", { name: /Planner/i })).toBeInTheDocument();
     const craftingButton = within(navigation)
       .getAllByRole("button")

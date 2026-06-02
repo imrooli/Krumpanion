@@ -5,14 +5,16 @@ export function PageHeader({
   title,
   description,
   actions,
+  compact = false,
 }: {
   eyebrow?: string;
   title: string;
   description?: string;
   actions?: ReactNode;
+  compact?: boolean;
 }) {
   return (
-    <header className="page-header">
+    <header className={`page-header ${compact ? "is-compact" : ""}`.trim()}>
       <div>
         {eyebrow ? <p className="page-eyebrow">{eyebrow}</p> : null}
         <h1>{title}</h1>
@@ -25,11 +27,13 @@ export function PageHeader({
 
 export function MetricStrip({
   items,
+  compact = false,
 }: {
   items: Array<{ label: string; value: string; tone?: "default" | "accent" | "warning" | "success" }>;
+  compact?: boolean;
 }) {
   return (
-    <section className="metric-strip">
+    <section className={`metric-strip ${compact ? "is-compact" : ""}`.trim()}>
       {items.map((item) => (
         <article key={`${item.label}-${item.value}`} className={`metric-card metric-card-${item.tone ?? "default"}`}>
           <span>{item.label}</span>
@@ -43,11 +47,13 @@ export function MetricStrip({
 export function StatusBadge({
   children,
   tone = "default",
+  compact = false,
 }: {
   children: ReactNode;
   tone?: "default" | "accent" | "warning" | "success" | "muted";
+  compact?: boolean;
 }) {
-  return <span className={`status-badge status-badge-${tone}`}>{children}</span>;
+  return <span className={`status-badge status-badge-${tone} ${compact ? "is-compact" : ""}`.trim()}>{children}</span>;
 }
 
 export function EmptyStateCard({
@@ -157,14 +163,16 @@ export function SectionCard({
   description,
   actions,
   children,
+  compact = false,
 }: {
   title: string;
   description?: string;
   actions?: ReactNode;
   children: ReactNode;
+  compact?: boolean;
 }) {
   return (
-    <article className="panel section-card">
+    <article className={`panel section-card ${compact ? "is-compact" : ""}`.trim()}>
       <div className="section-header">
         <div>
           <h2>{title}</h2>
@@ -182,19 +190,21 @@ export function WorkspaceTabs<T extends string>({
   tabs,
   activeTab,
   onChange,
+  compact = false,
 }: {
   label: string;
   tabs: Array<{ key: T; label: string; count?: number }>;
   activeTab: T;
   onChange: (key: T) => void;
+  compact?: boolean;
 }) {
   return (
-    <nav className="workspace-tabs" aria-label={label}>
+    <nav className={`workspace-tabs ${compact ? "is-compact" : ""}`.trim()} aria-label={label}>
       {tabs.map((tab) => (
         <button
           key={tab.key}
           type="button"
-          className={`workspace-tab ${activeTab === tab.key ? "is-active" : ""}`}
+          className={`workspace-tab ${activeTab === tab.key ? "is-active" : ""} ${compact ? "is-compact" : ""}`.trim()}
           onClick={() => onChange(tab.key)}
           aria-pressed={activeTab === tab.key}
         >
@@ -209,14 +219,16 @@ export function WorkspaceTabs<T extends string>({
 export function FilterToolbar({
   children,
   actions,
+  compact = false,
 }: {
   children: ReactNode;
   actions?: ReactNode;
+  compact?: boolean;
 }) {
   return (
-    <div className="filter-toolbar">
-      <div className="filter-toolbar-fields">{children}</div>
-      {actions ? <div className="filter-toolbar-actions">{actions}</div> : null}
+    <div className={`filter-toolbar ${compact ? "is-compact" : ""}`.trim()}>
+      <div className={`filter-toolbar-fields ${compact ? "is-compact" : ""}`.trim()}>{children}</div>
+      {actions ? <div className={`filter-toolbar-actions ${compact ? "is-compact" : ""}`.trim()}>{actions}</div> : null}
     </div>
   );
 }

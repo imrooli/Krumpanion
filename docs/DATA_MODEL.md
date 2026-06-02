@@ -87,9 +87,19 @@ Each record includes:
 - `releaseState`
 - `status`
 - `plannerEligible`
+- optional `acquisitionType`
+- optional `refinementTrackable`
+- optional `refinementPolicy`
+- optional `limited`
+- optional `eventExclusive`
 - `notes`
 
 Only 3-star, 4-star, and 5-star weapons are progression-goal trackable by default.
+
+Refinement policy defaults:
+- 1-star/2-star: not trackable
+- 3-star/4-star: normal unless metadata says otherwise
+- 5-star: manual review unless metadata says otherwise
 
 ## Material records and families
 
@@ -181,6 +191,14 @@ Account-scoped data:
 - world state
 - import metadata
 
+Owned weapons are per-copy instances rather than aggregated counts. This allows the app to preserve:
+
+- instance-level refinement
+- instance-level level and ascension
+- lock/equip state
+- deterministic duplicate handling
+- refinement safety analysis
+
 Global data:
 - canonical static database
 - validated override packs
@@ -203,6 +221,47 @@ type KrumpanionGoals = {
 ```
 
 Weapon goals are now structured and account-aware. They should not rely on fragile encoded IDs.
+
+## Weapon inventory instance model
+
+Weapon profiles and weapon instances are intentionally separate.
+
+Typical owned weapon instance fields:
+
+- `weaponInstanceId`
+- `weaponKey`
+- `currentLevel`
+- `currentAscension`
+- `refinement`
+- `locked`
+- `equippedByCharacterId`
+- `location`
+- `accountId`
+- `importSourceId`
+- `importedName`
+- `lastImportedAt`
+
+Unmatched imported weapons remain account-scoped as well, but they do not participate in canonical refinement analysis until the static catalog recognizes them.
+
+## Weapon refinement model
+
+Refinement tracking is a checklist/status layer, not a resin-planning layer.
+
+Key concepts:
+
+- `WeaponInventorySummary`
+  - one grouped summary per canonical weapon
+- `RefinementOpportunity`
+  - recommended base copy, safe consumable copies, possible refinement, and warnings
+- `WeaponCopyEvaluation`
+  - per-instance safety analysis for UI details
+
+Important rules:
+
+- one R5 copy marks a weapon complete for the default tracker
+- duplicate copies remain visible even when no automatic consume recommendation is allowed
+- 5-star duplicate refinement is manual review by default
+- 1-star and 2-star weapons are not tracked for refinement goals
 
 ## Planner estimate models
 
@@ -228,6 +287,39 @@ Key planner-side models:
 Important rule:
 - deterministic requirements and deficits are not allowed to mutate based on estimate assumptions
 - farming estimates consume deficits, but do not rewrite them
+
+## Planner UI model
+
+The Planner tab uses a presentation-only adapter over `PlannerReport`.
+
+This UI model is intentionally separate from planner math:
+
+- it may merge or repartition report sections for display
+- it may deduplicate warnings
+- it may recompute readable related-goal labels
+- it must not change deterministic requirements, deficits, or Resin totals
+
+UI-facing section records should carry:
+
+- section key
+- title
+- subtitle
+- rows
+- item count
+- section Resin total when applicable
+- empty-state text
+
+UI-facing recommendation cards should carry:
+
+- readable source/activity title
+- activity type
+- action sentence
+- materials and quantities
+- related goal labels
+- warnings
+- optional expandable details
+
+Raw goal ids and raw priority scores are persistence/debug data, not UI-facing fields.
 
 ## Inventory editing
 

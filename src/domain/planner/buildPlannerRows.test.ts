@@ -484,7 +484,7 @@ describe("buildPlannerOutput", () => {
     expect(bossRow?.needed).toBe(46);
   });
 
-  it("reports when a talent goal needs a higher ascension phase without auto-adding ascension costs", () => {
+  it("reports when a talent goal needs a higher ascension phase and includes the required ascension costs", () => {
     const staticData = loadStaticData({
       version: 1,
       characterMaterialProfiles: {
@@ -554,12 +554,12 @@ describe("buildPlannerOutput", () => {
           warning.message.includes("phase 6"),
       ),
     ).toBe(true);
-    expect(planner.totalMissingByMaterial.some((row) => row.materialKey === "TestLocalSpecialty")).toBe(false);
-    expect(planner.totalMissingByMaterial.some((row) => row.materialKey === "TestBossMaterial")).toBe(false);
+    expect(planner.totalMissingByMaterial.some((row) => row.materialKey === "TestLocalSpecialty")).toBe(true);
+    expect(planner.totalMissingByMaterial.some((row) => row.materialKey === "TestBossMaterial")).toBe(true);
     expect(planner.totalMissingByMaterial.find((row) => row.materialKey === "TestPhilosophies")?.needed).toBe(22);
   });
 
-  it("uses the separate post-90 extension table when post-90 planning is enabled", () => {
+  it("does not surface post-90 special progression materials in the standard planner deficit tables", () => {
     const staticData = loadStaticData({
       version: 1,
       characterMaterialProfiles: {
@@ -571,6 +571,7 @@ describe("buildPlannerOutput", () => {
           enemyDropFamily: ["TestEnemyLow", "TestEnemyMid", "TestEnemyHigh"],
           talentBookFamily: ["TestTeachings", "TestGuide", "TestPhilosophies"],
           weeklyBossMaterial: "TestWeeklyBoss",
+          post90ResourceKey: "MasterlessStellaFortuna",
         },
       },
     });
@@ -607,6 +608,7 @@ describe("buildPlannerOutput", () => {
           TestPost90Character: {
             characterKey: "TestPost90Character",
             targetLevel: 95,
+            targetAscension: 7,
             enabled: true,
             priority: 3,
           },
@@ -620,7 +622,8 @@ describe("buildPlannerOutput", () => {
       enablePost90Planning: true,
     });
 
-    expect(planner.totalMissingByMaterial.find((row) => row.materialKey === "MasterlessStellaFortuna")?.needed).toBe(1);
+    expect(planner.byCharacter[0]?.missingByMaterial.MasterlessStellaFortuna).toBeUndefined();
+    expect(planner.warnings.some((warning) => warning.type === "post_90_profile_incomplete")).toBe(false);
   });
 
   it("builds exact weapon milestone costs from the seeded range and ascension tables", () => {
@@ -889,6 +892,86 @@ describe("buildPlannerOutput", () => {
     expect(planner.totalMissingByMaterial.length).toBeGreaterThan(0);
   });
 
+  it("excludes paused character and weapon goals from planner output while retaining active goals", () => {
+    const planner = buildPlannerOutput({
+      ...buildPlannerInput({
+        importMeta: {
+          format: "GOOD",
+          version: 1,
+          importedAt: new Date("2026-05-02T00:00:00.000Z").toISOString(),
+        },
+        characters: [
+          {
+            characterId: "Furina",
+            currentLevel: 70,
+            currentAscension: 4,
+            currentTalents: {
+              normal: 1,
+              skill: 8,
+              burst: 8,
+            },
+          },
+        ],
+        weapons: [
+          {
+            weaponInstanceId: "weapon-cool-steel",
+            weaponKey: "CoolSteel",
+            weaponId: "CoolSteel",
+            currentLevel: 1,
+            currentAscension: 0,
+          },
+        ],
+        artifacts: [],
+        inventory: {},
+        warnings: [],
+      }),
+      goals: {
+        ...exampleGoals,
+        characterGoals: {
+          Furina: {
+            characterKey: "Furina",
+            enabled: true,
+            paused: false,
+            priority: 3,
+            planningMode: "owned",
+            targetLevel: 90,
+          },
+          Mavuika: {
+            characterKey: "Mavuika",
+            enabled: true,
+            paused: true,
+            priority: 4,
+            planningMode: "prefarm",
+            targetLevel: 90,
+          },
+        },
+        weaponGoals: {
+          "weapon-cool-steel": {
+            id: "weapon-cool-steel",
+            weaponKey: "CoolSteel",
+            enabled: true,
+            paused: true,
+            priority: 3,
+            planningMode: "owned",
+            linkedInventoryInstanceId: "weapon-cool-steel",
+            useOwnedInstance: true,
+            targetLevel: 40,
+            targetAscensionPhase: 1,
+          },
+        },
+        artifactGoals: [],
+      } as unknown as KrumpanionGoals,
+      staticData: loadStaticData(),
+      today: "Monday",
+      resinSettings: exampleGoals.plannerSettings,
+    });
+
+    expect(planner.byCharacter.map((plan) => plan.characterKey)).toEqual(["Furina"]);
+    expect(planner.byWeapon).toHaveLength(0);
+    expect(planner.plannerGoals.some((goal) => goal.entityKey === "Mavuika")).toBe(false);
+    expect(planner.plannerGoals.some((goal) => goal.entityKey === "CoolSteel")).toBe(false);
+  });
+
   it("supports unowned prefarm weapon goals from level 1 without an imported weapon instance", () => {
     const planner = buildPlannerOutput({
       ...buildPlannerInput({
@@ -926,6 +1009,69 @@ describe("buildPlannerOutput", () => {
 
     expect(planner.byWeapon[0]?.weaponKey).toBe("CoolSteel");
     expect(planner.byWeapon[0]?.missingByMaterial.Mora).toBeGreaterThan(0);
+  });
+
+  it("traces talent-book usage by exact material key without cross-linking Jahoda and Neuvillette", () => {
+    const planner = buildPlannerOutput({
+      ...buildPlannerInput({
+        importMeta: {
+          format: "GOOD",
+          version: 1,
+          importedAt: new Date("2026-05-02T00:00:00.000Z").toISOString(),
+        },
+        characters: [],
+        weapons: [],
+        artifacts: [],
+        inventory: {},
+        warnings: [],
+      }),
+      goals: {
+        ...exampleGoals,
+        characterGoals: {
+          Jahoda: {
+            characterKey: "Jahoda",
+            enabled: true,
+            priority: 3,
+            planningMode: "prefarm",
+            talents: {
+              skill: 10,
+            },
+          },
+          Neuvillette: {
+            characterKey: "Neuvillette",
+            enabled: true,
+            priority: 3,
+            planningMode: "prefarm",
+            talents: {
+              skill: 10,
+              burst: 10,
+            },
+          },
+        },
+        weaponGoals: {},
+        artifactGoals: [],
+      } as unknown as KrumpanionGoals,
+      staticData: loadStaticData(),
+      today: "Monday",
+      resinSettings: exampleGoals.plannerSettings,
+    });
+
+    const equityRow = planner.exactRequirementsByMaterial.find((row) => row.materialKey === "PhilosophiesOfEquity");
+    const vagrancyRow = planner.exactRequirementsByMaterial.find((row) => row.materialKey === "PhilosophiesOfVagrancy");
+
+    expect(equityRow).toBeDefined();
+    expect(vagrancyRow).toBeDefined();
+    expect(equityRow?.usedBy.every((usage) => usage.key === "Neuvillette")).toBe(true);
+    expect(equityRow?.usedBy.map((usage) => usage.requirementLabel).sort()).toEqual(["Talent: Burst", "Talent: Skill"]);
+    expect(equityRow?.usedBy.every((usage) => usage.displayName === "Neuvillette")).toBe(true);
+    expect(vagrancyRow?.usedBy).toEqual([
+      expect.objectContaining({
+        key: "Jahoda",
+        displayName: "Jahoda",
+        requirementLabel: "Talent: Skill",
+      }),
+    ]);
+    expect(vagrancyRow?.usedBy.some((usage) => usage.key === "Neuvillette")).toBe(false);
   });
 
   it("deduplicates Traveler shared ascension costs across multiple elemental Traveler goals", () => {

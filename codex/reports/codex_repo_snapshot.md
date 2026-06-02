@@ -83,10 +83,12 @@ docs\GOOD_IMPORT.md
 docs\LOOT_MODELS.md
 docs\PERFORMANCE_PLAN.md
 docs\PLANNER_ENGINE.md
+docs\PLANNER_UI.md
 docs\RESIN_AND_AVAILABILITY_NOTES.md
 docs\RESIN_CALCULATION.md
 docs\STACK_DECISION.md
 docs\UI_SPEC.md
+docs\WEAPON_INVENTORY.md
 eslint.config.js
 examples/
 examples\goals.example.json
@@ -169,6 +171,7 @@ src\domain\crafting\resolveCraftingPlan.test.ts
 src\domain\crafting\resolveCraftingPlan.ts
 src\domain\crafting\types.ts
 src\domain\goals/
+src\domain\goals\goalDisplay.ts
 src\domain\goals\goalState.test.ts
 src\domain\goals\goalState.ts
 src\domain\goals\types.ts
@@ -245,6 +248,7 @@ src\domain\staticData\weaponProgressionRegistry.test.ts
 src\domain\staticData\weaponProgressionRegistry.ts
 src\domain\staticData\weeklyBossMaterialRegistry.ts
 src\domain\weapons/
+src\domain\weapons\refinementTracker.test.ts
 src\domain\weapons\refinementTracker.ts
 src\features/
 src\features\accounts/
@@ -285,8 +289,12 @@ src\features\inventory\InventoryTab.tsx
 src\features\inventory\InventoryWorkspace.test.tsx
 src\features\inventory\InventoryWorkspace.tsx
 src\features\planner/
+src\features\planner\plannerFormatting.ts
+src\features\planner\PlannerRecommendationCard.tsx
 src\features\planner\PlannerTab.test.tsx
 src\features\planner\PlannerTab.tsx
+src\features\planner\plannerUiModel.test.ts
+src\features\planner\plannerUiModel.ts
 src\features\planning/
 src\features\planning\PlannerAssumptionsPanel.tsx
 src\features\planning\PlanningWorkspace.tsx

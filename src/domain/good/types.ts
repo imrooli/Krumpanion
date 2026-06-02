@@ -11,6 +11,7 @@ export interface GoodCharacter {
 }
 
 export interface GoodWeapon {
+  id?: string;
   key: string;
   level: number;
   ascension: number;

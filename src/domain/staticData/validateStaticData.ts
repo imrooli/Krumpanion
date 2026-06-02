@@ -36,6 +36,7 @@ export type StaticDataIssueCategory =
   | "material"
   | "material_record"
   | "material_source"
+  | "ley_line_outcrop"
   | "family"
   | "crafting_recipe"
   | "progression"
@@ -1252,6 +1253,96 @@ function validateMaterialSources(staticData: StaticGameData, issues: StaticDataI
   }
 }
 
+function validateLeyLineOutcropLocations(staticData: StaticGameData, issues: StaticDataIssue[]): void {
+  const seenKeys = new Set<string>();
+  const validFamilyKeys = new Set([
+    ...Object.keys(staticData.generalEnemyDropFamilies),
+    ...Object.keys(staticData.eliteEnemyDropFamilies),
+  ]);
+
+  for (const [locationKey, location] of Object.entries(staticData.leyLineOutcropLocations)) {
+    if (seenKeys.has(locationKey)) {
+      pushIssue(
+        issues,
+        makeIssue("error", "ley_line_outcrop", "duplicate_location_key", `Duplicate Ley Line location key ${locationKey}.`, {
+          entityKey: locationKey,
+        }),
+      );
+    }
+    seenKeys.add(locationKey);
+
+    if (location.locationKey !== locationKey) {
+      pushIssue(
+        issues,
+        makeIssue("error", "ley_line_outcrop", "mismatched_location_key", `Ley Line location ${locationKey} does not match its internal locationKey ${location.locationKey}.`, {
+          entityKey: locationKey,
+        }),
+      );
+    }
+    if (!location.region?.trim() || !location.areaName?.trim() || location.locationNumber <= 0) {
+      pushIssue(
+        issues,
+        makeIssue("error", "ley_line_outcrop", "invalid_location_metadata", `Ley Line location ${locationKey} is missing region, area name, or a positive location number.`, {
+          entityKey: locationKey,
+        }),
+      );
+    }
+
+    for (const [index, spawn] of location.spawns.entries()) {
+      if (!Number.isFinite(spawn.count) || spawn.count <= 0) {
+        pushIssue(
+          issues,
+          makeIssue("error", "ley_line_outcrop", "invalid_spawn_count", `Ley Line location ${locationKey} spawn ${index} must have a positive count.`, {
+            entityKey: locationKey,
+          }),
+        );
+      }
+    }
+
+    for (const warning of location.unresolvedSpawnWarnings ?? []) {
+      pushIssue(
+        issues,
+        makeIssue("warning", "ley_line_outcrop", "unresolved_spawn_mapping", `${locationKey}: ${warning}`, {
+          entityKey: locationKey,
+        }),
+      );
+    }
+
+    for (const coverage of location.derivedDropFamilies) {
+      if (!validFamilyKeys.has(coverage.familyKey)) {
+        pushIssue(
+          issues,
+          makeIssue("error", "ley_line_outcrop", "invalid_family_reference", `Ley Line location ${locationKey} references unknown family ${coverage.familyKey}.`, {
+            entityKey: locationKey,
+            relatedKeys: [coverage.familyKey],
+          }),
+        );
+      }
+      for (const materialKey of coverage.materialKeys) {
+        if (!staticData.materials[materialKey]) {
+          pushIssue(
+            issues,
+            makeIssue("error", "ley_line_outcrop", "invalid_material_reference", `Ley Line location ${locationKey} references unknown material ${materialKey} under ${coverage.familyKey}.`, {
+              entityKey: locationKey,
+              relatedKeys: [materialKey, coverage.familyKey],
+            }),
+          );
+        }
+      }
+      for (const spawn of coverage.guaranteedEnemySpawns) {
+        if (!Number.isFinite(spawn.count) || spawn.count <= 0) {
+          pushIssue(
+            issues,
+            makeIssue("error", "ley_line_outcrop", "invalid_guaranteed_spawn", `Ley Line location ${locationKey} has a non-positive guaranteed spawn count for ${spawn.enemyName}.`, {
+              entityKey: locationKey,
+            }),
+          );
+        }
+      }
+    }
+  }
+}
+
 function validateFamilyMembership(
   familyType: StaticDataIssueCategory,
   membershipMap: Map<string, string[]>,
@@ -1981,6 +2072,7 @@ export function validateStaticData(staticData: StaticGameData): StaticDataHealth
   const materialCounts = validateMaterials(staticData, issues);
   validateMaterialRecords(staticData, issues);
   validateMaterialSources(staticData, issues);
+  validateLeyLineOutcropLocations(staticData, issues);
   validateFamilies(staticData, issues);
   validateRecipeRegistry("recipes", staticData.recipes, staticData, issues);
   validateRecipeRegistry("craftingRecipes", staticData.craftingRecipes, staticData, issues);

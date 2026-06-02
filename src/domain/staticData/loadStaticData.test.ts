@@ -59,6 +59,10 @@ describe("loadStaticData", () => {
     expect(staticData.materialRecords.BasaltPillar.category).toBe("normal_boss_material");
     expect(staticData.materialSources.BasaltPillar?.[0]?.sourceType).toBe("normal_boss");
     expect(staticData.weeklyBossMaterials.DvalinsSigh.source.type).toBe("weekly_boss");
+    expect(staticData.materials.CounterfeitResin.category).toBe("weekly_boss");
+    expect(staticData.materialRecords.CounterfeitResin.category).toBe("weekly_boss_material");
+    expect(staticData.materials.ProfanedSprout.displayName).toBe("Profaned Sprout");
+    expect(staticData.materialRecords.TwistedWitheredBranch.category).toBe("weekly_boss_material");
     expect(staticData.specialProgressionMaterials.MasterlessStellaFortuna.status).toBe("needs_manual_review");
     expect(staticData.materialRecords.MasterlessStellaFortuna.category).toBe("special_progression_material");
     expect(staticData.eliteEnemyDropFamilies.radiant_beast_materials.materialKeys[2]).toBe("RadiantExoskeleton");
@@ -71,6 +75,9 @@ describe("loadStaticData", () => {
     expect(staticData.weaponMaterialProfiles.CoolSteel.status).toBe("verified");
     expect(staticData.weapons.MoonweaversDawn.weaponType).toBe("Sword");
     expect(staticData.weapons.MoonweaversDawn.rarity).toBe(4);
+    expect(staticData.leyLineOutcropLocationList.length).toBeGreaterThan(100);
+    expect(staticData.leyLineOutcropLocations["leyline.liyue.yaodie_valley.1"]?.derivedDropFamilies.some((coverage) => coverage.familyKey === "humanoid_ruin_machine_materials")).toBe(true);
+    expect(staticData.leyLineOutcropLocations["leyline.natlan.atocpan.2"]?.derivedDropFamilies[0]?.familyKey).toBe("furnace_shell_mountain_weasel_materials");
   });
 
   it("loads universal character ascension and post-90 tables with the expected totals", () => {
@@ -178,9 +185,8 @@ describe("loadStaticData", () => {
     const nicoleWeeklyIssue = staticData.unresolvedCharacterMaterialReferences.find(
       (reference) => reference.characterKey === "Nicole" && reference.materialSlot === "weeklyBossMaterial",
     );
-    expect(nicoleWeeklyIssue?.rawName).toBe("???");
-    expect(nicoleWeeklyIssue?.status).toBe("unresolved");
-    expect(staticData.characterMaterialProfiles.Nicole.weeklyBossMaterialKey).toBe("");
+    expect(nicoleWeeklyIssue).toBeUndefined();
+    expect(staticData.characterMaterialProfiles.Nicole.weeklyBossMaterialKey).toBe("CounterfeitResin");
   });
 
   it("normalizes display-style material names into GOOD inventory keys", () => {

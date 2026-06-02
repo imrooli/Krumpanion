@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { APP_SECTIONS } from "./navigationRegistry";
 import { AccountSwitcher } from "../features/accounts/AccountSwitcher";
-import { selectActiveAccount, selectActiveGoals } from "../store/selectors";
+import { selectActiveAccount, selectActiveChecklistAttentionCount, selectActiveGoals } from "../store/selectors";
 import { selectInventoryWarnings, selectOverrideWarnings, selectPlannerOutput } from "../store/selectors";
 import { useAppStore } from "../store/useAppStore";
 
@@ -10,7 +10,8 @@ export function AppShell() {
   const settings = useAppStore((state) => state.settings);
   const goals = useAppStore(selectActiveGoals);
   const today = useAppStore((state) => state.today);
-  const refreshToday = useAppStore((state) => state.refreshToday);
+  const checklistAttentionCount = useAppStore(selectActiveChecklistAttentionCount);
+  const refreshTimeSensitiveState = useAppStore((state) => state.refreshTimeSensitiveState);
   const setActiveTab = useAppStore((state) => state.setActiveTab);
   const plannerOutput = useAppStore(selectPlannerOutput);
   const importWarnings = useAppStore(selectInventoryWarnings);
@@ -27,15 +28,15 @@ export function AppShell() {
     : "No GOOD import";
 
   useEffect(() => {
-    refreshToday();
+    void refreshTimeSensitiveState();
     const intervalId = window.setInterval(() => {
-      refreshToday();
+      void refreshTimeSensitiveState();
     }, 60_000);
 
     return () => {
       window.clearInterval(intervalId);
     };
-  }, [refreshToday]);
+  }, [refreshTimeSensitiveState]);
 
   return (
     <div className={`app-shell app-shell-sidebar ${sidebarCollapsed ? "is-collapsed" : ""}`}>
@@ -76,7 +77,12 @@ export function AppShell() {
                   void setActiveTab(section.key);
                 }}
               >
-                <span className="sidebar-nav-label">{section.label}</span>
+                <span className="sidebar-nav-heading">
+                  <span className="sidebar-nav-label">{section.label}</span>
+                  {section.key === "checklist" && checklistAttentionCount > 0 ? (
+                    <span className="sidebar-nav-badge">{checklistAttentionCount}</span>
+                  ) : null}
+                </span>
                 <small>{section.description}</small>
               </button>
             ))}

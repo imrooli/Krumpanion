@@ -7,6 +7,8 @@ import {
   REQUIRED_CHARACTER_FIXES,
   VALID_CHARACTER_ELEMENTS,
   VALID_CHARACTER_WEAPON_TYPES,
+  VALID_WEAPON_ACQUISITION_TYPES,
+  VALID_WEAPON_REFINEMENT_POLICIES,
   VALID_WEAPON_RARITIES,
 } from "./databaseValidationRules";
 
@@ -144,6 +146,12 @@ function validateWeapons(database: CanonicalDatabase, issues: DatabaseValidation
     if (profile.weaponType && !VALID_CHARACTER_WEAPON_TYPES.has(profile.weaponType)) {
       issues.push(issue("error", "weapon", weaponKey, `Unknown weaponType ${profile.weaponType}.`));
     }
+    if (profile.acquisitionType && !VALID_WEAPON_ACQUISITION_TYPES.has(profile.acquisitionType)) {
+      issues.push(issue("error", "weapon", weaponKey, `Unknown acquisitionType ${profile.acquisitionType}.`));
+    }
+    if (profile.refinementPolicy && !VALID_WEAPON_REFINEMENT_POLICIES.has(profile.refinementPolicy)) {
+      issues.push(issue("error", "weapon", weaponKey, `Unknown refinementPolicy ${profile.refinementPolicy}.`));
+    }
     if (profile.status === "verified") {
       for (const [field, value] of Object.entries({
         weaponAscensionMaterialFamilyKey: profile.weaponAscensionMaterialFamilyKey,
@@ -157,6 +165,12 @@ function validateWeapons(database: CanonicalDatabase, issues: DatabaseValidation
     }
     if (profile.plannerEligible && profile.rarity !== 3 && profile.rarity !== 4 && profile.rarity !== 5) {
       issues.push(issue("error", "weapon", weaponKey, "1-star/2-star weapons cannot be plannerEligible."));
+    }
+    if (profile.refinementTrackable === true && profile.rarity !== 3 && profile.rarity !== 4 && profile.rarity !== 5) {
+      issues.push(issue("error", "weapon", weaponKey, "1-star/2-star weapons cannot be refinementTrackable."));
+    }
+    if (profile.rarity === 5 && !profile.refinementPolicy && profile.refinementTrackable !== false) {
+      issues.push(issue("warning", "weapon", weaponKey, "5-star weapons should default to manual review when no explicit refinementPolicy is present."));
     }
   }
 }
@@ -257,6 +271,39 @@ function validateSources(database: CanonicalDatabase, issues: DatabaseValidation
     for (const row of rows) {
       if (["enemy_drop", "local_specialty", "world_gathering", "forging"].includes(row.sourceType) && row.resinCost && row.resinCost > 0) {
         issues.push(issue("warning", "source", materialKey, `No-resin source ${row.sourceKey} has resinCost ${row.resinCost}.`));
+      }
+    }
+  }
+
+  const validEnemyFamilyKeys = new Set([
+    ...Object.keys(database.materials.commonEnemyDropFamilies),
+    ...Object.keys(database.materials.eliteEnemyDropFamilies),
+  ]);
+
+  for (const [locationKey, location] of Object.entries(database.sources.leyLineOutcropLocations)) {
+    if (location.locationKey !== locationKey) {
+      issues.push(issue("error", "source", locationKey, "Ley Line Outcrop object key does not match locationKey."));
+    }
+    if (!location.region?.trim() || !location.areaName?.trim()) {
+      issues.push(issue("error", "source", locationKey, "Ley Line Outcrop is missing region or areaName."));
+    }
+    if (!Number.isInteger(location.locationNumber) || location.locationNumber <= 0) {
+      issues.push(issue("error", "source", locationKey, "Ley Line Outcrop locationNumber must be a positive integer."));
+    }
+
+    for (const [index, spawn] of location.spawns.entries()) {
+      if (!Number.isFinite(spawn.count) || spawn.count <= 0) {
+        issues.push(issue("error", "source", locationKey, `Ley Line spawn ${index} must have a positive count.`));
+      }
+      if (!spawn.enemyName?.trim()) {
+        issues.push(issue("error", "source", locationKey, `Ley Line spawn ${index} is missing enemyName.`));
+      }
+      if (!spawn.dropFamilyKey) {
+        issues.push(issue("warning", "source", locationKey, `Ley Line spawn ${index} for ${spawn.enemyName} has no resolved dropFamilyKey.`));
+        continue;
+      }
+      if (!validEnemyFamilyKeys.has(spawn.dropFamilyKey)) {
+        issues.push(issue("error", "source", locationKey, `Ley Line spawn ${index} references unknown drop family ${spawn.dropFamilyKey}.`));
       }
     }
   }

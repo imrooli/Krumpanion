@@ -19,10 +19,18 @@ function resetStore() {
     user: structuredClone(saveFile.user),
     settings: structuredClone(saveFile.settings),
     today: "Monday",
+    timeSensitiveAt: FIXED_DATE.toISOString(),
     importErrors: [],
     importWarnings: [],
     overrideText: "",
     saveInfo: toSaveInfo(saveFile),
+    persistenceStatus: {
+      status: "idle",
+      lastSavedAt: saveFile.updatedAt,
+      lastGoalBackupAtByAccount: {},
+    },
+    goalBackups: [],
+    saveRecoveryPoints: [],
     isHydrated: true,
   });
 }
@@ -69,6 +77,7 @@ describe("useAppStore multi-account support", () => {
     expect(state.user.accountOrder).toHaveLength(1);
     expect(state.user.activeAccountId).toBe(state.user.accountOrder[0]);
     expect(state.user.accountsById[state.user.activeAccountId]?.name).toBe("Main Account");
+    expect(state.user.accountsById[state.user.activeAccountId]?.checklist.weeklyBossClaims.usedCount).toBe(0);
   });
 
   it("creates, renames, duplicates, switches, and safely deletes accounts", async () => {
@@ -152,6 +161,305 @@ describe("useAppStore multi-account support", () => {
     expect(goals.characterGoals.Furina?.targetLevel).toBe(90);
   });
 
+  it("promotes prefarm character goals to owned when the character appears in the latest GOOD import", async () => {
+    await useAppStore.getState().updateCharacterGoal("Furina", {
+      characterKey: "Furina",
+      planningMode: "prefarm",
+      targetLevel: 90,
+      enabled: true,
+      notes: "keep this goal",
+    });
+
+    expect(selectActiveGoals(useAppStore.getState()).characterGoals.Furina?.planningMode).toBe("prefarm");
+
+    await useAppStore.getState().importGoodText(JSON.stringify(exampleGood), {
+      fileName: "main-account.json",
+      source: "file",
+    });
+
+    const goals = selectActiveGoals(useAppStore.getState());
+    expect(goals.characterGoals.Furina?.planningMode).toBe("owned");
+    expect(goals.characterGoals.Furina?.targetLevel).toBe(90);
+    expect(goals.characterGoals.Furina?.notes).toBe("keep this goal");
+  });
+
+  it("auto-raises goal ascension to satisfy level and talent targets for characters and weapons", async () => {
+    await useAppStore.getState().updateCharacterGoal("Furina", {
+      characterKey: "Furina",
+      targetLevel: 90,
+      enabled: true,
+    });
+
+    let goals = selectActiveGoals(useAppStore.getState());
+    expect(goals.characterGoals.Furina?.targetAscension).toBe(6);
+
+    await useAppStore.getState().updateCharacterGoal("Bennett", {
+      characterKey: "Bennett",
+      talents: {
+        burst: 9,
+      },
+      enabled: true,
+    });
+
+    goals = selectActiveGoals(useAppStore.getState());
+    expect(goals.characterGoals.Bennett?.targetAscension).toBe(6);
+
+    const weaponGoalId = await useAppStore.getState().createWeaponGoal({
+      weaponKey: "CoolSteel",
+      targetLevel: 80,
+      enabled: true,
+    });
+
+    goals = selectActiveGoals(useAppStore.getState());
+    expect(goals.weaponGoals[weaponGoalId]?.targetAscensionPhase).toBe(5);
+  });
+
+  it("pauses character and weapon goals without losing their saved progress tracking", async () => {
+    await useAppStore.getState().updateCharacterGoal("Furina", {
+      characterKey: "Furina",
+      targetLevel: 90,
+      enabled: true,
+    });
+
+    const weaponGoalId = await useAppStore.getState().createWeaponGoal({
+      weaponKey: "CoolSteel",
+      targetLevel: 40,
+      targetAscensionPhase: 1,
+      enabled: true,
+      useOwnedInstance: false,
+    });
+
+    const activeAccountId = useAppStore.getState().user.activeAccountId;
+    const beforePauseAccount = useAppStore.getState().user.accountsById[activeAccountId];
+    const characterStartedAt = beforePauseAccount.goalProgressTracking["character:Furina"]?.startedAt;
+    const weaponStartedAt = beforePauseAccount.goalProgressTracking[`weapon:${weaponGoalId}`]?.startedAt;
+
+    expect(characterStartedAt).toBeDefined();
+    expect(weaponStartedAt).toBeDefined();
+
+    await useAppStore.getState().pauseCharacterGoal("Furina");
+    await useAppStore.getState().pauseWeaponGoal(weaponGoalId, "CoolSteel");
+
+    let goals = selectActiveGoals(useAppStore.getState());
+    let planner = selectPlannerOutput(useAppStore.getState());
+    let pausedAccount = useAppStore.getState().user.accountsById[activeAccountId];
+
+    expect(goals.characterGoals.Furina?.paused).toBe(true);
+    expect(goals.weaponGoals[weaponGoalId]?.paused).toBe(true);
+    expect(planner.byCharacter.some((plan) => plan.characterKey === "Furina")).toBe(false);
+    expect(planner.byWeapon.some((plan) => plan.goalKey === weaponGoalId)).toBe(false);
+    expect(pausedAccount.goalProgressTracking["character:Furina"]?.startedAt).toBe(characterStartedAt);
+    expect(pausedAccount.goalProgressTracking[`weapon:${weaponGoalId}`]?.startedAt).toBe(weaponStartedAt);
+
+    await useAppStore.getState().resumeCharacterGoal("Furina");
+    await useAppStore.getState().resumeWeaponGoal(weaponGoalId, "CoolSteel");
+
+    goals = selectActiveGoals(useAppStore.getState());
+    planner = selectPlannerOutput(useAppStore.getState());
+    pausedAccount = useAppStore.getState().user.accountsById[activeAccountId];
+
+    expect(goals.characterGoals.Furina?.paused).toBe(false);
+    expect(goals.weaponGoals[weaponGoalId]?.paused).toBe(false);
+    expect(planner.byCharacter.some((plan) => plan.characterKey === "Furina")).toBe(true);
+    expect(planner.byWeapon.some((plan) => plan.goalKey === weaponGoalId)).toBe(true);
+    expect(pausedAccount.goalProgressTracking["character:Furina"]?.startedAt).toBe(characterStartedAt);
+    expect(pausedAccount.goalProgressTracking[`weapon:${weaponGoalId}`]?.startedAt).toBe(weaponStartedAt);
+  });
+
+  it("creates debounced goal backups for goal edits but not inventory-only edits", async () => {
+    vi.useFakeTimers();
+    const goalBackupSpy = vi.spyOn(persistenceAdapter, "createGoalBackup").mockResolvedValue({
+      id: "goal-backup-1",
+      kind: "goal_backup",
+      accountId: useAppStore.getState().user.activeAccountId,
+      createdAt: "2026-05-07T12:00:05.000Z",
+      reason: "goal_edit",
+      payload: {
+        accountId: useAppStore.getState().user.activeAccountId,
+        accountName: "Main Account",
+        goals: useAppStore.getState().user.accountsById[useAppStore.getState().user.activeAccountId].goals,
+        plannerSettings: useAppStore.getState().user.accountsById[useAppStore.getState().user.activeAccountId].plannerSettings,
+      },
+    });
+    vi.spyOn(persistenceAdapter, "listGoalBackups").mockResolvedValue([]);
+    vi.spyOn(persistenceAdapter, "listSaveRecoveryPoints").mockResolvedValue([]);
+
+    await useAppStore.getState().updateCharacterGoal("Furina", {
+      characterKey: "Furina",
+      targetLevel: 90,
+      enabled: true,
+    });
+
+    expect(goalBackupSpy).not.toHaveBeenCalled();
+    await vi.advanceTimersByTimeAsync(5000);
+    expect(goalBackupSpy).toHaveBeenCalledTimes(1);
+
+    goalBackupSpy.mockClear();
+
+    await useAppStore.getState().setActiveMaterialQuantity("Mora", 1234);
+    await vi.advanceTimersByTimeAsync(5000);
+    expect(goalBackupSpy).not.toHaveBeenCalled();
+  });
+
+  it("keeps checklist actions account-scoped and syncs weekly boss claims into planner state", async () => {
+    const mainId = useAppStore.getState().user.activeAccountId;
+
+    await useAppStore.getState().setChecklistResetTaskCompleted("dailyCommissions", true, "2026-06-02T12:00:00.000Z");
+    await useAppStore.getState().setWeeklyBossClaimsUsed(2, "2026-06-02T12:00:00.000Z");
+
+    let mainAccount = useAppStore.getState().user.accountsById[mainId];
+    expect(mainAccount.checklist.dailyCommissions.completedAt).toBe("2026-06-02T12:00:00.000Z");
+    expect(mainAccount.checklist.weeklyBossClaims.usedCount).toBe(2);
+    expect(mainAccount.plannerSettings.weeklyBossDiscountClaimsUsed).toBe(2);
+    expect(mainAccount.worldState.weeklyBossDiscountsUsed).toBe(2);
+
+    const altId = await useAppStore.getState().createAccount({ name: "Alt Account" });
+    let altAccount = useAppStore.getState().user.accountsById[altId];
+    expect(altAccount.checklist.dailyCommissions.completedAt).toBeUndefined();
+    expect(altAccount.checklist.weeklyBossClaims.usedCount).toBe(0);
+
+    await useAppStore.getState().startChecklistCooldown("expeditions", "2026-06-02T12:30:00.000Z");
+    altAccount = useAppStore.getState().user.accountsById[altId];
+    expect(altAccount.checklist.expeditions.lastClaimedAt).toBe("2026-06-02T12:30:00.000Z");
+
+    await useAppStore.getState().switchAccount(mainId);
+    mainAccount = useAppStore.getState().user.accountsById[mainId];
+    expect(mainAccount.checklist.dailyCommissions.completedAt).toBe("2026-06-02T12:00:00.000Z");
+    expect(mainAccount.checklist.expeditions.lastClaimedAt).toBeUndefined();
+  });
+
+  it("reconciles stale weekly checklist boss claims during time-sensitive refresh", async () => {
+    await useAppStore.getState().setWeeklyBossClaimsUsed(3, "2026-06-02T12:00:00.000Z");
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date("2026-06-09T12:00:00.000Z"));
+
+    await useAppStore.getState().refreshTimeSensitiveState();
+
+    const activeAccount = useAppStore.getState().user.accountsById[useAppStore.getState().user.activeAccountId];
+    expect(activeAccount.checklist.weeklyBossClaims.usedCount).toBe(3);
+    expect(activeAccount.plannerSettings.weeklyBossDiscountClaimsUsed).toBe(0);
+    expect(activeAccount.worldState.weeklyBossDiscountsUsed).toBe(0);
+  });
+
+  it("keeps realm depot and realm currency state isolated per account", async () => {
+    const mainId = useAppStore.getState().user.activeAccountId;
+    await useAppStore.getState().setChecklistResetTaskCompleted("realmDepot", true, "2026-06-02T12:00:00.000Z");
+    await useAppStore.getState().updateRealmCurrencySettings({ realmLevel: 8, trustRank: 9 });
+    await useAppStore.getState().setRealmCurrencyClaimedNow("2026-06-02T12:00:00.000Z");
+
+    const altId = await useAppStore.getState().createAccount({ name: "Alt Account" });
+    let altAccount = useAppStore.getState().user.accountsById[altId];
+    expect(altAccount.checklist.realmDepot.completedAt).toBeUndefined();
+    expect(altAccount.checklist.realmCurrency.realmLevel).toBe(10);
+    expect(altAccount.checklist.realmCurrency.trustRank).toBe(10);
+    expect(altAccount.checklist.realmCurrency.lastClaimedAt).toBeUndefined();
+
+    await useAppStore.getState().updateRealmCurrencySettings({ realmLevel: 6, trustRank: 7 });
+    altAccount = useAppStore.getState().user.accountsById[altId];
+    expect(altAccount.checklist.realmCurrency.realmLevel).toBe(6);
+    expect(altAccount.checklist.realmCurrency.trustRank).toBe(7);
+
+    await useAppStore.getState().switchAccount(mainId);
+    const mainAccount = useAppStore.getState().user.accountsById[mainId];
+    expect(mainAccount.checklist.realmDepot.completedAt).toBe("2026-06-02T12:00:00.000Z");
+    expect(mainAccount.checklist.realmCurrency.realmLevel).toBe(8);
+    expect(mainAccount.checklist.realmCurrency.trustRank).toBe(9);
+    expect(mainAccount.checklist.realmCurrency.lastClaimedAt).toBe("2026-06-02T12:00:00.000Z");
+  });
+
+  it("creates a full recovery point before replacing the active account with a GOOD import", async () => {
+    const recoverySpy = vi.spyOn(persistenceAdapter, "createSaveRecoveryPoint").mockResolvedValue({
+      id: "recovery-1",
+      kind: "save_recovery_point",
+      accountId: useAppStore.getState().user.activeAccountId,
+      createdAt: "2026-05-07T12:00:01.000Z",
+      reason: "good_import_preflight",
+      payload: {
+        saveFile: createDefaultSaveFile(FIXED_DATE),
+      },
+    });
+    vi.spyOn(persistenceAdapter, "listGoalBackups").mockResolvedValue([]);
+    vi.spyOn(persistenceAdapter, "listSaveRecoveryPoints").mockResolvedValue([]);
+
+    await useAppStore.getState().importGoodText(JSON.stringify(exampleGood), {
+      fileName: "active.json",
+      source: "file",
+    });
+
+    expect(recoverySpy).toHaveBeenCalledWith(expect.any(Object), "good_import_preflight", expect.any(String));
+  });
+
+  it("restores a goal backup without touching inventory", async () => {
+    const activeAccountId = useAppStore.getState().user.activeAccountId;
+    await useAppStore.getState().setActiveMaterialQuantity("Mora", 3210);
+
+    vi.spyOn(persistenceAdapter, "restoreGoalBackup").mockResolvedValue({
+      accountId: activeAccountId,
+      accountName: "Main Account",
+      goals: {
+        ...useAppStore.getState().user.accountsById[activeAccountId].goals,
+        characterGoals: {
+          Furina: {
+            characterKey: "Furina",
+            enabled: true,
+            priority: 3,
+            planningMode: "owned",
+            targetLevel: 90,
+            targetAscension: 6,
+            talents: {},
+          },
+        },
+      },
+      plannerSettings: useAppStore.getState().user.accountsById[activeAccountId].plannerSettings,
+    });
+    vi.spyOn(persistenceAdapter, "createSaveRecoveryPoint").mockResolvedValue({
+      id: "recovery-restore",
+      kind: "save_recovery_point",
+      accountId: activeAccountId,
+      createdAt: "2026-05-07T12:00:01.000Z",
+      reason: "pre_restore",
+      payload: {
+        saveFile: createDefaultSaveFile(FIXED_DATE),
+      },
+    });
+    vi.spyOn(persistenceAdapter, "listGoalBackups").mockResolvedValue([]);
+    vi.spyOn(persistenceAdapter, "listSaveRecoveryPoints").mockResolvedValue([]);
+
+    await useAppStore.getState().restoreGoalBackup("backup-1");
+
+    const activeAccount = useAppStore.getState().user.accountsById[activeAccountId];
+    expect(activeAccount.inventory.Mora).toBe(3210);
+    expect(activeAccount.goals.characterGoals.Furina?.targetLevel).toBe(90);
+  });
+
+  it("restores a full save recovery point", async () => {
+    const restoredSave = createDefaultSaveFile(new Date("2026-05-09T00:00:00.000Z"));
+    const altId = crypto.randomUUID();
+    const altAccount = createBlankAccount({ id: altId, name: "Restored Alt", now: new Date("2026-05-09T00:00:00.000Z") });
+    restoredSave.user.accountsById[altId] = altAccount;
+    restoredSave.user.accountOrder = [restoredSave.user.activeAccountId, altId];
+    restoredSave.user.activeAccountId = altId;
+
+    vi.spyOn(persistenceAdapter, "restoreSaveRecoveryPoint").mockResolvedValue(restoredSave);
+    vi.spyOn(persistenceAdapter, "createSaveRecoveryPoint").mockResolvedValue({
+      id: "recovery-pre-restore",
+      kind: "save_recovery_point",
+      accountId: useAppStore.getState().user.activeAccountId,
+      createdAt: "2026-05-07T12:00:01.000Z",
+      reason: "pre_restore",
+      payload: {
+        saveFile: createDefaultSaveFile(FIXED_DATE),
+      },
+    });
+    vi.spyOn(persistenceAdapter, "listGoalBackups").mockResolvedValue([]);
+    vi.spyOn(persistenceAdapter, "listSaveRecoveryPoints").mockResolvedValue([]);
+
+    await useAppStore.getState().restoreSaveRecoveryPoint("recovery-1");
+
+    expect(useAppStore.getState().user.activeAccountId).toBe(altId);
+    expect(useAppStore.getState().user.accountsById[altId]?.name).toBe("Restored Alt");
+  });
+
   it("supports direct and bulk material quantity edits without leaking across accounts", async () => {
     await useAppStore.getState().updateCharacterGoal("Mavuika", {
       characterKey: "Mavuika",
@@ -213,6 +521,44 @@ describe("useAppStore multi-account support", () => {
 
     await useAppStore.getState().clearActiveMaterialQuantity("Mora");
     expect(useAppStore.getState().user.accountsById[useAppStore.getState().user.activeAccountId]?.inventory.Mora).toBeUndefined();
+  });
+
+  it("resets a manual material override back to the imported baseline", async () => {
+    await useAppStore.getState().importGoodText(buildGoodWithMora(2500), {
+      fileName: "baseline.json",
+      source: "file",
+    });
+
+    await useAppStore.getState().setActiveMaterialQuantity("Mora", 4000);
+    expect(useAppStore.getState().user.accountsById[useAppStore.getState().user.activeAccountId]?.inventory.Mora).toBe(4000);
+
+    await useAppStore.getState().resetActiveMaterialToImported("Mora");
+
+    const activeAccount = useAppStore.getState().user.accountsById[useAppStore.getState().user.activeAccountId];
+    expect(activeAccount?.inventory.Mora).toBe(2500);
+    expect(activeAccount?.importedInventory.Mora).toBe(2500);
+    expect(activeAccount?.materialEditState.Mora).toBeUndefined();
+  });
+
+  it("replaces conflicting manual quantities on GOOD import and records recent import history", async () => {
+    await useAppStore.getState().importGoodText(buildGoodWithMora(1000), {
+      fileName: "first.json",
+      source: "file",
+    });
+    await useAppStore.getState().setActiveMaterialQuantity("Mora", 5000);
+
+    await useAppStore.getState().importGoodText(buildGoodWithMora(1800), {
+      fileName: "second.json",
+      source: "file",
+    });
+
+    const activeAccount = useAppStore.getState().user.accountsById[useAppStore.getState().user.activeAccountId];
+    expect(activeAccount?.inventory.Mora).toBe(1800);
+    expect(activeAccount?.importedInventory.Mora).toBe(1800);
+    expect(activeAccount?.materialEditState.Mora).toBeUndefined();
+    expect(activeAccount?.recentImports[0]?.fileName).toBe("second.json");
+    expect(activeAccount?.recentImports[0]?.changedMaterialCount).toBeGreaterThan(0);
+    expect(activeAccount?.recentChanges.some((entry) => entry.kind === "inventory" && entry.materialKey === "Mora")).toBe(true);
   });
 
   it("keeps goals account-scoped and planner output tied to the active account inventory and world state", async () => {

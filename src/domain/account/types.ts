@@ -1,6 +1,8 @@
 import type { KrumpanionGoalState, PlannerSettings } from "../goals/types";
 import { DEFAULT_GOAL_STATE, DEFAULT_PLANNER_SETTINGS } from "../goals/types";
 import type { ImportWarning } from "../good/types";
+import type { AccountChecklistState } from "../checklist/types";
+import { createDefaultChecklistState } from "../checklist/types";
 
 export type AccountId = string;
 
@@ -19,26 +21,38 @@ export interface OwnedCharacter {
 
 export interface OwnedWeapon {
   weaponInstanceId: string;
+  accountId?: string;
   weaponKey: string;
   weaponId?: string;
   importName?: string;
+  importedName?: string | null;
+  importSourceId?: string | null;
   currentLevel: number;
   currentAscension: number;
   refinement?: number;
   equippedByCharacterId?: string;
+  equippedBy?: string | null;
   location?: string;
   lock?: boolean;
+  locked?: boolean;
+  lastImportedAt?: string;
 }
 
 export interface UnmatchedOwnedWeapon {
   weaponInstanceId: string;
+  accountId?: string;
   importName: string;
+  importedName?: string | null;
+  importSourceId?: string | null;
   currentLevel: number;
   currentAscension: number;
   refinement?: number;
   equippedByCharacterId?: string;
+  equippedBy?: string | null;
   location?: string;
   lock?: boolean;
+  locked?: boolean;
+  lastImportedAt?: string;
 }
 
 export interface OwnedArtifact {
@@ -67,6 +81,7 @@ export interface OwnedArtifact {
 
 export type InventoryState = Record<string, number>;
 export type AccountInventoryState = InventoryState;
+export type ImportedInventoryState = InventoryState;
 export type MaterialEditSource = "manual" | "bulk";
 
 export interface MaterialEditMetadata {
@@ -138,6 +153,131 @@ export interface AccountImportState {
   };
 }
 
+export type PlannerRecalculationState = "idle" | "recalculating" | "recalculated" | "recalculatedWithWarnings" | "failed";
+
+export interface PlannerRecalculationStatus {
+  status: PlannerRecalculationState;
+  lastRecalculatedAt?: string;
+  activeGoalCount: number;
+  materialDeficitCount: number;
+  totalEstimatedResin: number;
+  warningCount: number;
+  lastError?: string;
+}
+
+export interface GoalProgressBucketBaseline {
+  mora: number;
+  characterExp: number;
+  weaponExp: number;
+  materials: number;
+}
+
+export interface GoalProgressTrackingRecord {
+  goalId: string;
+  goalType: "character" | "weapon";
+  goalLabel: string;
+  targetSignature: string;
+  startedAt: string;
+  completedAt?: string;
+  baseline: GoalProgressBucketBaseline;
+}
+
+export interface GoalMilestoneLogEntry {
+  id: string;
+  goalId: string;
+  goalType: "character" | "weapon";
+  goalLabel: string;
+  milestoneType: "character_built" | "weapon_goal_met";
+  occurredAt: string;
+  startedAt?: string;
+  targetSummary?: string;
+}
+
+export type RecentPlannerChangeTrigger =
+  | "good_import"
+  | "manual_edit"
+  | "bulk_edit"
+  | "reset_to_imported"
+  | "goal_edit"
+  | "goal_reset"
+  | "goal_restore"
+  | "account_switch"
+  | "save_restore"
+  | "world_state_change"
+  | "planner_settings"
+  | "database_update"
+  | "inventory_clear";
+
+export type RecentInventorySourceState = "imported" | "manual" | "missing_from_import" | "preview";
+
+interface RecentPlannerChangeBase {
+  id: string;
+  changedAt: string;
+}
+
+export interface RecentInventoryPlannerChange extends RecentPlannerChangeBase {
+  kind: "inventory";
+  trigger: Extract<RecentPlannerChangeTrigger, "good_import" | "manual_edit" | "bulk_edit" | "reset_to_imported" | "inventory_clear">;
+  materialKey: string;
+  materialName: string;
+  previousQuantity: number;
+  nextQuantity: number;
+  sourceStateAfter: RecentInventorySourceState;
+}
+
+export interface RecentGoalProgressPlannerChange extends RecentPlannerChangeBase {
+  kind: "goal_progress";
+  trigger: Extract<RecentPlannerChangeTrigger, "good_import" | "goal_edit" | "goal_reset" | "manual_edit" | "bulk_edit" | "reset_to_imported" | "world_state_change" | "planner_settings">;
+  goalId: string;
+  goalType: "character" | "weapon" | "artifact";
+  goalLabel: string;
+  previousStatus: "completed" | "craftable" | "blocked" | "in_progress";
+  nextStatus: "completed" | "craftable" | "blocked" | "in_progress";
+  previousSummary: string;
+  nextSummary: string;
+  blocker?: string;
+}
+
+export interface RecentPlannerRecalculationChange extends RecentPlannerChangeBase {
+  kind: "recalculation";
+  trigger: RecentPlannerChangeTrigger;
+  status: Exclude<PlannerRecalculationState, "idle" | "recalculating">;
+  activeGoalCount: number;
+  materialDeficitCount: number;
+  totalEstimatedResin: number;
+  warningCount: number;
+  resolvedGoalCount?: number;
+  newlyCompletedGoalCount?: number;
+  newlyCraftableGoalCount?: number;
+  blockedGoalCountDelta?: number;
+  resolvedDeficitCount?: number;
+  materialDeficitCountDelta?: number;
+  estimatedResinDelta?: number;
+  estimatedDaysDelta?: number;
+  warningCountDelta?: number;
+  errorMessage?: string;
+}
+
+export type RecentPlannerChange =
+  | RecentInventoryPlannerChange
+  | RecentGoalProgressPlannerChange
+  | RecentPlannerRecalculationChange;
+
+export interface RecentImportEntry {
+  id: string;
+  importedAt: string;
+  fileName?: string;
+  source?: AccountImportState["lastGoodSource"];
+  materialCount: number;
+  characterCount: number;
+  weaponCount: number;
+  unmatchedWeaponCount: number;
+  artifactCount: number;
+  warningCount: number;
+  changedMaterialCount: number;
+  overwrittenManualCount: number;
+}
+
 export interface KrumpanionAccount extends AccountOwnershipState {
   id: AccountId;
   name: string;
@@ -146,13 +286,20 @@ export interface KrumpanionAccount extends AccountOwnershipState {
   metadata: AccountMetadata;
   importMeta: ImportedAccountState["importMeta"];
   inventory: AccountInventoryState;
+  importedInventory: ImportedInventoryState;
   unmatchedWeapons: UnmatchedOwnedWeapon[];
   materialEditState: AccountMaterialEditState;
   warnings: ImportWarning[];
   goals: KrumpanionGoalState;
   plannerSettings: PlannerSettings;
+  checklist: AccountChecklistState;
   worldState: AccountWorldState;
   importState: AccountImportState;
+  plannerStatus: PlannerRecalculationStatus;
+  goalProgressTracking: Record<string, GoalProgressTrackingRecord>;
+  goalMilestones: GoalMilestoneLogEntry[];
+  recentChanges: RecentPlannerChange[];
+  recentImports: RecentImportEntry[];
 }
 
 export interface ExportedKrumpanionAccount {
@@ -236,9 +383,11 @@ export function createBlankAccount(
       ...input.metadata,
       lastOpenedAt: timestamp,
     },
+    importedInventory: {},
     materialEditState: {},
     goals: structuredClone(DEFAULT_GOAL_STATE),
     plannerSettings: structuredClone(DEFAULT_PLANNER_SETTINGS),
+    checklist: createDefaultChecklistState(),
     worldState: createDefaultWorldState(),
     importState: {
       lastGoodSource: "unknown",
@@ -250,6 +399,17 @@ export function createBlankAccount(
         artifactCount: 0,
       },
     },
+    plannerStatus: {
+      status: "idle",
+      activeGoalCount: 0,
+      materialDeficitCount: 0,
+      totalEstimatedResin: 0,
+      warningCount: 0,
+    },
+    goalProgressTracking: {},
+    goalMilestones: [],
+    recentChanges: [],
+    recentImports: [],
   };
 }
 
@@ -270,7 +430,7 @@ export function buildImportedAccountState(account: KrumpanionAccount): ImportedA
     weapons: account.weapons,
     unmatchedWeapons: account.unmatchedWeapons,
     artifacts: account.artifacts,
-    inventory: account.inventory,
+    inventory: account.importedInventory,
     warnings: account.warnings,
   };
 }

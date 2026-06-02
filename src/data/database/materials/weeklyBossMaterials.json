@@ -79,6 +79,22 @@
     "craftable": false,
     "status": "verified"
   },
+  "CounterfeitResin": {
+    "key": "CounterfeitResin",
+    "displayName": "Counterfeit Resin",
+    "category": "weekly_boss_material",
+    "source": {
+      "type": "weekly_boss",
+      "bossKey": "BindingFieldOfUniversalNirvana",
+      "bossName": "Binding Field of Universal Nirvana",
+      "domainName": "Binding Field of Universal Nirvana"
+    },
+    "usedFor": [
+      "talent_leveling"
+    ],
+    "craftable": false,
+    "status": "verified"
+  },
   "DakasBell": {
     "key": "DakasBell",
     "displayName": "Daka's Bell",
@@ -447,6 +463,22 @@
     "craftable": false,
     "status": "verified"
   },
+  "ProfanedSprout": {
+    "key": "ProfanedSprout",
+    "displayName": "Profaned Sprout",
+    "category": "weekly_boss_material",
+    "source": {
+      "type": "weekly_boss",
+      "bossKey": "BindingFieldOfUniversalNirvana",
+      "bossName": "Binding Field of Universal Nirvana",
+      "domainName": "Binding Field of Universal Nirvana"
+    },
+    "usedFor": [
+      "talent_leveling"
+    ],
+    "craftable": false,
+    "status": "verified"
+  },
   "PuppetStrings": {
     "key": "PuppetStrings",
     "displayName": "Puppet Strings",
@@ -600,6 +632,22 @@
       "bossKey": "EnterTheGoldenHouse",
       "bossName": "Enter the Golden House",
       "domainName": "Enter the Golden House"
+    },
+    "usedFor": [
+      "talent_leveling"
+    ],
+    "craftable": false,
+    "status": "verified"
+  },
+  "TwistedWitheredBranch": {
+    "key": "TwistedWitheredBranch",
+    "displayName": "Twisted Withered Branch",
+    "category": "weekly_boss_material",
+    "source": {
+      "type": "weekly_boss",
+      "bossKey": "BindingFieldOfUniversalNirvana",
+      "bossName": "Binding Field of Universal Nirvana",
+      "domainName": "Binding Field of Universal Nirvana"
     },
     "usedFor": [
       "talent_leveling"

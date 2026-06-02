@@ -32,6 +32,14 @@ function cloneGoalState(goals: KrumpanionGoalState): KrumpanionGoalState {
   return structuredClone(goals);
 }
 
+export function isCharacterGoalPlannerActive(goal: Pick<CharacterGoal, "enabled" | "paused"> | null | undefined): boolean {
+  return Boolean(goal?.enabled) && !goal?.paused;
+}
+
+export function isWeaponGoalPlannerActive(goal: Pick<WeaponGoal, "enabled" | "paused"> | null | undefined): boolean {
+  return Boolean(goal?.enabled) && !goal?.paused;
+}
+
 export function defaultPlanningMode(isOwned: boolean): GoalPlanningMode {
   return isOwned ? "owned" : "prefarm";
 }
@@ -70,6 +78,126 @@ function clampWeaponGoalAscension(ascension: number | undefined): number | undef
     return undefined;
   }
   return Math.max(0, Math.min(ascension, 6));
+}
+
+function clampCharacterGoalLevel(level: number | undefined): number | undefined {
+  if (level === undefined) {
+    return undefined;
+  }
+  return Math.max(1, Math.min(level, 90));
+}
+
+function clampCharacterGoalAscension(ascension: number | undefined): number | undefined {
+  if (ascension === undefined) {
+    return undefined;
+  }
+  return Math.max(0, Math.min(ascension, 6));
+}
+
+export function getMinimumAscensionForTargetLevel(level: number | undefined): number | undefined {
+  if (level === undefined) {
+    return undefined;
+  }
+
+  const clampedLevel = Math.max(1, Math.min(level, 90));
+  if (clampedLevel <= 20) {
+    return 0;
+  }
+  if (clampedLevel <= 40) {
+    return 1;
+  }
+  if (clampedLevel <= 50) {
+    return 2;
+  }
+  if (clampedLevel <= 60) {
+    return 3;
+  }
+  if (clampedLevel <= 70) {
+    return 4;
+  }
+  if (clampedLevel <= 80) {
+    return 5;
+  }
+  return 6;
+}
+
+export function getMinimumAscensionForTalentTarget(
+  targetLevel: number | undefined,
+  staticData: StaticGameData,
+): number | undefined {
+  if (targetLevel === undefined || targetLevel <= 1) {
+    return undefined;
+  }
+
+  return staticData.universalTalentProgressionCore.upgradeCosts.reduce<number | undefined>((highest, upgradeCost) => {
+    if (upgradeCost.toLevel > targetLevel) {
+      return highest;
+    }
+
+    return Math.max(highest ?? 0, upgradeCost.requiredAscensionPhase);
+  }, undefined);
+}
+
+export function getMinimumAscensionForTalentTargets(
+  talents:
+    | {
+        auto?: number;
+        skill?: number;
+        burst?: number;
+      }
+    | undefined,
+  staticData: StaticGameData,
+): number | undefined {
+  if (!talents) {
+    return undefined;
+  }
+
+  return [talents.auto, talents.skill, talents.burst].reduce<number | undefined>((highest, targetLevel) => {
+    const requiredAscension = getMinimumAscensionForTalentTarget(targetLevel, staticData);
+    if (requiredAscension === undefined) {
+      return highest;
+    }
+
+    return Math.max(highest ?? 0, requiredAscension);
+  }, undefined);
+}
+
+export function normalizeCharacterGoalRecord(
+  characterKey: string,
+  goal: CharacterGoal,
+  isOwned: boolean,
+  staticData?: StaticGameData,
+): CharacterGoal {
+  const targetLevel = clampCharacterGoalLevel(goal.targetLevel);
+  const explicitAscension = clampCharacterGoalAscension(goal.targetAscension);
+  const minimumLevelAscension = getMinimumAscensionForTargetLevel(targetLevel);
+  const minimumTalentAscension = staticData ? getMinimumAscensionForTalentTargets(goal.talents, staticData) : undefined;
+  const minimumAscension =
+    minimumLevelAscension === undefined && minimumTalentAscension === undefined
+      ? undefined
+      : Math.max(minimumLevelAscension ?? 0, minimumTalentAscension ?? 0);
+  const targetAscension =
+    minimumAscension === undefined
+      ? explicitAscension
+      : Math.max(explicitAscension ?? minimumAscension, minimumAscension);
+
+  return {
+    ...goal,
+    characterKey,
+    planningMode: goal.planningMode ?? defaultPlanningMode(isOwned),
+    priority: goal.priority ?? 3,
+    targetLevel,
+    targetAscension,
+    enabled: goal.enabled ?? true,
+    paused: goal.paused ?? false,
+    currentOverride: goal.currentOverride
+      ? {
+          ...goal.currentOverride,
+          level: clampCharacterGoalLevel(goal.currentOverride.level),
+          ascension: clampCharacterGoalAscension(goal.currentOverride.ascension),
+        }
+      : undefined,
+  };
 }
 
 function parseLegacyWeaponGoalId(goalId: string): Partial<WeaponGoal> {
@@ -120,7 +248,12 @@ export function normalizeWeaponGoalRecord(goalId: string, goal: WeaponGoal, acco
   const legacy = parseLegacyWeaponGoalId(goalId);
   const normalizedGoalId = getWeaponGoalId(goal, goalId);
   const targetLevel = clampWeaponGoalLevel(goal.targetLevel ?? legacy.targetLevel);
-  const targetAscensionPhase = clampWeaponGoalAscension(getWeaponGoalTargetAscension(goal) ?? legacy.targetAscensionPhase);
+  const explicitAscension = clampWeaponGoalAscension(getWeaponGoalTargetAscension(goal) ?? legacy.targetAscensionPhase);
+  const minimumAscension = getMinimumAscensionForTargetLevel(targetLevel);
+  const targetAscensionPhase =
+    minimumAscension == null
+      ? explicitAscension
+      : Math.max(explicitAscension ?? minimumAscension, minimumAscension);
   const fallbackLinkedInventoryInstanceId = goal.planningMode === "prefarm" ? undefined : goalId;
   const useOwnedInstance =
     goal.useOwnedInstance ??
@@ -149,6 +282,7 @@ export function normalizeWeaponGoalRecord(goalId: string, goal: WeaponGoal, acco
     targetAscensionPhase,
     targetAscension: targetAscensionPhase,
     enabled: goal.enabled ?? legacy.enabled ?? true,
+    paused: goal.paused ?? false,
     currentOverride: goal.currentOverride
       ? {
           ...goal.currentOverride,
@@ -316,13 +450,16 @@ export function validateGoalStateAgainstStaticData(
   const warnings: PlannerWarning[] = [];
 
   for (const [characterKey, goal] of Object.entries(nextGoals.characterGoals)) {
-    const normalizedGoal = {
-      ...goal,
-      planningMode: goal.planningMode ?? "owned",
-    };
-    nextGoals.characterGoals[characterKey] = {
-      ...normalizedGoal,
-    };
+    const normalizedGoal = normalizeCharacterGoalRecord(
+      characterKey,
+      {
+        ...goal,
+        planningMode: goal.planningMode ?? "owned",
+      },
+      (goal.planningMode ?? "owned") !== "prefarm",
+      staticData,
+    );
+    nextGoals.characterGoals[characterKey] = normalizedGoal;
 
     if (isIgnoredCharacterKey(characterKey)) {
       nextGoals.characterGoals[characterKey] = {

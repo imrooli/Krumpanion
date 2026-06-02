@@ -19,6 +19,24 @@ export const CANONICAL_RELEASE_STATES = new Set([
 export const VALID_CHARACTER_WEAPON_TYPES = new Set(["Sword", "Claymore", "Polearm", "Bow", "Catalyst"]);
 export const VALID_CHARACTER_ELEMENTS = new Set(["Anemo", "Cryo", "Dendro", "Electro", "Geo", "Hydro", "Pyro"]);
 export const VALID_WEAPON_RARITIES = new Set([3, 4, 5]);
+export const VALID_WEAPON_ACQUISITION_TYPES = new Set([
+  "standard_wish",
+  "limited_wish",
+  "event",
+  "craftable",
+  "battle_pass",
+  "starglitter",
+  "fishing",
+  "quest",
+  "chest",
+  "unknown",
+] as const);
+export const VALID_WEAPON_REFINEMENT_POLICIES = new Set([
+  "normal",
+  "manual_review",
+  "preserve_all",
+  "not_trackable",
+] as const);
 
 export const REQUIRED_CHARACTER_FIXES: Record<
   string,

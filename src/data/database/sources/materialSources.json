@@ -775,6 +775,16 @@
       "notes": "Found under cliffs in Liyue, especially Mt. Hulao"
     }
   ],
+  "CounterfeitResin": [
+    {
+      "materialKey": "CounterfeitResin",
+      "sourceType": "weekly_boss",
+      "sourceKey": "BindingFieldOfUniversalNirvana",
+      "sourceName": "Binding Field of Universal Nirvana",
+      "availability": "WEEKLY",
+      "notes": "Binding Field of Universal Nirvana"
+    }
+  ],
   "CrownOfInsight": [
     {
       "materialKey": "CrownOfInsight",
@@ -3471,6 +3481,16 @@
       "notes": "Dropped by elemental-aligned bosses and craftable upward at the alchemy bench."
     }
   ],
+  "ProfanedSprout": [
+    {
+      "materialKey": "ProfanedSprout",
+      "sourceType": "weekly_boss",
+      "sourceKey": "BindingFieldOfUniversalNirvana",
+      "sourceName": "Binding Field of Universal Nirvana",
+      "availability": "WEEKLY",
+      "notes": "Binding Field of Universal Nirvana"
+    }
+  ],
   "PseudoStamens": [
     {
       "materialKey": "PseudoStamens",
@@ -4712,6 +4732,16 @@
       "sourceName": "Enter the Golden House",
       "availability": "WEEKLY",
       "notes": "Enter the Golden House"
+    }
+  ],
+  "TwistedWitheredBranch": [
+    {
+      "materialKey": "TwistedWitheredBranch",
+      "sourceType": "weekly_boss",
+      "sourceKey": "BindingFieldOfUniversalNirvana",
+      "sourceName": "Binding Field of Universal Nirvana",
+      "availability": "WEEKLY",
+      "notes": "Binding Field of Universal Nirvana"
     }
   ],
   "TwoStarWeaponFodder": [

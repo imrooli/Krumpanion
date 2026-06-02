@@ -214,21 +214,21 @@ Found 40 potential issue(s).
 
 ## good-schema-outside-adapter
 
-- File: `src\features\weapons\WeaponsTab.test.tsx:42`
+- File: `src\features\weapons\WeaponsTab.test.tsx:43`
 - Description: GOOD-specific logic should usually live in import/export adapters.
 - Match: `GOOD`
 
 ## good-schema-outside-adapter
 
-- File: `src\features\weapons\WeaponsTab.tsx:335`
+- File: `src\features\weapons\WeaponsTab.tsx:399`
 - Description: GOOD-specific logic should usually live in import/export adapters.
 - Match: `GOOD`
 
 ## hardcoded-material-cost-array
 
-- File: `src\features\weapons\WeaponsTab.tsx:6`
+- File: `src\features\weapons\WeaponsTab.tsx:3`
 - Description: Potential hard-coded material cost table outside game-data/core.
-- Match: `WeaponInstanceId,   getWeaponGoalId,   getWeaponGoalTargetAscension,   resolveWeaponGoalCurrentState, } from "../../domain/goals/goalState"; import type { GoalP`
+- Match: `WeaponGoalSubtitle } from "../../domain/goals/goalDisplay"; import {   defaultPlanningMode,   getGoalCurrentStateLabel,   getLinkedWeaponInstanceId,   getWeapon`
 
 ## good-schema-outside-adapter
 
@@ -238,7 +238,7 @@ Found 40 potential issue(s).
 
 ## good-schema-outside-adapter
 
-- File: `src\store\useAppStore.ts:478`
+- File: `src\store\useAppStore.ts:520`
 - Description: GOOD-specific logic should usually live in import/export adapters.
 - Match: `GoodFormat`
 

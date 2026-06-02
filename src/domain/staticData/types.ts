@@ -69,6 +69,44 @@ export type MaterialSourceType =
   | "alchemy"
   | "other";
 
+export interface LeyLineEnemySpawn {
+  enemyName: string;
+  count: number;
+  dropFamilyKey?: string;
+  isOptionalNearby?: boolean;
+  notes?: string[];
+}
+
+export interface LeyLineDerivedDropFamilyCoverage {
+  familyKey: string;
+  familyDisplayName: string;
+  materialKeys: string[];
+  materialNames: string[];
+  guaranteedEnemySpawns: Array<{
+    enemyName: string;
+    count: number;
+  }>;
+  optionalNearbyEnemySpawns: Array<{
+    enemyName: string;
+    count: number;
+  }>;
+  totalGuaranteedEnemyCount: number;
+  notes?: string[];
+}
+
+export interface LeyLineOutcropLocation {
+  locationKey: string;
+  region: string;
+  areaName: string;
+  locationNumber: number;
+  waves: number[];
+  transitionsTo?: string[];
+  notes?: string[];
+  spawns: LeyLineEnemySpawn[];
+  derivedDropFamilies: LeyLineDerivedDropFamilyCoverage[];
+  unresolvedSpawnWarnings?: string[];
+}
+
 export type CanonicalMaterialSource =
   | {
       type: "elemental_boss_drop_or_crafting";
@@ -157,6 +195,18 @@ export type TravelerElementKey =
   | "traveler_hydro"
   | "traveler_pyro";
 export type WeaponRarity = 1 | 2 | 3 | 4 | 5;
+export type WeaponAcquisitionType =
+  | "standard_wish"
+  | "limited_wish"
+  | "event"
+  | "craftable"
+  | "battle_pass"
+  | "starglitter"
+  | "fishing"
+  | "quest"
+  | "chest"
+  | "unknown";
+export type WeaponRefinementPolicy = "normal" | "manual_review" | "preserve_all" | "not_trackable";
 export type WeaponGoalTrackableRarity = 3 | 4 | 5;
 export type WeaponRarityLabel = "1-Star" | "2-Star" | "3-Star" | "4-Star" | "5-Star";
 export type WeaponGoalTrackableRarityLabel = "3-Star" | "4-Star" | "5-Star";
@@ -357,6 +407,11 @@ export interface WeaponCatalogEntry {
   displayName: string;
   weaponType?: CharacterWeaponType;
   rarity?: WeaponRarity;
+  acquisitionType?: WeaponAcquisitionType;
+  refinementTrackable?: boolean;
+  refinementPolicy?: WeaponRefinementPolicy;
+  limited?: boolean;
+  eventExclusive?: boolean;
 }
 
 export interface MaterialDescriptor {
@@ -1008,6 +1063,8 @@ export interface StaticGameData {
   domainsOfForgery: Record<string, DomainOfForgeryRecord>;
   domainsOfMastery: Record<string, DomainOfMasteryRecord>;
   trounceDomains: Record<string, TrounceDomainRecord>;
+  leyLineOutcropLocations: Record<string, LeyLineOutcropLocation>;
+  leyLineOutcropLocationList: LeyLineOutcropLocation[];
   weaponAscensionDomainDropModel: Record<PlannerDomainLevel, WeaponAscensionDomainDropModelRecord>;
   talentBookDomainDropModel: Record<PlannerDomainLevel, TalentBookDomainDropModelRecord>;
   normalBossAscensionGemDropsByWorldLevel: Record<string, BossGemWorldLevelDropRecord>;
@@ -1071,6 +1128,7 @@ export interface OverrideDataPack {
   domainsOfForgery?: Record<string, DomainOfForgeryRecord>;
   domainsOfMastery?: Record<string, DomainOfMasteryRecord>;
   trounceDomains?: Record<string, TrounceDomainRecord>;
+  leyLineOutcropLocations?: Record<string, LeyLineOutcropLocation>;
   weaponAscensionDomainDropModel?: Record<PlannerDomainLevel, WeaponAscensionDomainDropModelRecord>;
   talentBookDomainDropModel?: Record<PlannerDomainLevel, TalentBookDomainDropModelRecord>;
   normalBossAscensionGemDropsByWorldLevel?: Record<string, BossGemWorldLevelDropRecord>;

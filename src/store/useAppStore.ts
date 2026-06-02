@@ -4,8 +4,14 @@ import { persistenceAdapter } from "../adapters/persistence";
 import type {
   AccountId,
   AccountImportState,
+  GoalMilestoneLogEntry,
+  GoalProgressTrackingRecord,
   MaterialEditSource,
   AccountMetadata,
+  PlannerRecalculationStatus,
+  RecentImportEntry,
+  RecentPlannerChange,
+  RecentPlannerChangeTrigger,
   AccountWorldState,
   ExportedKrumpanionAccount,
   ImportedAccountState,
@@ -19,6 +25,12 @@ import {
   createImportedAccountSummary,
 } from "../domain/account/types";
 import {
+  normalizeChecklistState,
+  type CooldownChecklistKey,
+  type ResetWindowChecklistKey,
+} from "../domain/checklist/types";
+import { getEffectiveWeeklyBossClaimsUsed } from "../domain/checklist/model";
+import {
   DEFAULT_GOAL_STATE,
   DEFAULT_PLANNER_SETTINGS,
   type AppSettings,
@@ -29,17 +41,73 @@ import {
   type PlannerView,
   type WeaponGoal,
 } from "../domain/goals/types";
-import { defaultPlanningMode, getLinkedWeaponInstanceId, getWeaponGoalId, normalizeWeaponGoalRecord } from "../domain/goals/goalState";
+import {
+  defaultPlanningMode,
+  getLinkedWeaponInstanceId,
+  getWeaponGoalId,
+  normalizeCharacterGoalRecord,
+  normalizeWeaponGoalRecord,
+} from "../domain/goals/goalState";
 import { createStaticData } from "../domain/staticData/staticDataFactory";
 import { parseOverrideDataPack } from "../domain/staticData/overrideSchema";
 import type { OverrideDataPack, StaticGameData } from "../domain/staticData/types";
 import type { DayOfWeek } from "../domain/planner/types";
-import { createDefaultAccountExport } from "../domain/save/types";
-import { defaultSave, persistCurrentSnapshot, toSaveInfo, type SaveInfo } from "./persistenceHelpers";
+import {
+  createDefaultAccountExport,
+  type BackupReason,
+  type GoalBackupPayload,
+  type GoalBackupRecord,
+  type PersistenceStatus,
+  type SaveRecoveryPointRecord,
+} from "../domain/save/types";
+import { buildSaveFromState, defaultSave, persistCurrentSnapshot, toSaveInfo, type SaveInfo } from "./persistenceHelpers";
 import { getGenshinResetDay } from "../utils/days";
+import { createStableEntityId } from "../utils/stableIds";
+import {
+  MAX_IMPORT_MATERIAL_CHANGES,
+  appendRecentChanges,
+  appendRecentImports,
+  buildGoalBucketSnapshot,
+  buildGoalProgressChanges,
+  buildInventoryChangeEntries,
+  buildTrackedGoalProgressMap,
+  buildPlannerFailureStatus,
+  buildPlannerOutputForAccount,
+  buildPlannerStatusFromOutput,
+  buildRecentImportEntry,
+  createRecalculationChange,
+} from "./plannerTracking";
+
+const GOAL_BACKUP_DEBOUNCE_MS = 5000;
+const goalBackupTimers = new Map<AccountId, ReturnType<typeof globalThis.setTimeout>>();
 
 function getToday(): DayOfWeek {
   return getGenshinResetDay(new Date());
+}
+
+function toIsoTimestamp(at?: string | Date): string {
+  if (typeof at === "string") {
+    return new Date(at).toISOString();
+  }
+  return (at ?? new Date()).toISOString();
+}
+
+function clampWeeklyBossClaimsUsed(value: number): number {
+  return Math.max(0, Math.min(3, Math.floor(value)));
+}
+
+function clampRealmLevel(value: number | undefined): number {
+  if (!Number.isFinite(value)) {
+    return 10;
+  }
+  return Math.max(1, Math.min(10, Math.floor(value as number)));
+}
+
+function clampTrustRank(value: number | undefined): number {
+  if (!Number.isFinite(value)) {
+    return 10;
+  }
+  return Math.max(1, Math.min(10, Math.floor(value as number)));
 }
 
 function createBlankArtifactGoal(): ArtifactGoal {
@@ -58,8 +126,47 @@ function clone<T>(value: T): T {
   return structuredClone(value);
 }
 
+function toErrorMessage(error: unknown): string {
+  return error instanceof Error ? error.message : String(error);
+}
+
+function createDefaultPersistenceStatus(saveInfo: SaveInfo): PersistenceStatus {
+  return {
+    status: "idle",
+    lastSavedAt: saveInfo.updatedAt,
+    lastGoalBackupAtByAccount: {},
+  };
+}
+
 function normalizeGoalPlanningMode(mode: GoalPlanningMode | undefined, isOwned: boolean): GoalPlanningMode {
   return mode ?? (isOwned ? "owned" : "prefarm");
+}
+
+function synchronizeChecklistPlannerState(account: KrumpanionAccount, now = new Date()): KrumpanionAccount {
+  const effectiveWeeklyBossClaimsUsed = getEffectiveWeeklyBossClaimsUsed(account.checklist, now);
+  const plannerSettingsChanged =
+    account.plannerSettings.weeklyBossDiscountClaimsUsed !== effectiveWeeklyBossClaimsUsed;
+  const worldStateChanged = account.worldState.weeklyBossDiscountsUsed !== effectiveWeeklyBossClaimsUsed;
+
+  if (!plannerSettingsChanged && !worldStateChanged) {
+    return account;
+  }
+
+  return {
+    ...account,
+    plannerSettings: plannerSettingsChanged
+      ? {
+          ...account.plannerSettings,
+          weeklyBossDiscountClaimsUsed: effectiveWeeklyBossClaimsUsed,
+        }
+      : account.plannerSettings,
+    worldState: worldStateChanged
+      ? {
+          ...account.worldState,
+          weeklyBossDiscountsUsed: effectiveWeeklyBossClaimsUsed,
+        }
+      : account.worldState,
+  };
 }
 
 function getActiveAccount(user: MultiAccountUserState): KrumpanionAccount {
@@ -178,6 +285,46 @@ function createWeaponGoalId(): string {
   return `weapon-goal-${crypto.randomUUID()}`;
 }
 
+function stampImportedWeaponState(imported: ImportedAccountState, accountId: AccountId): ImportedAccountState {
+  const importedAt = imported.importMeta.importedAt;
+  const weapons = imported.weapons.map((weapon) => ({
+    ...weapon,
+    accountId,
+    importedName: weapon.importedName ?? weapon.importName ?? weapon.weaponKey,
+    importSourceId: weapon.importSourceId ?? weapon.weaponInstanceId,
+    weaponInstanceId: createStableEntityId(
+      "weapon",
+      weapon.weaponKey,
+      [accountId, weapon.importSourceId ?? weapon.weaponInstanceId],
+      1,
+    ),
+    equippedBy: weapon.equippedBy ?? weapon.equippedByCharacterId ?? null,
+    locked: weapon.locked ?? weapon.lock ?? false,
+    lastImportedAt: importedAt,
+  }));
+  const unmatchedWeapons = (imported.unmatchedWeapons ?? []).map((weapon) => ({
+    ...weapon,
+    accountId,
+    importedName: weapon.importedName ?? weapon.importName,
+    importSourceId: weapon.importSourceId ?? weapon.weaponInstanceId,
+    weaponInstanceId: createStableEntityId(
+      "weapon",
+      weapon.importName,
+      [accountId, weapon.importSourceId ?? weapon.weaponInstanceId],
+      1,
+    ),
+    equippedBy: weapon.equippedBy ?? weapon.equippedByCharacterId ?? null,
+    locked: weapon.locked ?? weapon.lock ?? false,
+    lastImportedAt: importedAt,
+  }));
+
+  return {
+    ...imported,
+    weapons,
+    unmatchedWeapons,
+  };
+}
+
 function createWeaponGoalRecord(
   account: KrumpanionAccount,
   goalId: string,
@@ -229,6 +376,7 @@ function createWeaponGoalRecord(
       planningMode,
       priority: updates.priority ?? normalizedCurrentGoal?.priority ?? 3,
       enabled: updates.enabled ?? normalizedCurrentGoal?.enabled ?? true,
+      paused: updates.paused ?? normalizedCurrentGoal?.paused ?? false,
       targetAscensionPhase:
         updates.targetAscensionPhase ??
         updates.targetAscension ??
@@ -242,6 +390,27 @@ function createWeaponGoalRecord(
     },
     account.id,
   );
+}
+
+function normalizeAccountGoalTargets(account: KrumpanionAccount, staticData: StaticGameData): KrumpanionAccount {
+  return {
+    ...account,
+    goals: {
+      ...account.goals,
+      characterGoals: Object.fromEntries(
+        Object.entries(account.goals.characterGoals).map(([characterKey, goal]) => {
+          const isOwned = account.characters.some((character) => character.characterId === characterKey);
+          return [characterKey, normalizeCharacterGoalRecord(characterKey, goal, isOwned, staticData)];
+        }),
+      ),
+      weaponGoals: Object.fromEntries(
+        Object.entries(account.goals.weaponGoals).map(([goalId, goal]) => {
+          const normalizedGoal = normalizeWeaponGoalRecord(goalId, goal, account.id);
+          return [normalizedGoal.goalId ?? goalId, normalizedGoal];
+        }),
+      ),
+    },
+  };
 }
 
 function scoreWeaponRelinkCandidate(
@@ -401,6 +570,26 @@ function relinkWeaponGoalsAfterImport(
   return relinkedGoals;
 }
 
+function reconcileCharacterGoalsAfterImport(
+  goals: KrumpanionAccount["goals"]["characterGoals"],
+  importedCharacters: ImportedAccountState["characters"],
+): KrumpanionAccount["goals"]["characterGoals"] {
+  const ownedCharacterKeys = new Set(importedCharacters.map((character) => character.characterId));
+  const nextGoals: KrumpanionAccount["goals"]["characterGoals"] = {};
+
+  for (const [characterKey, goal] of Object.entries(goals)) {
+    nextGoals[characterKey] =
+      goal.planningMode === "prefarm" && ownedCharacterKeys.has(characterKey)
+        ? {
+            ...goal,
+            planningMode: "owned",
+          }
+        : goal;
+  }
+
+  return nextGoals;
+}
+
 function isValidMaterialQuantity(quantity: number): boolean {
   return Number.isInteger(quantity) && quantity >= 0;
 }
@@ -461,25 +650,27 @@ function createAccountFromImport(
     now,
     metadata: input.metadata,
   });
+  const stampedImport = stampImportedWeaponState(imported, input.id);
 
   return {
     ...blank,
-    ...imported,
+    ...stampedImport,
     id: input.id,
     name: input.name,
+    importedInventory: { ...stampedImport.inventory },
     importMeta: {
-      ...imported.importMeta,
-      source: input.source ?? imported.importMeta.source,
+      ...stampedImport.importMeta,
+      source: input.source ?? stampedImport.importMeta.source,
     },
     importState: {
-      lastGoodImportAt: imported.importMeta.importedAt,
+      lastGoodImportAt: stampedImport.importMeta.importedAt,
       lastGoodFileName: input.fileName,
       lastGoodSource: input.source ?? "unknown",
-      lastGoodFormatVersion: String(imported.importMeta.version),
-      importWarnings: imported.warnings.map((warning) => warning.message),
-      importSummary: createImportedAccountSummary(imported),
+      lastGoodFormatVersion: String(stampedImport.importMeta.version),
+      importWarnings: stampedImport.warnings.map((warning) => warning.message),
+      importSummary: createImportedAccountSummary(stampedImport),
     },
-    warnings: imported.warnings,
+    warnings: stampedImport.warnings,
     materialEditState: {},
   };
 }
@@ -495,25 +686,27 @@ function replaceAccountSnapshot(
 ): KrumpanionAccount {
   const now = input.now ?? new Date();
   const timestamp = now.toISOString();
+  const stampedImport = stampImportedWeaponState(imported, account.id);
 
   return {
     ...account,
-    ...imported,
+    ...stampedImport,
+    importedInventory: { ...stampedImport.inventory },
     importMeta: {
-      ...imported.importMeta,
-      source: input.source ?? imported.importMeta.source,
+      ...stampedImport.importMeta,
+      source: input.source ?? stampedImport.importMeta.source,
     },
     updatedAt: timestamp,
     importState: {
       ...account.importState,
-      lastGoodImportAt: imported.importMeta.importedAt,
+      lastGoodImportAt: stampedImport.importMeta.importedAt,
       lastGoodFileName: input.fileName,
       lastGoodSource: input.source ?? "unknown",
-      lastGoodFormatVersion: String(imported.importMeta.version),
-      importWarnings: imported.warnings.map((warning) => warning.message),
-      importSummary: createImportedAccountSummary(imported),
+      lastGoodFormatVersion: String(stampedImport.importMeta.version),
+      importWarnings: stampedImport.warnings.map((warning) => warning.message),
+      importSummary: createImportedAccountSummary(stampedImport),
     },
-    warnings: imported.warnings,
+    warnings: stampedImport.warnings,
     materialEditState: {},
   };
 }
@@ -537,6 +730,599 @@ function updateAccountInUser(
   };
 }
 
+function setAccountPlannerStatus(
+  user: MultiAccountUserState,
+  accountId: AccountId,
+  plannerStatus: PlannerRecalculationStatus,
+  extra?: {
+    recentChanges?: RecentPlannerChange[];
+    recentImports?: RecentImportEntry[];
+    goalProgressTracking?: Record<string, GoalProgressTrackingRecord>;
+    goalMilestones?: GoalMilestoneLogEntry[];
+  },
+): MultiAccountUserState {
+  return updateAccountInUser(user, accountId, (account) => ({
+    ...account,
+    plannerStatus,
+    recentChanges: extra?.recentChanges ? appendRecentChanges(account.recentChanges, extra.recentChanges) : account.recentChanges,
+    recentImports: extra?.recentImports ? appendRecentImports(account.recentImports, extra.recentImports) : account.recentImports,
+    goalProgressTracking: extra?.goalProgressTracking ?? account.goalProgressTracking,
+    goalMilestones: extra?.goalMilestones ?? account.goalMilestones,
+  }));
+}
+
+const MAX_GOAL_MILESTONES = 100;
+
+function appendGoalMilestones(existing: GoalMilestoneLogEntry[], additions: GoalMilestoneLogEntry[]): GoalMilestoneLogEntry[] {
+  return [...additions, ...existing].slice(0, MAX_GOAL_MILESTONES);
+}
+
+function buildGoalTrackingKey(goalType: "character" | "weapon", goalId: string): string {
+  return `${goalType}:${goalId}`;
+}
+
+function buildCharacterGoalTrackingSignature(goal: CharacterGoal): string {
+  return JSON.stringify({
+    characterKey: goal.characterKey,
+    planningMode: goal.planningMode,
+    targetLevel: goal.targetLevel ?? null,
+    targetAscension: goal.targetAscension ?? null,
+    talents: goal.talents ?? null,
+    currentOverride: goal.currentOverride ?? null,
+  });
+}
+
+function buildWeaponGoalTrackingSignature(goal: WeaponGoal): string {
+  return JSON.stringify({
+    goalId: goal.goalId,
+    weaponKey: goal.weaponKey,
+    planningMode: goal.planningMode,
+    targetLevel: goal.targetLevel ?? null,
+    targetAscensionPhase: goal.targetAscensionPhase ?? null,
+    linkedInventoryInstanceId: goal.linkedInventoryInstanceId ?? null,
+    linkedCharacterKey: goal.linkedCharacterKey ?? null,
+    useOwnedInstance: goal.useOwnedInstance ?? null,
+    currentOverride: goal.currentOverride ?? null,
+  });
+}
+
+function syncGoalProgressState(params: {
+  beforeAccount?: KrumpanionAccount;
+  afterAccount: KrumpanionAccount;
+  beforeOutput: ReturnType<typeof buildPlannerOutputForAccount> | null;
+  afterOutput: ReturnType<typeof buildPlannerOutputForAccount>;
+  changedAt: string;
+}): {
+  tracking: Record<string, GoalProgressTrackingRecord>;
+  milestones: GoalMilestoneLogEntry[];
+} {
+  const tracking: Record<string, GoalProgressTrackingRecord> = {};
+  const previousTracking = params.beforeAccount?.goalProgressTracking ?? params.afterAccount.goalProgressTracking ?? {};
+  const previousMilestones = params.beforeAccount?.goalMilestones ?? params.afterAccount.goalMilestones ?? [];
+  const beforeProgress = params.beforeOutput ? buildTrackedGoalProgressMap(params.beforeOutput) : new Map();
+  const afterProgress = buildTrackedGoalProgressMap(params.afterOutput);
+  const newMilestones: GoalMilestoneLogEntry[] = [];
+
+  for (const goal of Object.values(params.afterAccount.goals.characterGoals)) {
+    const trackingKey = buildGoalTrackingKey("character", goal.characterKey);
+    const currentProgress = afterProgress.get(trackingKey);
+    if (!currentProgress) {
+      const existing = previousTracking[trackingKey];
+      if (goal.paused && existing) {
+        tracking[trackingKey] = existing;
+      }
+      continue;
+    }
+
+    const signature = buildCharacterGoalTrackingSignature(goal);
+    const existing = previousTracking[trackingKey];
+    const carriesForward = existing && existing.targetSignature === signature;
+    const nextTracking: GoalProgressTrackingRecord = carriesForward
+      ? {
+          ...existing,
+          goalLabel: currentProgress.goalLabel,
+        }
+      : {
+          goalId: goal.characterKey,
+          goalType: "character",
+          goalLabel: currentProgress.goalLabel,
+          targetSignature: signature,
+          startedAt: params.changedAt,
+          baseline: buildGoalBucketSnapshot("character", currentProgress.status === "completed" ? undefined : params.afterOutput.goalResolutions.find((resolution) => resolution.goalType === "character" && resolution.goalKey === goal.characterKey)),
+        };
+
+    if (carriesForward && !existing.completedAt) {
+      const previousProgress = beforeProgress.get(trackingKey);
+      if (previousProgress?.status !== "completed" && currentProgress.status === "completed") {
+        nextTracking.completedAt = params.changedAt;
+        newMilestones.push({
+          id: crypto.randomUUID(),
+          goalId: goal.characterKey,
+          goalType: "character",
+          goalLabel: currentProgress.goalLabel,
+          milestoneType: "character_built",
+          occurredAt: params.changedAt,
+          startedAt: existing.startedAt,
+          targetSummary: currentProgress.targetSummary,
+        });
+      }
+    }
+
+    tracking[trackingKey] = nextTracking;
+  }
+
+  for (const [goalId, goal] of Object.entries(params.afterAccount.goals.weaponGoals)) {
+    const trackingKey = buildGoalTrackingKey("weapon", goalId);
+    const currentProgress = afterProgress.get(trackingKey);
+    if (!currentProgress) {
+      const existing = previousTracking[trackingKey];
+      if (goal.paused && existing) {
+        tracking[trackingKey] = existing;
+      }
+      continue;
+    }
+
+    const signature = buildWeaponGoalTrackingSignature(goal);
+    const existing = previousTracking[trackingKey];
+    const carriesForward = existing && existing.targetSignature === signature;
+    const nextTracking: GoalProgressTrackingRecord = carriesForward
+      ? {
+          ...existing,
+          goalLabel: currentProgress.goalLabel,
+        }
+      : {
+          goalId,
+          goalType: "weapon",
+          goalLabel: currentProgress.goalLabel,
+          targetSignature: signature,
+          startedAt: params.changedAt,
+          baseline: buildGoalBucketSnapshot("weapon", currentProgress.status === "completed" ? undefined : params.afterOutput.goalResolutions.find((resolution) => resolution.goalType === "weapon" && resolution.goalKey === goalId)),
+        };
+
+    if (carriesForward && !existing.completedAt) {
+      const previousProgress = beforeProgress.get(trackingKey);
+      if (previousProgress?.status !== "completed" && currentProgress.status === "completed") {
+        nextTracking.completedAt = params.changedAt;
+        newMilestones.push({
+          id: crypto.randomUUID(),
+          goalId,
+          goalType: "weapon",
+          goalLabel: currentProgress.goalLabel,
+          milestoneType: "weapon_goal_met",
+          occurredAt: params.changedAt,
+          startedAt: existing.startedAt,
+          targetSummary: currentProgress.targetSummary,
+        });
+      }
+    }
+
+    tracking[trackingKey] = nextTracking;
+  }
+
+  return {
+    tracking,
+    milestones: newMilestones.length > 0 ? appendGoalMilestones(previousMilestones, newMilestones) : previousMilestones,
+  };
+}
+
+function buildGoalBackupPayload(account: KrumpanionAccount): GoalBackupPayload {
+  return {
+    accountId: account.id,
+    accountName: account.name,
+    goals: clone(account.goals),
+    plannerSettings: clone(account.plannerSettings),
+  };
+}
+
+function buildGoalBackupTimestampMap(accountId: AccountId, goalBackups: GoalBackupRecord[]): Record<AccountId, string> {
+  const latest = goalBackups[0]?.createdAt;
+  return latest ? { [accountId]: latest } : {};
+}
+
+function updatePersistenceStatus(
+  current: PersistenceStatus,
+  patch: Partial<PersistenceStatus>,
+): PersistenceStatus {
+  return {
+    ...current,
+    ...patch,
+    lastGoalBackupAtByAccount: {
+      ...current.lastGoalBackupAtByAccount,
+      ...(patch.lastGoalBackupAtByAccount ?? {}),
+    },
+  };
+}
+
+function syncBackupCollections(
+  currentState: AppState,
+  patch: Partial<AppState>,
+  accountId: AccountId,
+  goalBackups: GoalBackupRecord[],
+  saveRecoveryPoints: SaveRecoveryPointRecord[],
+): Partial<AppState> {
+  return {
+    ...patch,
+    goalBackups: currentState.user.activeAccountId === accountId ? goalBackups : currentState.goalBackups,
+    saveRecoveryPoints,
+  };
+}
+
+async function loadBackupCollections(accountId: AccountId) {
+  const [goalBackups, saveRecoveryPoints] = await Promise.all([
+    persistenceAdapter.listGoalBackups(accountId),
+    persistenceAdapter.listSaveRecoveryPoints(),
+  ]);
+
+  return { goalBackups, saveRecoveryPoints };
+}
+
+async function createSaveRecoveryPointForState(
+  state: Pick<AppState, "user" | "settings" | "overridePack" | "saveInfo">,
+  reason: BackupReason,
+  accountId?: AccountId,
+): Promise<SaveRecoveryPointRecord> {
+  const saveFile = buildSaveFromState({
+    user: state.user,
+    settings: state.settings,
+    overridePack: state.overridePack,
+    saveInfo: state.saveInfo,
+  });
+
+  return persistenceAdapter.createSaveRecoveryPoint(saveFile, reason, accountId);
+}
+
+function scheduleGoalBackup(params: {
+  accountId: AccountId;
+  reason: BackupReason;
+  getState: () => AppState;
+  setState: (patch: Partial<AppState>) => void;
+}): void {
+  const existingTimer = goalBackupTimers.get(params.accountId);
+  if (existingTimer) {
+    globalThis.clearTimeout(existingTimer);
+  }
+
+  const timer = globalThis.setTimeout(() => {
+    void (async () => {
+      const currentState = params.getState();
+      const account = currentState.user.accountsById[params.accountId];
+      if (!account) {
+        goalBackupTimers.delete(params.accountId);
+        return;
+      }
+
+      params.setState({
+        persistenceStatus: updatePersistenceStatus(currentState.persistenceStatus, {
+          status: "backupSaving",
+          lastBackupError: undefined,
+        }),
+      });
+
+      try {
+        const record = await persistenceAdapter.createGoalBackup(
+          params.accountId,
+          buildGoalBackupPayload(account),
+          params.reason,
+        );
+        const [goalBackups, saveRecoveryPoints] = await Promise.all([
+          persistenceAdapter.listGoalBackups(params.accountId),
+          persistenceAdapter.listSaveRecoveryPoints(),
+        ]);
+        const latestState = params.getState();
+        params.setState(
+          syncBackupCollections(
+            latestState,
+            {
+              persistenceStatus: updatePersistenceStatus(latestState.persistenceStatus, {
+                status: "backupSaved",
+                lastGoalBackupAtByAccount: {
+                  [params.accountId]: record.createdAt,
+                },
+                lastBackupError: undefined,
+              }),
+            },
+            params.accountId,
+            goalBackups,
+            saveRecoveryPoints,
+          ),
+        );
+      } catch (error) {
+        const latestState = params.getState();
+        params.setState({
+          persistenceStatus: updatePersistenceStatus(latestState.persistenceStatus, {
+            status: "failed",
+            lastBackupError: `Goal backup failed: ${toErrorMessage(error)}`,
+          }),
+        });
+      } finally {
+        goalBackupTimers.delete(params.accountId);
+      }
+    })();
+  }, GOAL_BACKUP_DEBOUNCE_MS);
+
+  goalBackupTimers.set(params.accountId, timer);
+}
+
+async function persistLiveSnapshot(params: {
+  state: AppState;
+  setState: (patch: Partial<AppState>) => void;
+  user?: MultiAccountUserState;
+  settings?: AppSettings;
+  overridePack?: OverrideDataPack | null;
+  patch?: Partial<AppState>;
+  importErrors?: string[];
+  importWarnings?: string[];
+}): Promise<SaveInfo | null> {
+  const nextUser = params.user ?? params.state.user;
+  const nextSettings = params.settings ?? params.state.settings;
+  const nextOverridePack = params.overridePack ?? params.state.overridePack;
+  const savingStatus = updatePersistenceStatus(params.state.persistenceStatus, {
+    status: "saving",
+    lastBackupError: undefined,
+  });
+
+  params.setState({
+    persistenceStatus: savingStatus,
+  });
+
+  try {
+    const saveFile = await persistCurrentSnapshot({
+      ...buildPersistedSlice(params.state),
+      user: nextUser,
+      settings: nextSettings,
+      overridePack: nextOverridePack,
+    });
+
+    const latestState = params.state;
+    params.setState({
+      user: nextUser,
+      settings: nextSettings,
+      overridePack: nextOverridePack,
+      saveInfo: toSaveInfo(saveFile),
+      importErrors: params.importErrors ?? [],
+      importWarnings: params.importWarnings ?? getActiveAccount(nextUser).importState.importWarnings ?? [],
+      persistenceStatus: updatePersistenceStatus(latestState.persistenceStatus, {
+        status: "saved",
+        lastSavedAt: saveFile.updatedAt,
+        lastBackupError: undefined,
+      }),
+      ...(params.patch ?? {}),
+    });
+    return toSaveInfo(saveFile);
+  } catch (error) {
+    const latestState = params.state;
+    params.setState({
+      user: nextUser,
+      settings: nextSettings,
+      overridePack: nextOverridePack,
+      importErrors: params.importErrors ?? latestState.importErrors,
+      importWarnings: params.importWarnings ?? getActiveAccount(nextUser).importState.importWarnings ?? [],
+      persistenceStatus: updatePersistenceStatus(latestState.persistenceStatus, {
+        status: "failed",
+        lastBackupError: `Save failed: ${toErrorMessage(error)}`,
+      }),
+      ...(params.patch ?? {}),
+    });
+    return null;
+  }
+}
+
+async function finalizePlannerAwareUserUpdate(params: {
+  state: AppState;
+  setState: (patch: Partial<AppState>) => void;
+  getState: () => AppState;
+  nextUser: MultiAccountUserState;
+  targetAccountId: AccountId;
+  trigger: RecentPlannerChangeTrigger;
+  inventoryTrigger?: Parameters<typeof buildInventoryChangeEntries>[0]["trigger"];
+  changedMaterialKeys?: string[];
+  importMetadata?: { fileName?: string; source?: AccountImportState["lastGoodSource"] };
+  recordGoalChanges?: boolean;
+  staticData?: StaticGameData;
+  goalBackupReason?: BackupReason;
+  createRecoveryPointReason?: BackupReason;
+}): Promise<void> {
+  const timestamp = new Date().toISOString();
+  const beforeAccount = params.state.user.accountsById[params.targetAccountId];
+  const candidateAccount = params.nextUser.accountsById[params.targetAccountId];
+  const staticData = params.staticData ?? params.state.staticData;
+  let recoveryPointError: string | undefined;
+
+  if (!candidateAccount) {
+    return;
+  }
+
+  if (params.createRecoveryPointReason) {
+    params.setState({
+      persistenceStatus: updatePersistenceStatus(params.state.persistenceStatus, {
+        status: "backupSaving",
+        lastBackupError: undefined,
+      }),
+    });
+    try {
+      await createSaveRecoveryPointForState(params.state, params.createRecoveryPointReason, params.targetAccountId);
+    } catch (error) {
+      recoveryPointError = `Recovery point failed: ${toErrorMessage(error)}`;
+    }
+  }
+
+  try {
+    const baselineAccount =
+      beforeAccount ??
+      createBlankAccount({
+        id: params.targetAccountId,
+        name: candidateAccount.name,
+        now: new Date(candidateAccount.createdAt),
+        metadata: candidateAccount.metadata,
+      });
+    const beforeOutput = beforeAccount
+      ? buildPlannerOutputForAccount({
+          account: beforeAccount,
+          staticData,
+          today: params.state.today,
+        })
+      : null;
+    const afterOutput = buildPlannerOutputForAccount({
+      account: candidateAccount,
+      staticData,
+      today: params.state.today,
+    });
+    const plannerStatus = buildPlannerStatusFromOutput(afterOutput, timestamp);
+    const progressState = syncGoalProgressState({
+      beforeAccount,
+      afterAccount: candidateAccount,
+      beforeOutput,
+      afterOutput,
+      changedAt: timestamp,
+    });
+
+    const nextAccount = {
+      ...candidateAccount,
+      plannerStatus,
+      goalProgressTracking: progressState.tracking,
+      goalMilestones: progressState.milestones,
+    };
+
+    const inventoryChanges =
+      params.inventoryTrigger
+        ? buildInventoryChangeEntries({
+            beforeAccount: baselineAccount,
+            afterAccount: nextAccount,
+            staticData,
+            changedAt: timestamp,
+            trigger: params.inventoryTrigger,
+            changedKeys: params.changedMaterialKeys,
+            limit: params.inventoryTrigger === "good_import" ? MAX_IMPORT_MATERIAL_CHANGES : undefined,
+          })
+        : [];
+    const goalChanges =
+      beforeOutput && params.recordGoalChanges !== false
+        ? buildGoalProgressChanges({
+            beforeOutput,
+            afterOutput,
+            changedAt: timestamp,
+            trigger:
+              params.trigger === "manual_edit" ||
+              params.trigger === "bulk_edit" ||
+              params.trigger === "reset_to_imported" ||
+              params.trigger === "good_import" ||
+              params.trigger === "goal_edit" ||
+              params.trigger === "goal_reset" ||
+              params.trigger === "world_state_change" ||
+              params.trigger === "planner_settings"
+                ? params.trigger
+                : "planner_settings",
+          })
+        : [];
+    const recalculationChange = createRecalculationChange({
+      trigger: params.trigger,
+      status: plannerStatus,
+      changedAt: timestamp,
+      beforeOutput,
+      afterOutput,
+    });
+    const extraRecentImports =
+      params.trigger === "good_import"
+        ? [
+            buildRecentImportEntry({
+              account: nextAccount,
+              changedAt: timestamp,
+              fileName: params.importMetadata?.fileName,
+              source: params.importMetadata?.source,
+              changedMaterialCount: inventoryChanges.length,
+              overwrittenManualCount:
+                params.changedMaterialKeys?.filter((materialKey) => Boolean(beforeAccount?.materialEditState[materialKey])).length ?? 0,
+            }),
+          ]
+        : [];
+
+    const userWithTelemetry = setAccountPlannerStatus(
+      {
+        ...params.nextUser,
+        accountsById: {
+          ...params.nextUser.accountsById,
+          [params.targetAccountId]: nextAccount,
+        },
+      },
+      params.targetAccountId,
+      plannerStatus,
+      {
+        recentChanges: [recalculationChange, ...inventoryChanges, ...goalChanges],
+        recentImports: extraRecentImports,
+        goalProgressTracking: progressState.tracking,
+        goalMilestones: progressState.milestones,
+      },
+    );
+
+    const { goalBackups, saveRecoveryPoints } = await loadBackupCollections(params.targetAccountId);
+    const persisted = await persistLiveSnapshot({
+      state: params.state,
+      setState: params.setState,
+      user: userWithTelemetry,
+      importErrors: [],
+      importWarnings: getActiveAccount(userWithTelemetry).importState.importWarnings ?? [],
+      patch: syncBackupCollections(
+        params.state,
+        {
+          persistenceStatus: updatePersistenceStatus(params.state.persistenceStatus, {
+            ...(params.createRecoveryPointReason ? { status: "backupSaved" as const } : {}),
+            ...(recoveryPointError
+              ? { lastBackupError: recoveryPointError }
+              : params.createRecoveryPointReason
+                ? { lastBackupError: undefined }
+                : {}),
+            lastGoalBackupAtByAccount: buildGoalBackupTimestampMap(params.targetAccountId, goalBackups),
+          }),
+        },
+        params.targetAccountId,
+        goalBackups,
+        saveRecoveryPoints,
+      ),
+    });
+
+    if (params.goalBackupReason && persisted) {
+      scheduleGoalBackup({
+        accountId: params.targetAccountId,
+        reason: params.goalBackupReason,
+        getState: params.getState,
+        setState: params.setState,
+      });
+    }
+  } catch (error) {
+    const failureStatus = buildPlannerFailureStatus(beforeAccount ?? candidateAccount, error, timestamp);
+    const failedUser = setAccountPlannerStatus(params.state.user, params.targetAccountId, failureStatus, {
+      recentChanges: [
+        createRecalculationChange({
+          trigger: params.trigger,
+          status: failureStatus,
+          changedAt: timestamp,
+        }),
+      ],
+    });
+    const { goalBackups, saveRecoveryPoints } = await loadBackupCollections(params.targetAccountId);
+    await persistLiveSnapshot({
+      state: params.state,
+      setState: params.setState,
+      user: failedUser,
+      importErrors: failureStatus.lastError ? [failureStatus.lastError] : params.state.importErrors,
+      importWarnings: getActiveAccount(failedUser).importState.importWarnings ?? [],
+      patch: syncBackupCollections(
+        params.state,
+        {
+          persistenceStatus: updatePersistenceStatus(params.state.persistenceStatus, {
+            status: "failed",
+            lastBackupError: recoveryPointError ?? failureStatus.lastError,
+            lastGoalBackupAtByAccount: buildGoalBackupTimestampMap(params.targetAccountId, goalBackups),
+          }),
+        },
+        params.targetAccountId,
+        goalBackups,
+        saveRecoveryPoints,
+      ),
+    });
+  }
+}
+
 function ensureUserState(user: MultiAccountUserState): MultiAccountUserState {
   const active = user.accountsById[user.activeAccountId];
   if (active && user.accountOrder.length > 0) {
@@ -552,6 +1338,14 @@ function ensureUserState(user: MultiAccountUserState): MultiAccountUserState {
   }
 
   return createDefaultMultiAccountUserState();
+}
+
+function synchronizeChecklistPlannerStateInUser(
+  user: MultiAccountUserState,
+  accountId = user.activeAccountId,
+  now = new Date(),
+): MultiAccountUserState {
+  return updateAccountInUser(user, accountId, (account) => synchronizeChecklistPlannerState(account, now));
 }
 
 function buildPersistedSlice(state: Pick<AppState, "user" | "settings" | "overridePack" | "saveInfo">) {
@@ -610,12 +1404,20 @@ export interface AppState {
   user: MultiAccountUserState;
   settings: AppSettings;
   today: DayOfWeek;
+  timeSensitiveAt: string;
   importErrors: string[];
   importWarnings: string[];
   overrideText: string;
   saveInfo: SaveInfo;
+  persistenceStatus: PersistenceStatus;
+  goalBackups: GoalBackupRecord[];
+  saveRecoveryPoints: SaveRecoveryPointRecord[];
   isHydrated: boolean;
   refreshToday: () => void;
+  refreshTimeSensitiveState: () => Promise<void>;
+  refreshBackupState: () => Promise<void>;
+  restoreGoalBackup: (backupId: string) => Promise<void>;
+  restoreSaveRecoveryPoint: (backupId: string) => Promise<void>;
   hydrate: () => Promise<void>;
   importGoodText: (text: string, options?: ImportGoodTextOptions) => Promise<void>;
   importOverrideText: (text: string) => Promise<void>;
@@ -639,10 +1441,13 @@ export interface AppState {
     updates: Record<string, number>,
     meta?: { source?: MaterialEditSource },
   ) => Promise<void>;
+  resetActiveMaterialToImported: (materialKey: string) => Promise<void>;
   clearActiveMaterialQuantity: (materialKey: string) => Promise<void>;
   clearActiveAccountInventory: () => Promise<void>;
   resetActiveAccountGoals: () => Promise<void>;
   updateCharacterGoal: (characterKey: string, updates: Partial<CharacterGoal>) => Promise<void>;
+  pauseCharacterGoal: (characterKey: string) => Promise<void>;
+  resumeCharacterGoal: (characterKey: string) => Promise<void>;
   resetCharacterGoal: (characterKey: string) => Promise<void>;
   bulkUpdateCharacterGoals: (characterKeys: string[], updates: Partial<CharacterGoal>) => Promise<void>;
   createWeaponGoal: (input: {
@@ -654,16 +1459,26 @@ export interface AppState {
     targetLevel?: number;
     targetAscensionPhase?: number;
     enabled?: boolean;
+    paused?: boolean;
     notes?: string;
     currentOverride?: WeaponGoal["currentOverride"];
   }) => Promise<string>;
   updateWeaponGoal: (weaponId: string, weaponKey: string, updates: Partial<WeaponGoal>) => Promise<void>;
+  pauseWeaponGoal: (weaponId: string, weaponKey: string) => Promise<void>;
+  resumeWeaponGoal: (weaponId: string, weaponKey: string) => Promise<void>;
   resetWeaponGoal: (weaponId: string) => Promise<void>;
   bulkUpdateWeaponGoals: (weaponIds: string[], updates: Partial<WeaponGoal>) => Promise<void>;
   addArtifactGoal: () => Promise<void>;
   updateArtifactGoal: (id: string, updates: Partial<ArtifactGoal>) => Promise<void>;
   removeArtifactGoal: (id: string) => Promise<void>;
   updatePlannerSettings: (updates: Partial<PlannerSettings>) => Promise<void>;
+  setChecklistResetTaskCompleted: (taskKey: ResetWindowChecklistKey, completed: boolean, at?: string | Date) => Promise<void>;
+  setWeeklyBossClaimsUsed: (count: number, at?: string | Date) => Promise<void>;
+  adjustWeeklyBossClaims: (delta: number, at?: string | Date) => Promise<void>;
+  startChecklistCooldown: (taskKey: CooldownChecklistKey, at?: string | Date) => Promise<void>;
+  clearChecklistCooldown: (taskKey: CooldownChecklistKey) => Promise<void>;
+  setRealmCurrencyClaimedNow: (at?: string | Date) => Promise<void>;
+  updateRealmCurrencySettings: (updates: { realmLevel?: number; trustRank?: number }) => Promise<void>;
   exportSaveFile: () => Promise<string>;
   importSaveFile: (text: string) => Promise<void>;
   exportAccount: (accountId: AccountId) => Promise<ExportedKrumpanionAccount>;
@@ -677,6 +1492,7 @@ export const useAppStore = create<AppState>((set, get) => ({
   user: clone(defaultSave.user),
   settings: clone(defaultSave.settings),
   today: getToday(),
+  timeSensitiveAt: new Date().toISOString(),
   importErrors: [],
   importWarnings: [],
   overrideText: "",
@@ -686,6 +1502,9 @@ export const useAppStore = create<AppState>((set, get) => ({
     createdAt: defaultSave.createdAt,
     updatedAt: defaultSave.updatedAt,
   },
+  persistenceStatus: createDefaultPersistenceStatus(toSaveInfo(defaultSave)),
+  goalBackups: [],
+  saveRecoveryPoints: [],
   isHydrated: false,
   refreshToday: () => {
     set((state) => {
@@ -693,21 +1512,204 @@ export const useAppStore = create<AppState>((set, get) => ({
       return state.today === nextToday ? state : { today: nextToday };
     });
   },
+  refreshTimeSensitiveState: async () => {
+    const state = get();
+    const now = new Date();
+    const timeSensitiveAt = now.toISOString();
+    const nextToday = getGenshinResetDay(now);
+    const activeAccountId = state.user.activeAccountId;
+    const activeAccount = state.user.accountsById[activeAccountId];
+
+    if (!activeAccount) {
+      set({
+        today: nextToday,
+        timeSensitiveAt,
+      });
+      return;
+    }
+
+    const synchronizedAccount = synchronizeChecklistPlannerState(activeAccount, now);
+    if (synchronizedAccount === activeAccount) {
+      set({
+        today: nextToday,
+        timeSensitiveAt,
+      });
+      return;
+    }
+
+    const user = updateAccountInUser(state.user, activeAccountId, () => touchAccount(synchronizedAccount, now));
+    await persistLiveSnapshot({
+      state,
+      setState: set,
+      user,
+      importErrors: state.importErrors,
+      importWarnings: getActiveAccount(user).importState.importWarnings ?? [],
+      patch: {
+        today: nextToday,
+        timeSensitiveAt,
+      },
+    });
+  },
+  refreshBackupState: async () => {
+    const state = get();
+    const activeAccountId = state.user.activeAccountId;
+    const { goalBackups, saveRecoveryPoints } = await loadBackupCollections(activeAccountId);
+    set(
+      syncBackupCollections(
+        state,
+        {
+          persistenceStatus: updatePersistenceStatus(state.persistenceStatus, {
+            lastGoalBackupAtByAccount: buildGoalBackupTimestampMap(activeAccountId, goalBackups),
+          }),
+        },
+        activeAccountId,
+        goalBackups,
+        saveRecoveryPoints,
+      ),
+    );
+  },
   hydrate: async () => {
     const saveFile = await persistenceAdapter.loadSaveFile();
-    const user = ensureUserState(saveFile.user);
+    const staticData = createStaticData(saveFile.overridePack);
+    const now = new Date();
+    const ensuredUser = ensureUserState({
+      ...saveFile.user,
+      accountsById: Object.fromEntries(
+        Object.entries(saveFile.user.accountsById).map(([accountId, account]) => [accountId, normalizeAccountGoalTargets(account, staticData)]),
+      ),
+    });
+    const user = synchronizeChecklistPlannerStateInUser(ensuredUser, ensuredUser.activeAccountId, now);
     const activeAccount = getActiveAccount(user);
+    const { goalBackups, saveRecoveryPoints } = await loadBackupCollections(activeAccount.id);
     set({
       user,
       settings: saveFile.settings,
       overridePack: saveFile.overridePack,
-      staticData: createStaticData(saveFile.overridePack),
+      staticData,
       overrideText: saveFile.overridePack ? JSON.stringify(saveFile.overridePack, null, 2) : "",
       saveInfo: toSaveInfo(saveFile),
+      persistenceStatus: updatePersistenceStatus(createDefaultPersistenceStatus(toSaveInfo(saveFile)), {
+        lastGoalBackupAtByAccount: buildGoalBackupTimestampMap(activeAccount.id, goalBackups),
+      }),
+      goalBackups,
+      saveRecoveryPoints,
       importErrors: [],
       importWarnings: activeAccount.importState.importWarnings ?? [],
-      today: getToday(),
+      today: getGenshinResetDay(now),
+      timeSensitiveAt: now.toISOString(),
       isHydrated: true,
+    });
+  },
+  restoreGoalBackup: async (backupId) => {
+    const state = get();
+    const payload = await persistenceAdapter.restoreGoalBackup(backupId);
+    const existingAccount = state.user.accountsById[payload.accountId];
+    if (!existingAccount) {
+      throw new Error("The backup account no longer exists in this save.");
+    }
+
+    const plannerSettings = synchronizePlannerSettings(
+      clone(payload.plannerSettings),
+      existingAccount.worldState,
+    );
+    const worldState = synchronizeWorldState(plannerSettings, existingAccount.worldState);
+    const user = updateAccountInUser(state.user, payload.accountId, (account) =>
+      touchAccount({
+        ...account,
+        goals: clone(payload.goals),
+        plannerSettings,
+        worldState,
+      }),
+    );
+
+    await finalizePlannerAwareUserUpdate({
+      state,
+      setState: set,
+      getState: get,
+      nextUser: user,
+      targetAccountId: payload.accountId,
+      trigger: "goal_restore",
+      createRecoveryPointReason: "pre_restore",
+    });
+  },
+  restoreSaveRecoveryPoint: async (backupId) => {
+    const state = get();
+    let recoveryPointError: string | undefined;
+
+    set({
+      persistenceStatus: updatePersistenceStatus(state.persistenceStatus, {
+        status: "backupSaving",
+        lastBackupError: undefined,
+      }),
+    });
+
+    try {
+      await createSaveRecoveryPointForState(state, "pre_restore", state.user.activeAccountId);
+    } catch (error) {
+      recoveryPointError = `Recovery point failed: ${toErrorMessage(error)}`;
+    }
+
+    const restoredSave = await persistenceAdapter.restoreSaveRecoveryPoint(backupId);
+    const staticData = createStaticData(restoredSave.overridePack);
+    const timestamp = new Date().toISOString();
+    const restoredEnsuredUser = ensureUserState({
+      ...restoredSave.user,
+      accountsById: Object.fromEntries(
+        Object.entries(restoredSave.user.accountsById).map(([accountId, account]) => [
+          accountId,
+          normalizeAccountGoalTargets(account, staticData),
+        ]),
+      ),
+    });
+    const user = synchronizeChecklistPlannerStateInUser(
+      restoredEnsuredUser,
+      restoredEnsuredUser.activeAccountId,
+      new Date(timestamp),
+    );
+    const activeAccount = getActiveAccount(user);
+    const restoredOutput = buildPlannerOutputForAccount({
+      account: activeAccount,
+      staticData,
+      today: state.today,
+    });
+    const plannerStatus = buildPlannerStatusFromOutput(restoredOutput, timestamp);
+    const userWithStatus = setAccountPlannerStatus(user, activeAccount.id, plannerStatus, {
+      recentChanges: [
+        createRecalculationChange({
+          trigger: "save_restore",
+          status: plannerStatus,
+          changedAt: timestamp,
+          afterOutput: restoredOutput,
+        }),
+      ],
+    });
+    const { goalBackups, saveRecoveryPoints } = await loadBackupCollections(activeAccount.id);
+
+    await persistLiveSnapshot({
+      state,
+      setState: set,
+      user: userWithStatus,
+      settings: restoredSave.settings,
+      overridePack: restoredSave.overridePack,
+      importErrors: [],
+      importWarnings: getActiveAccount(userWithStatus).importState.importWarnings ?? [],
+      patch: syncBackupCollections(
+        state,
+        {
+          staticData,
+          overrideText: restoredSave.overridePack ? JSON.stringify(restoredSave.overridePack, null, 2) : "",
+          today: getGenshinResetDay(new Date(timestamp)),
+          timeSensitiveAt: timestamp,
+          persistenceStatus: updatePersistenceStatus(state.persistenceStatus, {
+            status: recoveryPointError ? "saved" : "backupSaved",
+            lastBackupError: recoveryPointError,
+            lastGoalBackupAtByAccount: buildGoalBackupTimestampMap(activeAccount.id, goalBackups),
+          }),
+        },
+        activeAccount.id,
+        goalBackups,
+        saveRecoveryPoints,
+      ),
     });
   },
   importGoodText: async (text, options) => {
@@ -742,16 +1744,19 @@ export const useAppStore = create<AppState>((set, get) => ({
         },
         accountOrder: [...activeState.user.accountOrder, accountId],
       });
-
-      const saveFile = await persistCurrentSnapshot({
-        ...buildPersistedSlice(activeState),
-        user,
-      });
-
-      set({
-        user,
-        importWarnings: importedAccount.importState.importWarnings ?? [],
-        saveInfo: toSaveInfo(saveFile),
+      await finalizePlannerAwareUserUpdate({
+        state: activeState,
+        setState: set,
+        getState: get,
+        nextUser: user,
+        targetAccountId: accountId,
+        trigger: "good_import",
+        inventoryTrigger: "good_import",
+        changedMaterialKeys: Object.keys(importedAccount.inventory),
+        importMetadata: {
+          fileName: options.fileName,
+          source: options.source ?? "file",
+        },
       });
       return;
     }
@@ -762,52 +1767,72 @@ export const useAppStore = create<AppState>((set, get) => ({
     });
   },
   importOverrideText: async (text) => {
+    const state = get();
     const overridePack = parseOverrideDataPack(text);
+    const staticData = createStaticData(overridePack);
     const nextState = {
-      ...buildPersistedSlice(get()),
+      ...buildPersistedSlice(state),
       overridePack,
     };
     const saveFile = await persistCurrentSnapshot(nextState);
     set({
       overridePack,
       overrideText: text,
-      staticData: createStaticData(overridePack),
+      staticData,
       saveInfo: toSaveInfo(saveFile),
+    });
+    await finalizePlannerAwareUserUpdate({
+      state: { ...state, overridePack, staticData },
+      setState: set,
+      getState: get,
+      nextUser: state.user,
+      targetAccountId: state.user.activeAccountId,
+      trigger: "database_update",
+      recordGoalChanges: false,
+      staticData,
     });
   },
   clearOverridePack: async () => {
+    const state = get();
+    const staticData = createStaticData();
     const nextState = {
-      ...buildPersistedSlice(get()),
+      ...buildPersistedSlice(state),
       overridePack: null,
     };
     const saveFile = await persistCurrentSnapshot(nextState);
     set({
       overridePack: null,
       overrideText: "",
-      staticData: createStaticData(),
+      staticData,
       saveInfo: toSaveInfo(saveFile),
+    });
+    await finalizePlannerAwareUserUpdate({
+      state: { ...state, overridePack: null, staticData },
+      setState: set,
+      getState: get,
+      nextUser: state.user,
+      targetAccountId: state.user.activeAccountId,
+      trigger: "database_update",
+      recordGoalChanges: false,
+      staticData,
     });
   },
   setActiveTab: async (activeTab) => {
-    const settings = { ...get().settings, activeTab };
-    const saveFile = await persistCurrentSnapshot({
-      ...buildPersistedSlice(get()),
+    const state = get();
+    const settings = { ...state.settings, activeTab };
+    await persistLiveSnapshot({
+      state,
+      setState: set,
       settings,
-    });
-    set({
-      settings,
-      saveInfo: toSaveInfo(saveFile),
     });
   },
   setPlannerView: async (plannerView) => {
-    const settings = { ...get().settings, plannerView };
-    const saveFile = await persistCurrentSnapshot({
-      ...buildPersistedSlice(get()),
+    const state = get();
+    const settings = { ...state.settings, plannerView };
+    await persistLiveSnapshot({
+      state,
+      setState: set,
       settings,
-    });
-    set({
-      settings,
-      saveInfo: toSaveInfo(saveFile),
     });
   },
   createAccount: async (input) => {
@@ -828,15 +1853,24 @@ export const useAppStore = create<AppState>((set, get) => ({
       },
       accountOrder: [...state.user.accountOrder, id],
     });
-    const saveFile = await persistCurrentSnapshot({
-      ...buildPersistedSlice(state),
-      user,
-    });
-    set({
+    const { goalBackups, saveRecoveryPoints } = await loadBackupCollections(id);
+    await persistLiveSnapshot({
+      state,
+      setState: set,
       user,
       importWarnings: account.importState.importWarnings ?? [],
       importErrors: [],
-      saveInfo: toSaveInfo(saveFile),
+      patch: syncBackupCollections(
+        state,
+        {
+          persistenceStatus: updatePersistenceStatus(state.persistenceStatus, {
+            lastGoalBackupAtByAccount: buildGoalBackupTimestampMap(id, goalBackups),
+          }),
+        },
+        id,
+        goalBackups,
+        saveRecoveryPoints,
+      ),
     });
     return id;
   },
@@ -848,13 +1882,10 @@ export const useAppStore = create<AppState>((set, get) => ({
         name: resolveUniqueAccountName(state.user, name, accountId),
       }),
     );
-    const saveFile = await persistCurrentSnapshot({
-      ...buildPersistedSlice(state),
+    await persistLiveSnapshot({
+      state,
+      setState: set,
       user,
-    });
-    set({
-      user,
-      saveInfo: toSaveInfo(saveFile),
     });
   },
   duplicateAccount: async (accountId, newName) => {
@@ -888,15 +1919,24 @@ export const useAppStore = create<AppState>((set, get) => ({
       },
       accountOrder: [...state.user.accountOrder, duplicateId],
     });
-    const saveFile = await persistCurrentSnapshot({
-      ...buildPersistedSlice(state),
-      user,
-    });
-    set({
+    const { goalBackups, saveRecoveryPoints } = await loadBackupCollections(duplicateId);
+    await persistLiveSnapshot({
+      state,
+      setState: set,
       user,
       importWarnings: duplicate.importState.importWarnings ?? [],
       importErrors: [],
-      saveInfo: toSaveInfo(saveFile),
+      patch: syncBackupCollections(
+        state,
+        {
+          persistenceStatus: updatePersistenceStatus(state.persistenceStatus, {
+            lastGoalBackupAtByAccount: buildGoalBackupTimestampMap(duplicateId, goalBackups),
+          }),
+        },
+        duplicateId,
+        goalBackups,
+        saveRecoveryPoints,
+      ),
     });
     return duplicateId;
   },
@@ -905,6 +1945,13 @@ export const useAppStore = create<AppState>((set, get) => ({
     const exists = state.user.accountsById[accountId];
     if (!exists) {
       return;
+    }
+
+    let recoveryPointError: string | undefined;
+    try {
+      await createSaveRecoveryPointForState(state, "account_delete_preflight", accountId);
+    } catch (error) {
+      recoveryPointError = `Recovery point failed: ${toErrorMessage(error)}`;
     }
 
     let user: MultiAccountUserState;
@@ -926,15 +1973,27 @@ export const useAppStore = create<AppState>((set, get) => ({
       });
     }
 
-    const saveFile = await persistCurrentSnapshot({
-      ...buildPersistedSlice(state),
-      user,
-    });
-    set({
+    const nextActiveAccountId = user.activeAccountId;
+    const { goalBackups, saveRecoveryPoints } = await loadBackupCollections(nextActiveAccountId);
+    await persistLiveSnapshot({
+      state,
+      setState: set,
       user,
       importWarnings: getActiveAccount(user).importState.importWarnings ?? [],
       importErrors: [],
-      saveInfo: toSaveInfo(saveFile),
+      patch: syncBackupCollections(
+        state,
+        {
+          persistenceStatus: updatePersistenceStatus(state.persistenceStatus, {
+            status: recoveryPointError ? "saved" : "backupSaved",
+            lastBackupError: recoveryPointError,
+            lastGoalBackupAtByAccount: buildGoalBackupTimestampMap(nextActiveAccountId, goalBackups),
+          }),
+        },
+        nextActiveAccountId,
+        goalBackups,
+        saveRecoveryPoints,
+      ),
     });
   },
   switchAccount: async (accountId) => {
@@ -943,25 +2002,29 @@ export const useAppStore = create<AppState>((set, get) => ({
       return;
     }
 
-    const user = ensureUserState(
-      updateAccountInUser(
-        {
-          ...state.user,
-          activeAccountId: accountId,
-        },
-        accountId,
-        (account) => touchAccount(account),
+    const now = new Date();
+    const user = synchronizeChecklistPlannerStateInUser(
+      ensureUserState(
+        updateAccountInUser(
+          {
+            ...state.user,
+            activeAccountId: accountId,
+          },
+          accountId,
+          (account) => touchAccount(account, now),
+        ),
       ),
+      accountId,
+      now,
     );
-    const saveFile = await persistCurrentSnapshot({
-      ...buildPersistedSlice(state),
-      user,
-    });
-    set({
-      user,
-      importWarnings: getActiveAccount(user).importState.importWarnings ?? [],
-      importErrors: [],
-      saveInfo: toSaveInfo(saveFile),
+    await finalizePlannerAwareUserUpdate({
+      state,
+      setState: set,
+      getState: get,
+      nextUser: user,
+      targetAccountId: accountId,
+      trigger: "account_switch",
+      recordGoalChanges: false,
     });
   },
   updateAccountMetadata: async (accountId, patch) => {
@@ -975,61 +2038,82 @@ export const useAppStore = create<AppState>((set, get) => ({
         },
       }),
     );
-    const saveFile = await persistCurrentSnapshot({
-      ...buildPersistedSlice(state),
+    await persistLiveSnapshot({
+      state,
+      setState: set,
       user,
-    });
-    set({
-      user,
-      saveInfo: toSaveInfo(saveFile),
     });
   },
   updateActiveAccountWorldState: async (patch) => {
     const state = get();
     const activeAccountId = state.user.activeAccountId;
+    const now = new Date();
     const user = updateAccountInUser(state.user, activeAccountId, (account) => {
+      const checklist =
+        patch.weeklyBossDiscountsUsed !== undefined
+          ? {
+              ...account.checklist,
+              weeklyBossClaims: {
+                usedCount: clampWeeklyBossClaimsUsed(patch.weeklyBossDiscountsUsed),
+                updatedAt: now.toISOString(),
+              },
+            }
+          : account.checklist;
       const worldState = synchronizeWorldState(account.plannerSettings, account.worldState, patch);
       const plannerSettings = synchronizePlannerSettings(account.plannerSettings, worldState);
-      return touchAccount({
+      return synchronizeChecklistPlannerState(touchAccount({
         ...account,
+        checklist,
         worldState,
         plannerSettings,
-      });
+      }, now), now);
     });
-    const saveFile = await persistCurrentSnapshot({
-      ...buildPersistedSlice(state),
-      user,
-    });
-    set({
-      user,
-      saveInfo: toSaveInfo(saveFile),
+    await finalizePlannerAwareUserUpdate({
+      state,
+      setState: set,
+      getState: get,
+      nextUser: user,
+      targetAccountId: activeAccountId,
+      trigger: "world_state_change",
     });
   },
   replaceActiveAccountFromGoodImport: async (imported, importMetadata) => {
     const state = get();
     const activeAccountId = state.user.activeAccountId;
+    const beforeAccount = state.user.accountsById[activeAccountId];
     const user = updateAccountInUser(state.user, activeAccountId, (account) => {
+      const stampedImport = stampImportedWeaponState(imported, account.id);
       const nextAccount = replaceAccountSnapshot(account, imported, {
         fileName: importMetadata?.fileName,
         source: importMetadata?.source ?? "unknown",
       });
 
-      return {
+      return normalizeAccountGoalTargets({
         ...nextAccount,
         goals: {
           ...nextAccount.goals,
-          weaponGoals: relinkWeaponGoalsAfterImport(account.goals.weaponGoals, account.weapons, imported.weapons, account.id),
+          characterGoals: reconcileCharacterGoalsAfterImport(account.goals.characterGoals, stampedImport.characters),
+          weaponGoals: relinkWeaponGoalsAfterImport(account.goals.weaponGoals, account.weapons, stampedImport.weapons, account.id),
         },
-      };
+      }, state.staticData);
     });
-    const saveFile = await persistCurrentSnapshot({
-      ...buildPersistedSlice(state),
-      user,
-    });
-    set({
-      user,
-      importWarnings: getActiveAccount(user).importState.importWarnings ?? [],
-      saveInfo: toSaveInfo(saveFile),
+    const changedMaterialKeys = [
+      ...new Set([
+        ...Object.keys(beforeAccount?.inventory ?? {}),
+        ...Object.keys(imported.inventory),
+      ]),
+    ];
+    await finalizePlannerAwareUserUpdate({
+      state,
+      setState: set,
+      getState: get,
+      nextUser: user,
+      targetAccountId: activeAccountId,
+      trigger: "good_import",
+      inventoryTrigger: "good_import",
+      changedMaterialKeys,
+      importMetadata,
+      createRecoveryPointReason: "good_import_preflight",
     });
   },
   setActiveMaterialQuantity: async (materialKey, quantity) => {
@@ -1041,13 +2125,15 @@ export const useAppStore = create<AppState>((set, get) => ({
     const user = updateAccountInUser(state.user, state.user.activeAccountId, (account) =>
       applyMaterialQuantityUpdates(account, { [materialKey]: quantity }, "manual"),
     );
-    const saveFile = await persistCurrentSnapshot({
-      ...buildPersistedSlice(state),
-      user,
-    });
-    set({
-      user,
-      saveInfo: toSaveInfo(saveFile),
+    await finalizePlannerAwareUserUpdate({
+      state,
+      setState: set,
+      getState: get,
+      nextUser: user,
+      targetAccountId: state.user.activeAccountId,
+      trigger: "manual_edit",
+      inventoryTrigger: "manual_edit",
+      changedMaterialKeys: [materialKey],
     });
   },
   incrementActiveMaterialQuantity: async (materialKey, delta) => {
@@ -1065,13 +2151,15 @@ export const useAppStore = create<AppState>((set, get) => ({
     const user = updateAccountInUser(state.user, state.user.activeAccountId, (account) =>
       applyMaterialQuantityUpdates(account, { [materialKey]: nextQuantity }, "manual"),
     );
-    const saveFile = await persistCurrentSnapshot({
-      ...buildPersistedSlice(state),
-      user,
-    });
-    set({
-      user,
-      saveInfo: toSaveInfo(saveFile),
+    await finalizePlannerAwareUserUpdate({
+      state,
+      setState: set,
+      getState: get,
+      nextUser: user,
+      targetAccountId: state.user.activeAccountId,
+      trigger: "manual_edit",
+      inventoryTrigger: "manual_edit",
+      changedMaterialKeys: [materialKey],
     });
   },
   bulkSetActiveMaterialQuantities: async (updates, meta) => {
@@ -1083,13 +2171,45 @@ export const useAppStore = create<AppState>((set, get) => ({
     const user = updateAccountInUser(state.user, state.user.activeAccountId, (account) =>
       applyMaterialQuantityUpdates(account, validUpdates, meta?.source ?? "bulk"),
     );
-    const saveFile = await persistCurrentSnapshot({
-      ...buildPersistedSlice(state),
-      user,
+    await finalizePlannerAwareUserUpdate({
+      state,
+      setState: set,
+      getState: get,
+      nextUser: user,
+      targetAccountId: state.user.activeAccountId,
+      trigger: "bulk_edit",
+      inventoryTrigger: "bulk_edit",
+      changedMaterialKeys: Object.keys(validUpdates),
     });
-    set({
-      user,
-      saveInfo: toSaveInfo(saveFile),
+  },
+  resetActiveMaterialToImported: async (materialKey) => {
+    const state = get();
+    const activeAccount = state.user.accountsById[state.user.activeAccountId];
+    if (!activeAccount) {
+      return;
+    }
+
+    const importedQuantity = activeAccount.importedInventory[materialKey] ?? 0;
+    const user = updateAccountInUser(state.user, state.user.activeAccountId, (account) =>
+      applyMaterialQuantityUpdates(account, { [materialKey]: importedQuantity }, "manual"),
+    );
+    const userWithResetState = updateAccountInUser(user, state.user.activeAccountId, (account) => {
+      const nextEditState = { ...account.materialEditState };
+      delete nextEditState[materialKey];
+      return touchAccount({
+        ...account,
+        materialEditState: nextEditState,
+      });
+    });
+    await finalizePlannerAwareUserUpdate({
+      state,
+      setState: set,
+      getState: get,
+      nextUser: userWithResetState,
+      targetAccountId: state.user.activeAccountId,
+      trigger: "reset_to_imported",
+      inventoryTrigger: "reset_to_imported",
+      changedMaterialKeys: [materialKey],
     });
   },
   clearActiveMaterialQuantity: async (materialKey) => {
@@ -1097,13 +2217,15 @@ export const useAppStore = create<AppState>((set, get) => ({
     const user = updateAccountInUser(state.user, state.user.activeAccountId, (account) =>
       applyMaterialQuantityUpdates(account, { [materialKey]: 0 }, "manual"),
     );
-    const saveFile = await persistCurrentSnapshot({
-      ...buildPersistedSlice(state),
-      user,
-    });
-    set({
-      user,
-      saveInfo: toSaveInfo(saveFile),
+    await finalizePlannerAwareUserUpdate({
+      state,
+      setState: set,
+      getState: get,
+      nextUser: user,
+      targetAccountId: state.user.activeAccountId,
+      trigger: "manual_edit",
+      inventoryTrigger: "manual_edit",
+      changedMaterialKeys: [materialKey],
     });
   },
   clearActiveAccountInventory: async () => {
@@ -1127,17 +2249,18 @@ export const useAppStore = create<AppState>((set, get) => ({
         goals: account.goals,
         plannerSettings: account.plannerSettings,
         worldState: account.worldState,
+        importedInventory: {},
       }),
     );
-    const saveFile = await persistCurrentSnapshot({
-      ...buildPersistedSlice(state),
-      user,
-    });
-    set({
-      user,
-      importWarnings: [],
-      importErrors: [],
-      saveInfo: toSaveInfo(saveFile),
+    await finalizePlannerAwareUserUpdate({
+      state,
+      setState: set,
+      getState: get,
+      nextUser: user,
+      targetAccountId: activeAccountId,
+      trigger: "inventory_clear",
+      inventoryTrigger: "inventory_clear",
+      changedMaterialKeys: Object.keys(state.user.accountsById[activeAccountId]?.inventory ?? {}),
     });
   },
   resetActiveAccountGoals: async () => {
@@ -1149,13 +2272,14 @@ export const useAppStore = create<AppState>((set, get) => ({
         goals: clone(DEFAULT_GOAL_STATE),
       }),
     );
-    const saveFile = await persistCurrentSnapshot({
-      ...buildPersistedSlice(state),
-      user,
-    });
-    set({
-      user,
-      saveInfo: toSaveInfo(saveFile),
+    await finalizePlannerAwareUserUpdate({
+      state,
+      setState: set,
+      getState: get,
+      nextUser: user,
+      targetAccountId: activeAccountId,
+      trigger: "goal_reset",
+      goalBackupReason: "goal_edit",
     });
   },
   updateCharacterGoal: async (characterKey, updates) => {
@@ -1164,11 +2288,12 @@ export const useAppStore = create<AppState>((set, get) => ({
     const user = updateAccountInUser(state.user, activeAccountId, (account) => {
       const currentGoal = account.goals.characterGoals[characterKey];
       const isOwned = account.characters.some((character) => character.characterId === characterKey);
-      const nextGoal: CharacterGoal = {
+      const nextGoal = normalizeCharacterGoalRecord(characterKey, {
         ...(currentGoal ?? {}),
         ...updates,
         characterKey,
         enabled: updates.enabled ?? currentGoal?.enabled ?? true,
+        paused: updates.paused ?? currentGoal?.paused ?? false,
         priority: updates.priority ?? currentGoal?.priority ?? 3,
         planningMode: normalizeGoalPlanningMode(updates.planningMode ?? currentGoal?.planningMode, isOwned),
         talents: {
@@ -1185,7 +2310,7 @@ export const useAppStore = create<AppState>((set, get) => ({
               },
             }
           : currentGoal?.currentOverride,
-      };
+      }, isOwned, state.staticData);
       return touchAccount({
         ...account,
         goals: {
@@ -1197,14 +2322,21 @@ export const useAppStore = create<AppState>((set, get) => ({
         },
       });
     });
-    const saveFile = await persistCurrentSnapshot({
-      ...buildPersistedSlice(state),
-      user,
+    await finalizePlannerAwareUserUpdate({
+      state,
+      setState: set,
+      getState: get,
+      nextUser: user,
+      targetAccountId: activeAccountId,
+      trigger: "goal_edit",
+      goalBackupReason: "goal_edit",
     });
-    set({
-      user,
-      saveInfo: toSaveInfo(saveFile),
-    });
+  },
+  pauseCharacterGoal: async (characterKey) => {
+    await get().updateCharacterGoal(characterKey, { paused: true });
+  },
+  resumeCharacterGoal: async (characterKey) => {
+    await get().updateCharacterGoal(characterKey, { paused: false });
   },
   resetCharacterGoal: async (characterKey) => {
     const state = get();
@@ -1216,13 +2348,14 @@ export const useAppStore = create<AppState>((set, get) => ({
         goals: { ...account.goals, characterGoals: nextGoals },
       });
     });
-    const saveFile = await persistCurrentSnapshot({
-      ...buildPersistedSlice(state),
-      user,
-    });
-    set({
-      user,
-      saveInfo: toSaveInfo(saveFile),
+    await finalizePlannerAwareUserUpdate({
+      state,
+      setState: set,
+      getState: get,
+      nextUser: user,
+      targetAccountId: state.user.activeAccountId,
+      trigger: "goal_reset",
+      goalBackupReason: "goal_edit",
     });
   },
   bulkUpdateCharacterGoals: async (characterKeys, updates) => {
@@ -1238,7 +2371,7 @@ export const useAppStore = create<AppState>((set, get) => ({
         }
 
         const isOwned = account.characters.some((character) => character.characterId === characterKey);
-        nextCharacterGoals[characterKey] = {
+        nextCharacterGoals[characterKey] = normalizeCharacterGoalRecord(characterKey, {
           ...currentGoal,
           ...updates,
           characterKey,
@@ -1261,7 +2394,7 @@ export const useAppStore = create<AppState>((set, get) => ({
                   : currentGoal.currentOverride?.talents,
               }
             : currentGoal.currentOverride,
-        };
+        }, isOwned, state.staticData);
       }
 
       return touchAccount({
@@ -1272,13 +2405,14 @@ export const useAppStore = create<AppState>((set, get) => ({
         },
       });
     });
-    const saveFile = await persistCurrentSnapshot({
-      ...buildPersistedSlice(state),
-      user,
-    });
-    set({
-      user,
-      saveInfo: toSaveInfo(saveFile),
+    await finalizePlannerAwareUserUpdate({
+      state,
+      setState: set,
+      getState: get,
+      nextUser: user,
+      targetAccountId: state.user.activeAccountId,
+      trigger: "goal_edit",
+      goalBackupReason: "goal_edit",
     });
   },
   createWeaponGoal: async (input) => {
@@ -1295,6 +2429,7 @@ export const useAppStore = create<AppState>((set, get) => ({
         targetLevel: input.targetLevel,
         targetAscensionPhase: input.targetAscensionPhase,
         enabled: input.enabled ?? true,
+        paused: input.paused ?? false,
         notes: input.notes,
         currentOverride: input.currentOverride,
       });
@@ -1310,13 +2445,14 @@ export const useAppStore = create<AppState>((set, get) => ({
         },
       });
     });
-    const saveFile = await persistCurrentSnapshot({
-      ...buildPersistedSlice(state),
-      user,
-    });
-    set({
-      user,
-      saveInfo: toSaveInfo(saveFile),
+    await finalizePlannerAwareUserUpdate({
+      state,
+      setState: set,
+      getState: get,
+      nextUser: user,
+      targetAccountId: state.user.activeAccountId,
+      trigger: "goal_edit",
+      goalBackupReason: "goal_edit",
     });
     return goalId;
   },
@@ -1345,14 +2481,21 @@ export const useAppStore = create<AppState>((set, get) => ({
         },
       });
     });
-    const saveFile = await persistCurrentSnapshot({
-      ...buildPersistedSlice(state),
-      user,
+    await finalizePlannerAwareUserUpdate({
+      state,
+      setState: set,
+      getState: get,
+      nextUser: user,
+      targetAccountId: state.user.activeAccountId,
+      trigger: "goal_edit",
+      goalBackupReason: "goal_edit",
     });
-    set({
-      user,
-      saveInfo: toSaveInfo(saveFile),
-    });
+  },
+  pauseWeaponGoal: async (weaponId, weaponKey) => {
+    await get().updateWeaponGoal(weaponId, weaponKey, { paused: true });
+  },
+  resumeWeaponGoal: async (weaponId, weaponKey) => {
+    await get().updateWeaponGoal(weaponId, weaponKey, { paused: false });
   },
   resetWeaponGoal: async (weaponId) => {
     const state = get();
@@ -1364,13 +2507,14 @@ export const useAppStore = create<AppState>((set, get) => ({
         goals: { ...account.goals, weaponGoals: nextGoals },
       });
     });
-    const saveFile = await persistCurrentSnapshot({
-      ...buildPersistedSlice(state),
-      user,
-    });
-    set({
-      user,
-      saveInfo: toSaveInfo(saveFile),
+    await finalizePlannerAwareUserUpdate({
+      state,
+      setState: set,
+      getState: get,
+      nextUser: user,
+      targetAccountId: state.user.activeAccountId,
+      trigger: "goal_reset",
+      goalBackupReason: "goal_edit",
     });
   },
   bulkUpdateWeaponGoals: async (weaponIds, updates) => {
@@ -1400,13 +2544,14 @@ export const useAppStore = create<AppState>((set, get) => ({
         },
       });
     });
-    const saveFile = await persistCurrentSnapshot({
-      ...buildPersistedSlice(state),
-      user,
-    });
-    set({
-      user,
-      saveInfo: toSaveInfo(saveFile),
+    await finalizePlannerAwareUserUpdate({
+      state,
+      setState: set,
+      getState: get,
+      nextUser: user,
+      targetAccountId: state.user.activeAccountId,
+      trigger: "goal_edit",
+      goalBackupReason: "goal_edit",
     });
   },
   addArtifactGoal: async () => {
@@ -1420,13 +2565,14 @@ export const useAppStore = create<AppState>((set, get) => ({
         },
       }),
     );
-    const saveFile = await persistCurrentSnapshot({
-      ...buildPersistedSlice(state),
-      user,
-    });
-    set({
-      user,
-      saveInfo: toSaveInfo(saveFile),
+    await finalizePlannerAwareUserUpdate({
+      state,
+      setState: set,
+      getState: get,
+      nextUser: user,
+      targetAccountId: state.user.activeAccountId,
+      trigger: "goal_edit",
+      goalBackupReason: "goal_edit",
     });
   },
   updateArtifactGoal: async (id, updates) => {
@@ -1440,13 +2586,14 @@ export const useAppStore = create<AppState>((set, get) => ({
         },
       }),
     );
-    const saveFile = await persistCurrentSnapshot({
-      ...buildPersistedSlice(state),
-      user,
-    });
-    set({
-      user,
-      saveInfo: toSaveInfo(saveFile),
+    await finalizePlannerAwareUserUpdate({
+      state,
+      setState: set,
+      getState: get,
+      nextUser: user,
+      targetAccountId: state.user.activeAccountId,
+      trigger: "goal_edit",
+      goalBackupReason: "goal_edit",
     });
   },
   removeArtifactGoal: async (id) => {
@@ -1460,53 +2607,259 @@ export const useAppStore = create<AppState>((set, get) => ({
         },
       }),
     );
-    const saveFile = await persistCurrentSnapshot({
-      ...buildPersistedSlice(state),
-      user,
-    });
-    set({
-      user,
-      saveInfo: toSaveInfo(saveFile),
+    await finalizePlannerAwareUserUpdate({
+      state,
+      setState: set,
+      getState: get,
+      nextUser: user,
+      targetAccountId: state.user.activeAccountId,
+      trigger: "goal_reset",
+      goalBackupReason: "goal_edit",
     });
   },
   updatePlannerSettings: async (updates) => {
     const state = get();
+    const now = new Date();
     const user = updateAccountInUser(state.user, state.user.activeAccountId, (account) => {
+      const checklist =
+        updates.weeklyBossDiscountClaimsUsed !== undefined
+          ? {
+              ...account.checklist,
+              weeklyBossClaims: {
+                usedCount: clampWeeklyBossClaimsUsed(updates.weeklyBossDiscountClaimsUsed),
+                updatedAt: now.toISOString(),
+              },
+            }
+          : account.checklist;
       const plannerSettings = synchronizePlannerSettings(account.plannerSettings, account.worldState, {
         ...updates,
       });
       const worldState = synchronizeWorldState(plannerSettings, account.worldState, {
         currentResinUpdatedAt:
-          updates.currentResin !== undefined ? new Date().toISOString() : account.worldState.currentResinUpdatedAt,
+          updates.currentResin !== undefined ? now.toISOString() : account.worldState.currentResinUpdatedAt,
       });
-      return touchAccount({
+      return synchronizeChecklistPlannerState(touchAccount({
         ...account,
+        checklist,
         plannerSettings,
         worldState,
-      });
+      }, now), now);
     });
-    const saveFile = await persistCurrentSnapshot({
-      ...buildPersistedSlice(state),
-      user,
+    await finalizePlannerAwareUserUpdate({
+      state,
+      setState: set,
+      getState: get,
+      nextUser: user,
+      targetAccountId: state.user.activeAccountId,
+      trigger: "planner_settings",
+      goalBackupReason: "planner_settings_edit",
     });
-    set({
+  },
+  setChecklistResetTaskCompleted: async (taskKey, completed, at) => {
+    const state = get();
+    const timestamp = completed ? toIsoTimestamp(at) : undefined;
+    const user = updateAccountInUser(state.user, state.user.activeAccountId, (account) =>
+      touchAccount({
+        ...account,
+        checklist: {
+          ...account.checklist,
+          [taskKey]: timestamp ? { completedAt: timestamp } : {},
+        },
+      }, timestamp ? new Date(timestamp) : new Date()),
+    );
+    await persistLiveSnapshot({
+      state,
+      setState: set,
       user,
-      saveInfo: toSaveInfo(saveFile),
+      importWarnings: getActiveAccount(user).importState.importWarnings ?? [],
+    });
+  },
+  setWeeklyBossClaimsUsed: async (count, at) => {
+    const state = get();
+    const timestamp = toIsoTimestamp(at);
+    const now = new Date(timestamp);
+    const user = updateAccountInUser(state.user, state.user.activeAccountId, (account) =>
+      synchronizeChecklistPlannerState(
+        touchAccount(
+          {
+            ...account,
+            checklist: {
+              ...account.checklist,
+              weeklyBossClaims: {
+                usedCount: clampWeeklyBossClaimsUsed(count),
+                updatedAt: timestamp,
+              },
+            },
+          },
+          now,
+        ),
+        now,
+      ),
+    );
+    await finalizePlannerAwareUserUpdate({
+      state,
+      setState: set,
+      getState: get,
+      nextUser: user,
+      targetAccountId: state.user.activeAccountId,
+      trigger: "planner_settings",
+      recordGoalChanges: false,
+    });
+  },
+  adjustWeeklyBossClaims: async (delta, at) => {
+    const state = get();
+    const activeAccount = state.user.accountsById[state.user.activeAccountId];
+    if (!activeAccount) {
+      return;
+    }
+    const baseCount = getEffectiveWeeklyBossClaimsUsed(activeAccount.checklist, at ? new Date(toIsoTimestamp(at)) : new Date());
+    await get().setWeeklyBossClaimsUsed(baseCount + delta, at);
+  },
+  startChecklistCooldown: async (taskKey, at) => {
+    const state = get();
+    const timestamp = toIsoTimestamp(at);
+    const now = new Date(timestamp);
+    const user = updateAccountInUser(state.user, state.user.activeAccountId, (account) =>
+      touchAccount(
+        {
+          ...account,
+          checklist: {
+            ...account.checklist,
+            ...(taskKey === "expeditions"
+              ? {
+                  expeditions: {
+                    lastClaimedAt: timestamp,
+                  },
+                }
+              : {
+                  [taskKey]: {
+                    lastUsedAt: timestamp,
+                  },
+                }),
+          },
+        },
+        now,
+      ),
+    );
+    await persistLiveSnapshot({
+      state,
+      setState: set,
+      user,
+      importWarnings: getActiveAccount(user).importState.importWarnings ?? [],
+    });
+  },
+  clearChecklistCooldown: async (taskKey) => {
+    const state = get();
+    const user = updateAccountInUser(state.user, state.user.activeAccountId, (account) =>
+      touchAccount({
+        ...account,
+        checklist: {
+          ...account.checklist,
+          ...(taskKey === "expeditions"
+            ? {
+                expeditions: {},
+              }
+            : {
+                [taskKey]: {},
+              }),
+        },
+      }),
+    );
+    await persistLiveSnapshot({
+      state,
+      setState: set,
+      user,
+      importWarnings: getActiveAccount(user).importState.importWarnings ?? [],
+    });
+  },
+  setRealmCurrencyClaimedNow: async (at) => {
+    const state = get();
+    const timestamp = toIsoTimestamp(at);
+    const now = new Date(timestamp);
+    const user = updateAccountInUser(state.user, state.user.activeAccountId, (account) =>
+      touchAccount(
+        {
+          ...account,
+          checklist: {
+            ...account.checklist,
+            realmCurrency: {
+              ...account.checklist.realmCurrency,
+              lastClaimedAt: timestamp,
+            },
+          },
+        },
+        now,
+      ),
+    );
+    await persistLiveSnapshot({
+      state,
+      setState: set,
+      user,
+      importWarnings: getActiveAccount(user).importState.importWarnings ?? [],
+    });
+  },
+  updateRealmCurrencySettings: async (updates) => {
+    const state = get();
+    const user = updateAccountInUser(state.user, state.user.activeAccountId, (account) =>
+      touchAccount({
+        ...account,
+        checklist: {
+          ...account.checklist,
+          realmCurrency: {
+            ...account.checklist.realmCurrency,
+            realmLevel: clampRealmLevel(updates.realmLevel ?? account.checklist.realmCurrency.realmLevel),
+            trustRank: clampTrustRank(updates.trustRank ?? account.checklist.realmCurrency.trustRank),
+          },
+        },
+      }),
+    );
+    await persistLiveSnapshot({
+      state,
+      setState: set,
+      user,
+      importWarnings: getActiveAccount(user).importState.importWarnings ?? [],
     });
   },
   exportSaveFile: async () => persistenceAdapter.exportSaveFile(),
   importSaveFile: async (text) => {
+    const state = get();
+    let recoveryPointError: string | undefined;
+    try {
+      await createSaveRecoveryPointForState(state, "save_import_preflight", state.user.activeAccountId);
+    } catch (error) {
+      recoveryPointError = `Recovery point failed: ${toErrorMessage(error)}`;
+    }
+
     const saveFile = await persistenceAdapter.importSaveFile(text);
-    const user = ensureUserState(saveFile.user);
+    const staticData = createStaticData(saveFile.overridePack);
+    const now = new Date();
+    const ensuredUser = ensureUserState({
+      ...saveFile.user,
+      accountsById: Object.fromEntries(
+        Object.entries(saveFile.user.accountsById).map(([accountId, account]) => [accountId, normalizeAccountGoalTargets(account, staticData)]),
+      ),
+    });
+    const user = synchronizeChecklistPlannerStateInUser(ensuredUser, ensuredUser.activeAccountId, now);
+    const activeAccount = getActiveAccount(user);
+    const { goalBackups, saveRecoveryPoints } = await loadBackupCollections(activeAccount.id);
     set({
       user,
       settings: saveFile.settings,
       overridePack: saveFile.overridePack,
-      staticData: createStaticData(saveFile.overridePack),
+      staticData,
       overrideText: saveFile.overridePack ? JSON.stringify(saveFile.overridePack, null, 2) : "",
       saveInfo: toSaveInfo(saveFile),
+      persistenceStatus: updatePersistenceStatus(createDefaultPersistenceStatus(toSaveInfo(saveFile)), {
+        status: recoveryPointError ? "saved" : "backupSaved",
+        lastBackupError: recoveryPointError,
+        lastGoalBackupAtByAccount: buildGoalBackupTimestampMap(activeAccount.id, goalBackups),
+      }),
+      goalBackups,
+      saveRecoveryPoints,
       importErrors: [],
-      importWarnings: getActiveAccount(user).importState.importWarnings ?? [],
+      importWarnings: activeAccount.importState.importWarnings ?? [],
+      today: getGenshinResetDay(now),
+      timeSensitiveAt: now.toISOString(),
     });
   },
   exportAccount: async (accountId) => {
@@ -1553,6 +2906,11 @@ export const useAppStore = create<AppState>((set, get) => ({
         clone(exported.account.plannerSettings ?? DEFAULT_PLANNER_SETTINGS),
         clone(exported.account.worldState ?? createDefaultWorldState()),
       ),
+      checklist: normalizeChecklistState(
+        clone(exported.account.checklist),
+        clone(exported.account.plannerSettings ?? DEFAULT_PLANNER_SETTINGS).weeklyBossDiscountClaimsUsed ?? 0,
+        exported.account.updatedAt,
+      ),
       worldState: synchronizeWorldState(
         clone(exported.account.plannerSettings ?? DEFAULT_PLANNER_SETTINGS),
         clone(exported.account.worldState ?? createDefaultWorldState()),
@@ -1571,37 +2929,43 @@ export const useAppStore = create<AppState>((set, get) => ({
           }),
         ...clone(exported.account.importState ?? {}),
       },
+      importedInventory: clone(exported.account.importedInventory ?? exported.account.inventory ?? {}),
+      plannerStatus: clone(exported.account.plannerStatus ?? createBlankAccount({ id: accountId, name }).plannerStatus),
+      recentChanges: clone(exported.account.recentChanges ?? []),
+      recentImports: clone(exported.account.recentImports ?? []),
     };
+    const normalizedImportedAccount = synchronizeChecklistPlannerState(
+      normalizeAccountGoalTargets(importedAccount, state.staticData),
+      new Date(),
+    );
     const user = ensureUserState({
       ...state.user,
       activeAccountId: accountId,
       accountsById: {
         ...state.user.accountsById,
-        [accountId]: importedAccount,
+        [accountId]: normalizedImportedAccount,
       },
       accountOrder: [...state.user.accountOrder, accountId],
     });
-    const saveFile = await persistCurrentSnapshot({
-      ...buildPersistedSlice(state),
-      user,
-    });
-    set({
-      user,
-      importErrors: [],
-      importWarnings: importedAccount.importState.importWarnings ?? [],
-      saveInfo: toSaveInfo(saveFile),
+    await finalizePlannerAwareUserUpdate({
+      state,
+      setState: set,
+      getState: get,
+      nextUser: user,
+      targetAccountId: accountId,
+      trigger: "account_switch",
+      recordGoalChanges: false,
+      createRecoveryPointReason: "account_import_preflight",
     });
     return accountId;
   },
   updateSettings: async (updates) => {
     const settings = { ...get().settings, ...updates };
-    const saveFile = await persistCurrentSnapshot({
-      ...buildPersistedSlice(get()),
+    const state = get();
+    await persistLiveSnapshot({
+      state,
+      setState: set,
       settings,
-    });
-    set({
-      settings,
-      saveInfo: toSaveInfo(saveFile),
     });
   },
 }));

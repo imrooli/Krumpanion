@@ -288,13 +288,26 @@ These warnings belong to the estimate layer and must remain visible in the Plann
 
 ## Planner UI grouping
 
-The Planner page preserves the existing views, but grouped recommendation rows now surface clearer activity buckets:
+The Planner tab now treats `plannerReport` as the primary UI contract and renders a
+today-focused dashboard plus a dedicated weekly domain schedule inside the same workspace,
+instead of relying on the older `today | week | materials | character | source` table split.
 
-- Resin Activities
-- Weekly Resin Activities
-- Domains
+The dashboard uses a presentation adapter to:
+
+- repartition overlapping engine sections into exclusive UI sections
+- deduplicate repeated warning text
+- recompute readable goal labels when a row is missing them
+- keep PlannerReport math intact while improving display structure
+
+Grouped recommendation rows now surface clearer activity buckets:
+
+- Today's Resin Activities
 - Bosses
 - Ley Lines
+- Domains of Mastery available today
+- Domains of Forgery available today
+- This Week domain schedule grouped by availability day
+- Weekly Resin Activities
 - Crafting / Conversion
 - Forging
 - Open-World Enemy Farming
@@ -314,6 +327,28 @@ Displayed Resin semantics:
   - `actionableRuns * resinPerRun` for standard Resin-gated activities
 
 No-resin activities must display `No resin`, never `?`.
+
+The deep deterministic tables still belong in the calculator-oriented Planning workspace, not the
+main Planner dashboard.
+
+## Planner day estimates
+
+The engine already provides the raw ingredients for lightweight UI time estimates:
+
+- `totalEstimatedResin`
+- `estimatedDaysNaturalResin`
+- weekly gate metadata
+- domain availability
+- forging daily reset counts
+
+The Planner UI adapter may derive:
+
+- total estimated Resin days
+- a conservative time-gated completion estimate
+- per-row day labels
+- earliest completion labels for rotating domains
+
+The UI adapter must not change the underlying deterministic planner math when deriving these labels.
 
 ## Display normalization
 

@@ -2,6 +2,8 @@ import type { AccountOwnershipState } from "../account/types";
 import {
   getWeaponGoalId,
   getWeaponGoalTargetAscension,
+  isCharacterGoalPlannerActive,
+  isWeaponGoalPlannerActive,
   resolveCharacterGoalCurrentState,
   resolveWeaponGoalCurrentState,
 } from "../goals/goalState";
@@ -171,10 +173,11 @@ function buildCharacterMissingTotals(
     const sharedTravelerGoal = isTravelerElementKey(characterGoal.characterKey)
       ? input.goals.characterGoals[TRAVELER_SHARED_KEY]
       : undefined;
-    const sharedTravelerAscensionTarget = sharedTravelerGoal?.enabled
+    const activeSharedTravelerGoal = isCharacterGoalPlannerActive(sharedTravelerGoal) ? sharedTravelerGoal : undefined;
+    const sharedTravelerAscensionTarget = activeSharedTravelerGoal
       ? Math.max(
-          sharedTravelerGoal.targetAscension ?? character.currentAscension,
-          determineRequiredAscensionPhaseForLevel(sharedTravelerGoal.targetLevel, input.staticData) ?? character.currentAscension,
+          activeSharedTravelerGoal.targetAscension ?? character.currentAscension,
+          determineRequiredAscensionPhaseForLevel(activeSharedTravelerGoal.targetLevel, input.staticData) ?? character.currentAscension,
         )
       : character.currentAscension;
     const talentLevels = {
@@ -321,7 +324,7 @@ export function calculateCharacterPlans(input: PlannerInput): CharacterPlan[] {
   const { ownership, goals, staticData } = input;
 
   return Object.values(goals.characterGoals)
-    .filter((goal) => goal.enabled)
+    .filter((goal) => isCharacterGoalPlannerActive(goal))
     .map((goal) => {
       const warnings: PlannerWarning[] = [];
       const { totals, breakdown } = buildCharacterMissingTotals(ownership, goal, input, warnings);
@@ -343,7 +346,7 @@ export function calculateWeaponPlans(input: PlannerInput): WeaponPlan[] {
   const { ownership, goals, staticData } = input;
 
   return Object.values(goals.weaponGoals)
-    .filter((goal) => goal.enabled)
+    .filter((goal) => isWeaponGoalPlannerActive(goal))
     .map((goal) => {
       const warnings: PlannerWarning[] = [];
       const { totals: missingByMaterial, breakdown } = buildWeaponMissingTotals(ownership, goal, input, warnings);

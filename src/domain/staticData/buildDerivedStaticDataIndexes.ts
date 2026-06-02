@@ -7,6 +7,8 @@ import {
   buildGeneralEnemyDerivedDataFromFamilies,
   buildGeneralEnemyMaterialFamilyIndex,
 } from "./generalEnemyDropRegistry";
+import { buildCanonicalMaterialRegistry } from "./canonicalMaterialRegistry";
+import { buildLeyLineOutcropRegistry } from "./leyLineOutcropRegistry";
 import { normalizeStaticDataMaterialReferences, buildLocalSpecialtyRegionIndex } from "./normalizeStaticDataMaterialReferences";
 import type { StaticGameData } from "./types";
 
@@ -24,9 +26,16 @@ export function buildDerivedStaticDataIndexes(data: StaticGameData): StaticGameD
     ...buildGeneralEnemyMaterialFamilyIndex(normalized.generalEnemyDropFamilies),
     ...buildEliteEnemyMaterialFamilyIndex(normalized.eliteEnemyDropFamilies),
   };
+  const canonicalMaterialRegistry = buildCanonicalMaterialRegistry(normalized);
+  const leyLineOutcropRegistry = buildLeyLineOutcropRegistry(
+    normalized.leyLineOutcropLocations,
+    generalDerived.families,
+    eliteDerived.families,
+  );
   const registryInput: StaticGameData = {
     ...normalized,
     materials: {
+      ...canonicalMaterialRegistry.materials,
       ...generalDerived.materials,
       ...eliteDerived.materials,
       ...normalized.materials,
@@ -39,6 +48,7 @@ export function buildDerivedStaticDataIndexes(data: StaticGameData): StaticGameD
     generalEnemyDropFamilies: generalDerived.families,
     eliteEnemyDropFamilies: eliteDerived.families,
     materialSources: {
+      ...canonicalMaterialRegistry.materialSources,
       ...generalDerived.materialSources,
       ...eliteDerived.materialSources,
       ...normalized.materialSources,
@@ -50,6 +60,8 @@ export function buildDerivedStaticDataIndexes(data: StaticGameData): StaticGameD
     generalEnemyDropCharacterReferences: generalDerived.generalEnemyDropCharacterReferences,
     unresolvedCharacterReferences: generalDerived.unresolvedCharacterReferences,
     unresolvedWeaponReferences: [...generalDerived.unresolvedWeaponReferences, ...weaponFamilyLinks.unresolvedWeaponReferences],
+    leyLineOutcropLocations: leyLineOutcropRegistry.leyLineOutcropLocations,
+    leyLineOutcropLocationList: leyLineOutcropRegistry.leyLineOutcropLocationList,
   };
 
   return {
@@ -77,6 +89,11 @@ export function buildDerivedStaticDataIndexes(data: StaticGameData): StaticGameD
     unresolvedCharacterReferences: generalDerived.unresolvedCharacterReferences,
     unresolvedCharacterMaterialReferences: normalized.unresolvedCharacterMaterialReferences,
     unresolvedWeaponReferences: [...generalDerived.unresolvedWeaponReferences, ...weaponFamilyLinks.unresolvedWeaponReferences],
-    materialRecords: normalized.materialRecords,
+    materialRecords: {
+      ...canonicalMaterialRegistry.materialRecords,
+      ...normalized.materialRecords,
+    },
+    leyLineOutcropLocations: leyLineOutcropRegistry.leyLineOutcropLocations,
+    leyLineOutcropLocationList: leyLineOutcropRegistry.leyLineOutcropLocationList,
   };
 }

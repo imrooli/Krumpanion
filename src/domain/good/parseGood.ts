@@ -25,12 +25,13 @@ const goodCharacterSchema = z.object({
 });
 
 const goodWeaponSchema = z.object({
+  id: z.union([z.string(), z.number()]).transform(String).optional(),
   key: z.string(),
   level: z.number().int().min(1).max(90),
   ascension: z.number().int().min(0).max(6),
   refinement: z.number().int().min(1).max(5),
-  location: z.string(),
-  lock: z.boolean(),
+  location: z.string().optional().default(""),
+  lock: z.boolean().optional().default(false),
 });
 
 const goodArtifactSchema = z.object({
@@ -103,11 +104,23 @@ function normalizeWeapons(
   for (const weapon of weapons) {
     const location = weapon.location ?? "";
     const lock = weapon.lock ?? false;
+    const rawImportId = weapon.id?.trim() || null;
+    const generatedSignatureKey = `${weapon.key}:${location}:${lock}`;
     const signature = [location, lock];
-    const occurrence = (counts.get(`${weapon.key}:${location}:${lock}`) ?? 0) + 1;
-    counts.set(`${weapon.key}:${location}:${lock}`, occurrence);
+    const occurrence = (counts.get(rawImportId ?? generatedSignatureKey) ?? 0) + 1;
+    counts.set(rawImportId ?? generatedSignatureKey, occurrence);
 
-    const id = createStableEntityId("weapon", weapon.key, signature, occurrence);
+    if (rawImportId && occurrence > 1) {
+      warnings.push({
+        type: "duplicate_weapon_id",
+        key: rawImportId,
+        message: `GOOD weapon id ${rawImportId} appeared multiple times. Duplicate copies were preserved with deterministic local ids.`,
+      });
+    }
+
+    const id = rawImportId
+      ? createStableEntityId("weapon", weapon.key, [rawImportId], occurrence)
+      : createStableEntityId("weapon", weapon.key, signature, occurrence);
 
     if (next[id]) {
       warnings.push({
@@ -117,7 +130,12 @@ function normalizeWeapons(
       });
     }
 
-    next[id] = { ...weapon, id };
+    next[id] = {
+      ...weapon,
+      location,
+      lock,
+      id,
+    };
   }
 
   return next;

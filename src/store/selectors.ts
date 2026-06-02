@@ -1,5 +1,7 @@
 import type { KrumpanionAccount, MultiAccountUserState } from "../domain/account/types";
 import { buildAccountLookups, buildImportedAccountState } from "../domain/account/types";
+import { buildChecklistAccountSummary, buildChecklistModel } from "../domain/checklist/model";
+import { createDefaultChecklistState } from "../domain/checklist/types";
 import type { KrumpanionGoals } from "../domain/goals/types";
 import { DEFAULT_GOAL_STATE, DEFAULT_PLANNER_SETTINGS } from "../domain/goals/types";
 import { buildInventoryWarnings, buildUnknownDataWarnings } from "../domain/staticData/loadStaticData";
@@ -54,6 +56,10 @@ export function selectActiveInventory(state: AppState) {
   return getActiveAccount(state)?.inventory ?? {};
 }
 
+export function selectActiveImportedInventory(state: AppState) {
+  return getActiveAccount(state)?.importedInventory ?? {};
+}
+
 export function selectActiveGoals(state: AppState): KrumpanionGoals {
   const account = getActiveAccount(state);
   if (!account) {
@@ -82,8 +88,35 @@ export function selectActiveWorldState(state: AppState) {
   return getActiveAccount(state)?.worldState ?? {};
 }
 
+export function selectActivePlannerStatus(state: AppState) {
+  return getActiveAccount(state)?.plannerStatus ?? null;
+}
+
+export function selectActiveRecentChanges(state: AppState) {
+  return getActiveAccount(state)?.recentChanges ?? [];
+}
+
+export function selectActiveRecentImports(state: AppState) {
+  return getActiveAccount(state)?.recentImports ?? [];
+}
+
 export function selectActivePlannerSettings(state: AppState) {
   return getActiveAccount(state)?.plannerSettings ?? clonePlannerSettings();
+}
+
+export function selectActiveChecklistModel(state: AppState) {
+  const account = getActiveAccount(state);
+  const now = new Date(state.timeSensitiveAt ?? new Date().toISOString());
+  return buildChecklistModel(account?.checklist ?? createDefaultChecklistState(), now);
+}
+
+export function selectActiveChecklistAttentionCount(state: AppState) {
+  return selectActiveChecklistModel(state).summary.needsAttentionCount;
+}
+
+export function selectAllAccountChecklistSummaries(state: AppState) {
+  const now = new Date(state.timeSensitiveAt ?? new Date().toISOString());
+  return getAccountOrder(state.user).map((account) => buildChecklistAccountSummary(account, now));
 }
 
 export function selectPlannerOutput(state: AppState) {
@@ -114,18 +147,27 @@ export function selectAccountLookups(state: AppState) {
 
 export function selectInventoryRows(state: AppState) {
   const inventory = selectActiveInventory(state);
+  const importedInventory = selectActiveImportedInventory(state);
   const materialEditState = getActiveAccount(state)?.materialEditState ?? {};
   const knownRows = Object.values(state.staticData.materials).map((material) => {
     const record = state.staticData.materialRecords[material.key];
+    const importedQuantity = importedInventory[material.key];
+    const sourceState = materialEditState[material.key]
+      ? "manual"
+      : importedQuantity != null
+        ? "imported"
+        : "missing_from_import";
     return {
       materialKey: material.key,
-        displayName: material.displayName,
-        category: material.category ?? "other",
-        quantity: inventory[material.key] ?? 0,
-        familyKey: record?.familyKey,
-        sources: state.staticData.materialSources[material.key] ?? [],
-        manualEdit: materialEditState[material.key],
-      };
+      displayName: material.displayName,
+      category: material.category ?? "other",
+      quantity: inventory[material.key] ?? 0,
+      importedQuantity,
+      sourceState,
+      familyKey: record?.familyKey,
+      sources: state.staticData.materialSources[material.key] ?? [],
+      manualEdit: materialEditState[material.key],
+    };
   });
 
   const extraRows = Object.entries(inventory)
@@ -135,6 +177,12 @@ export function selectInventoryRows(state: AppState) {
       displayName: materialKey,
       category: "other",
       quantity,
+      importedQuantity: importedInventory[materialKey],
+      sourceState: materialEditState[materialKey]
+        ? "manual"
+        : materialKey in importedInventory
+          ? "imported"
+          : "missing_from_import",
       familyKey: undefined,
       sources: state.staticData.materialSources[materialKey] ?? [],
       manualEdit: materialEditState[materialKey],
@@ -146,6 +194,7 @@ export function selectInventoryRows(state: AppState) {
 
 export function selectSaveSummary(state: AppState) {
   const activeAccount = getActiveAccount(state);
+  const activeAccountId = activeAccount?.id ?? state.user.activeAccountId;
   return {
     schemaVersion: state.saveInfo.schemaVersion,
     appVersion: state.saveInfo.appVersion,
@@ -154,7 +203,25 @@ export function selectSaveSummary(state: AppState) {
     hasAccount: Boolean(activeAccount),
     activeAccountName: activeAccount?.name ?? "No account",
     accountCount: state.user.accountOrder.length,
+    persistenceStatus: state.persistenceStatus.status,
+    lastSavedAt: state.persistenceStatus.lastSavedAt ?? state.saveInfo.updatedAt,
+    lastGoalBackupAt: activeAccountId ? state.persistenceStatus.lastGoalBackupAtByAccount[activeAccountId] : undefined,
+    goalBackupCount: state.goalBackups.length,
+    saveRecoveryPointCount: state.saveRecoveryPoints.length,
+    lastBackupError: state.persistenceStatus.lastBackupError,
   };
+}
+
+export function selectPersistenceStatus(state: AppState) {
+  return state.persistenceStatus;
+}
+
+export function selectActiveGoalBackups(state: AppState) {
+  return state.goalBackups;
+}
+
+export function selectSaveRecoveryPoints(state: AppState) {
+  return state.saveRecoveryPoints;
 }
 
 export function getAccountOrder(user: MultiAccountUserState) {

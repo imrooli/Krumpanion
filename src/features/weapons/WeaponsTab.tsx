@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { StatusBadge, WorkspaceTabs } from "../../app/layoutPrimitives";
+import { getWeaponGoalSubtitle } from "../../domain/goals/goalDisplay";
 import {
   defaultPlanningMode,
   getGoalCurrentStateLabel,
@@ -11,7 +12,11 @@ import {
 import type { GoalPlanningMode, WeaponGoal } from "../../domain/goals/types";
 import type { PlannerOutput } from "../../domain/planner/types";
 import { getGoalTrackableWeapons } from "../../domain/staticData/targetability";
-import { analyzeWeaponRefinementCollection, type WeaponRefinementEntry, type WeaponRefinementStatus } from "../../domain/weapons/refinementTracker";
+import {
+  analyzeWeaponRefinementCollection,
+  type WeaponInventorySummary,
+  type WeaponRefinementStatus,
+} from "../../domain/weapons/refinementTracker";
 import { selectActiveAccount, selectActiveGoals, selectActiveOwnership } from "../../store/selectors";
 import { useAppStore } from "../../store/useAppStore";
 
@@ -26,6 +31,9 @@ type WeaponsMode = "progression" | "refinement";
 type ProgressionTabKey = "owned" | "prefarm" | "stale";
 type WeaponBulkPresetKey = "lvl-80-a5" | "lvl-90-a6";
 type OwnershipFilter = "all" | "planned" | "not_planned";
+type GoalStatusFilter = "all" | "active" | "paused";
+type InventoryOwnershipFilter = "all" | "owned" | "missing" | "duplicates_only" | "goal_linked";
+type RefinementSortKey = "recommended" | "name" | "rarity" | "type" | "highest_refinement" | "copies_owned";
 
 const WEAPON_BULK_PRESETS: Array<{
   key: WeaponBulkPresetKey;
@@ -37,24 +45,28 @@ const WEAPON_BULK_PRESETS: Array<{
 ];
 
 const REFINEMENT_STATUS_LABELS: Record<WeaponRefinementStatus, string> = {
-  complete_r5: "Complete R5",
-  ready_to_r5: "Ready to R5",
-  upgrade_available: "Upgrade Available",
-  missing_duplicates: "Missing Duplicates",
-  single_copy_only: "Single Copy Only",
+  already_r5: "Already R5",
+  can_refine_now: "Can refine now",
+  needs_more_copies: "Needs more copies",
+  manual_review: "Manual review",
+  unsafe_to_refine: "Unsafe right now",
   not_owned: "Not Owned",
+  not_tracked: "Not tracked",
   unknown_or_untracked: "Unmatched",
 };
 
 const REFINEMENT_STATUS_ORDER: WeaponRefinementStatus[] = [
-  "ready_to_r5",
-  "upgrade_available",
-  "missing_duplicates",
-  "single_copy_only",
+  "can_refine_now",
+  "manual_review",
+  "unsafe_to_refine",
+  "needs_more_copies",
   "not_owned",
-  "complete_r5",
+  "already_r5",
+  "not_tracked",
   "unknown_or_untracked",
 ];
+
+const showLegacyRefinementFallback = false;
 
 function buildWeaponSourceHints(staticData: ReturnType<typeof useAppStore.getState>["staticData"], weaponKey: string, manual: boolean): string[] {
   const profile = staticData.weaponMaterialProfiles[weaponKey];
@@ -79,14 +91,15 @@ function buildWeaponSourceHints(staticData: ReturnType<typeof useAppStore.getSta
 
 function refinementStatusTone(status: WeaponRefinementStatus): "success" | "warning" | "accent" | "muted" {
   switch (status) {
-    case "complete_r5":
+    case "already_r5":
       return "success";
-    case "ready_to_r5":
+    case "can_refine_now":
       return "accent";
-    case "upgrade_available":
-    case "missing_duplicates":
-    case "single_copy_only":
+    case "manual_review":
+    case "unsafe_to_refine":
+    case "needs_more_copies":
       return "warning";
+    case "not_tracked":
     case "not_owned":
     case "unknown_or_untracked":
     default:
@@ -94,13 +107,54 @@ function refinementStatusTone(status: WeaponRefinementStatus): "success" | "warn
   }
 }
 
-function refinementSort(left: WeaponRefinementEntry, right: WeaponRefinementEntry): number {
+function refinementSort(left: WeaponInventorySummary, right: WeaponInventorySummary): number {
   return (
     REFINEMENT_STATUS_ORDER.indexOf(left.status) - REFINEMENT_STATUS_ORDER.indexOf(right.status) ||
     (right.rarity ?? 0) - (left.rarity ?? 0) ||
     String(left.weaponType ?? "").localeCompare(String(right.weaponType ?? "")) ||
-    left.name.localeCompare(right.name)
+    left.displayName.localeCompare(right.displayName)
   );
+}
+
+function refinementSortByKey(left: WeaponInventorySummary, right: WeaponInventorySummary, sortKey: RefinementSortKey): number {
+  switch (sortKey) {
+    case "name":
+      return left.displayName.localeCompare(right.displayName);
+    case "rarity":
+      return (right.rarity ?? 0) - (left.rarity ?? 0) || left.displayName.localeCompare(right.displayName);
+    case "type":
+      return String(left.weaponType ?? "").localeCompare(String(right.weaponType ?? "")) || left.displayName.localeCompare(right.displayName);
+    case "highest_refinement":
+      return right.highestRefinement - left.highestRefinement || left.displayName.localeCompare(right.displayName);
+    case "copies_owned":
+      return right.totalCopies - left.totalCopies || left.displayName.localeCompare(right.displayName);
+    case "recommended":
+    default:
+      return refinementSort(left, right);
+  }
+}
+
+function matchesInventoryOwnershipFilter(entry: WeaponInventorySummary, filter: InventoryOwnershipFilter): boolean {
+  switch (filter) {
+    case "all":
+      return true;
+    case "owned":
+      return entry.totalCopies > 0;
+    case "missing":
+      return entry.totalCopies === 0;
+    case "duplicates_only":
+      return entry.totalCopies > 1;
+    case "goal_linked":
+      return entry.goalLinkedCount > 0;
+  }
+}
+
+function formatWeaponProgress(weapon: { currentLevel: number; currentAscension: number; refinement?: number }) {
+  return `Lv. ${weapon.currentLevel} / Asc. ${weapon.currentAscension} / R${weapon.refinement ?? 1}`;
+}
+
+function formatCopyLabel(index: number): string {
+  return `Copy ${String.fromCharCode(65 + (index % 26))}`;
 }
 
 function getSafeWeaponGoalId(goal: WeaponGoal, fallback: string): string {
@@ -114,12 +168,15 @@ export function WeaponsTab({ plannerOutput }: WeaponsTabProps) {
   const weaponGoals = useAppStore((state) => selectActiveGoals(state).weaponGoals);
   const createWeaponGoal = useAppStore((state) => state.createWeaponGoal);
   const updateWeaponGoal = useAppStore((state) => state.updateWeaponGoal);
+  const pauseWeaponGoal = useAppStore((state) => state.pauseWeaponGoal);
+  const resumeWeaponGoal = useAppStore((state) => state.resumeWeaponGoal);
   const resetWeaponGoal = useAppStore((state) => state.resetWeaponGoal);
   const bulkUpdateWeaponGoals = useAppStore((state) => state.bulkUpdateWeaponGoals);
   const [mode, setMode] = useState<WeaponsMode>("progression");
   const [progressionTab, setProgressionTab] = useState<ProgressionTabKey>("owned");
   const [search, setSearch] = useState("");
   const [ownershipFilter, setOwnershipFilter] = useState<OwnershipFilter>("all");
+  const [goalStatusFilter, setGoalStatusFilter] = useState<GoalStatusFilter>("all");
   const [weaponTypeFilter, setWeaponTypeFilter] = useState("all");
   const [rarityFilter, setRarityFilter] = useState("all");
   const [selectedGoalIds, setSelectedGoalIds] = useState<string[]>([]);
@@ -127,8 +184,8 @@ export function WeaponsTab({ plannerOutput }: WeaponsTabProps) {
   const [refinementWeaponTypeFilter, setRefinementWeaponTypeFilter] = useState("all");
   const [refinementRarityFilter, setRefinementRarityFilter] = useState("all");
   const [refinementStatusFilter, setRefinementStatusFilter] = useState<WeaponRefinementStatus | "all">("all");
-  const [showCompletedR5, setShowCompletedR5] = useState(false);
-  const [showNotOwned, setShowNotOwned] = useState(false);
+  const [refinementOwnershipFilter, setRefinementOwnershipFilter] = useState<InventoryOwnershipFilter>("owned");
+  const [refinementSortKey, setRefinementSortKey] = useState<RefinementSortKey>("recommended");
   const [refinementSearch, setRefinementSearch] = useState("");
 
   useEffect(() => {
@@ -136,6 +193,7 @@ export function WeaponsTab({ plannerOutput }: WeaponsTabProps) {
     setProgressionTab("owned");
     setSearch("");
     setOwnershipFilter("all");
+    setGoalStatusFilter("all");
     setWeaponTypeFilter("all");
     setRarityFilter("all");
     setSelectedGoalIds([]);
@@ -143,8 +201,8 @@ export function WeaponsTab({ plannerOutput }: WeaponsTabProps) {
     setRefinementWeaponTypeFilter("all");
     setRefinementRarityFilter("all");
     setRefinementStatusFilter("all");
-    setShowCompletedR5(false);
-    setShowNotOwned(false);
+    setRefinementOwnershipFilter("owned");
+    setRefinementSortKey("recommended");
     setRefinementSearch("");
   }, [account?.id]);
 
@@ -208,9 +266,13 @@ export function WeaponsTab({ plannerOutput }: WeaponsTabProps) {
             ownershipFilter === "all" ||
             (ownershipFilter === "planned" && Boolean(goal)) ||
             (ownershipFilter === "not_planned" && !goal);
+          const matchesGoalStatus =
+            goalStatusFilter === "all" ||
+            (goalStatusFilter === "active" && Boolean(goal) && !goal.paused) ||
+            (goalStatusFilter === "paused" && Boolean(goal?.paused));
           const matchesWeaponType = weaponTypeFilter === "all" || weaponRecord?.weaponType === weaponTypeFilter;
           const matchesRarity = rarityFilter === "all" || String(weaponRecord?.rarity ?? "") === rarityFilter;
-          return matchesSearch && matchesScope && matchesWeaponType && matchesRarity;
+          return matchesSearch && matchesScope && matchesGoalStatus && matchesWeaponType && matchesRarity;
         })
         .sort((left, right) => {
           const leftRecord = staticData.weapons[left.weaponKey];
@@ -222,7 +284,7 @@ export function WeaponsTab({ plannerOutput }: WeaponsTabProps) {
             (leftRecord?.displayName ?? left.weaponKey).localeCompare(rightRecord?.displayName ?? right.weaponKey)
           );
         }),
-    [ownedGoalByInstanceId, ownershipFilter, progressableOwnedWeapons, rarityFilter, search, staticData.weapons, weaponTypeFilter],
+    [goalStatusFilter, ownedGoalByInstanceId, ownershipFilter, progressableOwnedWeapons, rarityFilter, search, staticData.weapons, weaponTypeFilter],
   );
 
   const filteredPrefarmWeapons = useMemo(
@@ -236,9 +298,13 @@ export function WeaponsTab({ plannerOutput }: WeaponsTabProps) {
             ownershipFilter === "all" ||
             (ownershipFilter === "planned" && Boolean(goal)) ||
             (ownershipFilter === "not_planned" && !goal);
+          const matchesGoalStatus =
+            goalStatusFilter === "all" ||
+            (goalStatusFilter === "active" && Boolean(goal) && !goal.paused) ||
+            (goalStatusFilter === "paused" && Boolean(goal?.paused));
           const matchesWeaponType = weaponTypeFilter === "all" || weapon.weaponType === weaponTypeFilter;
           const matchesRarity = rarityFilter === "all" || String(weapon.rarity ?? "") === rarityFilter;
-          return matchesSearch && matchesScope && matchesWeaponType && matchesRarity;
+          return matchesSearch && matchesScope && matchesGoalStatus && matchesWeaponType && matchesRarity;
         })
         .sort((left, right) => {
           return (
@@ -247,7 +313,7 @@ export function WeaponsTab({ plannerOutput }: WeaponsTabProps) {
             left.displayName.localeCompare(right.displayName)
           );
         }),
-    [ownershipFilter, prefarmCatalog, prefarmGoalByWeaponKey, rarityFilter, search, weaponTypeFilter],
+    [goalStatusFilter, ownershipFilter, prefarmCatalog, prefarmGoalByWeaponKey, rarityFilter, search, weaponTypeFilter],
   );
 
   const selectedPreset = WEAPON_BULK_PRESETS.find((preset) => preset.key === selectedPresetKey) ?? WEAPON_BULK_PRESETS[0];
@@ -267,17 +333,17 @@ export function WeaponsTab({ plannerOutput }: WeaponsTabProps) {
         staticData,
         ownedWeapons,
         unmatchedWeapons: account?.unmatchedWeapons ?? [],
+        linkedWeaponInstanceIds: Object.values(weaponGoals)
+          .map((goal) => getLinkedWeaponInstanceId(goal))
+          .filter((value): value is string => Boolean(value)),
       }),
-    [account?.unmatchedWeapons, ownedWeapons, staticData],
+    [account?.unmatchedWeapons, ownedWeapons, staticData, weaponGoals],
   );
 
   const filteredRefinementEntries = useMemo(() => {
     return [...refinementAnalysis.entries]
       .filter((entry) => {
-        if (!showCompletedR5 && entry.status === "complete_r5") {
-          return false;
-        }
-        if (!showNotOwned && entry.status === "not_owned") {
+        if (!matchesInventoryOwnershipFilter(entry, refinementOwnershipFilter)) {
           return false;
         }
         if (refinementStatusFilter !== "all" && entry.status !== refinementStatusFilter) {
@@ -298,25 +364,36 @@ export function WeaponsTab({ plannerOutput }: WeaponsTabProps) {
         }
         return true;
       })
-      .sort(refinementSort);
+      .sort((left, right) => refinementSortByKey(left, right, refinementSortKey));
   }, [
     refinementAnalysis.entries,
+    refinementOwnershipFilter,
     refinementRarityFilter,
     refinementSearch,
     refinementStatusFilter,
+    refinementSortKey,
     refinementWeaponTypeFilter,
-    showCompletedR5,
-    showNotOwned,
   ]);
 
-  const refinementSections = useMemo(
+  const refinementRecommendationSections = useMemo(
     () =>
-      REFINEMENT_STATUS_ORDER.map((status) => ({
+      (["can_refine_now", "manual_review", "unsafe_to_refine", "needs_more_copies", "already_r5"] as WeaponRefinementStatus[]).map((status) => ({
         status,
         label: REFINEMENT_STATUS_LABELS[status],
         rows: filteredRefinementEntries.filter((entry) => entry.status === status),
       })).filter((section) => section.rows.length > 0),
     [filteredRefinementEntries],
+  );
+
+  const refinementInventoryEntries = useMemo(
+    () =>
+      filteredRefinementEntries.filter((entry) => {
+        if (entry.totalCopies > 0) {
+          return true;
+        }
+        return refinementOwnershipFilter === "missing";
+      }),
+    [filteredRefinementEntries, refinementOwnershipFilter],
   );
 
   async function applyWeaponPreset() {
@@ -344,23 +421,29 @@ export function WeaponsTab({ plannerOutput }: WeaponsTabProps) {
       <div className="section-header">
         <div>
           <h2>Weapons</h2>
-          <p>Split weapon planning into explicit progression goals and a separate R5 collection tracker so upgrades and duplicate analysis stay easy to reason about.</p>
+          <p className="compact-helper-text">Keep progression editing primary. Inventory and refinement review stay available, but secondary.</p>
         </div>
       </div>
 
       <WorkspaceTabs
+        compact
         label="Weapon workspace modes"
         activeTab={mode}
         onChange={(value) => setMode(value as WeaponsMode)}
         tabs={[
-          { key: "progression", label: "Progression Goals", count: Object.keys(weaponGoals).length },
-          { key: "refinement", label: "R5 Collection Tracker", count: refinementAnalysis.entries.length },
+          { key: "progression", label: "Weapon Goals", count: Object.keys(weaponGoals).length },
+          {
+            key: "refinement",
+            label: "Refinement Review",
+            count: refinementAnalysis.entries.filter((entry) => entry.totalCopies > 0 || entry.status === "not_owned").length,
+          },
         ]}
       />
 
       {mode === "progression" ? (
         <>
           <WorkspaceTabs
+            compact
             label="Weapon progression sections"
             activeTab={progressionTab}
             onChange={(value) => setProgressionTab(value as ProgressionTabKey)}
@@ -371,7 +454,8 @@ export function WeaponsTab({ plannerOutput }: WeaponsTabProps) {
             ]}
           />
 
-          <div className="button-row wrap">
+          <div className="compact-toolbar">
+            <div className="compact-toolbar-secondary">
             <button
               type="button"
               className="button-secondary"
@@ -392,10 +476,10 @@ export function WeaponsTab({ plannerOutput }: WeaponsTabProps) {
               Select visible goals
             </button>
             <button type="button" className="button-ghost" onClick={() => setSelectedGoalIds([])}>
-              Clear selection
+              Clear
             </button>
             <label>
-              Bulk preset
+              Preset
               <select value={selectedPresetKey} onChange={(event) => setSelectedPresetKey(event.target.value as WeaponBulkPresetKey)}>
                 {WEAPON_BULK_PRESETS.map((preset) => (
                   <option key={preset.key} value={preset.key}>
@@ -405,11 +489,30 @@ export function WeaponsTab({ plannerOutput }: WeaponsTabProps) {
               </select>
             </label>
             <button type="button" className="button-primary" disabled={visibleSelectedGoalIds.length === 0} onClick={() => void applyWeaponPreset()}>
-              Apply to {visibleSelectedGoalIds.length} goal(s)
+              Apply to {visibleSelectedGoalIds.length}
             </button>
-          </div>
+            <button
+              type="button"
+              className="button-secondary"
+              disabled={visibleSelectedGoalIds.length === 0}
+              onClick={() => void bulkUpdateWeaponGoals(visibleSelectedGoalIds, { paused: true })}
+            >
+              Pause selected
+            </button>
+            <button
+              type="button"
+              className="button-ghost"
+              disabled={visibleSelectedGoalIds.length === 0}
+              onClick={() => void bulkUpdateWeaponGoals(visibleSelectedGoalIds, { paused: false })}
+            >
+              Resume selected
+            </button>
+              <span className="table-toolbar-summary">
+                {(progressionTab === "owned" ? filteredOwnedWeapons.length : progressionTab === "prefarm" ? filteredPrefarmWeapons.length : staleGoals.length)} visible
+              </span>
+            </div>
 
-          <div className="planner-controls">
+            <div className="compact-toolbar-main">
             <label>
               Search
               <input className="text-input" placeholder="Search weapons" value={search} onChange={(event) => setSearch(event.target.value)} />
@@ -420,6 +523,14 @@ export function WeaponsTab({ plannerOutput }: WeaponsTabProps) {
                 <option value="all">All</option>
                 <option value="planned">Planned</option>
                 <option value="not_planned">Not planned</option>
+              </select>
+            </label>
+            <label>
+              Goal status
+              <select value={goalStatusFilter} onChange={(event) => setGoalStatusFilter(event.target.value as GoalStatusFilter)}>
+                <option value="all">All</option>
+                <option value="active">Active goals</option>
+                <option value="paused">Paused goals</option>
               </select>
             </label>
             <label>
@@ -442,11 +553,12 @@ export function WeaponsTab({ plannerOutput }: WeaponsTabProps) {
                 <option value="5">5-Star</option>
               </select>
             </label>
+            </div>
           </div>
 
           {progressionTab === "owned" ? (
-            <div className="table-wrapper">
-              <table className="data-table">
+            <div className="table-wrapper is-compact">
+              <table className="data-table is-compact">
                 <thead>
                   <tr>
                     <th>Select</th>
@@ -505,8 +617,10 @@ export function WeaponsTab({ plannerOutput }: WeaponsTabProps) {
                           <div className="muted">Instance {weapon.weaponInstanceId}</div>
                         </td>
                         <td>
-                          <div className="badge-row">
+                          <div className="badge-row is-compact">
                             <StatusBadge tone="success">Owned</StatusBadge>
+                            {goal && !goal.enabled ? <StatusBadge tone="warning">Inactive</StatusBadge> : null}
+                            {goal?.enabled && goal.paused ? <StatusBadge tone="muted">Paused</StatusBadge> : null}
                             {goal ? <StatusBadge tone={goal.linkStatus === "stale" ? "warning" : "accent"}>{goal.linkStatus === "stale" ? "Stale link" : "Planned"}</StatusBadge> : null}
                             <StatusBadge tone={planningMode === "manual" ? "warning" : "muted"}>
                               {planningMode === "manual" ? "Manual current" : "Owned instance"}
@@ -522,7 +636,7 @@ export function WeaponsTab({ plannerOutput }: WeaponsTabProps) {
                           </div>
                           <div className="muted">R{weapon.refinement ?? 1}</div>
                         </td>
-                        <td className="goal-grid">
+                        <td className="goal-grid goal-grid-compact">
                           {goal ? (
                             <>
                               <select
@@ -627,7 +741,7 @@ export function WeaponsTab({ plannerOutput }: WeaponsTabProps) {
                           )}
                         </td>
                         <td>
-                          <div className="badge-row">
+                          <div className="badge-row is-compact">
                             {hints.map((hint) => (
                               <StatusBadge key={`${weapon.weaponInstanceId}-${hint}`} tone="muted">
                                 {hint}
@@ -639,9 +753,20 @@ export function WeaponsTab({ plannerOutput }: WeaponsTabProps) {
                         <td>{plan?.estimatedResin ?? 0}</td>
                         <td>
                           {goal ? (
-                            <button type="button" className="button-ghost" onClick={() => void resetWeaponGoal(goalId)}>
-                              Reset
-                            </button>
+                            <div className="button-row wrap">
+                              {goal.enabled ? (
+                                <button
+                                  type="button"
+                                  className="button-ghost"
+                                  onClick={() => void (goal.paused ? resumeWeaponGoal(goalId, goal.weaponKey) : pauseWeaponGoal(goalId, goal.weaponKey))}
+                                >
+                                  {goal.paused ? "Resume" : "Pause"}
+                                </button>
+                              ) : null}
+                              <button type="button" className="button-ghost" onClick={() => void resetWeaponGoal(goalId)}>
+                                Reset
+                              </button>
+                            </div>
                           ) : (
                             <button
                               type="button"
@@ -673,8 +798,8 @@ export function WeaponsTab({ plannerOutput }: WeaponsTabProps) {
           ) : null}
 
           {progressionTab === "prefarm" ? (
-            <div className="table-wrapper">
-              <table className="data-table">
+            <div className="table-wrapper is-compact">
+              <table className="data-table is-compact">
                 <thead>
                   <tr>
                     <th>Select</th>
@@ -731,8 +856,10 @@ export function WeaponsTab({ plannerOutput }: WeaponsTabProps) {
                           <div className="muted">{weapon.key}</div>
                         </td>
                         <td>
-                          <div className="badge-row">
+                          <div className="badge-row is-compact">
                             <StatusBadge tone="muted">Pre-farm</StatusBadge>
+                            {goal && !goal.enabled ? <StatusBadge tone="warning">Inactive</StatusBadge> : null}
+                            {goal?.enabled && goal.paused ? <StatusBadge tone="muted">Paused</StatusBadge> : null}
                             {goal ? <StatusBadge tone="accent">Planned</StatusBadge> : null}
                             <StatusBadge tone={planningMode === "manual" ? "warning" : "muted"}>
                               {planningMode === "manual" ? "Manual current" : "Baseline"}
@@ -747,7 +874,7 @@ export function WeaponsTab({ plannerOutput }: WeaponsTabProps) {
                             Lv {resolvedCurrent.state.currentLevel} / A{resolvedCurrent.state.currentAscension}
                           </div>
                         </td>
-                        <td className="goal-grid">
+                        <td className="goal-grid goal-grid-compact">
                           {goal ? (
                             <>
                               <select
@@ -846,7 +973,7 @@ export function WeaponsTab({ plannerOutput }: WeaponsTabProps) {
                           )}
                         </td>
                         <td>
-                          <div className="badge-row">
+                          <div className="badge-row is-compact">
                             {hints.map((hint) => (
                               <StatusBadge key={`${weapon.key}-${hint}`} tone="muted">
                                 {hint}
@@ -858,9 +985,20 @@ export function WeaponsTab({ plannerOutput }: WeaponsTabProps) {
                         <td>{plan?.estimatedResin ?? 0}</td>
                         <td>
                           {goal ? (
-                            <button type="button" className="button-ghost" onClick={() => void resetWeaponGoal(goalId)}>
-                              Reset
-                            </button>
+                            <div className="button-row wrap">
+                              {goal.enabled ? (
+                                <button
+                                  type="button"
+                                  className="button-ghost"
+                                  onClick={() => void (goal.paused ? resumeWeaponGoal(goalId, goal.weaponKey) : pauseWeaponGoal(goalId, goal.weaponKey))}
+                                >
+                                  {goal.paused ? "Resume" : "Pause"}
+                                </button>
+                              ) : null}
+                              <button type="button" className="button-ghost" onClick={() => void resetWeaponGoal(goalId)}>
+                                Reset
+                              </button>
+                            </div>
                           ) : (
                             <button
                               type="button"
@@ -901,11 +1039,12 @@ export function WeaponsTab({ plannerOutput }: WeaponsTabProps) {
                   <article key={goalId} className="catalog-item">
                     <div>
                       <strong>{displayName}</strong>
-                      <div className="muted">Goal {goalId}</div>
+                      <div className="muted">{getWeaponGoalSubtitle(goal) || "Weapon goal"}</div>
                       <div className="muted">
                         Target Lv {goal.targetLevel ?? "current"} / A{getWeaponGoalTargetAscension(goal) ?? "current"}
                       </div>
                       <div className="muted">The linked owned instance no longer exists in the latest GOOD import.</div>
+                      {goal.paused ? <div className="muted">Paused until you choose to resume it.</div> : null}
                     </div>
                     <div className="button-row wrap">
                       <select
@@ -929,6 +1068,15 @@ export function WeaponsTab({ plannerOutput }: WeaponsTabProps) {
                           </option>
                         ))}
                       </select>
+                      {goal.enabled ? (
+                        <button
+                          type="button"
+                          className="button-ghost"
+                          onClick={() => void (goal.paused ? resumeWeaponGoal(goalId, goal.weaponKey) : pauseWeaponGoal(goalId, goal.weaponKey))}
+                        >
+                          {goal.paused ? "Resume" : "Pause"}
+                        </button>
+                      ) : null}
                       <button type="button" className="button-ghost" onClick={() => void resetWeaponGoal(goalId)}>
                         Remove goal
                       </button>
@@ -944,6 +1092,27 @@ export function WeaponsTab({ plannerOutput }: WeaponsTabProps) {
 
       {mode === "refinement" ? (
         <>
+          <article className="panel">
+            <div className="section-header">
+              <div>
+                <h3>Weapon inventory and refinement</h3>
+                <p>Track owned weapon copies, review safe duplicate use, and work toward one unique R5 copy of each trackable weapon.</p>
+              </div>
+            </div>
+            <div className="badge-row">
+              <StatusBadge tone="accent">
+                Can refine now {refinementAnalysis.entries.filter((entry) => entry.status === "can_refine_now").length}
+              </StatusBadge>
+              <StatusBadge tone="warning">
+                Manual review {refinementAnalysis.entries.filter((entry) => entry.status === "manual_review").length}
+              </StatusBadge>
+              <StatusBadge tone="success">
+                Already R5 {refinementAnalysis.entries.filter((entry) => entry.status === "already_r5").length}
+              </StatusBadge>
+              <StatusBadge tone="muted">Unmatched imports {refinementAnalysis.unmatchedEntries.length}</StatusBadge>
+            </div>
+          </article>
+
           <div className="planner-controls">
             <label>
               Search
@@ -985,17 +1154,255 @@ export function WeaponsTab({ plannerOutput }: WeaponsTabProps) {
                 ))}
               </select>
             </label>
-            <label className="checkbox-row">
-              <input type="checkbox" checked={showCompletedR5} onChange={(event) => setShowCompletedR5(event.target.checked)} />
-              Show completed R5
+            <label>
+              Ownership
+              <select value={refinementOwnershipFilter} onChange={(event) => setRefinementOwnershipFilter(event.target.value as InventoryOwnershipFilter)}>
+                <option value="all">All</option>
+                <option value="owned">Owned</option>
+                <option value="missing">Missing</option>
+                <option value="duplicates_only">Duplicates only</option>
+                <option value="goal_linked">Goal-linked</option>
+              </select>
             </label>
-            <label className="checkbox-row">
-              <input type="checkbox" checked={showNotOwned} onChange={(event) => setShowNotOwned(event.target.checked)} />
-              Show not owned
+            <label>
+              Sort
+              <select value={refinementSortKey} onChange={(event) => setRefinementSortKey(event.target.value as RefinementSortKey)}>
+                <option value="recommended">Recommended order</option>
+                <option value="name">Name</option>
+                <option value="rarity">Rarity</option>
+                <option value="type">Type</option>
+                <option value="highest_refinement">Highest refinement</option>
+                <option value="copies_owned">Copies owned</option>
+              </select>
             </label>
           </div>
 
-          {refinementSections.map((section) => (
+          {refinementRecommendationSections.map((section) => (
+            <article key={section.status} className="panel">
+              <div className="section-header">
+                <div>
+                  <h3>{section.label}</h3>
+                  <p className="muted">{section.rows.length} weapon(s)</p>
+                </div>
+              </div>
+              <div className="catalog-list">
+                {section.rows.map((entry) => (
+                  <article key={entry.weaponKey} className="catalog-item">
+                    <div>
+                      <strong>{entry.displayName}</strong>
+                      <div className="muted">
+                        {entry.weaponType ?? "Unknown type"} · {entry.rarity ? `${entry.rarity}-Star` : "Unknown rarity"} · Copies {entry.totalCopies}
+                      </div>
+                      <div className="muted">{entry.recommendation}</div>
+                      {entry.safetyWarnings.length > 0 ? (
+                        <ul className="warning-list">
+                          {entry.safetyWarnings.map((warning) => (
+                            <li key={warning}>{warning}</li>
+                          ))}
+                        </ul>
+                      ) : null}
+                    </div>
+                    <div className="badge-row">
+                      <StatusBadge tone={refinementStatusTone(entry.status)}>{REFINEMENT_STATUS_LABELS[entry.status]}</StatusBadge>
+                      <StatusBadge tone="muted">Highest R{entry.highestRefinement || "-"}</StatusBadge>
+                      <StatusBadge tone="muted">Safe duplicates {entry.safeConsumableCount}</StatusBadge>
+                      <StatusBadge tone="muted">Possible R{entry.possibleRefinement ?? "-"}</StatusBadge>
+                      <StatusBadge tone="muted">Needs {entry.copiesNeededForUniqueR5}</StatusBadge>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </article>
+          ))}
+
+          {refinementRecommendationSections.length === 0 ? <p className="muted">No refinement recommendations match the current filters.</p> : null}
+
+          <article className="panel">
+            <div className="section-header">
+              <div>
+                <h3>Weapon inventory</h3>
+                <p className="muted">Review copy-by-copy investment, lock/equip state, and which duplicates are safe to use for in-game refinement.</p>
+              </div>
+            </div>
+            <div className="catalog-list">
+              {refinementInventoryEntries.map((entry) => (
+                <article key={entry.weaponKey} className="catalog-item">
+                  <div>
+                    <strong>{entry.displayName}</strong>
+                    <div className="muted">
+                      {entry.weaponType ?? "Unknown type"} · {entry.rarity ? `${entry.rarity}-Star` : "Unknown rarity"} · Copies {entry.totalCopies}
+                    </div>
+                    <div className="muted">
+                      Highest copy: {entry.totalCopies > 0 ? `R${entry.highestRefinement} · Lv. ${entry.highestLevel} / Asc. ${entry.highestAscension}` : "Not owned"}
+                    </div>
+                    <div className="muted">{entry.recommendation}</div>
+                    <details>
+                      <summary>Review copies</summary>
+                      <div className="catalog-list">
+                        {entry.copyEvaluations.length === 0 ? (
+                          <p className="muted">No owned copies yet.</p>
+                        ) : (
+                          entry.copyEvaluations.map((copy, index) => (
+                            <article key={copy.instance.weaponInstanceId} className="catalog-item">
+                              <div>
+                                <strong>{formatCopyLabel(index)}</strong>
+                                <div className="muted">{formatWeaponProgress(copy.instance)}</div>
+                                {copy.instance.location ? <div className="muted">Location: {copy.instance.location}</div> : null}
+                                {copy.safetyWarnings.length > 0 ? (
+                                  <ul className="warning-list">
+                                    {copy.safetyWarnings.map((warning) => (
+                                      <li key={`${copy.instance.weaponInstanceId}-${warning}`}>{warning}</li>
+                                    ))}
+                                  </ul>
+                                ) : (
+                                  <div className="muted">Safe duplicate for in-game refinement.</div>
+                                )}
+                              </div>
+                              <div className="badge-row">
+                                {copy.isBaseCandidate ? <StatusBadge tone="accent">Base candidate</StatusBadge> : null}
+                                {copy.canConsume ? <StatusBadge tone="success">Safe duplicate</StatusBadge> : null}
+                                {copy.goalLinked ? <StatusBadge tone="warning">Goal-linked</StatusBadge> : null}
+                                {(copy.instance.locked ?? copy.instance.lock) ? <StatusBadge tone="muted">Locked</StatusBadge> : null}
+                                {(copy.instance.equippedBy ?? copy.instance.equippedByCharacterId) ? <StatusBadge tone="muted">Equipped</StatusBadge> : null}
+                              </div>
+                            </article>
+                          ))
+                        )}
+                      </div>
+                    </details>
+                  </div>
+                  <div className="badge-row">
+                    <StatusBadge tone={refinementStatusTone(entry.status)}>{REFINEMENT_STATUS_LABELS[entry.status]}</StatusBadge>
+                    <StatusBadge tone="muted">R5 {entry.hasR5 ? "Complete" : "Missing"}</StatusBadge>
+                    <StatusBadge tone="muted">Locked {entry.lockedCount}</StatusBadge>
+                    <StatusBadge tone="muted">Equipped {entry.equippedCount}</StatusBadge>
+                    <StatusBadge tone="muted">Goal-linked {entry.goalLinkedCount}</StatusBadge>
+                  </div>
+                </article>
+              ))}
+              {refinementInventoryEntries.length === 0 ? <p className="muted">No weapon inventory rows match the current filters.</p> : null}
+            </div>
+          </article>
+
+          {refinementAnalysis.unmatchedEntries.length > 0 ? (
+            <article className="panel">
+              <div className="section-header">
+                <div>
+                  <h3>Unmatched imported weapons</h3>
+                  <p className="muted">These GOOD weapon instances could not be matched to the canonical weapon database, so they are excluded from refinement recommendations until the static catalog is patched.</p>
+                </div>
+              </div>
+              <div className="catalog-list">
+                {refinementAnalysis.unmatchedEntries.map((entry) => (
+                  <article key={entry.weaponInstanceId} className="catalog-item">
+                    <div>
+                      <strong>{entry.importName}</strong>
+                      <div className="muted">
+                        Lv {entry.currentLevel} / A{entry.currentAscension} / R{entry.refinement}
+                      </div>
+                      <div className="muted">{entry.recommendation}</div>
+                    </div>
+                    <div className="badge-row">
+                      <StatusBadge tone="warning">Unmatched</StatusBadge>
+                      {(entry.locked ?? entry.lock) ? <StatusBadge tone="muted">Locked</StatusBadge> : null}
+                      {(entry.equippedBy ?? entry.equippedByCharacterId) ? <StatusBadge tone="muted">Equipped</StatusBadge> : null}
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </article>
+          ) : null}
+        </>
+      ) : null}
+
+      {showLegacyRefinementFallback ? (
+        <>
+          <article className="panel">
+            <div className="section-header">
+              <div>
+                <h3>Weapon inventory and refinement</h3>
+                <p>Track owned weapon copies, review safe duplicate use, and work toward one unique R5 copy of each trackable weapon.</p>
+              </div>
+            </div>
+            <div className="badge-row">
+              <StatusBadge tone="accent">
+                Can refine now {refinementAnalysis.entries.filter((entry) => entry.status === "can_refine_now").length}
+              </StatusBadge>
+              <StatusBadge tone="warning">
+                Manual review {refinementAnalysis.entries.filter((entry) => entry.status === "manual_review").length}
+              </StatusBadge>
+              <StatusBadge tone="success">
+                Already R5 {refinementAnalysis.entries.filter((entry) => entry.status === "already_r5").length}
+              </StatusBadge>
+              <StatusBadge tone="muted">Unmatched imports {refinementAnalysis.unmatchedEntries.length}</StatusBadge>
+            </div>
+          </article>
+
+          <div className="planner-controls">
+            <label>
+              Search
+              <input
+                className="text-input"
+                placeholder="Search weapon name"
+                value={refinementSearch}
+                onChange={(event) => setRefinementSearch(event.target.value)}
+              />
+            </label>
+            <label>
+              Weapon Type
+              <select value={refinementWeaponTypeFilter} onChange={(event) => setRefinementWeaponTypeFilter(event.target.value)}>
+                <option value="all">All</option>
+                {["Sword", "Polearm", "Claymore", "Bow", "Catalyst"].map((value) => (
+                  <option key={value} value={value}>
+                    {value}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <label>
+              Rarity
+              <select value={refinementRarityFilter} onChange={(event) => setRefinementRarityFilter(event.target.value)}>
+                <option value="all">All</option>
+                <option value="3">3-Star</option>
+                <option value="4">4-Star</option>
+                <option value="5">5-Star</option>
+              </select>
+            </label>
+            <label>
+              Status
+              <select value={refinementStatusFilter} onChange={(event) => setRefinementStatusFilter(event.target.value as WeaponRefinementStatus | "all")}>
+                <option value="all">All</option>
+                {REFINEMENT_STATUS_ORDER.filter((status) => status !== "unknown_or_untracked").map((status) => (
+                  <option key={status} value={status}>
+                    {REFINEMENT_STATUS_LABELS[status]}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <label>
+              Ownership
+              <select value={refinementOwnershipFilter} onChange={(event) => setRefinementOwnershipFilter(event.target.value as InventoryOwnershipFilter)}>
+                <option value="all">All</option>
+                <option value="owned">Owned</option>
+                <option value="missing">Missing</option>
+                <option value="duplicates_only">Duplicates only</option>
+                <option value="goal_linked">Goal-linked</option>
+              </select>
+            </label>
+            <label>
+              Sort
+              <select value={refinementSortKey} onChange={(event) => setRefinementSortKey(event.target.value as RefinementSortKey)}>
+                <option value="recommended">Recommended order</option>
+                <option value="name">Name</option>
+                <option value="rarity">Rarity</option>
+                <option value="type">Type</option>
+                <option value="highest_refinement">Highest refinement</option>
+                <option value="copies_owned">Copies owned</option>
+              </select>
+            </label>
+          </div>
+
+          {refinementRecommendationSections.map((section) => (
             <article key={section.status} className="panel">
               <div className="section-header">
                 <div>
@@ -1033,7 +1440,7 @@ export function WeaponsTab({ plannerOutput }: WeaponsTabProps) {
             </article>
           ))}
 
-          {refinementSections.length === 0 ? <p className="muted">No refinement tracker rows match the current filters.</p> : null}
+          {refinementRecommendationSections.length === 0 ? <p className="muted">No refinement recommendations match the current filters.</p> : null}
 
           {refinementAnalysis.unmatchedEntries.length > 0 ? (
             <article className="panel">

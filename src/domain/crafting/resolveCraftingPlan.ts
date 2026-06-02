@@ -3,6 +3,8 @@ import type { PlannerSettings } from "../goals/types";
 import type { MaterialNeedRow } from "../planner/types";
 import type { StaticGameData } from "../staticData/types";
 import type {
+  CraftingAffectedGoal,
+  CraftingAffectedRequirementEntry,
   CraftingPlan,
   CraftingPlanReport,
   CraftingRecipe,
@@ -436,6 +438,60 @@ function buildDustOfAzothOption(
   };
 }
 
+function buildAffectedRequirementEntries(row: MaterialNeedRow): CraftingAffectedRequirementEntry[] {
+  const groupedEntries = new Map<string, CraftingAffectedRequirementEntry>();
+
+  for (const usage of row.usedBy) {
+    const entryKey = [usage.goalType, usage.key, usage.requirementLabel ?? "", row.materialKey].join("|");
+    const existing = groupedEntries.get(entryKey);
+    if (existing) {
+      existing.amount += usage.amount;
+      continue;
+    }
+
+    groupedEntries.set(entryKey, {
+      goalType: usage.goalType,
+      goalKey: usage.key,
+      displayName: usage.displayName ?? usage.key,
+      requirementLabel: usage.requirementLabel,
+      materialKey: row.materialKey,
+      materialName: row.displayName,
+      amount: usage.amount,
+    });
+  }
+
+  return [...groupedEntries.values()].sort(
+    (left, right) =>
+      left.displayName.localeCompare(right.displayName) ||
+      (left.requirementLabel ?? "").localeCompare(right.requirementLabel ?? "") ||
+      right.amount - left.amount,
+  );
+}
+
+function buildAffectedGoals(entries: CraftingAffectedRequirementEntry[]): CraftingAffectedGoal[] {
+  const groupedGoals = new Map<string, CraftingAffectedGoal>();
+
+  for (const entry of entries) {
+    const goalKey = `${entry.goalType}|${entry.goalKey}`;
+    const existing = groupedGoals.get(goalKey);
+    if (existing) {
+      existing.amount += entry.amount;
+      continue;
+    }
+
+    groupedGoals.set(goalKey, {
+      goalType: entry.goalType,
+      goalKey: entry.goalKey,
+      displayName: entry.displayName,
+      amount: entry.amount,
+    });
+  }
+
+  return [...groupedGoals.values()].sort(
+    (left, right) => left.displayName.localeCompare(right.displayName) || right.amount - left.amount,
+  );
+}
+
 function buildSuggestionReason(report: CraftingPlanReport): string {
   const crafted = Math.max(Math.min(report.guaranteedCrafting.outputAmount, Math.max(report.requiredAmount - report.ownedAmount, 0)), 0);
   const mora = report.guaranteedCrafting.moraCost;
@@ -514,11 +570,16 @@ export function resolveCraftingPlan(
       }
     }
 
+    const affectedRequirementEntries = buildAffectedRequirementEntries(row);
+    const affectedGoals = buildAffectedGoals(affectedRequirementEntries);
+
     reports.push({
       targetMaterialKey: row.materialKey,
       targetMaterialName: row.displayName,
       requiredAmount: row.needed,
       ownedAmount: directOwned,
+      affectedGoals,
+      affectedRequirementEntries,
       lowerTierAvailable: guaranteedPlan.lowerTierAvailable,
       guaranteedCrafting: {
         canSatisfy: guaranteedPlan.canSatisfy,

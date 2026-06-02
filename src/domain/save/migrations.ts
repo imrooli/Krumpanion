@@ -12,6 +12,7 @@ import { normalizeWeaponGoalRecord } from "../goals/goalState";
 import { isIgnoredCharacterKey } from "../staticData/targetability";
 import type { OverrideDataPack } from "../staticData/types";
 import { APP_VERSION, createDefaultSaveFile, type KrumpanionSaveFile } from "./types";
+import { normalizeChecklistState } from "../checklist/types";
 
 interface LegacySettingsDocument {
   version: 1;
@@ -33,6 +34,7 @@ function normalizeActiveTab(activeTab: unknown): AppSettings["activeTab"] {
     case "goals":
     case "inventory":
     case "database":
+    case "checklist":
     case "settings":
       return activeTab;
     case "home":
@@ -54,6 +56,27 @@ function normalizeActiveTab(activeTab: unknown): AppSettings["activeTab"] {
   }
 }
 
+function normalizePlannerView(plannerView: unknown): AppSettings["plannerView"] {
+  switch (plannerView) {
+    case "today":
+      return "today";
+    case "week":
+      return "week";
+    case "no_resin":
+      return "no_resin";
+    case "recent_changes":
+      return "recent_changes";
+    case "materials":
+      return "no_resin";
+    case "character":
+      return "today";
+    case "source":
+      return "week";
+    default:
+      return "today";
+  }
+}
+
 export interface LegacyPersistenceSnapshot {
   goals?: unknown;
   settings?: unknown;
@@ -72,7 +95,7 @@ function maybeGoals(value: unknown): KrumpanionGoals | null {
     weaponGoals?: unknown;
     artifactGoals?: unknown;
   };
-  if ((candidate.version === 1 || candidate.version === 2 || candidate.version === 3) && candidate.characterGoals && candidate.weaponGoals && candidate.artifactGoals) {
+  if ((candidate.version === 1 || candidate.version === 2 || candidate.version === 3 || candidate.version === 4) && candidate.characterGoals && candidate.weaponGoals && candidate.artifactGoals) {
     return candidate as KrumpanionGoals;
   }
 
@@ -106,6 +129,7 @@ function normalizeGoalState(goals: KrumpanionGoals | null, accountId?: string): 
           ...currentGoal,
           characterKey,
           enabled: isIgnoredCharacterKey(characterKey) ? false : currentGoal.enabled ?? true,
+          paused: currentGoal.paused ?? false,
           priority: currentGoal.priority ?? 3,
           planningMode: currentGoal.planningMode ?? "owned",
           currentOverride: currentGoal.currentOverride
@@ -133,7 +157,7 @@ function normalizeGoalState(goals: KrumpanionGoals | null, accountId?: string): 
 
   return {
     ...structuredClone(DEFAULT_GOAL_STATE),
-    version: 3,
+    version: 4,
     ...(goals
       ? {
           profileName: goals.profileName,
@@ -156,6 +180,7 @@ function maybeSettings(value: unknown): AppSettings | null {
       ...DEFAULT_SETTINGS,
       ...document.settings,
       activeTab: normalizeActiveTab(document.settings.activeTab),
+      plannerView: normalizePlannerView(document.settings.plannerView),
     };
   }
 
@@ -165,6 +190,7 @@ function maybeSettings(value: unknown): AppSettings | null {
       ...DEFAULT_SETTINGS,
       ...(direct as AppSettings),
       activeTab: normalizeActiveTab(direct.activeTab),
+      plannerView: normalizePlannerView(direct.plannerView),
     };
   }
 
@@ -239,6 +265,7 @@ function createAccountFromLegacyState(
       ...blank,
       goals: normalizeGoalState(goals, id),
       plannerSettings: normalizedPlannerSettings,
+      checklist: normalizeChecklistState(undefined, normalizedPlannerSettings.weeklyBossDiscountClaimsUsed, createdAt),
       worldState: buildWorldStateFromPlannerSettings(normalizedPlannerSettings),
     };
   }
@@ -263,6 +290,7 @@ function createAccountFromLegacyState(
     },
     goals: normalizeGoalState(goals, id),
     plannerSettings: normalizedPlannerSettings,
+    checklist: normalizeChecklistState(undefined, normalizedPlannerSettings.weeklyBossDiscountClaimsUsed, account.importMeta.importedAt || createdAt),
     worldState: buildWorldStateFromPlannerSettings(normalizedPlannerSettings),
     importState: {
       lastGoodImportAt: account.importMeta.importedAt,
@@ -315,6 +343,11 @@ function normalizeUserState(user: unknown, createdAt: string): MultiAccountUserS
         plannerSettings,
       } as KrumpanionGoals, accountId),
       plannerSettings,
+      checklist: normalizeChecklistState(
+        current.checklist,
+        plannerSettings.weeklyBossDiscountClaimsUsed,
+        current.updatedAt || createdAt,
+      ),
       worldState: {
         ...buildWorldStateFromPlannerSettings(plannerSettings),
         ...(current.worldState ?? {}),
@@ -326,6 +359,24 @@ function normalizeUserState(user: unknown, createdAt: string): MultiAccountUserS
           createImportedAccountSummary(buildImportedAccountState(current)),
         ...current.importState,
       },
+      importedInventory: {
+        ...(current.importedInventory ?? current.inventory ?? {}),
+      },
+      plannerStatus: {
+        status: current.plannerStatus?.status ?? "idle",
+        lastRecalculatedAt: current.plannerStatus?.lastRecalculatedAt,
+        activeGoalCount: current.plannerStatus?.activeGoalCount ?? 0,
+        materialDeficitCount: current.plannerStatus?.materialDeficitCount ?? 0,
+        totalEstimatedResin: current.plannerStatus?.totalEstimatedResin ?? 0,
+        warningCount: current.plannerStatus?.warningCount ?? 0,
+        lastError: current.plannerStatus?.lastError,
+      },
+      goalProgressTracking: {
+        ...(current.goalProgressTracking ?? {}),
+      },
+      goalMilestones: [...(current.goalMilestones ?? [])],
+      recentChanges: [...(current.recentChanges ?? [])],
+      recentImports: [...(current.recentImports ?? [])],
       metadata: {
         ...current.metadata,
       },
@@ -378,10 +429,15 @@ export function migrateSaveFile(value: unknown): KrumpanionSaveFile | null {
     overridePack?: unknown;
   };
 
-  if (candidate.schemaVersion === 4 && typeof candidate.createdAt === "string" && typeof candidate.updatedAt === "string") {
+  if (
+    (candidate.schemaVersion === 9 || candidate.schemaVersion === 8 || candidate.schemaVersion === 7 || candidate.schemaVersion === 6 || candidate.schemaVersion === 5) &&
+    typeof candidate.createdAt === "string" &&
+    typeof candidate.updatedAt === "string"
+  ) {
     return {
       ...createDefaultSaveFile(new Date(candidate.createdAt)),
       ...candidate,
+      schemaVersion: 9,
       appVersion: candidate.appVersion ?? APP_VERSION,
       user: normalizeUserState(candidate.user, candidate.createdAt),
       settings: {
@@ -393,7 +449,7 @@ export function migrateSaveFile(value: unknown): KrumpanionSaveFile | null {
   }
 
   if (
-    (candidate.schemaVersion === 3 || candidate.schemaVersion === 2 || candidate.schemaVersion === 1) &&
+    (candidate.schemaVersion === 4 || candidate.schemaVersion === 3 || candidate.schemaVersion === 2 || candidate.schemaVersion === 1) &&
     typeof candidate.createdAt === "string" &&
     typeof candidate.updatedAt === "string"
   ) {
@@ -406,7 +462,7 @@ export function migrateSaveFile(value: unknown): KrumpanionSaveFile | null {
 
     return {
       ...createDefaultSaveFile(new Date(candidate.createdAt)),
-      schemaVersion: 4,
+      schemaVersion: 9,
       appVersion: candidate.appVersion ?? APP_VERSION,
       createdAt: candidate.createdAt,
       updatedAt: candidate.updatedAt,

@@ -9,6 +9,8 @@ import type {
   EliteEnemyDropFamily,
   GeneralEnemyDropFamily,
   LeyLineRewardRecord,
+  LeyLineEnemySpawn,
+  LeyLineOutcropLocation,
   LocalSpecialtyMaterial,
   MaterialSourceRecord,
   PlannerDefaults,
@@ -115,6 +117,21 @@ export interface CanonicalWeaponProfile {
   displayName: string;
   weaponType?: CharacterWeaponType | null;
   rarity: 3 | 4 | 5;
+  acquisitionType?:
+    | "standard_wish"
+    | "limited_wish"
+    | "event"
+    | "craftable"
+    | "battle_pass"
+    | "starglitter"
+    | "fishing"
+    | "quest"
+    | "chest"
+    | "unknown";
+  refinementTrackable?: boolean;
+  refinementPolicy?: "normal" | "manual_review" | "preserve_all" | "not_trackable";
+  limited?: boolean;
+  eventExclusive?: boolean;
   weaponAscensionMaterialFamilyKey: string;
   eliteEnemyDropFamilyKey: string;
   commonEnemyDropFamilyKey: string;
@@ -185,6 +202,7 @@ export interface CanonicalDatabase {
   };
   sources: {
     materialSources: Record<string, MaterialSourceRecord[]>;
+    leyLineOutcropLocations: Record<string, Omit<LeyLineOutcropLocation, "derivedDropFamilies" | "unresolvedSpawnWarnings"> & { spawns: LeyLineEnemySpawn[] }>;
     resinRules: ResinRules;
     resinSystem: ResinSystem;
     resinActivityCosts: ResinActivityCosts;

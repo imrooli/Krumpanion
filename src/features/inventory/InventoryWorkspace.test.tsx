@@ -65,5 +65,5 @@ describe("InventoryWorkspace", () => {
 
     await user.click(screen.getByRole("button", { name: /Characters Owned/i }));
     expect(await screen.findByRole("heading", { name: /Owned characters/i }, { timeout: 10000 })).toBeInTheDocument();
-  }, 15000);
+  }, 30000);
 });

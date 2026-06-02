@@ -8,37 +8,54 @@ function createPlannerOutput(): PlannerOutput {
   return {
     totalMissingByMaterial: [
       {
-        materialKey: "GuideToFreedom",
-        displayName: "Guide to Freedom",
+        materialKey: "PhilosophiesOfEquity",
+        displayName: "Philosophies of Equity",
+        progressionNeeded: 35,
+        extraNeeded: 0,
+        needed: 35,
+        owned: 0,
+        missing: 35,
+        rawMissing: 35,
+        craftableQuantity: 2,
+        effectiveOwned: 0,
+        effectiveDeficit: 33,
+        category: "talent_book",
+        familyDisplayName: "Equity",
+        usedBy: [{ goalType: "character", key: "Jahoda", amount: 99, displayName: "Jahoda" }],
+        sources: [],
+      },
+      {
+        materialKey: "PhilosophiesOfVagrancy",
+        displayName: "Philosophies of Vagrancy",
+        progressionNeeded: 12,
+        extraNeeded: 0,
+        needed: 12,
+        owned: 0,
+        missing: 12,
+        rawMissing: 12,
+        craftableQuantity: 1,
+        effectiveOwned: 0,
+        effectiveDeficit: 11,
+        category: "talent_book",
+        familyDisplayName: "Vagrancy",
+        usedBy: [{ goalType: "character", key: "Neuvillette", amount: 99, displayName: "Neuvillette" }],
+        sources: [],
+      },
+      {
+        materialKey: "TeachingsOfJustice",
+        displayName: "Teachings of Justice",
         progressionNeeded: 2,
         extraNeeded: 0,
         needed: 2,
         owned: 0,
         missing: 2,
         rawMissing: 2,
-        craftableQuantity: 2,
+        craftableQuantity: 1,
         effectiveOwned: 0,
-        effectiveDeficit: 0,
-        category: "talent_book",
-        familyDisplayName: "Freedom",
-        usedBy: [{ goalType: "character", key: "Furina", amount: 2 }],
-        sources: [],
-      },
-      {
-        materialKey: "PhilosophiesOfJustice",
-        displayName: "Philosophies of Justice",
-        progressionNeeded: 1,
-        extraNeeded: 0,
-        needed: 1,
-        owned: 0,
-        missing: 1,
-        rawMissing: 1,
-        craftableQuantity: 0,
-        effectiveOwned: 0,
-        effectiveDeficit: 0,
+        effectiveDeficit: 1,
         category: "talent_book",
         familyDisplayName: "Justice",
-        usedBy: [{ goalType: "character", key: "Neuvillette", amount: 1 }],
+        usedBy: [],
         sources: [],
       },
     ],
@@ -50,11 +67,33 @@ function createPlannerOutput(): PlannerOutput {
     today: [],
     bySource: [],
     recommendationSections: [],
-    groupedRecommendations: [],
     plannerGoals: [],
     plannerGoalGroups: [],
     goalResolutions: [],
+    deterministicRequirements: [],
+    inventoryCoverage: [],
+    materialDeficits: [],
     farmingEstimates: [],
+    plannerReport: {
+      summary: {
+        progressionMora: 400,
+        craftingMora: 950,
+        totalMora: 1350,
+        totalEstimatedResin: 0,
+        totalEstimatedNaturalResinDays: 0,
+        totalEstimatedNaturalResinWeeks: 0,
+        weeklyGatedEstimateCount: 0,
+        resinGatedEstimateCount: 0,
+        openWorldEstimateCount: 0,
+        noResinTaskCount: 0,
+        unknownEstimateCount: 0,
+        dailyResinBudget: 180,
+        weeklyResinBudget: 1260,
+        artifactBudget: 0,
+      },
+      sections: [],
+      warnings: [],
+    },
     warnings: [],
     summary: {
       progressionMora: 400,
@@ -64,44 +103,86 @@ function createPlannerOutput(): PlannerOutput {
       totalEstimatedNaturalResinDays: 0,
       totalEstimatedNaturalResinWeeks: 0,
       weeklyGatedEstimateCount: 0,
+      resinGatedEstimateCount: 0,
       openWorldEstimateCount: 0,
-      totalMoraFromGoals: 1350,
+      noResinTaskCount: 0,
+      unknownEstimateCount: 0,
+      dailyResinBudget: 180,
+      weeklyResinBudget: 1260,
+      artifactBudget: 0,
     },
     resinSummary: {
+      progressionMora: 400,
+      craftingMora: 950,
+      totalMora: 1350,
       totalEstimatedResin: 0,
       totalEstimatedNaturalResinDays: 0,
       totalEstimatedNaturalResinWeeks: 0,
       weeklyGatedEstimateCount: 0,
+      resinGatedEstimateCount: 0,
       openWorldEstimateCount: 0,
+      noResinTaskCount: 0,
+      unknownEstimateCount: 0,
+      dailyResinBudget: 180,
+      weeklyResinBudget: 1260,
+      artifactBudget: 0,
     },
     craftingPlan: {
       reports: [
         {
-          targetMaterialKey: "GuideToFreedom",
-          targetMaterialName: "Guide to Freedom",
-          requiredAmount: 2,
+          targetMaterialKey: "PhilosophiesOfEquity",
+          targetMaterialName: "Philosophies of Equity",
+          requiredAmount: 35,
           ownedAmount: 0,
-          lowerTierAvailable: { TeachingsOfFreedom: 6 },
+          affectedGoals: [
+            {
+              goalType: "character",
+              goalKey: "Neuvillette",
+              displayName: "Neuvillette",
+              amount: 35,
+            },
+          ],
+          affectedRequirementEntries: [
+            {
+              goalType: "character",
+              goalKey: "Neuvillette",
+              displayName: "Neuvillette",
+              requirementLabel: "Talent: Skill",
+              materialKey: "PhilosophiesOfEquity",
+              materialName: "Philosophies of Equity",
+              amount: 17,
+            },
+            {
+              goalType: "character",
+              goalKey: "Neuvillette",
+              displayName: "Neuvillette",
+              requirementLabel: "Talent: Burst",
+              materialKey: "PhilosophiesOfEquity",
+              materialName: "Philosophies of Equity",
+              amount: 18,
+            },
+          ],
+          lowerTierAvailable: { GuideToEquity: 6 },
           guaranteedCrafting: {
-            canSatisfy: true,
+            canSatisfy: false,
             outputAmount: 2,
             steps: [
               {
-                outputKey: "GuideToFreedom",
-                outputMaterialKey: "GuideToFreedom",
-                outputName: "Guide to Freedom",
+                outputKey: "PhilosophiesOfEquity",
+                outputMaterialKey: "PhilosophiesOfEquity",
+                outputName: "Philosophies of Equity",
                 outputQuantity: 1,
-                inputKey: "TeachingsOfFreedom",
-                inputName: "Teachings of Freedom",
+                inputKey: "GuideToEquity",
+                inputName: "Guide to Equity",
                 inputQuantity: 3,
                 crafts: 2,
-                moraCostPerCraft: 175,
-                totalMoraCost: 350,
+                moraCostPerCraft: 550,
+                totalMoraCost: 1100,
               },
             ],
-            moraCost: 350,
+            moraCost: 1100,
             leftovers: {},
-            remainingMissing: 0,
+            remainingMissing: 33,
           },
           recommendedPassive: {
             passiveKey: "eula-passive",
@@ -113,34 +194,67 @@ function createPlannerOutput(): PlannerOutput {
             warning: "Crafting talent bonuses are probabilistic and not guaranteed.",
             rationale: "Best expected refund for this recipe.",
           },
+          expectedValue: {
+            passiveKey: "eula-passive",
+            outputEquivalent: 2,
+            expectedInputPerOutput: 2.7273,
+            expectedSavingsPercent: 0.09,
+            expectedAdditionalCoverage: 0,
+          },
           resinImpact: {
             resinBeforeCrafting: 40,
-            resinAfterGuaranteedCrafting: 0,
-            resinAfterExpectedPassive: 0,
-            resinSavedGuaranteed: 40,
-            resinSavedExpected: 40,
+            resinAfterGuaranteedCrafting: 20,
+            resinAfterExpectedPassive: 20,
+            resinSavedGuaranteed: 20,
+            resinSavedExpected: 20,
           },
           warnings: [],
         },
         {
-          targetMaterialKey: "PhilosophiesOfJustice",
-          targetMaterialName: "Philosophies of Justice",
-          requiredAmount: 1,
+          targetMaterialKey: "PhilosophiesOfVagrancy",
+          targetMaterialName: "Philosophies of Vagrancy",
+          requiredAmount: 12,
           ownedAmount: 0,
-          lowerTierAvailable: {},
+          affectedGoals: [
+            {
+              goalType: "character",
+              goalKey: "Jahoda",
+              displayName: "Jahoda",
+              amount: 12,
+            },
+          ],
+          affectedRequirementEntries: [
+            {
+              goalType: "character",
+              goalKey: "Jahoda",
+              displayName: "Jahoda",
+              requirementLabel: "Talent: Skill",
+              materialKey: "PhilosophiesOfVagrancy",
+              materialName: "Philosophies of Vagrancy",
+              amount: 12,
+            },
+          ],
+          lowerTierAvailable: { GuideToVagrancy: 3 },
           guaranteedCrafting: {
             canSatisfy: false,
-            outputAmount: 0,
-            steps: [],
-            moraCost: 0,
-            leftovers: {},
-            remainingMissing: 0,
-          },
-          dustOfAzothOption: {
             outputAmount: 1,
-            dustRequired: 3,
-            conversions: [],
-            remainingMissing: 0,
+            steps: [
+              {
+                outputKey: "PhilosophiesOfVagrancy",
+                outputMaterialKey: "PhilosophiesOfVagrancy",
+                outputName: "Philosophies of Vagrancy",
+                outputQuantity: 1,
+                inputKey: "GuideToVagrancy",
+                inputName: "Guide to Vagrancy",
+                inputQuantity: 3,
+                crafts: 1,
+                moraCostPerCraft: 550,
+                totalMoraCost: 550,
+              },
+            ],
+            moraCost: 550,
+            leftovers: {},
+            remainingMissing: 11,
           },
           resinImpact: {
             resinBeforeCrafting: 20,
@@ -154,16 +268,31 @@ function createPlannerOutput(): PlannerOutput {
         {
           targetMaterialKey: "TeachingsOfJustice",
           targetMaterialName: "Teachings of Justice",
-          requiredAmount: 0,
+          requiredAmount: 2,
           ownedAmount: 0,
+          affectedGoals: [],
+          affectedRequirementEntries: [],
           lowerTierAvailable: {},
           guaranteedCrafting: {
             canSatisfy: false,
-            outputAmount: 0,
-            steps: [],
-            moraCost: 0,
+            outputAmount: 1,
+            steps: [
+              {
+                outputKey: "TeachingsOfJustice",
+                outputMaterialKey: "TeachingsOfJustice",
+                outputName: "Teachings of Justice",
+                outputQuantity: 1,
+                inputKey: "TeachingsOfJusticeShard",
+                inputName: "Teachings of Justice Shard",
+                inputQuantity: 3,
+                crafts: 1,
+                moraCostPerCraft: 175,
+                totalMoraCost: 175,
+              },
+            ],
+            moraCost: 175,
             leftovers: {},
-            remainingMissing: 0,
+            remainingMissing: 1,
           },
           resinImpact: {
             resinBeforeCrafting: null,
@@ -185,18 +314,19 @@ function createPlannerOutput(): PlannerOutput {
       progressionMora: 0,
       totalMora: 950,
     },
+    recommendations: [],
     weaponExpSummary: {
       totalWeaponExpNeeded: 0,
       totalWeaponLevelingMoraNeeded: 0,
-      mysticEquivalentNeeded: 0,
       enhancementOreOwned: 0,
       fineEnhancementOreOwned: 0,
       mysticEnhancementOreOwned: 0,
-      ownedWeaponExpValue: 0,
-      remainingWeaponExpAfterOwnedOre: 0,
       crystalChunkOwned: 0,
       rainbowdropCrystalOwned: 0,
       condessenceCrystalOwned: 0,
+      ownedWeaponExpValue: 0,
+      remainingWeaponExpAfterOwnedOre: 0,
+      mysticEquivalentNeeded: 0,
       mysticForgeableFromCrystals: 0,
       remainingMysticEquivalentUnforgeable: 0,
       dailyMysticForgeCap: 40,
@@ -208,21 +338,31 @@ function createPlannerOutput(): PlannerOutput {
 }
 
 describe("CraftingTab", () => {
-  it("shows only useful doable crafting actions and surfaces crafter guidance", async () => {
+  it("uses report-owned affected goals instead of a broad totalMissingByMaterial lookup", async () => {
     const user = userEvent.setup();
     render(<CraftingTab plannerOutput={createPlannerOutput()} />);
 
     expect(screen.getByRole("heading", { name: /Doable crafting actions/i })).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: "Freedom" })).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: "Justice" })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /^Guide to Freedom/i })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /^Philosophies of Justice/i })).toBeInTheDocument();
-    expect(screen.queryByText("Teachings of Justice")).not.toBeInTheDocument();
-    expect(screen.getByText(/Use Eula/i)).toBeInTheDocument();
+    expect(screen.getByText("Neuvillette - 35 needed")).toBeInTheDocument();
+    expect(screen.getByText("Neuvillette - Talent: Skill - 17")).toBeInTheDocument();
+    expect(screen.getByText("Neuvillette - Talent: Burst - 18")).toBeInTheDocument();
+    expect(screen.queryByText("Jahoda - 99 needed")).not.toBeInTheDocument();
+    expect(screen.queryByText("character: Jahoda")).not.toBeInTheDocument();
+    expect(screen.getByText("33")).toBeInTheDocument();
 
-    await user.click(screen.getByRole("button", { name: /^Philosophies of Justice/i }));
+    await user.click(screen.getByRole("button", { name: /^Philosophies of Vagrancy/i }));
 
-    expect(screen.getByText("No special crafter")).toBeInTheDocument();
-    expect(screen.getByText(/Convert up to 1 same-tier gems using 3 Dust of Azoth/i)).toBeInTheDocument();
+    expect(screen.getByText("Jahoda - 12 needed")).toBeInTheDocument();
+    expect(screen.getByText("Jahoda - Talent: Skill - 12")).toBeInTheDocument();
+    expect(screen.queryByText("Neuvillette - 35 needed")).not.toBeInTheDocument();
+  });
+
+  it("shows a fallback when no linked goal details are available", async () => {
+    const user = userEvent.setup();
+    render(<CraftingTab plannerOutput={createPlannerOutput()} />);
+
+    await user.click(screen.getAllByRole("button", { name: /^Teachings of Justice/i })[0]);
+
+    expect(screen.getByText("No linked goal details available.")).toBeInTheDocument();
   });
 });

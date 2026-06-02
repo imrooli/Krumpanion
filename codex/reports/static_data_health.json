@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-14T17:26:06.173Z",
+  "generatedAt": "2026-05-21T23:08:08.766Z",
   "summary": {
-    "totalIssues": 499,
+    "totalIssues": 694,
     "errorCount": 0,
-    "warningCount": 491,
-    "infoCount": 8,
+    "warningCount": 687,
+    "infoCount": 7,
     "characterCount": 124,
     "characterProfileCount": 124,
     "completeCharacterProfileCount": 119,
@@ -13,15 +13,15 @@
     "weaponProfileCount": 230,
     "completeWeaponProfileCount": 224,
     "incompleteWeaponProfileCount": 0,
-    "materialCount": 1744,
-    "materialRecordCount": 472,
-    "materialSourceCount": 480,
+    "materialCount": 1747,
+    "materialRecordCount": 475,
+    "materialSourceCount": 483,
     "missingMaterialSourceCount": 0,
     "craftingRecipeCount": 223,
     "invalidCraftingRecipeCount": 0,
     "unresolvedCharacterReferenceCount": 0,
     "unresolvedWeaponReferenceCount": 20,
-    "unresolvedCharacterMaterialReferenceCount": 1,
+    "unresolvedCharacterMaterialReferenceCount": 0,
     "generatedBetaMaterialCount": 0,
     "generatedManualReviewWeaponProfileCount": 0,
     "generatedCharacterSourceVersion": "maintenance-only",
@@ -3002,6 +3002,15 @@
       "suggestedFix": "Review the canonical character profile status and promote it only when the record is planner-safe."
     },
     {
+      "id": "character_profile:profile_status_lags_resolution:Nicole",
+      "severity": "warning",
+      "category": "character_profile",
+      "entityKey": "Nicole",
+      "entityName": "Nicole",
+      "message": "Character profile Nicole looks complete but is still marked beta.",
+      "suggestedFix": "Review the canonical character profile status and promote it only when the record is planner-safe."
+    },
+    {
       "id": "character_profile:profile_status_lags_resolution:Prune",
       "severity": "warning",
       "category": "character_profile",
@@ -3009,16 +3018,6 @@
       "entityName": "Prune",
       "message": "Character profile Prune looks complete but is still marked beta.",
       "suggestedFix": "Review the canonical character profile status and promote it only when the record is planner-safe."
-    },
-    {
-      "id": "character_profile:unresolved_character_material_reference:Nicole:weeklyBossMaterial",
-      "severity": "warning",
-      "category": "character_profile",
-      "entityKey": "Nicole:weeklyBossMaterial",
-      "entityName": "Nicole",
-      "message": "Nicole still has an unresolved weeklyBossMaterial reference (???).",
-      "suggestedFix": "Canonical weeklyBossMaterialKey is unresolved.",
-      "relatedKeys": []
     },
     {
       "id": "family:unresolved_weapon_reference:ApprenticesNotes",
@@ -3419,6 +3418,447 @@
       "relatedKeys": [
         "BasaltPillar"
       ]
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.liyue.bishui_plain_northwest_to_stone_gate.6",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.liyue.bishui_plain_northwest_to_stone_gate.6",
+      "message": "leyline.liyue.bishui_plain_northwest_to_stone_gate.6: Unresolved drop family mapping for Electro Cicin."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.liyue.bishui_plain_to_minlin_north.5",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.liyue.bishui_plain_to_minlin_north.5",
+      "message": "leyline.liyue.bishui_plain_to_minlin_north.5: Unresolved drop family mapping for Electro Cicin."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.liyue.dunyu_ruins_to_luhua_pool.1",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.liyue.dunyu_ruins_to_luhua_pool.1",
+      "message": "leyline.liyue.dunyu_ruins_to_luhua_pool.1: Unresolved drop family mapping for Electro Cicin."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.liyue.dunyu_ruins_to_luhua_pool.1#2",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.liyue.dunyu_ruins_to_luhua_pool.1",
+      "message": "leyline.liyue.dunyu_ruins_to_luhua_pool.1: Unresolved drop family mapping for Hydro Cicin."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.liyue.sal_terrae_to_qiongji_estuary.2",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.liyue.sal_terrae_to_qiongji_estuary.2",
+      "message": "leyline.liyue.sal_terrae_to_qiongji_estuary.2: Unresolved drop family mapping for Hydro Cicin."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.liyue.yaoguang_shoal_to_guili_plains.1",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.liyue.yaoguang_shoal_to_guili_plains.1",
+      "message": "leyline.liyue.yaoguang_shoal_to_guili_plains.1: Unresolved drop family mapping for Hydro Cicin."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.mondstadt.windwail_highland_south.5",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.mondstadt.windwail_highland_south.5",
+      "message": "leyline.mondstadt.windwail_highland_south.5: Unresolved drop family mapping for Eye of the Storm."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.ardravi_valley.1",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.ardravi_valley.1",
+      "message": "leyline.sumeru.ardravi_valley.1: Unresolved drop family mapping for Stretchy Anemo Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.ardravi_valley.1#2",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.ardravi_valley.1",
+      "message": "leyline.sumeru.ardravi_valley.1: Unresolved drop family mapping for Whirling Cryo Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.ardravi_valley.1#3",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.ardravi_valley.1",
+      "message": "leyline.sumeru.ardravi_valley.1: Unresolved drop family mapping for Winged Cryoshroom (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.ardravi_valley.1#4",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.ardravi_valley.1",
+      "message": "leyline.sumeru.ardravi_valley.1: Unresolved drop family mapping for Grounded Hydroshroom (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.ardravi_valley.2",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.ardravi_valley.2",
+      "message": "leyline.sumeru.ardravi_valley.2: Unresolved drop family mapping for Stretchy Geo Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.ardravi_valley.2#2",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.ardravi_valley.2",
+      "message": "leyline.sumeru.ardravi_valley.2: Unresolved drop family mapping for Stretchy Pyro Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.ardravi_valley.2#3",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.ardravi_valley.2",
+      "message": "leyline.sumeru.ardravi_valley.2: Unresolved drop family mapping for Winged Dendroshroom (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.ardravi_valley.2#4",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.ardravi_valley.2",
+      "message": "leyline.sumeru.ardravi_valley.2: Unresolved drop family mapping for Winged Cryoshroom (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.ardravi_valley.3",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.ardravi_valley.3",
+      "message": "leyline.sumeru.ardravi_valley.3: Unresolved drop family mapping for Floating Hydro Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.ardravi_valley.3#2",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.ardravi_valley.3",
+      "message": "leyline.sumeru.ardravi_valley.3: Unresolved drop family mapping for Whirling Electro Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.ardravi_valley.3#3",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.ardravi_valley.3",
+      "message": "leyline.sumeru.ardravi_valley.3: Unresolved drop family mapping for Winged Dendroshroom (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.ardravi_valley.3#4",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.ardravi_valley.3",
+      "message": "leyline.sumeru.ardravi_valley.3: Unresolved drop family mapping for Winged Cryoshroom (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.ashavan_realm.1",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.ashavan_realm.1",
+      "message": "leyline.sumeru.ashavan_realm.1: Unresolved drop family mapping for Floating Hydro Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.ashavan_realm.1#2",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.ashavan_realm.1",
+      "message": "leyline.sumeru.ashavan_realm.1: Unresolved drop family mapping for Stretchy Anemo Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.ashavan_realm.1#3",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.ashavan_realm.1",
+      "message": "leyline.sumeru.ashavan_realm.1: Unresolved drop family mapping for Winged Cryoshroom (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.ashavan_realm.2",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.ashavan_realm.2",
+      "message": "leyline.sumeru.ashavan_realm.2: Unresolved drop family mapping for Floating Dendro Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.ashavan_realm.2#2",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.ashavan_realm.2",
+      "message": "leyline.sumeru.ashavan_realm.2: Unresolved drop family mapping for Floating Hydro Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.ashavan_realm.2#3",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.ashavan_realm.2",
+      "message": "leyline.sumeru.ashavan_realm.2: Unresolved drop family mapping for Winged Dendroshroom (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.desert_of_hadramaveth_northeast.3",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.desert_of_hadramaveth_northeast.3",
+      "message": "leyline.sumeru.desert_of_hadramaveth_northeast.3: Unresolved drop family mapping for Grounded Geoshroom (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.desert_of_hadramaveth_northeast.3#2",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.desert_of_hadramaveth_northeast.3",
+      "message": "leyline.sumeru.desert_of_hadramaveth_northeast.3: Unresolved drop family mapping for Whirling Pyro Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.desert_of_hadramaveth_northeast.3#3",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.desert_of_hadramaveth_northeast.3",
+      "message": "leyline.sumeru.desert_of_hadramaveth_northeast.3: Unresolved drop family mapping for Grounded Hydroshroom (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.desert_of_hadramaveth_northeast.3#4",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.desert_of_hadramaveth_northeast.3",
+      "message": "leyline.sumeru.desert_of_hadramaveth_northeast.3: Unresolved drop family mapping for Floating Dendro Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.desert_of_hadramaveth_northeast.3#5",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.desert_of_hadramaveth_northeast.3",
+      "message": "leyline.sumeru.desert_of_hadramaveth_northeast.3: Unresolved drop family mapping for Floating Anemo Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.desert_of_hadramaveth_southwest.1",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.desert_of_hadramaveth_southwest.1",
+      "message": "leyline.sumeru.desert_of_hadramaveth_southwest.1: Unresolved drop family mapping for Grounded Geoshroom (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.desert_of_hadramaveth_southwest.1#2",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.desert_of_hadramaveth_southwest.1",
+      "message": "leyline.sumeru.desert_of_hadramaveth_southwest.1: Unresolved drop family mapping for Stretchy Geo Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.desert_of_hadramaveth_southwest.1#3",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.desert_of_hadramaveth_southwest.1",
+      "message": "leyline.sumeru.desert_of_hadramaveth_southwest.1: Unresolved drop family mapping for Winged Dendroshroom (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.desert_of_hadramaveth_southwest.1#4",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.desert_of_hadramaveth_southwest.1",
+      "message": "leyline.sumeru.desert_of_hadramaveth_southwest.1: Unresolved drop family mapping for Floating Dendro Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.desert_of_hadramaveth_southwest.4",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.desert_of_hadramaveth_southwest.4",
+      "message": "leyline.sumeru.desert_of_hadramaveth_southwest.4: Unresolved drop family mapping for Flying Serpent."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.desert_of_hadramaveth_southwest.4#2",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.desert_of_hadramaveth_southwest.4",
+      "message": "leyline.sumeru.desert_of_hadramaveth_southwest.4: Unresolved drop family mapping for Flying Serpent."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.hypostyle_desert.2",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.hypostyle_desert.2",
+      "message": "leyline.sumeru.hypostyle_desert.2: Unresolved drop family mapping for Stretchy Geo Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.hypostyle_desert.2#2",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.hypostyle_desert.2",
+      "message": "leyline.sumeru.hypostyle_desert.2: Unresolved drop family mapping for Stretchy Pyro Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.hypostyle_desert.2#3",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.hypostyle_desert.2",
+      "message": "leyline.sumeru.hypostyle_desert.2: Unresolved drop family mapping for Grounded Geoshroom (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.hypostyle_desert.2#4",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.hypostyle_desert.2",
+      "message": "leyline.sumeru.hypostyle_desert.2: Unresolved drop family mapping for Whirling Pyro Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.land_of_lower_setekh.2",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.land_of_lower_setekh.2",
+      "message": "leyline.sumeru.land_of_lower_setekh.2: Unresolved drop family mapping for Stretchy Electro Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.land_of_lower_setekh.2#2",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.land_of_lower_setekh.2",
+      "message": "leyline.sumeru.land_of_lower_setekh.2: Unresolved drop family mapping for Stretchy Geo Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.land_of_lower_setekh.2#3",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.land_of_lower_setekh.2",
+      "message": "leyline.sumeru.land_of_lower_setekh.2: Unresolved drop family mapping for Whirling Electro Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.land_of_lower_setekh.2#4",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.land_of_lower_setekh.2",
+      "message": "leyline.sumeru.land_of_lower_setekh.2: Unresolved drop family mapping for Stretchy Anemo Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.land_of_lower_setekh.2#5",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.land_of_lower_setekh.2",
+      "message": "leyline.sumeru.land_of_lower_setekh.2: Unresolved drop family mapping for Grounded Geoshroom (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.land_of_lower_setekh.4",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.land_of_lower_setekh.4",
+      "message": "leyline.sumeru.land_of_lower_setekh.4: Unresolved drop family mapping for Stretchy Geo Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.land_of_lower_setekh.4#2",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.land_of_lower_setekh.4",
+      "message": "leyline.sumeru.land_of_lower_setekh.4: Unresolved drop family mapping for Stretchy Pyro Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.land_of_lower_setekh.4#3",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.land_of_lower_setekh.4",
+      "message": "leyline.sumeru.land_of_lower_setekh.4: Unresolved drop family mapping for Whirling Pyro Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.land_of_lower_setekh.4#4",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.land_of_lower_setekh.4",
+      "message": "leyline.sumeru.land_of_lower_setekh.4: Unresolved drop family mapping for Grounded Geoshroom (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.land_of_lower_setekh.4#5",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.land_of_lower_setekh.4",
+      "message": "leyline.sumeru.land_of_lower_setekh.4: Unresolved drop family mapping for Stretchy Geo Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.land_of_upper_setekh.1",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.land_of_upper_setekh.1",
+      "message": "leyline.sumeru.land_of_upper_setekh.1: Unresolved drop family mapping for Whirling Electro Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.land_of_upper_setekh.1#2",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.land_of_upper_setekh.1",
+      "message": "leyline.sumeru.land_of_upper_setekh.1: Unresolved drop family mapping for Whirling Pyro Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.land_of_upper_setekh.1#3",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.land_of_upper_setekh.1",
+      "message": "leyline.sumeru.land_of_upper_setekh.1: Unresolved drop family mapping for Grounded Geoshroom (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.land_of_upper_setekh.1#4",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.land_of_upper_setekh.1",
+      "message": "leyline.sumeru.land_of_upper_setekh.1: Unresolved drop family mapping for Whirling Pyro Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.lokapala_jungle.1",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.lokapala_jungle.1",
+      "message": "leyline.sumeru.lokapala_jungle.1: Unresolved drop family mapping for Whirling Cryo Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.lokapala_jungle.1#2",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.lokapala_jungle.1",
+      "message": "leyline.sumeru.lokapala_jungle.1: Unresolved drop family mapping for Winged Cryoshroom (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.vissudha_field.2",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.vissudha_field.2",
+      "message": "leyline.sumeru.vissudha_field.2: Unresolved drop family mapping for Floating Dendro Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.vissudha_field.2#2",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.vissudha_field.2",
+      "message": "leyline.sumeru.vissudha_field.2: Unresolved drop family mapping for Winged Cryoshroom (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.vissudha_field.2#3",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.vissudha_field.2",
+      "message": "leyline.sumeru.vissudha_field.2: Unresolved drop family mapping for Grounded Hydroshroom (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.vissudha_field.2#4",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.vissudha_field.2",
+      "message": "leyline.sumeru.vissudha_field.2: Unresolved drop family mapping for Winged Dendroshroom (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.vissudha_field.4",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.vissudha_field.4",
+      "message": "leyline.sumeru.vissudha_field.4: Unresolved drop family mapping for Stretchy Pyro Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.vissudha_field.4#2",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.vissudha_field.4",
+      "message": "leyline.sumeru.vissudha_field.4: Unresolved drop family mapping for Stretchy Pyro Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+    },
+    {
+      "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.vissudha_field.4#3",
+      "severity": "warning",
+      "category": "ley_line_outcrop",
+      "entityKey": "leyline.sumeru.vissudha_field.4",
+      "message": "leyline.sumeru.vissudha_field.4: Unresolved drop family mapping for Whirling Electro Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
     },
     {
       "id": "repository_hygiene:canonical_database_character:Aino",
@@ -4975,11 +5415,942 @@
       "message": "Verified character is missing rarity metadata."
     },
     {
+      "id": "repository_hygiene:canonical_database_source:leyline.liyue.bishui_plain_northwest_to_stone_gate.6",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.liyue.bishui_plain_northwest_to_stone_gate.6",
+      "message": "Ley Line spawn 0 for Electro Cicin has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.liyue.bishui_plain_to_minlin_north.5",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.liyue.bishui_plain_to_minlin_north.5",
+      "message": "Ley Line spawn 0 for Electro Cicin has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.liyue.dunyu_ruins_to_luhua_pool.1",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.liyue.dunyu_ruins_to_luhua_pool.1",
+      "message": "Ley Line spawn 0 for Electro Cicin has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.liyue.dunyu_ruins_to_luhua_pool.1#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.liyue.dunyu_ruins_to_luhua_pool.1",
+      "message": "Ley Line spawn 1 for Hydro Cicin has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.liyue.sal_terrae_to_qiongji_estuary.2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.liyue.sal_terrae_to_qiongji_estuary.2",
+      "message": "Ley Line spawn 1 for Hydro Cicin has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.liyue.yaoguang_shoal_to_guili_plains.1",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.liyue.yaoguang_shoal_to_guili_plains.1",
+      "message": "Ley Line spawn 3 for Hydro Cicin has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.mondstadt.windwail_highland_south.5",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.mondstadt.windwail_highland_south.5",
+      "message": "Ley Line spawn 0 for Eye of the Storm has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.ardravi_valley.1",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.ardravi_valley.1",
+      "message": "Ley Line spawn 0 for Stretchy Anemo Fungus has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.ardravi_valley.1#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.ardravi_valley.1",
+      "message": "Ley Line spawn 1 for Whirling Cryo Fungus has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.ardravi_valley.1#3",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.ardravi_valley.1",
+      "message": "Ley Line spawn 2 for Winged Cryoshroom has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.ardravi_valley.1#4",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.ardravi_valley.1",
+      "message": "Ley Line spawn 3 for Grounded Hydroshroom has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.ardravi_valley.2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.ardravi_valley.2",
+      "message": "Ley Line spawn 0 for Stretchy Geo Fungus has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.ardravi_valley.2#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.ardravi_valley.2",
+      "message": "Ley Line spawn 1 for Stretchy Pyro Fungus has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.ardravi_valley.2#3",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.ardravi_valley.2",
+      "message": "Ley Line spawn 2 for Winged Dendroshroom has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.ardravi_valley.2#4",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.ardravi_valley.2",
+      "message": "Ley Line spawn 3 for Winged Cryoshroom has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.ardravi_valley.3",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.ardravi_valley.3",
+      "message": "Ley Line spawn 0 for Floating Hydro Fungus has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.ardravi_valley.3#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.ardravi_valley.3",
+      "message": "Ley Line spawn 1 for Whirling Electro Fungus has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.ardravi_valley.3#3",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.ardravi_valley.3",
+      "message": "Ley Line spawn 2 for Winged Dendroshroom has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.ardravi_valley.3#4",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.ardravi_valley.3",
+      "message": "Ley Line spawn 3 for Winged Cryoshroom has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.ashavan_realm.1",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.ashavan_realm.1",
+      "message": "Ley Line spawn 0 for Floating Hydro Fungus has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.ashavan_realm.1#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.ashavan_realm.1",
+      "message": "Ley Line spawn 1 for Stretchy Anemo Fungus has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.ashavan_realm.1#3",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.ashavan_realm.1",
+      "message": "Ley Line spawn 2 for Winged Cryoshroom has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.ashavan_realm.2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.ashavan_realm.2",
+      "message": "Ley Line spawn 0 for Floating Dendro Fungus has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.ashavan_realm.2#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.ashavan_realm.2",
+      "message": "Ley Line spawn 1 for Floating Hydro Fungus has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.ashavan_realm.2#3",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.ashavan_realm.2",
+      "message": "Ley Line spawn 2 for Winged Dendroshroom has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.desert_of_hadramaveth_northeast.3",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.desert_of_hadramaveth_northeast.3",
+      "message": "Ley Line spawn 0 for Grounded Geoshroom has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.desert_of_hadramaveth_northeast.3#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.desert_of_hadramaveth_northeast.3",
+      "message": "Ley Line spawn 1 for Whirling Pyro Fungus has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.desert_of_hadramaveth_northeast.3#3",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.desert_of_hadramaveth_northeast.3",
+      "message": "Ley Line spawn 2 for Grounded Hydroshroom has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.desert_of_hadramaveth_northeast.3#4",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.desert_of_hadramaveth_northeast.3",
+      "message": "Ley Line spawn 3 for Floating Dendro Fungus has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.desert_of_hadramaveth_northeast.3#5",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.desert_of_hadramaveth_northeast.3",
+      "message": "Ley Line spawn 4 for Floating Anemo Fungus has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.desert_of_hadramaveth_southwest.1",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.desert_of_hadramaveth_southwest.1",
+      "message": "Ley Line spawn 0 for Grounded Geoshroom has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.desert_of_hadramaveth_southwest.1#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.desert_of_hadramaveth_southwest.1",
+      "message": "Ley Line spawn 1 for Stretchy Geo Fungus has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.desert_of_hadramaveth_southwest.1#3",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.desert_of_hadramaveth_southwest.1",
+      "message": "Ley Line spawn 2 for Winged Dendroshroom has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.desert_of_hadramaveth_southwest.1#4",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.desert_of_hadramaveth_southwest.1",
+      "message": "Ley Line spawn 3 for Floating Dendro Fungus has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.desert_of_hadramaveth_southwest.4",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.desert_of_hadramaveth_southwest.4",
+      "message": "Ley Line spawn 0 for Flying Serpent has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.desert_of_hadramaveth_southwest.4#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.desert_of_hadramaveth_southwest.4",
+      "message": "Ley Line spawn 2 for Flying Serpent has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.hypostyle_desert.2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.hypostyle_desert.2",
+      "message": "Ley Line spawn 0 for Stretchy Geo Fungus has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.hypostyle_desert.2#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.hypostyle_desert.2",
+      "message": "Ley Line spawn 1 for Stretchy Pyro Fungus has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.hypostyle_desert.2#3",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.hypostyle_desert.2",
+      "message": "Ley Line spawn 2 for Grounded Geoshroom has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.hypostyle_desert.2#4",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.hypostyle_desert.2",
+      "message": "Ley Line spawn 3 for Whirling Pyro Fungus has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.land_of_lower_setekh.2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.land_of_lower_setekh.2",
+      "message": "Ley Line spawn 0 for Stretchy Electro Fungus has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.land_of_lower_setekh.2#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.land_of_lower_setekh.2",
+      "message": "Ley Line spawn 1 for Stretchy Geo Fungus has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.land_of_lower_setekh.2#3",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.land_of_lower_setekh.2",
+      "message": "Ley Line spawn 2 for Whirling Electro Fungus has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.land_of_lower_setekh.2#4",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.land_of_lower_setekh.2",
+      "message": "Ley Line spawn 3 for Stretchy Anemo Fungus has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.land_of_lower_setekh.2#5",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.land_of_lower_setekh.2",
+      "message": "Ley Line spawn 4 for Grounded Geoshroom has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.land_of_lower_setekh.4",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.land_of_lower_setekh.4",
+      "message": "Ley Line spawn 0 for Stretchy Geo Fungus has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.land_of_lower_setekh.4#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.land_of_lower_setekh.4",
+      "message": "Ley Line spawn 1 for Stretchy Pyro Fungus has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.land_of_lower_setekh.4#3",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.land_of_lower_setekh.4",
+      "message": "Ley Line spawn 2 for Whirling Pyro Fungus has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.land_of_lower_setekh.4#4",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.land_of_lower_setekh.4",
+      "message": "Ley Line spawn 3 for Grounded Geoshroom has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.land_of_lower_setekh.4#5",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.land_of_lower_setekh.4",
+      "message": "Ley Line spawn 4 for Stretchy Geo Fungus has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.land_of_upper_setekh.1",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.land_of_upper_setekh.1",
+      "message": "Ley Line spawn 0 for Whirling Electro Fungus has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.land_of_upper_setekh.1#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.land_of_upper_setekh.1",
+      "message": "Ley Line spawn 1 for Whirling Pyro Fungus has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.land_of_upper_setekh.1#3",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.land_of_upper_setekh.1",
+      "message": "Ley Line spawn 2 for Grounded Geoshroom has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.land_of_upper_setekh.1#4",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.land_of_upper_setekh.1",
+      "message": "Ley Line spawn 3 for Whirling Pyro Fungus has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.lokapala_jungle.1",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.lokapala_jungle.1",
+      "message": "Ley Line spawn 1 for Whirling Cryo Fungus has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.lokapala_jungle.1#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.lokapala_jungle.1",
+      "message": "Ley Line spawn 2 for Winged Cryoshroom has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.vissudha_field.2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.vissudha_field.2",
+      "message": "Ley Line spawn 0 for Floating Dendro Fungus has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.vissudha_field.2#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.vissudha_field.2",
+      "message": "Ley Line spawn 1 for Winged Cryoshroom has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.vissudha_field.2#3",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.vissudha_field.2",
+      "message": "Ley Line spawn 2 for Grounded Hydroshroom has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.vissudha_field.2#4",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.vissudha_field.2",
+      "message": "Ley Line spawn 3 for Winged Dendroshroom has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.vissudha_field.4",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.vissudha_field.4",
+      "message": "Ley Line spawn 0 for Stretchy Pyro Fungus has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.vissudha_field.4#2",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.vissudha_field.4",
+      "message": "Ley Line spawn 2 for Stretchy Pyro Fungus has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_source:leyline.sumeru.vissudha_field.4#3",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "leyline.sumeru.vissudha_field.4",
+      "message": "Ley Line spawn 3 for Whirling Electro Fungus has no resolved dropFamilyKey."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:Absolution",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Absolution",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:AmosBow",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "AmosBow",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:AquaSimulacra",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "AquaSimulacra",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:AquilaFavonia",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "AquilaFavonia",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:AstralVulturesCrimsonPlumage",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "AstralVulturesCrimsonPlumage",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:AthameArtis",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "AthameArtis",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:AThousandBlazingSuns",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "AThousandBlazingSuns",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:AThousandFloatingDreams",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "AThousandFloatingDreams",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:Azurelight",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Azurelight",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:BeaconOfTheReedSea",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "BeaconOfTheReedSea",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:BloodsoakedRuins",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "BloodsoakedRuins",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:CalamityQueller",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "CalamityQueller",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:CashflowSupervision",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "CashflowSupervision",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:CranesEchoingCall",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "CranesEchoingCall",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:CrimsonMoonsSemblance",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "CrimsonMoonsSemblance",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:DisasterAndRemorse",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "DisasterAndRemorse",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:ElegyForTheEnd",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "ElegyForTheEnd",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:EngulfingLightning",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "EngulfingLightning",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:EverlastingMoonglow",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "EverlastingMoonglow",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:FangOfTheMountainKing",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "FangOfTheMountainKing",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:FracturedHalo",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "FracturedHalo",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:FreedomSworn",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "FreedomSworn",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:GestOfTheMightyWolf",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "GestOfTheMightyWolf",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:GoldenFrostboundOath",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "GoldenFrostboundOath",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:HaranGeppakuFutsu",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "HaranGeppakuFutsu",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:HuntersPath",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "HuntersPath",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:JadefallsSplendor",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "JadefallsSplendor",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:KagurasVerity",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "KagurasVerity",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:KeyOfKhajNisut",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "KeyOfKhajNisut",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:LightbearingMoonshard",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "LightbearingMoonshard",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:LightOfFoliarIncision",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "LightOfFoliarIncision",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:LostPrayerToTheSacredWinds",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "LostPrayerToTheSacredWinds",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:LumidouceElegy",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "LumidouceElegy",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:MemoryOfDust",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "MemoryOfDust",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:MistsplitterReforged",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "MistsplitterReforged",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:NightweaversLookingGlass",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "NightweaversLookingGlass",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:NocturnesCurtainCall",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "NocturnesCurtainCall",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:PeakPatrolSong",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "PeakPatrolSong",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:PolarStar",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "PolarStar",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:PrimordialJadeCutter",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "PrimordialJadeCutter",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:PrimordialJadeWingedSpear",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "PrimordialJadeWingedSpear",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
       "id": "repository_hygiene:canonical_database_weapon:Prized_Isshin_Blade",
       "severity": "warning",
       "category": "repository_hygiene",
       "entityKey": "Prized Isshin Blade",
       "message": "Duplicate weapon display name used by PrizedIsshinBlade_i_n11419, PrizedIsshinBlade_i_n11420, PrizedIsshinBlade_i_n11421."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:RedhornStonethresher",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "RedhornStonethresher",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:ReliquaryOfTruth",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "ReliquaryOfTruth",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:SevenEdictsOfDustAndLight",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "SevenEdictsOfDustAndLight",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:SilvershowerHeartstrings",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "SilvershowerHeartstrings",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:SkywardAtlas",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "SkywardAtlas",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:SkywardBlade",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "SkywardBlade",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:SkywardHarp",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "SkywardHarp",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:SkywardPride",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "SkywardPride",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:SkywardSpine",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "SkywardSpine",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:SongOfBrokenPines",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "SongOfBrokenPines",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:SplendorOfTranquilWaters",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "SplendorOfTranquilWaters",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:StaffOfHoma",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "StaffOfHoma",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:StaffOfTheScarletSands",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "StaffOfTheScarletSands",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:StarcallersWatch",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "StarcallersWatch",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:SummitShaper",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "SummitShaper",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:SunnyMorningSleepIn",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "SunnyMorningSleepIn",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:SurfsUp",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "SurfsUp",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:SymphonistOfScents",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "SymphonistOfScents",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:TheDaybreakChronicles",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "TheDaybreakChronicles",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:TheFirstGreatMagic",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "TheFirstGreatMagic",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:TheUnforged",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "TheUnforged",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:ThunderingPulse",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "ThunderingPulse",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:TomeOfTheEternalFlow",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "TomeOfTheEternalFlow",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:TulaytullahsRemembrance",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "TulaytullahsRemembrance",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:UrakuMisugiri",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "UrakuMisugiri",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:Verdict",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "Verdict",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:VividNotions",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "VividNotions",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:VortexVanquisher",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "VortexVanquisher",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
+    },
+    {
+      "id": "repository_hygiene:canonical_database_weapon:WolfsGravestone",
+      "severity": "warning",
+      "category": "repository_hygiene",
+      "entityKey": "WolfsGravestone",
+      "message": "5-star weapons should default to manual review when no explicit refinementPolicy is present."
     },
     {
       "id": "repository_hygiene:dist_present:dist",
@@ -5020,15 +6391,6 @@
       "entityKey": "Manekina",
       "entityName": "Manekina",
       "message": "Character Manekina is intentionally ignored for progression planning."
-    },
-    {
-      "id": "character_profile:missing_weekly_boss_material:Nicole",
-      "severity": "info",
-      "category": "character_profile",
-      "entityKey": "Nicole",
-      "entityName": "Nicole",
-      "message": "Character profile Nicole does not resolve a valid weekly boss material.",
-      "relatedKeys": []
     },
     {
       "id": "generated_data:legacy_generated_bundle_counts:src/data/runtime/generated",

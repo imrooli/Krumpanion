@@ -54,4 +54,45 @@ describe("importGoodAccountFromText", () => {
     expect(result.account?.unmatchedWeapons?.[0]?.importName).toBe("Not A Real Weapon");
     expect(result.account?.warnings.some((warning) => warning.type === "unknown_weapon" && warning.key === "Not A Real Weapon")).toBe(true);
   });
+
+  it("keeps duplicate weapon copies as separate inventory instances with refinement and lock state", () => {
+    const staticData = loadStaticData();
+    const payload = {
+      format: "GOOD",
+      version: 3,
+      characters: [],
+      weapons: [
+        {
+          id: "fav-base",
+          key: "Favonius Sword",
+          level: 80,
+          ascension: 5,
+          refinement: 2,
+          location: "Furina",
+          lock: true,
+        },
+        {
+          id: "fav-dupe",
+          key: "Favonius Sword",
+          level: 1,
+          ascension: 0,
+          refinement: 1,
+          location: "",
+          lock: false,
+        },
+      ],
+      artifacts: [],
+      materials: {},
+    };
+
+    const result = importGoodAccountFromText(JSON.stringify(payload), staticData);
+
+    expect(result.errors).toEqual([]);
+    expect(result.account?.weapons).toHaveLength(2);
+    expect(result.account?.weapons[0]?.weaponKey).toBe("FavoniusSword");
+    expect(result.account?.weapons[0]?.importSourceId).toBeTruthy();
+    expect(result.account?.weapons[0]?.locked).toBe(true);
+    expect(result.account?.weapons[0]?.equippedByCharacterId).toBe("Furina");
+    expect(result.account?.weapons[1]?.weaponInstanceId).not.toBe(result.account?.weapons[0]?.weaponInstanceId);
+  });
 });

@@ -21,6 +21,7 @@ export interface CharacterGoal {
     };
   };
   enabled: boolean;
+  paused?: boolean;
   notes?: string;
 }
 
@@ -41,6 +42,7 @@ export interface WeaponGoal {
     ascension?: number;
   };
   enabled: boolean;
+  paused?: boolean;
   notes?: string;
   // Deprecated compatibility fields for migration and older UI call sites.
   id?: string;
@@ -95,7 +97,7 @@ export interface PlannerSettings {
 }
 
 export interface KrumpanionGoalState {
-  version: 3;
+  version: 4;
   profileName?: string;
   characterGoals: Record<string, CharacterGoal>;
   weaponGoals: Record<string, WeaponGoal>;
@@ -113,6 +115,7 @@ export interface AppSettings {
 
 export type AppSection =
   | "dashboard"
+  | "checklist"
   | "planner"
   | "crafting"
   | "goals"
@@ -120,10 +123,10 @@ export type AppSection =
   | "database"
   | "settings";
 
-export type PlannerView = "today" | "week" | "materials" | "character" | "source";
+export type PlannerView = "today" | "week" | "no_resin" | "recent_changes";
 
 export const DEFAULT_GOAL_STATE: KrumpanionGoalState = {
-  version: 3,
+  version: 4,
   characterGoals: {},
   weaponGoals: {},
   artifactGoals: [],

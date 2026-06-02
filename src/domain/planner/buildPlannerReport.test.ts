@@ -6,6 +6,7 @@ import type { PlannerInput, PlannerRecommendation } from "./types";
 import type { FarmingEstimateDetail } from "./buildFarmingEstimates";
 import {
   buildCraftingPlannerRecommendations,
+  getGoalDisplayName,
   buildMaterialRecommendations,
   buildWeaponExpRecommendation,
   sortRecommendations,
@@ -204,6 +205,28 @@ describe("buildPlannerReport helpers", () => {
 
     expect(rows[0]?.relatedGoalLabels).toEqual(["Cool Steel weapon goal"]);
     expect(rows[0]?.relatedGoalLabels).not.toContain("prefarm:CoolSteel");
+  });
+
+  it("uses readable character display names for artifact goals", () => {
+    const input = buildPlannerInput({
+      goals: {
+        ...DEFAULT_GOALS,
+        characterGoals: {},
+        weaponGoals: {},
+        artifactGoals: [
+          {
+            id: "artifact-raiden",
+            characterKey: "RaidenShogun",
+            domainKey: "MomijiDyedCourt",
+            targetSetKeys: ["EmblemOfSeveredFate"],
+            priority: 3,
+            enabled: true,
+          },
+        ],
+      },
+    });
+
+    expect(getGoalDisplayName("artifact-raiden", input)).toBe("Raiden Shogun artifact goal");
   });
 
   it("reports weekly boss resin using the exact discounted/full-cost schedule instead of an averaged per-run cost", () => {

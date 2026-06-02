@@ -1676,7 +1676,7 @@
     "commonEnemyDropFamilyKey": "fatui_oprichniki_materials",
     "talentBookFamilyKey": "Elysium",
     "normalBossMaterialKey": "RemnantOfTheDreadwing",
-    "weeklyBossMaterialKey": "",
+    "weeklyBossMaterialKey": "CounterfeitResin",
     "releaseState": "beta",
     "status": "beta",
     "plannerEligible": false,
@@ -1882,6 +1882,28 @@
     "notes": [],
     "aliases": [
       "Rosaria"
+    ],
+    "sourceRefs": [
+      "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+    ]
+  },
+  "Sandrone": {
+    "characterKey": "Sandrone",
+    "displayName": "Sandrone",
+    "element": "Cryo",
+    "elementGemFamilyKey": "Cryo",
+    "localSpecialtyKey": "SubdetectionUnit",
+    "commonEnemyDropFamilyKey": "landcruiser_materials",
+    "talentBookFamilyKey": "Vagrancy",
+    "normalBossMaterialKey": "PlumeOfTheFallenWatcher",
+    "weeklyBossMaterialKey": "MadmansRestraint",
+    "releaseState": "beta",
+    "status": "beta",
+    "plannerEligible": false,
+    "region": "Nod-Krai",
+    "notes": [],
+    "aliases": [
+      "Sandrone"
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"

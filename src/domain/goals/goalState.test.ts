@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { resolveCharacterGoalCurrentState, resolveWeaponGoalCurrentState, validateGoalStateAgainstStaticData } from "./goalState";
+import { normalizeCharacterGoalRecord, normalizeWeaponGoalRecord, resolveCharacterGoalCurrentState, resolveWeaponGoalCurrentState, validateGoalStateAgainstStaticData } from "./goalState";
 import { loadStaticData } from "../staticData/loadStaticData";
 import type { AccountOwnershipState } from "../account/types";
 import type { KrumpanionGoalState } from "./types";
@@ -168,7 +168,7 @@ describe("goalState", () => {
   it("disables ignored or non-trackable persisted goals instead of crashing", () => {
     const staticData = loadStaticData();
     const goals: KrumpanionGoalState = {
-      version: 3,
+      version: 4,
       characterGoals: {
         Manekin: {
           characterKey: "Manekin",
@@ -193,5 +193,49 @@ describe("goalState", () => {
     expect(result.goals.characterGoals.Manekin.enabled).toBe(false);
     expect(result.goals.weaponGoals.dull_blade_prefarm.enabled).toBe(false);
     expect(result.warnings.length).toBeGreaterThan(0);
+  });
+
+  it("defaults paused goals to false and preserves paused state during normalization and validation", () => {
+    const staticData = loadStaticData();
+    const normalizedCharacter = normalizeCharacterGoalRecord(
+      "Furina",
+      {
+        characterKey: "Furina",
+        enabled: true,
+        priority: 3,
+      },
+      true,
+      staticData,
+    );
+    const normalizedWeapon = normalizeWeaponGoalRecord("prefarm:CoolSteel", {
+      id: "prefarm:CoolSteel",
+      weaponKey: "CoolSteel",
+      enabled: true,
+      priority: 3,
+      planningMode: "prefarm",
+    });
+
+    expect(normalizedCharacter.paused).toBe(false);
+    expect(normalizedWeapon.paused).toBe(false);
+
+    const result = validateGoalStateAgainstStaticData(
+      {
+        version: 4,
+        characterGoals: {
+          Manekin: {
+            characterKey: "Manekin",
+            enabled: true,
+            paused: true,
+            priority: 3,
+          },
+        },
+        weaponGoals: {},
+        artifactGoals: [],
+      },
+      staticData,
+    );
+
+    expect(result.goals.characterGoals.Manekin.enabled).toBe(false);
+    expect(result.goals.characterGoals.Manekin.paused).toBe(true);
   });
 });

@@ -35,6 +35,7 @@ export function GoalsWorkspace({ plannerOutput }: GoalsWorkspaceProps) {
       <PageShell
         header={
           <PageHeader
+            compact
             eyebrow="Goals"
             title="Set planning goals"
             description="Goals are account-scoped. Import a GOOD snapshot first so character and weapon goal editing starts from the right ownership state."
@@ -60,13 +61,15 @@ export function GoalsWorkspace({ plannerOutput }: GoalsWorkspaceProps) {
     <PageShell
       header={
         <PageHeader
+          compact
           eyebrow="Goals"
           title="Track character, weapon, and artifact plans"
-          description="Edit account-scoped progression goals first, then jump into Planner to see exact deficits, crafting impact, and farming effort."
+          description="Edit account-scoped progression goals, then jump into Planner for exact deficits and farming effort."
         />
       }
       metrics={
         <MetricStrip
+          compact
           items={[
             { label: "Active account", value: account.name, tone: "accent" },
             { label: "Total goals", value: String(totalGoals), tone: totalGoals ? "accent" : "default" },
@@ -77,7 +80,9 @@ export function GoalsWorkspace({ plannerOutput }: GoalsWorkspaceProps) {
         />
       }
     >
+      <div className="goals-page">
       <WorkspaceTabs
+        compact
         label="Goal sections"
         activeTab={activeTab}
         onChange={setActiveTabState}
@@ -90,17 +95,18 @@ export function GoalsWorkspace({ plannerOutput }: GoalsWorkspaceProps) {
       />
 
       {activeTab === "overview" ? (
-        <div className="workspace-card-grid goals-overview-grid">
+        <div className="workspace-card-grid goals-overview-grid is-compact">
           <SectionCard
             title="Goal coverage"
-            description="Use this workspace to edit what each account is trying to build. Owned targets use imported progression when available, and unowned targets can be planned as prefarm goals."
+            description="Edit what this account is actively building."
+            compact
             actions={
-              <button type="button" className="button-secondary" onClick={() => void setActiveTab("planner")}>
+              <button type="button" className="button-ghost" onClick={() => void setActiveTab("planner")}>
                 Open Planner
               </button>
             }
           >
-            <ul className="ranked-list">
+            <ul className="ranked-list compact-list">
               <li>
                 <strong>Characters with goal rows</strong>
                 <span>{goalCounts.characters}</span>
@@ -116,8 +122,8 @@ export function GoalsWorkspace({ plannerOutput }: GoalsWorkspaceProps) {
             </ul>
           </SectionCard>
 
-          <SectionCard title="Planning snapshot" description="A quick read on how much your current goals will cost before you drill into the planner details.">
-            <ul className="ranked-list">
+          <SectionCard title="Planning snapshot" description="Quick read before drilling into Planner." compact>
+            <ul className="ranked-list compact-list">
               <li>
                 <strong>Estimated resin</strong>
                 <span>{plannerOutput.summary.totalEstimatedResin}</span>
@@ -138,6 +144,7 @@ export function GoalsWorkspace({ plannerOutput }: GoalsWorkspaceProps) {
       {activeTab === "characters" ? <CharactersTab key={`characters-${account.id}`} plannerOutput={plannerOutput} /> : null}
       {activeTab === "weapons" ? <WeaponsTab key={`weapons-${account.id}`} plannerOutput={plannerOutput} /> : null}
       {activeTab === "artifacts" ? <ArtifactGoalsTab key={`artifacts-${account.id}`} plannerOutput={plannerOutput} /> : null}
+      </div>
     </PageShell>
   );
 }

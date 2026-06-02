@@ -113,11 +113,30 @@ export interface CraftingResinImpact {
   resinSavedExpected: number | null;
 }
 
+export interface CraftingAffectedGoal {
+  goalType: "character" | "talent" | "weapon" | "artifact";
+  goalKey: string;
+  displayName: string;
+  amount: number;
+}
+
+export interface CraftingAffectedRequirementEntry {
+  goalType: "character" | "talent" | "weapon" | "artifact";
+  goalKey: string;
+  displayName: string;
+  requirementLabel?: string;
+  materialKey: string;
+  materialName: string;
+  amount: number;
+}
+
 export interface CraftingPlanReport {
   targetMaterialKey: string;
   targetMaterialName: string;
   requiredAmount: number;
   ownedAmount: number;
+  affectedGoals: CraftingAffectedGoal[];
+  affectedRequirementEntries: CraftingAffectedRequirementEntry[];
   lowerTierAvailable: Record<string, number>;
   guaranteedCrafting: {
     canSatisfy: boolean;

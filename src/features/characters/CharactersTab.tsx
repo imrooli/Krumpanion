@@ -24,6 +24,7 @@ const TALENT_OPTIONS = [undefined, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 type OwnershipFilter = "all" | "owned" | "unowned" | "planned" | "not_planned";
 type ProfileFilter = "all" | "missing_profile" | "manual_review";
+type GoalStatusFilter = "all" | "active" | "paused";
 
 const CHARACTER_BULK_PRESETS: Array<{ key: string; label: string; updates: Partial<CharacterGoal> }> = [
   { key: "lvl-80-a5", label: "Level 80 / Ascension 5", updates: { targetLevel: 80, targetAscension: 5 } },
@@ -35,6 +36,22 @@ const CHARACTER_BULK_PRESETS: Array<{ key: string; label: string; updates: Parti
   { key: "talent-199", label: "Talents 1/9/9", updates: { talents: { auto: 1, skill: 9, burst: 9 } } },
   { key: "talent-101010", label: "Talents 10/10/10", updates: { talents: { auto: 10, skill: 10, burst: 10 } } },
 ];
+
+function renderCompactBadges(labels: string[], tone: "muted" | "warning" | "accent" | "success" = "muted") {
+  const visibleLabels = labels.slice(0, 2);
+  const remainingCount = Math.max(0, labels.length - visibleLabels.length);
+
+  return (
+    <div className="badge-row is-compact">
+      {visibleLabels.map((label) => (
+        <StatusBadge key={`${tone}-${label}`} compact tone={tone}>
+          {label}
+        </StatusBadge>
+      ))}
+      {remainingCount > 0 ? <span className="badge-overflow">+{remainingCount}</span> : null}
+    </div>
+  );
+}
 
 function buildSourceCategoryHints(goal: CharacterGoal | undefined, staticData: ReturnType<typeof useAppStore.getState>["staticData"], characterKey: string): string[] {
   if (isTravelerSharedKey(characterKey)) {
@@ -83,6 +100,8 @@ export function CharactersTab({ plannerOutput }: CharactersTabProps) {
   const staticData = useAppStore((state) => state.staticData);
   const goals = useAppStore((state) => selectActiveGoals(state).characterGoals);
   const updateCharacterGoal = useAppStore((state) => state.updateCharacterGoal);
+  const pauseCharacterGoal = useAppStore((state) => state.pauseCharacterGoal);
+  const resumeCharacterGoal = useAppStore((state) => state.resumeCharacterGoal);
   const resetCharacterGoal = useAppStore((state) => state.resetCharacterGoal);
   const bulkUpdateCharacterGoals = useAppStore((state) => state.bulkUpdateCharacterGoals);
   const [search, setSearch] = useState("");
@@ -91,6 +110,7 @@ export function CharactersTab({ plannerOutput }: CharactersTabProps) {
   const [weaponTypeFilter, setWeaponTypeFilter] = useState("all");
   const [rarityFilter, setRarityFilter] = useState("all");
   const [profileFilter, setProfileFilter] = useState<ProfileFilter>("all");
+  const [goalStatusFilter, setGoalStatusFilter] = useState<GoalStatusFilter>("all");
   const [selectedCharacterKeys, setSelectedCharacterKeys] = useState<string[]>([]);
   const [selectedPresetKey, setSelectedPresetKey] = useState(CHARACTER_BULK_PRESETS[0]?.key ?? "");
 
@@ -132,14 +152,18 @@ export function CharactersTab({ plannerOutput }: CharactersTabProps) {
         profileFilter === "all" ||
         (profileFilter === "missing_profile" && !profile) ||
         (profileFilter === "manual_review" && profile?.status === "needs_manual_review");
+      const matchesGoalStatus =
+        goalStatusFilter === "all" ||
+        (goalStatusFilter === "active" && Boolean(goal) && !goal.paused) ||
+        (goalStatusFilter === "paused" && Boolean(goal?.paused));
 
-      return matchesSearch && matchesOwnership && matchesElement && matchesWeaponType && matchesRarity && matchesProfile;
+      return matchesSearch && matchesOwnership && matchesElement && matchesWeaponType && matchesRarity && matchesProfile && matchesGoalStatus;
     }).sort((left, right) => {
       const leftTraveler = isTravelerGoalKey(left.key) ? 0 : 1;
       const rightTraveler = isTravelerGoalKey(right.key) ? 0 : 1;
       return leftTraveler - rightTraveler || (getTravelerGoalLabel(left.key) ?? left.displayName).localeCompare(getTravelerGoalLabel(right.key) ?? right.displayName);
     });
-  }, [elementFilter, goals, isCharacterOwned, ownershipFilter, profileFilter, rarityFilter, search, staticData, weaponTypeFilter]);
+  }, [elementFilter, goalStatusFilter, goals, isCharacterOwned, ownershipFilter, profileFilter, rarityFilter, search, staticData, weaponTypeFilter]);
 
   const selectedVisibleCharacterKeys = selectedCharacterKeys.filter((characterKey) =>
     rows.some((row) => row.key === characterKey && Boolean(goals[characterKey])),
@@ -161,12 +185,12 @@ export function CharactersTab({ plannerOutput }: CharactersTabProps) {
       <div className="section-header">
         <div>
           <h2>Characters</h2>
-          <p>Plan owned or unowned characters. Prefarm goals use a level 1, ascension 0, talent 1-1-1 baseline until you provide imported or manual current state.</p>
-          <p className="muted">Traveler is grouped as one shared level goal plus separate elemental talent goals.</p>
+          <p className="compact-helper-text">Owned, prefarm, and manual goal editing in one compact table. Traveler keeps one shared level row plus separate elemental talent rows.</p>
         </div>
       </div>
 
-      <div className="button-row wrap">
+      <div className="compact-toolbar">
+        <div className="compact-toolbar-secondary">
         <button
           type="button"
           className="button-secondary"
@@ -177,10 +201,10 @@ export function CharactersTab({ plannerOutput }: CharactersTabProps) {
           Select visible goals
         </button>
         <button type="button" className="button-ghost" onClick={() => setSelectedCharacterKeys([])}>
-          Clear selection
+          Clear
         </button>
         <label>
-          Character preset
+          Preset
           <select value={selectedPresetKey} onChange={(event) => setSelectedPresetKey(event.target.value)}>
             {CHARACTER_BULK_PRESETS.map((preset) => (
               <option key={preset.key} value={preset.key}>
@@ -195,11 +219,28 @@ export function CharactersTab({ plannerOutput }: CharactersTabProps) {
           disabled={selectedVisibleCharacterKeys.length === 0}
           onClick={() => void applyCharacterPreset()}
         >
-          Apply to {selectedVisibleCharacterKeys.length} goal(s)
+          Apply to {selectedVisibleCharacterKeys.length}
         </button>
-      </div>
+        <button
+          type="button"
+          className="button-secondary"
+          disabled={selectedVisibleCharacterKeys.length === 0}
+          onClick={() => void bulkUpdateCharacterGoals(selectedVisibleCharacterKeys, { paused: true })}
+        >
+          Pause selected
+        </button>
+        <button
+          type="button"
+          className="button-ghost"
+          disabled={selectedVisibleCharacterKeys.length === 0}
+          onClick={() => void bulkUpdateCharacterGoals(selectedVisibleCharacterKeys, { paused: false })}
+        >
+          Resume selected
+        </button>
+          <span className="table-toolbar-summary">{rows.length} visible</span>
+        </div>
 
-      <div className="planner-controls">
+        <div className="compact-toolbar-main">
         <label>
           Search
           <input className="text-input" placeholder="Search characters" value={search} onChange={(event) => setSearch(event.target.value)} />
@@ -252,10 +293,19 @@ export function CharactersTab({ plannerOutput }: CharactersTabProps) {
             <option value="manual_review">Manual review</option>
           </select>
         </label>
+        <label>
+          Goal status
+          <select value={goalStatusFilter} onChange={(event) => setGoalStatusFilter(event.target.value as GoalStatusFilter)}>
+            <option value="all">All</option>
+            <option value="active">Active goals</option>
+            <option value="paused">Paused goals</option>
+          </select>
+        </label>
+        </div>
       </div>
 
-      <div className="table-wrapper">
-        <table className="data-table">
+      <div className="table-wrapper is-compact">
+        <table className="data-table is-compact">
           <thead>
             <tr>
               <th>Select</th>
@@ -317,14 +367,25 @@ export function CharactersTab({ plannerOutput }: CharactersTabProps) {
                     <div className="muted">{character.key}</div>
                   </td>
                   <td>
-                    <div className="badge-row">
-                      <StatusBadge tone={owned ? "success" : "muted"}>{owned ? "Owned" : "Unowned"}</StatusBadge>
-                      <StatusBadge tone={planningMode === "prefarm" ? "accent" : planningMode === "manual" ? "warning" : "muted"}>
-                        {planningMode === "prefarm" ? "Pre-farm" : planningMode === "manual" ? "Manual" : "Owned"}
-                      </StatusBadge>
-                      {!profile ? <StatusBadge tone="warning">Missing Profile</StatusBadge> : null}
-                      {profile?.status === "needs_manual_review" ? <StatusBadge tone="warning">Manual Review</StatusBadge> : null}
-                    </div>
+                    {renderCompactBadges(
+                      [
+                        ...(goal && !goal.enabled ? ["Inactive"] : []),
+                        ...(goal?.enabled && goal.paused ? ["Paused"] : []),
+                        owned ? "Owned" : "Unowned",
+                        planningMode === "prefarm" ? "Pre-farm" : planningMode === "manual" ? "Manual" : "Owned",
+                        ...(!profile ? ["Missing Profile"] : []),
+                        ...(profile?.status === "needs_manual_review" ? ["Manual Review"] : []),
+                      ],
+                      !goal?.enabled || !profile || profile?.status === "needs_manual_review" || planningMode === "manual"
+                        ? "warning"
+                        : goal?.paused
+                          ? "muted"
+                        : planningMode === "prefarm"
+                          ? "accent"
+                          : owned
+                            ? "success"
+                            : "muted",
+                    )}
                   </td>
                   <td>
                     <div>{getGoalCurrentStateLabel(resolvedCurrent.source)}</div>
@@ -335,7 +396,7 @@ export function CharactersTab({ plannerOutput }: CharactersTabProps) {
                       Talents {resolvedCurrent.state.currentTalents.normal}/{resolvedCurrent.state.currentTalents.skill}/{resolvedCurrent.state.currentTalents.burst}
                     </div>
                   </td>
-                  <td className="goal-grid">
+                  <td className="goal-grid goal-grid-compact">
                     <select
                       aria-label={`Planning mode for ${displayName}`}
                       value={planningMode}
@@ -351,7 +412,7 @@ export function CharactersTab({ plannerOutput }: CharactersTabProps) {
                       <option value="manual">Manual</option>
                     </select>
                     {!isTravelerElement ? (
-                      <>
+                      <div className="goal-grid-row two-up">
                         <select
                           value={goal?.targetLevel ?? ""}
                           onChange={(event) =>
@@ -382,10 +443,11 @@ export function CharactersTab({ plannerOutput }: CharactersTabProps) {
                             </option>
                           ))}
                         </select>
-                      </>
+                      </div>
                     ) : null}
                     {!isTravelerShared ? (
-                      (["auto", "skill", "burst"] as const).map((talentKey) => (
+                      <div className="goal-grid-row three-up">
+                      {(["auto", "skill", "burst"] as const).map((talentKey) => (
                         <select
                           key={talentKey}
                           value={goal?.talents?.[talentKey] ?? ""}
@@ -404,7 +466,8 @@ export function CharactersTab({ plannerOutput }: CharactersTabProps) {
                             </option>
                           ))}
                         </select>
-                      ))
+                      ))}
+                      </div>
                     ) : (
                       <div className="muted">Traveler talents are tracked in the elemental rows below.</div>
                     )}
@@ -412,7 +475,7 @@ export function CharactersTab({ plannerOutput }: CharactersTabProps) {
                       <>
                         <div className="muted">Manual current state</div>
                         {!isTravelerElement ? (
-                          <>
+                          <div className="goal-grid-row two-up">
                             <select
                               value={goal?.currentOverride?.level ?? ""}
                               onChange={(event) =>
@@ -447,12 +510,12 @@ export function CharactersTab({ plannerOutput }: CharactersTabProps) {
                                 </option>
                               ))}
                             </select>
-                          </>
+                          </div>
                         ) : (
                           <div className="muted">Shared Traveler level still comes from the shared Traveler row or GOOD import.</div>
                         )}
                         {!isTravelerShared
-                          ? (["auto", "skill", "burst"] as const).map((talentKey) => (
+                          ? <div className="goal-grid-row three-up">{(["auto", "skill", "burst"] as const).map((talentKey) => (
                               <select
                                 key={`current-talent-${talentKey}`}
                                 value={goal?.currentOverride?.talents?.[talentKey] ?? ""}
@@ -473,27 +536,30 @@ export function CharactersTab({ plannerOutput }: CharactersTabProps) {
                                   </option>
                                 ))}
                               </select>
-                            ))
+                            ))}</div>
                           : null}
                       </>
                     ) : null}
                   </td>
-                  <td>
-                    <div className="badge-row">
-                      {sourceHints.map((hint) => (
-                        <StatusBadge key={`${character.key}-${hint}`} tone="muted">
-                          {hint}
-                        </StatusBadge>
-                      ))}
-                    </div>
-                  </td>
+                  <td>{renderCompactBadges(sourceHints)}</td>
                   <td>{plan?.missingSummary.slice(0, 3).map((row) => `${row.displayName}: ${row.effectiveDeficit}`).join(", ") || "No shortages"}</td>
                   <td>{plan?.estimatedResin ?? 0}</td>
                   <td>
                     {goal ? (
-                      <button type="button" className="button-ghost" onClick={() => void resetCharacterGoal(character.key)}>
-                        Reset
-                      </button>
+                      <div className="button-row wrap">
+                        {goal.enabled ? (
+                          <button
+                            type="button"
+                            className="button-ghost"
+                            onClick={() => void (goal.paused ? resumeCharacterGoal(character.key) : pauseCharacterGoal(character.key))}
+                          >
+                            {goal.paused ? "Resume" : "Pause"}
+                          </button>
+                        ) : null}
+                        <button type="button" className="button-ghost" onClick={() => void resetCharacterGoal(character.key)}>
+                          Reset
+                        </button>
+                      </div>
                     ) : (
                       <button
                         type="button"

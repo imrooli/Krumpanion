@@ -53,6 +53,8 @@ export interface GoalUsage {
   goalType: "character" | "talent" | "weapon" | "artifact";
   key: string;
   amount: number;
+  requirementLabel?: string;
+  displayName?: string;
 }
 
 export interface MaterialNeedRow {
@@ -124,6 +126,7 @@ export interface MaterialDeficit {
 export type FarmingEstimateSourceType =
   | "ley_line_wealth"
   | "ley_line_revelation"
+  | "ley_line_enemy_drop"
   | "domain_of_forgery"
   | "domain_of_mastery"
   | "normal_boss"
@@ -282,6 +285,50 @@ export interface MaterialQuantity {
   quantity: number;
 }
 
+export interface LeyLineEnemyDropLocationRecommendation {
+  locationKey: string;
+  region: string;
+  areaName: string;
+  locationNumber: number;
+  totalGuaranteedEnemyCount: number;
+  guaranteedEnemySpawns: Array<{
+    enemyName: string;
+    count: number;
+  }>;
+  optionalNearbyEnemySpawns: Array<{
+    enemyName: string;
+    count: number;
+  }>;
+  coveredFamilyKeys: string[];
+  notes?: string[];
+  isOptionalOnly: boolean;
+}
+
+export interface LeyLineEnemyDropRegionRecommendation {
+  region: string;
+  totalGuaranteedEnemyCount: number;
+  locationCount: number;
+  optionalOnlyLocationCount: number;
+  coveredFamilyKeys: string[];
+  coveredMaterialKeys: string[];
+  affectedGoalLabels: string[];
+  locations: Array<{
+    locationKey: string;
+    areaName: string;
+    locationNumber: number;
+  }>;
+}
+
+export interface LeyLineEnemyDropRecommendationDetails {
+  familyKey: string;
+  familyDisplayName: string;
+  materialChain: string[];
+  bestRegion: string | null;
+  regionRecommendations: LeyLineEnemyDropRegionRecommendation[];
+  locationRecommendations: LeyLineEnemyDropLocationRecommendation[];
+  incidentalDropNote: string;
+}
+
 export interface PlannerRecommendation {
   id: string;
   title: string;
@@ -306,6 +353,7 @@ export interface PlannerRecommendation {
     | "domains"
     | "bosses"
     | "ley_lines"
+    | "ley_line_enemy_drops"
     | "local_specialty"
     | "forging"
     | "unknown_estimates";
@@ -319,6 +367,9 @@ export interface PlannerRecommendation {
   resinLabel?: string;
   estimatedRuns?: number | null;
   actionableRuns?: number | null;
+  estimatedDaysNaturalResin?: number | null;
+  estimatedWeeksNaturalResin?: number | null;
+  weeklyGate?: FarmingEstimate["weeklyGate"];
   relatedGoalKeys: string[];
   relatedGoalLabels?: string[];
   requiredMaterials: MaterialQuantity[];
@@ -329,6 +380,7 @@ export interface PlannerRecommendation {
   warnings?: string[];
   estimateBasis?: string;
   dataQuality?: LootModelDataQuality;
+  leyLineEnemyDropDetails?: LeyLineEnemyDropRecommendationDetails;
 }
 
 export interface AvailabilityGroup {
@@ -388,6 +440,7 @@ export interface PlannerRecommendationSection {
     | "domains"
     | "bosses"
     | "ley_lines"
+    | "ley_line_enemy_drops"
     | "time_gated_non_resin"
     | "crafting"
     | "forging"

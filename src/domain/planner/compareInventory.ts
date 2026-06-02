@@ -10,8 +10,20 @@ import type {
   PlannerWarning,
 } from "./types";
 
-function buildGoalUsage(label: string, goalType: GoalUsage["goalType"], amount: number): GoalUsage {
-  return { goalType, key: label, amount };
+function buildGoalUsage(params: {
+  goalKey: string;
+  goalType: GoalUsage["goalType"];
+  amount: number;
+  requirementLabel?: string;
+  displayName?: string;
+}): GoalUsage {
+  return {
+    goalType: params.goalType,
+    key: params.goalKey,
+    amount: params.amount,
+    requirementLabel: params.requirementLabel,
+    displayName: params.displayName,
+  };
 }
 
 function inferMaterialCategory(materialKey: string, staticData: StaticGameData): MaterialNeedRow["category"] {
@@ -70,7 +82,16 @@ export function buildDeterministicRequirements(
           requirementType:
             existing && existing.requirementType !== requirementType ? "other" : requirementType,
         });
-        registerUsage(materialKey, buildGoalUsage(plan.goalKey, usageType, amount));
+        registerUsage(
+          materialKey,
+          buildGoalUsage({
+            goalKey: plan.goalKey,
+            goalType: usageType,
+            amount,
+            requirementLabel: entry.label,
+            displayName: plan.displayName,
+          }),
+        );
       }
     }
   }

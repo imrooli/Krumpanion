@@ -94,6 +94,41 @@ describe("validateStaticData", () => {
     expect(report.issues.some((issue) => issue.id === "crafting_recipe:unknown_ingredient:InvalidRecipe")).toBe(true);
   });
 
+  it("invalid ley line outcrop metadata is detected", () => {
+    const data = cloneStaticData();
+    data.leyLineOutcropLocations["bad-location"] = {
+      locationKey: "different-key",
+      region: "",
+      areaName: "",
+      locationNumber: 0,
+      waves: [1],
+      spawns: [
+        {
+          enemyName: "Broken Spawn",
+          count: 0,
+          dropFamilyKey: "missing_family",
+        },
+      ],
+      derivedDropFamilies: [
+        {
+          familyKey: "missing_family",
+          familyDisplayName: "Missing Family",
+          materialKeys: ["UnknownMaterial"],
+          materialNames: ["Unknown Material"],
+          guaranteedEnemySpawns: [{ enemyName: "Broken Spawn", count: 0 }],
+          optionalNearbyEnemySpawns: [],
+          totalGuaranteedEnemyCount: 0,
+        },
+      ],
+    };
+
+    const report = validateStaticData(data);
+
+    expect(report.issues.some((issue) => issue.id === "ley_line_outcrop:mismatched_location_key:bad-location")).toBe(true);
+    expect(report.issues.some((issue) => issue.id === "ley_line_outcrop:invalid_family_reference:bad-location")).toBe(true);
+    expect(report.issues.some((issue) => issue.id === "ley_line_outcrop:invalid_material_reference:bad-location")).toBe(true);
+  });
+
   it("duplicate or conflicting material-family membership is detected", () => {
     const data = cloneStaticData();
     const familyKeys = Object.keys(data.generalEnemyDropFamilies);
@@ -110,11 +145,11 @@ describe("validateStaticData", () => {
     expect(report.issues.some((issue) => issue.id === `family:conflicting_family_membership:${duplicateMaterialKey}`)).toBe(true);
   });
 
-  it("canonical unresolved character material references appear in the report", () => {
+  it("canonical unresolved character material references are fully resolved in the current bundle", () => {
     const report = validateStaticData(loadStaticData());
 
-    expect(report.summary.unresolvedCharacterMaterialReferenceCount).toBeGreaterThan(0);
-    expect(report.issues.some((issue) => issue.category === "character_profile" && issue.id.includes("unresolved_character_material_reference"))).toBe(true);
+    expect(report.summary.unresolvedCharacterMaterialReferenceCount).toBe(0);
+    expect(report.issues.some((issue) => issue.category === "character_profile" && issue.id.includes("unresolved_character_material_reference"))).toBe(false);
   });
 
   it("manual-review profiles are reported but do not crash validation", () => {

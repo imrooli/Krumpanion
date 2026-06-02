@@ -1,8 +1,7 @@
 import type { PlannerInput } from "./types";
 import type { CraftingPlan } from "../crafting/types";
 import { resolveCraftingPlan } from "../crafting/resolveCraftingPlan";
-import { validateGoalStateAgainstStaticData } from "../goals/goalState";
-import { getWeaponGoalId, resolveWeaponGoalCurrentState } from "../goals/goalState";
+import { getWeaponGoalId, isWeaponGoalPlannerActive, resolveWeaponGoalCurrentState, validateGoalStateAgainstStaticData } from "../goals/goalState";
 import { buildFarmingEstimates, normalizePlannerEstimationSettings } from "./buildFarmingEstimates";
 import {
   buildDeterministicRequirements,
@@ -12,6 +11,7 @@ import {
 } from "./compareInventory";
 import { expandGoals } from "./expandGoals";
 import { buildSourceAssignments } from "./classifySources";
+import { buildLeyLineEnemyDropRecommendations } from "./buildLeyLineEnemyDropRecommendations";
 import {
   buildArtifactPlans,
   buildArtifactRecommendations,
@@ -98,7 +98,7 @@ function buildWeaponExpSummary(input: PlannerInput) {
   let totalWeaponLevelingMoraNeeded = 0;
   const exactBoundaries = new Set<number>(WEAPON_LEVEL_BOUNDARIES);
 
-  for (const goal of Object.values(input.goals.weaponGoals).filter((entry) => entry.enabled)) {
+  for (const goal of Object.values(input.goals.weaponGoals).filter((entry) => isWeaponGoalPlannerActive(entry))) {
     const current = resolveWeaponGoalCurrentState(goal, input.ownership).state;
     const rarity = input.staticData.weaponMaterialProfiles[goal.weaponKey]?.rarity ?? input.staticData.weapons[goal.weaponKey]?.rarity;
     const rarityLabel = resolveGoalTrackableWeaponRarityLabel(rarity);
@@ -260,12 +260,17 @@ export function buildPlannerOutput(input: PlannerInput) {
 
   const weaponExpSummary = buildWeaponExpSummary(normalizedInput);
   const materialRecommendations = buildMaterialRecommendations(normalizedInput, farmingEstimates);
+  const leyLineEnemyDropRecommendations = buildLeyLineEnemyDropRecommendations({
+    materialRows: calculatorInventoryComparison.rows,
+    staticData: normalizedInput.staticData,
+    goals: normalizedInput.goals,
+  });
   const artifactRecommendations = buildArtifactRecommendations(normalizedInput, artifactFarmGoals);
   const craftingRecommendations = buildCraftingPlannerRecommendations(craftingPlan);
   const weaponExpRecommendations = buildWeaponExpRecommendation(
     weaponExpSummary,
     Object.values(normalizedInput.goals.weaponGoals)
-      .filter((goal) => goal.enabled)
+      .filter((goal) => isWeaponGoalPlannerActive(goal))
       .map((goal) => ({
         key: getWeaponGoalId(goal, goal.weaponKey),
         label: normalizedInput.staticData.weapons[goal.weaponKey]?.displayName
@@ -275,6 +280,7 @@ export function buildPlannerOutput(input: PlannerInput) {
   );
   const recommendations = sortRecommendations([
     ...materialRecommendations,
+    ...leyLineEnemyDropRecommendations,
     ...weaponExpRecommendations,
     ...craftingRecommendations,
     ...artifactRecommendations,

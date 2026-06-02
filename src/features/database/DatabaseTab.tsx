@@ -82,7 +82,23 @@ import {
 } from "./databaseProfileHelpers";
 import { CharacterProfileEditor, WeaponProfileEditor } from "./databaseGuidedEditors";
 import { validateStaticData, type StaticDataIssue } from "../../domain/staticData/validateStaticData";
-import { selectActiveAccount } from "../../store/selectors";
+import { selectActiveAccount, selectActiveGoals, selectInventoryWarnings, selectPlannerOutput } from "../../store/selectors";
+import { DatabaseWorkbench, type DatabaseWorkbenchView } from "./DatabaseWorkbench";
+import {
+  compileChangeSetToOverridePack,
+  countChangeSetEntries,
+  createEmptyDatabaseChangeSet,
+  exportChangeSetToCanonicalBundle,
+  mergeOverridePacks,
+  validateChangeSet,
+} from "../../domain/staticData/databaseChangeSet";
+import { createStaticData } from "../../domain/staticData/staticDataFactory";
+import { DataHealthCenter } from "./DataHealthCenter";
+import {
+  buildDataHealthCenterModel,
+  getDataHealthOverviewCounts,
+  type DataHealthIssue,
+} from "./dataHealthModel";
 
 const DATABASE_SECTIONS: Array<{ key: DatabaseSection; label: string }> = [
   { key: "coverage", label: "Coverage" },
@@ -94,15 +110,13 @@ const DATABASE_SECTIONS: Array<{ key: DatabaseSection; label: string }> = [
 
 type DatabaseWorkspaceTab =
   | "overview"
-  | "materials"
-  | "families"
-  | "characters"
-  | "weapons"
-  | "sources"
-  | "recipes"
-  | "health"
-  | "overrides"
-  | "advanced";
+  | "release"
+  | "materialsFamilies"
+  | "assignments"
+  | "validation"
+  | "dataHealth"
+  | "rawHealth"
+  | "legacy";
 
 type DatabaseEntityType =
   | "coverageDashboard"
@@ -167,22 +181,14 @@ function resolveWorkspaceTarget(tab: DatabaseWorkspaceTab): { section: DatabaseS
   switch (tab) {
     case "overview":
       return { section: "coverage", entityType: "coverageDashboard" };
-    case "materials":
-      return { section: "sources", entityType: "materials" };
-    case "families":
-      return { section: "families", entityType: "elementGems" };
-    case "characters":
-      return { section: "profiles", entityType: "characters" };
-    case "weapons":
-      return { section: "profiles", entityType: "weapons" };
-    case "sources":
-      return { section: "sources", entityType: "materialSources" };
-    case "recipes":
-      return { section: "sources", entityType: "recipes" };
-    case "advanced":
-      return { section: "advanced", entityType: "characterCore" };
-    case "health":
-    case "overrides":
+    case "legacy":
+      return { section: "profiles", entityType: "characterProfiles" };
+    case "release":
+    case "materialsFamilies":
+    case "assignments":
+    case "validation":
+    case "dataHealth":
+    case "rawHealth":
       return null;
   }
 }
@@ -246,7 +252,10 @@ function buildHealthFixQueue(issues: StaticDataIssue[]) {
 
 export function DatabaseTab() {
   const account = useAppStore(selectActiveAccount);
+  const activeGoals = useAppStore(selectActiveGoals);
   const staticData = useAppStore((state) => state.staticData);
+  const plannerOutput = useAppStore(selectPlannerOutput);
+  const importWarnings = useAppStore(selectInventoryWarnings);
   const overridePack = useAppStore((state) => state.overridePack);
   const importOverrideText = useAppStore((state) => state.importOverrideText);
   const clearOverridePack = useAppStore((state) => state.clearOverridePack);
@@ -257,10 +266,11 @@ export function DatabaseTab() {
   const [status, setStatus] = useState("");
   const [error, setError] = useState("");
   const [labelDraft, setLabelDraft] = useState(overridePack?.label ?? "Krumpanion Database Overrides");
+  const [changeSet, setChangeSet] = useState(createEmptyDatabaseChangeSet);
   const [globalSearch, setGlobalSearch] = useState("");
-  const [healthSearch, setHealthSearch] = useState("");
-  const [healthSeverityFilter, setHealthSeverityFilter] = useState<"all" | "error" | "warning" | "info">("all");
-  const [healthCategoryFilter, setHealthCategoryFilter] = useState("all");
+  const [rawHealthSearch, setRawHealthSearch] = useState("");
+  const [rawHealthSeverityFilter, setRawHealthSeverityFilter] = useState<"all" | "error" | "warning" | "info">("all");
+  const [rawHealthCategoryFilter, setRawHealthCategoryFilter] = useState("all");
   const [showProblemsOnly, setShowProblemsOnly] = useState(true);
   const [showPlannerImpactingOnly, setShowPlannerImpactingOnly] = useState(false);
   const [showManualReviewOnly, setShowManualReviewOnly] = useState(false);
@@ -396,6 +406,18 @@ export function DatabaseTab() {
   const coverage = useMemo(() => buildAccountCoverage(account, staticData), [account, staticData]);
   const coverageModel = useMemo(() => buildDatabaseCoverage(staticData, account), [account, staticData]);
   const staticDataHealthReport = useMemo(() => validateStaticData(staticData), [staticData]);
+  const dataHealthModel = useMemo(
+    () =>
+      buildDataHealthCenterModel({
+        staticIssues: staticDataHealthReport.issues,
+        importWarnings,
+        plannerWarnings: plannerOutput.warnings,
+        goals: activeGoals,
+        plannerOutput,
+      }),
+    [activeGoals, importWarnings, plannerOutput, staticDataHealthReport.issues],
+  );
+  const dataHealthOverviewCounts = useMemo(() => getDataHealthOverviewCounts(dataHealthModel.issues), [dataHealthModel.issues]);
   const healthCategories = useMemo(
     () => ["all", ...new Set(staticDataHealthReport.issues.map((issue) => issue.category))],
     [staticDataHealthReport.issues],
@@ -407,15 +429,15 @@ export function DatabaseTab() {
   const filteredHealthIssues = useMemo(
     () =>
       staticDataHealthReport.issues.filter((issue) => {
-        const matchesSeverity = healthSeverityFilter === "all" || issue.severity === healthSeverityFilter;
-        const matchesCategory = healthCategoryFilter === "all" || issue.category === healthCategoryFilter;
+        const matchesSeverity = rawHealthSeverityFilter === "all" || issue.severity === rawHealthSeverityFilter;
+        const matchesCategory = rawHealthCategoryFilter === "all" || issue.category === rawHealthCategoryFilter;
         const matchesProblems = !showProblemsOnly || issue.severity !== "info";
         const matchesPlannerImpact = !showPlannerImpactingOnly || issue.plannerImpact === "high";
         const matchesManualReview = !showManualReviewOnly || issue.actionGroup === "manual_review";
         const matchesIgnored = !showIgnoredOnly || issue.actionGroup === "ignored_records" || issue.subCategory === "ignored_record";
         const matchesGenerated = !showGeneratedOnly || issue.category === "generated_data";
         const searchText = `${issue.entityKey ?? ""} ${issue.entityName ?? ""} ${issue.message} ${issue.suggestedFix ?? ""}`.toLowerCase();
-        const matchesSearch = !healthSearch.trim() || searchText.includes(healthSearch.trim().toLowerCase());
+        const matchesSearch = !rawHealthSearch.trim() || searchText.includes(rawHealthSearch.trim().toLowerCase());
         return (
           matchesSeverity &&
           matchesCategory &&
@@ -428,9 +450,9 @@ export function DatabaseTab() {
         );
       }),
     [
-      healthCategoryFilter,
-      healthSearch,
-      healthSeverityFilter,
+      rawHealthCategoryFilter,
+      rawHealthSearch,
+      rawHealthSeverityFilter,
       showGeneratedOnly,
       showIgnoredOnly,
       showManualReviewOnly,
@@ -473,6 +495,16 @@ export function DatabaseTab() {
     () => Object.values(staticData.materials).sort((left, right) => left.displayName.localeCompare(right.displayName)),
     [staticData.materials],
   );
+  const previewOverridePack = useMemo(() => compileChangeSetToOverridePack(changeSet), [changeSet]);
+  const previewMergedOverridePack = useMemo(
+    () => mergeOverridePacks(overridePack, previewOverridePack),
+    [overridePack, previewOverridePack],
+  );
+  const previewStaticData = useMemo(() => createStaticData(previewMergedOverridePack), [previewMergedOverridePack]);
+  const changeSetValidationIssues = useMemo(() => validateChangeSet(changeSet, previewStaticData), [changeSet, previewStaticData]);
+  const previewStaticDataHealthReport = useMemo(() => validateStaticData(previewStaticData), [previewStaticData]);
+  const changeSetExportBundle = useMemo(() => exportChangeSetToCanonicalBundle(changeSet), [changeSet]);
+  const changeSetEntryCount = useMemo(() => countChangeSetEntries(changeSet), [changeSet]);
 
   async function savePack(pack: OverrideDataPack) {
     setError("");
@@ -512,7 +544,7 @@ export function DatabaseTab() {
     }
 
     if (issue.recordType === "character") {
-      setActiveWorkspaceTab("characters");
+      setActiveWorkspaceTab("legacy");
       setActiveSection("profiles");
       setActiveEntityType(issue.subCategory === "character_catalog_metadata" ? "characters" : "characterProfiles");
       selectCharacter(entityKey);
@@ -520,27 +552,87 @@ export function DatabaseTab() {
     }
 
     if (issue.recordType === "weapon") {
-      setActiveWorkspaceTab("weapons");
+      setActiveWorkspaceTab("legacy");
       setActiveSection("profiles");
-      setActiveEntityType("weaponProfiles");
+      setActiveEntityType(issue.subCategory === "weapon_catalog_metadata" ? "weapons" : "weaponProfiles");
       selectWeapon(entityKey);
       return;
     }
 
     if (issue.recordType === "weapon_ascension_family") {
-      setActiveWorkspaceTab("families");
+      setActiveWorkspaceTab("legacy");
       setActiveSection("families");
       setActiveEntityType("weaponAscensions");
       setWeaponAscensionFamilyKey(entityKey);
       return;
     }
 
+    if (issue.recordType === "talent_book_family") {
+      setActiveWorkspaceTab("legacy");
+      setActiveSection("families");
+      setActiveEntityType("talentBooks");
+      setTalentBookFamilyKey(entityKey);
+      return;
+    }
+
+    if (issue.recordType === "enemy_drop_family") {
+      setActiveWorkspaceTab("legacy");
+      setActiveSection("families");
+      setActiveEntityType("enemyDrops");
+      setEnemyDropFamilyKey(entityKey);
+      return;
+    }
+
+    if (issue.recordType === "element_gem_family") {
+      setActiveWorkspaceTab("legacy");
+      setActiveSection("families");
+      setActiveEntityType("elementGems");
+      setElementGemFamilyKey(entityKey);
+      return;
+    }
+
+    if (issue.recordType === "local_specialty") {
+      setActiveWorkspaceTab("legacy");
+      setActiveSection("families");
+      setActiveEntityType("localSpecialties");
+      setLocalSpecialtyKey(entityKey);
+      return;
+    }
+
     if (issue.recordType === "material") {
-      setActiveWorkspaceTab(issue.category === "material_source" ? "sources" : "materials");
+      setActiveWorkspaceTab("legacy");
       setActiveSection("sources");
       setActiveEntityType(issue.category === "material_source" ? "materialSources" : "materials");
-      selectMaterial(entityKey);
+      if (issue.category === "material_source") {
+        setSourceMaterialKey(entityKey);
+      } else {
+        selectMaterial(entityKey);
+      }
     }
+  }
+
+  function openDataHealthIssue(issue: DataHealthIssue) {
+    const editorTarget = issue.editorTarget;
+    if (!editorTarget) {
+      return;
+    }
+
+    if (editorTarget.workspaceTab === "rawHealth") {
+      setActiveWorkspaceTab("rawHealth");
+      setRawHealthSearch(editorTarget.rawSearchText ?? issue.affectedKey ?? issue.affectedName ?? issue.shortMessage);
+      return;
+    }
+
+    if (!editorTarget.entityType || !editorTarget.recordKey || !editorTarget.section) {
+      setActiveWorkspaceTab("rawHealth");
+      setRawHealthSearch(editorTarget.rawSearchText ?? issue.affectedKey ?? issue.affectedName ?? issue.shortMessage);
+      return;
+    }
+
+    setActiveWorkspaceTab(editorTarget.workspaceTab ?? "legacy");
+    setActiveSection(editorTarget.section);
+    setActiveEntityType(editorTarget.entityType);
+    setSelectedRecordKey(editorTarget.recordKey, editorTarget.entityType);
   }
 
   function handleSearchResult(record: DatabaseSearchRecord) {
@@ -1754,8 +1846,9 @@ export function DatabaseTab() {
       metrics={
         <MetricStrip
           items={[
-            { label: "Errors", value: String(staticDataHealthReport.summary.errorCount), tone: staticDataHealthReport.summary.errorCount ? "warning" : "success" },
-            { label: "Warnings", value: String(staticDataHealthReport.summary.warningCount), tone: staticDataHealthReport.summary.warningCount ? "warning" : "success" },
+            { label: "Blocking", value: String(dataHealthModel.summary.blockingCount), tone: dataHealthModel.summary.blockingCount ? "warning" : "success" },
+            { label: "Warnings", value: String(dataHealthModel.summary.warningCount), tone: dataHealthModel.summary.warningCount ? "warning" : "success" },
+            { label: "Beta", value: String(dataHealthModel.summary.betaCount), tone: dataHealthModel.summary.betaCount ? "accent" : "default" },
             { label: "Materials", value: String(Object.keys(staticData.materials).length) },
             { label: "Characters", value: String(Object.keys(staticData.characters).length) },
             { label: "Weapons", value: String(Object.keys(staticData.weapons).length) },
@@ -1770,15 +1863,13 @@ export function DatabaseTab() {
         onChange={setActiveWorkspaceTab}
         tabs={[
           { key: "overview", label: "Overview" },
-          { key: "materials", label: "Materials" },
-          { key: "families", label: "Families" },
-          { key: "characters", label: "Characters" },
-          { key: "weapons", label: "Weapons" },
-          { key: "sources", label: "Sources" },
-          { key: "recipes", label: "Recipes" },
-          { key: "health", label: "Health Issues", count: staticDataHealthReport.issues.length },
-          { key: "overrides", label: "Overrides", count: overrideCounts },
-          { key: "advanced", label: "Advanced" },
+          { key: "release", label: "Release Update" },
+          { key: "materialsFamilies", label: "Materials & Families" },
+          { key: "assignments", label: "Character Assignments" },
+          { key: "validation", label: "Validation & Export", count: changeSetValidationIssues.length + previewStaticDataHealthReport.summary.errorCount },
+          { key: "dataHealth", label: "Data Health", count: dataHealthModel.summary.totalIssues },
+          { key: "rawHealth", label: "Raw Issues", count: staticDataHealthReport.issues.length },
+          { key: "legacy", label: "Legacy Overrides", count: overrideCounts },
         ]}
       />
 
@@ -1787,20 +1878,63 @@ export function DatabaseTab() {
           {staticDataHealthReport.summary.errorCount ? (
             <WarningPanel title="Blocking static-data issues exist" tone="error">
               <p className="muted">
-                {staticDataHealthReport.summary.errorCount} blocking error(s) are currently present. Open Health Issues for details and suggested fixes.
+                {staticDataHealthReport.summary.errorCount} blocking error(s) are currently present. Open Data Health for compact guidance or Raw Issues for full validator details.
               </p>
             </WarningPanel>
           ) : null}
+          <SectionCard title="Canonical update workbench" description="Use the new workflow-first path for patch maintenance, then fall back to Legacy Overrides only when you truly need raw record editing.">
+            <div className="workspace-card-grid">
+              <article className="metric-card">
+                <span>Draft entries</span>
+                <strong>{changeSetEntryCount}</strong>
+              </article>
+              <article className="metric-card">
+                <span>Export files</span>
+                <strong>{changeSetExportBundle.files.length}</strong>
+              </article>
+              <article className="metric-card">
+                <span>Preview errors</span>
+                <strong>{previewStaticDataHealthReport.summary.errorCount}</strong>
+              </article>
+              <article className="metric-card">
+                <span>Preview warnings</span>
+                <strong>{previewStaticDataHealthReport.summary.warningCount}</strong>
+              </article>
+            </div>
+            <p className="muted">
+              The workbench compiles structured drafts into a preview override pack and canonical-ready export bundle so new weekly bosses,
+              materials, and character assignments can be maintained without hopping across unrelated raw editors.
+            </p>
+          </SectionCard>
+          <SectionCard title="Needs review by area" description="Start with the sections carrying the most active warning load instead of browsing the whole database.">
+            <div className="workspace-card-grid">
+              <article className="metric-card">
+                <span>Characters</span>
+                <strong>{dataHealthOverviewCounts.characters.warnings}</strong>
+                <small>{dataHealthOverviewCounts.characters.beta} beta / {dataHealthOverviewCounts.characters.ignored} ignored</small>
+              </article>
+              <article className="metric-card">
+                <span>Weapons</span>
+                <strong>{dataHealthOverviewCounts.weapons.warnings}</strong>
+                <small>{dataHealthOverviewCounts.weapons.beta} beta / {dataHealthOverviewCounts.weapons.ignored} ignored</small>
+              </article>
+              <article className="metric-card">
+                <span>Materials</span>
+                <strong>{dataHealthOverviewCounts.materials.warnings}</strong>
+                <small>{dataHealthOverviewCounts.materials.beta} beta / {dataHealthOverviewCounts.materials.ignored} ignored</small>
+              </article>
+            </div>
+          </SectionCard>
           <DatabaseHomeCoverage
             coverage={coverageModel}
             healthReport={staticDataHealthReport}
             onOpenItem={(item) => {
               if (item.section === "profiles") {
-                setActiveWorkspaceTab(item.entityType.includes("weapon") ? "weapons" : "characters");
+                setActiveWorkspaceTab("assignments");
               } else if (item.section === "families") {
-                setActiveWorkspaceTab("families");
+                setActiveWorkspaceTab("materialsFamilies");
               } else if (item.section === "sources") {
-                setActiveWorkspaceTab("sources");
+                setActiveWorkspaceTab("materialsFamilies");
               }
               openCoverageItem(item);
             }}
@@ -1808,9 +1942,28 @@ export function DatabaseTab() {
         </div>
       ) : null}
 
-      {activeWorkspaceTab === "health" ? (
+      {(["release", "materialsFamilies", "assignments", "validation"] as DatabaseWorkbenchView[]).includes(activeWorkspaceTab as DatabaseWorkbenchView) ? (
+        <DatabaseWorkbench
+          view={activeWorkspaceTab as DatabaseWorkbenchView}
+          account={account}
+          staticData={staticData}
+          previewStaticData={previewStaticData}
+          previewOverridePack={previewOverridePack}
+          changeSet={changeSet}
+          onChangeSetChange={setChangeSet}
+          validationIssues={changeSetValidationIssues}
+          previewHealthReport={previewStaticDataHealthReport}
+          exportBundle={changeSetExportBundle}
+        />
+      ) : null}
+
+      {activeWorkspaceTab === "dataHealth" ? (
+        <DataHealthCenter model={dataHealthModel} onOpenIssue={openDataHealthIssue} />
+      ) : null}
+
+      {activeWorkspaceTab === "rawHealth" ? (
         <div className="database-overview-stack">
-          <SectionCard title="Health fix queue" description="Start with planner-impacting groups, then jump to the relevant record from the detailed table below.">
+          <SectionCard title="Health fix queue" description="The raw validator table stays available here for developer-style cleanup and exact category tracing.">
             <div className="workspace-card-grid">
               {healthFixQueue.map((group) => (
                 <article key={group.key} className="metric-card">
@@ -1838,14 +1991,17 @@ export function DatabaseTab() {
                 Search
                 <input
                   className="text-input"
-                  value={healthSearch}
-                  onChange={(event) => setHealthSearch(event.target.value)}
+                  value={rawHealthSearch}
+                  onChange={(event) => setRawHealthSearch(event.target.value)}
                   placeholder="Search entity, message, or suggested fix"
                 />
               </label>
               <label>
                 Severity
-                <select value={healthSeverityFilter} onChange={(event) => setHealthSeverityFilter(event.target.value as typeof healthSeverityFilter)}>
+                <select
+                  value={rawHealthSeverityFilter}
+                  onChange={(event) => setRawHealthSeverityFilter(event.target.value as typeof rawHealthSeverityFilter)}
+                >
                   <option value="all">All severities</option>
                   <option value="error">Errors</option>
                   <option value="warning">Warnings</option>
@@ -1854,7 +2010,7 @@ export function DatabaseTab() {
               </label>
               <label>
                 Category
-                <select value={healthCategoryFilter} onChange={(event) => setHealthCategoryFilter(event.target.value)}>
+                <select value={rawHealthCategoryFilter} onChange={(event) => setRawHealthCategoryFilter(event.target.value)}>
                   {healthCategories.map((category) => (
                     <option key={category} value={category}>
                       {category === "all" ? "All categories" : category}
@@ -1962,7 +2118,7 @@ export function DatabaseTab() {
         </div>
       ) : null}
 
-      {activeWorkspaceTab === "overrides" ? (
+      {activeWorkspaceTab === "legacy" ? (
         <div className="workspace-card-grid settings-overview-grid">
           <SectionCard title="Override pack controls" description="Override packs remain the safe place to patch database records without changing bundled runtime data.">
             <label>
@@ -2017,7 +2173,7 @@ export function DatabaseTab() {
         </div>
       ) : null}
 
-      {!["overview", "health", "overrides"].includes(activeWorkspaceTab) ? (
+      {activeWorkspaceTab === "legacy" ? (
         <DatabaseWorkspaceShell
           account={account}
           effectiveDatabaseRecordCount={effectiveDatabaseRecordCount}
