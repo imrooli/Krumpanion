@@ -579,6 +579,8 @@ export function assembleBaseStaticData(): StaticGameData {
     domainsOfForgery: canonicalDatabase.sources.domainsOfForgery,
     domainsOfMastery: canonicalDatabase.sources.domainsOfMastery,
     trounceDomains: canonicalDatabase.sources.trounceDomains,
+    leyLineNationCoverage: canonicalDatabase.sources.leyLineNationCoverage,
+    leyLineNationCoverageList: Object.values(canonicalDatabase.sources.leyLineNationCoverage),
     leyLineOutcropLocations: Object.fromEntries(
       Object.entries(canonicalDatabase.sources.leyLineOutcropLocations).map(([locationKey, location]) => [
         locationKey,

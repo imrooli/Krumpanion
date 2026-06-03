@@ -92,7 +92,7 @@ function LeyLineLocationList({
   }
 
   if (details.locationRecommendations.length === 0) {
-    return <div className="muted">No Ley Line enemy-spawn recommendation is currently available for this material family.</div>;
+    return <div className="muted">{details.emptyStateMessage ?? "No Ley Line enemy-spawn recommendation is currently available for this material family."}</div>;
   }
 
   return (
@@ -146,6 +146,15 @@ function LeyLineRegionList({
       ))}
     </ol>
   );
+}
+
+function formatLeyLineMatchedFamilyLabels(row: PlannerUiRow): string[] {
+  const details = row.leyLineEnemyDropDetails;
+  if (!details) {
+    return [];
+  }
+
+  return details.matchedFamilies.map((family) => `${family.familyDisplayName} x${formatInteger(family.quantity)}`);
 }
 
 function getFamilyLabel(
@@ -528,14 +537,19 @@ export function PlannerRecommendationCard({
     formatMaterialQuantity(material.materialId, material.quantity, staticData),
   );
   const expectedRewards = row.expectedRewards?.map((material) => formatMaterialQuantity(material.materialId, material.quantity, staticData)) ?? [];
+  const leyLineModeLabel = row.leyLineEnemyDropDetails?.modeLabel ?? null;
+  const leyLineMatchedFamilies = formatLeyLineMatchedFamilyLabels(row);
   const materialChain = row.leyLineEnemyDropDetails?.materialChain.map((materialId) => staticData.materials[materialId]?.displayName ?? materialId) ?? [];
   const bestRegion = row.leyLineEnemyDropDetails?.bestRegion ?? null;
-  const visibleMaterials = compact ? materials.slice(0, 4) : materials;
-  const hiddenMaterialCount = Math.max(0, materials.length - visibleMaterials.length);
+  const displayedMaterials = row.leyLineEnemyDropDetails?.mode === "stockpile" ? leyLineMatchedFamilies : materials;
+  const visibleMaterials = compact ? displayedMaterials.slice(0, 4) : displayedMaterials;
+  const hiddenMaterialCount = Math.max(0, displayedMaterials.length - visibleMaterials.length);
   const visibleWarnings = warningLabels.slice(0, compact ? 1 : 3);
   const materialsLabel =
     row.actionSubgroup === "ley_line_enemy_drops"
-      ? "Current deficits"
+      ? row.leyLineEnemyDropDetails?.mode === "stockpile"
+        ? "Lowest inventory families"
+        : "Current deficits"
       : row.category === "boss"
         ? "Unique boss materials"
         : row.category === "weekly_boss"
@@ -594,6 +608,12 @@ export function PlannerRecommendationCard({
               </div>
             </>
           ) : null}
+          {leyLineModeLabel ? (
+            <>
+              <div className="planner-field-label">Recommendation mode</div>
+              <div>{leyLineModeLabel}</div>
+            </>
+          ) : null}
           {bestRegion ? (
             <>
               <div className="planner-field-label">Best nation</div>
@@ -649,8 +669,40 @@ export function PlannerRecommendationCard({
           ) : null}
           {row.leyLineEnemyDropDetails ? (
             <div>
-              <strong>Best nations</strong>
+              <strong>{row.leyLineEnemyDropDetails.mode === "stockpile" ? "Top stockpile nations" : "Best nations"}</strong>
               <LeyLineRegionList row={row} />
+            </div>
+          ) : null}
+          {row.leyLineEnemyDropDetails?.matchedFamilies.length ? (
+            <div>
+              <strong>
+                {row.leyLineEnemyDropDetails.quantityContext === "owned" ? "Matched low-stock families" : "Matched deficit families"}
+              </strong>
+              <div className="planner-material-list">
+                {row.leyLineEnemyDropDetails.matchedFamilies.map((family) => (
+                  <span
+                    key={`${row.id}-${family.familyKey}`}
+                    className="planner-chip"
+                  >
+                    {family.familyDisplayName} x{formatInteger(family.quantity)}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ) : null}
+          {row.leyLineEnemyDropDetails?.uncoveredFamilies?.length ? (
+            <div>
+              <strong>Uncovered low-stock families</strong>
+              <div className="planner-material-list">
+                {row.leyLineEnemyDropDetails.uncoveredFamilies.map((family) => (
+                  <span
+                    key={`${row.id}-uncovered-${family.familyKey}`}
+                    className="planner-warning-chip"
+                  >
+                    {family.familyDisplayName} x{formatInteger(family.quantity)}
+                  </span>
+                ))}
+              </div>
             </div>
           ) : null}
           {row.leyLineEnemyDropDetails ? (

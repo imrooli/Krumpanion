@@ -54,6 +54,7 @@ describe("ChecklistWorkspace", () => {
     const dailySection = screen.getByRole("heading", { name: "Daily" }).closest("article");
     expect(dailySection).not.toBeNull();
     expect(within(dailySection!).getByText("Daily Commissions")).toBeInTheDocument();
+    expect(within(dailySection!).getByText("Daily Forging")).toBeInTheDocument();
 
     await user.click(within(dailySection!).getByRole("button", { name: /Mark Daily Commissions complete/i }));
 
@@ -84,6 +85,7 @@ describe("ChecklistWorkspace", () => {
 
     const weeklySection = screen.getByRole("heading", { name: "Weekly" }).closest("article");
     expect(weeklySection).not.toBeNull();
+    expect(within(weeklySection!).getByText("Weekly Bounties / Requests")).toBeInTheDocument();
 
     await user.click(within(weeklySection!).getByRole("button", { name: "+1" }));
     expect(within(weeklySection!).getByText("1 / 3")).toBeInTheDocument();

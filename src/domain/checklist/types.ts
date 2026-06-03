@@ -1,7 +1,9 @@
 export type ResetWindowChecklistKey =
   | "dailyCommissions"
+  | "dailyForging"
   | "battlePassDailyClaims"
   | "battlePassWeeklyClaims"
+  | "weeklyBountiesRequests"
   | "stardustExchange"
   | "artifactTransmuter"
   | "realmDepot";
@@ -33,8 +35,10 @@ export interface RealmCurrencyChecklistState {
 
 export interface AccountChecklistState {
   dailyCommissions: ChecklistCompletionState;
+  dailyForging: ChecklistCompletionState;
   battlePassDailyClaims: ChecklistCompletionState;
   battlePassWeeklyClaims: ChecklistCompletionState;
+  weeklyBountiesRequests: ChecklistCompletionState;
   stardustExchange: ChecklistCompletionState;
   weeklyBossClaims: WeeklyBossClaimsChecklistState;
   artifactTransmuter: ChecklistCompletionState;
@@ -129,8 +133,10 @@ export function createDefaultChecklistState(
 ): AccountChecklistState {
   return {
     dailyCommissions: {},
+    dailyForging: {},
     battlePassDailyClaims: {},
     battlePassWeeklyClaims: {},
+    weeklyBountiesRequests: {},
     stardustExchange: {},
     weeklyBossClaims: {
       usedCount: clampWeeklyBossClaimCount(weeklyBossClaimsUsed),
@@ -159,6 +165,10 @@ export function normalizeChecklistState(
       ...defaults.dailyCommissions,
       ...(checklist?.dailyCommissions ?? {}),
     },
+    dailyForging: {
+      ...defaults.dailyForging,
+      ...(checklist?.dailyForging ?? {}),
+    },
     battlePassDailyClaims: {
       ...defaults.battlePassDailyClaims,
       ...(checklist?.battlePassDailyClaims ?? {}),
@@ -166,6 +176,10 @@ export function normalizeChecklistState(
     battlePassWeeklyClaims: {
       ...defaults.battlePassWeeklyClaims,
       ...(checklist?.battlePassWeeklyClaims ?? {}),
+    },
+    weeklyBountiesRequests: {
+      ...defaults.weeklyBountiesRequests,
+      ...(checklist?.weeklyBountiesRequests ?? {}),
     },
     stardustExchange: {
       ...defaults.stardustExchange,
@@ -209,8 +223,10 @@ export function normalizeChecklistState(
 
 export const RESET_WINDOW_CHECKLIST_KEYS: ResetWindowChecklistKey[] = [
   "dailyCommissions",
+  "dailyForging",
   "battlePassDailyClaims",
   "battlePassWeeklyClaims",
+  "weeklyBountiesRequests",
   "stardustExchange",
   "artifactTransmuter",
   "realmDepot",

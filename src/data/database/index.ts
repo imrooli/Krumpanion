@@ -28,6 +28,7 @@ import bossLootEstimates from "./sources/bossLootEstimates.json";
 import domainLootEstimates from "./sources/domainLootEstimates.json";
 import domainSchedule from "./sources/domainSchedule.json";
 import enemyRouteSources from "./sources/enemyRouteSources.json";
+import { leyLineNationCoverage } from "./sources/leyLineNationCoverage";
 import { leyLineOutcropLocations } from "./sources/leyLineOutcropLocations";
 import leyLineRewards from "./sources/leyLineRewards.json";
 import materialSources from "./sources/materialSources.json";
@@ -94,6 +95,7 @@ const typedBossLootEstimates = bossLootEstimates as unknown as {
 };
 const typedEnemyRouteSources = enemyRouteSources as unknown as CanonicalDatabase["sources"]["enemyRouteSources"];
 const typedLeyLineOutcropLocations = leyLineOutcropLocations as unknown as CanonicalDatabase["sources"]["leyLineOutcropLocations"];
+const typedLeyLineNationCoverage = leyLineNationCoverage as unknown as CanonicalDatabase["sources"]["leyLineNationCoverage"];
 const typedRecipes = recipes as unknown as CanonicalDatabase["crafting"]["recipes"];
 const typedTieredMaterialIndex = tieredMaterialIndex as unknown as CanonicalDatabase["crafting"]["tieredMaterialIndex"];
 const typedCraftingUtilityPassives =
@@ -190,6 +192,7 @@ export const canonicalDatabase: CanonicalDatabase = {
     bossGemDropPackRarityDistribution: typedBossLootEstimates.bossGemDropPackRarityDistribution,
     enemyRouteSources: typedEnemyRouteSources,
     leyLineOutcropLocations: typedLeyLineOutcropLocations,
+    leyLineNationCoverage: typedLeyLineNationCoverage,
   },
   crafting: {
     recipes: typedRecipes,

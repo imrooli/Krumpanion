@@ -6,7 +6,7 @@ import type { OverrideDataPack } from "../staticData/types";
 import type { AccountId } from "../account/types";
 
 export const APP_VERSION = "0.4.0";
-export const SAVE_SCHEMA_VERSION = 9;
+export const SAVE_SCHEMA_VERSION = 10;
 export const ACCOUNT_EXPORT_SCHEMA_VERSION = 1;
 
 export type BackupReason =
@@ -60,7 +60,7 @@ export interface PersistenceStatus {
 }
 
 export interface KrumpanionFullBackup {
-  schemaVersion: 9;
+  schemaVersion: 10;
   appVersion: string;
   createdAt: string;
   updatedAt: string;

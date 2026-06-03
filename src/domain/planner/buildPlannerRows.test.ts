@@ -892,7 +892,7 @@ describe("buildPlannerOutput", () => {
     expect(planner.totalMissingByMaterial.length).toBeGreaterThan(0);
   });
 
-  it("excludes paused character and weapon goals from planner output while retaining active goals", () => {
+  it("keeps paused goals out of active planner totals while preserving their no-resin actions", () => {
     const planner = buildPlannerOutput({
       ...buildPlannerInput({
         importMeta: {
@@ -970,6 +970,26 @@ describe("buildPlannerOutput", () => {
     expect(planner.byWeapon).toHaveLength(0);
     expect(planner.plannerGoals.some((goal) => goal.entityKey === "Mavuika")).toBe(false);
     expect(planner.plannerGoals.some((goal) => goal.entityKey === "CoolSteel")).toBe(false);
+    expect(
+      planner.recommendations.some(
+        (row) => row.relatedGoalKeys.includes("Mavuika") && row.actionGroup !== "resin_gated" && row.id.startsWith("paused-"),
+      ),
+    ).toBe(true);
+    expect(
+      planner.recommendations.some(
+        (row) =>
+          row.relatedGoalKeys.includes("weapon-cool-steel") &&
+          row.actionGroup !== "resin_gated" &&
+          row.id.startsWith("paused-"),
+      ),
+    ).toBe(true);
+    expect(
+      planner.recommendations.some(
+        (row) =>
+          (row.relatedGoalKeys.includes("Mavuika") || row.relatedGoalKeys.includes("weapon-cool-steel")) &&
+          row.actionGroup === "resin_gated",
+      ),
+    ).toBe(false);
   });
 
   it("supports unowned prefarm weapon goals from level 1 without an imported weapon instance", () => {

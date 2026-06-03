@@ -430,14 +430,14 @@ export function migrateSaveFile(value: unknown): KrumpanionSaveFile | null {
   };
 
   if (
-    (candidate.schemaVersion === 9 || candidate.schemaVersion === 8 || candidate.schemaVersion === 7 || candidate.schemaVersion === 6 || candidate.schemaVersion === 5) &&
+    (candidate.schemaVersion === 10 || candidate.schemaVersion === 9 || candidate.schemaVersion === 8 || candidate.schemaVersion === 7 || candidate.schemaVersion === 6 || candidate.schemaVersion === 5) &&
     typeof candidate.createdAt === "string" &&
     typeof candidate.updatedAt === "string"
   ) {
     return {
       ...createDefaultSaveFile(new Date(candidate.createdAt)),
       ...candidate,
-      schemaVersion: 9,
+      schemaVersion: 10,
       appVersion: candidate.appVersion ?? APP_VERSION,
       user: normalizeUserState(candidate.user, candidate.createdAt),
       settings: {
@@ -462,7 +462,7 @@ export function migrateSaveFile(value: unknown): KrumpanionSaveFile | null {
 
     return {
       ...createDefaultSaveFile(new Date(candidate.createdAt)),
-      schemaVersion: 9,
+      schemaVersion: 10,
       appVersion: candidate.appVersion ?? APP_VERSION,
       createdAt: candidate.createdAt,
       updatedAt: candidate.updatedAt,

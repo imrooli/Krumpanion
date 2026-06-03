@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { DEFAULT_GOALS } from "../goals/types";
 import { loadStaticData } from "../staticData/loadStaticData";
+import type { AccountInventoryState } from "../account/types";
 import type { MaterialNeedRow } from "./types";
 import { buildLeyLineEnemyDropRecommendations } from "./buildLeyLineEnemyDropRecommendations";
 
@@ -29,10 +30,11 @@ function enemyDropRow(materialKey: string, missing: number, goalKey = "prefarm:S
   };
 }
 
-function buildRecommendations(rows: MaterialNeedRow[]) {
+function buildRecommendations(rows: MaterialNeedRow[], inventory: AccountInventoryState = {}) {
   return buildLeyLineEnemyDropRecommendations({
     materialRows: rows,
     staticData,
+    inventory,
     goals: {
       ...DEFAULT_GOALS,
       characterGoals: {},
@@ -53,6 +55,14 @@ function buildRecommendations(rows: MaterialNeedRow[]) {
 }
 
 describe("buildLeyLineEnemyDropRecommendations", () => {
+  it("includes released nation coverage data and keeps Snezhnaya disabled", () => {
+    expect(staticData.leyLineNationCoverage.sumeru.familyKeys).toEqual(
+      expect.arrayContaining(["fungus_materials", "state_shifted_fungus_materials"]),
+    );
+    expect(staticData.leyLineNationCoverage.natlan.familyKeys.length).toBeGreaterThan(0);
+    expect(staticData.leyLineNationCoverage.snezhnaya.enabledForRecommendations).toBe(false);
+  });
+
   it("resolves Chaos Core to Humanoid Ruin Machine locations only", () => {
     const recommendations = buildRecommendations([enemyDropRow("ChaosCore", 6)]);
     const recommendation = recommendations[0];
@@ -188,6 +198,53 @@ describe("buildLeyLineEnemyDropRecommendations", () => {
 
   it("returns no recommendations when there are no enemy-drop deficits", () => {
     const recommendations = buildRecommendations([]);
-    expect(recommendations).toEqual([]);
+    expect(recommendations).toHaveLength(1);
+    expect(recommendations[0]?.leyLineEnemyDropDetails?.mode).toBe("stockpile");
+    expect(recommendations[0]?.priorityLabel).toBe("Blocked");
+  });
+
+  it("switches to stockpile mode when there are no active enemy-drop deficits and inventory exists", () => {
+    const seededInventory = Object.fromEntries(
+      [
+        ...Object.values(staticData.generalEnemyDropFamilies),
+        ...Object.values(staticData.eliteEnemyDropFamilies),
+      ].flatMap((family) => family.materialKeys.map((materialKey) => [materialKey, 10])),
+    ) as AccountInventoryState;
+
+    const recommendations = buildRecommendations([], {
+      ...seededInventory,
+      TreasureHoarderInsignia: 0,
+      SilverRavenInsignia: 0,
+      GoldenRavenInsignia: 0,
+      RecruitsInsignia: 1,
+      SergeantsInsignia: 0,
+      LieutenantsInsignia: 0,
+      ChaosCore: 12,
+      ChaosCircuit: 6,
+      ChaosDevice: 4,
+    });
+
+    expect(recommendations).toHaveLength(1);
+    expect(recommendations[0]?.leyLineEnemyDropDetails?.mode).toBe("stockpile");
+    expect(recommendations[0]?.leyLineEnemyDropDetails?.quantityContext).toBe("owned");
+    expect(recommendations[0]?.leyLineEnemyDropDetails?.matchedFamilies.map((family) => family.familyKey)).toEqual(
+      expect.arrayContaining(["treasure_hoarder_materials", "fatui_skirmisher_materials"]),
+    );
+    expect(recommendations[0]?.leyLineEnemyDropDetails?.nationMatchSummaries[0]?.region).toBeTruthy();
+  });
+
+  it("keeps stockpile mode compact with one overall row", () => {
+    const recommendations = buildRecommendations([], {
+      FungalSpores: 2,
+      LuminescentPollen: 0,
+      CrystallineCystDust: 0,
+      DeadLeyLineBranch: 10,
+      DeadLeyLineLeaves: 8,
+      LeyLineSprout: 5,
+    });
+
+    expect(recommendations).toHaveLength(1);
+    expect(recommendations[0]?.leyLineEnemyDropDetails?.familyKey).toBe("__stockpile__");
+    expect(recommendations[0]?.sourceName).toBe("Best nations to stockpile enemy drops");
   });
 });

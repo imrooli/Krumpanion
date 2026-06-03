@@ -454,6 +454,13 @@ function buildTasks(checklist: AccountChecklistState, now: Date): ChecklistTaskV
       now,
     }),
     buildResetTaskView({
+      key: "dailyForging",
+      label: "Daily Forging",
+      state: checklist.dailyForging,
+      window: dailyWindow,
+      now,
+    }),
+    buildResetTaskView({
       key: "battlePassDailyClaims",
       label: "Battle Pass Daily Claims",
       state: checklist.battlePassDailyClaims,
@@ -464,6 +471,13 @@ function buildTasks(checklist: AccountChecklistState, now: Date): ChecklistTaskV
       key: "battlePassWeeklyClaims",
       label: "Battle Pass Weekly Claims",
       state: checklist.battlePassWeeklyClaims,
+      window: weeklyWindow,
+      now,
+    }),
+    buildResetTaskView({
+      key: "weeklyBountiesRequests",
+      label: "Weekly Bounties / Requests",
+      state: checklist.weeklyBountiesRequests,
       window: weeklyWindow,
       now,
     }),

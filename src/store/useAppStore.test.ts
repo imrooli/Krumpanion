@@ -248,6 +248,17 @@ describe("useAppStore multi-account support", () => {
     expect(goals.weaponGoals[weaponGoalId]?.paused).toBe(true);
     expect(planner.byCharacter.some((plan) => plan.characterKey === "Furina")).toBe(false);
     expect(planner.byWeapon.some((plan) => plan.goalKey === weaponGoalId)).toBe(false);
+    expect(
+      planner.recommendations.some(
+        (row) => row.relatedGoalKeys.includes("Furina") && row.actionGroup !== "resin_gated" && row.id.startsWith("paused-"),
+      ),
+    ).toBe(true);
+    expect(
+      planner.recommendations.some(
+        (row) =>
+          row.relatedGoalKeys.includes(weaponGoalId) && row.actionGroup !== "resin_gated" && row.id.startsWith("paused-"),
+      ),
+    ).toBe(true);
     expect(pausedAccount.goalProgressTracking["character:Furina"]?.startedAt).toBe(characterStartedAt);
     expect(pausedAccount.goalProgressTracking[`weapon:${weaponGoalId}`]?.startedAt).toBe(weaponStartedAt);
 

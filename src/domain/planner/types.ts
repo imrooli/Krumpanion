@@ -319,13 +319,37 @@ export interface LeyLineEnemyDropRegionRecommendation {
   }>;
 }
 
+export interface LeyLineEnemyDropMatchedFamilySummary {
+  familyKey: string;
+  familyDisplayName: string;
+  quantity: number;
+}
+
+export interface LeyLineEnemyDropNationMatchSummary {
+  region: string;
+  matchedFamilies: LeyLineEnemyDropMatchedFamilySummary[];
+  totalMatchedQuantity: number;
+  totalRelevantFamilyCoverage: number;
+  averageOwnedQuantity: number | null;
+  locationCount: number;
+  optionalOnlyLocationCount: number;
+  totalGuaranteedEnemyCount: number;
+}
+
 export interface LeyLineEnemyDropRecommendationDetails {
+  mode: "goal_deficit" | "stockpile";
+  modeLabel: string;
+  quantityContext: "missing" | "owned";
   familyKey: string;
   familyDisplayName: string;
   materialChain: string[];
   bestRegion: string | null;
+  matchedFamilies: LeyLineEnemyDropMatchedFamilySummary[];
+  nationMatchSummaries: LeyLineEnemyDropNationMatchSummary[];
   regionRecommendations: LeyLineEnemyDropRegionRecommendation[];
   locationRecommendations: LeyLineEnemyDropLocationRecommendation[];
+  uncoveredFamilies?: LeyLineEnemyDropMatchedFamilySummary[];
+  emptyStateMessage?: string;
   incidentalDropNote: string;
 }
 

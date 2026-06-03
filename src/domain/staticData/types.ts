@@ -107,6 +107,14 @@ export interface LeyLineOutcropLocation {
   unresolvedSpawnWarnings?: string[];
 }
 
+export interface LeyLineNationCoverage {
+  nationKey: string;
+  displayName: string;
+  releaseState: "live" | "beta" | "unreleased" | "special_case" | "ignored" | "deprecated";
+  enabledForRecommendations: boolean;
+  familyKeys: string[];
+}
+
 export type CanonicalMaterialSource =
   | {
       type: "elemental_boss_drop_or_crafting";
@@ -1065,6 +1073,8 @@ export interface StaticGameData {
   trounceDomains: Record<string, TrounceDomainRecord>;
   leyLineOutcropLocations: Record<string, LeyLineOutcropLocation>;
   leyLineOutcropLocationList: LeyLineOutcropLocation[];
+  leyLineNationCoverage: Record<string, LeyLineNationCoverage>;
+  leyLineNationCoverageList: LeyLineNationCoverage[];
   weaponAscensionDomainDropModel: Record<PlannerDomainLevel, WeaponAscensionDomainDropModelRecord>;
   talentBookDomainDropModel: Record<PlannerDomainLevel, TalentBookDomainDropModelRecord>;
   normalBossAscensionGemDropsByWorldLevel: Record<string, BossGemWorldLevelDropRecord>;

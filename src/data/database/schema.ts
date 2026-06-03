@@ -162,6 +162,14 @@ export interface CanonicalMaterialRecord {
   weaponExpValue?: number | null;
 }
 
+export interface CanonicalLeyLineNationCoverageEntry {
+  nationKey: string;
+  displayName: string;
+  releaseState: CanonicalReleaseState;
+  enabledForRecommendations: boolean;
+  familyKeys: string[];
+}
+
 export interface CanonicalDatabase {
   version: number;
   metadata: {
@@ -203,6 +211,7 @@ export interface CanonicalDatabase {
   sources: {
     materialSources: Record<string, MaterialSourceRecord[]>;
     leyLineOutcropLocations: Record<string, Omit<LeyLineOutcropLocation, "derivedDropFamilies" | "unresolvedSpawnWarnings"> & { spawns: LeyLineEnemySpawn[] }>;
+    leyLineNationCoverage: Record<string, CanonicalLeyLineNationCoverageEntry>;
     resinRules: ResinRules;
     resinSystem: ResinSystem;
     resinActivityCosts: ResinActivityCosts;

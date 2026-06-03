@@ -103,7 +103,7 @@ describe("IndexedDbPersistenceAdapter", () => {
     );
 
     const migratedAccount = migrated.user.accountsById[migrated.user.activeAccountId];
-    expect(migrated.schemaVersion).toBe(9);
+    expect(migrated.schemaVersion).toBe(10);
     expect(migrated.settings.activeTab).toBe("dashboard");
     expect(migratedAccount.plannerSettings.weeklyBossDiscountClaimsUsed).toBe(0);
     expect(migratedAccount.importedInventory).toEqual(migratedAccount.inventory);

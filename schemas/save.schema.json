@@ -13,7 +13,7 @@
     "overridePack"
   ],
   "properties": {
-    "schemaVersion": { "const": 9 },
+    "schemaVersion": { "const": 10 },
     "appVersion": { "type": "string" },
     "createdAt": { "type": "string" },
     "updatedAt": { "type": "string" },
@@ -359,8 +359,10 @@
                 "type": "object",
                 "required": [
                   "dailyCommissions",
+                  "dailyForging",
                   "battlePassDailyClaims",
                   "battlePassWeeklyClaims",
+                  "weeklyBountiesRequests",
                   "stardustExchange",
                   "weeklyBossClaims",
                   "artifactTransmuter",
@@ -378,6 +380,13 @@
                     },
                     "additionalProperties": false
                   },
+                  "dailyForging": {
+                    "type": "object",
+                    "properties": {
+                      "completedAt": { "type": "string" }
+                    },
+                    "additionalProperties": false
+                  },
                   "battlePassDailyClaims": {
                     "type": "object",
                     "properties": {
@@ -386,6 +395,13 @@
                     "additionalProperties": false
                   },
                   "battlePassWeeklyClaims": {
+                    "type": "object",
+                    "properties": {
+                      "completedAt": { "type": "string" }
+                    },
+                    "additionalProperties": false
+                  },
+                  "weeklyBountiesRequests": {
                     "type": "object",
                     "properties": {
                       "completedAt": { "type": "string" }

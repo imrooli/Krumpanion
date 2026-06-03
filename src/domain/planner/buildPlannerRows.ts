@@ -1,7 +1,14 @@
-import type { PlannerInput } from "./types";
+import type { PlannerInput, PlannerRecommendation } from "./types";
 import type { CraftingPlan } from "../crafting/types";
 import { resolveCraftingPlan } from "../crafting/resolveCraftingPlan";
-import { getWeaponGoalId, isWeaponGoalPlannerActive, resolveWeaponGoalCurrentState, validateGoalStateAgainstStaticData } from "../goals/goalState";
+import {
+  getWeaponGoalId,
+  isWeaponGoalPlannerActive,
+  normalizeCharacterGoalRecord,
+  normalizeWeaponGoalRecord,
+  resolveWeaponGoalCurrentState,
+  validateGoalStateAgainstStaticData,
+} from "../goals/goalState";
 import { buildFarmingEstimates, normalizePlannerEstimationSettings } from "./buildFarmingEstimates";
 import {
   buildDeterministicRequirements,
@@ -168,6 +175,126 @@ function buildWeaponExpSummary(input: PlannerInput) {
   };
 }
 
+function isNoResinRecommendation(recommendation: PlannerRecommendation): boolean {
+  return (
+    recommendation.actionGroup === "crafting" ||
+    recommendation.actionGroup === "open_world" ||
+    recommendation.actionGroup === "time_gated_non_resin" ||
+    recommendation.actionSubgroup === "ley_line_enemy_drops" ||
+    recommendation.actionSubgroup === "local_specialty" ||
+    recommendation.actionSubgroup === "forging"
+  );
+}
+
+function buildPausedOnlyPlannerInput(input: PlannerInput): PlannerInput | null {
+  const pausedCharacterGoals = Object.fromEntries(
+    Object.values(input.goals.characterGoals)
+      .filter((goal) => Boolean(goal.enabled) && Boolean(goal.paused))
+      .map((goal) => [
+        goal.characterKey,
+        normalizeCharacterGoalRecord(
+          goal.characterKey,
+          {
+            ...goal,
+            paused: false,
+          },
+          goal.planningMode !== "prefarm",
+          input.staticData,
+        ),
+      ]),
+  );
+
+  const pausedWeaponGoals = Object.fromEntries(
+    Object.entries(input.goals.weaponGoals)
+      .filter(([, goal]) => Boolean(goal.enabled) && Boolean(goal.paused))
+      .map(([goalId, goal]) => [
+        goalId,
+        normalizeWeaponGoalRecord(goalId, {
+          ...goal,
+          paused: false,
+        }),
+      ]),
+  );
+
+  if (Object.keys(pausedCharacterGoals).length === 0 && Object.keys(pausedWeaponGoals).length === 0) {
+    return null;
+  }
+
+  return {
+    ...input,
+    goals: {
+      ...input.goals,
+      characterGoals: pausedCharacterGoals,
+      weaponGoals: pausedWeaponGoals,
+      artifactGoals: [],
+    },
+  };
+}
+
+function buildPausedNoResinRecommendations(input: PlannerInput): PlannerRecommendation[] {
+  const pausedInput = buildPausedOnlyPlannerInput(input);
+  if (!pausedInput) {
+    return [];
+  }
+
+  const goalExpansion = expandGoals(pausedInput);
+  const exactInventoryComparison = buildMaterialRows(pausedInput, goalExpansion.goalResolutions);
+  const baseCraftingPlan = buildCraftingPlan(pausedInput, exactInventoryComparison.rows);
+  const normalizedSettings = normalizePlannerEstimationSettings(pausedInput.resinSettings, pausedInput.staticData);
+  const finalCoverageMode = normalizedSettings.craftingModeForResinEstimate === "expected_value" ? "expected" : "guaranteed";
+  const finalAssignments = buildSourceAssignments({
+    goalResolutions: goalExpansion.goalResolutions,
+    exactMaterialRows: exactInventoryComparison.rows,
+    craftingPlan: baseCraftingPlan,
+    staticData: pausedInput.staticData,
+    resinSettings: pausedInput.resinSettings,
+    coverageMode: finalCoverageMode,
+  });
+  const { farmingEstimates } = buildFarmingEstimates({
+    sourceAssignments: finalAssignments.sourceAssignments,
+    staticData: pausedInput.staticData,
+    resinSettings: pausedInput.resinSettings,
+    today: pausedInput.today,
+  });
+  const craftingPlan = withCraftingResinImpact(baseCraftingPlan, [], [], farmingEstimates);
+  const calculatorInventoryComparison = buildMaterialRows(pausedInput, goalExpansion.goalResolutions, {
+    craftingPlan,
+    extraNeededByMaterial: craftingPlan.totalCraftingMora > 0 ? { Mora: craftingPlan.totalCraftingMora } : undefined,
+  });
+  const materialRecommendations = buildMaterialRecommendations(pausedInput, farmingEstimates);
+  const leyLineEnemyDropRecommendations = buildLeyLineEnemyDropRecommendations({
+    materialRows: calculatorInventoryComparison.rows,
+    staticData: pausedInput.staticData,
+    goals: pausedInput.goals,
+    inventory: pausedInput.inventory,
+    allowStockpileMode: false,
+  });
+  const weaponExpSummary = buildWeaponExpSummary(pausedInput);
+  const weaponExpRecommendations = buildWeaponExpRecommendation(
+    weaponExpSummary,
+    Object.values(pausedInput.goals.weaponGoals)
+      .filter((goal) => isWeaponGoalPlannerActive(goal))
+      .map((goal) => ({
+        key: getWeaponGoalId(goal, goal.weaponKey),
+        label: pausedInput.staticData.weapons[goal.weaponKey]?.displayName
+          ? `${pausedInput.staticData.weapons[goal.weaponKey]?.displayName} weapon goal`
+          : goal.weaponKey,
+      })),
+  );
+
+  return sortRecommendations(
+    [...materialRecommendations, ...leyLineEnemyDropRecommendations, ...weaponExpRecommendations]
+      .filter((recommendation) => isNoResinRecommendation(recommendation))
+      .concat(buildCraftingPlannerRecommendations(craftingPlan))
+      .map((recommendation) => ({
+        ...recommendation,
+        id: `paused-${recommendation.id}`,
+        relatedGoalLabels: recommendation.relatedGoalLabels?.map((label) => `${label} (paused)`),
+        reason: `${recommendation.reason} This recommendation comes from a paused goal and stays in the no-resin view only.`,
+      })),
+  );
+}
+
 export function buildPlannerOutput(input: PlannerInput) {
   const goalValidation = validateGoalStateAgainstStaticData(input.goals, input.staticData);
   const normalizedInput: PlannerInput = {
@@ -264,6 +391,7 @@ export function buildPlannerOutput(input: PlannerInput) {
     materialRows: calculatorInventoryComparison.rows,
     staticData: normalizedInput.staticData,
     goals: normalizedInput.goals,
+    inventory: normalizedInput.inventory,
   });
   const artifactRecommendations = buildArtifactRecommendations(normalizedInput, artifactFarmGoals);
   const craftingRecommendations = buildCraftingPlannerRecommendations(craftingPlan);
@@ -278,12 +406,14 @@ export function buildPlannerOutput(input: PlannerInput) {
           : goal.weaponKey,
       })),
   );
+  const pausedNoResinRecommendations = buildPausedNoResinRecommendations(normalizedInput);
   const recommendations = sortRecommendations([
     ...materialRecommendations,
     ...leyLineEnemyDropRecommendations,
     ...weaponExpRecommendations,
     ...craftingRecommendations,
     ...artifactRecommendations,
+    ...pausedNoResinRecommendations,
   ]);
   const reportSections = buildReportSections(recommendations);
   const enrichedGoals = enrichGoalResolutions({

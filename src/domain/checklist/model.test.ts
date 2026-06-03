@@ -12,12 +12,27 @@ describe("checklist timing model", () => {
   it("treats daily tasks as incomplete after the 2 AM Los Angeles reset", () => {
     const checklist = createDefaultChecklistState();
     checklist.dailyCommissions.completedAt = "2026-06-02T08:30:00.000Z";
+    checklist.dailyForging.completedAt = "2026-06-02T08:30:00.000Z";
 
     const beforeReset = buildChecklistModel(checklist, new Date("2026-06-02T08:59:00.000Z"));
     const afterReset = buildChecklistModel(checklist, new Date("2026-06-02T09:01:00.000Z"));
 
     expect(beforeReset.tasks.find((task) => task.key === "dailyCommissions")?.status).toBe("complete");
     expect(afterReset.tasks.find((task) => task.key === "dailyCommissions")?.status).toBe("incomplete");
+    expect(beforeReset.tasks.find((task) => task.key === "dailyForging")?.status).toBe("complete");
+    expect(afterReset.tasks.find((task) => task.key === "dailyForging")?.status).toBe("incomplete");
+  });
+
+  it("resets weekly bounties and requests on the Monday 2 AM Los Angeles weekly boundary", () => {
+    const checklist = createDefaultChecklistState();
+    checklist.weeklyBountiesRequests.completedAt = "2026-06-07T18:00:00.000Z";
+
+    const beforeReset = buildChecklistModel(checklist, new Date("2026-06-08T08:59:00.000Z"));
+    const afterReset = buildChecklistModel(checklist, new Date("2026-06-08T09:01:00.000Z"));
+
+    expect(beforeReset.tasks.find((task) => task.key === "weeklyBountiesRequests")?.status).toBe("complete");
+    expect(afterReset.tasks.find((task) => task.key === "weeklyBountiesRequests")?.status).toBe("incomplete");
+    expect(afterReset.tasks.find((task) => task.key === "weeklyBountiesRequests")?.section).toBe("weekly");
   });
 
   it("resets weekly boss claim usage when the stored timestamp is outside the current weekly window", () => {
