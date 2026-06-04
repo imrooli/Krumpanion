@@ -123,6 +123,8 @@ function createBlankArtifactGoal(initial: Partial<ArtifactGoal> = {}): ArtifactG
     },
     desiredSubstats: [],
     progress: {
+      flowerObtained: false,
+      plumeObtained: false,
       sandsObtained: false,
       gobletObtained: false,
       circletObtained: false,

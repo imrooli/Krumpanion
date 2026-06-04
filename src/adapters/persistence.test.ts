@@ -17,7 +17,7 @@ describe("IndexedDbPersistenceAdapter", () => {
     saveFile.user.accountsById[activeAccountId] = {
       ...saveFile.user.accountsById[activeAccountId],
       goals: {
-        version: 6,
+        version: 7,
         profileName: (exampleGoals as { profileName?: string }).profileName,
         characterGoals: {
           ...((exampleGoals as { characterGoals: Record<string, unknown> }).characterGoals as typeof saveFile.user.accountsById[typeof activeAccountId]["goals"]["characterGoals"]),
@@ -103,14 +103,14 @@ describe("IndexedDbPersistenceAdapter", () => {
     );
 
     const migratedAccount = migrated.user.accountsById[migrated.user.activeAccountId];
-    expect(migrated.schemaVersion).toBe(12);
+    expect(migrated.schemaVersion).toBe(13);
     expect(migrated.settings.activeTab).toBe("dashboard");
     expect(migratedAccount.plannerSettings.weeklyBossDiscountClaimsUsed).toBe(0);
     expect(migratedAccount.importedInventory).toEqual(migratedAccount.inventory);
     expect(migratedAccount.checklist.weeklyBossClaims.usedCount).toBe(0);
     expect(migratedAccount.checklist.realmCurrency.realmLevel).toBe(10);
     expect(migratedAccount.checklist.realmCurrency.trustRank).toBe(10);
-    expect(migratedAccount.goals.version).toBe(6);
+    expect(migratedAccount.goals.version).toBe(7);
     expect(migratedAccount.goalProgressTracking).toEqual({});
     expect(migratedAccount.goalMilestones).toEqual([]);
     expect(migrated.overridePack?.legacyExactCharacterProgressions?.LegacyCharacter.levelTotals?.["20"]?.Mora).toBe(1);

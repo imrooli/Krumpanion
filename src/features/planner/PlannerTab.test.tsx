@@ -622,6 +622,8 @@ describe("PlannerTab", () => {
             },
             desiredSubstats: [],
             progress: {
+              flowerObtained: false,
+              plumeObtained: false,
               sandsObtained: false,
               gobletObtained: false,
               circletObtained: false,

@@ -13,7 +13,7 @@
     "overridePack"
   ],
   "properties": {
-    "schemaVersion": { "const": 12 },
+    "schemaVersion": { "const": 13 },
     "appVersion": { "type": "string" },
     "createdAt": { "type": "string" },
     "updatedAt": { "type": "string" },
@@ -239,7 +239,7 @@
                 "type": "object",
                 "required": ["version", "characterGoals", "weaponGoals", "artifactGoals"],
                 "properties": {
-                  "version": { "const": 6 },
+                  "version": { "const": 7 },
                   "profileName": { "type": "string" },
                   "characterGoals": {
                     "type": "object",
@@ -389,8 +389,10 @@
                         },
                         "progress": {
                           "type": "object",
-                          "required": ["sandsObtained", "gobletObtained", "circletObtained"],
+                          "required": ["flowerObtained", "plumeObtained", "sandsObtained", "gobletObtained", "circletObtained"],
                           "properties": {
+                            "flowerObtained": { "type": "boolean" },
+                            "plumeObtained": { "type": "boolean" },
                             "sandsObtained": { "type": "boolean" },
                             "gobletObtained": { "type": "boolean" },
                             "circletObtained": { "type": "boolean" }

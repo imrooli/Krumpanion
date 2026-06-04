@@ -96,7 +96,7 @@ function maybeGoals(value: unknown): KrumpanionGoals | null {
     artifactGoals?: unknown;
   };
   if (
-    (candidate.version === 1 || candidate.version === 2 || candidate.version === 3 || candidate.version === 4 || candidate.version === 5 || candidate.version === 6) &&
+    (candidate.version === 1 || candidate.version === 2 || candidate.version === 3 || candidate.version === 4 || candidate.version === 5 || candidate.version === 6 || candidate.version === 7) &&
     candidate.characterGoals &&
     candidate.weaponGoals &&
     candidate.artifactGoals
@@ -162,7 +162,7 @@ function normalizeGoalState(goals: KrumpanionGoals | null, accountId?: string): 
 
   return {
     ...structuredClone(DEFAULT_GOAL_STATE),
-    version: 6,
+    version: 7,
     ...(goals
       ? {
           profileName: goals.profileName,
@@ -435,14 +435,14 @@ export function migrateSaveFile(value: unknown): KrumpanionSaveFile | null {
   };
 
   if (
-    (candidate.schemaVersion === 12 || candidate.schemaVersion === 11 || candidate.schemaVersion === 10 || candidate.schemaVersion === 9 || candidate.schemaVersion === 8 || candidate.schemaVersion === 7 || candidate.schemaVersion === 6 || candidate.schemaVersion === 5) &&
+    (candidate.schemaVersion === 13 || candidate.schemaVersion === 12 || candidate.schemaVersion === 11 || candidate.schemaVersion === 10 || candidate.schemaVersion === 9 || candidate.schemaVersion === 8 || candidate.schemaVersion === 7 || candidate.schemaVersion === 6 || candidate.schemaVersion === 5) &&
     typeof candidate.createdAt === "string" &&
     typeof candidate.updatedAt === "string"
   ) {
     return {
       ...createDefaultSaveFile(new Date(candidate.createdAt)),
       ...candidate,
-      schemaVersion: 12,
+      schemaVersion: 13,
       appVersion: candidate.appVersion ?? APP_VERSION,
       user: normalizeUserState(candidate.user, candidate.createdAt),
       settings: {
@@ -467,7 +467,7 @@ export function migrateSaveFile(value: unknown): KrumpanionSaveFile | null {
 
     return {
       ...createDefaultSaveFile(new Date(candidate.createdAt)),
-      schemaVersion: 12,
+      schemaVersion: 13,
       appVersion: candidate.appVersion ?? APP_VERSION,
       createdAt: candidate.createdAt,
       updatedAt: candidate.updatedAt,

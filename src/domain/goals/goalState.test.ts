@@ -175,7 +175,7 @@ describe("goalState", () => {
   it("disables ignored or non-trackable persisted goals instead of crashing", () => {
     const staticData = loadStaticData();
     const goals: KrumpanionGoalState = {
-      version: 6,
+      version: 7,
       characterGoals: {
         Manekin: {
           characterKey: "Manekin",
@@ -227,7 +227,7 @@ describe("goalState", () => {
 
     const result = validateGoalStateAgainstStaticData(
       {
-        version: 6,
+        version: 7,
         characterGoals: {
           Manekin: {
             characterKey: "Manekin",
@@ -259,6 +259,8 @@ describe("goalState", () => {
       },
       desiredSubstats: ["critRate_", "critDMG_", "critRate_", "enerRech_"] as never,
       progress: {
+        flowerObtained: false,
+        plumeObtained: false,
         sandsObtained: false,
         gobletObtained: false,
         circletObtained: false,
@@ -274,5 +276,7 @@ describe("goalState", () => {
     expect(normalized.mainStatTargets.goblet).toEqual(["Hydro DMG Bonus%"]);
     expect(normalized.mainStatTargets.circlet).toEqual(["CRIT DMG%", "CRIT Rate%"]);
     expect(normalized.desiredSubstats).toEqual(["CRIT Rate%", "CRIT DMG%", "Energy Recharge%"]);
+    expect(normalized.progress.flowerObtained).toBe(false);
+    expect(normalized.progress.plumeObtained).toBe(false);
   });
 });

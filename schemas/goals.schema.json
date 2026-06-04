@@ -12,7 +12,7 @@
   ],
   "properties": {
     "version": {
-      "const": 6
+      "const": 7
     },
     "profileName": {
       "type": "string"
@@ -305,8 +305,10 @@
           },
           "progress": {
             "type": "object",
-            "required": ["sandsObtained", "gobletObtained", "circletObtained"],
+            "required": ["flowerObtained", "plumeObtained", "sandsObtained", "gobletObtained", "circletObtained"],
             "properties": {
+              "flowerObtained": { "type": "boolean" },
+              "plumeObtained": { "type": "boolean" },
               "sandsObtained": { "type": "boolean" },
               "gobletObtained": { "type": "boolean" },
               "circletObtained": { "type": "boolean" }

@@ -1,6 +1,7 @@
 export type GoalPlanningMode = "owned" | "prefarm" | "manual";
 
-export type ArtifactGoalKeyPiece = "sands" | "goblet" | "circlet";
+export type ArtifactGoalSlotKey = "flower" | "plume" | "sands" | "goblet" | "circlet";
+export type ArtifactGoalKeyPiece = Extract<ArtifactGoalSlotKey, "sands" | "goblet" | "circlet">;
 export type ArtifactSandsMainStat = "HP%" | "ATK%" | "DEF%" | "Elemental Mastery" | "Energy Recharge%";
 export type ArtifactGobletMainStat =
   | "HP%"
@@ -42,6 +43,8 @@ export interface ArtifactGoalMainStatTargets {
 }
 
 export interface ArtifactGoalProgress {
+  flowerObtained: boolean;
+  plumeObtained: boolean;
   sandsObtained: boolean;
   gobletObtained: boolean;
   circletObtained: boolean;
@@ -149,7 +152,7 @@ export interface PlannerSettings {
 }
 
 export interface KrumpanionGoalState {
-  version: 6;
+  version: 7;
   profileName?: string;
   characterGoals: Record<string, CharacterGoal>;
   weaponGoals: Record<string, WeaponGoal>;
@@ -178,7 +181,7 @@ export type AppSection =
 export type PlannerView = "today" | "week" | "no_resin" | "recent_changes";
 
 export const DEFAULT_GOAL_STATE: KrumpanionGoalState = {
-  version: 6,
+  version: 7,
   characterGoals: {},
   weaponGoals: {},
   artifactGoals: [],

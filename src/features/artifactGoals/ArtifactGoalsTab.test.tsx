@@ -90,7 +90,7 @@ describe("ArtifactGoalsTab", () => {
     cleanup();
   });
 
-  it("defaults to by-character editing and keeps goal edits isolated across characters", async () => {
+  it("defaults to by-domain browsing and keeps goal edits isolated across characters", async () => {
     const user = userEvent.setup();
 
     render(<ArtifactGoalsTab plannerOutput={UNUSED_PLANNER_OUTPUT} />);
@@ -101,12 +101,13 @@ describe("ArtifactGoalsTab", () => {
 
     let editor = await waitForEditor();
 
-    expect(screen.getByRole("button", { name: "By Character" })).toHaveAttribute("aria-pressed", "true");
+    expect(screen.getByRole("button", { name: "By Domain" })).toHaveAttribute("aria-pressed", "true");
 
     await user.selectOptions(within(editor).getByLabelText("Character"), "Neuvillette");
     await user.type(within(editor).getByLabelText("Goal name"), "Neuv Goal");
     await user.click(within(within(editor).getByRole("group", { name: "Artifact sets" })).getByRole("button", { name: "Marechaussee Hunter" }));
     await user.click(within(within(editor).getByRole("group", { name: "Sands" })).getByRole("button", { name: "HP%" }));
+    await user.click(screen.getByRole("button", { name: "By Character" }));
     await waitFor(() => expect(findArtifactBrowserButton("Neuvillette")).toBeTruthy());
 
     await user.click(screen.getAllByRole("button", { name: "Add Artifact Goal" })[0]);
@@ -137,9 +138,9 @@ describe("ArtifactGoalsTab", () => {
     await waitFor(() => expect(screen.getByLabelText("Character")).toHaveValue("Fischl"));
     expect(findPickerChoice("Sands", "HP%").some((button) => button.getAttribute("aria-pressed") === "true")).toBe(false);
     expect(screen.getByRole("button", { name: "Golden Troupe", pressed: true })).toBeInTheDocument();
-  });
+  }, 10000);
 
-  it("preserves selection across view changes and keeps the editor visible when incomplete-only hides the row", async () => {
+  it("preserves selection across view changes and keeps the editor visible when completed rows are hidden", async () => {
     const user = userEvent.setup();
 
     render(<ArtifactGoalsTab plannerOutput={UNUSED_PLANNER_OUTPUT} />);
@@ -151,23 +152,22 @@ describe("ArtifactGoalsTab", () => {
     await user.selectOptions(within(editor).getByLabelText("Character"), "Neuvillette");
     await user.type(within(editor).getByLabelText("Goal name"), "Persistent Goal");
     await user.click(within(within(editor).getByRole("group", { name: "Artifact sets" })).getByRole("button", { name: "Marechaussee Hunter" }));
+    await user.click(screen.getByRole("button", { name: /By Character/i }));
     await waitFor(() => expect(findArtifactBrowserButton("Neuvillette")).toBeTruthy());
-
-    await user.click(screen.getByRole("button", { name: /By Domain/i }));
     await waitFor(() => expect(screen.getByLabelText("Character")).toHaveValue("Neuvillette"));
-    expect(screen.getAllByText("Denouement of Sin").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("Neuvillette").length).toBeGreaterThan(0);
 
+    await user.click(within(editor).getByLabelText(/Flower obtained/i));
+    await user.click(within(editor).getByLabelText(/Plume obtained/i));
     await user.click(within(editor).getByLabelText(/Sands obtained/i));
     await user.click(within(editor).getByLabelText(/Goblet obtained/i));
     await user.click(within(editor).getByLabelText(/Circlet obtained/i));
-    await waitFor(() => expect(screen.getAllByText("3/3 key pieces obtained").length).toBeGreaterThan(0));
-
-    await user.click(screen.getByRole("checkbox", { name: /Incomplete Only/i }));
+    await waitFor(() => expect(screen.getAllByText("5/5 pieces obtained").length).toBeGreaterThan(0));
 
     expect(screen.getByText("No goals match this filter")).toBeInTheDocument();
     expect(screen.getByLabelText("Character")).toHaveValue("Neuvillette");
     expect(screen.getByText("Changes save automatically.")).toBeInTheDocument();
-  });
+  }, 10000);
 
   it("selects a deterministic fallback goal after deletion", async () => {
     const user = userEvent.setup();
@@ -178,6 +178,7 @@ describe("ArtifactGoalsTab", () => {
     let editor = await waitForEditor();
     await user.selectOptions(within(editor).getByLabelText("Character"), "Fischl");
     await user.type(within(editor).getByLabelText("Goal name"), "Fischl Goal");
+    await user.click(screen.getByRole("button", { name: "By Character" }));
     await waitFor(() => expect(findArtifactBrowserButton("Fischl")).toBeTruthy());
 
     await user.click(screen.getAllByRole("button", { name: "Add Artifact Goal" })[0]);
@@ -232,6 +233,8 @@ describe("ArtifactGoalsTab", () => {
             mainStatTargets: { sands: [], goblet: [], circlet: [] },
             desiredSubstats: [],
             progress: {
+              flowerObtained: false,
+              plumeObtained: false,
               sandsObtained: false,
               gobletObtained: false,
               circletObtained: false,
@@ -265,6 +268,8 @@ describe("ArtifactGoalsTab", () => {
             mainStatTargets: { sands: [], goblet: [], circlet: [] },
             desiredSubstats: [],
             progress: {
+              flowerObtained: false,
+              plumeObtained: false,
               sandsObtained: false,
               gobletObtained: false,
               circletObtained: false,

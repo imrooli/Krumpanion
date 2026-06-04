@@ -1,5 +1,5 @@
 {
-  "version": 6,
+  "version": 7,
   "profileName": "Example Profile",
   "characterGoals": {
     "Furina": {
@@ -60,6 +60,8 @@
         "Energy Recharge%"
       ],
       "progress": {
+        "flowerObtained": false,
+        "plumeObtained": false,
         "sandsObtained": false,
         "gobletObtained": false,
         "circletObtained": false

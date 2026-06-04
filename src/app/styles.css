@@ -1924,6 +1924,11 @@ input[type="number"] {
   gap: 0.75rem;
 }
 
+.artifact-goals-workspace .split-workspace {
+  grid-template-columns: minmax(28rem, 36rem) minmax(0, 1fr);
+  align-items: start;
+}
+
 .artifact-browser {
   min-width: 0;
 }
@@ -1931,6 +1936,10 @@ input[type="number"] {
 .artifact-browser-group {
   display: grid;
   gap: 0.75rem;
+}
+
+.artifact-domain-card {
+  gap: 0.85rem;
 }
 
 .artifact-browser-group + .artifact-browser-group {
@@ -2089,6 +2098,86 @@ input[type="number"] {
   font-size: 0.92rem;
 }
 
+.artifact-domain-summary {
+  display: grid;
+  gap: 0.28rem;
+  justify-items: end;
+  text-align: right;
+}
+
+.artifact-domain-set-stack {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.artifact-domain-set-group {
+  display: grid;
+  gap: 0.55rem;
+  padding: 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 0.9rem;
+  background: rgba(255, 255, 255, 0.52);
+}
+
+.artifact-domain-set-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.9rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.artifact-domain-table-wrapper {
+  overflow-x: auto;
+}
+
+.artifact-domain-table {
+  min-width: 42rem;
+}
+
+.artifact-domain-table th:nth-child(1),
+.artifact-domain-table td:nth-child(1) {
+  min-width: 5rem;
+}
+
+.artifact-domain-table th:nth-child(2),
+.artifact-domain-table td:nth-child(2) {
+  min-width: 9rem;
+}
+
+.artifact-domain-table th:nth-child(3),
+.artifact-domain-table td:nth-child(3) {
+  min-width: 9rem;
+}
+
+.artifact-domain-table th:nth-child(4),
+.artifact-domain-table td:nth-child(4) {
+  min-width: 11rem;
+}
+
+.artifact-domain-table th:nth-child(5),
+.artifact-domain-table td:nth-child(5) {
+  min-width: 12rem;
+}
+
+.artifact-domain-cell-stack {
+  display: grid;
+  gap: 0.18rem;
+}
+
+.artifact-domain-row {
+  cursor: pointer;
+}
+
+.artifact-domain-row:focus-visible {
+  outline: 2px solid rgba(182, 84, 39, 0.38);
+  outline-offset: -2px;
+}
+
+.artifact-domain-row.is-complete {
+  opacity: 0.72;
+}
+
 .artifact-domain-meta {
   display: flex;
   flex-wrap: wrap;
@@ -2102,6 +2191,11 @@ input[type="number"] {
   display: flex;
   flex-wrap: wrap;
   gap: 0.6rem 1rem;
+}
+
+.artifact-progress-section {
+  display: grid;
+  gap: 0.4rem;
 }
 
 .artifact-goal-fields {
@@ -2413,6 +2507,10 @@ input[type="number"] {
     grid-template-columns: 1fr;
   }
 
+  .artifact-goals-workspace .split-workspace {
+    grid-template-columns: 1fr;
+  }
+
   .inspector-panel {
     position: static;
   }
@@ -2479,6 +2577,15 @@ input[type="number"] {
 
   .data-table {
     min-width: 34rem;
+  }
+
+  .artifact-domain-summary {
+    justify-items: start;
+    text-align: left;
+  }
+
+  .artifact-domain-table {
+    min-width: 36rem;
   }
 }
 

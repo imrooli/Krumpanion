@@ -249,6 +249,8 @@ export function normalizeArtifactGoalRecord(goal: ArtifactGoal): ArtifactGoal {
     },
     desiredSubstats: normalizeArtifactDesiredSubstats(goal.desiredSubstats),
     progress: {
+      flowerObtained: Boolean(goal.progress?.flowerObtained),
+      plumeObtained: Boolean(goal.progress?.plumeObtained),
       sandsObtained: Boolean(goal.progress?.sandsObtained),
       gobletObtained: Boolean(goal.progress?.gobletObtained),
       circletObtained: Boolean(goal.progress?.circletObtained),

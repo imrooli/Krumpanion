@@ -29,7 +29,7 @@ const GOALS: KrumpanionGoals = {
     dailyResinBudget: 180,
     includeArtifactGoals: false,
   },
-  version: 6,
+  version: 7,
 };
 
 function makeRow(overrides: Partial<MaterialNeedRow>): MaterialNeedRow {

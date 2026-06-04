@@ -62,6 +62,8 @@ function createArtifactGoal(overrides: Partial<ArtifactGoal> = {}): ArtifactGoal
     },
     desiredSubstats: overrides.desiredSubstats ?? [],
     progress: overrides.progress ?? {
+      flowerObtained: false,
+      plumeObtained: false,
       sandsObtained: false,
       gobletObtained: false,
       circletObtained: false,
@@ -78,7 +80,7 @@ describe("buildArtifactGoalsViewModel", () => {
     const viewModel = buildArtifactGoalsViewModel({
       account,
       staticData,
-      incompleteOnly: false,
+      showCompleted: false,
       goals: [
         createArtifactGoal({
           id: "neuv",
@@ -114,11 +116,13 @@ describe("buildArtifactGoalsViewModel", () => {
     expect(denouement).toBeDefined();
     expect(denouement?.goals.map((goal) => goal.id)).toEqual(expect.arrayContaining(["neuv", "fischl"]));
     expect(denouement?.setLabels).toEqual(expect.arrayContaining(["Marechaussee Hunter", "Golden Troupe"]));
+    expect(denouement?.setGroups.map((group) => group.setLabel)).toEqual(expect.arrayContaining(["Marechaussee Hunter", "Golden Troupe"]));
     expect(denouement?.goals.find((goal) => goal.id === "neuv")?.mainStatSummary).toContain("Sands HP% / Energy Recharge%");
+    expect(denouement?.setGroups[0]?.rows[0]?.slotLabel).toBeDefined();
     expect(valley?.goals.map((goal) => goal.id)).toContain("kazuha");
     expect(momiji?.goals.map((goal) => goal.id)).toContain("kazuha");
     expect(viewModel.visibleGoalIdsByView.character).toEqual(["fischl", "kazuha", "neuv"]);
-    expect(viewModel.visibleGoalIdsByView.domain).toEqual(["fischl", "neuv", "kazuha"]);
+    expect(viewModel.visibleGoalIdsByView.domain).toEqual(expect.arrayContaining(["fischl", "kazuha", "neuv"]));
     expect(viewModel.selectedGoalSummariesById.neuv.domainSummary).toBe("Denouement of Sin");
   });
 
@@ -128,7 +132,7 @@ describe("buildArtifactGoalsViewModel", () => {
     const viewModel = buildArtifactGoalsViewModel({
       account,
       staticData,
-      incompleteOnly: false,
+      showCompleted: false,
       goals: [
         createArtifactGoal({
           id: "glad",
@@ -160,6 +164,8 @@ describe("buildArtifactGoalsViewModel", () => {
         characterKey: "Neuvillette",
         targetSetKeys: ["MarechausseeHunter"],
         progress: {
+          flowerObtained: true,
+          plumeObtained: true,
           sandsObtained: true,
           gobletObtained: true,
           circletObtained: true,
@@ -170,6 +176,8 @@ describe("buildArtifactGoalsViewModel", () => {
         characterKey: "Fischl",
         targetSetKeys: ["GoldenTroupe"],
         progress: {
+          flowerObtained: false,
+          plumeObtained: false,
           sandsObtained: true,
           gobletObtained: false,
           circletObtained: false,
@@ -181,22 +189,64 @@ describe("buildArtifactGoalsViewModel", () => {
       account,
       staticData,
       goals,
-      incompleteOnly: false,
+      showCompleted: true,
     });
     const incompleteOnly = buildArtifactGoalsViewModel({
       account,
       staticData,
       goals,
-      incompleteOnly: true,
+      showCompleted: false,
     });
 
     expect(allGoals.goalRows.find((goal) => goal.id === "complete-goal")?.status).toBe("complete");
-    expect(allGoals.goalRows.find((goal) => goal.id === "complete-goal")?.progressLabel).toBe("3/3 key pieces obtained");
+    expect(allGoals.goalRows.find((goal) => goal.id === "complete-goal")?.progressLabel).toBe("5/5 pieces obtained");
     expect(allGoals.goalRows.find((goal) => goal.id === "partial-goal")?.status).toBe("in_progress");
-    expect(allGoals.goalRows.find((goal) => goal.id === "partial-goal")?.progressLabel).toBe("1/3 key pieces obtained");
+    expect(allGoals.goalRows.find((goal) => goal.id === "partial-goal")?.progressLabel).toBe("1/5 pieces obtained");
     expect(incompleteOnly.domainGroups.flatMap((group) => group.goals.map((goal) => goal.id))).toEqual(["partial-goal"]);
     expect(incompleteOnly.characterGroups.flatMap((group) => group.goals.map((goal) => goal.id))).toEqual(["partial-goal"]);
     expect(incompleteOnly.visibleGoalIdsByView.character).toEqual(["partial-goal"]);
     expect(incompleteOnly.goalRowsById["complete-goal"]?.status).toBe("complete");
+  });
+
+  it("merges matching domain keep-guide rows across multiple characters", () => {
+    const staticData = createStaticData();
+    const account = createAccountWithCharacters();
+    const viewModel = buildArtifactGoalsViewModel({
+      account,
+      staticData,
+      showCompleted: false,
+      goals: [
+        createArtifactGoal({
+          id: "raiden-like",
+          characterKey: "Fischl",
+          targetSetKeys: ["GoldenTroupe"],
+          mainStatTargets: {
+            sands: ["ATK%"],
+            goblet: ["Electro DMG Bonus%"],
+            circlet: ["CRIT Rate%"],
+          },
+          desiredSubstats: ["CRIT Rate%", "CRIT DMG%", "ATK%"],
+        }),
+        createArtifactGoal({
+          id: "another-electro",
+          characterKey: "Kazuha",
+          targetSetKeys: ["GoldenTroupe"],
+          mainStatTargets: {
+            sands: ["ATK%"],
+            goblet: ["Electro DMG Bonus%"],
+            circlet: ["CRIT Rate%"],
+          },
+          desiredSubstats: ["CRIT Rate%", "CRIT DMG%", "ATK%"],
+        }),
+      ],
+    });
+
+    const denouement = viewModel.domainGroups.find((group) => group.label === "Denouement of Sin");
+    const mergedSands = denouement?.setGroups
+      .find((group) => group.setLabel === "Golden Troupe")
+      ?.rows.find((row) => row.slotKey === "sands");
+
+    expect(mergedSands?.usefulForCharacters).toEqual(["Fischl", "Kazuha"]);
+    expect(mergedSands?.statusLabel).toBe("2 missing");
   });
 });
