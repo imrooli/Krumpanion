@@ -464,10 +464,15 @@ export interface MaterialSourceRecord {
 
 export interface ArtifactDomainRecord {
   setKey: string;
-  domainKey: string;
-  domainName: string;
-  availability: AvailabilityGroupKey;
-  resinCost: number;
+  setName: string;
+  hasStandardDomainSource: boolean;
+  domainKey?: string;
+  domainName?: string;
+  domainLocation?: string;
+  region?: string;
+  availability?: AvailabilityGroupKey;
+  resinCost?: number;
+  pairedSetKeys?: string[];
 }
 
 export interface ResinRules {

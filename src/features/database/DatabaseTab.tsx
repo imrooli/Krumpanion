@@ -323,6 +323,8 @@ export function DatabaseTab() {
   const [materialDraft, setMaterialDraft] = useState<MaterialDescriptor>({ key: "", displayName: "", category: "other" });
   const [artifactDomainDraft, setArtifactDomainDraft] = useState<ArtifactDomainRecord>({
     setKey: "",
+    setName: "",
+    hasStandardDomainSource: true,
     domainKey: "",
     domainName: "",
     availability: "ALWAYS",
@@ -1295,21 +1297,27 @@ export function DatabaseTab() {
             <div className="two-column-grid">
               <label>
                 Domain Key
-                <input className="text-input" value={artifactDomainDraft.domainKey} onChange={(event) => setArtifactDomainDraft({ ...artifactDomainDraft, setKey: artifactSetKey, domainKey: event.target.value })} />
+                <input className="text-input" value={artifactDomainDraft.domainKey ?? ""} onChange={(event) => setArtifactDomainDraft({ ...artifactDomainDraft, setKey: artifactSetKey, setName: artifactDomainDraft.setName || artifactSetKey, domainKey: event.target.value })} />
               </label>
               <label>
                 Domain Name
-                <input className="text-input" value={artifactDomainDraft.domainName} onChange={(event) => setArtifactDomainDraft({ ...artifactDomainDraft, setKey: artifactSetKey, domainName: event.target.value })} />
+                <input className="text-input" value={artifactDomainDraft.domainName ?? ""} onChange={(event) => setArtifactDomainDraft({ ...artifactDomainDraft, setKey: artifactSetKey, setName: artifactDomainDraft.setName || artifactSetKey, domainName: event.target.value })} />
               </label>
-              <SelectField label="Availability" value={artifactDomainDraft.availability} options={AVAILABILITY_OPTIONS} includeBlank={false} onChange={(value) => setArtifactDomainDraft({ ...artifactDomainDraft, setKey: artifactSetKey, availability: value as AvailabilityGroupKey })} />
+              <SelectField label="Availability" value={artifactDomainDraft.availability ?? "ALWAYS"} options={AVAILABILITY_OPTIONS} includeBlank={false} onChange={(value) => setArtifactDomainDraft({ ...artifactDomainDraft, setKey: artifactSetKey, setName: artifactDomainDraft.setName || artifactSetKey, availability: value as AvailabilityGroupKey })} />
               <label>
                 Resin Cost
-                <input type="number" min={0} value={artifactDomainDraft.resinCost} onChange={(event) => setArtifactDomainDraft({ ...artifactDomainDraft, setKey: artifactSetKey, resinCost: Number(event.target.value) || 0 })} />
+                <input type="number" min={0} value={artifactDomainDraft.resinCost ?? 20} onChange={(event) => setArtifactDomainDraft({ ...artifactDomainDraft, setKey: artifactSetKey, setName: artifactDomainDraft.setName || artifactSetKey, resinCost: Number(event.target.value) || 0 })} />
               </label>
             </div>
             <div className="button-row">
               <button type="button" className="button-primary" disabled={!artifactSetKey} onClick={async () => {
-                await savePack(upsertOverrideRecord(overridePack, "artifactDomains", artifactSetKey, { ...artifactDomainDraft, setKey: artifactSetKey }));
+                await savePack(
+                  upsertOverrideRecord(overridePack, "artifactDomains", artifactSetKey, {
+                    ...artifactDomainDraft,
+                    setKey: artifactSetKey,
+                    setName: artifactDomainDraft.setName || artifactSetKey,
+                  }),
+                );
               }}>Save Artifact Domain</button>
               <button type="button" className="button-ghost" disabled={!artifactSetKey} onClick={async () => {
                 await savePack(removeOverrideRecord(overridePack, "artifactDomains", artifactSetKey));

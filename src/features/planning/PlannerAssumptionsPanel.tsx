@@ -215,14 +215,6 @@ export function PlannerAssumptionsPanel({ staticData }: PlannerAssumptionsPanelP
           />
           Estimate open-world enemy drops
         </label>
-        <label className="checkbox-row">
-          <input
-            type="checkbox"
-            checked={plannerSettings.includeArtifactGoals}
-            onChange={(event) => void updatePlannerSettings({ includeArtifactGoals: event.target.checked })}
-          />
-          Include artifact goals
-        </label>
       </div>
     </article>
   );

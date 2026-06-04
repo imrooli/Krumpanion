@@ -217,9 +217,19 @@ describe("buildPlannerReport helpers", () => {
           {
             id: "artifact-raiden",
             characterKey: "RaidenShogun",
-            domainKey: "MomijiDyedCourt",
             targetSetKeys: ["EmblemOfSeveredFate"],
             priority: 3,
+            mainStatTargets: {
+              sands: [],
+              goblet: [],
+              circlet: [],
+            },
+            desiredSubstats: [],
+            progress: {
+              sandsObtained: false,
+              gobletObtained: false,
+              circletObtained: false,
+            },
             enabled: true,
           },
         ],

@@ -12,14 +12,12 @@ import {
 } from "../goals/goalState";
 import {
   getArtifactGoalDisplayName,
-  getArtifactGoalSubtitle,
   getCharacterGoalDisplayName,
   getGoalDisplayName as getReadableGoalDisplayName,
   getGoalTypeLabel as getReadableGoalTypeLabel,
   getWeaponGoalDisplayName,
 } from "../goals/goalDisplay";
 import type { StaticGameData } from "../staticData/types";
-import { availabilityMatchesDay } from "../../utils/days";
 import type {
   ArtifactFarmPlan,
   CharacterPlan,
@@ -149,16 +147,17 @@ export function buildArtifactPlans(goals: ArtifactGoal[], staticData: StaticGame
   return goals
     .filter((goal) => goal.enabled)
     .map((goal) => {
-      const setKey = goal.targetSetKeys[0];
-      const domain = setKey ? staticData.artifactDomains[setKey] : undefined;
+      const domain = goal.targetSetKeys
+        .map((setKey) => staticData.artifactDomains[setKey])
+        .find((record) => record?.hasStandardDomainSource);
       return {
         id: goal.id,
         label: getArtifactGoalDisplayName(goal, staticData),
-        domainKey: goal.domainKey,
-        domainName: domain?.domainName ?? goal.domainKey,
+        domainKey: domain?.domainKey ?? "no-standard-source",
+        domainName: domain?.domainName ?? "No standard Artifact Domain source",
         targetSetKeys: goal.targetSetKeys,
         availability: domain?.availability ?? "ALWAYS",
-        weeklyResinBudget: goal.weeklyResinBudget ?? null,
+        weeklyResinBudget: null,
         priority: goal.priority,
         notes: goal.notes,
       };
@@ -392,32 +391,9 @@ export function buildMaterialRecommendations(input: PlannerInput, farmingEstimat
 }
 
 export function buildArtifactRecommendations(input: PlannerInput, artifactPlans: ArtifactFarmPlan[]): PlannerRecommendation[] {
-  return artifactPlans.map((artifactPlan) => ({
-    id: `recommendation-artifact-${artifactPlan.id}`,
-    title: `Farm ${artifactPlan.domainName}`,
-    category: "artifact_domain",
-    actionGroup: "resin_gated",
-    priority: artifactPlan.priority * 100 + (availabilityMatchesDay(artifactPlan.availability, input.today) ? 25 : 0),
-    availability: artifactPlan.availability,
-    sourceName: artifactPlan.domainName,
-    resinCost: input.staticData.artifactDomains[artifactPlan.targetSetKeys[0]]?.resinCost ?? 20,
-    resinPerRun: input.staticData.artifactDomains[artifactPlan.targetSetKeys[0]]?.resinCost ?? 20,
-    totalEstimatedResin: artifactPlan.weeklyResinBudget ?? null,
-    resinLabel:
-      artifactPlan.weeklyResinBudget != null
-        ? String(artifactPlan.weeklyResinBudget)
-        : String(input.staticData.artifactDomains[artifactPlan.targetSetKeys[0]]?.resinCost ?? 20),
-    estimatedRuns: artifactPlan.weeklyResinBudget
-      ? Math.ceil(artifactPlan.weeklyResinBudget / (input.staticData.artifactDomains[artifactPlan.targetSetKeys[0]]?.resinCost ?? 20))
-      : null,
-    relatedGoalKeys: [artifactPlan.id],
-    relatedGoalLabels: [artifactPlan.label],
-    priorityLabel: getPlannerPriorityLabel(artifactPlan.priority * 100, []),
-    requiredMaterials: [],
-    reason: `Farm ${artifactPlan.domainName} because ${artifactPlan.label} is an active artifact goal.`,
-    blockedBy: [],
-    isAvailableToday: availabilityMatchesDay(artifactPlan.availability, input.today),
-  }));
+  void input;
+  void artifactPlans;
+  return [];
 }
 
 export function buildCraftingPlannerRecommendations(craftingPlan: PlannerOutput["craftingPlan"]): PlannerRecommendation[] {
@@ -670,38 +646,15 @@ function buildPlannerGoalFromWeapon(
   };
 }
 
-function buildPlannerGoalFromArtifact(
-  goal: ArtifactGoal,
-  plan: ArtifactFarmPlan | undefined,
-  staticData: StaticGameData,
-): PlannerGoal {
-  return {
-    id: goal.id,
-    goalType: "artifact",
-    entityKey: goal.domainKey,
-    label: getArtifactGoalDisplayName(goal, staticData),
-    currentSummary: plan?.domainName ?? (goal.domainKey || "No domain"),
-    targetSummary: getArtifactGoalSubtitle(goal, staticData) || "No sets",
-    enabled: goal.enabled,
-    priority: goal.priority,
-    shortageCount: 0,
-    estimatedResin: goal.weeklyResinBudget ?? 0,
-    warningCount: 0,
-    notes: goal.notes,
-  };
-}
-
 export function buildPlannerGoals(params: {
   ownership: AccountOwnershipState;
   goals: KrumpanionGoals;
   staticData: StaticGameData;
   byCharacter: CharacterPlan[];
   byWeapon: WeaponPlan[];
-  artifactFarmGoals: ArtifactFarmPlan[];
 }): { plannerGoals: PlannerGoal[]; plannerGoalGroups: PlannerGoalGroup[] } {
   const characterPlansByKey = new Map(params.byCharacter.map((plan) => [plan.characterKey, plan]));
   const weaponPlansById = new Map(params.byWeapon.map((plan) => [plan.weaponId, plan]));
-  const artifactPlansById = new Map(params.artifactFarmGoals.map((plan) => [plan.id, plan]));
 
   const plannerGoals = [
     ...Object.values(params.goals.characterGoals)
@@ -717,16 +670,13 @@ export function buildPlannerGoals(params: {
           params.staticData,
         ),
       ),
-    ...params.goals.artifactGoals
-      .filter((goal) => goal.enabled)
-      .map((goal) => buildPlannerGoalFromArtifact(goal, artifactPlansById.get(goal.id), params.staticData)),
   ].sort((left, right) => right.priority - left.priority || left.label.localeCompare(right.label));
 
   const plannerGoalGroups: PlannerGoalGroup[] = [
     { key: "all", label: "All Goals", goals: plannerGoals },
     { key: "character", label: "Characters", goals: plannerGoals.filter((goal) => goal.goalType === "character") },
     { key: "weapon", label: "Weapons", goals: plannerGoals.filter((goal) => goal.goalType === "weapon") },
-    { key: "artifact", label: "Artifacts", goals: plannerGoals.filter((goal) => goal.goalType === "artifact") },
+    { key: "artifact", label: "Artifacts", goals: [] },
   ];
 
   return { plannerGoals, plannerGoalGroups };

@@ -27,9 +27,9 @@ const GOALS: KrumpanionGoals = {
   artifactGoals: [],
   plannerSettings: {
     dailyResinBudget: 180,
-    includeArtifactGoals: true,
+    includeArtifactGoals: false,
   },
-  version: 4,
+  version: 6,
 };
 
 function makeRow(overrides: Partial<MaterialNeedRow>): MaterialNeedRow {

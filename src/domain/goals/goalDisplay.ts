@@ -71,8 +71,13 @@ export function getWeaponGoalSubtitle(goal: WeaponGoal): string {
 }
 
 export function getArtifactGoalDisplayName(goal: ArtifactGoal, staticData: StaticGameData): string {
+  if (goal.goalName?.trim()) {
+    return goal.goalName.trim();
+  }
   const characterName = goal.characterKey ? getCharacterGoalDisplayName(goal.characterKey, staticData) : null;
-  const setLabel = goal.targetSetKeys.join(", ");
+  const setLabel = goal.targetSetKeys
+    .map((setKey) => staticData.artifactDomains[setKey]?.setName ?? prettifyKey(setKey))
+    .join(", ");
 
   if (characterName) {
     return `${characterName} artifact goal`;
@@ -82,8 +87,11 @@ export function getArtifactGoalDisplayName(goal: ArtifactGoal, staticData: Stati
 }
 
 export function getArtifactGoalSubtitle(goal: ArtifactGoal, staticData: StaticGameData): string {
-  const domainName = staticData.artifactDomains[goal.targetSetKeys[0]]?.domainName ?? goal.domainKey;
-  return joinNonEmpty([domainName, goal.targetSetKeys.join(", ")]);
+  const domainName = staticData.artifactDomains[goal.targetSetKeys[0]]?.domainName;
+  const setSummary = goal.targetSetKeys
+    .map((setKey) => staticData.artifactDomains[setKey]?.setName ?? prettifyKey(setKey))
+    .join(", ");
+  return joinNonEmpty([domainName, setSummary]);
 }
 
 export function getGoalDisplayName(goalKey: string, goals: KrumpanionGoals, staticData: StaticGameData): string {

@@ -134,6 +134,34 @@ describe("buildPlannerOutput", () => {
     expect(planner.craftingPlan.reports.every((report) => report.resinImpact.resinBeforeCrafting !== undefined)).toBe(true);
   });
 
+  it("keeps artifact goals out of deterministic resin totals and planner farming actions", () => {
+    const account = importGoodAccountFromText(JSON.stringify(exampleGood)).account;
+    const staticData = loadStaticData();
+    const withoutArtifacts = buildPlannerOutput({
+      ...buildPlannerInput(account),
+      goals: {
+        ...(exampleGoals as unknown as KrumpanionGoals),
+        artifactGoals: [],
+      },
+      staticData,
+      today: "Sunday",
+      resinSettings: (exampleGoals as unknown as KrumpanionGoals).plannerSettings,
+    });
+    const withArtifacts = buildPlannerOutput({
+      ...buildPlannerInput(account),
+      goals: exampleGoals as unknown as KrumpanionGoals,
+      staticData,
+      today: "Sunday",
+      resinSettings: (exampleGoals as unknown as KrumpanionGoals).plannerSettings,
+    });
+
+    expect(withArtifacts.summary.totalEstimatedResin).toBe(withoutArtifacts.summary.totalEstimatedResin);
+    expect(withArtifacts.summary.totalEstimatedNaturalResinDays).toBe(withoutArtifacts.summary.totalEstimatedNaturalResinDays);
+    expect(withArtifacts.plannerGoals).toEqual(withoutArtifacts.plannerGoals);
+    expect(withArtifacts.recommendations.some((row) => row.category === "artifact_domain")).toBe(false);
+    expect(withArtifacts.recommendations).toEqual(withoutArtifacts.recommendations);
+  });
+
   it("groups priority recommendations by actionable section instead of legacy raw-priority buckets", () => {
     const planner = buildPlannerOutput({
       ...buildPlannerInput(importGoodAccountFromText(JSON.stringify(exampleGood)).account),

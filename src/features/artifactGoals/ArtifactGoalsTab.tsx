@@ -1,120 +1,636 @@
+import { useEffect, useMemo, useState } from "react";
+import { EmptyStateCard, FilterToolbar, MetricStrip, SectionCard, SplitWorkspace, StatusBadge, WorkspaceTabs } from "../../app/layoutPrimitives";
+import type {
+  ArtifactCircletMainStat,
+  ArtifactDesiredSubstat,
+  ArtifactGoal,
+  ArtifactGobletMainStat,
+  ArtifactSandsMainStat,
+} from "../../domain/goals/types";
 import type { PlannerOutput } from "../../domain/planner/types";
-import { selectActiveGoals } from "../../store/selectors";
+import { selectActiveAccount, selectActiveGoals } from "../../store/selectors";
 import { useAppStore } from "../../store/useAppStore";
+import {
+  ARTIFACT_CIRCLET_OPTIONS,
+  ARTIFACT_GOBLET_OPTIONS,
+  ARTIFACT_SANDS_OPTIONS,
+  ARTIFACT_SUBSTAT_OPTIONS,
+  ARTIFACT_VIEW_OPTIONS,
+  buildArtifactCharacterOptions,
+  buildArtifactGoalsViewModel,
+  buildArtifactSetOptions,
+  type ArtifactGoalViewModel,
+  type ArtifactViewKey,
+} from "./artifactGoalsModel";
 
 interface ArtifactGoalsTabProps {
   plannerOutput: PlannerOutput;
 }
 
-export function ArtifactGoalsTab({ plannerOutput }: ArtifactGoalsTabProps) {
+function resolveReplacementSelection(params: {
+  selectedGoalId: string;
+  visibleGoalIds: string[];
+  allGoalIds: string[];
+}): string | null {
+  const visibleWithoutSelected = params.visibleGoalIds.filter((goalId) => goalId !== params.selectedGoalId);
+  const allWithoutSelected = params.allGoalIds.filter((goalId) => goalId !== params.selectedGoalId);
+  const visibleIndex = params.visibleGoalIds.indexOf(params.selectedGoalId);
+  if (visibleIndex >= 0) {
+    return params.visibleGoalIds[visibleIndex + 1] ?? params.visibleGoalIds[visibleIndex - 1] ?? allWithoutSelected[0] ?? null;
+  }
+  return visibleWithoutSelected[0] ?? allWithoutSelected[0] ?? null;
+}
+
+export function ArtifactGoalsTab(_props: ArtifactGoalsTabProps) {
+  void _props;
+  const account = useAppStore(selectActiveAccount);
   const goals = useAppStore((state) => selectActiveGoals(state).artifactGoals);
+  const staticData = useAppStore((state) => state.staticData);
   const addArtifactGoal = useAppStore((state) => state.addArtifactGoal);
   const updateArtifactGoal = useAppStore((state) => state.updateArtifactGoal);
   const removeArtifactGoal = useAppStore((state) => state.removeArtifactGoal);
+  const [activeView, setActiveView] = useState<ArtifactViewKey>("character");
+  const [incompleteOnly, setIncompleteOnly] = useState(false);
+  const [selectedGoalId, setSelectedGoalId] = useState<string | null>(null);
+
+  const characterOptions = useMemo(() => buildArtifactCharacterOptions(account, staticData), [account, staticData]);
+  const setOptions = useMemo(() => buildArtifactSetOptions(staticData), [staticData]);
+  const viewModel = useMemo(
+    () =>
+      buildArtifactGoalsViewModel({
+        account,
+        staticData,
+        goals,
+        incompleteOnly,
+      }),
+    [account, staticData, goals, incompleteOnly],
+  );
+  const visibleGoalIds = viewModel.visibleGoalIdsByView[activeView];
+  const allGoalIds = viewModel.goalRows.map((goal) => goal.id);
+  const effectiveSelectedGoalId = selectedGoalId && allGoalIds.includes(selectedGoalId)
+    ? selectedGoalId
+    : visibleGoalIds[0] ?? allGoalIds[0] ?? null;
+
+  useEffect(() => {
+    if (goals.length <= 0) {
+      if (selectedGoalId !== null) {
+        setSelectedGoalId(null);
+      }
+      return;
+    }
+    if (selectedGoalId && goals.some((goal) => goal.id === selectedGoalId)) {
+      return;
+    }
+    if (selectedGoalId !== effectiveSelectedGoalId) {
+      setSelectedGoalId(effectiveSelectedGoalId);
+    }
+  }, [effectiveSelectedGoalId, goals, selectedGoalId]);
+
+  const selectedGoal = goals.find((goal) => goal.id === effectiveSelectedGoalId) ?? null;
+  const selectedGoalView = effectiveSelectedGoalId ? viewModel.goalRowsById[effectiveSelectedGoalId] ?? null : null;
+  const selectedGoalSummary = effectiveSelectedGoalId ? viewModel.selectedGoalSummariesById[effectiveSelectedGoalId] ?? null : null;
+
+  async function createArtifactGoal(prefilledCharacterKey?: string) {
+    const id = await addArtifactGoal({
+      characterKey: prefilledCharacterKey ?? characterOptions[0]?.key,
+    });
+    setSelectedGoalId(id);
+  }
+
+  function updateGoalProgress(goalId: string, pieceKey: "sandsObtained" | "gobletObtained" | "circletObtained", value: boolean) {
+    const currentGoal = goals.find((entry) => entry.id === goalId);
+    if (!currentGoal) {
+      return;
+    }
+
+    setSelectedGoalId(goalId);
+    void updateArtifactGoal(goalId, {
+      progress: {
+        ...currentGoal.progress,
+        [pieceKey]: value,
+      },
+    });
+  }
+
+  function deleteGoal(goalId: string) {
+    const nextSelectedGoalId = resolveReplacementSelection({
+      selectedGoalId: goalId,
+      visibleGoalIds,
+      allGoalIds,
+    });
+    setSelectedGoalId(nextSelectedGoalId);
+    void removeArtifactGoal(goalId);
+  }
+
+  if (!account) {
+    return (
+      <section className="panel">
+        <EmptyStateCard
+          title="No active account"
+          description="Artifact farming goals are account-scoped. Load or create an account first, then come back here to map characters to the right domains and target stats."
+        />
+      </section>
+    );
+  }
+
+  if (characterOptions.length === 0 && goals.length === 0) {
+    return (
+      <section className="panel">
+        <EmptyStateCard
+          title="No owned characters yet"
+          description="Artifact goals start from owned characters on the active account. Import a GOOD snapshot first, then add artifact farming goals here."
+        />
+      </section>
+    );
+  }
 
   return (
-    <section className="panel">
+    <section className="stack">
       <div className="section-header">
         <div>
           <h2>Artifact Goals</h2>
-          <p className="compact-helper-text">Keep artifact plans concise: target sets, budget, priority, and notes.</p>
+          <p className="compact-helper-text">Practical domain guidance only. Artifact farming is chance-based and not included in deterministic resin totals.</p>
         </div>
-        <button type="button" className="button-primary" onClick={() => void addArtifactGoal()}>
-          Add Goal
-        </button>
+        <div className="button-row wrap">
+          <button type="button" className="button-primary" onClick={() => void createArtifactGoal()}>
+            Add Artifact Goal
+          </button>
+        </div>
       </div>
 
-      <div className="artifact-goal-list">
-        {goals.map((goal) => {
-          const linkedPlan = plannerOutput.artifactFarmGoals.find((plan) => plan.id === goal.id);
-          return (
-            <article key={goal.id} className="artifact-card is-compact">
-              <div className="artifact-goal-topline">
-                <strong>{goal.characterKey || "Unassigned artifact goal"}</strong>
-                <span className="table-toolbar-summary">{linkedPlan?.label ?? "Incomplete goal"}</span>
-              </div>
-              <div className="artifact-goal-fields">
-                <label>
-                  Character key
-                  <input
-                    className="text-input"
-                    placeholder="Character key"
-                    value={goal.characterKey ?? ""}
-                    onChange={(event) => void updateArtifactGoal(goal.id, { characterKey: event.target.value || undefined })}
-                  />
-                </label>
-                <label>
-                  Domain key
-                  <input
-                    className="text-input"
-                    placeholder="Domain key"
-                    value={goal.domainKey}
-                    onChange={(event) => void updateArtifactGoal(goal.id, { domainKey: event.target.value })}
-                  />
-                </label>
-                <label>
-                  Target set keys
-                  <input
-                    className="text-input"
-                    placeholder="Comma separated"
-                    value={goal.targetSetKeys.join(", ")}
-                    onChange={(event) =>
-                      void updateArtifactGoal(goal.id, {
-                        targetSetKeys: event.target.value
-                          .split(",")
-                          .map((value) => value.trim())
-                          .filter(Boolean),
-                      })
-                    }
-                  />
-                </label>
-              </div>
-              <div className="artifact-inline-fields">
-                <label>
-                  Priority
-                  <input
-                    type="number"
-                    min={1}
-                    max={5}
-                    value={goal.priority}
-                    onChange={(event) => void updateArtifactGoal(goal.id, { priority: Number(event.target.value) })}
-                  />
-                </label>
-                <label>
-                  Weekly Resin
-                  <input
-                    type="number"
-                    min={0}
-                    value={goal.weeklyResinBudget ?? 0}
-                    onChange={(event) =>
-                      void updateArtifactGoal(goal.id, {
-                        weeklyResinBudget: event.target.value ? Number(event.target.value) : undefined,
-                      })
-                    }
-                  />
-                </label>
-              </div>
-              <label className="artifact-goal-notes">
-                Notes
-                <textarea
-                  className="code-input compact"
-                  rows={3}
-                  placeholder="Notes"
-                  value={goal.notes ?? ""}
-                  onChange={(event) => void updateArtifactGoal(goal.id, { notes: event.target.value })}
+      <MetricStrip
+        compact
+        items={[
+          { label: "Artifact goals", value: String(viewModel.summary.totalGoals), tone: "accent" },
+          { label: "Incomplete", value: String(viewModel.summary.incompleteGoals), tone: viewModel.summary.incompleteGoals ? "warning" : "default" },
+          { label: "Domains needed", value: String(viewModel.summary.domainsNeeded) },
+          { label: "Completed", value: String(viewModel.summary.completedGoals), tone: viewModel.summary.completedGoals ? "success" : "default" },
+        ]}
+      />
+
+      {viewModel.goalRows.length === 0 ? (
+        <EmptyStateCard
+          title="No artifact goals yet"
+          description="Add an artifact goal to track which domains to farm, what main stats to chase, and which key pieces are already done."
+          action={
+            <div className="button-row wrap">
+              <button type="button" className="button-primary" onClick={() => void createArtifactGoal()}>
+                Add Artifact Goal
+              </button>
+            </div>
+          }
+        />
+      ) : (
+        <SplitWorkspace
+          left={
+            <SectionCard compact title="Goal Browser" description="Select a goal to edit it quickly. By Character is the default editing view.">
+              <FilterToolbar
+                compact
+                actions={
+                  <label className="checkbox-row">
+                    <input
+                      type="checkbox"
+                      checked={incompleteOnly}
+                      onChange={(event) => setIncompleteOnly(event.target.checked)}
+                    />
+                    Incomplete Only
+                  </label>
+                }
+              >
+                <WorkspaceTabs
+                  compact
+                  label="Artifact views"
+                  activeTab={activeView}
+                  onChange={setActiveView}
+                  tabs={ARTIFACT_VIEW_OPTIONS.map((option) => ({ key: option.key, label: option.label }))}
                 />
-              </label>
-              <div className="artifact-goal-meta">
-                <span className="muted">Planner label: {linkedPlan?.label ?? "Incomplete goal"}</span>
-                <button type="button" className="button-ghost" onClick={() => void removeArtifactGoal(goal.id)}>
-                  Remove
-                </button>
+              </FilterToolbar>
+
+              <div className="artifact-browser stack">
+                {activeView === "character"
+                  ? viewModel.characterGroups.map((group) => (
+                      <section key={group.characterKey ?? group.characterLabel} className="artifact-browser-group">
+                        <div className="artifact-browser-group-header">
+                          <div>
+                            <strong>{group.characterLabel}</strong>
+                            <div className="table-toolbar-summary">
+                              {group.goalCount} goals | {group.incompleteGoalCount} incomplete
+                            </div>
+                          </div>
+                          <button
+                            type="button"
+                            className="button-ghost"
+                            onClick={() => void createArtifactGoal(group.characterKey)}
+                          >
+                            Add goal
+                          </button>
+                        </div>
+                        <div className="artifact-goal-list">
+                          {group.goals.map((goal) => (
+                            <ArtifactGoalRow
+                              key={goal.id}
+                              goal={goal}
+                              selected={goal.id === effectiveSelectedGoalId}
+                              onSelect={() => setSelectedGoalId(goal.id)}
+                              onDelete={() => deleteGoal(goal.id)}
+                              onTogglePiece={(pieceKey, value) => updateGoalProgress(goal.id, pieceKey, value)}
+                            />
+                          ))}
+                        </div>
+                      </section>
+                    ))
+                  : null}
+
+                {activeView === "domain"
+                  ? viewModel.domainGroups.map((group) => (
+                      <section key={group.key} className="artifact-browser-group">
+                        <div className="artifact-browser-group-header">
+                          <div>
+                            <strong>{group.label}</strong>
+                            <div className="table-toolbar-summary">
+                              {group.hasStandardDomainSource
+                                ? [group.location, group.region].filter(Boolean).join(" | ")
+                                : "No standard Domain of Blessing source"}
+                            </div>
+                            <div className="table-toolbar-summary">Drops: {group.setLabels.join(", ") || "No standard domain sets"}</div>
+                          </div>
+                          <div className="table-toolbar-summary">
+                            {group.incompleteGoalCount} incomplete | {group.completedGoalCount} complete
+                          </div>
+                        </div>
+                        <div className="artifact-goal-list">
+                          {group.goals.map((goal) => (
+                            <ArtifactGoalRow
+                              key={`${group.key}-${goal.id}`}
+                              goal={goal}
+                              selected={goal.id === effectiveSelectedGoalId}
+                              onSelect={() => setSelectedGoalId(goal.id)}
+                              onDelete={() => deleteGoal(goal.id)}
+                              onTogglePiece={(pieceKey, value) => updateGoalProgress(goal.id, pieceKey, value)}
+                            />
+                          ))}
+                        </div>
+                      </section>
+                    ))
+                  : null}
+
+                {visibleGoalIds.length <= 0 ? (
+                  <EmptyStateCard
+                    title="No goals match this filter"
+                    description="The current browser view is empty, but your selected goal can still stay open in the editor until you switch selection."
+                  />
+                ) : null}
               </div>
-            </article>
+            </SectionCard>
+          }
+          center={
+            selectedGoal && selectedGoalView && selectedGoalSummary ? (
+              <div className="stack">
+                <article className="panel artifact-selected-summary">
+                  <div className="artifact-selected-summary-header">
+                    <div>
+                      <div className="artifact-selected-kicker">Editing artifact goal</div>
+                      <h3>{selectedGoalSummary.characterLabel}</h3>
+                      <p className="compact-helper-text">{selectedGoalSummary.goalName}</p>
+                    </div>
+                    <StatusBadge compact tone={selectedGoalView.status === "complete" ? "success" : selectedGoalView.status === "in_progress" ? "accent" : "warning"}>
+                      {selectedGoalView.statusLabel}
+                    </StatusBadge>
+                  </div>
+                  <div className="artifact-selected-summary-grid">
+                    <div>
+                      <span className="table-toolbar-summary">Sets</span>
+                      <strong>{selectedGoalSummary.setSummary}</strong>
+                    </div>
+                    <div>
+                      <span className="table-toolbar-summary">Progress</span>
+                      <strong>{selectedGoalSummary.progressLabel}</strong>
+                    </div>
+                    <div>
+                      <span className="table-toolbar-summary">Domains</span>
+                      <strong>{selectedGoalSummary.domainSummary}</strong>
+                    </div>
+                  </div>
+                  <div className="artifact-selected-summary-footer">
+                    <span className="table-toolbar-summary">Changes save automatically.</span>
+                    {selectedGoalSummary.warningSummary ? <span className="table-toolbar-summary">Review: {selectedGoalSummary.warningSummary}</span> : null}
+                  </div>
+                </article>
+
+                <ArtifactGoalEditor
+                  goal={selectedGoal}
+                  characterOptions={characterOptions}
+                  setOptions={setOptions}
+                  onChange={(updates) => void updateArtifactGoal(selectedGoal.id, updates)}
+                  onDelete={() => deleteGoal(selectedGoal.id)}
+                />
+              </div>
+            ) : (
+              <EmptyStateCard
+                title="Select an artifact goal"
+                description="Pick a goal from the browser to edit sets, affixes, substats, and key-piece progress."
+              />
+            )
+          }
+        />
+      )}
+    </section>
+  );
+}
+
+function toggleChoice<T extends string>(values: T[], value: T): T[] {
+  return values.includes(value) ? values.filter((entry) => entry !== value) : [...values, value];
+}
+
+function ArtifactChoicePicker<T extends string>({
+  label,
+  options,
+  values,
+  emptyLabel,
+  onChange,
+}: {
+  label: string;
+  options: T[];
+  values: T[];
+  emptyLabel: string;
+  onChange: (values: T[]) => void;
+}) {
+  return (
+    <div className="artifact-choice-picker">
+      <div className="artifact-choice-label">{label}</div>
+      <div className="artifact-choice-selected" aria-label={`${label} selected`}>
+        {values.length > 0
+          ? values.map((value) => (
+              <button
+                key={value}
+                type="button"
+                className="artifact-chip artifact-chip-selected"
+                onClick={() => onChange(values.filter((entry) => entry !== value))}
+                aria-label={`Remove ${value}`}
+              >
+                {value}
+              </button>
+            ))
+          : <span className="muted">{emptyLabel}</span>}
+      </div>
+      <div className="artifact-choice-grid" role="group" aria-label={label}>
+        {options.map((option) => {
+          const selected = values.includes(option);
+          return (
+            <button
+              key={option}
+              type="button"
+              className={selected ? "artifact-chip artifact-chip-selected" : "artifact-chip"}
+              aria-pressed={selected}
+              onClick={() => onChange(toggleChoice(values, option))}
+            >
+              {option}
+            </button>
           );
         })}
-        {goals.length === 0 ? <p>No artifact goals yet.</p> : null}
       </div>
-    </section>
+    </div>
+  );
+}
+
+function ArtifactGoalEditor({
+  goal,
+  characterOptions,
+  setOptions,
+  onChange,
+  onDelete,
+}: {
+  goal: ArtifactGoal;
+  characterOptions: Array<{ key: string; label: string }>;
+  setOptions: Array<{ key: string; label: string }>;
+  onChange: (updates: Partial<ArtifactGoal>) => void;
+  onDelete: () => void;
+}) {
+  return (
+    <SectionCard
+      compact
+      title="Artifact Goal Editor"
+      description="Pick the relevant sets, acceptable slot affixes, and the key pieces you already have."
+      actions={
+        <div className="button-row wrap">
+          <button type="button" className="button-ghost" onClick={onDelete}>
+            Delete
+          </button>
+        </div>
+      }
+    >
+      <div className="artifact-editor-grid">
+        <label>
+          Character
+          <select
+            value={goal.characterKey ?? ""}
+            onChange={(event) => onChange({ characterKey: event.target.value || undefined })}
+          >
+            <option value="">Select character</option>
+            {characterOptions.map((option) => (
+              <option key={option.key} value={option.key}>
+                {option.label}
+              </option>
+            ))}
+          </select>
+        </label>
+        <label>
+          Goal name
+          <input
+            className="text-input"
+            placeholder="Optional label"
+            value={goal.goalName ?? ""}
+            onChange={(event) => onChange({ goalName: event.target.value || undefined })}
+          />
+        </label>
+      </div>
+
+      <ArtifactChoicePicker
+        label="Artifact sets"
+        options={setOptions.map((option) => option.label)}
+        values={goal.targetSetKeys.map((setKey) => setOptions.find((option) => option.key === setKey)?.label ?? setKey)}
+        emptyLabel="No sets selected yet"
+        onChange={(labels) =>
+          onChange({
+            targetSetKeys: labels
+              .map((label) => setOptions.find((option) => option.label === label)?.key)
+              .filter((value): value is string => Boolean(value)),
+          })
+        }
+      />
+
+      <div className="artifact-picker-grid">
+        <ArtifactChoicePicker<ArtifactSandsMainStat>
+          label="Sands"
+          options={ARTIFACT_SANDS_OPTIONS}
+          values={goal.mainStatTargets.sands}
+          emptyLabel="Any Sands main stat"
+          onChange={(values) =>
+            onChange({
+              mainStatTargets: {
+                ...goal.mainStatTargets,
+                sands: values,
+              },
+            })
+          }
+        />
+        <ArtifactChoicePicker<ArtifactGobletMainStat>
+          label="Goblet"
+          options={ARTIFACT_GOBLET_OPTIONS}
+          values={goal.mainStatTargets.goblet}
+          emptyLabel="Any Goblet main stat"
+          onChange={(values) =>
+            onChange({
+              mainStatTargets: {
+                ...goal.mainStatTargets,
+                goblet: values,
+              },
+            })
+          }
+        />
+        <ArtifactChoicePicker<ArtifactCircletMainStat>
+          label="Circlet"
+          options={ARTIFACT_CIRCLET_OPTIONS}
+          values={goal.mainStatTargets.circlet}
+          emptyLabel="Any Circlet main stat"
+          onChange={(values) =>
+            onChange({
+              mainStatTargets: {
+                ...goal.mainStatTargets,
+                circlet: values,
+              },
+            })
+          }
+        />
+      </div>
+
+      <ArtifactChoicePicker<ArtifactDesiredSubstat>
+        label="Desired substats"
+        options={ARTIFACT_SUBSTAT_OPTIONS}
+        values={goal.desiredSubstats}
+        emptyLabel="No substats selected yet"
+        onChange={(desiredSubstats) => onChange({ desiredSubstats })}
+      />
+
+      <div className="button-row wrap artifact-progress-controls">
+        <label className="checkbox-row">
+          <input
+            type="checkbox"
+            checked={goal.progress.sandsObtained}
+            onChange={(event) => onChange({ progress: { ...goal.progress, sandsObtained: event.target.checked } })}
+          />
+          Sands obtained
+        </label>
+        <label className="checkbox-row">
+          <input
+            type="checkbox"
+            checked={goal.progress.gobletObtained}
+            onChange={(event) => onChange({ progress: { ...goal.progress, gobletObtained: event.target.checked } })}
+          />
+          Goblet obtained
+        </label>
+        <label className="checkbox-row">
+          <input
+            type="checkbox"
+            checked={goal.progress.circletObtained}
+            onChange={(event) => onChange({ progress: { ...goal.progress, circletObtained: event.target.checked } })}
+          />
+          Circlet obtained
+        </label>
+      </div>
+
+      <label className="artifact-goal-notes">
+        Notes
+        <textarea
+          className="code-input compact"
+          rows={3}
+          value={goal.notes ?? ""}
+          placeholder="Optional farming notes"
+          onChange={(event) => onChange({ notes: event.target.value || undefined })}
+        />
+      </label>
+    </SectionCard>
+  );
+}
+
+function ArtifactGoalRow({
+  goal,
+  selected,
+  onSelect,
+  onDelete,
+  onTogglePiece,
+}: {
+  goal: ArtifactGoalViewModel;
+  selected: boolean;
+  onSelect: () => void;
+  onDelete: () => void;
+  onTogglePiece: (pieceKey: "sandsObtained" | "gobletObtained" | "circletObtained", value: boolean) => void;
+}) {
+  return (
+    <article className={`artifact-summary-card ${selected ? "is-selected" : ""}`.trim()}>
+      <button type="button" className="artifact-summary-select" onClick={onSelect} aria-pressed={selected}>
+        <div className="artifact-goal-topline">
+          <div>
+            <strong>{goal.characterLabel}</strong>
+            <div className="muted">{goal.goalName}</div>
+          </div>
+          <div className="badge-row">
+            <StatusBadge compact tone={goal.status === "complete" ? "success" : goal.status === "in_progress" ? "accent" : "warning"}>
+              {goal.statusLabel}
+            </StatusBadge>
+          </div>
+        </div>
+
+        <div className="artifact-summary-details">
+          <div><span className="muted">Sets:</span> {goal.setSummary}</div>
+          <div>{goal.mainStatSummary}</div>
+          <div className="muted">Look for: {goal.desiredSubstatsSummary}</div>
+          <div className="muted">Domains: {goal.domainSummary}</div>
+          {goal.warnings.length > 0 ? <div className="muted">Review: {goal.warnings.join(" | ")}</div> : null}
+        </div>
+
+        <div className="artifact-goal-meta">
+          <span className="table-toolbar-summary">{goal.progressLabel}</span>
+        </div>
+      </button>
+
+      <div className="artifact-piece-toggle-row">
+        <label className="checkbox-row">
+          <input
+            aria-label="Sands"
+            type="checkbox"
+            checked={goal.pieceProgress.sandsObtained}
+            onChange={(event) => onTogglePiece("sandsObtained", event.target.checked)}
+          />
+          Sands
+        </label>
+        <label className="checkbox-row">
+          <input
+            aria-label="Goblet"
+            type="checkbox"
+            checked={goal.pieceProgress.gobletObtained}
+            onChange={(event) => onTogglePiece("gobletObtained", event.target.checked)}
+          />
+          Goblet
+        </label>
+        <label className="checkbox-row">
+          <input
+            aria-label="Circlet"
+            type="checkbox"
+            checked={goal.pieceProgress.circletObtained}
+            onChange={(event) => onTogglePiece("circletObtained", event.target.checked)}
+          />
+          Circlet
+        </label>
+        <div className="button-row wrap">
+          <button type="button" className="button-ghost" onClick={onSelect}>
+            {selected ? "Editing" : "Edit"}
+          </button>
+          <button type="button" className="button-ghost" onClick={onDelete}>
+            Delete
+          </button>
+        </div>
+      </div>
+    </article>
   );
 }

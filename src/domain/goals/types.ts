@@ -1,5 +1,52 @@
 export type GoalPlanningMode = "owned" | "prefarm" | "manual";
 
+export type ArtifactGoalKeyPiece = "sands" | "goblet" | "circlet";
+export type ArtifactSandsMainStat = "HP%" | "ATK%" | "DEF%" | "Elemental Mastery" | "Energy Recharge%";
+export type ArtifactGobletMainStat =
+  | "HP%"
+  | "ATK%"
+  | "DEF%"
+  | "Elemental Mastery"
+  | "Anemo DMG Bonus%"
+  | "Cryo DMG Bonus%"
+  | "Dendro DMG Bonus%"
+  | "Electro DMG Bonus%"
+  | "Geo DMG Bonus%"
+  | "Hydro DMG Bonus%"
+  | "Pyro DMG Bonus%"
+  | "Physical DMG Bonus%";
+export type ArtifactCircletMainStat =
+  | "HP%"
+  | "ATK%"
+  | "DEF%"
+  | "Elemental Mastery"
+  | "CRIT Rate%"
+  | "CRIT DMG%"
+  | "Healing Bonus%";
+export type ArtifactDesiredSubstat =
+  | "HP"
+  | "ATK"
+  | "DEF"
+  | "HP%"
+  | "ATK%"
+  | "DEF%"
+  | "Elemental Mastery"
+  | "Energy Recharge%"
+  | "CRIT Rate%"
+  | "CRIT DMG%";
+
+export interface ArtifactGoalMainStatTargets {
+  sands: ArtifactSandsMainStat[];
+  goblet: ArtifactGobletMainStat[];
+  circlet: ArtifactCircletMainStat[];
+}
+
+export interface ArtifactGoalProgress {
+  sandsObtained: boolean;
+  gobletObtained: boolean;
+  circletObtained: boolean;
+}
+
 export interface CharacterGoal {
   characterKey: string;
   planningMode?: GoalPlanningMode;
@@ -55,14 +102,19 @@ export interface WeaponGoal {
 export interface ArtifactGoal {
   id: string;
   characterKey?: string;
-  domainKey: string;
+  goalName?: string;
   targetSetKeys: string[];
   priority: number;
-  weeklyResinBudget?: number;
-  desiredMainStats?: Partial<Record<"flower" | "plume" | "sands" | "goblet" | "circlet", string[]>>;
-  desiredSubstats?: string[];
+  mainStatTargets: ArtifactGoalMainStatTargets;
+  desiredSubstats: ArtifactDesiredSubstat[];
+  progress: ArtifactGoalProgress;
   enabled: boolean;
   notes?: string;
+  // Deprecated legacy fields kept only for save migration compatibility.
+  goalType?: "four_piece" | "two_plus_two" | "flexible";
+  domainKey?: string;
+  weeklyResinBudget?: number;
+  desiredMainStats?: Partial<Record<"flower" | "plume" | "sands" | "goblet" | "circlet", string[]>>;
 }
 
 export interface PlannerSettings {
@@ -97,7 +149,7 @@ export interface PlannerSettings {
 }
 
 export interface KrumpanionGoalState {
-  version: 4;
+  version: 6;
   profileName?: string;
   characterGoals: Record<string, CharacterGoal>;
   weaponGoals: Record<string, WeaponGoal>;
@@ -126,7 +178,7 @@ export type AppSection =
 export type PlannerView = "today" | "week" | "no_resin" | "recent_changes";
 
 export const DEFAULT_GOAL_STATE: KrumpanionGoalState = {
-  version: 4,
+  version: 6,
   characterGoals: {},
   weaponGoals: {},
   artifactGoals: [],
@@ -154,7 +206,7 @@ export const DEFAULT_PLANNER_SETTINGS: PlannerSettings = {
   assumeCondensedResinEquivalentForDomains: true,
   estimateOpenWorldEnemyDrops: false,
   dailyResinBudget: 180,
-  includeArtifactGoals: true,
+  includeArtifactGoals: false,
 };
 
 export const DEFAULT_GOALS: KrumpanionGoals = {

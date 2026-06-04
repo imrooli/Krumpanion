@@ -250,7 +250,7 @@ export function buildMaterialRows(staticData: StaticGameData, overridePack: Over
         (staticData.materialSources[entry.key] ?? []).length ? "has sources" : "needs sources",
         staticData.recipes[entry.key] ? "recipe" : "no recipe",
         overridePack?.materials?.[entry.key] ? "override" : "seed",
-      ],
+      ].filter((badge): badge is string => Boolean(badge)),
       searchText: `${entry.key} ${entry.displayName} ${entry.category}`.toLowerCase(),
     }))
     .sort((left, right) => left.label.localeCompare(right.label));
@@ -266,9 +266,11 @@ export function buildArtifactRows(
     const domain = staticData.artifactDomains[setKey];
     return {
       key: setKey,
-      label: setKey,
-      subtitle: domain ? domain.domainName : "No domain mapped yet",
-      badges: [domain ? domain.availability : "needs domain", overridePack?.artifactDomains?.[setKey] ? "override" : "seed"].filter(Boolean),
+      label: domain?.setName ?? setKey,
+      subtitle: domain?.hasStandardDomainSource ? domain.domainName : "No standard domain source",
+      badges: [domain ? domain.availability : "needs domain", overridePack?.artifactDomains?.[setKey] ? "override" : "seed"].filter(
+        (badge): badge is string => Boolean(badge),
+      ),
       searchText: `${setKey} ${domain?.domainName ?? ""} ${domain?.domainKey ?? ""}`.toLowerCase(),
     };
   });

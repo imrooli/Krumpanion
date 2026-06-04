@@ -613,10 +613,19 @@ describe("PlannerTab", () => {
         artifactGoals: [
           {
             id: "artifact-goal-1",
-            domainKey: "",
             targetSetKeys: [],
             priority: 2,
-            weeklyResinBudget: 240,
+            mainStatTargets: {
+              sands: [],
+              goblet: [],
+              circlet: [],
+            },
+            desiredSubstats: [],
+            progress: {
+              sandsObtained: false,
+              gobletObtained: false,
+              circletObtained: false,
+            },
             enabled: true,
           },
         ],
@@ -651,7 +660,7 @@ describe("PlannerTab", () => {
     expect(within(achievementsSection).getByText(/Character built at Lv 90 \/ A6 \/ 9-9-9/i)).toBeInTheDocument();
     expect(within(achievementsSection).getByText(/5\/26\/2026/)).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: "Recent Activity" })).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: "Artifact Goals" })).toBeInTheDocument();
+    expect(screen.queryByRole("heading", { name: "Artifact Goals" })).not.toBeInTheDocument();
     const activitySection = screen.getByRole("heading", { name: "Recent Activity" }).closest("article");
     expect(activitySection).not.toBeNull();
     if (!activitySection) {

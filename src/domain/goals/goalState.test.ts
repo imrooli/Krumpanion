@@ -1,5 +1,12 @@
 import { describe, expect, it } from "vitest";
-import { normalizeCharacterGoalRecord, normalizeWeaponGoalRecord, resolveCharacterGoalCurrentState, resolveWeaponGoalCurrentState, validateGoalStateAgainstStaticData } from "./goalState";
+import {
+  normalizeArtifactGoalRecord,
+  normalizeCharacterGoalRecord,
+  normalizeWeaponGoalRecord,
+  resolveCharacterGoalCurrentState,
+  resolveWeaponGoalCurrentState,
+  validateGoalStateAgainstStaticData,
+} from "./goalState";
 import { loadStaticData } from "../staticData/loadStaticData";
 import type { AccountOwnershipState } from "../account/types";
 import type { KrumpanionGoalState } from "./types";
@@ -168,7 +175,7 @@ describe("goalState", () => {
   it("disables ignored or non-trackable persisted goals instead of crashing", () => {
     const staticData = loadStaticData();
     const goals: KrumpanionGoalState = {
-      version: 4,
+      version: 6,
       characterGoals: {
         Manekin: {
           characterKey: "Manekin",
@@ -220,7 +227,7 @@ describe("goalState", () => {
 
     const result = validateGoalStateAgainstStaticData(
       {
-        version: 4,
+        version: 6,
         characterGoals: {
           Manekin: {
             characterKey: "Manekin",
@@ -237,5 +244,35 @@ describe("goalState", () => {
 
     expect(result.goals.characterGoals.Manekin.enabled).toBe(false);
     expect(result.goals.characterGoals.Manekin.paused).toBe(true);
+  });
+
+  it("normalizes artifact goals into array-based affix targets and deduped set/substat selections", () => {
+    const normalized = normalizeArtifactGoalRecord({
+      id: "artifact-goal-1",
+      characterKey: "Neuvillette",
+      targetSetKeys: ["MarechausseeHunter", "MarechausseeHunter", "GoldenTroupe"],
+      priority: 3,
+      mainStatTargets: {
+        sands: ["HP%", "Energy Recharge%", "HP%"],
+        goblet: ["Hydro DMG Bonus%"],
+        circlet: ["critDMG_", "critRate_", "critDMG_"] as never,
+      },
+      desiredSubstats: ["critRate_", "critDMG_", "critRate_", "enerRech_"] as never,
+      progress: {
+        sandsObtained: false,
+        gobletObtained: false,
+        circletObtained: false,
+      },
+      enabled: true,
+      desiredMainStats: {
+        sands: ["ATK%"],
+      },
+    });
+
+    expect(normalized.targetSetKeys).toEqual(["MarechausseeHunter", "GoldenTroupe"]);
+    expect(normalized.mainStatTargets.sands).toEqual(["HP%", "Energy Recharge%"]);
+    expect(normalized.mainStatTargets.goblet).toEqual(["Hydro DMG Bonus%"]);
+    expect(normalized.mainStatTargets.circlet).toEqual(["CRIT DMG%", "CRIT Rate%"]);
+    expect(normalized.desiredSubstats).toEqual(["CRIT Rate%", "CRIT DMG%", "Energy Recharge%"]);
   });
 });

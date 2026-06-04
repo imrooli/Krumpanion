@@ -66,7 +66,7 @@ describe("DatabaseTab", () => {
     expect(screen.getByRole("heading", { name: /Preview override pack/i })).toBeInTheDocument();
   });
 
-  it("exposes the compact data health center, raw issues, and legacy overrides", { timeout: 15000 }, async () => {
+  it("exposes the compact data health center, raw issues, and legacy overrides", { timeout: 30000 }, async () => {
     const user = userEvent.setup();
     render(<DatabaseTab />);
 

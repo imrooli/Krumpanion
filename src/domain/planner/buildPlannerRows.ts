@@ -21,7 +21,6 @@ import { buildSourceAssignments } from "./classifySources";
 import { buildLeyLineEnemyDropRecommendations } from "./buildLeyLineEnemyDropRecommendations";
 import {
   buildArtifactPlans,
-  buildArtifactRecommendations,
   buildCraftingPlannerRecommendations,
   buildMaterialRecommendations,
   buildPlannerGoals,
@@ -312,9 +311,7 @@ export function buildPlannerOutput(input: PlannerInput) {
   );
   const exactInventoryCoverage = buildInventoryCoverage(normalizedInput, deterministicRequirementsStage.requirements);
   const exactInventoryComparison = buildMaterialRows(normalizedInput, goalExpansion.goalResolutions);
-  const artifactFarmGoals = normalizedInput.goals.plannerSettings.includeArtifactGoals
-    ? buildArtifactPlans(normalizedInput.goals.artifactGoals, normalizedInput.staticData)
-    : [];
+  const artifactFarmGoals = buildArtifactPlans(normalizedInput.goals.artifactGoals, normalizedInput.staticData);
 
   const baseCraftingPlan = buildCraftingPlan(normalizedInput, exactInventoryComparison.rows);
   const normalizedSettings = normalizePlannerEstimationSettings(normalizedInput.resinSettings, normalizedInput.staticData);
@@ -393,7 +390,6 @@ export function buildPlannerOutput(input: PlannerInput) {
     goals: normalizedInput.goals,
     inventory: normalizedInput.inventory,
   });
-  const artifactRecommendations = buildArtifactRecommendations(normalizedInput, artifactFarmGoals);
   const craftingRecommendations = buildCraftingPlannerRecommendations(craftingPlan);
   const weaponExpRecommendations = buildWeaponExpRecommendation(
     weaponExpSummary,
@@ -412,7 +408,6 @@ export function buildPlannerOutput(input: PlannerInput) {
     ...leyLineEnemyDropRecommendations,
     ...weaponExpRecommendations,
     ...craftingRecommendations,
-    ...artifactRecommendations,
     ...pausedNoResinRecommendations,
   ]);
   const reportSections = buildReportSections(recommendations);
@@ -427,14 +422,13 @@ export function buildPlannerOutput(input: PlannerInput) {
     staticData: normalizedInput.staticData,
     byCharacter: enrichedGoals.byCharacter,
     byWeapon: enrichedGoals.byWeapon,
-    artifactFarmGoals,
   });
   const resinSummary = buildResinSummary({
     farmingEstimates,
     dailyResinBudget: normalizedSettings.dailyResinBudget,
     naturalResinPerWeek: normalizedSettings.naturalResinPerWeek,
     weeklyResinBudget: normalizedInput.staticData.resinRules.naturalResinPerWeek,
-    artifactBudget: artifactFarmGoals.reduce((sum, goal) => sum + (goal.weeklyResinBudget ?? 0), 0),
+    artifactBudget: 0,
     progressionMora: baseCraftingPlan.progressionMora,
     craftingMora: baseCraftingPlan.totalCraftingMora,
   });

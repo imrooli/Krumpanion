@@ -12,7 +12,7 @@
   ],
   "properties": {
     "version": {
-      "const": 3
+      "const": 6
     },
     "profileName": {
       "type": "string"
@@ -110,6 +110,9 @@
           "enabled": {
             "type": "boolean"
           },
+          "paused": {
+            "type": "boolean"
+          },
           "notes": {
             "type": "string"
           }
@@ -204,6 +207,9 @@
           "enabled": {
             "type": "boolean"
           },
+          "paused": {
+            "type": "boolean"
+          },
           "notes": {
             "type": "string"
           }
@@ -217,9 +223,11 @@
         "type": "object",
         "required": [
           "id",
-          "domainKey",
           "targetSetKeys",
           "priority",
+          "mainStatTargets",
+          "desiredSubstats",
+          "progress",
           "enabled"
         ],
         "properties": {
@@ -229,11 +237,12 @@
           "characterKey": {
             "type": "string"
           },
-          "domainKey": {
+          "goalName": {
             "type": "string"
           },
           "targetSetKeys": {
             "type": "array",
+            "uniqueItems": true,
             "items": {
               "type": "string"
             }
@@ -243,24 +252,66 @@
             "minimum": 1,
             "maximum": 5
           },
-          "weeklyResinBudget": {
-            "type": "integer",
-            "minimum": 0
-          },
-          "desiredMainStats": {
+          "mainStatTargets": {
             "type": "object",
-            "additionalProperties": {
-              "type": "array",
-              "items": {
-                "type": "string"
+            "properties": {
+              "sands": {
+                "type": "array",
+                "uniqueItems": true,
+                "items": {
+                  "type": "string",
+                  "enum": ["HP%", "ATK%", "DEF%", "Elemental Mastery", "Energy Recharge%"]
+                }
+              },
+              "goblet": {
+                "type": "array",
+                "uniqueItems": true,
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "HP%",
+                    "ATK%",
+                    "DEF%",
+                    "Elemental Mastery",
+                    "Anemo DMG Bonus%",
+                    "Cryo DMG Bonus%",
+                    "Dendro DMG Bonus%",
+                    "Electro DMG Bonus%",
+                    "Geo DMG Bonus%",
+                    "Hydro DMG Bonus%",
+                    "Pyro DMG Bonus%",
+                    "Physical DMG Bonus%"
+                  ]
+                }
+              },
+              "circlet": {
+                "type": "array",
+                "uniqueItems": true,
+                "items": {
+                  "type": "string",
+                  "enum": ["HP%", "ATK%", "DEF%", "Elemental Mastery", "CRIT Rate%", "CRIT DMG%", "Healing Bonus%"]
+                }
               }
-            }
+            },
+            "additionalProperties": false
           },
           "desiredSubstats": {
             "type": "array",
+            "uniqueItems": true,
             "items": {
-              "type": "string"
+              "type": "string",
+              "enum": ["HP", "ATK", "DEF", "HP%", "ATK%", "DEF%", "Elemental Mastery", "Energy Recharge%", "CRIT Rate%", "CRIT DMG%"]
             }
+          },
+          "progress": {
+            "type": "object",
+            "required": ["sandsObtained", "gobletObtained", "circletObtained"],
+            "properties": {
+              "sandsObtained": { "type": "boolean" },
+              "gobletObtained": { "type": "boolean" },
+              "circletObtained": { "type": "boolean" }
+            },
+            "additionalProperties": false
           },
           "enabled": {
             "type": "boolean"

@@ -44,6 +44,7 @@ import {
 import {
   defaultPlanningMode,
   getLinkedWeaponInstanceId,
+  normalizeArtifactGoalRecord,
   getWeaponGoalId,
   normalizeCharacterGoalRecord,
   normalizeWeaponGoalRecord,
@@ -110,16 +111,26 @@ function clampTrustRank(value: number | undefined): number {
   return Math.max(1, Math.min(10, Math.floor(value as number)));
 }
 
-function createBlankArtifactGoal(): ArtifactGoal {
-  return {
+function createBlankArtifactGoal(initial: Partial<ArtifactGoal> = {}): ArtifactGoal {
+  return normalizeArtifactGoalRecord({
     id: `artifact-goal-${crypto.randomUUID()}`,
-    domainKey: "",
     targetSetKeys: [],
     priority: 3,
-    weeklyResinBudget: 200,
+    mainStatTargets: {
+      sands: [],
+      goblet: [],
+      circlet: [],
+    },
+    desiredSubstats: [],
+    progress: {
+      sandsObtained: false,
+      gobletObtained: false,
+      circletObtained: false,
+    },
     enabled: true,
     notes: "",
-  };
+    ...initial,
+  });
 }
 
 function clone<T>(value: T): T {
@@ -409,6 +420,7 @@ function normalizeAccountGoalTargets(account: KrumpanionAccount, staticData: Sta
           return [normalizedGoal.goalId ?? goalId, normalizedGoal];
         }),
       ),
+      artifactGoals: account.goals.artifactGoals.map((goal) => normalizeArtifactGoalRecord(goal)),
     },
   };
 }
@@ -1468,7 +1480,7 @@ export interface AppState {
   resumeWeaponGoal: (weaponId: string, weaponKey: string) => Promise<void>;
   resetWeaponGoal: (weaponId: string) => Promise<void>;
   bulkUpdateWeaponGoals: (weaponIds: string[], updates: Partial<WeaponGoal>) => Promise<void>;
-  addArtifactGoal: () => Promise<void>;
+  addArtifactGoal: (initial?: Partial<ArtifactGoal>) => Promise<string>;
   updateArtifactGoal: (id: string, updates: Partial<ArtifactGoal>) => Promise<void>;
   removeArtifactGoal: (id: string) => Promise<void>;
   updatePlannerSettings: (updates: Partial<PlannerSettings>) => Promise<void>;
@@ -2554,14 +2566,15 @@ export const useAppStore = create<AppState>((set, get) => ({
       goalBackupReason: "goal_edit",
     });
   },
-  addArtifactGoal: async () => {
+  addArtifactGoal: async (initial) => {
     const state = get();
+    const nextGoal = createBlankArtifactGoal(initial);
     const user = updateAccountInUser(state.user, state.user.activeAccountId, (account) =>
       touchAccount({
         ...account,
         goals: {
           ...account.goals,
-          artifactGoals: [...account.goals.artifactGoals, createBlankArtifactGoal()],
+          artifactGoals: [...account.goals.artifactGoals, nextGoal],
         },
       }),
     );
@@ -2574,6 +2587,7 @@ export const useAppStore = create<AppState>((set, get) => ({
       trigger: "goal_edit",
       goalBackupReason: "goal_edit",
     });
+    return nextGoal.id;
   },
   updateArtifactGoal: async (id, updates) => {
     const state = get();
@@ -2582,7 +2596,17 @@ export const useAppStore = create<AppState>((set, get) => ({
         ...account,
         goals: {
           ...account.goals,
-          artifactGoals: account.goals.artifactGoals.map((goal) => (goal.id === id ? { ...goal, ...updates } : goal)),
+          artifactGoals: account.goals.artifactGoals.map((goal) => {
+            if (goal.id !== id) {
+              return goal;
+            }
+
+            const normalized = normalizeArtifactGoalRecord({
+              ...goal,
+              ...updates,
+            });
+            return normalized;
+          }),
         },
       }),
     );

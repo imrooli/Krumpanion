@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 6,
   "profileName": "Example Profile",
   "characterGoals": {
     "Furina": {
@@ -43,32 +43,27 @@
     {
       "id": "artifact-goal-001",
       "characterKey": "Furina",
-      "domainKey": "DenouementOfSin",
+      "goalName": "Golden Troupe Support",
       "targetSetKeys": [
         "GoldenTroupe"
       ],
       "priority": 5,
-      "weeklyResinBudget": 400,
-      "desiredMainStats": {
-        "sands": [
-          "hp_",
-          "enerRech_"
-        ],
-        "goblet": [
-          "hp_",
-          "hydro_dmg_"
-        ],
-        "circlet": [
-          "critRate_",
-          "critDMG_"
-        ]
+      "mainStatTargets": {
+        "sands": ["HP%", "Energy Recharge%"],
+        "goblet": ["Hydro DMG Bonus%"],
+        "circlet": ["CRIT DMG%", "CRIT Rate%"]
       },
       "desiredSubstats": [
-        "critRate_",
-        "critDMG_",
-        "hp_",
-        "enerRech_"
+        "CRIT Rate%",
+        "CRIT DMG%",
+        "HP%",
+        "Energy Recharge%"
       ],
+      "progress": {
+        "sandsObtained": false,
+        "gobletObtained": false,
+        "circletObtained": false
+      },
       "enabled": true,
       "notes": "Artifact goal is independent from current GOOD artifacts."
     }
@@ -76,6 +71,6 @@
   "plannerSettings": {
     "weeklyBossDiscountClaims": 3,
     "dailyResinBudget": 180,
-    "includeArtifactGoals": true
+    "includeArtifactGoals": false
   }
 }
