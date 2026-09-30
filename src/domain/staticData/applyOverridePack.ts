@@ -38,6 +38,9 @@ export function applyOverridePack(baseData: StaticGameData, overridePack?: Overr
 
   return {
     ...baseData,
+    artifactSets: { ...baseData.artifactSets, ...overridePack.artifactSets },
+    exactCharacterRequirements: { ...baseData.exactCharacterRequirements, ...overridePack.exactCharacterRequirements },
+    exactWeaponRequirements: { ...baseData.exactWeaponRequirements, ...overridePack.exactWeaponRequirements },
     characters: {
       ...baseData.characters,
       ...(overridePack.characters ?? {}),

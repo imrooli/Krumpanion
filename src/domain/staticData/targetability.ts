@@ -71,6 +71,7 @@ export function isGoalTrackableWeaponRecord(staticData: StaticGameData, weaponKe
   if (rarity !== 3 && rarity !== 4 && rarity !== 5) {
     return false;
   }
+  if (staticData.exactWeaponRequirements?.[weaponKey]) return true;
   if (!profile) {
     return false;
   }

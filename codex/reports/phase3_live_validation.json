@@ -1,0 +1,36 @@
+{
+  "revision": {
+    "bytes": 3272,
+    "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+    "releaseVersion": "7.1.0"
+  },
+  "files": 22,
+  "bytes": 63263431,
+  "downloadMs": 3232.6062,
+  "parseMs": 2151.0494,
+  "reconcileAndValidateMs": 883.2871999999998,
+  "validationMs": 46.1207000000004,
+  "memory": {
+    "rss": 642650112,
+    "heapTotal": 473550848,
+    "heapUsed": 402892928,
+    "external": 25451597,
+    "arrayBuffers": 21385633
+  },
+  "maxRssKiB": 627600,
+  "observations": 10675,
+  "farming": 48,
+  "delta": {
+    "added": 67,
+    "changed": 2146,
+    "unchanged": 0,
+    "review": 223,
+    "progression": 359,
+    "families": 6,
+    "domains": 6,
+    "schedules": 0,
+    "affectedKeys": 369
+  },
+  "schemaDiagnostics": [],
+  "review": 223
+}

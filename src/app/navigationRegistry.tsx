@@ -1,9 +1,9 @@
-import type { ReactNode } from "react";
+import { lazy, Suspense, type ReactNode } from "react";
 import type { ImportWarning } from "../domain/good/types";
 import type { AppSection } from "../domain/goals/types";
 import type { PlannerOutput, PlannerWarning } from "../domain/planner/types";
 import { CraftingTab } from "../features/crafting/CraftingTab";
-import { DatabaseTab } from "../features/database/DatabaseTab";
+const DatabaseTab = lazy(() => import("../features/database/DatabaseTab").then(module => ({ default: module.DatabaseTab })));
 import { GoalsWorkspace } from "../features/goals/GoalsWorkspace";
 import { HomeWorkspace } from "../features/home/HomeWorkspace";
 import { InventoryWorkspace } from "../features/inventory/InventoryWorkspace";
@@ -75,7 +75,7 @@ export const APP_SECTIONS: AppSectionDefinition[] = [
     label: "Database",
     shortLabel: "Data",
     description: "Static data explorer, source coverage, overrides, and health issues.",
-    render: () => <DatabaseTab />,
+    render: () => <Suspense fallback={<div role="status">Loading Game Data...</div>}><DatabaseTab /></Suspense>,
   },
   {
     key: "settings",

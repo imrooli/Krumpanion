@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { createBlankAccount } from "../../domain/account/types";
 import type { ArtifactGoal } from "../../domain/goals/types";
 import { createStaticData } from "../../domain/staticData/staticDataFactory";
-import { buildArtifactGoalsViewModel } from "./artifactGoalsModel";
+import { buildArtifactCharacterOptions, buildArtifactGoalsViewModel } from "./artifactGoalsModel";
 
 function createAccountWithCharacters() {
   const account = createBlankAccount({
@@ -74,6 +74,17 @@ function createArtifactGoal(overrides: Partial<ArtifactGoal> = {}): ArtifactGoal
 }
 
 describe("buildArtifactGoalsViewModel", () => {
+  it("includes goal-pickable unowned characters in artifact character options", () => {
+    const staticData = createStaticData();
+    const account = createAccountWithCharacters();
+
+    const options = buildArtifactCharacterOptions(account, staticData);
+
+    expect(options.find((option) => option.key === "Neuvillette")).toBeDefined();
+    expect(options.find((option) => option.key === "KaedeharaKazuha")).toBeDefined();
+    expect(options.find((option) => option.key === "Traveler")).toBeDefined();
+  });
+
   it("groups same-domain and split-domain goals correctly in the domain view", () => {
     const staticData = createStaticData();
     const account = createAccountWithCharacters();
@@ -121,9 +132,11 @@ describe("buildArtifactGoalsViewModel", () => {
     expect(denouement?.setGroups[0]?.rows[0]?.slotLabel).toBeDefined();
     expect(valley?.goals.map((goal) => goal.id)).toContain("kazuha");
     expect(momiji?.goals.map((goal) => goal.id)).toContain("kazuha");
-    expect(viewModel.visibleGoalIdsByView.character).toEqual(["fischl", "kazuha", "neuv"]);
-    expect(viewModel.visibleGoalIdsByView.domain).toEqual(expect.arrayContaining(["fischl", "kazuha", "neuv"]));
+    expect(viewModel.characterGoals.visibleGoalIds).toEqual(["fischl", "kazuha", "neuv"]);
+    expect(viewModel.goalEditor.visibleGoalIds).toEqual(["fischl", "kazuha", "neuv"]);
+    expect(viewModel.domainGuide.visibleGoalIds).toEqual(expect.arrayContaining(["fischl", "kazuha", "neuv"]));
     expect(viewModel.selectedGoalSummariesById.neuv.domainSummary).toBe("Denouement of Sin");
+    expect(viewModel.summary.charactersServed).toBe(3);
   });
 
   it("shows fallback domain grouping for unknown and no-standard-source sets", () => {
@@ -153,6 +166,7 @@ describe("buildArtifactGoalsViewModel", () => {
     expect(fallbackGroup?.goals.find((goal) => goal.id === "unknown")?.warnings).toEqual(
       expect.arrayContaining(["Unknown artifact set UnknownArtifactSet."]),
     );
+    expect(viewModel.summary.nonStandardSourceGoalCount).toBe(2);
   });
 
   it("derives completion state and hides completed goals from incomplete-only view", () => {
@@ -204,7 +218,8 @@ describe("buildArtifactGoalsViewModel", () => {
     expect(allGoals.goalRows.find((goal) => goal.id === "partial-goal")?.progressLabel).toBe("1/5 pieces obtained");
     expect(incompleteOnly.domainGroups.flatMap((group) => group.goals.map((goal) => goal.id))).toEqual(["partial-goal"]);
     expect(incompleteOnly.characterGroups.flatMap((group) => group.goals.map((goal) => goal.id))).toEqual(["partial-goal"]);
-    expect(incompleteOnly.visibleGoalIdsByView.character).toEqual(["partial-goal"]);
+    expect(incompleteOnly.characterGoals.visibleGoalIds).toEqual(["partial-goal"]);
+    expect(incompleteOnly.goalEditor.visibleGoalIds).toEqual(["partial-goal"]);
     expect(incompleteOnly.goalRowsById["complete-goal"]?.status).toBe("complete");
   });
 

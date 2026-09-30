@@ -101,6 +101,48 @@ describe("checklist timing model", () => {
     expect(full.tasks.find((task) => task.key === "realmCurrency")?.needsAttention).toBe(true);
   });
 
+  it("puts full realm currency and ready cooldowns into the do now queue ahead of weekly tasks", () => {
+    const checklist = createDefaultChecklistState();
+    checklist.expeditions.lastClaimedAt = "2026-06-01T12:00:00.000Z";
+    checklist.parametricTransformer.lastUsedAt = "2026-05-26T12:00:00.000Z";
+
+    const model = buildChecklistModel(checklist, new Date("2026-06-03T12:00:00.000Z"));
+
+    expect(model.dashboard.doNow.tasks.map((task) => task.key)).toEqual([
+      "realmCurrency",
+      "expeditions",
+      "parametricTransformer",
+      "crystalflyTrap",
+      "dailyCommissions",
+      "dailyForging",
+      "battlePassDailyClaims",
+    ]);
+    expect(model.dashboard.thisWeek.tasks[0]?.key).toBe("weeklyBossClaims");
+  });
+
+  it("promotes reset-soon incomplete tasks into do now", () => {
+    const checklist = createDefaultChecklistState();
+
+    const model = buildChecklistModel(checklist, new Date("2026-06-02T06:30:00.000Z"));
+
+    const doNowKeys = model.dashboard.doNow.tasks.map((task) => task.key);
+    expect(doNowKeys).toContain("dailyCommissions");
+    expect(model.dashboard.doNow.tasks.find((task) => task.key === "dailyCommissions")?.expiresSoon).toBe(true);
+  });
+
+  it("keeps completed tasks out of do now while retaining them in daily and weekly sections", () => {
+    const checklist = createDefaultChecklistState();
+    checklist.dailyCommissions.completedAt = "2026-06-02T12:00:00.000Z";
+    checklist.dailyForging.completedAt = "2026-06-02T12:00:00.000Z";
+    checklist.battlePassDailyClaims.completedAt = "2026-06-02T12:00:00.000Z";
+
+    const model = buildChecklistModel(checklist, new Date("2026-06-02T12:30:00.000Z"));
+
+    expect(model.dashboard.doNow.tasks.some((task) => task.key === "dailyCommissions")).toBe(false);
+    expect(model.dashboard.today.tasks.find((task) => task.key === "dailyCommissions")?.status).toBe("complete");
+    expect(model.summary.todayRemainingCount).toBe(0);
+  });
+
   it("places realm depot in the realm section and resets it on Monday weekly reset", () => {
     const checklist = createDefaultChecklistState();
     checklist.realmDepot.completedAt = "2026-06-07T18:00:00.000Z";

@@ -14,7 +14,11 @@
     "region": "Mondstadt",
     "availability": "ALWAYS",
     "resinCost": 20,
-    "pairedSetKeys": ["ThunderingFury", "Thundersoother", "BraveHeart"]
+    "pairedSetKeys": [
+      "ThunderingFury",
+      "Thundersoother",
+      "ResolutionOfSojourner"
+    ]
   },
   "LuckyDog": {
     "setKey": "LuckyDog",
@@ -26,7 +30,11 @@
     "region": "Liyue",
     "availability": "ALWAYS",
     "resinCost": 20,
-    "pairedSetKeys": ["ArchaicPetra", "RetracingBolide", "BraveHeart"]
+    "pairedSetKeys": [
+      "ArchaicPetra",
+      "RetracingBolide",
+      "BraveHeart"
+    ]
   },
   "TravelingDoctor": {
     "setKey": "TravelingDoctor",
@@ -38,12 +46,27 @@
     "region": "Mondstadt",
     "availability": "ALWAYS",
     "resinCost": 20,
-    "pairedSetKeys": ["ViridescentVenerer", "MaidenBeloved", "TinyMiracle"]
+    "pairedSetKeys": [
+      "ViridescentVenerer",
+      "MaidenBeloved",
+      "TinyMiracle"
+    ]
   },
   "ResolutionOfSojourner": {
     "setKey": "ResolutionOfSojourner",
     "setName": "Resolution of Sojourner",
-    "hasStandardDomainSource": false
+    "hasStandardDomainSource": true,
+    "domainKey": "MidsummerCourtyard",
+    "domainName": "Midsummer Courtyard",
+    "domainLocation": "Starsnatch Cliff, Starfell Valley, Mondstadt",
+    "region": "Mondstadt",
+    "availability": "ALWAYS",
+    "resinCost": 20,
+    "pairedSetKeys": [
+      "ThunderingFury",
+      "Thundersoother",
+      "Adventurer"
+    ]
   },
   "TinyMiracle": {
     "setKey": "TinyMiracle",
@@ -55,7 +78,11 @@
     "region": "Mondstadt",
     "availability": "ALWAYS",
     "resinCost": 20,
-    "pairedSetKeys": ["ViridescentVenerer", "MaidenBeloved", "TravelingDoctor"]
+    "pairedSetKeys": [
+      "ViridescentVenerer",
+      "MaidenBeloved",
+      "TravelingDoctor"
+    ]
   },
   "Berserker": {
     "setKey": "Berserker",
@@ -67,7 +94,11 @@
     "region": "Mondstadt",
     "availability": "ALWAYS",
     "resinCost": 20,
-    "pairedSetKeys": ["NightOfTheSkysUnveiling", "AubadeOfMorningstarAndMoon", "TheExile"]
+    "pairedSetKeys": [
+      "CelestialGift",
+      "DisenchantmentInDeepShadow",
+      "TheExile"
+    ]
   },
   "Instructor": {
     "setKey": "Instructor",
@@ -79,7 +110,11 @@
     "region": "Nod-Krai",
     "availability": "ALWAYS",
     "resinCost": 20,
-    "pairedSetKeys": ["SilkenMoonsSerenade", "ADayCarvedFromRisingWinds", "TinyMiracle"]
+    "pairedSetKeys": [
+      "AubadeOfMorningstarAndMoon",
+      "ADayCarvedFromRisingWinds",
+      "TinyMiracle"
+    ]
   },
   "TheExile": {
     "setKey": "TheExile",
@@ -91,7 +126,11 @@
     "region": "Mondstadt",
     "availability": "ALWAYS",
     "resinCost": 20,
-    "pairedSetKeys": ["NightOfTheSkysUnveiling", "AubadeOfMorningstarAndMoon", "Berserker"]
+    "pairedSetKeys": [
+      "CelestialGift",
+      "DisenchantmentInDeepShadow",
+      "Berserker"
+    ]
   },
   "DefendersWill": {
     "setKey": "DefendersWill",
@@ -103,7 +142,11 @@
     "region": "Fontaine",
     "availability": "ALWAYS",
     "resinCost": 20,
-    "pairedSetKeys": ["MarechausseeHunter", "GoldenTroupe", "BraveHeart"]
+    "pairedSetKeys": [
+      "MarechausseeHunter",
+      "GoldenTroupe",
+      "ResolutionOfSojourner"
+    ]
   },
   "BraveHeart": {
     "setKey": "BraveHeart",
@@ -115,7 +158,11 @@
     "region": "Liyue",
     "availability": "ALWAYS",
     "resinCost": 20,
-    "pairedSetKeys": ["ArchaicPetra", "RetracingBolide", "LuckyDog"]
+    "pairedSetKeys": [
+      "ArchaicPetra",
+      "RetracingBolide",
+      "LuckyDog"
+    ]
   },
   "MartialArtist": {
     "setKey": "MartialArtist",
@@ -127,19 +174,27 @@
     "region": "Liyue",
     "availability": "ALWAYS",
     "resinCost": 20,
-    "pairedSetKeys": ["CrimsonWitchOfFlames", "Lavawalker", "DefendersWill"]
+    "pairedSetKeys": [
+      "CrimsonWitchOfFlames",
+      "Lavawalker",
+      "DefendersWill"
+    ]
   },
   "Gambler": {
     "setKey": "Gambler",
     "setName": "Gambler",
     "hasStandardDomainSource": true,
-    "domainKey": "CityOfGold",
-    "domainName": "City of Gold",
-    "domainLocation": "Khaj-Nisut, Land of Lower Setekh, Sumeru",
-    "region": "Sumeru",
+    "domainKey": "FrostladenMachinery",
+    "domainName": "Frostladen Machinery",
+    "domainLocation": "Maroon Basin, Paha Isle, Nod-Krai",
+    "region": "Nod-Krai",
     "availability": "ALWAYS",
     "resinCost": 20,
-    "pairedSetKeys": ["DesertPavilionChronicle", "FlowerOfParadiseLost", "BraveHeart"]
+    "pairedSetKeys": [
+      "NightOfTheSkysUnveiling",
+      "SilkenMoonsSerenade",
+      "ResolutionOfSojourner"
+    ]
   },
   "Scholar": {
     "setKey": "Scholar",
@@ -151,7 +206,11 @@
     "region": "Natlan",
     "availability": "ALWAYS",
     "resinCost": 20,
-    "pairedSetKeys": ["LongNightsOath", "FinaleOfTheDeepGalleries", "TinyMiracle"]
+    "pairedSetKeys": [
+      "LongNightsOath",
+      "FinaleOfTheDeepGalleries",
+      "TinyMiracle"
+    ]
   },
   "PrayersForWisdom": {
     "setKey": "PrayersForWisdom",
@@ -193,7 +252,11 @@
     "region": "Liyue",
     "availability": "ALWAYS",
     "resinCost": 20,
-    "pairedSetKeys": ["BloodstainedChivalry", "Gambler", "Scholar"]
+    "pairedSetKeys": [
+      "BloodstainedChivalry",
+      "Gambler",
+      "Scholar"
+    ]
   },
   "BloodstainedChivalry": {
     "setKey": "BloodstainedChivalry",
@@ -205,7 +268,11 @@
     "region": "Liyue",
     "availability": "ALWAYS",
     "resinCost": 20,
-    "pairedSetKeys": ["NoblesseOblige", "Gambler", "Scholar"]
+    "pairedSetKeys": [
+      "NoblesseOblige",
+      "Gambler",
+      "Scholar"
+    ]
   },
   "MaidenBeloved": {
     "setKey": "MaidenBeloved",
@@ -217,7 +284,11 @@
     "region": "Mondstadt",
     "availability": "ALWAYS",
     "resinCost": 20,
-    "pairedSetKeys": ["ViridescentVenerer", "TinyMiracle", "TravelingDoctor"]
+    "pairedSetKeys": [
+      "ViridescentVenerer",
+      "TinyMiracle",
+      "TravelingDoctor"
+    ]
   },
   "ViridescentVenerer": {
     "setKey": "ViridescentVenerer",
@@ -229,7 +300,11 @@
     "region": "Mondstadt",
     "availability": "ALWAYS",
     "resinCost": 20,
-    "pairedSetKeys": ["MaidenBeloved", "TinyMiracle", "TravelingDoctor"]
+    "pairedSetKeys": [
+      "MaidenBeloved",
+      "TinyMiracle",
+      "TravelingDoctor"
+    ]
   },
   "ArchaicPetra": {
     "setKey": "ArchaicPetra",
@@ -241,7 +316,11 @@
     "region": "Liyue",
     "availability": "ALWAYS",
     "resinCost": 20,
-    "pairedSetKeys": ["RetracingBolide", "BraveHeart", "LuckyDog"]
+    "pairedSetKeys": [
+      "RetracingBolide",
+      "BraveHeart",
+      "LuckyDog"
+    ]
   },
   "RetracingBolide": {
     "setKey": "RetracingBolide",
@@ -253,7 +332,11 @@
     "region": "Liyue",
     "availability": "ALWAYS",
     "resinCost": 20,
-    "pairedSetKeys": ["ArchaicPetra", "BraveHeart", "LuckyDog"]
+    "pairedSetKeys": [
+      "ArchaicPetra",
+      "BraveHeart",
+      "LuckyDog"
+    ]
   },
   "Thundersoother": {
     "setKey": "Thundersoother",
@@ -265,7 +348,11 @@
     "region": "Mondstadt",
     "availability": "ALWAYS",
     "resinCost": 20,
-    "pairedSetKeys": ["ThunderingFury", "BraveHeart", "Adventurer"]
+    "pairedSetKeys": [
+      "ThunderingFury",
+      "ResolutionOfSojourner",
+      "Adventurer"
+    ]
   },
   "ThunderingFury": {
     "setKey": "ThunderingFury",
@@ -277,7 +364,11 @@
     "region": "Mondstadt",
     "availability": "ALWAYS",
     "resinCost": 20,
-    "pairedSetKeys": ["Thundersoother", "BraveHeart", "Adventurer"]
+    "pairedSetKeys": [
+      "Thundersoother",
+      "ResolutionOfSojourner",
+      "Adventurer"
+    ]
   },
   "Lavawalker": {
     "setKey": "Lavawalker",
@@ -289,7 +380,11 @@
     "region": "Liyue",
     "availability": "ALWAYS",
     "resinCost": 20,
-    "pairedSetKeys": ["CrimsonWitchOfFlames", "DefendersWill", "MartialArtist"]
+    "pairedSetKeys": [
+      "CrimsonWitchOfFlames",
+      "DefendersWill",
+      "MartialArtist"
+    ]
   },
   "CrimsonWitchOfFlames": {
     "setKey": "CrimsonWitchOfFlames",
@@ -301,7 +396,11 @@
     "region": "Liyue",
     "availability": "ALWAYS",
     "resinCost": 20,
-    "pairedSetKeys": ["Lavawalker", "DefendersWill", "MartialArtist"]
+    "pairedSetKeys": [
+      "Lavawalker",
+      "DefendersWill",
+      "MartialArtist"
+    ]
   },
   "BlizzardStrayer": {
     "setKey": "BlizzardStrayer",
@@ -313,7 +412,11 @@
     "region": "Mondstadt",
     "availability": "ALWAYS",
     "resinCost": 20,
-    "pairedSetKeys": ["HeartOfDepth", "DefendersWill", "Gambler"]
+    "pairedSetKeys": [
+      "HeartOfDepth",
+      "DefendersWill",
+      "Gambler"
+    ]
   },
   "HeartOfDepth": {
     "setKey": "HeartOfDepth",
@@ -325,7 +428,11 @@
     "region": "Mondstadt",
     "availability": "ALWAYS",
     "resinCost": 20,
-    "pairedSetKeys": ["BlizzardStrayer", "DefendersWill", "Gambler"]
+    "pairedSetKeys": [
+      "BlizzardStrayer",
+      "DefendersWill",
+      "Gambler"
+    ]
   },
   "TenacityOfTheMillelith": {
     "setKey": "TenacityOfTheMillelith",
@@ -337,7 +444,11 @@
     "region": "Liyue",
     "availability": "ALWAYS",
     "resinCost": 20,
-    "pairedSetKeys": ["PaleFlame", "BraveHeart", "MartialArtist"]
+    "pairedSetKeys": [
+      "PaleFlame",
+      "BraveHeart",
+      "MartialArtist"
+    ]
   },
   "PaleFlame": {
     "setKey": "PaleFlame",
@@ -349,7 +460,11 @@
     "region": "Liyue",
     "availability": "ALWAYS",
     "resinCost": 20,
-    "pairedSetKeys": ["TenacityOfTheMillelith", "BraveHeart", "MartialArtist"]
+    "pairedSetKeys": [
+      "TenacityOfTheMillelith",
+      "BraveHeart",
+      "MartialArtist"
+    ]
   },
   "ShimenawasReminiscence": {
     "setKey": "ShimenawasReminiscence",
@@ -361,7 +476,11 @@
     "region": "Inazuma",
     "availability": "ALWAYS",
     "resinCost": 20,
-    "pairedSetKeys": ["EmblemOfSeveredFate", "BraveHeart", "TinyMiracle"]
+    "pairedSetKeys": [
+      "EmblemOfSeveredFate",
+      "ResolutionOfSojourner",
+      "TinyMiracle"
+    ]
   },
   "EmblemOfSeveredFate": {
     "setKey": "EmblemOfSeveredFate",
@@ -373,7 +492,11 @@
     "region": "Inazuma",
     "availability": "ALWAYS",
     "resinCost": 20,
-    "pairedSetKeys": ["ShimenawasReminiscence", "BraveHeart", "TinyMiracle"]
+    "pairedSetKeys": [
+      "ShimenawasReminiscence",
+      "ResolutionOfSojourner",
+      "TinyMiracle"
+    ]
   },
   "HuskOfOpulentDreams": {
     "setKey": "HuskOfOpulentDreams",
@@ -385,7 +508,11 @@
     "region": "Inazuma",
     "availability": "ALWAYS",
     "resinCost": 20,
-    "pairedSetKeys": ["OceanHuedClam", "DefendersWill", "BraveHeart"]
+    "pairedSetKeys": [
+      "OceanHuedClam",
+      "DefendersWill",
+      "BraveHeart"
+    ]
   },
   "OceanHuedClam": {
     "setKey": "OceanHuedClam",
@@ -397,7 +524,11 @@
     "region": "Inazuma",
     "availability": "ALWAYS",
     "resinCost": 20,
-    "pairedSetKeys": ["HuskOfOpulentDreams", "DefendersWill", "BraveHeart"]
+    "pairedSetKeys": [
+      "HuskOfOpulentDreams",
+      "DefendersWill",
+      "BraveHeart"
+    ]
   },
   "VermillionHereafter": {
     "setKey": "VermillionHereafter",
@@ -405,11 +536,15 @@
     "hasStandardDomainSource": true,
     "domainKey": "TheLostValley",
     "domainName": "The Lost Valley",
-    "domainLocation": "Fuao Vale, The Chasm, Liyue",
+    "domainLocation": "Fuao Vale, The Chasm (Area), Liyue",
     "region": "Liyue",
     "availability": "ALWAYS",
     "resinCost": 20,
-    "pairedSetKeys": ["EchoesOfAnOffering", "MartialArtist", "Gambler"]
+    "pairedSetKeys": [
+      "EchoesOfAnOffering",
+      "MartialArtist",
+      "Gambler"
+    ]
   },
   "EchoesOfAnOffering": {
     "setKey": "EchoesOfAnOffering",
@@ -417,11 +552,15 @@
     "hasStandardDomainSource": true,
     "domainKey": "TheLostValley",
     "domainName": "The Lost Valley",
-    "domainLocation": "Fuao Vale, The Chasm, Liyue",
+    "domainLocation": "Fuao Vale, The Chasm (Area), Liyue",
     "region": "Liyue",
     "availability": "ALWAYS",
     "resinCost": 20,
-    "pairedSetKeys": ["VermillionHereafter", "MartialArtist", "Gambler"]
+    "pairedSetKeys": [
+      "VermillionHereafter",
+      "MartialArtist",
+      "Gambler"
+    ]
   },
   "DeepwoodMemories": {
     "setKey": "DeepwoodMemories",
@@ -433,7 +572,11 @@
     "region": "Sumeru",
     "availability": "ALWAYS",
     "resinCost": 20,
-    "pairedSetKeys": ["GildedDreams", "TinyMiracle", "Gambler"]
+    "pairedSetKeys": [
+      "GildedDreams",
+      "TinyMiracle",
+      "Gambler"
+    ]
   },
   "GildedDreams": {
     "setKey": "GildedDreams",
@@ -445,7 +588,11 @@
     "region": "Sumeru",
     "availability": "ALWAYS",
     "resinCost": 20,
-    "pairedSetKeys": ["DeepwoodMemories", "TinyMiracle", "Gambler"]
+    "pairedSetKeys": [
+      "DeepwoodMemories",
+      "TinyMiracle",
+      "Gambler"
+    ]
   },
   "DesertPavilionChronicle": {
     "setKey": "DesertPavilionChronicle",
@@ -457,7 +604,11 @@
     "region": "Sumeru",
     "availability": "ALWAYS",
     "resinCost": 20,
-    "pairedSetKeys": ["FlowerOfParadiseLost", "BraveHeart", "Gambler"]
+    "pairedSetKeys": [
+      "FlowerOfParadiseLost",
+      "ResolutionOfSojourner",
+      "BraveHeart"
+    ]
   },
   "FlowerOfParadiseLost": {
     "setKey": "FlowerOfParadiseLost",
@@ -469,7 +620,11 @@
     "region": "Sumeru",
     "availability": "ALWAYS",
     "resinCost": 20,
-    "pairedSetKeys": ["DesertPavilionChronicle", "BraveHeart", "Gambler"]
+    "pairedSetKeys": [
+      "DesertPavilionChronicle",
+      "ResolutionOfSojourner",
+      "BraveHeart"
+    ]
   },
   "NymphsDream": {
     "setKey": "NymphsDream",
@@ -481,7 +636,11 @@
     "region": "Sumeru",
     "availability": "ALWAYS",
     "resinCost": 20,
-    "pairedSetKeys": ["VourukashasGlow", "MartialArtist", "Scholar"]
+    "pairedSetKeys": [
+      "VourukashasGlow",
+      "MartialArtist",
+      "Scholar"
+    ]
   },
   "VourukashasGlow": {
     "setKey": "VourukashasGlow",
@@ -493,7 +652,11 @@
     "region": "Sumeru",
     "availability": "ALWAYS",
     "resinCost": 20,
-    "pairedSetKeys": ["NymphsDream", "MartialArtist", "Scholar"]
+    "pairedSetKeys": [
+      "NymphsDream",
+      "MartialArtist",
+      "Scholar"
+    ]
   },
   "MarechausseeHunter": {
     "setKey": "MarechausseeHunter",
@@ -505,7 +668,11 @@
     "region": "Fontaine",
     "availability": "ALWAYS",
     "resinCost": 20,
-    "pairedSetKeys": ["GoldenTroupe", "BraveHeart", "DefendersWill"]
+    "pairedSetKeys": [
+      "GoldenTroupe",
+      "ResolutionOfSojourner",
+      "DefendersWill"
+    ]
   },
   "GoldenTroupe": {
     "setKey": "GoldenTroupe",
@@ -517,7 +684,11 @@
     "region": "Fontaine",
     "availability": "ALWAYS",
     "resinCost": 20,
-    "pairedSetKeys": ["MarechausseeHunter", "BraveHeart", "DefendersWill"]
+    "pairedSetKeys": [
+      "MarechausseeHunter",
+      "ResolutionOfSojourner",
+      "DefendersWill"
+    ]
   },
   "SongOfDaysPast": {
     "setKey": "SongOfDaysPast",
@@ -529,7 +700,11 @@
     "region": "Fontaine",
     "availability": "ALWAYS",
     "resinCost": 20,
-    "pairedSetKeys": ["NighttimeWhispersInTheEchoingWoods", "TinyMiracle", "MartialArtist"]
+    "pairedSetKeys": [
+      "NighttimeWhispersInTheEchoingWoods",
+      "TinyMiracle",
+      "MartialArtist"
+    ]
   },
   "NighttimeWhispersInTheEchoingWoods": {
     "setKey": "NighttimeWhispersInTheEchoingWoods",
@@ -541,7 +716,11 @@
     "region": "Fontaine",
     "availability": "ALWAYS",
     "resinCost": 20,
-    "pairedSetKeys": ["SongOfDaysPast", "TinyMiracle", "MartialArtist"]
+    "pairedSetKeys": [
+      "SongOfDaysPast",
+      "TinyMiracle",
+      "MartialArtist"
+    ]
   },
   "FragmentOfHarmonicWhimsy": {
     "setKey": "FragmentOfHarmonicWhimsy",
@@ -553,7 +732,11 @@
     "region": "Fontaine",
     "availability": "ALWAYS",
     "resinCost": 20,
-    "pairedSetKeys": ["UnfinishedReverie", "BraveHeart", "Scholar"]
+    "pairedSetKeys": [
+      "UnfinishedReverie",
+      "BraveHeart",
+      "Scholar"
+    ]
   },
   "UnfinishedReverie": {
     "setKey": "UnfinishedReverie",
@@ -565,7 +748,11 @@
     "region": "Fontaine",
     "availability": "ALWAYS",
     "resinCost": 20,
-    "pairedSetKeys": ["FragmentOfHarmonicWhimsy", "BraveHeart", "Scholar"]
+    "pairedSetKeys": [
+      "FragmentOfHarmonicWhimsy",
+      "BraveHeart",
+      "Scholar"
+    ]
   },
   "ScrollOfTheHeroOfCinderCity": {
     "setKey": "ScrollOfTheHeroOfCinderCity",
@@ -577,7 +764,11 @@
     "region": "Natlan",
     "availability": "ALWAYS",
     "resinCost": 20,
-    "pairedSetKeys": ["ObsidianCodex", "BraveHeart", "Gambler"]
+    "pairedSetKeys": [
+      "ObsidianCodex",
+      "ResolutionOfSojourner",
+      "Gambler"
+    ]
   },
   "ObsidianCodex": {
     "setKey": "ObsidianCodex",
@@ -589,7 +780,11 @@
     "region": "Natlan",
     "availability": "ALWAYS",
     "resinCost": 20,
-    "pairedSetKeys": ["ScrollOfTheHeroOfCinderCity", "BraveHeart", "Gambler"]
+    "pairedSetKeys": [
+      "ScrollOfTheHeroOfCinderCity",
+      "ResolutionOfSojourner",
+      "Gambler"
+    ]
   },
   "LongNightsOath": {
     "setKey": "LongNightsOath",
@@ -601,7 +796,11 @@
     "region": "Natlan",
     "availability": "ALWAYS",
     "resinCost": 20,
-    "pairedSetKeys": ["FinaleOfTheDeepGalleries", "TinyMiracle", "Scholar"]
+    "pairedSetKeys": [
+      "FinaleOfTheDeepGalleries",
+      "TinyMiracle",
+      "Scholar"
+    ]
   },
   "FinaleOfTheDeepGalleries": {
     "setKey": "FinaleOfTheDeepGalleries",
@@ -613,31 +812,43 @@
     "region": "Natlan",
     "availability": "ALWAYS",
     "resinCost": 20,
-    "pairedSetKeys": ["LongNightsOath", "TinyMiracle", "Scholar"]
+    "pairedSetKeys": [
+      "LongNightsOath",
+      "TinyMiracle",
+      "Scholar"
+    ]
   },
   "NightOfTheSkysUnveiling": {
     "setKey": "NightOfTheSkysUnveiling",
     "setName": "Night of the Sky's Unveiling",
     "hasStandardDomainSource": true,
-    "domainKey": "ThornyCrownOfTheMountainWind",
-    "domainName": "Thorny Crown of the Mountain Wind",
-    "domainLocation": "Windrest Peak, Mondstadt",
-    "region": "Mondstadt",
+    "domainKey": "FrostladenMachinery",
+    "domainName": "Frostladen Machinery",
+    "domainLocation": "Maroon Basin, Paha Isle, Nod-Krai",
+    "region": "Nod-Krai",
     "availability": "ALWAYS",
     "resinCost": 20,
-    "pairedSetKeys": ["AubadeOfMorningstarAndMoon", "Berserker", "TheExile"]
+    "pairedSetKeys": [
+      "SilkenMoonsSerenade",
+      "ResolutionOfSojourner",
+      "Gambler"
+    ]
   },
   "SilkenMoonsSerenade": {
     "setKey": "SilkenMoonsSerenade",
     "setName": "Silken Moon's Serenade",
     "hasStandardDomainSource": true,
-    "domainKey": "MoonchildsTreasures",
-    "domainName": "Moonchild's Treasures",
-    "domainLocation": "Ashveil Peak, Nod-Krai",
+    "domainKey": "FrostladenMachinery",
+    "domainName": "Frostladen Machinery",
+    "domainLocation": "Maroon Basin, Paha Isle, Nod-Krai",
     "region": "Nod-Krai",
     "availability": "ALWAYS",
     "resinCost": 20,
-    "pairedSetKeys": ["ADayCarvedFromRisingWinds", "TinyMiracle", "Instructor"]
+    "pairedSetKeys": [
+      "NightOfTheSkysUnveiling",
+      "ResolutionOfSojourner",
+      "Gambler"
+    ]
   },
   "ADayCarvedFromRisingWinds": {
     "setKey": "ADayCarvedFromRisingWinds",
@@ -649,11 +860,31 @@
     "region": "Nod-Krai",
     "availability": "ALWAYS",
     "resinCost": 20,
-    "pairedSetKeys": ["SilkenMoonsSerenade", "TinyMiracle", "Instructor"]
+    "pairedSetKeys": [
+      "AubadeOfMorningstarAndMoon",
+      "TinyMiracle",
+      "Instructor"
+    ]
   },
   "AubadeOfMorningstarAndMoon": {
     "setKey": "AubadeOfMorningstarAndMoon",
     "setName": "Aubade of Morningstar and Moon",
+    "hasStandardDomainSource": true,
+    "domainKey": "MoonchildsTreasures",
+    "domainName": "Moonchild's Treasures",
+    "domainLocation": "Ashveil Peak, Nod-Krai",
+    "region": "Nod-Krai",
+    "availability": "ALWAYS",
+    "resinCost": 20,
+    "pairedSetKeys": [
+      "ADayCarvedFromRisingWinds",
+      "TinyMiracle",
+      "Instructor"
+    ]
+  },
+  "CelestialGift": {
+    "setKey": "CelestialGift",
+    "setName": "Celestial Gift",
     "hasStandardDomainSource": true,
     "domainKey": "ThornyCrownOfTheMountainWind",
     "domainName": "Thorny Crown of the Mountain Wind",
@@ -661,30 +892,26 @@
     "region": "Mondstadt",
     "availability": "ALWAYS",
     "resinCost": 20,
-    "pairedSetKeys": ["NightOfTheSkysUnveiling", "Berserker", "TheExile"]
-  },
-  "CelestialGift": {
-    "setKey": "CelestialGift",
-    "setName": "Celestial Gift",
-    "hasStandardDomainSource": true,
-    "domainKey": "FrostladenMachinery",
-    "domainName": "Frostladen Machinery",
-    "domainLocation": "Maroon Basin, Paha Isle, Nod-Krai",
-    "region": "Nod-Krai",
-    "availability": "ALWAYS",
-    "resinCost": 20,
-    "pairedSetKeys": ["DisenchantmentInDeepShadow", "BraveHeart", "Gambler"]
+    "pairedSetKeys": [
+      "DisenchantmentInDeepShadow",
+      "Berserker",
+      "TheExile"
+    ]
   },
   "DisenchantmentInDeepShadow": {
     "setKey": "DisenchantmentInDeepShadow",
     "setName": "Disenchantment in Deep Shadow",
     "hasStandardDomainSource": true,
-    "domainKey": "FrostladenMachinery",
-    "domainName": "Frostladen Machinery",
-    "domainLocation": "Maroon Basin, Paha Isle, Nod-Krai",
-    "region": "Nod-Krai",
+    "domainKey": "ThornyCrownOfTheMountainWind",
+    "domainName": "Thorny Crown of the Mountain Wind",
+    "domainLocation": "Windrest Peak, Mondstadt",
+    "region": "Mondstadt",
     "availability": "ALWAYS",
     "resinCost": 20,
-    "pairedSetKeys": ["CelestialGift", "BraveHeart", "Gambler"]
+    "pairedSetKeys": [
+      "CelestialGift",
+      "Berserker",
+      "TheExile"
+    ]
   }
 }

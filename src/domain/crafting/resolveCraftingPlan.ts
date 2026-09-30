@@ -5,6 +5,7 @@ import type { StaticGameData } from "../staticData/types";
 import type {
   CraftingAffectedGoal,
   CraftingAffectedRequirementEntry,
+  CraftingExecutionPlan,
   CraftingPlan,
   CraftingPlanReport,
   CraftingRecipe,
@@ -23,15 +24,7 @@ interface ResolveCraftingPlanOptions {
   progressionMora?: number;
 }
 
-interface TargetCraftPlan {
-  outputAmount: number;
-  steps: CraftingStep[];
-  moraCost: number;
-  leftovers: Record<string, number>;
-  remainingMissing: number;
-  canSatisfy: boolean;
-  lowerTierAvailable: Record<string, number>;
-}
+type TargetCraftPlan = CraftingExecutionPlan;
 
 interface PassiveSelectionInput {
   staticData: StaticGameData;
@@ -203,6 +196,16 @@ function buildTargetCraftPlan(
   };
 }
 
+export function resolveGuaranteedCraftExecution(
+  targetMaterialKey: string,
+  quantityToCraft: number,
+  inventory: InventoryState,
+  staticData: StaticGameData,
+): CraftingExecutionPlan {
+  const usageInventory = { ...inventory };
+  return buildTargetCraftPlan(targetMaterialKey, Math.max(0, quantityToCraft), usageInventory, {}, staticData);
+}
+
 function applicableOverrideKey(recipe: CraftingRecipe | null): keyof NonNullable<PlannerSettings["craftingPassiveOverrides"]> | null {
   switch (recipe?.category) {
     case "talent_level_up_material":
@@ -335,6 +338,7 @@ function calculateExpectedCoverage(
   targetMaterialKey: string,
   missingAmount: number,
   usageInventorySnapshot: InventoryState,
+  reservedByMaterial: Record<string, number>,
   staticData: StaticGameData,
   passive: RecommendedCraftingPassive | undefined,
 ): number {
@@ -348,15 +352,18 @@ function calculateExpectedCoverage(
   }
 
   const rate = passive.expectedInputPerOutput;
-  let equivalent = usageInventorySnapshot[targetMaterialKey] ?? 0;
+  let equivalent = 0;
   for (let index = 0; index < familyEntry.tierIndex; index += 1) {
     const lowerKey = familyEntry.tierKeys[index];
     const distance = familyEntry.tierIndex - index;
-    equivalent += (usageInventorySnapshot[lowerKey] ?? 0) / rate ** distance;
+    const availableSurplus = Math.max(
+      (usageInventorySnapshot[lowerKey] ?? 0) - (reservedByMaterial[lowerKey] ?? 0),
+      0,
+    );
+    equivalent += availableSurplus / rate ** distance;
   }
 
-  const directOwned = usageInventorySnapshot[targetMaterialKey] ?? 0;
-  return Math.max(0, Math.min(missingAmount, equivalent - directOwned));
+  return Math.max(0, Math.min(missingAmount, equivalent));
 }
 
 function buildDustOfAzothOption(
@@ -366,8 +373,9 @@ function buildDustOfAzothOption(
   inventory: InventoryState,
   staticData: StaticGameData,
   plannerSettings: PlannerSettings | undefined,
+  reservedByMaterial: Record<string, number>,
 ): CraftingPlanReport["dustOfAzothOption"] | undefined {
-  if (!plannerSettings?.showDustOfAzothOption || remainingMissing <= 0) {
+  if ((!plannerSettings?.showDustOfAzothOption && !plannerSettings?.allowDustOfAzothConversion) || remainingMissing <= 0) {
     return undefined;
   }
 
@@ -396,7 +404,7 @@ function buildDustOfAzothOption(
     .map((entry) => entry.materialKey);
 
   for (const sourceKey of sameTierOffElementKeys) {
-    const owned = inventory[sourceKey] ?? 0;
+    const owned = Math.max(0, (inventory[sourceKey] ?? 0) - (reservedByMaterial[sourceKey] ?? 0));
     if (owned <= 0) {
       continue;
     }
@@ -536,24 +544,45 @@ export function resolveCraftingPlan(
       requiredAmount: row.needed,
       ownedAmount: row.owned,
     });
-    const expectedCoverage = guaranteedPlan.outputAmount + calculateExpectedCoverage(
-      row.materialKey,
-      guaranteedPlan.remainingMissing,
-      usageInventorySnapshot,
-      staticData,
-      recommendedPassive,
+    const expectedCoverage = Math.max(
+      guaranteedPlan.outputAmount,
+      calculateExpectedCoverage(
+        row.materialKey,
+        directMissing,
+        usageInventorySnapshot,
+        reservedByMaterial,
+        staticData,
+        recommendedPassive,
+      ),
     );
     const dustOfAzothOption = buildDustOfAzothOption(
       row.materialKey,
       row.displayName,
       guaranteedPlan.remainingMissing,
-      usageInventorySnapshot,
+      usageInventory,
       staticData,
       options.plannerSettings,
+      reservedByMaterial,
     );
+    const appliedDustCoverage =
+      options.plannerSettings?.allowDustOfAzothConversion
+        ? dustOfAzothOption?.outputAmount ?? 0
+        : 0;
+    if (appliedDustCoverage > 0 && dustOfAzothOption) {
+      usageInventory.DustOfAzoth = Math.max(
+        (usageInventory.DustOfAzoth ?? 0) - dustOfAzothOption.dustRequired,
+        0,
+      );
+      for (const conversion of dustOfAzothOption.conversions) {
+        usageInventory[conversion.inputKey] = Math.max(
+          (usageInventory[conversion.inputKey] ?? 0) - conversion.inputQuantity * conversion.crafts,
+          0,
+        );
+      }
+    }
 
-    guaranteedCoverageByMaterial[row.materialKey] = guaranteedPlan.outputAmount;
-    guaranteedRemainingByMaterial[row.materialKey] = guaranteedPlan.remainingMissing;
+    guaranteedCoverageByMaterial[row.materialKey] = guaranteedPlan.outputAmount + appliedDustCoverage;
+    guaranteedRemainingByMaterial[row.materialKey] = Math.max(guaranteedPlan.remainingMissing - appliedDustCoverage, 0);
     expectedCoverageByMaterial[row.materialKey] = Math.min(directMissing, expectedCoverage);
     if (guaranteedPlan.moraCost > 0) {
       craftingMoraByMaterial[row.materialKey] = guaranteedPlan.moraCost;

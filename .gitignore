@@ -8,3 +8,6 @@ Thumbs.db
 
 data_sources/**/*.tmp
 data_sources/**/*.bak
+
+playwright-report/
+test-results/

@@ -1,3 +1,5 @@
+import { createIdentityResolver, identityRecords } from "../domain/staticData/entityIdentity";
+import { discoverGoodEntities } from "../domain/staticData/goodDiscoveries";
 import type { ImportedAccountState, OwnedArtifact, OwnedCharacter, OwnedWeapon, UnmatchedOwnedWeapon } from "../domain/account/types";
 import { parseGoodFromText } from "../domain/good/parseGood";
 import type { ImportResult } from "../domain/good/types";
@@ -18,35 +20,9 @@ function normalizeCharacters(account: NonNullable<ImportResult["inventory"]>): O
   }));
 }
 
-function normalizeLookupValue(value: string): string {
-  return value
-    .trim()
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "");
-}
-
 function buildWeaponCatalogLookup(staticData: StaticGameData | undefined) {
-  const directKeyMap = new Map<string, string>();
-  const exactNameMap = new Map<string, string>();
-  const normalizedMap = new Map<string, string>();
-
-  for (const weapon of Object.values(staticData?.weapons ?? {})) {
-    directKeyMap.set(weapon.key, weapon.key);
-    exactNameMap.set(weapon.displayName, weapon.key);
-    normalizedMap.set(normalizeLookupValue(weapon.key), weapon.key);
-    normalizedMap.set(normalizeLookupValue(weapon.displayName), weapon.key);
-  }
-
-  return {
-    resolve(rawName: string): string | null {
-      return (
-        exactNameMap.get(rawName) ??
-        directKeyMap.get(rawName) ??
-        normalizedMap.get(normalizeLookupValue(rawName)) ??
-        null
-      );
-    },
-  };
+  const resolver = staticData ? createIdentityResolver(identityRecords(staticData, "weapon")) : undefined;
+  return { resolve: (rawName: string) => resolver ? resolver(rawName).key ?? null : rawName };
 }
 
 function normalizeWeapons(
@@ -140,10 +116,19 @@ export function importGoodAccountFromText(text: string, staticData?: StaticGameD
     };
   }
 
+  if (staticData) {
+    const resolvers = Object.fromEntries((["character", "material", "artifactSet"] as const).map(type => [type, createIdentityResolver(identityRecords(staticData, type))]));
+    const resolve = (type: "character" | "material" | "artifactSet", key: string) => resolvers[type](key).key ?? key;
+    parsed.inventory.charactersByKey = Object.fromEntries(Object.values(parsed.inventory.charactersByKey).map(row => { const key = resolve("character", row.key); return [key, { ...row, key }]; }));
+    const materials: Record<string, number> = {};
+    for (const [raw, amount] of Object.entries(parsed.inventory.materialsByKey)) { const key = resolve("material", raw); materials[key] = (materials[key] ?? 0) + amount; }
+    parsed.inventory.materialsByKey = materials;
+    parsed.inventory.artifactsById = Object.fromEntries(Object.entries(parsed.inventory.artifactsById).map(([id, row]) => [id, { ...row, setKey: resolve("artifactSet", row.setKey), location: row.location ? resolve("character", row.location) : row.location }]));
+    parsed.inventory.weaponsById = Object.fromEntries(Object.entries(parsed.inventory.weaponsById).map(([id, row]) => [id, { ...row, location: row.location ? resolve("character", row.location) : row.location }]));
+  }
   const normalizedWeapons = normalizeWeapons(parsed.inventory, staticData);
 
-  return {
-    account: {
+  const account: ImportedAccountState = {
       importMeta: parsed.inventory.importMeta,
       characters: normalizeCharacters(parsed.inventory),
       weapons: normalizedWeapons.weapons,
@@ -151,8 +136,9 @@ export function importGoodAccountFromText(text: string, staticData?: StaticGameD
       artifacts: normalizeArtifacts(parsed.inventory),
       inventory: parsed.inventory.materialsByKey,
       warnings: [...parsed.inventory.warnings, ...normalizedWeapons.warnings],
-    },
-    warnings: parsed.warnings,
-    errors: parsed.errors,
   };
+  if (staticData) for (const discovery of discoverGoodEntities(account, staticData)) {
+    if (discovery.entityType === "character" || discovery.entityType === "material") account.warnings.push({ type: discovery.entityType === "character" ? "unknown_character" : "unknown_material", key: discovery.rawKey, message: `Unknown ${discovery.entityType} ${discovery.rawKey} was preserved for database discovery.` });
+  }
+  return { account, warnings: parsed.warnings, errors: parsed.errors };
 }

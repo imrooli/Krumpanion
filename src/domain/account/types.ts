@@ -161,6 +161,8 @@ export interface PlannerRecalculationStatus {
   activeGoalCount: number;
   materialDeficitCount: number;
   totalEstimatedResin: number;
+  guaranteedTotalResin?: number;
+  expectedAdvisoryResin?: number;
   warningCount: number;
   lastError?: string;
 }
@@ -245,6 +247,8 @@ export interface RecentPlannerRecalculationChange extends RecentPlannerChangeBas
   activeGoalCount: number;
   materialDeficitCount: number;
   totalEstimatedResin: number;
+  guaranteedTotalResin?: number;
+  expectedAdvisoryResin?: number;
   warningCount: number;
   resolvedGoalCount?: number;
   newlyCompletedGoalCount?: number;

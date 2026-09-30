@@ -1,3 +1,5 @@
+import { canonicalDatabase } from "../../data/database";
+import { validateExactRequirements } from "./validateExactRequirements";
 import type { ImportedAccountState } from "../account/types";
 import type { ImportWarning } from "../good/types";
 import type { PlannerWarning } from "../planner/types";
@@ -7,17 +9,19 @@ import { assembleBaseStaticData } from "./assembleBaseStaticData";
 import { buildDerivedStaticDataIndexes } from "./buildDerivedStaticDataIndexes";
 import type { OverrideDataPack, StaticGameData } from "./types";
 
-export function loadStaticData(overridePack?: OverrideDataPack | null): StaticGameData {
+export function loadStaticData(overridePack?: OverrideDataPack | null, baseline = canonicalDatabase): StaticGameData {
   // Assembly order:
   // 1. Load the canonical database from src/data/database.
   // 2. Validate canonical source-of-truth records.
   // 3. Normalize the canonical database into the current StaticGameData shape.
   // 4. Apply validated override packs.
   // 5. Build derived lookup indexes and compatibility maps.
-  assertCanonicalDatabaseValid();
-  const baseData = assembleBaseStaticData();
+  assertCanonicalDatabaseValid(baseline);
+  const baseData = assembleBaseStaticData(baseline);
   const dataWithOverrides = applyOverridePack(baseData, overridePack);
-  return buildDerivedStaticDataIndexes(dataWithOverrides);
+  const data = buildDerivedStaticDataIndexes(dataWithOverrides);
+  validateExactRequirements(data);
+  return data;
 }
 
 export function buildInventoryWarnings(

@@ -13,7 +13,9 @@ import {
 } from "./databaseValidationRules";
 
 export interface DatabaseValidationIssue {
-  severity: "error" | "warning";
+  severity: "error" | "warning" | "info";
+  condition?: { recordType: string; field: string; kind: string; value: unknown };
+  code: string;
   category:
     | "character"
     | "traveler"
@@ -33,12 +35,13 @@ export interface DatabaseValidationReport {
 }
 
 function issue(
-  severity: "error" | "warning",
+  severity: "error" | "warning" | "info",
   category: DatabaseValidationIssue["category"],
   key: string,
   message: string,
+  condition?: DatabaseValidationIssue["condition"],
 ): DatabaseValidationIssue {
-  return { severity, category, key, message };
+  return { severity, category, key, message, condition, code: condition ? `${condition.recordType}.${condition.field}.${condition.kind}` : `${category}.constraint` };
 }
 
 function isBlank(value: string | null | undefined): boolean {
@@ -95,10 +98,10 @@ function validateCharacters(database: CanonicalDatabase, issues: DatabaseValidat
         }
       }
       if (!profile.weaponType) {
-        issues.push(issue("warning", "character", characterKey, "Verified character is missing weaponType metadata."));
+        issues.push(issue("warning", "character", characterKey, "Verified character is missing weaponType metadata.", { recordType: "character", field: "weaponType", kind: "missing", value: null }));
       }
       if (!profile.rarity) {
-        issues.push(issue("warning", "character", characterKey, "Verified character is missing rarity metadata."));
+        issues.push(issue("warning", "character", characterKey, "Verified character is missing rarity metadata.", { recordType: "character", field: "rarity", kind: "missing", value: null }));
       }
     }
     if ((profile.releaseState === "beta" || profile.releaseState === "unreleased") && profile.plannerEligible) {
@@ -133,7 +136,11 @@ function validateCharacters(database: CanonicalDatabase, issues: DatabaseValidat
 function validateWeapons(database: CanonicalDatabase, issues: DatabaseValidationIssue[]): void {
   const duplicateNames = collectDuplicateDisplayNames(database.weapons.weaponProfiles);
   for (const [displayName, keys] of duplicateNames) {
-    issues.push(issue("warning", "weapon", displayName, `Duplicate weapon display name used by ${keys.join(", ")}.`));
+    const ids = keys.map(key => database.weapons.weaponProfiles[key].gameId);
+    const distinctIdentities = ids.every(id => Number.isInteger(id) && Number(id) > 0) && new Set(ids).size === keys.length;
+    issues.push(issue(distinctIdentities ? "info" : "warning", "weapon", displayName,
+      `Duplicate weapon display name used by ${keys.join(", ")}.${distinctIdentities ? " Distinct game IDs establish separate identities; name-only imports remain ambiguous." : ""}`,
+      { recordType: "weapon", field: "displayName", kind: distinctIdentities ? "shared_name_distinct_ids" : "ambiguous_identity", value: keys.map((key, index) => ({ key, gameId: ids[index] })) }));
   }
 
   for (const [weaponKey, profile] of Object.entries(database.weapons.weaponProfiles)) {
@@ -152,7 +159,7 @@ function validateWeapons(database: CanonicalDatabase, issues: DatabaseValidation
     if (profile.refinementPolicy && !VALID_WEAPON_REFINEMENT_POLICIES.has(profile.refinementPolicy)) {
       issues.push(issue("error", "weapon", weaponKey, `Unknown refinementPolicy ${profile.refinementPolicy}.`));
     }
-    if (profile.status === "verified") {
+    if (profile.status === "verified" && profile.rarity >= 3) {
       for (const [field, value] of Object.entries({
         weaponAscensionMaterialFamilyKey: profile.weaponAscensionMaterialFamilyKey,
         eliteEnemyDropFamilyKey: profile.eliteEnemyDropFamilyKey,
@@ -170,7 +177,7 @@ function validateWeapons(database: CanonicalDatabase, issues: DatabaseValidation
       issues.push(issue("error", "weapon", weaponKey, "1-star/2-star weapons cannot be refinementTrackable."));
     }
     if (profile.rarity === 5 && !profile.refinementPolicy && profile.refinementTrackable !== false) {
-      issues.push(issue("warning", "weapon", weaponKey, "5-star weapons should default to manual review when no explicit refinementPolicy is present."));
+      issues.push(issue("info", "weapon", weaponKey, "Effective refinement policy uses the established manual_review default.", { recordType: "weapon", field: "refinementPolicy", kind: "default", value: "manual_review" }));
     }
   }
 }
@@ -249,7 +256,7 @@ function validateReferences(database: CanonicalDatabase, issues: DatabaseValidat
       ["common enemy family", profile.commonEnemyDropFamilyKey, database.materials.commonEnemyDropFamilies],
     ];
     for (const [label, key, record] of refs) {
-      if (profile.status === "verified" && !record[key]) {
+      if (profile.status === "verified" && (profile.rarity >= 3 || !isBlank(key)) && !record[key]) {
         issues.push(issue("error", "weapon", weaponKey, `Weapon references missing ${label} key ${key}.`));
       }
     }
@@ -299,7 +306,7 @@ function validateSources(database: CanonicalDatabase, issues: DatabaseValidation
         issues.push(issue("error", "source", locationKey, `Ley Line spawn ${index} is missing enemyName.`));
       }
       if (!spawn.dropFamilyKey) {
-        issues.push(issue("warning", "source", locationKey, `Ley Line spawn ${index} for ${spawn.enemyName} has no resolved dropFamilyKey.`));
+        issues.push(issue("warning", "source", locationKey, `Ley Line spawn ${index} for ${spawn.enemyName} has no resolved dropFamilyKey.`, { recordType: "ley_line", field: `spawns.${index}.dropFamilyKey`, kind: "missing", value: null }));
         continue;
       }
       if (!validEnemyFamilyKeys.has(spawn.dropFamilyKey)) {

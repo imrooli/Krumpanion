@@ -1,3 +1,4 @@
+import { availabilityDays } from "../../utils/days";
 import type { AvailabilityGroup, AvailabilityGroupKey, PlannerRecommendation } from "./types";
 
 const AVAILABILITY_LABELS: Record<AvailabilityGroupKey, string> = {
@@ -16,9 +17,9 @@ export function groupByAvailability(rows: PlannerRecommendation[]): Availability
     groups.set(row.availability, [...(groups.get(row.availability) ?? []), row]);
   }
 
-  return (Object.keys(AVAILABILITY_LABELS) as AvailabilityGroupKey[]).map((key) => ({
+  return [...new Set([...Object.keys(AVAILABILITY_LABELS) as AvailabilityGroupKey[], ...groups.keys()])].map((key) => ({
     key,
-    label: AVAILABILITY_LABELS[key],
+    label: AVAILABILITY_LABELS[key] ?? availabilityDays(key).join(" / "),
     rows: (groups.get(key) ?? []).sort((left, right) => right.priority - left.priority),
   }));
 }

@@ -31,6 +31,7 @@ describe("canonicalDatabase", () => {
   it("defaults 5-star weapon refinement policy to manual review and leaves 3-star weapons trackable", () => {
     const staticData = createStaticData();
     expect(staticData.weapons.AmosBow.refinementPolicy).toBe("manual_review");
+    expect(validateCanonicalDatabase().issues).toContainEqual(expect.objectContaining({ key: "AmosBow", severity: "info", condition: expect.objectContaining({ field: "refinementPolicy", kind: "default" }) }));
     expect(staticData.weapons.CoolSteel.refinementPolicy).toBe("normal");
     expect(staticData.weapons.CoolSteel.refinementTrackable).toBe(true);
   });

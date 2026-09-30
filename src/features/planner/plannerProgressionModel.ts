@@ -711,7 +711,7 @@ function buildSharedReadinessMap(
   const remainingByMaterial = new Map<string, number>();
 
   for (const row of plannerOutput.totalMissingByMaterial) {
-    remainingByMaterial.set(row.materialKey, row.effectiveOwned);
+    remainingByMaterial.set(row.materialKey, Math.max(0, row.effectiveOwned - (row.materialKey === 'Mora' ? plannerOutput.craftingPlan?.totalCraftingMora ?? 0 : 0)));
   }
 
   const result = new Map<string, Omit<PlannerProgressGoalRow, "goalId" | "goalType" | "planningMode" | "goalLabel" | "priority" | "currentSummary" | "targetSummary" | "status" | "statusLabel" | "shortageCount" | "estimatedResin" | "warningCount" | "changedRecently" | "recentMilestone" | "blocker" | "startedAt" | "completedAt" | "bars" | "missingMaterials" | "timeline">>();
@@ -735,7 +735,9 @@ function buildSharedReadinessMap(
     const sharedShortages: Array<{ label: string; missingQuantity: number; kind: SharedShortageKind }> = [];
 
     for (const requirement of requirements) {
-      const required = Math.max(0, requirement.needed);
+      // missingSummary contains account aggregate rows; only this goal's remaining
+      // progression demand may consume the shared pool here.
+      const required = Math.max(0, resolution?.missingByMaterial[requirement.materialKey] ?? 0);
       if (required <= 0) {
         continue;
       }

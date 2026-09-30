@@ -46,6 +46,33 @@ function estimate(overrides: Partial<FarmingEstimateDetail>): FarmingEstimateDet
     relatedMaterialDisplayNames: { Mora: "Mora" },
     deterministicRequirementsByMaterial: { Mora: 1 },
     remainingDeficitsByMaterial: { Mora: 1 },
+    guaranteedEstimate: {
+      available: true,
+      canGuarantee: true,
+      basis: "Fixed reward",
+      outputPerRun: 60000,
+      runs: 1,
+      actionableRuns: 1,
+      resin: 20,
+      daysNaturalResin: 20 / 180,
+      weeksNaturalResin: 20 / 1260,
+      dataQuality: "exact",
+      warnings: [],
+    },
+    expectedEstimate: {
+      available: true,
+      basis: "Fixed reward",
+      outputPerRun: 60000,
+      runs: 1,
+      actionableRuns: 1,
+      resin: 20,
+      daysNaturalResin: 20 / 180,
+      weeksNaturalResin: 20 / 1260,
+      dataQuality: "exact",
+      warnings: [],
+    },
+    contributesToGuaranteedTotal: true,
+    estimateClassification: "guaranteed",
     affectedMaterialKeys: ["Mora"],
     deficitsCovered: { Mora: 1 },
     resinCostPerRun: 20,
@@ -60,7 +87,7 @@ function estimate(overrides: Partial<FarmingEstimateDetail>): FarmingEstimateDet
     availability: "ALWAYS",
     isAvailableToday: true,
     ...overrides,
-  };
+  } as FarmingEstimateDetail;
 }
 
 function recommendation(overrides: Partial<PlannerRecommendation>): PlannerRecommendation {
@@ -253,8 +280,36 @@ describe("buildPlannerReport helpers", () => {
         missingAmount: 6,
         deterministicRequirement: 6,
         remainingDeficitsByMaterial: { DvalinsPlume: 6 },
-        estimatedRuns: 6,
-        estimatedResin: 270,
+        estimatedRuns: null,
+        actionableRuns: null,
+        estimatedResin: null,
+        contributesToGuaranteedTotal: false,
+        estimateClassification: "chance_based",
+        guaranteedEstimate: {
+          available: false,
+          canGuarantee: false,
+          basis: "Chance-based weekly target material",
+          outputPerRun: null,
+          runs: null,
+          actionableRuns: null,
+          resin: null,
+          daysNaturalResin: null,
+          weeksNaturalResin: null,
+          dataQuality: "exact",
+          warnings: [],
+        },
+        expectedEstimate: {
+          available: true,
+          basis: "Weekly boss mean",
+          outputPerRun: 0.8,
+          runs: 6,
+          actionableRuns: 6,
+          resin: 270,
+          daysNaturalResin: 1.5,
+          weeksNaturalResin: 0.21,
+          dataQuality: "observed_estimate",
+          warnings: [],
+        },
         weeklyGate: {
           isWeeklyGated: true,
           estimatedWeeks: 3,
@@ -267,12 +322,12 @@ describe("buildPlannerReport helpers", () => {
 
     expect(rows[0]).toMatchObject({
       title: "Farm Confront Stormterror",
-      totalEstimatedResin: 270,
-      resinLabel: "270",
+      totalEstimatedResin: null,
+      expectedAdvisoryResin: 270,
       resinPerRun: null,
     });
     expect(rows[0]?.reason).toContain("3 discounted claim(s) and 3 full-cost claim(s)");
-    expect(rows[0]?.reason).toContain("Monday 2:00 AM PST reset");
+    expect(rows[0]?.reason).toContain("advisory only");
   });
 
   it("marks known non-resin source recommendations as No resin", () => {

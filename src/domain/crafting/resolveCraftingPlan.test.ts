@@ -167,6 +167,54 @@ describe("resolveCraftingPlan", () => {
     expect(philosophyReport?.guaranteedCrafting.leftovers.GuideToFreedom).toBe(3);
   });
 
+  it("does not double-count or spend reserved lower tiers in expected passive coverage", () => {
+    const materialRows = [
+      createMaterialRow({
+        materialKey: "TeachingsOfVagrancy",
+        displayName: "Teachings of Vagrancy",
+        needed: 48,
+        owned: 48,
+      }),
+      createMaterialRow({
+        materialKey: "GuideToVagrancy",
+        displayName: "Guide to Vagrancy",
+        needed: 96,
+        owned: 96,
+      }),
+      createMaterialRow({
+        materialKey: "PhilosophiesOfVagrancy",
+        displayName: "Philosophies of Vagrancy",
+        needed: 44,
+        owned: 0,
+        missing: 44,
+        rawMissing: 44,
+      }),
+    ];
+
+    const craftingPlan = resolveCraftingPlan(
+      {
+        TeachingsOfVagrancy: 48,
+        GuideToVagrancy: 96,
+      },
+      materialRows,
+      staticData,
+      {
+        mode: "aggressive",
+        ownedCharacterKeys: ["Xingqiu"],
+        plannerSettings: {
+          ...DEFAULT_GOALS.plannerSettings,
+          craftingPassiveOverrides: {
+            ...DEFAULT_GOALS.plannerSettings.craftingPassiveOverrides,
+            talentMaterials: "Xingqiu",
+          },
+        },
+      },
+    );
+
+    expect(craftingPlan.guaranteedCoverageByMaterial.PhilosophiesOfVagrancy).toBe(0);
+    expect(craftingPlan.expectedCoverageByMaterial.PhilosophiesOfVagrancy).toBe(0);
+  });
+
   it("uses exact weapon ascension tier-up Mora", () => {
     const materialRows: MaterialNeedRow[] = [
       {

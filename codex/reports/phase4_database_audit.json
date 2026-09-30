@@ -1,0 +1,1831 @@
+{
+  "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+  "checkedAt": "2026-09-30T12:00:00Z",
+  "nicole": {
+    "gameId": 10000131,
+    "codex": {
+      "sortFactor": 116,
+      "beginTime": "2026-05-19 00:00:00",
+      "sortId": 116,
+      "avatarId": 10000131
+    },
+    "profile": {
+      "characterKey": "Nicole",
+      "displayName": "Nicole",
+      "element": "Pyro",
+      "elementGemFamilyKey": "Pyro",
+      "localSpecialtyKey": "PineAmber",
+      "commonEnemyDropFamilyKey": "fatui_oprichniki_materials",
+      "talentBookFamilyKey": "Elysium",
+      "normalBossMaterialKey": "RemnantOfTheDreadwing",
+      "weeklyBossMaterialKey": "CounterfeitResin",
+      "releaseState": "beta",
+      "status": "beta",
+      "plannerEligible": false,
+      "region": "Nod-Krai",
+      "notes": [],
+      "aliases": [
+        "Nicole"
+      ],
+      "sourceRefs": [
+        "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
+      ],
+      "gameId": 10000131,
+      "rarity": 5,
+      "weaponType": "Catalyst",
+      "provenance": {
+        "provider": "animegamedata2",
+        "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+        "table": "AvatarExcelConfigData",
+        "relationshipIds": [
+          131,
+          13101,
+          13131,
+          13132,
+          13139
+        ]
+      }
+    },
+    "identities": [
+      {
+        "gameId": 202,
+        "displayName": "Mora",
+        "key": "Mora",
+        "primaryCatalogKey": "Mora"
+      },
+      {
+        "gameId": 104319,
+        "displayName": "Crown of Insight",
+        "key": "CrownOfInsight",
+        "primaryCatalogKey": "CrownOfInsight"
+      },
+      {
+        "gameId": 104111,
+        "displayName": "Agnidus Agate Sliver",
+        "key": "AgnidusAgateSliver",
+        "primaryCatalogKey": "AgnidusAgateSliver"
+      },
+      {
+        "gameId": 104112,
+        "displayName": "Agnidus Agate Fragment",
+        "key": "AgnidusAgateFragment",
+        "primaryCatalogKey": "AgnidusAgateFragment"
+      },
+      {
+        "gameId": 104113,
+        "displayName": "Agnidus Agate Chunk",
+        "key": "AgnidusAgateChunk",
+        "primaryCatalogKey": "AgnidusAgateChunk"
+      },
+      {
+        "gameId": 104114,
+        "displayName": "Agnidus Agate Gemstone",
+        "key": "AgnidusAgateGemstone",
+        "primaryCatalogKey": "AgnidusAgateGemstone"
+      },
+      {
+        "gameId": 104359,
+        "displayName": "Teachings of Elysium",
+        "key": "TeachingsOfElysium",
+        "primaryCatalogKey": "TeachingsOfElysium"
+      },
+      {
+        "gameId": 104360,
+        "displayName": "Guide to Elysium",
+        "key": "GuideToElysium",
+        "primaryCatalogKey": "GuideToElysium"
+      },
+      {
+        "gameId": 104361,
+        "displayName": "Philosophies of Elysium",
+        "key": "PhilosophiesOfElysium",
+        "primaryCatalogKey": "PhilosophiesOfElysium"
+      },
+      {
+        "gameId": 112125,
+        "displayName": "Tattered Warrant",
+        "key": "TatteredWarrant",
+        "primaryCatalogKey": "TatteredWarrant"
+      },
+      {
+        "gameId": 112126,
+        "displayName": "Immaculate Warrant",
+        "key": "ImmaculateWarrant",
+        "primaryCatalogKey": "ImmaculateWarrant"
+      },
+      {
+        "gameId": 112127,
+        "displayName": "Frost-Etched Warrant",
+        "key": "FrostEtchedWarrant",
+        "primaryCatalogKey": "FrostEtchedWarrant"
+      },
+      {
+        "gameId": 101269,
+        "displayName": "Pine Amber",
+        "key": "PineAmber",
+        "primaryCatalogKey": "PineAmber"
+      },
+      {
+        "gameId": 113084,
+        "displayName": "Remnant of the Dreadwing",
+        "key": "RemnantOfTheDreadwing",
+        "primaryCatalogKey": "RemnantOfTheDreadwing"
+      },
+      {
+        "gameId": 113087,
+        "displayName": "Counterfeit Resin",
+        "key": "CounterfeitResin",
+        "primaryCatalogKey": null
+      }
+    ],
+    "comparison": [
+      {
+        "section": "ascension",
+        "bundledCumulative": {
+          "0": {},
+          "1": {
+            "Mora": 20000,
+            "AgnidusAgateSliver": 1,
+            "PineAmber": 3,
+            "TatteredWarrant": 3
+          },
+          "2": {
+            "Mora": 60000,
+            "AgnidusAgateSliver": 1,
+            "PineAmber": 13,
+            "TatteredWarrant": 18,
+            "AgnidusAgateFragment": 3,
+            "RemnantOfTheDreadwing": 2
+          },
+          "3": {
+            "Mora": 120000,
+            "AgnidusAgateSliver": 1,
+            "PineAmber": 33,
+            "TatteredWarrant": 18,
+            "AgnidusAgateFragment": 9,
+            "RemnantOfTheDreadwing": 6,
+            "ImmaculateWarrant": 12
+          },
+          "4": {
+            "Mora": 200000,
+            "AgnidusAgateSliver": 1,
+            "PineAmber": 63,
+            "TatteredWarrant": 18,
+            "AgnidusAgateFragment": 9,
+            "RemnantOfTheDreadwing": 14,
+            "ImmaculateWarrant": 30,
+            "AgnidusAgateChunk": 3
+          },
+          "5": {
+            "Mora": 300000,
+            "AgnidusAgateSliver": 1,
+            "PineAmber": 108,
+            "TatteredWarrant": 18,
+            "AgnidusAgateFragment": 9,
+            "RemnantOfTheDreadwing": 26,
+            "ImmaculateWarrant": 30,
+            "AgnidusAgateChunk": 9,
+            "FrostEtchedWarrant": 12
+          },
+          "6": {
+            "Mora": 420000,
+            "AgnidusAgateSliver": 1,
+            "PineAmber": 168,
+            "TatteredWarrant": 18,
+            "AgnidusAgateFragment": 9,
+            "RemnantOfTheDreadwing": 46,
+            "ImmaculateWarrant": 30,
+            "AgnidusAgateChunk": 9,
+            "FrostEtchedWarrant": 36,
+            "AgnidusAgateGemstone": 6
+          }
+        },
+        "upstreamSteps": {
+          "1": {
+            "costs": {
+              "202": 20000,
+              "101269": 3,
+              "104111": 1,
+              "112125": 3
+            }
+          },
+          "2": {
+            "costs": {
+              "202": 40000,
+              "101269": 10,
+              "104112": 3,
+              "112125": 15,
+              "113084": 2
+            }
+          },
+          "3": {
+            "costs": {
+              "202": 60000,
+              "101269": 20,
+              "104112": 6,
+              "112126": 12,
+              "113084": 4
+            }
+          },
+          "4": {
+            "costs": {
+              "202": 80000,
+              "101269": 30,
+              "104113": 3,
+              "112126": 18,
+              "113084": 8
+            }
+          },
+          "5": {
+            "costs": {
+              "202": 100000,
+              "101269": 45,
+              "104113": 6,
+              "112127": 12,
+              "113084": 12
+            }
+          },
+          "6": {
+            "costs": {
+              "202": 120000,
+              "101269": 60,
+              "104114": 6,
+              "112127": 24,
+              "113084": 20
+            }
+          }
+        },
+        "mappedCumulative": {
+          "0": {},
+          "1": {
+            "Mora": 20000,
+            "PineAmber": 3,
+            "AgnidusAgateSliver": 1,
+            "TatteredWarrant": 3
+          },
+          "2": {
+            "Mora": 60000,
+            "PineAmber": 13,
+            "AgnidusAgateSliver": 1,
+            "TatteredWarrant": 18,
+            "AgnidusAgateFragment": 3,
+            "RemnantOfTheDreadwing": 2
+          },
+          "3": {
+            "Mora": 120000,
+            "PineAmber": 33,
+            "AgnidusAgateSliver": 1,
+            "TatteredWarrant": 18,
+            "AgnidusAgateFragment": 9,
+            "RemnantOfTheDreadwing": 6,
+            "ImmaculateWarrant": 12
+          },
+          "4": {
+            "Mora": 200000,
+            "PineAmber": 63,
+            "AgnidusAgateSliver": 1,
+            "TatteredWarrant": 18,
+            "AgnidusAgateFragment": 9,
+            "RemnantOfTheDreadwing": 14,
+            "ImmaculateWarrant": 30,
+            "AgnidusAgateChunk": 3
+          },
+          "5": {
+            "Mora": 300000,
+            "PineAmber": 108,
+            "AgnidusAgateSliver": 1,
+            "TatteredWarrant": 18,
+            "AgnidusAgateFragment": 9,
+            "RemnantOfTheDreadwing": 26,
+            "ImmaculateWarrant": 30,
+            "AgnidusAgateChunk": 9,
+            "FrostEtchedWarrant": 12
+          },
+          "6": {
+            "Mora": 420000,
+            "PineAmber": 168,
+            "AgnidusAgateSliver": 1,
+            "TatteredWarrant": 18,
+            "AgnidusAgateFragment": 9,
+            "RemnantOfTheDreadwing": 46,
+            "ImmaculateWarrant": 30,
+            "AgnidusAgateChunk": 9,
+            "FrostEtchedWarrant": 36,
+            "AgnidusAgateGemstone": 6
+          }
+        },
+        "differences": []
+      },
+      {
+        "section": "normal",
+        "bundledCumulative": {
+          "1": {},
+          "2": {
+            "Mora": 12500,
+            "TatteredWarrant": 6,
+            "TeachingsOfElysium": 3
+          },
+          "3": {
+            "Mora": 30000,
+            "TatteredWarrant": 6,
+            "TeachingsOfElysium": 3,
+            "ImmaculateWarrant": 3,
+            "GuideToElysium": 2
+          },
+          "4": {
+            "Mora": 55000,
+            "TatteredWarrant": 6,
+            "TeachingsOfElysium": 3,
+            "ImmaculateWarrant": 7,
+            "GuideToElysium": 6
+          },
+          "5": {
+            "Mora": 85000,
+            "TatteredWarrant": 6,
+            "TeachingsOfElysium": 3,
+            "ImmaculateWarrant": 13,
+            "GuideToElysium": 12
+          },
+          "6": {
+            "Mora": 122500,
+            "TatteredWarrant": 6,
+            "TeachingsOfElysium": 3,
+            "ImmaculateWarrant": 22,
+            "GuideToElysium": 21
+          },
+          "7": {
+            "Mora": 242500,
+            "TatteredWarrant": 6,
+            "TeachingsOfElysium": 3,
+            "ImmaculateWarrant": 22,
+            "GuideToElysium": 21,
+            "FrostEtchedWarrant": 4,
+            "PhilosophiesOfElysium": 4,
+            "CounterfeitResin": 1
+          },
+          "8": {
+            "Mora": 502500,
+            "TatteredWarrant": 6,
+            "TeachingsOfElysium": 3,
+            "ImmaculateWarrant": 22,
+            "GuideToElysium": 21,
+            "FrostEtchedWarrant": 10,
+            "PhilosophiesOfElysium": 10,
+            "CounterfeitResin": 2
+          },
+          "9": {
+            "Mora": 952500,
+            "TatteredWarrant": 6,
+            "TeachingsOfElysium": 3,
+            "ImmaculateWarrant": 22,
+            "GuideToElysium": 21,
+            "FrostEtchedWarrant": 19,
+            "PhilosophiesOfElysium": 22,
+            "CounterfeitResin": 4
+          },
+          "10": {
+            "Mora": 1652500,
+            "TatteredWarrant": 6,
+            "TeachingsOfElysium": 3,
+            "ImmaculateWarrant": 22,
+            "GuideToElysium": 21,
+            "FrostEtchedWarrant": 31,
+            "PhilosophiesOfElysium": 38,
+            "CounterfeitResin": 6,
+            "CrownOfInsight": 1
+          }
+        },
+        "upstreamSteps": {
+          "2": {
+            "costs": {
+              "202": 12500,
+              "104359": 3,
+              "112125": 6
+            },
+            "requiredAscension": 2
+          },
+          "3": {
+            "costs": {
+              "202": 17500,
+              "104360": 2,
+              "112126": 3
+            },
+            "requiredAscension": 3
+          },
+          "4": {
+            "costs": {
+              "202": 25000,
+              "104360": 4,
+              "112126": 4
+            },
+            "requiredAscension": 3
+          },
+          "5": {
+            "costs": {
+              "202": 30000,
+              "104360": 6,
+              "112126": 6
+            },
+            "requiredAscension": 4
+          },
+          "6": {
+            "costs": {
+              "202": 37500,
+              "104360": 9,
+              "112126": 9
+            },
+            "requiredAscension": 4
+          },
+          "7": {
+            "costs": {
+              "202": 120000,
+              "104361": 4,
+              "112127": 4,
+              "113087": 1
+            },
+            "requiredAscension": 5
+          },
+          "8": {
+            "costs": {
+              "202": 260000,
+              "104361": 6,
+              "112127": 6,
+              "113087": 1
+            },
+            "requiredAscension": 5
+          },
+          "9": {
+            "costs": {
+              "202": 450000,
+              "104361": 12,
+              "112127": 9,
+              "113087": 2
+            },
+            "requiredAscension": 6
+          },
+          "10": {
+            "costs": {
+              "202": 700000,
+              "104319": 1,
+              "104361": 16,
+              "112127": 12,
+              "113087": 2
+            },
+            "requiredAscension": 6
+          }
+        },
+        "mappedCumulative": {
+          "1": {},
+          "2": {
+            "Mora": 12500,
+            "TeachingsOfElysium": 3,
+            "TatteredWarrant": 6
+          },
+          "3": {
+            "Mora": 30000,
+            "TeachingsOfElysium": 3,
+            "TatteredWarrant": 6,
+            "GuideToElysium": 2,
+            "ImmaculateWarrant": 3
+          },
+          "4": {
+            "Mora": 55000,
+            "TeachingsOfElysium": 3,
+            "TatteredWarrant": 6,
+            "GuideToElysium": 6,
+            "ImmaculateWarrant": 7
+          },
+          "5": {
+            "Mora": 85000,
+            "TeachingsOfElysium": 3,
+            "TatteredWarrant": 6,
+            "GuideToElysium": 12,
+            "ImmaculateWarrant": 13
+          },
+          "6": {
+            "Mora": 122500,
+            "TeachingsOfElysium": 3,
+            "TatteredWarrant": 6,
+            "GuideToElysium": 21,
+            "ImmaculateWarrant": 22
+          },
+          "7": {
+            "Mora": 242500,
+            "TeachingsOfElysium": 3,
+            "TatteredWarrant": 6,
+            "GuideToElysium": 21,
+            "ImmaculateWarrant": 22,
+            "PhilosophiesOfElysium": 4,
+            "FrostEtchedWarrant": 4,
+            "CounterfeitResin": 1
+          },
+          "8": {
+            "Mora": 502500,
+            "TeachingsOfElysium": 3,
+            "TatteredWarrant": 6,
+            "GuideToElysium": 21,
+            "ImmaculateWarrant": 22,
+            "PhilosophiesOfElysium": 10,
+            "FrostEtchedWarrant": 10,
+            "CounterfeitResin": 2
+          },
+          "9": {
+            "Mora": 952500,
+            "TeachingsOfElysium": 3,
+            "TatteredWarrant": 6,
+            "GuideToElysium": 21,
+            "ImmaculateWarrant": 22,
+            "PhilosophiesOfElysium": 22,
+            "FrostEtchedWarrant": 19,
+            "CounterfeitResin": 4
+          },
+          "10": {
+            "Mora": 1652500,
+            "TeachingsOfElysium": 3,
+            "TatteredWarrant": 6,
+            "GuideToElysium": 21,
+            "ImmaculateWarrant": 22,
+            "PhilosophiesOfElysium": 38,
+            "FrostEtchedWarrant": 31,
+            "CounterfeitResin": 6,
+            "CrownOfInsight": 1
+          }
+        },
+        "differences": [],
+        "prerequisites": [
+          {
+            "level": "2",
+            "bundled": 2,
+            "upstream": 2
+          },
+          {
+            "level": "3",
+            "bundled": 3,
+            "upstream": 3
+          },
+          {
+            "level": "4",
+            "bundled": 3,
+            "upstream": 3
+          },
+          {
+            "level": "5",
+            "bundled": 4,
+            "upstream": 4
+          },
+          {
+            "level": "6",
+            "bundled": 4,
+            "upstream": 4
+          },
+          {
+            "level": "7",
+            "bundled": 5,
+            "upstream": 5
+          },
+          {
+            "level": "8",
+            "bundled": 5,
+            "upstream": 5
+          },
+          {
+            "level": "9",
+            "bundled": 6,
+            "upstream": 6
+          },
+          {
+            "level": "10",
+            "bundled": 6,
+            "upstream": 6
+          }
+        ]
+      },
+      {
+        "section": "skill",
+        "bundledCumulative": {
+          "1": {},
+          "2": {
+            "Mora": 12500,
+            "TatteredWarrant": 6,
+            "TeachingsOfElysium": 3
+          },
+          "3": {
+            "Mora": 30000,
+            "TatteredWarrant": 6,
+            "TeachingsOfElysium": 3,
+            "ImmaculateWarrant": 3,
+            "GuideToElysium": 2
+          },
+          "4": {
+            "Mora": 55000,
+            "TatteredWarrant": 6,
+            "TeachingsOfElysium": 3,
+            "ImmaculateWarrant": 7,
+            "GuideToElysium": 6
+          },
+          "5": {
+            "Mora": 85000,
+            "TatteredWarrant": 6,
+            "TeachingsOfElysium": 3,
+            "ImmaculateWarrant": 13,
+            "GuideToElysium": 12
+          },
+          "6": {
+            "Mora": 122500,
+            "TatteredWarrant": 6,
+            "TeachingsOfElysium": 3,
+            "ImmaculateWarrant": 22,
+            "GuideToElysium": 21
+          },
+          "7": {
+            "Mora": 242500,
+            "TatteredWarrant": 6,
+            "TeachingsOfElysium": 3,
+            "ImmaculateWarrant": 22,
+            "GuideToElysium": 21,
+            "FrostEtchedWarrant": 4,
+            "PhilosophiesOfElysium": 4,
+            "CounterfeitResin": 1
+          },
+          "8": {
+            "Mora": 502500,
+            "TatteredWarrant": 6,
+            "TeachingsOfElysium": 3,
+            "ImmaculateWarrant": 22,
+            "GuideToElysium": 21,
+            "FrostEtchedWarrant": 10,
+            "PhilosophiesOfElysium": 10,
+            "CounterfeitResin": 2
+          },
+          "9": {
+            "Mora": 952500,
+            "TatteredWarrant": 6,
+            "TeachingsOfElysium": 3,
+            "ImmaculateWarrant": 22,
+            "GuideToElysium": 21,
+            "FrostEtchedWarrant": 19,
+            "PhilosophiesOfElysium": 22,
+            "CounterfeitResin": 4
+          },
+          "10": {
+            "Mora": 1652500,
+            "TatteredWarrant": 6,
+            "TeachingsOfElysium": 3,
+            "ImmaculateWarrant": 22,
+            "GuideToElysium": 21,
+            "FrostEtchedWarrant": 31,
+            "PhilosophiesOfElysium": 38,
+            "CounterfeitResin": 6,
+            "CrownOfInsight": 1
+          }
+        },
+        "upstreamSteps": {
+          "2": {
+            "costs": {
+              "202": 12500,
+              "104359": 3,
+              "112125": 6
+            },
+            "requiredAscension": 2
+          },
+          "3": {
+            "costs": {
+              "202": 17500,
+              "104360": 2,
+              "112126": 3
+            },
+            "requiredAscension": 3
+          },
+          "4": {
+            "costs": {
+              "202": 25000,
+              "104360": 4,
+              "112126": 4
+            },
+            "requiredAscension": 3
+          },
+          "5": {
+            "costs": {
+              "202": 30000,
+              "104360": 6,
+              "112126": 6
+            },
+            "requiredAscension": 4
+          },
+          "6": {
+            "costs": {
+              "202": 37500,
+              "104360": 9,
+              "112126": 9
+            },
+            "requiredAscension": 4
+          },
+          "7": {
+            "costs": {
+              "202": 120000,
+              "104361": 4,
+              "112127": 4,
+              "113087": 1
+            },
+            "requiredAscension": 5
+          },
+          "8": {
+            "costs": {
+              "202": 260000,
+              "104361": 6,
+              "112127": 6,
+              "113087": 1
+            },
+            "requiredAscension": 5
+          },
+          "9": {
+            "costs": {
+              "202": 450000,
+              "104361": 12,
+              "112127": 9,
+              "113087": 2
+            },
+            "requiredAscension": 6
+          },
+          "10": {
+            "costs": {
+              "202": 700000,
+              "104319": 1,
+              "104361": 16,
+              "112127": 12,
+              "113087": 2
+            },
+            "requiredAscension": 6
+          }
+        },
+        "mappedCumulative": {
+          "1": {},
+          "2": {
+            "Mora": 12500,
+            "TeachingsOfElysium": 3,
+            "TatteredWarrant": 6
+          },
+          "3": {
+            "Mora": 30000,
+            "TeachingsOfElysium": 3,
+            "TatteredWarrant": 6,
+            "GuideToElysium": 2,
+            "ImmaculateWarrant": 3
+          },
+          "4": {
+            "Mora": 55000,
+            "TeachingsOfElysium": 3,
+            "TatteredWarrant": 6,
+            "GuideToElysium": 6,
+            "ImmaculateWarrant": 7
+          },
+          "5": {
+            "Mora": 85000,
+            "TeachingsOfElysium": 3,
+            "TatteredWarrant": 6,
+            "GuideToElysium": 12,
+            "ImmaculateWarrant": 13
+          },
+          "6": {
+            "Mora": 122500,
+            "TeachingsOfElysium": 3,
+            "TatteredWarrant": 6,
+            "GuideToElysium": 21,
+            "ImmaculateWarrant": 22
+          },
+          "7": {
+            "Mora": 242500,
+            "TeachingsOfElysium": 3,
+            "TatteredWarrant": 6,
+            "GuideToElysium": 21,
+            "ImmaculateWarrant": 22,
+            "PhilosophiesOfElysium": 4,
+            "FrostEtchedWarrant": 4,
+            "CounterfeitResin": 1
+          },
+          "8": {
+            "Mora": 502500,
+            "TeachingsOfElysium": 3,
+            "TatteredWarrant": 6,
+            "GuideToElysium": 21,
+            "ImmaculateWarrant": 22,
+            "PhilosophiesOfElysium": 10,
+            "FrostEtchedWarrant": 10,
+            "CounterfeitResin": 2
+          },
+          "9": {
+            "Mora": 952500,
+            "TeachingsOfElysium": 3,
+            "TatteredWarrant": 6,
+            "GuideToElysium": 21,
+            "ImmaculateWarrant": 22,
+            "PhilosophiesOfElysium": 22,
+            "FrostEtchedWarrant": 19,
+            "CounterfeitResin": 4
+          },
+          "10": {
+            "Mora": 1652500,
+            "TeachingsOfElysium": 3,
+            "TatteredWarrant": 6,
+            "GuideToElysium": 21,
+            "ImmaculateWarrant": 22,
+            "PhilosophiesOfElysium": 38,
+            "FrostEtchedWarrant": 31,
+            "CounterfeitResin": 6,
+            "CrownOfInsight": 1
+          }
+        },
+        "differences": [],
+        "prerequisites": [
+          {
+            "level": "2",
+            "bundled": 2,
+            "upstream": 2
+          },
+          {
+            "level": "3",
+            "bundled": 3,
+            "upstream": 3
+          },
+          {
+            "level": "4",
+            "bundled": 3,
+            "upstream": 3
+          },
+          {
+            "level": "5",
+            "bundled": 4,
+            "upstream": 4
+          },
+          {
+            "level": "6",
+            "bundled": 4,
+            "upstream": 4
+          },
+          {
+            "level": "7",
+            "bundled": 5,
+            "upstream": 5
+          },
+          {
+            "level": "8",
+            "bundled": 5,
+            "upstream": 5
+          },
+          {
+            "level": "9",
+            "bundled": 6,
+            "upstream": 6
+          },
+          {
+            "level": "10",
+            "bundled": 6,
+            "upstream": 6
+          }
+        ]
+      },
+      {
+        "section": "burst",
+        "bundledCumulative": {
+          "1": {},
+          "2": {
+            "Mora": 12500,
+            "TatteredWarrant": 6,
+            "TeachingsOfElysium": 3
+          },
+          "3": {
+            "Mora": 30000,
+            "TatteredWarrant": 6,
+            "TeachingsOfElysium": 3,
+            "ImmaculateWarrant": 3,
+            "GuideToElysium": 2
+          },
+          "4": {
+            "Mora": 55000,
+            "TatteredWarrant": 6,
+            "TeachingsOfElysium": 3,
+            "ImmaculateWarrant": 7,
+            "GuideToElysium": 6
+          },
+          "5": {
+            "Mora": 85000,
+            "TatteredWarrant": 6,
+            "TeachingsOfElysium": 3,
+            "ImmaculateWarrant": 13,
+            "GuideToElysium": 12
+          },
+          "6": {
+            "Mora": 122500,
+            "TatteredWarrant": 6,
+            "TeachingsOfElysium": 3,
+            "ImmaculateWarrant": 22,
+            "GuideToElysium": 21
+          },
+          "7": {
+            "Mora": 242500,
+            "TatteredWarrant": 6,
+            "TeachingsOfElysium": 3,
+            "ImmaculateWarrant": 22,
+            "GuideToElysium": 21,
+            "FrostEtchedWarrant": 4,
+            "PhilosophiesOfElysium": 4,
+            "CounterfeitResin": 1
+          },
+          "8": {
+            "Mora": 502500,
+            "TatteredWarrant": 6,
+            "TeachingsOfElysium": 3,
+            "ImmaculateWarrant": 22,
+            "GuideToElysium": 21,
+            "FrostEtchedWarrant": 10,
+            "PhilosophiesOfElysium": 10,
+            "CounterfeitResin": 2
+          },
+          "9": {
+            "Mora": 952500,
+            "TatteredWarrant": 6,
+            "TeachingsOfElysium": 3,
+            "ImmaculateWarrant": 22,
+            "GuideToElysium": 21,
+            "FrostEtchedWarrant": 19,
+            "PhilosophiesOfElysium": 22,
+            "CounterfeitResin": 4
+          },
+          "10": {
+            "Mora": 1652500,
+            "TatteredWarrant": 6,
+            "TeachingsOfElysium": 3,
+            "ImmaculateWarrant": 22,
+            "GuideToElysium": 21,
+            "FrostEtchedWarrant": 31,
+            "PhilosophiesOfElysium": 38,
+            "CounterfeitResin": 6,
+            "CrownOfInsight": 1
+          }
+        },
+        "upstreamSteps": {
+          "2": {
+            "costs": {
+              "202": 12500,
+              "104359": 3,
+              "112125": 6
+            },
+            "requiredAscension": 2
+          },
+          "3": {
+            "costs": {
+              "202": 17500,
+              "104360": 2,
+              "112126": 3
+            },
+            "requiredAscension": 3
+          },
+          "4": {
+            "costs": {
+              "202": 25000,
+              "104360": 4,
+              "112126": 4
+            },
+            "requiredAscension": 3
+          },
+          "5": {
+            "costs": {
+              "202": 30000,
+              "104360": 6,
+              "112126": 6
+            },
+            "requiredAscension": 4
+          },
+          "6": {
+            "costs": {
+              "202": 37500,
+              "104360": 9,
+              "112126": 9
+            },
+            "requiredAscension": 4
+          },
+          "7": {
+            "costs": {
+              "202": 120000,
+              "104361": 4,
+              "112127": 4,
+              "113087": 1
+            },
+            "requiredAscension": 5
+          },
+          "8": {
+            "costs": {
+              "202": 260000,
+              "104361": 6,
+              "112127": 6,
+              "113087": 1
+            },
+            "requiredAscension": 5
+          },
+          "9": {
+            "costs": {
+              "202": 450000,
+              "104361": 12,
+              "112127": 9,
+              "113087": 2
+            },
+            "requiredAscension": 6
+          },
+          "10": {
+            "costs": {
+              "202": 700000,
+              "104319": 1,
+              "104361": 16,
+              "112127": 12,
+              "113087": 2
+            },
+            "requiredAscension": 6
+          }
+        },
+        "mappedCumulative": {
+          "1": {},
+          "2": {
+            "Mora": 12500,
+            "TeachingsOfElysium": 3,
+            "TatteredWarrant": 6
+          },
+          "3": {
+            "Mora": 30000,
+            "TeachingsOfElysium": 3,
+            "TatteredWarrant": 6,
+            "GuideToElysium": 2,
+            "ImmaculateWarrant": 3
+          },
+          "4": {
+            "Mora": 55000,
+            "TeachingsOfElysium": 3,
+            "TatteredWarrant": 6,
+            "GuideToElysium": 6,
+            "ImmaculateWarrant": 7
+          },
+          "5": {
+            "Mora": 85000,
+            "TeachingsOfElysium": 3,
+            "TatteredWarrant": 6,
+            "GuideToElysium": 12,
+            "ImmaculateWarrant": 13
+          },
+          "6": {
+            "Mora": 122500,
+            "TeachingsOfElysium": 3,
+            "TatteredWarrant": 6,
+            "GuideToElysium": 21,
+            "ImmaculateWarrant": 22
+          },
+          "7": {
+            "Mora": 242500,
+            "TeachingsOfElysium": 3,
+            "TatteredWarrant": 6,
+            "GuideToElysium": 21,
+            "ImmaculateWarrant": 22,
+            "PhilosophiesOfElysium": 4,
+            "FrostEtchedWarrant": 4,
+            "CounterfeitResin": 1
+          },
+          "8": {
+            "Mora": 502500,
+            "TeachingsOfElysium": 3,
+            "TatteredWarrant": 6,
+            "GuideToElysium": 21,
+            "ImmaculateWarrant": 22,
+            "PhilosophiesOfElysium": 10,
+            "FrostEtchedWarrant": 10,
+            "CounterfeitResin": 2
+          },
+          "9": {
+            "Mora": 952500,
+            "TeachingsOfElysium": 3,
+            "TatteredWarrant": 6,
+            "GuideToElysium": 21,
+            "ImmaculateWarrant": 22,
+            "PhilosophiesOfElysium": 22,
+            "FrostEtchedWarrant": 19,
+            "CounterfeitResin": 4
+          },
+          "10": {
+            "Mora": 1652500,
+            "TeachingsOfElysium": 3,
+            "TatteredWarrant": 6,
+            "GuideToElysium": 21,
+            "ImmaculateWarrant": 22,
+            "PhilosophiesOfElysium": 38,
+            "FrostEtchedWarrant": 31,
+            "CounterfeitResin": 6,
+            "CrownOfInsight": 1
+          }
+        },
+        "differences": [],
+        "prerequisites": [
+          {
+            "level": "2",
+            "bundled": 2,
+            "upstream": 2
+          },
+          {
+            "level": "3",
+            "bundled": 3,
+            "upstream": 3
+          },
+          {
+            "level": "4",
+            "bundled": 3,
+            "upstream": 3
+          },
+          {
+            "level": "5",
+            "bundled": 4,
+            "upstream": 4
+          },
+          {
+            "level": "6",
+            "bundled": 4,
+            "upstream": 4
+          },
+          {
+            "level": "7",
+            "bundled": 5,
+            "upstream": 5
+          },
+          {
+            "level": "8",
+            "bundled": 5,
+            "upstream": 5
+          },
+          {
+            "level": "9",
+            "bundled": 6,
+            "upstream": 6
+          },
+          {
+            "level": "10",
+            "bundled": 6,
+            "upstream": 6
+          }
+        ]
+      }
+    ],
+    "cause": "Repair lookup omitted the canonical weeklyBossMaterials registry containing CounterfeitResin (113087); numerical progression agrees."
+  },
+  "weapons": [
+    {
+      "gameId": 11419,
+      "canonicalKey": "PrizedIsshinBlade_i_n11419",
+      "displayName": "Prized Isshin Blade",
+      "rarity": 4,
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "icon": "UI_EquipIcon_Sword_YoutouEnchanted",
+      "skillAffix": [
+        111419,
+        0
+      ],
+      "promoteId": 11419,
+      "codexMember": false,
+      "progression": [
+        {
+          "phase": 0,
+          "costs": [
+            {},
+            {},
+            {}
+          ],
+          "mora": 0
+        },
+        {
+          "phase": 1,
+          "costs": [
+            {
+              "count": 3
+            },
+            {
+              "count": 3
+            },
+            {
+              "count": 2
+            }
+          ],
+          "mora": 5000
+        },
+        {
+          "phase": 2,
+          "costs": [
+            {
+              "count": 3
+            },
+            {
+              "count": 12
+            },
+            {
+              "count": 8
+            }
+          ],
+          "mora": 15000
+        },
+        {
+          "phase": 3,
+          "costs": [
+            {
+              "count": 6
+            },
+            {
+              "count": 6
+            },
+            {
+              "count": 6
+            }
+          ],
+          "mora": 20000
+        },
+        {
+          "phase": 4,
+          "costs": [
+            {
+              "count": 3
+            },
+            {
+              "count": 12
+            },
+            {
+              "count": 9
+            }
+          ],
+          "mora": 30000
+        },
+        {
+          "phase": 5,
+          "costs": [
+            {
+              "count": 6
+            },
+            {
+              "count": 9
+            },
+            {
+              "count": 6
+            }
+          ],
+          "mora": 35000
+        },
+        {
+          "phase": 6,
+          "costs": [
+            {
+              "count": 4
+            },
+            {
+              "count": 18
+            },
+            {
+              "count": 12
+            }
+          ],
+          "mora": 45000
+        }
+      ],
+      "conclusion": "Separate upstream identity. No codex membership; incomplete cost IDs. Permanent ownability/acquisition and refinement semantics unproven. Keep planner/refinement disabled; preserve ambiguous GOOD names."
+    },
+    {
+      "gameId": 11420,
+      "canonicalKey": "PrizedIsshinBlade_i_n11420",
+      "displayName": "Prized Isshin Blade",
+      "rarity": 4,
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "icon": "UI_EquipIcon_Sword_YoutouShattered",
+      "skillAffix": [
+        111420,
+        0
+      ],
+      "promoteId": 11420,
+      "codexMember": false,
+      "progression": [
+        {
+          "phase": 0,
+          "costs": [
+            {},
+            {},
+            {}
+          ],
+          "mora": 0
+        },
+        {
+          "phase": 1,
+          "costs": [
+            {
+              "count": 3
+            },
+            {
+              "count": 3
+            },
+            {
+              "count": 2
+            }
+          ],
+          "mora": 5000
+        },
+        {
+          "phase": 2,
+          "costs": [
+            {
+              "count": 3
+            },
+            {
+              "count": 12
+            },
+            {
+              "count": 8
+            }
+          ],
+          "mora": 15000
+        },
+        {
+          "phase": 3,
+          "costs": [
+            {
+              "count": 6
+            },
+            {
+              "count": 6
+            },
+            {
+              "count": 6
+            }
+          ],
+          "mora": 20000
+        },
+        {
+          "phase": 4,
+          "costs": [
+            {
+              "count": 3
+            },
+            {
+              "count": 12
+            },
+            {
+              "count": 9
+            }
+          ],
+          "mora": 30000
+        },
+        {
+          "phase": 5,
+          "costs": [
+            {
+              "count": 6
+            },
+            {
+              "count": 9
+            },
+            {
+              "count": 6
+            }
+          ],
+          "mora": 35000
+        },
+        {
+          "phase": 6,
+          "costs": [
+            {
+              "count": 4
+            },
+            {
+              "count": 18
+            },
+            {
+              "count": 12
+            }
+          ],
+          "mora": 45000
+        }
+      ],
+      "conclusion": "Separate upstream identity. No codex membership; incomplete cost IDs. Permanent ownability/acquisition and refinement semantics unproven. Keep planner/refinement disabled; preserve ambiguous GOOD names."
+    },
+    {
+      "gameId": 11421,
+      "canonicalKey": "PrizedIsshinBlade_i_n11421",
+      "displayName": "Prized Isshin Blade",
+      "rarity": 4,
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "icon": "UI_EquipIcon_Sword_YoutouEnchanted",
+      "skillAffix": [
+        111421,
+        0
+      ],
+      "promoteId": 11421,
+      "codexMember": false,
+      "progression": [
+        {
+          "phase": 0,
+          "costs": [
+            {},
+            {},
+            {}
+          ],
+          "mora": 0
+        },
+        {
+          "phase": 1,
+          "costs": [
+            {
+              "count": 3
+            },
+            {
+              "count": 3
+            },
+            {
+              "count": 2
+            }
+          ],
+          "mora": 5000
+        },
+        {
+          "phase": 2,
+          "costs": [
+            {
+              "count": 3
+            },
+            {
+              "count": 12
+            },
+            {
+              "count": 8
+            }
+          ],
+          "mora": 15000
+        },
+        {
+          "phase": 3,
+          "costs": [
+            {
+              "count": 6
+            },
+            {
+              "count": 6
+            },
+            {
+              "count": 6
+            }
+          ],
+          "mora": 20000
+        },
+        {
+          "phase": 4,
+          "costs": [
+            {
+              "count": 3
+            },
+            {
+              "count": 12
+            },
+            {
+              "count": 9
+            }
+          ],
+          "mora": 30000
+        },
+        {
+          "phase": 5,
+          "costs": [
+            {
+              "count": 6
+            },
+            {
+              "count": 9
+            },
+            {
+              "count": 6
+            }
+          ],
+          "mora": 35000
+        },
+        {
+          "phase": 6,
+          "costs": [
+            {
+              "count": 4
+            },
+            {
+              "count": 18
+            },
+            {
+              "count": 12
+            }
+          ],
+          "mora": 45000
+        }
+      ],
+      "conclusion": "Separate upstream identity. No codex membership; incomplete cost IDs. Permanent ownability/acquisition and refinement semantics unproven. Keep planner/refinement disabled; preserve ambiguous GOOD names."
+    }
+  ],
+  "leyLines": [
+    {
+      "category": "Fungus",
+      "classification": "Unsupported multi-family mapping; source does not encode enemy-state conditions",
+      "findings": [
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.ardravi_valley.1",
+          "evidence": "leyline.sumeru.ardravi_valley.1: Unresolved drop family mapping for Stretchy Anemo Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.ardravi_valley.1#2",
+          "evidence": "leyline.sumeru.ardravi_valley.1: Unresolved drop family mapping for Whirling Cryo Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.ardravi_valley.1#3",
+          "evidence": "leyline.sumeru.ardravi_valley.1: Unresolved drop family mapping for Winged Cryoshroom (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.ardravi_valley.1#4",
+          "evidence": "leyline.sumeru.ardravi_valley.1: Unresolved drop family mapping for Grounded Hydroshroom (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.ardravi_valley.2",
+          "evidence": "leyline.sumeru.ardravi_valley.2: Unresolved drop family mapping for Stretchy Geo Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.ardravi_valley.2#2",
+          "evidence": "leyline.sumeru.ardravi_valley.2: Unresolved drop family mapping for Stretchy Pyro Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.ardravi_valley.2#3",
+          "evidence": "leyline.sumeru.ardravi_valley.2: Unresolved drop family mapping for Winged Dendroshroom (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.ardravi_valley.2#4",
+          "evidence": "leyline.sumeru.ardravi_valley.2: Unresolved drop family mapping for Winged Cryoshroom (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.ardravi_valley.3",
+          "evidence": "leyline.sumeru.ardravi_valley.3: Unresolved drop family mapping for Floating Hydro Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.ardravi_valley.3#2",
+          "evidence": "leyline.sumeru.ardravi_valley.3: Unresolved drop family mapping for Whirling Electro Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.ardravi_valley.3#3",
+          "evidence": "leyline.sumeru.ardravi_valley.3: Unresolved drop family mapping for Winged Dendroshroom (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.ardravi_valley.3#4",
+          "evidence": "leyline.sumeru.ardravi_valley.3: Unresolved drop family mapping for Winged Cryoshroom (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.ashavan_realm.1",
+          "evidence": "leyline.sumeru.ashavan_realm.1: Unresolved drop family mapping for Floating Hydro Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.ashavan_realm.1#2",
+          "evidence": "leyline.sumeru.ashavan_realm.1: Unresolved drop family mapping for Stretchy Anemo Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.ashavan_realm.1#3",
+          "evidence": "leyline.sumeru.ashavan_realm.1: Unresolved drop family mapping for Winged Cryoshroom (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.ashavan_realm.2",
+          "evidence": "leyline.sumeru.ashavan_realm.2: Unresolved drop family mapping for Floating Dendro Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.ashavan_realm.2#2",
+          "evidence": "leyline.sumeru.ashavan_realm.2: Unresolved drop family mapping for Floating Hydro Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.ashavan_realm.2#3",
+          "evidence": "leyline.sumeru.ashavan_realm.2: Unresolved drop family mapping for Winged Dendroshroom (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.desert_of_hadramaveth_northeast.3",
+          "evidence": "leyline.sumeru.desert_of_hadramaveth_northeast.3: Unresolved drop family mapping for Grounded Geoshroom (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.desert_of_hadramaveth_northeast.3#2",
+          "evidence": "leyline.sumeru.desert_of_hadramaveth_northeast.3: Unresolved drop family mapping for Whirling Pyro Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.desert_of_hadramaveth_northeast.3#3",
+          "evidence": "leyline.sumeru.desert_of_hadramaveth_northeast.3: Unresolved drop family mapping for Grounded Hydroshroom (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.desert_of_hadramaveth_northeast.3#4",
+          "evidence": "leyline.sumeru.desert_of_hadramaveth_northeast.3: Unresolved drop family mapping for Floating Dendro Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.desert_of_hadramaveth_northeast.3#5",
+          "evidence": "leyline.sumeru.desert_of_hadramaveth_northeast.3: Unresolved drop family mapping for Floating Anemo Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.desert_of_hadramaveth_southwest.1",
+          "evidence": "leyline.sumeru.desert_of_hadramaveth_southwest.1: Unresolved drop family mapping for Grounded Geoshroom (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.desert_of_hadramaveth_southwest.1#2",
+          "evidence": "leyline.sumeru.desert_of_hadramaveth_southwest.1: Unresolved drop family mapping for Stretchy Geo Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.desert_of_hadramaveth_southwest.1#3",
+          "evidence": "leyline.sumeru.desert_of_hadramaveth_southwest.1: Unresolved drop family mapping for Winged Dendroshroom (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.desert_of_hadramaveth_southwest.1#4",
+          "evidence": "leyline.sumeru.desert_of_hadramaveth_southwest.1: Unresolved drop family mapping for Floating Dendro Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.hypostyle_desert.2",
+          "evidence": "leyline.sumeru.hypostyle_desert.2: Unresolved drop family mapping for Stretchy Geo Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.hypostyle_desert.2#2",
+          "evidence": "leyline.sumeru.hypostyle_desert.2: Unresolved drop family mapping for Stretchy Pyro Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.hypostyle_desert.2#3",
+          "evidence": "leyline.sumeru.hypostyle_desert.2: Unresolved drop family mapping for Grounded Geoshroom (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.hypostyle_desert.2#4",
+          "evidence": "leyline.sumeru.hypostyle_desert.2: Unresolved drop family mapping for Whirling Pyro Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.land_of_lower_setekh.2",
+          "evidence": "leyline.sumeru.land_of_lower_setekh.2: Unresolved drop family mapping for Stretchy Electro Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.land_of_lower_setekh.2#2",
+          "evidence": "leyline.sumeru.land_of_lower_setekh.2: Unresolved drop family mapping for Stretchy Geo Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.land_of_lower_setekh.2#3",
+          "evidence": "leyline.sumeru.land_of_lower_setekh.2: Unresolved drop family mapping for Whirling Electro Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.land_of_lower_setekh.2#4",
+          "evidence": "leyline.sumeru.land_of_lower_setekh.2: Unresolved drop family mapping for Stretchy Anemo Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.land_of_lower_setekh.2#5",
+          "evidence": "leyline.sumeru.land_of_lower_setekh.2: Unresolved drop family mapping for Grounded Geoshroom (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.land_of_lower_setekh.4",
+          "evidence": "leyline.sumeru.land_of_lower_setekh.4: Unresolved drop family mapping for Stretchy Geo Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.land_of_lower_setekh.4#2",
+          "evidence": "leyline.sumeru.land_of_lower_setekh.4: Unresolved drop family mapping for Stretchy Pyro Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.land_of_lower_setekh.4#3",
+          "evidence": "leyline.sumeru.land_of_lower_setekh.4: Unresolved drop family mapping for Whirling Pyro Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.land_of_lower_setekh.4#4",
+          "evidence": "leyline.sumeru.land_of_lower_setekh.4: Unresolved drop family mapping for Grounded Geoshroom (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.land_of_lower_setekh.4#5",
+          "evidence": "leyline.sumeru.land_of_lower_setekh.4: Unresolved drop family mapping for Stretchy Geo Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.land_of_upper_setekh.1",
+          "evidence": "leyline.sumeru.land_of_upper_setekh.1: Unresolved drop family mapping for Whirling Electro Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.land_of_upper_setekh.1#2",
+          "evidence": "leyline.sumeru.land_of_upper_setekh.1: Unresolved drop family mapping for Whirling Pyro Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.land_of_upper_setekh.1#3",
+          "evidence": "leyline.sumeru.land_of_upper_setekh.1: Unresolved drop family mapping for Grounded Geoshroom (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.land_of_upper_setekh.1#4",
+          "evidence": "leyline.sumeru.land_of_upper_setekh.1: Unresolved drop family mapping for Whirling Pyro Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.lokapala_jungle.1",
+          "evidence": "leyline.sumeru.lokapala_jungle.1: Unresolved drop family mapping for Whirling Cryo Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.lokapala_jungle.1#2",
+          "evidence": "leyline.sumeru.lokapala_jungle.1: Unresolved drop family mapping for Winged Cryoshroom (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.vissudha_field.2",
+          "evidence": "leyline.sumeru.vissudha_field.2: Unresolved drop family mapping for Floating Dendro Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.vissudha_field.2#2",
+          "evidence": "leyline.sumeru.vissudha_field.2: Unresolved drop family mapping for Winged Cryoshroom (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.vissudha_field.2#3",
+          "evidence": "leyline.sumeru.vissudha_field.2: Unresolved drop family mapping for Grounded Hydroshroom (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.vissudha_field.2#4",
+          "evidence": "leyline.sumeru.vissudha_field.2: Unresolved drop family mapping for Winged Dendroshroom (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.vissudha_field.4",
+          "evidence": "leyline.sumeru.vissudha_field.4: Unresolved drop family mapping for Stretchy Pyro Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.vissudha_field.4#2",
+          "evidence": "leyline.sumeru.vissudha_field.4: Unresolved drop family mapping for Stretchy Pyro Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.vissudha_field.4#3",
+          "evidence": "leyline.sumeru.vissudha_field.4: Unresolved drop family mapping for Whirling Electro Fungus (Unresolved family mapping for materials: Crystalline Cyst Dust, Dormant Fungal Nucleus, Fungal Spores, Inactivated Fungal Nucleus, Luminescent Pollen, Robust Fungal Nucleus)."
+        }
+      ]
+    },
+    {
+      "category": "Electro Cicin",
+      "classification": "No progression material join in the bundled source; absence of drops is not proven",
+      "findings": [
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.liyue.bishui_plain_northwest_to_stone_gate.6",
+          "evidence": "leyline.liyue.bishui_plain_northwest_to_stone_gate.6: Unresolved drop family mapping for Electro Cicin."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.liyue.bishui_plain_to_minlin_north.5",
+          "evidence": "leyline.liyue.bishui_plain_to_minlin_north.5: Unresolved drop family mapping for Electro Cicin."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.liyue.dunyu_ruins_to_luhua_pool.1",
+          "evidence": "leyline.liyue.dunyu_ruins_to_luhua_pool.1: Unresolved drop family mapping for Electro Cicin."
+        }
+      ]
+    },
+    {
+      "category": "Hydro Cicin",
+      "classification": "No progression material join in the bundled source; absence of drops is not proven",
+      "findings": [
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.liyue.dunyu_ruins_to_luhua_pool.1#2",
+          "evidence": "leyline.liyue.dunyu_ruins_to_luhua_pool.1: Unresolved drop family mapping for Hydro Cicin."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.liyue.sal_terrae_to_qiongji_estuary.2",
+          "evidence": "leyline.liyue.sal_terrae_to_qiongji_estuary.2: Unresolved drop family mapping for Hydro Cicin."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.liyue.yaoguang_shoal_to_guili_plains.1",
+          "evidence": "leyline.liyue.yaoguang_shoal_to_guili_plains.1: Unresolved drop family mapping for Hydro Cicin."
+        }
+      ]
+    },
+    {
+      "category": "Flying Serpent",
+      "classification": "No progression material join in the bundled source; absence of drops is not proven",
+      "findings": [
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.desert_of_hadramaveth_southwest.4",
+          "evidence": "leyline.sumeru.desert_of_hadramaveth_southwest.4: Unresolved drop family mapping for Flying Serpent."
+        },
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.sumeru.desert_of_hadramaveth_southwest.4#2",
+          "evidence": "leyline.sumeru.desert_of_hadramaveth_southwest.4: Unresolved drop family mapping for Flying Serpent."
+        }
+      ]
+    },
+    {
+      "category": "Eye of the Storm",
+      "classification": "No progression material join in the bundled source; absence of drops is not proven",
+      "findings": [
+        {
+          "id": "ley_line_outcrop:unresolved_spawn_mapping:leyline.mondstadt.windwail_highland_south.5",
+          "evidence": "leyline.mondstadt.windwail_highland_south.5: Unresolved drop family mapping for Eye of the Storm."
+        }
+      ]
+    }
+  ],
+  "repairPreview": [
+    {
+      "key": "Nicole",
+      "field": "status",
+      "before": "beta",
+      "after": "verified",
+      "result": "repair"
+    },
+    {
+      "key": "Nicole",
+      "field": "releaseState",
+      "before": "beta",
+      "after": "live",
+      "result": "repair"
+    },
+    {
+      "key": "Nicole",
+      "field": "plannerEligible",
+      "before": false,
+      "after": true,
+      "result": "repair"
+    }
+  ]
+}

@@ -14,6 +14,7 @@
           "max": 4
         }
       },
+      "minimumCharacterExp": 22000,
       "averageCharacterExp": 25000,
       "averageEfficiencyPercent": 20.4
     },
@@ -37,6 +38,7 @@
           "max": 6
         }
       },
+      "minimumCharacterExp": 35000,
       "averageCharacterExp": 38500,
       "averageEfficiencyPercent": 31.4
     },
@@ -56,6 +58,7 @@
           "max": 11
         }
       },
+      "minimumCharacterExp": 50000,
       "averageCharacterExp": 52500,
       "averageEfficiencyPercent": 42.9
     },
@@ -75,6 +78,7 @@
           "max": 14
         }
       },
+      "minimumCharacterExp": 65000,
       "averageCharacterExp": 67500,
       "averageEfficiencyPercent": 55.1
     },
@@ -98,6 +102,7 @@
           "max": 3
         }
       },
+      "minimumCharacterExp": 70000,
       "averageCharacterExp": 82500,
       "averageEfficiencyPercent": 67.3
     },
@@ -121,6 +126,7 @@
           "max": 4
         }
       },
+      "minimumCharacterExp": 90000,
       "averageCharacterExp": 102500,
       "averageEfficiencyPercent": 83.7
     },
@@ -144,6 +150,7 @@
           "max": 5
         }
       },
+      "minimumCharacterExp": 110000,
       "averageCharacterExp": 122500,
       "averageEfficiencyPercent": null
     },
@@ -167,6 +174,7 @@
           "max": 5
         }
       },
+      "minimumCharacterExp": 110000,
       "averageCharacterExp": 122500,
       "averageEfficiencyPercent": null
     },
@@ -190,6 +198,7 @@
           "max": 5
         }
       },
+      "minimumCharacterExp": 110000,
       "averageCharacterExp": 122500,
       "averageEfficiencyPercent": null
     },
@@ -213,6 +222,7 @@
           "max": 5
         }
       },
+      "minimumCharacterExp": 110000,
       "averageCharacterExp": 122500,
       "averageEfficiencyPercent": null
     },

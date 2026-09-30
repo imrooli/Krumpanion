@@ -14,6 +14,7 @@ export type DayOfWeek =
   | "Sunday";
 
 export type AvailabilityGroupKey =
+  | `DAYS_${string}`
   | "MON_THU_SUN"
   | "TUE_FRI_SUN"
   | "WED_SAT_SUN"
@@ -39,6 +40,7 @@ export type PlannerWarningType =
   | "invalid_weapon_goal"
   | "unsupported_weapon_rarity"
   | "invalid_override_record"
+  | "estimate_invariant"
   | "migration_notice"
   | "estimate_source_unresolved"
   | "planner_advisory";
@@ -129,6 +131,7 @@ export type FarmingEstimateSourceType =
   | "ley_line_enemy_drop"
   | "domain_of_forgery"
   | "domain_of_mastery"
+  | "ascension_gem"
   | "normal_boss"
   | "weekly_boss"
   | "open_world_enemy"
@@ -136,6 +139,20 @@ export type FarmingEstimateSourceType =
   | "unknown";
 
 export type LootModelDataQuality = "exact" | "observed_estimate" | "inferred" | "partial" | "unknown";
+
+export interface PlannerEstimateLayer {
+  available: boolean;
+  canGuarantee?: boolean;
+  basis: string;
+  outputPerRun: number | null;
+  runs: number | null;
+  actionableRuns: number | null;
+  resin: number | null;
+  daysNaturalResin: number | null;
+  weeksNaturalResin: number | null;
+  dataQuality: LootModelDataQuality;
+  warnings: string[];
+}
 
 export interface LootTableModel {
   sourceKey: string;
@@ -164,6 +181,13 @@ export interface FarmingEstimate {
   relatedMaterialDisplayNames?: Record<string, string>;
   deterministicRequirementsByMaterial?: Record<string, number>;
   remainingDeficitsByMaterial?: Record<string, number>;
+  guaranteedEstimate: PlannerEstimateLayer;
+  expectedEstimate: PlannerEstimateLayer;
+  contributesToGuaranteedTotal: boolean;
+  estimateClassification: "guaranteed" | "chance_based" | "no_resin" | "time_gated" | "unknown";
+  guaranteedCraftingCoverage?: number;
+  deterministicConversionCoverage?: number;
+  // Compatibility aliases. These always mirror the guaranteed layer.
   estimatedRuns: number | null;
   actionableRuns?: number | null;
   estimatedResin: number | null;
@@ -388,6 +412,12 @@ export interface PlannerRecommendation {
   resinCost?: number;
   resinPerRun?: number | null;
   totalEstimatedResin?: number | null;
+  expectedAdvisoryResin?: number | null;
+  expectedAdvisoryRuns?: number | null;
+  expectedAdvisoryActionableRuns?: number | null;
+  expectedAdvisoryDays?: number | null;
+  contributesToGuaranteedTotal?: boolean;
+  estimateClassification?: FarmingEstimate["estimateClassification"];
   resinLabel?: string;
   estimatedRuns?: number | null;
   actionableRuns?: number | null;
@@ -423,6 +453,15 @@ export interface ResinSummary {
   progressionMora: number;
   craftingMora: number;
   totalMora: number;
+  guaranteedTotalResin: number;
+  guaranteedNaturalResinDays: number;
+  guaranteedNaturalResinWeeks: number;
+  expectedAdvisoryResin: number;
+  expectedAdvisoryDays: number;
+  expectedAdvisoryWeeks: number;
+  chanceBasedTaskCount: number;
+  timeGatedTaskCount: number;
+  // Compatibility aliases. These always mirror guaranteed totals.
   totalEstimatedResin: number;
   totalEstimatedNaturalResinDays: number;
   totalEstimatedNaturalResinWeeks: number;
@@ -505,7 +544,32 @@ export interface PlannerOutput {
   resinSummary: ResinSummary;
   summary: ResinSummary;
   weaponExpSummary: WeaponExpPlannerSummary;
+  plannerTrace?: PlannerTrace;
   warnings: PlannerWarning[];
+}
+
+export interface PlannerTraceRow {
+  estimateKey: string;
+  sourceGoalKeys: string[];
+  materialKey: string;
+  materialName: string;
+  deterministicRequiredAmount: number;
+  ownedAmount: number | null;
+  guaranteedCraftingCoverage: number;
+  deterministicConversionCoverage: number;
+  remainingDeficit: number;
+  sourceType: FarmingEstimateSourceType;
+  sourceName: string | null;
+  guaranteedEstimate: PlannerEstimateLayer;
+  expectedEstimate: PlannerEstimateLayer;
+  contributesToGuaranteedTotal: boolean;
+  warnings: string[];
+}
+
+export interface PlannerTrace {
+  rows: PlannerTraceRow[];
+  guaranteedContributionKeys: string[];
+  guaranteedTotalResin: number;
 }
 
 export interface PlannerEstimationSettings {
@@ -580,6 +644,7 @@ export interface InventoryDeficitSlice {
   weaponAscensionFamilyKey?: string;
   talentBookFamilyKey?: string;
   availability: AvailabilityGroupKey;
+  deterministicConversionCoverage?: number;
   assumptions: string[];
   warnings: string[];
 }

@@ -1,3 +1,4 @@
+import { GameDataUpdateCenter, type UpdateCenterView } from "./GameDataUpdateCenter";
 import { useEffect, useMemo, useState } from "react";
 import {
   FilterToolbar,
@@ -109,14 +110,15 @@ const DATABASE_SECTIONS: Array<{ key: DatabaseSection; label: string }> = [
 ];
 
 type DatabaseWorkspaceTab =
+  | UpdateCenterView
   | "overview"
-  | "release"
-  | "materialsFamilies"
-  | "assignments"
-  | "validation"
-  | "dataHealth"
   | "rawHealth"
-  | "legacy";
+  | "wizard"
+  | "records"
+  | "validate"
+  | "commit"
+  | "dataHealth"
+  | "advanced";
 
 type DatabaseEntityType =
   | "coverageDashboard"
@@ -179,16 +181,14 @@ function getDefaultEntityType(section: DatabaseSection): DatabaseEntityType {
 
 function resolveWorkspaceTarget(tab: DatabaseWorkspaceTab): { section: DatabaseSection; entityType: DatabaseEntityType } | null {
   switch (tab) {
-    case "overview":
-      return { section: "coverage", entityType: "coverageDashboard" };
-    case "legacy":
+    case "advanced":
       return { section: "profiles", entityType: "characterProfiles" };
-    case "release":
-    case "materialsFamilies":
-    case "assignments":
-    case "validation":
+    case "wizard":
+    case "records":
+    case "validate":
+    case "commit":
     case "dataHealth":
-    case "rawHealth":
+    default:
       return null;
   }
 }
@@ -260,7 +260,9 @@ export function DatabaseTab() {
   const importOverrideText = useAppStore((state) => state.importOverrideText);
   const clearOverridePack = useAppStore((state) => state.clearOverridePack);
 
-  const [activeWorkspaceTab, setActiveWorkspaceTab] = useState<DatabaseWorkspaceTab>("overview");
+  const databaseFocus = useAppStore(state => state.databaseFocus);
+  const [activeWorkspaceTab, setActiveWorkspaceTab] = useState<DatabaseWorkspaceTab>(databaseFocus ?? "gameData");
+  useEffect(() => { if (databaseFocus) { setActiveWorkspaceTab(databaseFocus); useAppStore.setState({ databaseFocus: undefined }); } }, [databaseFocus]);
   const [activeSection, setActiveSection] = useState<DatabaseSection>("coverage");
   const [activeEntityType, setActiveEntityType] = useState<DatabaseEntityType>(getDefaultEntityType("coverage"));
   const [status, setStatus] = useState("");
@@ -507,11 +509,40 @@ export function DatabaseTab() {
   const previewStaticDataHealthReport = useMemo(() => validateStaticData(previewStaticData), [previewStaticData]);
   const changeSetExportBundle = useMemo(() => exportChangeSetToCanonicalBundle(changeSet), [changeSet]);
   const changeSetEntryCount = useMemo(() => countChangeSetEntries(changeSet), [changeSet]);
+  const patchCommitDisabledReason = useMemo(() => {
+    if (changeSetEntryCount === 0) {
+      return "Add or clone at least one manifest record before committing a patch.";
+    }
+    const authoringErrors = changeSetValidationIssues.filter((issue) => issue.severity === "error").length;
+    if (authoringErrors > 0) {
+      return `Fix ${authoringErrors} manifest authoring error(s) before committing.`;
+    }
+    if (previewStaticDataHealthReport.summary.errorCount > 0) {
+      return `Fix ${previewStaticDataHealthReport.summary.errorCount} preview database error(s) before committing.`;
+    }
+    return "";
+  }, [changeSetEntryCount, changeSetValidationIssues, previewStaticDataHealthReport.summary.errorCount]);
 
   async function savePack(pack: OverrideDataPack) {
     setError("");
     await importOverrideText(formatJson(pack));
     setStatus("Database overrides saved.");
+  }
+
+  async function commitPatchToDatabase() {
+    setError("");
+    if (patchCommitDisabledReason) {
+      setError(patchCommitDisabledReason);
+      setActiveWorkspaceTab("validate");
+      return;
+    }
+
+    try {
+      await importOverrideText(formatJson(previewMergedOverridePack));
+      setStatus(`Patch committed to Krumpanion database (${changeSetEntryCount} manifest record${changeSetEntryCount === 1 ? "" : "s"}).`);
+    } catch (nextError) {
+      setError(nextError instanceof Error ? nextError.message : String(nextError));
+    }
   }
 
   function selectCharacter(key: string) {
@@ -546,7 +577,7 @@ export function DatabaseTab() {
     }
 
     if (issue.recordType === "character") {
-      setActiveWorkspaceTab("legacy");
+      setActiveWorkspaceTab("advanced");
       setActiveSection("profiles");
       setActiveEntityType(issue.subCategory === "character_catalog_metadata" ? "characters" : "characterProfiles");
       selectCharacter(entityKey);
@@ -554,7 +585,7 @@ export function DatabaseTab() {
     }
 
     if (issue.recordType === "weapon") {
-      setActiveWorkspaceTab("legacy");
+      setActiveWorkspaceTab("advanced");
       setActiveSection("profiles");
       setActiveEntityType(issue.subCategory === "weapon_catalog_metadata" ? "weapons" : "weaponProfiles");
       selectWeapon(entityKey);
@@ -562,7 +593,7 @@ export function DatabaseTab() {
     }
 
     if (issue.recordType === "weapon_ascension_family") {
-      setActiveWorkspaceTab("legacy");
+      setActiveWorkspaceTab("advanced");
       setActiveSection("families");
       setActiveEntityType("weaponAscensions");
       setWeaponAscensionFamilyKey(entityKey);
@@ -570,7 +601,7 @@ export function DatabaseTab() {
     }
 
     if (issue.recordType === "talent_book_family") {
-      setActiveWorkspaceTab("legacy");
+      setActiveWorkspaceTab("advanced");
       setActiveSection("families");
       setActiveEntityType("talentBooks");
       setTalentBookFamilyKey(entityKey);
@@ -578,7 +609,7 @@ export function DatabaseTab() {
     }
 
     if (issue.recordType === "enemy_drop_family") {
-      setActiveWorkspaceTab("legacy");
+      setActiveWorkspaceTab("advanced");
       setActiveSection("families");
       setActiveEntityType("enemyDrops");
       setEnemyDropFamilyKey(entityKey);
@@ -586,7 +617,7 @@ export function DatabaseTab() {
     }
 
     if (issue.recordType === "element_gem_family") {
-      setActiveWorkspaceTab("legacy");
+      setActiveWorkspaceTab("advanced");
       setActiveSection("families");
       setActiveEntityType("elementGems");
       setElementGemFamilyKey(entityKey);
@@ -594,7 +625,7 @@ export function DatabaseTab() {
     }
 
     if (issue.recordType === "local_specialty") {
-      setActiveWorkspaceTab("legacy");
+      setActiveWorkspaceTab("advanced");
       setActiveSection("families");
       setActiveEntityType("localSpecialties");
       setLocalSpecialtyKey(entityKey);
@@ -602,7 +633,7 @@ export function DatabaseTab() {
     }
 
     if (issue.recordType === "material") {
-      setActiveWorkspaceTab("legacy");
+      setActiveWorkspaceTab("advanced");
       setActiveSection("sources");
       setActiveEntityType(issue.category === "material_source" ? "materialSources" : "materials");
       if (issue.category === "material_source") {
@@ -620,18 +651,18 @@ export function DatabaseTab() {
     }
 
     if (editorTarget.workspaceTab === "rawHealth") {
-      setActiveWorkspaceTab("rawHealth");
+      setActiveWorkspaceTab("dataHealth");
       setRawHealthSearch(editorTarget.rawSearchText ?? issue.affectedKey ?? issue.affectedName ?? issue.shortMessage);
       return;
     }
 
     if (!editorTarget.entityType || !editorTarget.recordKey || !editorTarget.section) {
-      setActiveWorkspaceTab("rawHealth");
+      setActiveWorkspaceTab("dataHealth");
       setRawHealthSearch(editorTarget.rawSearchText ?? issue.affectedKey ?? issue.affectedName ?? issue.shortMessage);
       return;
     }
 
-    setActiveWorkspaceTab(editorTarget.workspaceTab ?? "legacy");
+    setActiveWorkspaceTab("advanced");
     setActiveSection(editorTarget.section);
     setActiveEntityType(editorTarget.entityType);
     setSelectedRecordKey(editorTarget.recordKey, editorTarget.entityType);
@@ -1847,8 +1878,8 @@ export function DatabaseTab() {
       header={
         <PageHeader
           eyebrow="Database"
-          title="Inspect and maintain static game data"
-          description="Overview cards, focused browsers, health issues, and override tools are split into guided tabs so database work stays navigable instead of becoming one long mixed editor."
+          title="Game data and farming setup"
+          description="Keep live game data current and complete the farming information needed by your planner."
         />
       }
       metrics={
@@ -1867,19 +1898,25 @@ export function DatabaseTab() {
     >
       <WorkspaceTabs
         label="Database sections"
-        activeTab={activeWorkspaceTab}
+        activeTab={["wizard", "records", "validate", "commit", "overview", "rawHealth"].includes(activeWorkspaceTab) ? "advanced" : activeWorkspaceTab}
         onChange={setActiveWorkspaceTab}
         tabs={[
-          { key: "overview", label: "Overview" },
-          { key: "release", label: "Release Update" },
-          { key: "materialsFamilies", label: "Materials & Families" },
-          { key: "assignments", label: "Character Assignments" },
-          { key: "validation", label: "Validation & Export", count: changeSetValidationIssues.length + previewStaticDataHealthReport.summary.errorCount },
-          { key: "dataHealth", label: "Data Health", count: dataHealthModel.summary.totalIssues },
-          { key: "rawHealth", label: "Raw Issues", count: staticDataHealthReport.issues.length },
-          { key: "legacy", label: "Legacy Overrides", count: overrideCounts },
+          { key: "gameData", label: "Game Data" },
+          { key: "automaticData", label: "Automatic Data" },
+          { key: "farmingSetup", label: "Farming Setup" },
+          { key: "discoveries", label: "Discoveries" },
+          { key: "dataHealth", label: "Diagnostics", count: dataHealthModel.summary.totalIssues },
+          { key: "advanced", label: "Advanced" },
         ]}
       />
+
+      {(["gameData", "automaticData", "farmingSetup", "discoveries"] as string[]).includes(activeWorkspaceTab) && <GameDataUpdateCenter view={activeWorkspaceTab as UpdateCenterView} onNavigate={setActiveWorkspaceTab} />}
+      {["advanced", "wizard", "records", "validate", "commit", "overview", "rawHealth"].includes(activeWorkspaceTab) && <WorkspaceTabs label="Advanced database tools" activeTab={activeWorkspaceTab} onChange={setActiveWorkspaceTab} tabs={[
+        { key: "wizard", label: "Wizard" }, { key: "records", label: "Manifest Records", count: changeSetEntryCount },
+        { key: "validate", label: "Validate & Preview", count: changeSetValidationIssues.length + previewStaticDataHealthReport.summary.errorCount },
+        { key: "commit", label: "Commit Patch", count: changeSetExportBundle.files.length },
+        { key: "advanced", label: "Advanced Raw Overrides", count: overrideCounts }, { key: "overview", label: "Coverage" }, { key: "rawHealth", label: "Raw Issues" },
+      ]} />}
 
       {activeWorkspaceTab === "overview" ? (
         <div className="database-overview-stack">
@@ -1938,11 +1975,11 @@ export function DatabaseTab() {
             healthReport={staticDataHealthReport}
             onOpenItem={(item) => {
               if (item.section === "profiles") {
-                setActiveWorkspaceTab("assignments");
+                setActiveWorkspaceTab("records");
               } else if (item.section === "families") {
-                setActiveWorkspaceTab("materialsFamilies");
+                setActiveWorkspaceTab("records");
               } else if (item.section === "sources") {
-                setActiveWorkspaceTab("materialsFamilies");
+                setActiveWorkspaceTab("records");
               }
               openCoverageItem(item);
             }}
@@ -1950,7 +1987,7 @@ export function DatabaseTab() {
         </div>
       ) : null}
 
-      {(["release", "materialsFamilies", "assignments", "validation"] as DatabaseWorkbenchView[]).includes(activeWorkspaceTab as DatabaseWorkbenchView) ? (
+      {(["wizard", "records", "validate", "commit"] as DatabaseWorkbenchView[]).includes(activeWorkspaceTab as DatabaseWorkbenchView) ? (
         <DatabaseWorkbench
           view={activeWorkspaceTab as DatabaseWorkbenchView}
           account={account}
@@ -1962,11 +1999,16 @@ export function DatabaseTab() {
           validationIssues={changeSetValidationIssues}
           previewHealthReport={previewStaticDataHealthReport}
           exportBundle={changeSetExportBundle}
+          onRequestViewChange={setActiveWorkspaceTab}
+          onCommitPatch={commitPatchToDatabase}
+          commitDisabledReason={patchCommitDisabledReason}
+          commitStatus={status}
+          commitError={error}
         />
       ) : null}
 
       {activeWorkspaceTab === "dataHealth" ? (
-        <DataHealthCenter model={dataHealthModel} onOpenIssue={openDataHealthIssue} />
+        <><GameDataUpdateCenter view="diagnostics" onNavigate={setActiveWorkspaceTab} /><DataHealthCenter model={dataHealthModel} onOpenIssue={openDataHealthIssue} /></>
       ) : null}
 
       {activeWorkspaceTab === "rawHealth" ? (
@@ -2126,9 +2168,9 @@ export function DatabaseTab() {
         </div>
       ) : null}
 
-      {activeWorkspaceTab === "legacy" ? (
+      {activeWorkspaceTab === "advanced" ? (
         <div className="workspace-card-grid settings-overview-grid">
-          <SectionCard title="Override pack controls" description="Override packs remain the safe place to patch database records without changing bundled runtime data.">
+          <SectionCard title="Advanced raw override controls" description="Developer escape hatch only. The normal patch workflow is Wizard -> Manifest Records -> Validate & Preview -> Commit Patch.">
             <label>
               Override pack label
               <input className="text-input" value={labelDraft} onChange={(event) => setLabelDraft(event.target.value)} />
@@ -2181,7 +2223,7 @@ export function DatabaseTab() {
         </div>
       ) : null}
 
-      {activeWorkspaceTab === "legacy" ? (
+      {activeWorkspaceTab === "advanced" ? (
         <DatabaseWorkspaceShell
           account={account}
           effectiveDatabaseRecordCount={effectiveDatabaseRecordCount}

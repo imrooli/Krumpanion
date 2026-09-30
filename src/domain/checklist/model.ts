@@ -4,6 +4,8 @@ import { getGenshinResetDay } from "../../utils/days";
 import type {
   AccountChecklistState,
   ChecklistAccountSummaryView,
+  ChecklistDashboardView,
+  ChecklistPriorityGroup,
   ChecklistSectionKey,
   ChecklistSectionView,
   ChecklistTaskView,
@@ -22,6 +24,36 @@ const EXPEDITION_COOLDOWN_MS = 20 * 60 * 60 * 1000;
 const PATCH_CYCLE_DAYS = 42;
 const REALM_DEFAULT_LEVEL = 10;
 const REALM_DEFAULT_TRUST_RANK = 10;
+const DAILY_TASK_ORDER: Record<"dailyCommissions" | "dailyForging" | "battlePassDailyClaims", number> = {
+  dailyCommissions: 0,
+  dailyForging: 1,
+  battlePassDailyClaims: 2,
+};
+const WEEKLY_TASK_ORDER: Record<"weeklyBossClaims" | "realmDepot" | "battlePassWeeklyClaims" | "weeklyBountiesRequests", number> =
+  {
+    weeklyBossClaims: 0,
+    realmDepot: 1,
+    battlePassWeeklyClaims: 2,
+    weeklyBountiesRequests: 3,
+  };
+const LONG_CYCLE_TASK_ORDER: Record<"stardustExchange" | "artifactTransmuter", number> = {
+  stardustExchange: 0,
+  artifactTransmuter: 1,
+};
+const COOLDOWN_TASK_ORDER: Record<"realmCurrency" | "expeditions" | "parametricTransformer" | "crystalflyTrap", number> = {
+  realmCurrency: 0,
+  expeditions: 1,
+  parametricTransformer: 2,
+  crystalflyTrap: 3,
+};
+const PRIORITY_GROUP_LABELS: Record<ChecklistPriorityGroup, string> = {
+  do_now: "Do Now",
+  today: "Today",
+  this_week: "This Week",
+  long_cycle: "Long Cycle",
+  cooldowns_accumulators: "Cooldowns & Accumulators",
+  completed: "Completed / Cooling Down",
+};
 
 export const REALM_LEVELS = [
   { level: 1, name: "Bare-Bones", adeptalEnergyNeeded: 0, realmCurrencyPerHour: 4 },
@@ -197,6 +229,212 @@ function clampTrustRank(value: number | undefined): number {
   return Math.max(1, Math.min(10, Math.floor(value as number)));
 }
 
+function getTaskReason(task: Pick<ChecklistTaskView, "key" | "status">): string {
+  switch (task.key) {
+    case "dailyCommissions":
+      return "Daily rewards and account progression.";
+    case "dailyForging":
+      return "Daily-capped weapon EXP material production.";
+    case "battlePassDailyClaims":
+      return "Daily Battle Pass progress.";
+    case "battlePassWeeklyClaims":
+      return "Weekly Battle Pass progress.";
+    case "weeklyBountiesRequests":
+      return "Weekly reputation progress.";
+    case "weeklyBossClaims":
+      return "Discounted weekly boss rewards.";
+    case "stardustExchange":
+      return "Monthly shop reset.";
+    case "artifactTransmuter":
+      return "Patch-cycle crafting opportunity.";
+    case "realmDepot":
+      return "Weekly limited Realm shop resources.";
+    case "parametricTransformer":
+      return task.status === "ready"
+        ? "Use when ready to restart the 6d 22h cooldown."
+        : "Long cooldown item. Keep the cycle moving when ready.";
+    case "crystalflyTrap":
+      return task.status === "ready"
+        ? "Claim/use when ready to restart the 7d cooldown."
+        : "Long cooldown item. Keep the cycle moving when ready.";
+    case "expeditions":
+      return task.status === "ready"
+        ? "Claim to restart the 20h expedition timer."
+        : "Passive timer. Claim promptly when ready.";
+    case "realmCurrency":
+      return task.status === "ready"
+        ? "Claim when full to avoid pausing currency production."
+        : "Passive currency generation while accumulating.";
+    default:
+      return "Checklist progress.";
+  }
+}
+
+function getDailyOrder(taskKey: ChecklistTaskView["key"]): number {
+  return taskKey in DAILY_TASK_ORDER ? DAILY_TASK_ORDER[taskKey as keyof typeof DAILY_TASK_ORDER] : 99;
+}
+
+function getWeeklyOrder(taskKey: ChecklistTaskView["key"]): number {
+  return taskKey in WEEKLY_TASK_ORDER ? WEEKLY_TASK_ORDER[taskKey as keyof typeof WEEKLY_TASK_ORDER] : 99;
+}
+
+function getLongCycleOrder(taskKey: ChecklistTaskView["key"]): number {
+  return taskKey in LONG_CYCLE_TASK_ORDER ? LONG_CYCLE_TASK_ORDER[taskKey as keyof typeof LONG_CYCLE_TASK_ORDER] : 99;
+}
+
+function getCooldownOrder(taskKey: ChecklistTaskView["key"]): number {
+  return taskKey in COOLDOWN_TASK_ORDER ? COOLDOWN_TASK_ORDER[taskKey as keyof typeof COOLDOWN_TASK_ORDER] : 99;
+}
+
+function isProductionBlockingReadyTask(task: ChecklistTaskView): boolean {
+  return (
+    (task.key === "realmCurrency" && task.status === "ready") ||
+    (task.key === "expeditions" && task.status === "ready") ||
+    (task.key === "parametricTransformer" && task.status === "ready") ||
+    (task.key === "crystalflyTrap" && task.status === "ready")
+  );
+}
+
+function isDailyTask(task: ChecklistTaskView): boolean {
+  return task.key === "dailyCommissions" || task.key === "dailyForging" || task.key === "battlePassDailyClaims";
+}
+
+function isWeeklyTask(task: ChecklistTaskView): boolean {
+  return (
+    task.key === "weeklyBossClaims" ||
+    task.key === "realmDepot" ||
+    task.key === "battlePassWeeklyClaims" ||
+    task.key === "weeklyBountiesRequests"
+  );
+}
+
+function isLongCycleTask(task: ChecklistTaskView): boolean {
+  return task.key === "stardustExchange" || task.key === "artifactTransmuter";
+}
+
+function isCooldownLikeTask(task: ChecklistTaskView): boolean {
+  return (
+    task.key === "realmCurrency" ||
+    task.key === "expeditions" ||
+    task.key === "parametricTransformer" ||
+    task.key === "crystalflyTrap"
+  );
+}
+
+function getDoNowRank(task: ChecklistTaskView): number {
+  if (task.key === "realmCurrency" && task.status === "ready") {
+    return 0;
+  }
+  if (task.key === "expeditions" && task.status === "ready") {
+    return 10;
+  }
+  if (task.key === "parametricTransformer" && task.status === "ready") {
+    return 20;
+  }
+  if (task.key === "crystalflyTrap" && task.status === "ready") {
+    return 30;
+  }
+  if (task.resetsSoon) {
+    if (isDailyTask(task)) {
+      return 100 + getDailyOrder(task.key);
+    }
+    if (isWeeklyTask(task)) {
+      return 120 + getWeeklyOrder(task.key);
+    }
+    if (isLongCycleTask(task)) {
+      return 140 + getLongCycleOrder(task.key);
+    }
+  }
+  if (task.key === "dailyCommissions" && task.status === "incomplete") {
+    return 200;
+  }
+  if (task.key === "dailyForging" && task.status === "incomplete") {
+    return 210;
+  }
+  if (task.key === "battlePassDailyClaims" && task.status === "incomplete") {
+    return 220;
+  }
+  return 999;
+}
+
+function getTaskPriorityRank(task: ChecklistTaskView): number {
+  if (isProductionBlockingReadyTask(task) || (task.needsAttention && task.resetsSoon) || (isDailyTask(task) && task.needsAttention)) {
+    return getDoNowRank(task);
+  }
+  if (isWeeklyTask(task) && task.needsAttention) {
+    return 300 + getWeeklyOrder(task.key);
+  }
+  if (isLongCycleTask(task) && task.needsAttention) {
+    return 400 + getLongCycleOrder(task.key);
+  }
+  if (isCooldownLikeTask(task)) {
+    return 500 + getCooldownOrder(task.key);
+  }
+  return 600 + Math.min(getDailyOrder(task.key), getWeeklyOrder(task.key), getLongCycleOrder(task.key), getCooldownOrder(task.key));
+}
+
+function getPriorityGroup(task: ChecklistTaskView): ChecklistPriorityGroup {
+  if (isProductionBlockingReadyTask(task) || (task.needsAttention && task.resetsSoon) || (isDailyTask(task) && task.needsAttention)) {
+    return "do_now";
+  }
+  if (isDailyTask(task)) {
+    return task.needsAttention ? "today" : "completed";
+  }
+  if (isWeeklyTask(task)) {
+    return task.needsAttention ? "this_week" : "completed";
+  }
+  if (isLongCycleTask(task)) {
+    return task.needsAttention ? "long_cycle" : "completed";
+  }
+  if (isCooldownLikeTask(task)) {
+    return task.status === "ready" ? "do_now" : "cooldowns_accumulators";
+  }
+  return "completed";
+}
+
+function getUrgencyLabel(task: ChecklistTaskView): string | undefined {
+  if (task.key === "realmCurrency" && task.status === "ready") {
+    return "Production paused";
+  }
+  if (task.key === "expeditions" && task.status === "ready") {
+    return "Claim to restart";
+  }
+  if ((task.key === "parametricTransformer" || task.key === "crystalflyTrap") && task.status === "ready") {
+    return "Ready to use";
+  }
+  if (task.resetsSoon && task.needsAttention) {
+    return "Resets soon";
+  }
+  if (isDailyTask(task) && task.status === "incomplete") {
+    return "Do today";
+  }
+  if (isWeeklyTask(task) && task.status === "incomplete") {
+    return "Weekly remaining";
+  }
+  return undefined;
+}
+
+function applyTaskStrategy(task: ChecklistTaskView): ChecklistTaskView {
+  const isDaily = isDailyTask(task);
+  const isWeekly = isWeeklyTask(task);
+  const isLongCycle = isLongCycleTask(task);
+  const isCooldownLike = isCooldownLikeTask(task);
+
+  return {
+    ...task,
+    priorityGroup: getPriorityGroup(task),
+    priorityRank: getTaskPriorityRank(task),
+    priorityReason: getTaskReason(task),
+    urgencyLabel: getUrgencyLabel(task),
+    blocksProduction: task.key === "realmCurrency" && task.status === "ready",
+    expiresSoon: task.needsAttention && task.resetsSoon,
+    isDaily,
+    isWeekly,
+    isLongCycle,
+    isCooldownLike,
+  };
+}
+
 function formatResetLabel(endAt: Date, now: Date): string {
   return `Resets in ${formatDuration(endAt.getTime() - now.getTime())}`;
 }
@@ -355,6 +593,15 @@ function buildResetTaskView(params: {
     nextResetAt: params.window.endAt.toISOString(),
     resetsSoon: isSoon(params.window.endAt, params.now),
     lastCompletedAt: params.state.completedAt,
+    priorityGroup: "completed",
+    priorityRank: 999,
+    priorityReason: "",
+    blocksProduction: false,
+    expiresSoon: false,
+    isDaily: false,
+    isWeekly: false,
+    isLongCycle: false,
+    isCooldownLike: false,
   };
 }
 
@@ -382,6 +629,15 @@ function buildCooldownTaskView(params: {
     resetsSoon: isSoon(nextAvailableAt, params.now),
     lastUsedAt: params.lastUsedAt,
     readyAt: nextAvailableAt?.toISOString(),
+    priorityGroup: "completed",
+    priorityRank: 999,
+    priorityReason: "",
+    blocksProduction: false,
+    expiresSoon: false,
+    isDaily: false,
+    isWeekly: false,
+    isLongCycle: false,
+    isCooldownLike: false,
   };
 }
 
@@ -403,6 +659,15 @@ function buildWeeklyBossClaimsTask(checklist: AccountChecklistState, now: Date):
     usedCount,
     maxCount: 3,
     lastCompletedAt: checklist.weeklyBossClaims.updatedAt,
+    priorityGroup: "completed",
+    priorityRank: 999,
+    priorityReason: "",
+    blocksProduction: false,
+    expiresSoon: false,
+    isDaily: false,
+    isWeekly: false,
+    isLongCycle: false,
+    isCooldownLike: false,
   };
 }
 
@@ -436,6 +701,15 @@ function buildRealmCurrencyTask(checklist: AccountChecklistState, now: Date): Ch
     capacity,
     timeToFullHours,
     settingsSummary: `Level ${realmLevel} · Trust ${trustRank}`,
+    priorityGroup: "completed",
+    priorityRank: 999,
+    priorityReason: "",
+    blocksProduction: false,
+    expiresSoon: false,
+    isDaily: false,
+    isWeekly: false,
+    isLongCycle: false,
+    isCooldownLike: false,
   };
 }
 
@@ -530,7 +804,7 @@ function buildTasks(checklist: AccountChecklistState, now: Date): ChecklistTaskV
       windowLabel: "20h claim timer",
       now,
     }),
-  ];
+  ].map((task) => applyTaskStrategy(task));
 }
 
 function buildSections(tasks: ChecklistTaskView[]): ChecklistSectionView[] {
@@ -551,6 +825,57 @@ function buildSections(tasks: ChecklistTaskView[]): ChecklistSectionView[] {
       tasks: tasks.filter((task) => task.section === sectionKey),
     }))
     .filter((section) => section.tasks.length > 0);
+}
+
+function sortByPriority(tasks: ChecklistTaskView[]): ChecklistTaskView[] {
+  return [...tasks].sort((left, right) => left.priorityRank - right.priorityRank || left.label.localeCompare(right.label));
+}
+
+function buildDashboardSection(
+  key: ChecklistPriorityGroup,
+  tasks: ChecklistTaskView[],
+  description?: string,
+): { key: ChecklistPriorityGroup; label: string; description?: string; tasks: ChecklistTaskView[] } {
+  return {
+    key,
+    label: PRIORITY_GROUP_LABELS[key],
+    description,
+    tasks,
+  };
+}
+
+function buildDashboard(tasks: ChecklistTaskView[]): ChecklistDashboardView {
+  const doNow = sortByPriority(tasks.filter((task) => task.priorityGroup === "do_now"));
+  const today = sortByPriority(tasks.filter((task) => task.isDaily));
+  const thisWeek = sortByPriority(tasks.filter((task) => task.isWeekly));
+  const longCycle = sortByPriority(tasks.filter((task) => task.isLongCycle));
+  const cooldownsAndAccumulators = sortByPriority(tasks.filter((task) => task.isCooldownLike));
+  const completedOrCoolingDown = sortByPriority(
+    tasks.filter(
+      (task) => !task.needsAttention && (task.status === "complete" || task.status === "on_cooldown"),
+    ),
+  );
+
+  return {
+    doNow: buildDashboardSection(
+      "do_now",
+      doNow,
+      "Highest-value actions to restart production, avoid waste, or beat an upcoming reset.",
+    ),
+    today: buildDashboardSection("today", today, "Daily progression tasks for the current reset window."),
+    thisWeek: buildDashboardSection("this_week", thisWeek, "Weekly lockouts and limited shops still remaining."),
+    longCycle: buildDashboardSection("long_cycle", longCycle, "Monthly and patch-cycle tasks that matter less often."),
+    cooldownsAndAccumulators: buildDashboardSection(
+      "cooldowns_accumulators",
+      cooldownsAndAccumulators,
+      "Timers that are either ready to restart or still accumulating in the background.",
+    ),
+    completedOrCoolingDown: buildDashboardSection(
+      "completed",
+      completedOrCoolingDown,
+      "Quiet tasks that are already done or no longer urgent.",
+    ),
+  };
 }
 
 function buildNextResetSummary(now: Date): { label: string; nextResetAt?: string } {
@@ -575,14 +900,23 @@ function buildNextResetSummary(now: Date): { label: string; nextResetAt?: string
 export function buildChecklistModel(checklist: AccountChecklistState, now = new Date()): ChecklistViewModel {
   const tasks = buildTasks(checklist, now);
   const nextReset = buildNextResetSummary(now);
+  const dashboard = buildDashboard(tasks);
+  const todayRemainingCount = dashboard.today.tasks.filter((task) => task.needsAttention).length;
+  const weeklyRemainingCount = dashboard.thisWeek.tasks.filter((task) => task.needsAttention).length;
+  const coolingDownCount = dashboard.cooldownsAndAccumulators.tasks.filter((task) => task.status === "on_cooldown").length;
 
   return {
     tasks,
     sections: buildSections(tasks),
+    dashboard,
     summary: {
+      urgentCount: dashboard.doNow.tasks.length,
       needsAttentionCount: tasks.filter((task) => task.needsAttention).length,
+      todayRemainingCount,
+      weeklyRemainingCount,
       completeCount: tasks.filter((task) => task.status === "complete").length,
       onCooldownCount: tasks.filter((task) => task.status === "on_cooldown").length,
+      coolingDownCount,
       availableCount: tasks.filter((task) => task.status === "ready" || task.status === "available").length,
       nextResetLabel: nextReset.label,
       nextResetAt: nextReset.nextResetAt,
@@ -595,12 +929,16 @@ export function buildChecklistAccountSummary(
   now = new Date(),
 ): ChecklistAccountSummaryView {
   const model = buildChecklistModel(account.checklist, now);
+  const nextUrgentTask = model.dashboard.doNow.tasks[0] ?? sortByPriority(model.tasks).find((task) => task.needsAttention);
   return {
     accountId: account.id,
     accountName: account.name,
+    urgentCount: model.summary.urgentCount,
     needsAttentionCount: model.summary.needsAttentionCount,
     completeCount: model.summary.completeCount,
     onCooldownCount: model.summary.onCooldownCount,
     availableCount: model.summary.availableCount,
+    nextUrgentLabel: nextUrgentTask?.label,
+    nextUrgentTimeLabel: nextUrgentTask?.status === "ready" ? nextUrgentTask.statusLabel : nextUrgentTask?.timeLabel,
   };
 }

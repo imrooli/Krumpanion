@@ -42,7 +42,7 @@ describe("buildPlannerOutput", () => {
     expect(planner.totalMissingByMaterial.length).toBeGreaterThan(0);
     expect(planner.byAvailability.some((group) => group.key === "TUE_FRI_SUN")).toBe(true);
     expect(planner.artifactFarmGoals[0]?.domainName).toBe("Denouement of Sin");
-    expect(planner.today[0]?.reason).toContain("Estimated");
+    expect(planner.today[0]?.reason).toMatch(/Guaranteed|Chance-based/);
     expect(planner.goalResolutions.length).toBe(planner.byCharacter.length + planner.byWeapon.length);
     expect(planner.plannerGoals.length).toBeGreaterThan(0);
     expect(planner.exactRequirementsByMaterial.length).toBeGreaterThan(0);
@@ -1308,17 +1308,126 @@ describe("buildPlannerOutput", () => {
     });
     expect(weeklyBossEstimate).toMatchObject({
       sourceName: "Enter the Golden House",
-      estimatedRuns: 9,
-      actionableRuns: 9,
-      estimatedResin: 270,
+      estimatedRuns: null,
+      actionableRuns: null,
+      estimatedResin: null,
+      contributesToGuaranteedTotal: false,
     });
-    expect(planner.resinSummary.totalEstimatedResin).toBeGreaterThanOrEqual(910);
-    expect(goalPlan?.estimatedResin).toBeGreaterThanOrEqual(910);
+    expect(weeklyBossEstimate?.expectedEstimate.resin).toBeGreaterThan(0);
+    expect(planner.resinSummary.totalEstimatedResin).toBeGreaterThanOrEqual(640);
+    expect(planner.resinSummary.expectedAdvisoryResin).toBeGreaterThan(0);
+    expect(planner.resinSummary.expectedAdvisoryResin).not.toBe(
+      planner.resinSummary.guaranteedTotalResin,
+    );
+    expect(goalPlan?.estimatedResin).toBeGreaterThanOrEqual(640);
     expect(bossRecommendations).toEqual(
       expect.arrayContaining([
         expect.objectContaining({ title: "Farm Geo Hypostasis", totalEstimatedResin: 640, resinPerRun: 40 }),
-        expect.objectContaining({ title: "Farm Enter the Golden House", totalEstimatedResin: 270 }),
+        expect.objectContaining({ title: "Farm Enter the Golden House", totalEstimatedResin: null, expectedAdvisoryResin: 270 }),
       ]),
     );
+  });
+
+  it("uses only owned same-boss materials and Dream Solvent for deterministic weekly conversion", () => {
+    const planner = buildPlannerOutput({
+      ...buildPlannerInput({
+        importMeta: {
+          format: "GOOD",
+          version: 1,
+          importedAt: new Date("2026-05-02T00:00:00.000Z").toISOString(),
+        },
+        characters: [{
+          characterId: "Zhongli",
+          currentLevel: 80,
+          currentAscension: 6,
+          currentTalents: { normal: 1, skill: 1, burst: 1 },
+        }],
+        weapons: [],
+        artifacts: [],
+        inventory: {
+          DreamSolvent: 2,
+          ShardOfAFoulLegacy: 3,
+        },
+        warnings: [],
+      }),
+      goals: {
+        ...exampleGoals,
+        characterGoals: {
+          Zhongli: {
+            characterKey: "Zhongli",
+            enabled: true,
+            priority: 3,
+            targetLevel: 80,
+            targetAscension: 6,
+            talents: { auto: 1, skill: 10, burst: 1 },
+          },
+        },
+        weaponGoals: {},
+        artifactGoals: [],
+      } as unknown as KrumpanionGoals,
+      staticData: loadStaticData(),
+      today: "Monday",
+      resinSettings: exampleGoals.plannerSettings,
+    });
+
+    const weeklyEstimate = planner.farmingEstimates.find(
+      (estimate) => estimate.materialKey === "TuskOfMonocerosCaeli",
+    );
+    expect(weeklyEstimate?.deterministicConversionCoverage).toBe(2);
+    expect(weeklyEstimate?.assumptions.some((line) => line.includes("Dream Solvent"))).toBe(true);
+    expect(
+      planner.plannerTrace?.rows.find((row) => row.materialKey === "TuskOfMonocerosCaeli")
+        ?.deterministicConversionCoverage,
+    ).toBe(2);
+  });
+
+  it("keeps gem-only shortages visible without assigning normal-boss resin", () => {
+    const planner = buildPlannerOutput({
+      ...buildPlannerInput({
+        importMeta: {
+          format: "GOOD",
+          version: 1,
+          importedAt: new Date("2026-05-02T00:00:00.000Z").toISOString(),
+        },
+        characters: [{
+          characterId: "Zhongli",
+          currentLevel: 1,
+          currentAscension: 0,
+          currentTalents: { normal: 1, skill: 1, burst: 1 },
+        }],
+        weapons: [],
+        artifacts: [],
+        inventory: { BasaltPillar: 46 },
+        warnings: [],
+      }),
+      goals: {
+        ...exampleGoals,
+        characterGoals: {
+          Zhongli: {
+            characterKey: "Zhongli",
+            enabled: true,
+            priority: 3,
+            targetLevel: 90,
+            targetAscension: 6,
+          },
+        },
+        weaponGoals: {},
+        artifactGoals: [],
+      } as unknown as KrumpanionGoals,
+      staticData: loadStaticData(),
+      today: "Monday",
+      resinSettings: {
+        ...exampleGoals.plannerSettings,
+        allowDustOfAzothConversion: false,
+      },
+    });
+
+    const gemEstimate = planner.farmingEstimates.find((estimate) => estimate.sourceType === "ascension_gem");
+    expect(gemEstimate).toMatchObject({
+      estimatedResin: null,
+      contributesToGuaranteedTotal: false,
+      estimateClassification: "chance_based",
+    });
+    expect(planner.farmingEstimates.some((estimate) => estimate.sourceType === "normal_boss")).toBe(false);
   });
 });

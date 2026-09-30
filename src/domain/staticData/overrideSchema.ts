@@ -1,3 +1,4 @@
+import { gameIdentitySchema, exactCharacterSchema, exactWeaponSchema, artifactSetIdentitySchema, farmingOriginSchema, provenanceSchema } from "./upstreamSchema";
 import { z } from "zod";
 import type { OverrideDataPack } from "./types";
 
@@ -12,12 +13,12 @@ const materialSourceRecordSchema = z.object({
   notes: z.string().optional(),
 }).passthrough();
 
-const catalogEntrySchema = z.object({
+const catalogEntrySchema = gameIdentitySchema.extend({
   key: z.string(),
   displayName: z.string(),
 }).passthrough();
 
-const materialDescriptorSchema = z.object({
+const materialDescriptorSchema = gameIdentitySchema.extend({
   key: z.string(),
   displayName: z.string(),
   category: z.string(),
@@ -335,6 +336,13 @@ const talentBookDomainDropModelSchema = z.object({
 
 const overrideSchema = z.object({
   version: z.number().int().min(1),
+  farmingRelationships: z.record(z.object({ kind: z.enum(["talent", "weapon"]), materialIds: z.array(z.number().int().positive()), recipeIds: z.array(z.number().int().positive()), recipeCoins: z.array(z.number().int().nonnegative()), stageIds: z.array(z.number().int().positive()).optional(), rewardPreviewIds: z.array(z.number().int().positive()).optional(), domain: z.object({ gameId: z.number().int().positive(), name: z.string().min(1), resinCost: z.number().positive().optional() }).optional(), provenance: provenanceSchema })).optional(),
+  farmingOrigins: z.record(z.object({ family: farmingOriginSchema.optional(), source: farmingOriginSchema.optional(), availability: farmingOriginSchema.optional(), resinCost: farmingOriginSchema.optional() })).optional(),
+  farmingConflicts: z.record(z.object({ id: z.string(), materialKey: z.string(), field: z.enum(["family", "source", "availability", "resinCost"]), proposed: z.object({ materialKey: z.string(), sourceType: z.string(), sourceKey: z.string(), sourceName: z.string(), availability: z.string(), resinCost: z.number().optional(), region: z.string(), familyKey: z.string(), tierKeys: z.array(z.string()) }), provenance: provenanceSchema, domainGameId: z.number().int().positive().optional(), status: z.enum(["pending", "kept_manual", "accepted"]) })).optional(),
+  farmingDrafts: z.record(z.object({ materialKey: z.string(), sourceType: z.string(), sourceKey: z.string(), sourceName: z.string(), availability: z.string(), resinCost: z.number().nonnegative().optional(), region: z.string(), familyKey: z.string(), tierKeys: z.array(z.string()) })).optional(),
+  artifactSets: z.record(artifactSetIdentitySchema).optional(),
+  exactCharacterRequirements: z.record(exactCharacterSchema).optional(),
+  exactWeaponRequirements: z.record(exactWeaponSchema).optional(),
   label: z.string().optional(),
   characters: z.record(catalogEntrySchema).optional(),
   materials: z.record(materialDescriptorSchema).optional(),

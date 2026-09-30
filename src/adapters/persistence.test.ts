@@ -1,14 +1,53 @@
+import { migrateSaveFile } from "../domain/save/migrations";
 import "fake-indexeddb/auto";
 import exampleGoals from "../../examples/goals.example.json";
 import { beforeEach, describe, expect, it } from "vitest";
 import { createDefaultSaveFile, type KrumpanionSaveFile } from "../domain/save/types";
 import { IndexedDbPersistenceAdapter } from "./persistence";
+import { reconcileGameData } from "../domain/staticData/reconcileGameData";
+import { loadStaticData } from "../domain/staticData/loadStaticData";
+import { newLivePatch } from "../test/fixtures/newLivePatch";
 
 describe("IndexedDbPersistenceAdapter", () => {
   let adapter: IndexedDbPersistenceAdapter;
 
   beforeEach(() => {
     adapter = new IndexedDbPersistenceAdapter();
+  });
+
+  it("migrates schema 14 and preserves schema 15 metadata through backup and hydration", async () => {
+    const original = createDefaultSaveFile();
+    original.user.accountsById[original.user.activeAccountId].inventory.Mora = 456;
+    const migrated = migrateSaveFile({ ...original, schemaVersion: 14 })!;
+    expect(migrated.schemaVersion).toBe(15);
+    migrated.gameDataUpdates.appliedExtractorVersion = 2;
+    migrated.gameDataUpdates.lastAttempt = { trigger: "good", startedAt: new Date().toISOString(), result: "running", stage: "download" };
+    migrated.gameDataUpdates.status = "downloading";
+    migrated.overridePack = { version: 1, farmingOrigins: { "family:test": { availability: { source: "manual" } } } };
+    await adapter.saveSaveFile(migrated);
+    const recovered = await adapter.loadSaveFile();
+    expect(recovered.gameDataUpdates.lastAttempt?.result).toBe("interrupted");
+    expect(recovered.gameDataUpdates.status).toBe("failed");
+    expect(recovered.gameDataUpdates.appliedExtractorVersion).toBe(2);
+    expect(recovered.overridePack?.farmingOrigins?.["family:test"].availability?.source).toBe("manual");
+    expect(recovered.user.accountsById[recovered.user.activeAccountId].inventory.Mora).toBe(456);
+    const restored = await adapter.importSaveFile(await adapter.exportSaveFile());
+    expect(restored.overridePack?.farmingOrigins).toEqual(recovered.overridePack?.farmingOrigins);
+  });
+  it("round-trips exact updates and account-associated discoveries through full backups and recovery", async () => {
+    const save = createDefaultSaveFile();
+    const result = reconcileGameData(loadStaticData(), null, newLivePatch(), {});
+    save.overridePack = result.overridePack;
+    save.gameDataUpdates = { ...save.gameDataUpdates, appliedRevision: newLivePatch().revision, effectiveVersion: 1, status: "updated", discoveries: { unknown: { id: "unknown", entityType: "material", rawKey: "Unknown", accountIds: [save.user.activeAccountId], firstSeen: save.createdAt, lastSeen: save.createdAt, source: "GOOD", status: "ignored" } } };
+    save.user.accountsById[save.user.activeAccountId].inventory.Unknown = 12;
+    await adapter.saveSaveFile(save);
+    const imported = await adapter.importSaveFile(await adapter.exportSaveFile());
+    expect(imported.gameDataUpdates).toEqual(save.gameDataUpdates);
+    expect(loadStaticData(imported.overridePack).exactCharacterRequirements?.NewCharacter).toEqual(result.staticData.exactCharacterRequirements?.NewCharacter);
+    const backup = await adapter.createSaveRecoveryPoint(save, "pre_restore");
+    const restored = await adapter.restoreSaveRecoveryPoint(backup.id);
+    expect(restored.gameDataUpdates.discoveries.unknown.status).toBe("ignored");
+    expect(restored.user.accountsById[save.user.activeAccountId].inventory.Unknown).toBe(12);
   });
 
   it("validates and round-trips full save files", async () => {
@@ -103,7 +142,7 @@ describe("IndexedDbPersistenceAdapter", () => {
     );
 
     const migratedAccount = migrated.user.accountsById[migrated.user.activeAccountId];
-    expect(migrated.schemaVersion).toBe(13);
+    expect(migrated.schemaVersion).toBe(15);
     expect(migrated.settings.activeTab).toBe("dashboard");
     expect(migratedAccount.plannerSettings.weeklyBossDiscountClaimsUsed).toBe(0);
     expect(migratedAccount.importedInventory).toEqual(migratedAccount.inventory);

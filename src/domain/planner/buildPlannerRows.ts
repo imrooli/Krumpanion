@@ -99,6 +99,61 @@ function withCraftingResinImpact(
   };
 }
 
+function mergeExpectedEstimateLayers(
+  guaranteedEstimates: ReturnType<typeof buildFarmingEstimates>["farmingEstimates"],
+  expectedEstimates: ReturnType<typeof buildFarmingEstimates>["farmingEstimates"],
+) {
+  const expectedByKey = new Map(expectedEstimates.map((estimate) => [estimate.estimateKey, estimate.expectedEstimate]));
+  return guaranteedEstimates.map((estimate) => ({
+    ...estimate,
+    expectedEstimate: expectedByKey.get(estimate.estimateKey) ?? estimate.expectedEstimate,
+  }));
+}
+
+function buildPlannerTrace(
+  farmingEstimates: ReturnType<typeof buildFarmingEstimates>["farmingEstimates"],
+  inventory: PlannerInput["inventory"],
+  craftingPlan: CraftingPlan,
+) {
+  const reportsByMaterial = new Map(craftingPlan.reports.map((report) => [report.targetMaterialKey, report]));
+  const rows = farmingEstimates.map((estimate) => {
+    const report = reportsByMaterial.get(estimate.materialKey);
+    const dustCoverage = report?.dustOfAzothOption
+      ? Math.max(
+          0,
+          report.guaranteedCrafting.remainingMissing - report.dustOfAzothOption.remainingMissing,
+        )
+      : 0;
+    return {
+      estimateKey: estimate.estimateKey,
+      sourceGoalKeys: estimate.relatedGoalKeys,
+      materialKey: estimate.materialKey,
+      materialName: estimate.materialName,
+      deterministicRequiredAmount: estimate.deterministicRequirement,
+      ownedAmount: inventory[estimate.materialKey] ?? 0,
+      guaranteedCraftingCoverage: craftingPlan.guaranteedCoverageByMaterial[estimate.materialKey] ?? 0,
+      deterministicConversionCoverage: dustCoverage + estimate.deterministicConversionCoverage,
+      remainingDeficit: estimate.missingAmount,
+      sourceType: estimate.sourceType,
+      sourceName: estimate.sourceName,
+      guaranteedEstimate: estimate.guaranteedEstimate,
+      expectedEstimate: estimate.expectedEstimate,
+      contributesToGuaranteedTotal: estimate.contributesToGuaranteedTotal,
+      warnings: estimate.warnings,
+    };
+  });
+  return {
+    rows,
+    guaranteedContributionKeys: rows
+      .filter((row) => row.contributesToGuaranteedTotal)
+      .map((row) => row.estimateKey),
+    guaranteedTotalResin: rows.reduce(
+      (sum, row) => sum + (row.contributesToGuaranteedTotal ? row.guaranteedEstimate.resin ?? 0 : 0),
+      0,
+    ),
+  };
+}
+
 function buildWeaponExpSummary(input: PlannerInput) {
   let totalWeaponExpNeeded = 0;
   let totalWeaponLevelingMoraNeeded = 0;
@@ -239,15 +294,15 @@ function buildPausedNoResinRecommendations(input: PlannerInput): PlannerRecommen
   const goalExpansion = expandGoals(pausedInput);
   const exactInventoryComparison = buildMaterialRows(pausedInput, goalExpansion.goalResolutions);
   const baseCraftingPlan = buildCraftingPlan(pausedInput, exactInventoryComparison.rows);
-  const normalizedSettings = normalizePlannerEstimationSettings(pausedInput.resinSettings, pausedInput.staticData);
-  const finalCoverageMode = normalizedSettings.craftingModeForResinEstimate === "expected_value" ? "expected" : "guaranteed";
   const finalAssignments = buildSourceAssignments({
+    today: pausedInput.today,
     goalResolutions: goalExpansion.goalResolutions,
     exactMaterialRows: exactInventoryComparison.rows,
     craftingPlan: baseCraftingPlan,
+    inventory: pausedInput.inventory,
     staticData: pausedInput.staticData,
     resinSettings: pausedInput.resinSettings,
-    coverageMode: finalCoverageMode,
+    coverageMode: "guaranteed",
   });
   const { farmingEstimates } = buildFarmingEstimates({
     sourceAssignments: finalAssignments.sourceAssignments,
@@ -284,12 +339,12 @@ function buildPausedNoResinRecommendations(input: PlannerInput): PlannerRecommen
   return sortRecommendations(
     [...materialRecommendations, ...leyLineEnemyDropRecommendations, ...weaponExpRecommendations]
       .filter((recommendation) => isNoResinRecommendation(recommendation))
-      .concat(buildCraftingPlannerRecommendations(craftingPlan))
+      // Paused plans are independent previews and cannot reserve the active pool.
       .map((recommendation) => ({
         ...recommendation,
         id: `paused-${recommendation.id}`,
         relatedGoalLabels: recommendation.relatedGoalLabels?.map((label) => `${label} (paused)`),
-        reason: `${recommendation.reason} This recommendation comes from a paused goal and stays in the no-resin view only.`,
+        reason: `${recommendation.reason} Independent preview for a paused goal; inventory is shared with active goals. Resume the goal to include it in account resource allocation.`,
       })),
   );
 }
@@ -316,28 +371,33 @@ export function buildPlannerOutput(input: PlannerInput) {
   const baseCraftingPlan = buildCraftingPlan(normalizedInput, exactInventoryComparison.rows);
   const normalizedSettings = normalizePlannerEstimationSettings(normalizedInput.resinSettings, normalizedInput.staticData);
   const baselineAssignments = buildSourceAssignments({
+    today: normalizedInput.today,
     goalResolutions: goalExpansion.goalResolutions,
     exactMaterialRows: exactInventoryComparison.rows,
+    inventory: normalizedInput.inventory,
     staticData: normalizedInput.staticData,
     resinSettings: normalizedInput.resinSettings,
     coverageMode: "none",
   });
   const guaranteedAssignments = buildSourceAssignments({
+    today: normalizedInput.today,
     goalResolutions: goalExpansion.goalResolutions,
     exactMaterialRows: exactInventoryComparison.rows,
     craftingPlan: baseCraftingPlan,
+    inventory: normalizedInput.inventory,
     staticData: normalizedInput.staticData,
     resinSettings: normalizedInput.resinSettings,
     coverageMode: "guaranteed",
   });
-  const finalCoverageMode = normalizedSettings.craftingModeForResinEstimate === "expected_value" ? "expected" : "guaranteed";
-  const finalAssignments = buildSourceAssignments({
+  const expectedAssignments = buildSourceAssignments({
+    today: normalizedInput.today,
     goalResolutions: goalExpansion.goalResolutions,
     exactMaterialRows: exactInventoryComparison.rows,
     craftingPlan: baseCraftingPlan,
+    inventory: normalizedInput.inventory,
     staticData: normalizedInput.staticData,
     resinSettings: normalizedInput.resinSettings,
-    coverageMode: finalCoverageMode,
+    coverageMode: "expected",
   });
 
   const { farmingEstimates: baselineFarmingEstimates } = buildFarmingEstimates({
@@ -352,12 +412,20 @@ export function buildPlannerOutput(input: PlannerInput) {
     resinSettings: normalizedInput.resinSettings,
     today: normalizedInput.today,
   });
-  const { farmingEstimates, warnings: estimateWarnings } = buildFarmingEstimates({
-    sourceAssignments: finalAssignments.sourceAssignments,
+  const { farmingEstimates: expectedFarmingEstimates } = buildFarmingEstimates({
+    sourceAssignments: expectedAssignments.sourceAssignments,
     staticData: normalizedInput.staticData,
     resinSettings: normalizedInput.resinSettings,
     today: normalizedInput.today,
   });
+  const farmingEstimates = mergeExpectedEstimateLayers(guaranteedFarmingEstimates, expectedFarmingEstimates);
+  const estimateWarnings = [
+    ...guaranteedFarmingEstimates.flatMap((estimate) =>
+      estimate.sourceType === "unknown"
+        ? [{ type: "estimate_source_unresolved" as const, key: estimate.materialKey, message: `No resin estimator is configured for ${estimate.materialName}.` }]
+        : [],
+    ),
+  ];
 
   const craftingPlan = withCraftingResinImpact(
     baseCraftingPlan,
@@ -439,6 +507,7 @@ export function buildPlannerOutput(input: PlannerInput) {
     estimateWarnings,
     craftingPlan.warnings,
   );
+  const plannerTrace = buildPlannerTrace(farmingEstimates, normalizedInput.inventory, craftingPlan);
   return {
     plannerGoals: goalCatalog.plannerGoals,
     plannerGoalGroups: goalCatalog.plannerGoalGroups,
@@ -466,6 +535,7 @@ export function buildPlannerOutput(input: PlannerInput) {
     resinSummary,
     summary: resinSummary,
     weaponExpSummary,
+    plannerTrace,
     warnings,
   };
 }

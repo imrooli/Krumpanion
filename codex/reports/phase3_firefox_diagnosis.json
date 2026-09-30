@@ -1,0 +1,31 @@
+{
+  "playwright": "1.63.0",
+  "browser": "Firefox 155 build 1543",
+  "executable": "C:\\Users\\Imran\\AppData\\Local\\ms-playwright\\firefox-1543\\firefox\\firefox.exe",
+  "launchResult": "spawn UNKNOWN before application execution",
+  "windowsEvent": "SideBySide: activation context generation failed; dependent Assembly mozglue, language=*, type=win32, version=1.0.0.0 could not be found",
+  "classification": "environmentally blocked",
+  "files": [
+    {
+      "name": "firefox.exe",
+      "exists": true,
+      "bytes": 1362432,
+      "sha256": "425a0a0fb606f567a303bdcea727476e124c0deb589050b13668af688da17fcb",
+      "manifest": "<assembly xmlns=\"urn:schemas-microsoft-com:asm.v1\" manifestVersion=\"1.0\">\n<assemblyIdentity\n        version=\"1.0.0.0\"\n        processorArchitecture=\"*\"\n        name=\"Firefox\"\n        type=\"win32\"\n/>\n<description>Firefox</description>\n<dependency>\n        <dependentAssembly>\n                <assemblyIdentity\n                        type=\"win32\"\n                        name=\"Microsoft.Windows.Common-Controls\"\n                        version=\"6.0.0.0\"\n                        processorArchitecture=\"*\"\n                        publicKeyToken=\"6595b64144ccf1df\"\n                        language=\"*\"\n                />\n        </dependentAssembly>\n</dependency>\n<dependency>\n        <dependentAssembly>\n                <assemblyIdentity\n                        type=\"win32\"\n                        name=\"mozglue\"\n                        version=\"1.0.0.0\"\n                        language=\"*\"\n                />\n        </dependentAssembly>\n</dependency>\n<ms_asmv3:trustInfo xmlns:ms_asmv3=\"urn:schemas-microsoft-com:asm.v3\">\n  <ms_asmv3:security>\n    <ms_asmv3:requestedPrivileges>\n      <ms_asmv3:requestedExecutionLevel level=\"asInvoker\" uiAccess=\"false\" />\n    </ms_asmv3:requestedPrivileges>\n  </ms_asmv3:security>\n</ms_asmv3:trustInfo>\n  <compatibility xmlns=\"urn:schemas-microsoft-com:compatibility.v1\">\n    <application>\n      <supportedOS Id=\"{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}\"/>\n      <supportedOS Id=\"{1f676c76-80e1-4239-95bb-83d0f6d0da78}\"/>\n      <supportedOS Id=\"{4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38}\"/>\n      <supportedOS Id=\"{35138b9a-5d96-4fbd-8e2d-a2440225f93a}\"/>\n    </application>\n  </compatibility>\n</assembly>"
+    },
+    {
+      "name": "mozglue.dll",
+      "exists": true,
+      "bytes": 662016,
+      "sha256": "b11acb767018bf61ddc15aa3c1dd5e74f5395892fc83659219ac2a0bcd0a95c0",
+      "manifest": "<assembly xmlns=\"urn:schemas-microsoft-com:asm.v1\" manifestVersion=\"1.0\">\n<assemblyIdentity\n    version=\"1.0.0.0\"\n    name=\"mozglue\"\n    type=\"win32\"\n/>\n<file name=\"mozglue.dll\"/>\n</assembly>"
+    }
+  ],
+  "reinstallsThisPhase": 0,
+  "personalBrowserModified": false,
+  "compatibleHostCommands": [
+    "npm ci",
+    "npx playwright install firefox",
+    "npm run test:e2e"
+  ]
+}

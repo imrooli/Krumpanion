@@ -64,7 +64,7 @@ describe("AppShell navigation", () => {
     await user.click(craftingButton!);
 
     const main = screen.getByRole("main");
-    expect(within(main).getByRole("heading", { level: 1, name: "Crafting actions" })).toBeInTheDocument();
+    expect(within(main).getByRole("heading", { level: 1, name: "Crafting bench companion" })).toBeInTheDocument();
     expect(navigation).toBeInTheDocument();
   });
 });

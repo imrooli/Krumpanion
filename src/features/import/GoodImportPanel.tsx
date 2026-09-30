@@ -8,6 +8,8 @@ export function GoodImportPanel() {
   const importErrors = useAppStore((state) => state.importErrors);
   const importWarnings = useAppStore((state) => state.importWarnings);
   const account = useAppStore(selectActiveAccount);
+  const updates = useAppStore(state => state.gameDataUpdates);
+  const unknowns = Object.values(updates.discoveries).filter(row => row.accountIds.includes(account?.id ?? "") && row.status !== "ignored" && Date.parse(row.lastSeen) >= Date.parse(account?.importState.lastGoodImportAt ?? account?.importMeta.importedAt ?? "1970-01-01"));
   const [draft, setDraft] = useState("");
   const [importAsNewAccount, setImportAsNewAccount] = useState(false);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
@@ -101,6 +103,13 @@ export function GoodImportPanel() {
         placeholder="Paste a GOOD JSON export here."
         rows={10}
       />
+      {unknowns.length > 0 && <div className="panel" role="status">
+        <strong>{updates.status === "updated" ? "Game database updated" : "New game data detected"}</strong>
+        <p>{updates.status === "checking" || updates.status === "downloading" ? "Checking the live game database..." : `${unknowns.filter(row => row.status !== "resolved").length} unresolved entities preserved for review.`}</p>
+        {updates.error && <p>{updates.error}</p>}
+        {updates.lastDelta && <p>Game records: {updates.lastDelta.added} added, {updates.lastDelta.changed} updated.</p>}
+        <button type="button" className="button-secondary" onClick={() => { useAppStore.setState({ databaseFocus: "farmingSetup" }); void useAppStore.getState().setActiveTab("database"); }}>Configure Farming Data</button>
+      </div>}
       <div className="import-status">
         <div>
           <strong>Active account snapshot:</strong>{" "}

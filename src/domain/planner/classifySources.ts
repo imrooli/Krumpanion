@@ -1,3 +1,6 @@
+import { farmingRequirements } from "../staticData/plannerReadiness";
+import { availabilityDays, availabilityFromDays, availabilityMatchesDay, validAvailability } from "../../utils/days";
+import type { AccountInventoryState } from "../account/types";
 import type { PlannerSettings } from "../goals/types";
 import type {
   CharacterPlan,
@@ -8,6 +11,7 @@ import type {
   PlannerEstimationSettings,
   SourceAssignment,
   WeaponPlan,
+  DayOfWeek,
 } from "./types";
 import type {
   CharacterMaterialProfile,
@@ -22,8 +26,24 @@ import { normalizePlannerEstimationSettings } from "./buildFarmingEstimates";
 
 type CraftingCoverageMode = "none" | "guaranteed" | "expected";
 
+const CHARACTER_EXP_VALUE_FALLBACKS: Record<string, number> = {
+  WanderersAdvice: 1000,
+  AdventurersExperience: 5000,
+  HerosWit: 20000,
+};
+
 function getRecord(staticData: StaticGameData, materialKey: string): MaterialRecord | null {
   return staticData.materialRecords[materialKey] ?? null;
+}
+
+function resolveCharacterExpValue(staticData: StaticGameData, materialKey: string): number {
+  const material = staticData.materials[materialKey] as
+    | (typeof staticData.materials[string] & {
+        expValue?: number;
+      })
+    | undefined;
+
+  return material?.characterExpValue ?? material?.expValue ?? CHARACTER_EXP_VALUE_FALLBACKS[materialKey] ?? 0;
 }
 
 function resolveCharacterEnemyFamily(profile: CharacterMaterialProfile | undefined, staticData: StaticGameData): string[] {
@@ -125,6 +145,19 @@ function resolveWeaponEnemyFamily(
   return [];
 }
 
+function configuredSliceKind(materialKey: string, staticData: StaticGameData): InventoryDeficitKind {
+  const source = staticData.materialSources[materialKey]?.[0];
+  switch (source?.sourceType) {
+    case "domain_of_mastery": return "talent_book";
+    case "domain_of_forgery": return "weapon_ascension_material";
+    case "normal_boss": return "normal_boss_material";
+    case "weekly_boss": return "weekly_boss_material";
+    case "enemy_drop": return "general_enemy_drop";
+    case "local_specialty": return "local_specialty";
+    default: return "unknown";
+  }
+}
+
 function inferCharacterSliceKind(
   profile: CharacterMaterialProfile | undefined,
   materialKey: string,
@@ -172,7 +205,7 @@ function inferCharacterSliceKind(
     return "special";
   }
 
-  return "unknown";
+  return configuredSliceKind(materialKey, staticData);
 }
 
 function inferWeaponSliceKind(
@@ -207,7 +240,7 @@ function inferWeaponSliceKind(
     }
   }
 
-  return "unknown";
+  return configuredSliceKind(materialKey, staticData);
 }
 
 function sliceAvailabilityForMaterial(materialKey: string, staticData: StaticGameData) {
@@ -230,7 +263,7 @@ function buildCharacterSlices(plan: CharacterPlan, staticData: StaticGameData): 
       characterKey: plan.characterKey,
       normalBossMaterialKey: profile?.normalBossMaterialKey || profile?.normalBossMaterial || undefined,
       weeklyBossMaterialKey: profile?.weeklyBossMaterialKey || profile?.weeklyBossMaterial || undefined,
-      talentBookFamilyKey: profile?.talentBookSeriesKey ?? profile?.talentBookFamilyKey,
+      talentBookFamilyKey: profile?.talentBookSeriesKey ?? profile?.talentBookFamilyKey ?? staticData.tieredMaterialIndex[materialKey]?.familyKey,
       availability: sliceAvailabilityForMaterial(materialKey, staticData),
       assumptions: [],
       warnings: [],
@@ -252,7 +285,7 @@ function buildWeaponSlices(plan: WeaponPlan, staticData: StaticGameData): Invent
       missingAmount: 0,
       kind: inferWeaponSliceKind(profile, materialKey, entry.label, staticData),
       weaponKey: plan.weaponKey,
-      weaponAscensionFamilyKey: profile?.weaponAscensionFamilyKey,
+      weaponAscensionFamilyKey: profile?.weaponAscensionFamilyKey ?? staticData.tieredMaterialIndex[materialKey]?.familyKey,
       availability: sliceAvailabilityForMaterial(materialKey, staticData),
       assumptions: [],
       warnings: [],
@@ -281,6 +314,46 @@ function allocateMissingAcrossSlices(slices: InventoryDeficitSlice[], materialRo
   }
 
   return allocated;
+}
+
+function applyCharacterExpValueCoverage(
+  slices: InventoryDeficitSlice[],
+  inventory: AccountInventoryState,
+  staticData: StaticGameData,
+): InventoryDeficitSlice[] {
+  let availableCharacterExp = Object.entries(inventory).reduce((sum, [materialKey, quantity]) => {
+    const expValue = resolveCharacterExpValue(staticData, materialKey);
+    return sum + Math.max(0, Math.floor(quantity)) * expValue;
+  }, 0);
+
+  if (availableCharacterExp <= 0 || !slices.some((slice) => slice.kind === "character_exp")) {
+    return slices;
+  }
+
+  return slices.map((slice) => {
+    if (slice.kind !== "character_exp") {
+      return slice;
+    }
+
+    const expValue = resolveCharacterExpValue(staticData, slice.materialKey);
+    if (expValue <= 0) {
+      return slice;
+    }
+
+    const requiredExp = slice.requiredAmount * expValue;
+    const coveredExp = Math.min(requiredExp, availableCharacterExp);
+    availableCharacterExp = Math.max(availableCharacterExp - coveredExp, 0);
+    const missingExp = Math.max(requiredExp - coveredExp, 0);
+
+    return {
+      ...slice,
+      missingAmount: missingExp / expValue,
+      assumptions:
+        coveredExp > 0
+          ? [...slice.assumptions, "Owned Character EXP books are pooled by EXP value before Blossom of Revelation estimates."]
+          : slice.assumptions,
+    };
+  });
 }
 
 function applyGuaranteedCraftingCoverage(
@@ -363,6 +436,83 @@ function applyExpectedCraftingCoverage(
   return adjusted;
 }
 
+function applyOwnedWeeklyConversionCoverage(
+  slices: InventoryDeficitSlice[],
+  materialRows: MaterialNeedRow[],
+  inventory: AccountInventoryState,
+  staticData: StaticGameData,
+): InventoryDeficitSlice[] {
+  let solventRemaining = Math.max(0, Math.floor(inventory.DreamSolvent ?? 0));
+  if (solventRemaining <= 0) {
+    return slices;
+  }
+
+  const requiredByMaterial = new Map(materialRows.map((row) => [row.materialKey, row.needed]));
+  const availableAlternatives = new Map<string, number>();
+  for (const [materialKey, quantity] of Object.entries(inventory)) {
+    const record = getRecord(staticData, materialKey);
+    if (record?.category !== "weekly_boss_material") {
+      continue;
+    }
+    availableAlternatives.set(
+      materialKey,
+      Math.max(0, Math.floor(quantity) - (requiredByMaterial.get(materialKey) ?? 0)),
+    );
+  }
+
+  return slices.map((slice) => {
+    if (slice.kind !== "weekly_boss_material" || slice.missingAmount <= 0 || solventRemaining <= 0) {
+      return slice;
+    }
+
+    const targetSourceKey = staticData.materialSources[slice.materialKey]?.find(
+      (source) => source.sourceType === "weekly_boss",
+    )?.sourceKey;
+    if (!targetSourceKey) {
+      return slice;
+    }
+
+    let converted = 0;
+    const alternatives = [...availableAlternatives.entries()]
+      .filter(([materialKey, quantity]) => {
+        if (materialKey === slice.materialKey || quantity <= 0) {
+          return false;
+        }
+        return staticData.materialSources[materialKey]?.some(
+          (source) => source.sourceType === "weekly_boss" && source.sourceKey === targetSourceKey,
+        );
+      })
+      .sort(([left], [right]) => left.localeCompare(right));
+
+    for (const [materialKey, quantity] of alternatives) {
+      if (converted >= slice.missingAmount || solventRemaining <= 0) {
+        break;
+      }
+      const amount = Math.min(quantity, solventRemaining, slice.missingAmount - converted);
+      if (amount <= 0) {
+        continue;
+      }
+      availableAlternatives.set(materialKey, quantity - amount);
+      solventRemaining -= amount;
+      converted += amount;
+    }
+
+    if (converted <= 0) {
+      return slice;
+    }
+
+    return {
+      ...slice,
+      missingAmount: slice.missingAmount - converted,
+      deterministicConversionCoverage: (slice.deterministicConversionCoverage ?? 0) + converted,
+      assumptions: [
+        ...slice.assumptions,
+        `${converted} currently owned same-boss material(s) converted with Dream Solvent before farming estimates.`,
+      ],
+    };
+  });
+}
+
 function sourceNameFromSlice(slice: InventoryDeficitSlice, staticData: StaticGameData): string | null {
   switch (slice.kind) {
     case "normal_boss_material": {
@@ -375,7 +525,7 @@ function sourceNameFromSlice(slice: InventoryDeficitSlice, staticData: StaticGam
     }
     case "talent_book": {
       const familyKey = slice.talentBookFamilyKey;
-      return familyKey ? staticData.talentBookFamilies[familyKey]?.domainName ?? staticData.materialSources[slice.materialKey]?.[0]?.sourceName ?? null : null;
+      return (familyKey ? staticData.talentBookFamilies[familyKey]?.domainName : undefined) ?? staticData.materialSources[slice.materialKey]?.[0]?.sourceName ?? null;
     }
     case "weapon_ascension_material": {
       const familyKey = slice.weaponAscensionFamilyKey ?? getRecord(staticData, slice.materialKey)?.familyKey;
@@ -434,8 +584,9 @@ function classifySourceType(kind: InventoryDeficitKind): SourceAssignment["sourc
     case "weapon_ascension_material":
       return "domain_of_forgery";
     case "normal_boss_material":
-    case "ascension_gem":
       return "normal_boss";
+    case "ascension_gem":
+      return "ascension_gem";
     case "weekly_boss_material":
       return "weekly_boss";
     case "general_enemy_drop":
@@ -452,9 +603,11 @@ export function buildSourceAssignments(params: {
   goalResolutions: GoalResolutionItem[];
   exactMaterialRows: MaterialNeedRow[];
   craftingPlan?: CraftingPlan;
+  inventory: AccountInventoryState;
   staticData: StaticGameData;
   resinSettings: PlannerSettings;
   coverageMode: CraftingCoverageMode;
+  today?: DayOfWeek;
 }): {
   sourceAssignments: SourceAssignment[];
   settings: PlannerEstimationSettings;
@@ -467,7 +620,10 @@ export function buildSourceAssignments(params: {
   );
 
   let adjustedSlices = allocateMissingAcrossSlices(slices, params.exactMaterialRows);
+  adjustedSlices = applyCharacterExpValueCoverage(adjustedSlices, params.inventory, params.staticData);
   if (params.coverageMode !== "none" && params.craftingPlan?.totalCraftingMora) {
+    const progressionMora = params.exactMaterialRows.find(row => row.materialKey === "Mora")?.needed ?? 0;
+    const surplusMora = Math.max(0, (params.inventory.Mora ?? 0) - progressionMora);
     adjustedSlices.push({
       id: "crafting-mora",
       goalKey: "crafting",
@@ -476,29 +632,45 @@ export function buildSourceAssignments(params: {
       materialKey: "Mora",
       materialName: "Mora",
       requiredAmount: params.craftingPlan.totalCraftingMora,
-      missingAmount: params.craftingPlan.totalCraftingMora,
+      missingAmount: Math.max(0, params.craftingPlan.totalCraftingMora - surplusMora),
       kind: "mora",
       availability: "ALWAYS",
-      assumptions: ["Crafting Mora is estimated separately from progression Mora."],
+      assumptions: ["Crafting Mora uses account Mora remaining after progression requirements."],
       warnings: [],
     });
   }
 
   if (params.coverageMode !== "none") {
     adjustedSlices = applyGuaranteedCraftingCoverage(adjustedSlices, params.craftingPlan);
+    adjustedSlices = applyOwnedWeeklyConversionCoverage(
+      adjustedSlices,
+      params.exactMaterialRows,
+      params.inventory,
+      params.staticData,
+    );
   }
   if (params.coverageMode === "expected") {
     adjustedSlices = applyExpectedCraftingCoverage(adjustedSlices, params.exactMaterialRows, params.craftingPlan);
   }
 
+  const unconfigured = new Set(farmingRequirements(params.staticData).map(row => row.materialKey));
   const sourceAssignments = adjustedSlices
     .filter((slice) => slice.missingAmount > 0)
-    .map((slice) => ({
+    .map((slice) => {
+      const sourceType = classifySourceType(slice.kind);
+      const alternatives = (params.staticData.materialSources[slice.materialKey] ?? []).filter(source =>
+        source.sourceType === sourceType && source.sourceKey && source.sourceName && validAvailability(source.availability) && source.availability !== 'UNKNOWN' &&
+        (!['domain_of_mastery', 'domain_of_forgery', 'normal_boss', 'weekly_boss'].includes(sourceType) || (source.resinCost ?? 0) > 0));
+      const selected = alternatives.find(source => params.today && availabilityMatchesDay(source.availability, params.today)) ?? alternatives[0];
+      const sameSource = alternatives.filter(source => source.sourceKey === selected?.sourceKey);
+      const availability = sameSource.length > 1 ? availabilityFromDays([...new Set(sameSource.flatMap(source => availabilityDays(source.availability)))]) : selected?.availability ?? slice.availability;
+      return {
       ...slice,
-      sourceType: classifySourceType(slice.kind),
-      sourceName: sourceNameFromSlice(slice, params.staticData),
+      availability: unconfigured.has(slice.materialKey) ? "UNKNOWN" as const : availability,
+      sourceType: unconfigured.has(slice.materialKey) || availability === "UNKNOWN" ? "unknown" as const : sourceType,
+      sourceName: selected?.sourceName ?? sourceNameFromSlice(slice, params.staticData),
       targetTierIndex: targetTierIndexForMaterial(slice.materialKey, slice.kind, params.staticData),
-    }));
+    }; });
 
   return {
     sourceAssignments,

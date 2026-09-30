@@ -4,12 +4,16 @@ Krumpanion is a Genshin Impact planning and database workspace that imports GOOD
 
 Krumpanion now supports multiple accounts in one installation. Each account keeps its own imported GOOD snapshot, owned characters and weapons, goals, planner settings, world state, and import history, while the static game database and override packs remain global.
 
+Automatic Tier 1/2 updates import live identities and exact progression from AnimeGameData2. Open **Database > Game Data** for revision checks and dataset import, **Farming Setup** for missing sources, and **Advanced** for portable patch authoring. See [Automatic Database Updates](docs/AUTOMATIC_DATABASE_UPDATES.md) and the [implementation report](docs/AUTOMATIC_DATABASE_UPDATES_REPORT.md).
+
 ## Architecture
 
 - `src/`
   Runtime application code only.
+- `src/data/database/`
+  Canonical bundled game data.
 - `src/data/runtime/`
-  Runtime-loaded seed data and generated normalized database artifacts.
+  Historical/reference artifacts; not the runtime source of truth.
 - `data_sources/`
   Raw import payloads and staging source tables used to build generated runtime data.
 - `tools/data/`
@@ -34,17 +38,11 @@ Krumpanion now supports multiple accounts in one installation. Each account keep
 
 ## Data Workflow
 
-Krumpanion now separates raw source payloads from runtime data.
+The runtime loads the canonical bundle through `loadStaticData()` and applies validated local override packs. Automatic updates use the existing change-set compiler, merge, validation, and persistence pipeline. Farming metadata remains manual. Historical builders in `tools/data/` can still prepare authoring references; their generated artifacts are not loaded as a second database.
 
-- Raw tables belong in `data_sources/`
-- Builders in `tools/data/` normalize them into generated runtime JSON under `src/data/runtime/generated/`
-- The runtime app consumes only normalized runtime data and override packs
-
-Current generated workflow:
-
-- `npm run data:build-character-index`
-
-This rebuilds Character Index-derived material profile artifacts from the raw source table in `data_sources/character-index/`.
+- `npm run data:fetch-upstream -- <output.json>` creates a versioned, integrity-checked dataset bundle for application import.
+- `npm run data:validate` writes the bundled database health reports.
+- Save schema 15 includes application-wide synchronization metadata, account-associated discoveries, farming provenance/conflicts, and extractor capability in full backups.
 
 ## Multi-Account Notes
 
@@ -105,3 +103,7 @@ Bulk paste rules:
 - The runtime database prefers profile- and family-driven material resolution over handwritten per-entity tables.
 - Any new user-owned, goal, planner, or import state should be account-scoped by default.
 - Any new static game database data should remain global.
+
+Automatic updates now include verified material-family and domain relationships, protected manual farming fields, and shared weekday configuration. See [Farming Data Pipeline](docs/FARMING_DATA_PIPELINE.md). Run `npm run test:e2e` for the required Firefox browser suite and `npm run data:validate-upstream` for opt-in live provider validation.
+
+Phase 3 adds reproducible canonical repair (`data:repair-canonical`), dynamic scene coverage, an opt-in five-run browser benchmark (`test:performance`), and bundle analysis (`data:analyze-bundle`). See the Phase 3 section of the automatic-update implementation report for acceptance evidence and remaining manual data.

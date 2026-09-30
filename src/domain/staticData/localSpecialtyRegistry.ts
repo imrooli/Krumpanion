@@ -93,6 +93,7 @@ export const LOCAL_SPECIALTIES_BY_REGION = LOCAL_SPECIALTIES.reduce(
     Fontaine: [],
     Natlan: [],
     "Nod-Krai": [],
+    Snezhnaya: [],
   } as Record<LocalSpecialtyRegion, LocalSpecialtyMaterial[]>,
 );
 

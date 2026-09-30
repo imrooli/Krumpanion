@@ -82,9 +82,10 @@ describe("planner farming estimates", () => {
 
     expect(result.farmingEstimates).toHaveLength(1);
     expect(result.farmingEstimates[0]?.sourceType).toBe("ley_line_revelation");
-    expect(result.farmingEstimates[0]?.estimatedRuns).toBeCloseTo(0.7755102040816326);
+    expect(result.farmingEstimates[0]?.estimatedRuns).toBeCloseTo(95000 / 110000);
     expect(result.farmingEstimates[0]?.actionableRuns).toBe(1);
     expect(result.farmingEstimates[0]?.estimatedResin).toBe(20);
+    expect(result.farmingEstimates[0]?.expectedEstimate.runs).toBeCloseTo(95000 / 122500);
     expect(result.farmingEstimates[0]?.assumptions.some((line) => line.includes("122500"))).toBe(true);
   });
 
@@ -150,8 +151,42 @@ describe("planner farming estimates", () => {
     expect(estimate?.relatedMaterialKeys).toEqual(
       expect.arrayContaining(["TeachingsOfFreedom", "GuideToFreedom", "PhilosophiesOfFreedom"]),
     );
-    expect(estimate?.estimatedRuns).toBeLessThan(naiveRuns);
+    expect(estimate?.estimatedRuns).toBe(9);
+    expect(estimate?.expectedEstimate.runs).toBeLessThan(naiveRuns);
     expect(estimate?.estimatedResin).toBe((estimate?.actionableRuns ?? 0) * 20);
+  });
+
+  it("does not collapse a 44-philosophy deficit into only a few expected Level IV runs", () => {
+    const staticData = loadStaticData();
+    const result = buildFarmingEstimates({
+      sourceAssignments: [
+        assignment({
+          materialKey: "PhilosophiesOfVagrancy",
+          materialName: "Philosophies of Vagrancy",
+          requiredAmount: 44,
+          missingAmount: 44,
+          kind: "talent_book",
+          sourceType: "domain_of_mastery",
+          sourceName: "Lightless Capital",
+          availability: "WED_SAT_SUN",
+          targetTierIndex: 2,
+          talentBookFamilyKey: "Vagrancy",
+        }),
+      ],
+      staticData,
+      resinSettings: {
+        ...DEFAULT_GOALS.plannerSettings,
+        domainLevel: "IV",
+        craftAwareEstimates: true,
+      },
+      today: "Wednesday",
+    });
+
+    const estimate = result.farmingEstimates[0];
+    expect(estimate?.guaranteedEstimate.actionableRuns).toBe(198);
+    expect(estimate?.expectedEstimate.runs).toBeCloseTo(396 / 10.12, 5);
+    expect(estimate?.expectedEstimate.actionableRuns).toBe(40);
+    expect(estimate?.expectedEstimate.resin).toBe(800);
   });
 
   it("uses the max direct-tier runs when craft-aware estimates are disabled", () => {
@@ -202,9 +237,11 @@ describe("planner farming estimates", () => {
       2 / (model.threeStar?.average ?? 1),
     );
 
-    expect(result.farmingEstimates[0]?.estimatedRuns).toBeCloseTo(expectedEstimatedRuns);
-    expect(result.farmingEstimates[0]?.actionableRuns).toBe(expectedRuns);
-    expect(result.farmingEstimates[0]?.estimatedResin).toBe(expectedRuns * 20);
+    expect(result.farmingEstimates[0]?.estimatedRuns).toBe(6);
+    expect(result.farmingEstimates[0]?.actionableRuns).toBe(6);
+    expect(result.farmingEstimates[0]?.estimatedResin).toBe(120);
+    expect(result.farmingEstimates[0]?.expectedEstimate.runs).toBeCloseTo(expectedEstimatedRuns);
+    expect(result.farmingEstimates[0]?.expectedEstimate.actionableRuns).toBe(expectedRuns);
   });
 
   it("drives normal boss resin only from missing unique boss materials", () => {
@@ -244,9 +281,10 @@ describe("planner farming estimates", () => {
 
     const estimate = result.farmingEstimates[0];
     expect(estimate?.materialKey).toBe("BasaltPillar");
-    expect(estimate?.estimatedRuns).toBeCloseTo(1.9564877132571608);
-    expect(estimate?.actionableRuns).toBe(2);
-    expect(estimate?.estimatedResin).toBe(80);
+    expect(estimate?.estimatedRuns).toBe(2.5);
+    expect(estimate?.actionableRuns).toBe(3);
+    expect(estimate?.estimatedResin).toBe(120);
+    expect(estimate?.expectedEstimate.runs).toBeCloseTo(5 / 2.5556);
     expect(estimate?.relatedMaterialKeys).toEqual(expect.arrayContaining(["BasaltPillar", "PrithivaTopazChunk"]));
     expect(estimate?.assumptions.some((line) => line.includes("incidental"))).toBe(true);
   });
@@ -341,10 +379,12 @@ describe("planner farming estimates", () => {
       today: "Monday",
     });
 
-    expect(result.farmingEstimates[0]?.estimatedRuns).toBeCloseTo(7.5);
-    expect(result.farmingEstimates[0]?.actionableRuns).toBe(8);
+    expect(result.farmingEstimates[0]?.estimatedRuns).toBeNull();
+    expect(result.farmingEstimates[0]?.actionableRuns).toBeNull();
     expect(result.farmingEstimates[0]?.weeklyGate?.estimatedWeeks).toBe(8);
-    expect(result.farmingEstimates[0]?.estimatedResin).toBe(240);
+    expect(result.farmingEstimates[0]?.estimatedResin).toBeNull();
+    expect(result.farmingEstimates[0]?.expectedEstimate.runs).toBeCloseTo(7.5);
+    expect(result.farmingEstimates[0]?.expectedEstimate.resin).toBe(240);
     expect(result.farmingEstimates[0]?.assumptions.some((line) => line.includes("0.8 target-specific"))).toBe(true);
   });
 
@@ -375,9 +415,15 @@ describe("planner farming estimates", () => {
 
     expect(result.farmingEstimates[0]).toMatchObject({
       sourceType: "weekly_boss",
-      estimatedRuns: 9,
+      estimatedRuns: null,
+      actionableRuns: null,
+      estimatedResin: null,
+      contributesToGuaranteedTotal: false,
+    });
+    expect(result.farmingEstimates[0]?.expectedEstimate).toMatchObject({
+      runs: 9,
       actionableRuns: 9,
-      estimatedResin: 270,
+      resin: 270,
     });
     expect(result.farmingEstimates[0]?.warnings.some((warning) => warning.includes("2/3 expected target material"))).toBe(true);
   });
@@ -416,9 +462,10 @@ describe("planner farming estimates", () => {
     });
 
     expect(result.farmingEstimates).toHaveLength(1);
-    expect(result.farmingEstimates[0]?.estimatedRuns).toBeCloseTo(1.25);
-    expect(result.farmingEstimates[0]?.actionableRuns).toBe(2);
-    expect(result.farmingEstimates[0]?.estimatedResin).toBe(60);
+    expect(result.farmingEstimates[0]?.estimatedRuns).toBeNull();
+    expect(result.farmingEstimates[0]?.expectedEstimate.runs).toBeCloseTo(1.25);
+    expect(result.farmingEstimates[0]?.expectedEstimate.actionableRuns).toBe(2);
+    expect(result.farmingEstimates[0]?.expectedEstimate.resin).toBe(60);
   });
 
   it("applies the first-week weekly discount remainder across multiple bosses", () => {
@@ -455,8 +502,10 @@ describe("planner farming estimates", () => {
       today: "Monday",
     });
 
-    const totalResin = result.farmingEstimates.reduce((sum, estimate) => sum + (estimate.estimatedResin ?? 0), 0);
-    expect(totalResin).toBe(150);
+    const guaranteedResin = result.farmingEstimates.reduce((sum, estimate) => sum + (estimate.estimatedResin ?? 0), 0);
+    const expectedResin = result.farmingEstimates.reduce((sum, estimate) => sum + (estimate.expectedEstimate.resin ?? 0), 0);
+    expect(guaranteedResin).toBe(0);
+    expect(expectedResin).toBe(150);
   });
 
   it("keeps local specialties and open-world drops out of total resin", () => {
@@ -635,5 +684,79 @@ describe("planner farming estimates", () => {
     expect(emptyInventory.totalMissingByMaterial.map((row) => [row.materialKey, row.needed])).toEqual(
       changedEstimateSettings.totalMissingByMaterial.map((row) => [row.materialKey, row.needed]),
     );
+  });
+
+  it("uses total owned Character EXP book value before estimating Revelation blossoms", () => {
+    const staticData = loadStaticData({
+      version: 1,
+      characterMaterialProfiles: {
+        TestCharacter: {
+          characterKey: "TestCharacter",
+          gemSeries: ["TestGemSliver", "TestGemFragment", "TestGemChunk", "TestGemstone"],
+          localSpecialty: "CallaLily",
+          normalBossMaterial: "BasaltPillar",
+          enemyDropFamily: ["SlimeCondensate", "SlimeSecretions", "SlimeConcentrate"],
+          talentBookFamily: ["TeachingsOfFreedom", "GuideToFreedom", "PhilosophiesOfFreedom"],
+          weeklyBossMaterial: "DvalinsPlume",
+        },
+      },
+    });
+    const planner = buildPlannerOutput({
+      inventory: {
+        HerosWit: 100,
+        AdventurersExperience: 1000,
+        WanderersAdvice: 1367,
+      },
+      ownership: {
+        characters: [
+          {
+            characterId: "TestCharacter",
+            currentLevel: 1,
+            currentAscension: 0,
+            currentTalents: { normal: 1, skill: 1, burst: 1 },
+          },
+        ],
+        weapons: [],
+        artifacts: [],
+      },
+      goals: {
+        ...DEFAULT_GOALS,
+        characterGoals: {
+          TestCharacter: {
+            characterKey: "TestCharacter",
+            enabled: true,
+            priority: 3,
+            targetLevel: 90,
+            targetAscension: 6,
+          },
+        },
+        weaponGoals: {},
+        artifactGoals: [],
+      },
+      staticData,
+      today: "Monday",
+      resinSettings: {
+        ...DEFAULT_GOALS.plannerSettings,
+        worldLevel: 8,
+      },
+    });
+
+    const expRequirement = planner.deterministicRequirements
+      .filter((requirement) => requirement.category === "character_exp")
+      .reduce((sum, requirement) => {
+        const fallbackValues: Record<string, number> = {
+          HerosWit: 20000,
+          AdventurersExperience: 5000,
+          WanderersAdvice: 1000,
+        };
+        const material = staticData.materials[requirement.materialKey] as
+          | (typeof staticData.materials[string] & { expValue?: number })
+          | undefined;
+        return sum + requirement.quantityRequired * (material?.characterExpValue ?? fallbackValues[requirement.materialKey] ?? 0);
+      }, 0);
+    const ownedExp = 100 * 20000 + 1000 * 5000 + 1367 * 1000;
+
+    expect(ownedExp).toBe(expRequirement);
+    expect(planner.farmingEstimates.some((estimate) => estimate.sourceType === "ley_line_revelation")).toBe(false);
   });
 });

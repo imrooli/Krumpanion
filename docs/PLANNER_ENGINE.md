@@ -78,10 +78,13 @@ type PlannerOutput = {
    - calculate weapon EXP/ascension materials missing
    - group into a weapon plan
 7. For each artifact goal:
-   - add as a Resin-budgeted farming plan, not a deterministic material shortage
+   - add descriptive farming guidance only; never add it to deterministic Resin totals
 8. Sum material requirements across all goals.
 9. Build deterministic inventory coverage from the active account inventory only.
-10. Apply guaranteed crafting coverage to exact deficits and expected-value crafting coverage only to estimate-side resin projections.
+10. Apply guaranteed crafting and current-inventory deterministic conversions to exact deficits.
+    - Dust conversion uses currently owned off-element gems and Dust only.
+    - Weekly conversion uses currently owned same-boss surplus and Dream Solvent only.
+    - Expected crafting passives affect advisory estimates only.
 11. Build exact non-negative material deficits.
 12. Attach source metadata:
    - domain
@@ -90,10 +93,11 @@ type PlannerOutput = {
    - weekly boss
    - day availability
    - Resin cost
-13. Build source-level farming estimates:
+13. Build source-level farming estimates with two isolated layers:
    - deterministic requirements stay exact
    - inventory deficits stay exact
-   - crafting-adjusted deficits feed the estimator
+   - guaranteed deficits use validated minimum rewards
+   - expected deficits use average rewards and are advisory only
    - one activity claim can satisfy multiple related material deficits
 14. Group by availability and source section.
 15. Build Planner tab rows.
@@ -175,7 +179,7 @@ type AvailabilityGroupKey =
   | "UNKNOWN";
 ```
 
-Sunday should show all rotating talent/weapon domain materials.
+Sunday shows only materials whose normalized availability includes Sunday; unresolved schedules remain unscheduled.
 
 ## Priority calculation
 
@@ -195,9 +199,9 @@ Planner Priority is now grouped by actionable activity first, then sorted within
 4. Open-World Farming
 5. Passive / Incidental / Conversion
 
-Within the Resin-Gated group, rows are sorted by total estimated Resin descending, then estimated runs, then title.
+Within the Resin-Gated group, rows are sorted by guaranteed Resin descending, then guaranteed runs, then title.
 
-The Priority table's Resin column shows total estimated Resin for the recommendation. Per-run Resin belongs in detail text only, for example `435 runs x 20 resin`.
+The Priority table's primary Resin value shows guaranteed Resin. Expected Resin is labeled `Advisory only`. Per-run Resin belongs in detail text.
 
 The internal score still starts from:
 
@@ -357,3 +361,17 @@ The UI adapter must not change the underlying deterministic planner math when de
 - Tiny floating-point artifacts near zero are treated as zero and do not create actionable rows.
 - Crafting suggestions only render when the useful crafted quantity is positive.
 - Crafting suggestions cap displayed coverage to the useful deficit and never show negative coverage.
+
+## Automatically identified farming relationships
+
+Structured upstream reward membership can supply a family and physical domain, but does not supply yield or probability. Existing yield assumptions remain independent. Unresolved availability remains unscheduled. Manual weekdays are shared per family/source relationship; validated custom weekday combinations participate in daily matching and weekly groups. See [Farming Data Pipeline](FARMING_DATA_PIPELINE.md).
+
+The Phase 3 weekday investigation did not establish authoritative automatic schedules. Manual and custom `DAYS_` availability remain supported. Conditional fungus ley-line drop families remain unresolved rather than being added as unconditional rewards.
+
+## Phase 4 account accounting and policy audit
+
+The planner aggregates remaining progression demand across active account goals before subtracting owned inventory once. Eight plus six required with six owned means eight missing, independent of goal priority. Source-slice attribution uses iteration order; the shared-readiness UI uses descending goal priority then label. These attribution policies do not change the aggregate demand.
+
+Crafting uses a shared working inventory, reserves direct lower-tier demand, and proceeds by ascending tier. Optional gem conversion also preserves reserved demand and consumes every converted unit. Crafting Mora joins progression Mora before inventory subtraction; farming estimates and displayed deficits use the same account balance. Paused goals are independent previews and no longer emit executable craft suggestions against the active pool.
+
+Read resource accounting, availability, and prioritization as separate layers. A correct deficit does not establish that the recommendation order is desirable. Resin recommendations currently sort by activity group/subgroup, estimated resin/runs and title; user goal priority does not determine this ranking. Daily resin budgets estimate duration and do not allocate a finite daily plan. See [the ten-layer Phase 4 audit](PHASE4_DATABASE_PLANNER_AUDIT.md) for tests, corrections, limitations, and the next policy decision.

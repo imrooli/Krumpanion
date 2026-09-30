@@ -19,7 +19,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000121,
+    "rarity": 4,
+    "weaponType": "Claymore",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        121,
+        12101,
+        12131,
+        12132,
+        12139
+      ]
+    }
   },
   "Albedo": {
     "characterKey": "Albedo",
@@ -41,7 +56,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000038,
+    "rarity": 5,
+    "weaponType": "Sword",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        38,
+        3801,
+        3831,
+        3832,
+        3839
+      ]
+    }
   },
   "Alhaitham": {
     "characterKey": "Alhaitham",
@@ -63,7 +93,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000078,
+    "rarity": 5,
+    "weaponType": "Sword",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        78,
+        7801,
+        7831,
+        7832,
+        7839
+      ]
+    }
   },
   "Aloy": {
     "characterKey": "Aloy",
@@ -85,7 +130,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000062,
+    "rarity": 5,
+    "weaponType": "Bow",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        62,
+        6201,
+        6231,
+        6232,
+        6239
+      ]
+    }
   },
   "Amber": {
     "characterKey": "Amber",
@@ -107,7 +167,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000021,
+    "rarity": 4,
+    "weaponType": "Bow",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        21,
+        2101,
+        2131,
+        2132,
+        2139
+      ]
+    }
   },
   "AratakiItto": {
     "characterKey": "AratakiItto",
@@ -129,7 +204,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000057,
+    "rarity": 5,
+    "weaponType": "Claymore",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        57,
+        5701,
+        5731,
+        5732,
+        5739
+      ]
+    }
   },
   "Arlecchino": {
     "characterKey": "Arlecchino",
@@ -151,7 +241,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000096,
+    "rarity": 5,
+    "weaponType": "Polearm",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        96,
+        9601,
+        9631,
+        9632,
+        9639
+      ]
+    }
   },
   "Baizhu": {
     "characterKey": "Baizhu",
@@ -173,7 +278,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000082,
+    "rarity": 5,
+    "weaponType": "Catalyst",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        82,
+        8201,
+        8231,
+        8232,
+        8239
+      ]
+    }
   },
   "Barbara": {
     "characterKey": "Barbara",
@@ -195,7 +315,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000014,
+    "rarity": 4,
+    "weaponType": "Catalyst",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        14,
+        1401,
+        1431,
+        1432,
+        1439
+      ]
+    }
   },
   "Beidou": {
     "characterKey": "Beidou",
@@ -217,7 +352,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000024,
+    "rarity": 4,
+    "weaponType": "Claymore",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        24,
+        2401,
+        2431,
+        2432,
+        2439
+      ]
+    }
   },
   "Bennett": {
     "characterKey": "Bennett",
@@ -240,7 +390,21 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000032,
+    "rarity": 4,
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        32,
+        3201,
+        3231,
+        3232,
+        3239
+      ]
+    }
   },
   "Candace": {
     "characterKey": "Candace",
@@ -262,7 +426,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000072,
+    "rarity": 4,
+    "weaponType": "Polearm",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        72,
+        7201,
+        7231,
+        7232,
+        7239
+      ]
+    }
   },
   "Charlotte": {
     "characterKey": "Charlotte",
@@ -284,7 +463,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000088,
+    "rarity": 4,
+    "weaponType": "Catalyst",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        88,
+        8801,
+        8831,
+        8832,
+        8839
+      ]
+    }
   },
   "Chasca": {
     "characterKey": "Chasca",
@@ -306,7 +500,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000104,
+    "rarity": 5,
+    "weaponType": "Bow",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        104,
+        10401,
+        10431,
+        10432,
+        10439
+      ]
+    }
   },
   "Chevreuse": {
     "characterKey": "Chevreuse",
@@ -328,7 +537,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000090,
+    "rarity": 4,
+    "weaponType": "Polearm",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        90,
+        9001,
+        9031,
+        9032,
+        9039
+      ]
+    }
   },
   "Chiori": {
     "characterKey": "Chiori",
@@ -350,7 +574,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000094,
+    "rarity": 5,
+    "weaponType": "Sword",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        94,
+        9401,
+        9431,
+        9432,
+        9439
+      ]
+    }
   },
   "Chongyun": {
     "characterKey": "Chongyun",
@@ -372,7 +611,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000036,
+    "rarity": 4,
+    "weaponType": "Claymore",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        36,
+        3601,
+        3631,
+        3632,
+        3639
+      ]
+    }
   },
   "Citlali": {
     "characterKey": "Citlali",
@@ -394,7 +648,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000107,
+    "rarity": 5,
+    "weaponType": "Catalyst",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        107,
+        10701,
+        10731,
+        10732,
+        10739
+      ]
+    }
   },
   "Clorinde": {
     "characterKey": "Clorinde",
@@ -416,7 +685,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000098,
+    "rarity": 5,
+    "weaponType": "Sword",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        98,
+        9801,
+        9831,
+        9832,
+        9839
+      ]
+    }
   },
   "Collei": {
     "characterKey": "Collei",
@@ -438,7 +722,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000067,
+    "rarity": 4,
+    "weaponType": "Bow",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        67,
+        6701,
+        6731,
+        6732,
+        6739
+      ]
+    }
   },
   "Columbina": {
     "characterKey": "Columbina",
@@ -460,7 +759,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000125,
+    "rarity": 5,
+    "weaponType": "Catalyst",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        125,
+        12501,
+        12531,
+        12532,
+        12539
+      ]
+    }
   },
   "Cyno": {
     "characterKey": "Cyno",
@@ -482,7 +796,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000071,
+    "rarity": 5,
+    "weaponType": "Polearm",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        71,
+        7101,
+        7131,
+        7132,
+        7139
+      ]
+    }
   },
   "Dahlia": {
     "characterKey": "Dahlia",
@@ -504,7 +833,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000115,
+    "rarity": 4,
+    "weaponType": "Sword",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        115,
+        11501,
+        11531,
+        11532,
+        11539
+      ]
+    }
   },
   "Dehya": {
     "characterKey": "Dehya",
@@ -526,7 +870,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000079,
+    "rarity": 5,
+    "weaponType": "Claymore",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        79,
+        7901,
+        7931,
+        7932,
+        7939
+      ]
+    }
   },
   "Diluc": {
     "characterKey": "Diluc",
@@ -548,7 +907,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000016,
+    "rarity": 5,
+    "weaponType": "Claymore",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        16,
+        1601,
+        1631,
+        1632,
+        1639
+      ]
+    }
   },
   "Diona": {
     "characterKey": "Diona",
@@ -570,7 +944,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000039,
+    "rarity": 4,
+    "weaponType": "Bow",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        39,
+        3901,
+        3931,
+        3932,
+        3939
+      ]
+    }
   },
   "Dori": {
     "characterKey": "Dori",
@@ -592,7 +981,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000068,
+    "rarity": 4,
+    "weaponType": "Claymore",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        68,
+        6801,
+        6831,
+        6832,
+        6839
+      ]
+    }
   },
   "Durin": {
     "characterKey": "Durin",
@@ -614,7 +1018,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000123,
+    "rarity": 5,
+    "weaponType": "Sword",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        123,
+        12301,
+        12331,
+        12332,
+        12339
+      ]
+    }
   },
   "Emilie": {
     "characterKey": "Emilie",
@@ -636,7 +1055,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000099,
+    "rarity": 5,
+    "weaponType": "Polearm",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        99,
+        9901,
+        9931,
+        9932,
+        9939
+      ]
+    }
   },
   "Escoffier": {
     "characterKey": "Escoffier",
@@ -658,7 +1092,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000112,
+    "rarity": 5,
+    "weaponType": "Polearm",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        112,
+        11201,
+        11231,
+        11232,
+        11239
+      ]
+    }
   },
   "Eula": {
     "characterKey": "Eula",
@@ -680,7 +1129,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000051,
+    "rarity": 5,
+    "weaponType": "Claymore",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        51,
+        5101,
+        5131,
+        5132,
+        5139
+      ]
+    }
   },
   "Faruzan": {
     "characterKey": "Faruzan",
@@ -702,7 +1166,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000076,
+    "rarity": 4,
+    "weaponType": "Bow",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        76,
+        7601,
+        7631,
+        7632,
+        7639
+      ]
+    }
   },
   "Fischl": {
     "characterKey": "Fischl",
@@ -724,7 +1203,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000031,
+    "rarity": 4,
+    "weaponType": "Bow",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        31,
+        3101,
+        3131,
+        3132,
+        3139
+      ]
+    }
   },
   "Flins": {
     "characterKey": "Flins",
@@ -746,7 +1240,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000120,
+    "rarity": 5,
+    "weaponType": "Polearm",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        120,
+        12001,
+        12031,
+        12032,
+        12039
+      ]
+    }
   },
   "Freminet": {
     "characterKey": "Freminet",
@@ -768,7 +1277,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000085,
+    "rarity": 4,
+    "weaponType": "Claymore",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        85,
+        8501,
+        8531,
+        8532,
+        8539
+      ]
+    }
   },
   "Furina": {
     "characterKey": "Furina",
@@ -791,7 +1315,21 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000089,
+    "rarity": 5,
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        89,
+        8901,
+        8931,
+        8932,
+        8939
+      ]
+    }
   },
   "Gaming": {
     "characterKey": "Gaming",
@@ -813,7 +1351,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000092,
+    "rarity": 4,
+    "weaponType": "Claymore",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        92,
+        9201,
+        9231,
+        9232,
+        9239
+      ]
+    }
   },
   "Ganyu": {
     "characterKey": "Ganyu",
@@ -835,7 +1388,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000037,
+    "rarity": 5,
+    "weaponType": "Bow",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        37,
+        3701,
+        3731,
+        3732,
+        3739
+      ]
+    }
   },
   "Gorou": {
     "characterKey": "Gorou",
@@ -857,7 +1425,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000055,
+    "rarity": 4,
+    "weaponType": "Bow",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        55,
+        5501,
+        5531,
+        5532,
+        5539
+      ]
+    }
   },
   "HuTao": {
     "characterKey": "HuTao",
@@ -879,7 +1462,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000046,
+    "rarity": 5,
+    "weaponType": "Polearm",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        46,
+        4601,
+        4631,
+        4632,
+        4639
+      ]
+    }
   },
   "Iansan": {
     "characterKey": "Iansan",
@@ -901,7 +1499,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000110,
+    "rarity": 4,
+    "weaponType": "Polearm",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        110,
+        11001,
+        11031,
+        11032,
+        11039
+      ]
+    }
   },
   "Ifa": {
     "characterKey": "Ifa",
@@ -923,7 +1536,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000113,
+    "rarity": 4,
+    "weaponType": "Catalyst",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        113,
+        11301,
+        11331,
+        11332,
+        11339
+      ]
+    }
   },
   "Illuga": {
     "characterKey": "Illuga",
@@ -945,7 +1573,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000127,
+    "rarity": 4,
+    "weaponType": "Polearm",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        127,
+        12701,
+        12731,
+        12732,
+        12739
+      ]
+    }
   },
   "Ineffa": {
     "characterKey": "Ineffa",
@@ -967,7 +1610,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000116,
+    "rarity": 5,
+    "weaponType": "Polearm",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        116,
+        11601,
+        11631,
+        11632,
+        11639
+      ]
+    }
   },
   "Jahoda": {
     "characterKey": "Jahoda",
@@ -989,7 +1647,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000124,
+    "rarity": 4,
+    "weaponType": "Bow",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        124,
+        12401,
+        12431,
+        12432,
+        12439
+      ]
+    }
   },
   "Jean": {
     "characterKey": "Jean",
@@ -1011,7 +1684,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000003,
+    "rarity": 5,
+    "weaponType": "Sword",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        3,
+        301,
+        331,
+        332,
+        339
+      ]
+    }
   },
   "Kachina": {
     "characterKey": "Kachina",
@@ -1033,7 +1721,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000100,
+    "rarity": 4,
+    "weaponType": "Polearm",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        100,
+        10001,
+        10031,
+        10032,
+        10039
+      ]
+    }
   },
   "KaedeharaKazuha": {
     "characterKey": "KaedeharaKazuha",
@@ -1055,7 +1758,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000047,
+    "rarity": 5,
+    "weaponType": "Sword",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        47,
+        4701,
+        4731,
+        4732,
+        4739
+      ]
+    }
   },
   "Kaeya": {
     "characterKey": "Kaeya",
@@ -1077,7 +1795,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000015,
+    "rarity": 4,
+    "weaponType": "Sword",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        15,
+        1501,
+        1531,
+        1532,
+        1539
+      ]
+    }
   },
   "KamisatoAyaka": {
     "characterKey": "KamisatoAyaka",
@@ -1099,7 +1832,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000002,
+    "rarity": 5,
+    "weaponType": "Sword",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        2,
+        201,
+        231,
+        232,
+        239
+      ]
+    }
   },
   "KamisatoAyato": {
     "characterKey": "KamisatoAyato",
@@ -1121,7 +1869,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000066,
+    "rarity": 5,
+    "weaponType": "Sword",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        66,
+        6601,
+        6631,
+        6632,
+        6639
+      ]
+    }
   },
   "Kaveh": {
     "characterKey": "Kaveh",
@@ -1143,7 +1906,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000081,
+    "rarity": 4,
+    "weaponType": "Claymore",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        81,
+        8101,
+        8131,
+        8132,
+        8139
+      ]
+    }
   },
   "Keqing": {
     "characterKey": "Keqing",
@@ -1165,7 +1943,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000042,
+    "rarity": 5,
+    "weaponType": "Sword",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        42,
+        4201,
+        4231,
+        4232,
+        4239
+      ]
+    }
   },
   "Kinich": {
     "characterKey": "Kinich",
@@ -1187,7 +1980,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000101,
+    "rarity": 5,
+    "weaponType": "Claymore",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        101,
+        10101,
+        10131,
+        10132,
+        10139
+      ]
+    }
   },
   "Kirara": {
     "characterKey": "Kirara",
@@ -1209,7 +2017,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000061,
+    "rarity": 4,
+    "weaponType": "Sword",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        61,
+        6101,
+        6131,
+        6132,
+        6139
+      ]
+    }
   },
   "Klee": {
     "characterKey": "Klee",
@@ -1231,7 +2054,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000029,
+    "rarity": 5,
+    "weaponType": "Catalyst",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        29,
+        2901,
+        2931,
+        2932,
+        2939
+      ]
+    }
   },
   "KujouSara": {
     "characterKey": "KujouSara",
@@ -1253,7 +2091,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000056,
+    "rarity": 4,
+    "weaponType": "Bow",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        56,
+        5601,
+        5631,
+        5632,
+        5639
+      ]
+    }
   },
   "KukiShinobu": {
     "characterKey": "KukiShinobu",
@@ -1275,7 +2128,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000065,
+    "rarity": 4,
+    "weaponType": "Sword",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        65,
+        6501,
+        6531,
+        6532,
+        6539
+      ]
+    }
   },
   "LanYan": {
     "characterKey": "LanYan",
@@ -1297,7 +2165,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000108,
+    "rarity": 4,
+    "weaponType": "Catalyst",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        108,
+        10801,
+        10831,
+        10832,
+        10839
+      ]
+    }
   },
   "Lauma": {
     "characterKey": "Lauma",
@@ -1319,7 +2202,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000119,
+    "rarity": 5,
+    "weaponType": "Catalyst",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        119,
+        11901,
+        11931,
+        11932,
+        11939
+      ]
+    }
   },
   "Layla": {
     "characterKey": "Layla",
@@ -1341,7 +2239,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000074,
+    "rarity": 4,
+    "weaponType": "Sword",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        74,
+        7401,
+        7431,
+        7432,
+        7439
+      ]
+    }
   },
   "Linnea": {
     "characterKey": "Linnea",
@@ -1363,7 +2276,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000130,
+    "rarity": 5,
+    "weaponType": "Bow",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        130,
+        13001,
+        13031,
+        13032,
+        13039
+      ]
+    }
   },
   "Lisa": {
     "characterKey": "Lisa",
@@ -1385,7 +2313,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000006,
+    "rarity": 4,
+    "weaponType": "Catalyst",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        4,
+        601,
+        431,
+        432,
+        439
+      ]
+    }
   },
   "Lohen": {
     "characterKey": "Lohen",
@@ -1397,9 +2340,9 @@
     "talentBookFamilyKey": "Resistance",
     "normalBossMaterialKey": "PrismaticSeveredTail",
     "weeklyBossMaterialKey": "AscendedSampleKnight",
-    "releaseState": "beta",
-    "status": "beta",
-    "plannerEligible": false,
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
     "region": "Mondstadt",
     "notes": [],
     "aliases": [
@@ -1407,7 +2350,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000129,
+    "rarity": 5,
+    "weaponType": "Polearm",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        129,
+        12901,
+        12931,
+        12932,
+        12939
+      ]
+    }
   },
   "Lynette": {
     "characterKey": "Lynette",
@@ -1429,7 +2387,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000083,
+    "rarity": 4,
+    "weaponType": "Sword",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        83,
+        8301,
+        8331,
+        8332,
+        8339
+      ]
+    }
   },
   "Lyney": {
     "characterKey": "Lyney",
@@ -1451,7 +2424,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000084,
+    "rarity": 5,
+    "weaponType": "Bow",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        84,
+        8401,
+        8431,
+        8432,
+        8439
+      ]
+    }
   },
   "Manekin": {
     "characterKey": "Manekin",
@@ -1511,7 +2499,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000106,
+    "rarity": 5,
+    "weaponType": "Claymore",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        106,
+        10601,
+        10631,
+        10632,
+        10639
+      ]
+    }
   },
   "Mika": {
     "characterKey": "Mika",
@@ -1533,7 +2536,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000080,
+    "rarity": 4,
+    "weaponType": "Polearm",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        80,
+        8001,
+        8031,
+        8032,
+        8039
+      ]
+    }
   },
   "Mona": {
     "characterKey": "Mona",
@@ -1555,7 +2573,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000041,
+    "rarity": 5,
+    "weaponType": "Catalyst",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        41,
+        4101,
+        4131,
+        4132,
+        4139
+      ]
+    }
   },
   "Mualani": {
     "characterKey": "Mualani",
@@ -1577,7 +2610,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000102,
+    "rarity": 5,
+    "weaponType": "Catalyst",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        102,
+        10201,
+        10231,
+        10232,
+        10239
+      ]
+    }
   },
   "Nahida": {
     "characterKey": "Nahida",
@@ -1599,7 +2647,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000073,
+    "rarity": 5,
+    "weaponType": "Catalyst",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        73,
+        7301,
+        7331,
+        7332,
+        7339
+      ]
+    }
   },
   "Navia": {
     "characterKey": "Navia",
@@ -1621,7 +2684,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000091,
+    "rarity": 5,
+    "weaponType": "Claymore",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        91,
+        9101,
+        9131,
+        9132,
+        9139
+      ]
+    }
   },
   "Nefer": {
     "characterKey": "Nefer",
@@ -1643,7 +2721,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000122,
+    "rarity": 5,
+    "weaponType": "Catalyst",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        122,
+        12201,
+        12231,
+        12232,
+        12239
+      ]
+    }
   },
   "Neuvillette": {
     "characterKey": "Neuvillette",
@@ -1665,7 +2758,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000087,
+    "rarity": 5,
+    "weaponType": "Catalyst",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        87,
+        8701,
+        8731,
+        8732,
+        8739
+      ]
+    }
   },
   "Nicole": {
     "characterKey": "Nicole",
@@ -1677,9 +2785,9 @@
     "talentBookFamilyKey": "Elysium",
     "normalBossMaterialKey": "RemnantOfTheDreadwing",
     "weeklyBossMaterialKey": "CounterfeitResin",
-    "releaseState": "beta",
-    "status": "beta",
-    "plannerEligible": false,
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
     "region": "Nod-Krai",
     "notes": [],
     "aliases": [
@@ -1687,7 +2795,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000131,
+    "rarity": 5,
+    "weaponType": "Catalyst",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        131,
+        13101,
+        13131,
+        13132,
+        13139
+      ]
+    }
   },
   "Nilou": {
     "characterKey": "Nilou",
@@ -1709,7 +2832,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000070,
+    "rarity": 5,
+    "weaponType": "Sword",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        70,
+        7001,
+        7031,
+        7032,
+        7039
+      ]
+    }
   },
   "Ningguang": {
     "characterKey": "Ningguang",
@@ -1731,7 +2869,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000027,
+    "rarity": 4,
+    "weaponType": "Catalyst",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        27,
+        2701,
+        2731,
+        2732,
+        2739
+      ]
+    }
   },
   "Noelle": {
     "characterKey": "Noelle",
@@ -1753,7 +2906,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000034,
+    "rarity": 4,
+    "weaponType": "Claymore",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        34,
+        3401,
+        3431,
+        3432,
+        3439
+      ]
+    }
   },
   "Ororon": {
     "characterKey": "Ororon",
@@ -1775,7 +2943,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000105,
+    "rarity": 4,
+    "weaponType": "Bow",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        105,
+        10501,
+        10531,
+        10532,
+        10539
+      ]
+    }
   },
   "Prune": {
     "characterKey": "Prune",
@@ -1787,9 +2970,9 @@
     "talentBookFamilyKey": "Resistance",
     "normalBossMaterialKey": "RadiantAntler",
     "weeklyBossMaterialKey": "MaskOfTheVirtuousDoctor",
-    "releaseState": "beta",
-    "status": "beta",
-    "plannerEligible": false,
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
     "region": "Nod-Krai",
     "notes": [],
     "aliases": [
@@ -1797,7 +2980,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000132,
+    "rarity": 4,
+    "weaponType": "Catalyst",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        132,
+        13201,
+        13231,
+        13232,
+        13239
+      ]
+    }
   },
   "Qiqi": {
     "characterKey": "Qiqi",
@@ -1819,7 +3017,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000035,
+    "rarity": 5,
+    "weaponType": "Sword",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        35,
+        3501,
+        3531,
+        3532,
+        3539
+      ]
+    }
   },
   "RaidenShogun": {
     "characterKey": "RaidenShogun",
@@ -1841,7 +3054,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000052,
+    "rarity": 5,
+    "weaponType": "Polearm",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        52,
+        5201,
+        5231,
+        5232,
+        5239
+      ]
+    }
   },
   "Razor": {
     "characterKey": "Razor",
@@ -1863,7 +3091,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000020,
+    "rarity": 4,
+    "weaponType": "Claymore",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        20,
+        2001,
+        2031,
+        2032,
+        2039
+      ]
+    }
   },
   "Rosaria": {
     "characterKey": "Rosaria",
@@ -1885,7 +3128,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000045,
+    "rarity": 4,
+    "weaponType": "Polearm",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        45,
+        4501,
+        4531,
+        4532,
+        4539
+      ]
+    }
   },
   "Sandrone": {
     "characterKey": "Sandrone",
@@ -1897,9 +3155,9 @@
     "talentBookFamilyKey": "Vagrancy",
     "normalBossMaterialKey": "PlumeOfTheFallenWatcher",
     "weeklyBossMaterialKey": "MadmansRestraint",
-    "releaseState": "beta",
-    "status": "beta",
-    "plannerEligible": false,
+    "releaseState": "live",
+    "status": "verified",
+    "plannerEligible": true,
     "region": "Nod-Krai",
     "notes": [],
     "aliases": [
@@ -1907,7 +3165,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000133,
+    "rarity": 5,
+    "weaponType": "Claymore",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        133,
+        13301,
+        13331,
+        13332,
+        13339
+      ]
+    }
   },
   "SangonomiyaKokomi": {
     "characterKey": "SangonomiyaKokomi",
@@ -1929,7 +3202,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000054,
+    "rarity": 5,
+    "weaponType": "Catalyst",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        54,
+        5401,
+        5431,
+        5432,
+        5439
+      ]
+    }
   },
   "Sayu": {
     "characterKey": "Sayu",
@@ -1951,7 +3239,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000053,
+    "rarity": 4,
+    "weaponType": "Claymore",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        53,
+        5301,
+        5331,
+        5332,
+        5339
+      ]
+    }
   },
   "Sethos": {
     "characterKey": "Sethos",
@@ -1973,7 +3276,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000097,
+    "rarity": 4,
+    "weaponType": "Bow",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        97,
+        9701,
+        9731,
+        9732,
+        9739
+      ]
+    }
   },
   "Shenhe": {
     "characterKey": "Shenhe",
@@ -1995,7 +3313,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000063,
+    "rarity": 5,
+    "weaponType": "Polearm",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        63,
+        6301,
+        6331,
+        6332,
+        6339
+      ]
+    }
   },
   "ShikanoinHeizou": {
     "characterKey": "ShikanoinHeizou",
@@ -2017,7 +3350,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000059,
+    "rarity": 4,
+    "weaponType": "Catalyst",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        59,
+        5901,
+        5931,
+        5932,
+        5939
+      ]
+    }
   },
   "Sigewinne": {
     "characterKey": "Sigewinne",
@@ -2039,7 +3387,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000095,
+    "rarity": 5,
+    "weaponType": "Bow",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        95,
+        9501,
+        9531,
+        9532,
+        9539
+      ]
+    }
   },
   "Skirk": {
     "characterKey": "Skirk",
@@ -2061,7 +3424,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000114,
+    "rarity": 5,
+    "weaponType": "Sword",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        114,
+        11401,
+        11431,
+        11432,
+        11439
+      ]
+    }
   },
   "Sucrose": {
     "characterKey": "Sucrose",
@@ -2083,7 +3461,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000043,
+    "rarity": 4,
+    "weaponType": "Catalyst",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        43,
+        4301,
+        4331,
+        4332,
+        4339
+      ]
+    }
   },
   "Tartaglia": {
     "characterKey": "Tartaglia",
@@ -2105,7 +3498,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000033,
+    "rarity": 5,
+    "weaponType": "Bow",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        33,
+        3301,
+        3331,
+        3332,
+        3339
+      ]
+    }
   },
   "Thoma": {
     "characterKey": "Thoma",
@@ -2127,7 +3535,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000050,
+    "rarity": 4,
+    "weaponType": "Polearm",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        50,
+        5001,
+        5031,
+        5032,
+        5039
+      ]
+    }
   },
   "Tighnari": {
     "characterKey": "Tighnari",
@@ -2149,7 +3572,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000069,
+    "rarity": 5,
+    "weaponType": "Bow",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        69,
+        6901,
+        6931,
+        6932,
+        6939
+      ]
+    }
   },
   "Varesa": {
     "characterKey": "Varesa",
@@ -2171,7 +3609,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000111,
+    "rarity": 5,
+    "weaponType": "Catalyst",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        111,
+        11101,
+        11131,
+        11132,
+        11139
+      ]
+    }
   },
   "Varka": {
     "characterKey": "Varka",
@@ -2193,7 +3646,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000128,
+    "rarity": 5,
+    "weaponType": "Claymore",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        128,
+        12801,
+        12831,
+        12832,
+        12839
+      ]
+    }
   },
   "Venti": {
     "characterKey": "Venti",
@@ -2215,7 +3683,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000022,
+    "rarity": 5,
+    "weaponType": "Bow",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        22,
+        2201,
+        2231,
+        2232,
+        2239
+      ]
+    }
   },
   "Wanderer": {
     "characterKey": "Wanderer",
@@ -2237,7 +3720,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000075,
+    "rarity": 5,
+    "weaponType": "Catalyst",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        75,
+        7501,
+        7531,
+        7532,
+        7539
+      ]
+    }
   },
   "Wriothesley": {
     "characterKey": "Wriothesley",
@@ -2259,7 +3757,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000086,
+    "rarity": 5,
+    "weaponType": "Catalyst",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        86,
+        8601,
+        8631,
+        8632,
+        8639
+      ]
+    }
   },
   "Xiangling": {
     "characterKey": "Xiangling",
@@ -2281,7 +3794,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000023,
+    "rarity": 4,
+    "weaponType": "Polearm",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        23,
+        2301,
+        2331,
+        2332,
+        2339
+      ]
+    }
   },
   "Xianyun": {
     "characterKey": "Xianyun",
@@ -2303,7 +3831,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000093,
+    "rarity": 5,
+    "weaponType": "Catalyst",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        93,
+        9301,
+        9331,
+        9332,
+        9339
+      ]
+    }
   },
   "Xiao": {
     "characterKey": "Xiao",
@@ -2325,7 +3868,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000026,
+    "rarity": 5,
+    "weaponType": "Polearm",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        26,
+        2601,
+        2631,
+        2632,
+        2639
+      ]
+    }
   },
   "Xilonen": {
     "characterKey": "Xilonen",
@@ -2347,7 +3905,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000103,
+    "rarity": 5,
+    "weaponType": "Sword",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        103,
+        10301,
+        10331,
+        10332,
+        10339
+      ]
+    }
   },
   "Xingqiu": {
     "characterKey": "Xingqiu",
@@ -2369,7 +3942,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000025,
+    "rarity": 4,
+    "weaponType": "Sword",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        25,
+        2501,
+        2531,
+        2532,
+        2539
+      ]
+    }
   },
   "Xinyan": {
     "characterKey": "Xinyan",
@@ -2391,7 +3979,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000044,
+    "rarity": 4,
+    "weaponType": "Claymore",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        44,
+        4401,
+        4431,
+        4432,
+        4439
+      ]
+    }
   },
   "YaeMiko": {
     "characterKey": "YaeMiko",
@@ -2413,7 +4016,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000058,
+    "rarity": 5,
+    "weaponType": "Catalyst",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        58,
+        5801,
+        5831,
+        5832,
+        5839
+      ]
+    }
   },
   "Yanfei": {
     "characterKey": "Yanfei",
@@ -2435,7 +4053,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000048,
+    "rarity": 4,
+    "weaponType": "Catalyst",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        48,
+        4801,
+        4831,
+        4832,
+        4839
+      ]
+    }
   },
   "Yaoyao": {
     "characterKey": "Yaoyao",
@@ -2457,7 +4090,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000077,
+    "rarity": 4,
+    "weaponType": "Polearm",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        77,
+        7701,
+        7731,
+        7732,
+        7739
+      ]
+    }
   },
   "Yelan": {
     "characterKey": "Yelan",
@@ -2479,7 +4127,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000060,
+    "rarity": 5,
+    "weaponType": "Bow",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        60,
+        6001,
+        6031,
+        6032,
+        6039
+      ]
+    }
   },
   "Yoimiya": {
     "characterKey": "Yoimiya",
@@ -2501,7 +4164,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000049,
+    "rarity": 5,
+    "weaponType": "Bow",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        49,
+        4901,
+        4931,
+        4932,
+        4939
+      ]
+    }
   },
   "YumemizukiMizuki": {
     "characterKey": "YumemizukiMizuki",
@@ -2523,7 +4201,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000109,
+    "rarity": 5,
+    "weaponType": "Catalyst",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        109,
+        10901,
+        10931,
+        10932,
+        10939
+      ]
+    }
   },
   "YunJin": {
     "characterKey": "YunJin",
@@ -2545,7 +4238,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000064,
+    "rarity": 4,
+    "weaponType": "Polearm",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        64,
+        6401,
+        6431,
+        6432,
+        6439
+      ]
+    }
   },
   "Zhongli": {
     "characterKey": "Zhongli",
@@ -2567,7 +4275,22 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000030,
+    "rarity": 5,
+    "weaponType": "Polearm",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        30,
+        3001,
+        3031,
+        3032,
+        3039
+      ]
+    }
   },
   "Zibai": {
     "characterKey": "Zibai",
@@ -2589,6 +4312,21 @@
     ],
     "sourceRefs": [
       "Live updated to 6.5.0. Beta updated to 6.6(6.5.52)"
-    ]
+    ],
+    "gameId": 10000126,
+    "rarity": 5,
+    "weaponType": "Sword",
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "AvatarExcelConfigData",
+      "relationshipIds": [
+        126,
+        12601,
+        12631,
+        12632,
+        12639
+      ]
+    }
   }
 }

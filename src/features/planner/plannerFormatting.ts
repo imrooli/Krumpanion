@@ -1,3 +1,4 @@
+import { availabilityDays } from "../../utils/days";
 import type { PlannerRecommendation } from "../../domain/planner/types";
 import type { StaticGameData } from "../../domain/staticData/types";
 
@@ -86,6 +87,18 @@ export function formatDayCount(value: number | null | undefined, unit = "day"): 
 }
 
 export function formatRecommendationAction(row: PlannerRecommendation): string {
+  if (row.expectedAdvisoryResin != null) {
+    const expectedRuns = clampDisplayInteger(
+      row.expectedAdvisoryActionableRuns ?? row.expectedAdvisoryRuns,
+    );
+    const segments = [
+      `${formatInteger(expectedRuns)} expected run${expectedRuns === 1 ? "" : "s"}`,
+      row.resinPerRun != null ? formatResinPerRun(row.resinPerRun) : null,
+      `${formatInteger(row.expectedAdvisoryResin)} expected resin`,
+    ].filter((segment): segment is string => Boolean(segment));
+    return segments.join(" | ");
+  }
+
   if (row.totalEstimatedResin != null) {
     const segments = [
       row.actionableRuns != null ? formatActionableRuns(row) : null,
@@ -119,6 +132,7 @@ export function formatUnknownEstimateLabel(row: PlannerRecommendation): string {
 }
 
 export function formatAvailabilityLabel(availability: PlannerRecommendation["availability"]): string {
+  if (availability.startsWith("DAYS_")) return availabilityDays(availability).join(" / ");
   switch (availability) {
     case "ALWAYS":
       return "Always available";

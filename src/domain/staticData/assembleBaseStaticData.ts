@@ -127,6 +127,7 @@ function mapRecordCategory(material: CanonicalMaterialRecord): MaterialRecordCat
 function buildCharacterCatalogEntry(profile: CanonicalCharacterProfile): CharacterCatalogEntry {
   return {
     key: profile.characterKey,
+    gameId: profile.gameId, aliases: profile.aliases, provenance: profile.provenance,
     displayName: profile.displayName,
     element: profile.element,
     weaponType: profile.weaponType,
@@ -284,6 +285,7 @@ function buildWeaponCatalogEntry(profile: CanonicalWeaponProfile): WeaponCatalog
         : "normal");
   return {
     key: profile.weaponKey,
+    gameId: profile.gameId, aliases: profile.aliases, provenance: profile.provenance,
     displayName: profile.displayName,
     weaponType: profile.weaponType ?? undefined,
     rarity: profile.rarity,
@@ -313,6 +315,7 @@ function buildWeaponMaterialProfile(profile: CanonicalWeaponProfile): WeaponMate
 function buildMaterialDescriptor(material: CanonicalMaterialRecord) {
   return {
     key: material.materialKey,
+    gameId: material.gameId, aliases: material.aliases, provenance: material.provenance,
     displayName: material.displayName,
     category: mapCanonicalMaterialCategory(material.legacyCategory),
     characterExpValue: material.characterExpValue ?? undefined,
@@ -328,6 +331,7 @@ function buildMaterialRecord(material: CanonicalMaterialRecord): MaterialRecord 
 
   return {
     key: material.materialKey,
+    gameId: material.gameId, aliases: material.aliases, provenance: material.provenance,
     displayName: material.displayName,
     category,
     rarity: material.rarity as MaterialRecord["rarity"] | undefined,
@@ -457,13 +461,13 @@ function cloneRecipes<T extends Record<string, CraftingRecipe>>(recipes: T): T {
   return JSON.parse(JSON.stringify(recipes)) as T;
 }
 
-export function assembleBaseStaticData(): StaticGameData {
-  const characterProfiles = canonicalDatabase.characters.characterProfiles;
-  const travelerProfile = canonicalDatabase.characters.travelerProfile;
+export function assembleBaseStaticData(database = canonicalDatabase): StaticGameData {
+  const characterProfiles = database.characters.characterProfiles;
+  const travelerProfile = database.characters.travelerProfile;
   const travelerElementCatalogEntries = buildTravelerElementCatalogEntries(travelerProfile);
   const travelerElementMaterialProfiles = buildTravelerElementMaterialProfiles(travelerProfile);
-  const weaponProfiles = canonicalDatabase.weapons.weaponProfiles;
-  const materialDefinitions = canonicalDatabase.materials.materials;
+  const weaponProfiles = database.weapons.weaponProfiles;
+  const materialDefinitions = database.materials.materials;
 
   const characters: StaticGameData["characters"] = Object.fromEntries(
     Object.values(characterProfiles).map((profile) => [profile.characterKey, buildCharacterCatalogEntry(profile)]),
@@ -515,49 +519,49 @@ export function assembleBaseStaticData(): StaticGameData {
       .map((record) => [record.key, record]),
   );
 
-  const localSpecialtySources = buildLocalSpecialtySources(canonicalDatabase.materials.localSpecialties);
-  const baseRecipes = cloneRecipes(canonicalDatabase.crafting.recipes);
+  const localSpecialtySources = buildLocalSpecialtySources(database.materials.localSpecialties);
+  const baseRecipes = cloneRecipes(database.crafting.recipes);
   const staticData: StaticGameData = {
-    version: canonicalDatabase.version,
+    version: database.version,
     characters,
     travelerProfile: buildTravelerRuntimeProfile(travelerProfile),
     travelerElementProfiles: buildTravelerElementProfiles(travelerProfile),
     materials,
     weapons,
-    universalCharacterProgressionCore: canonicalDatabase.progression.universalCharacterProgressionCore,
-    universalTalentProgressionCore: canonicalDatabase.progression.universalTalentProgressionCore,
-    universalWeaponProgressionCore: canonicalDatabase.progression.universalWeaponProgressionCore,
-    weaponAscensionPhaseCaps: canonicalDatabase.progression.weaponAscensionPhaseCaps,
-    weaponExpMaterials: canonicalDatabase.progression.weaponExpMaterials,
-    weaponExpRequirements: canonicalDatabase.progression.weaponExpRequirements,
-    weaponExpTotals1To90: canonicalDatabase.progression.weaponExpTotals1To90,
-    weaponAscensionCosts: canonicalDatabase.progression.weaponAscensionCosts,
-    weaponAscensionTotals20To90: canonicalDatabase.progression.weaponAscensionTotals20To90,
-    elementGemFamilies: canonicalDatabase.materials.elementalGemFamilies,
-    talentBookFamilies: canonicalDatabase.materials.talentBookFamilies,
+    universalCharacterProgressionCore: database.progression.universalCharacterProgressionCore,
+    universalTalentProgressionCore: database.progression.universalTalentProgressionCore,
+    universalWeaponProgressionCore: database.progression.universalWeaponProgressionCore,
+    weaponAscensionPhaseCaps: database.progression.weaponAscensionPhaseCaps,
+    weaponExpMaterials: database.progression.weaponExpMaterials,
+    weaponExpRequirements: database.progression.weaponExpRequirements,
+    weaponExpTotals1To90: database.progression.weaponExpTotals1To90,
+    weaponAscensionCosts: database.progression.weaponAscensionCosts,
+    weaponAscensionTotals20To90: database.progression.weaponAscensionTotals20To90,
+    elementGemFamilies: database.materials.elementalGemFamilies,
+    talentBookFamilies: database.materials.talentBookFamilies,
     enemyDropFamilies: {},
-    generalEnemyDropFamilies: canonicalDatabase.materials.commonEnemyDropFamilies,
-    eliteEnemyDropFamilies: canonicalDatabase.materials.eliteEnemyDropFamilies,
-    weaponAscensionMaterialFamilies: canonicalDatabase.materials.weaponAscensionMaterialFamilies,
-    localSpecialties: canonicalDatabase.materials.localSpecialties,
-    localSpecialtiesByRegion: buildLocalSpecialtyRegionIndex(canonicalDatabase.materials.localSpecialties),
-    normalBossMaterials: canonicalDatabase.materials.normalBossMaterials,
-    weeklyBossMaterials: canonicalDatabase.materials.weeklyBossMaterials,
-    specialProgressionMaterials: canonicalDatabase.materials.specialProgressionMaterials,
+    generalEnemyDropFamilies: database.materials.commonEnemyDropFamilies,
+    eliteEnemyDropFamilies: database.materials.eliteEnemyDropFamilies,
+    weaponAscensionMaterialFamilies: database.materials.weaponAscensionMaterialFamilies,
+    localSpecialties: database.materials.localSpecialties,
+    localSpecialtiesByRegion: buildLocalSpecialtyRegionIndex(database.materials.localSpecialties),
+    normalBossMaterials: database.materials.normalBossMaterials,
+    weeklyBossMaterials: database.materials.weeklyBossMaterials,
+    specialProgressionMaterials: database.materials.specialProgressionMaterials,
     materialRecords,
-    tieredMaterialIndex: canonicalDatabase.crafting.tieredMaterialIndex,
-    weaponAscensionFamilies: canonicalDatabase.compatibility.weaponAscensionFamilies as Record<string, WeaponAscensionFamily>,
+    tieredMaterialIndex: database.crafting.tieredMaterialIndex,
+    weaponAscensionFamilies: database.compatibility.weaponAscensionFamilies as Record<string, WeaponAscensionFamily>,
     localSpecialtySources,
     characterMaterialProfiles,
     weaponMaterialProfiles,
-    characterProgressions: canonicalDatabase.progression.legacyCharacterProgressions as Record<string, CharacterProgressionEntry>,
-    weaponProgressions: canonicalDatabase.progression.legacyWeaponProgressions as Record<string, WeaponProgressionEntry>,
-    legacyCharacterProgressions: canonicalDatabase.progression.legacyCharacterProgressions as Record<string, CharacterProgressionEntry>,
-    legacyWeaponProgressions: canonicalDatabase.progression.legacyWeaponProgressions as Record<string, WeaponProgressionEntry>,
-    materialSources: canonicalDatabase.sources.materialSources as Record<string, MaterialSourceRecord[]>,
+    characterProgressions: database.progression.legacyCharacterProgressions as Record<string, CharacterProgressionEntry>,
+    weaponProgressions: database.progression.legacyWeaponProgressions as Record<string, WeaponProgressionEntry>,
+    legacyCharacterProgressions: database.progression.legacyCharacterProgressions as Record<string, CharacterProgressionEntry>,
+    legacyWeaponProgressions: database.progression.legacyWeaponProgressions as Record<string, WeaponProgressionEntry>,
+    materialSources: database.sources.materialSources as Record<string, MaterialSourceRecord[]>,
     materialFamilyByKey: buildMaterialFamilyByKey(
-      canonicalDatabase.materials.commonEnemyDropFamilies,
-      canonicalDatabase.materials.eliteEnemyDropFamilies,
+      database.materials.commonEnemyDropFamilies,
+      database.materials.eliteEnemyDropFamilies,
     ),
     characterGeneralEnemyDropFamilyByKey: {},
     weaponGeneralEnemyDropFamilyByKey: {},
@@ -566,23 +570,23 @@ export function assembleBaseStaticData(): StaticGameData {
     unresolvedCharacterReferences: [],
     unresolvedCharacterMaterialReferences: buildUnresolvedCharacterMaterialReferences(characterProfiles),
     unresolvedWeaponReferences: [],
-    artifactDomains: canonicalDatabase.artifacts.artifactDomains,
+    artifactDomains: database.artifacts.artifactDomains,
     recipes: baseRecipes,
     craftingRecipes: cloneRecipes(baseRecipes),
-    craftingUtilityPassives: canonicalDatabase.crafting.craftingUtilityPassives,
-    craftingPlannerDefaults: canonicalDatabase.crafting.craftingPlannerDefaults,
-    gemConversionDefaults: canonicalDatabase.crafting.gemConversionDefaults,
-    resinRules: canonicalDatabase.sources.resinRules,
-    resinSystem: canonicalDatabase.sources.resinSystem,
-    resinActivityCosts: canonicalDatabase.sources.resinActivityCosts,
-    leyLineRewardsByWorldLevel: canonicalDatabase.sources.leyLineRewardsByWorldLevel,
-    domainsOfForgery: canonicalDatabase.sources.domainsOfForgery,
-    domainsOfMastery: canonicalDatabase.sources.domainsOfMastery,
-    trounceDomains: canonicalDatabase.sources.trounceDomains,
-    leyLineNationCoverage: canonicalDatabase.sources.leyLineNationCoverage,
-    leyLineNationCoverageList: Object.values(canonicalDatabase.sources.leyLineNationCoverage),
+    craftingUtilityPassives: database.crafting.craftingUtilityPassives,
+    craftingPlannerDefaults: database.crafting.craftingPlannerDefaults,
+    gemConversionDefaults: database.crafting.gemConversionDefaults,
+    resinRules: database.sources.resinRules,
+    resinSystem: database.sources.resinSystem,
+    resinActivityCosts: database.sources.resinActivityCosts,
+    leyLineRewardsByWorldLevel: database.sources.leyLineRewardsByWorldLevel,
+    domainsOfForgery: database.sources.domainsOfForgery,
+    domainsOfMastery: database.sources.domainsOfMastery,
+    trounceDomains: database.sources.trounceDomains,
+    leyLineNationCoverage: database.sources.leyLineNationCoverage,
+    leyLineNationCoverageList: Object.values(database.sources.leyLineNationCoverage),
     leyLineOutcropLocations: Object.fromEntries(
-      Object.entries(canonicalDatabase.sources.leyLineOutcropLocations).map(([locationKey, location]) => [
+      Object.entries(database.sources.leyLineOutcropLocations).map(([locationKey, location]) => [
         locationKey,
         {
           ...location,
@@ -591,16 +595,16 @@ export function assembleBaseStaticData(): StaticGameData {
       ]),
     ),
     leyLineOutcropLocationList: [],
-    weaponAscensionDomainDropModel: canonicalDatabase.sources.weaponAscensionDomainDropModel,
-    talentBookDomainDropModel: canonicalDatabase.sources.talentBookDomainDropModel,
-    normalBossAscensionGemDropsByWorldLevel: canonicalDatabase.sources.normalBossAscensionGemDropsByWorldLevel,
-    weeklyBossAscensionGemDropsByWorldLevel: canonicalDatabase.sources.weeklyBossAscensionGemDropsByWorldLevel,
-    normalBossUniqueMaterialDropMeanByWorldLevel: canonicalDatabase.sources.normalBossUniqueMaterialDropMeanByWorldLevel,
-    weeklyTalentMaterialDropMeanByWorldLevel: canonicalDatabase.sources.weeklyTalentMaterialDropMeanByWorldLevel,
-    bossGemThreeStarRollMean: canonicalDatabase.sources.bossGemThreeStarRollMean,
-    bossGemDropPackMeanByRewardLevel: canonicalDatabase.sources.bossGemDropPackMeanByRewardLevel,
-    bossGemDropPackRarityDistribution: canonicalDatabase.sources.bossGemDropPackRarityDistribution,
-    plannerDefaults: canonicalDatabase.sources.plannerDefaults,
+    weaponAscensionDomainDropModel: database.sources.weaponAscensionDomainDropModel,
+    talentBookDomainDropModel: database.sources.talentBookDomainDropModel,
+    normalBossAscensionGemDropsByWorldLevel: database.sources.normalBossAscensionGemDropsByWorldLevel,
+    weeklyBossAscensionGemDropsByWorldLevel: database.sources.weeklyBossAscensionGemDropsByWorldLevel,
+    normalBossUniqueMaterialDropMeanByWorldLevel: database.sources.normalBossUniqueMaterialDropMeanByWorldLevel,
+    weeklyTalentMaterialDropMeanByWorldLevel: database.sources.weeklyTalentMaterialDropMeanByWorldLevel,
+    bossGemThreeStarRollMean: database.sources.bossGemThreeStarRollMean,
+    bossGemDropPackMeanByRewardLevel: database.sources.bossGemDropPackMeanByRewardLevel,
+    bossGemDropPackRarityDistribution: database.sources.bossGemDropPackRarityDistribution,
+    plannerDefaults: database.sources.plannerDefaults,
     appliedOverrideKeys: [],
   };
 

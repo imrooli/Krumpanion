@@ -103,9 +103,12 @@ export function sortRecommendations(rows: PlannerRecommendation[]): PlannerRecom
 
     if (left.actionGroup === "resin_gated") {
       return (
-        (right.totalEstimatedResin ?? 0) - (left.totalEstimatedResin ?? 0) ||
-        (right.actionableRuns ?? 0) - (left.actionableRuns ?? 0) ||
-        (right.estimatedRuns ?? 0) - (left.estimatedRuns ?? 0) ||
+        (right.expectedAdvisoryResin ?? right.totalEstimatedResin ?? 0) -
+          (left.expectedAdvisoryResin ?? left.totalEstimatedResin ?? 0) ||
+        (right.expectedAdvisoryActionableRuns ?? right.actionableRuns ?? 0) -
+          (left.expectedAdvisoryActionableRuns ?? left.actionableRuns ?? 0) ||
+        (right.expectedAdvisoryRuns ?? right.estimatedRuns ?? 0) -
+          (left.expectedAdvisoryRuns ?? left.estimatedRuns ?? 0) ||
         left.title.localeCompare(right.title)
       );
     }
@@ -191,6 +194,8 @@ function inferActionGroupFromEstimate(estimate: FarmingEstimateDetail): PlannerR
     case "normal_boss":
     case "weekly_boss":
       return "resin_gated";
+    case "ascension_gem":
+      return "passive_incidental";
     case "open_world_enemy":
     case "local_specialty":
       return "open_world";
@@ -222,6 +227,8 @@ function inferActionSubgroupFromEstimate(estimate: FarmingEstimateDetail): Plann
 }
 
 function resolveResinPerRun(input: PlannerInput, estimate: FarmingEstimateDetail): number | null {
+  if (estimate.sourceType === "weekly_boss" && estimate.weeklyGate?.fullCostClaims) return null;
+  if (estimate.resinCostPerRun !== null) return estimate.resinCostPerRun;
   switch (estimate.sourceType) {
     case "ley_line_wealth":
     case "ley_line_revelation":
@@ -275,23 +282,30 @@ function buildMaterialSummary(estimate: FarmingEstimateDetail): string {
 function buildEstimateReason(estimate: FarmingEstimateDetail): string {
   const sourceName = estimate.sourceName ?? "unknown source";
   const materialSummary = buildMaterialSummary(estimate);
-  const actionableRuns = estimate.actionableRuns ?? (estimate.estimatedRuns !== null ? Math.ceil(estimate.estimatedRuns) : null);
-  const basisSuffix = estimate.estimateBasis ? ` Basis: ${estimate.estimateBasis}.` : "";
+  const actionableRuns = estimate.guaranteedEstimate.actionableRuns;
+  const basisSuffix = ` Guaranteed basis: ${estimate.guaranteedEstimate.basis}.`;
+  const expectedSuffix = estimate.expectedEstimate.available && estimate.expectedEstimate.resin !== null
+    ? ` Expected: about ${estimate.expectedEstimate.resin} resin using average rewards; advisory only.`
+    : "";
   const warningSuffix = estimate.warnings.length > 0 ? ` Warning: ${estimate.warnings[0]}.` : "";
   if (estimate.sourceType === "ley_line_wealth") {
-    return `Need ${estimate.missingAmount.toLocaleString()} Mora. Estimated ${estimate.estimatedRuns?.toFixed(2) ?? "0"} claim(s), actionable ${actionableRuns ?? 0}, about ${estimate.estimatedResin ?? 0} resin.${basisSuffix}${warningSuffix}`;
+    return `Need ${estimate.missingAmount.toLocaleString()} Mora. Guaranteed ${actionableRuns ?? 0} claim(s), ${estimate.guaranteedEstimate.resin ?? 0} resin.${expectedSuffix}${basisSuffix}${warningSuffix}`;
   }
 
   if (estimate.sourceType === "ley_line_revelation") {
-    return `Need approximately ${estimate.deterministicRequirement.toLocaleString()} Character EXP value across ${formatMaterialDetailList(estimate)}. Estimated ${estimate.estimatedRuns?.toFixed(2) ?? "0"} claim(s), actionable ${actionableRuns ?? 0}, about ${estimate.estimatedResin ?? 0} resin.${basisSuffix}${warningSuffix}`;
+    return `Need approximately ${estimate.deterministicRequirement.toLocaleString()} Character EXP value across ${formatMaterialDetailList(estimate)}. Guaranteed ${actionableRuns ?? 0} claim(s), ${estimate.guaranteedEstimate.resin ?? 0} resin using minimum rewards.${expectedSuffix}${basisSuffix}${warningSuffix}`;
   }
 
   if (estimate.sourceType === "domain_of_mastery" || estimate.sourceType === "domain_of_forgery") {
-    return `Need ${materialSummary}. Estimated ${estimate.estimatedRuns?.toFixed(2) ?? "0"} domain claim(s), actionable ${actionableRuns ?? 0}, about ${estimate.estimatedResin ?? 0} resin.${basisSuffix}${warningSuffix}`;
+    return `Need ${materialSummary}. Expected average: about ${estimate.expectedEstimate.actionableRuns ?? 0} domain claim(s), ${estimate.expectedEstimate.resin ?? 0} resin. Worst-case guarantee: ${actionableRuns ?? 0} claim(s), ${estimate.guaranteedEstimate.resin ?? 0} resin if every claim yields only the validated minimum.${basisSuffix}${warningSuffix}`;
   }
 
   if (estimate.sourceType === "normal_boss") {
-    return `Need ${materialSummary}. Estimated ${estimate.estimatedRuns?.toFixed(2) ?? "0"} ${sourceName} claim(s), actionable ${actionableRuns ?? 0}, about ${estimate.estimatedResin ?? 0} resin. Gem drops are incidental.${basisSuffix}${warningSuffix}`;
+    return `Need ${materialSummary}. Guaranteed ${actionableRuns ?? 0} ${sourceName} claim(s), ${estimate.guaranteedEstimate.resin ?? 0} resin. Gem drops are incidental.${expectedSuffix}${basisSuffix}${warningSuffix}`;
+  }
+
+  if (estimate.sourceType === "ascension_gem") {
+    return `Need ${materialSummary}. Use owned gem crafting or enabled Dust of Azoth conversion. Future boss gem drops are incidental and excluded from guaranteed resin totals.${basisSuffix}${warningSuffix}`;
   }
 
   if (estimate.sourceType === "weekly_boss") {
@@ -301,7 +315,7 @@ function buildEstimateReason(estimate: FarmingEstimateDetail): string {
       fullCostClaims > 0
         ? `${discountedClaims} discounted claim(s) and ${fullCostClaims} full-cost claim(s)`
         : `${discountedClaims} discounted claim(s)`;
-    return `Need ${materialSummary}. Estimated ${estimate.estimatedRuns?.toFixed(2) ?? "0"} weekly claim(s), actionable ${actionableRuns ?? 0}, about ${estimate.estimatedResin ?? 0} resin (${pricingDetail}), with once-per-boss-per-week scheduling and a Monday 2:00 AM PST reset.${basisSuffix}${warningSuffix}`;
+    return `Need ${materialSummary}. Chance-based weekly target drop with no guaranteed completion bound. Excluded from guaranteed total. Expected: about ${estimate.expectedEstimate.resin ?? 0} resin (${pricingDetail}); advisory only.${warningSuffix}`;
   }
 
   if (estimate.sourceType === "open_world_enemy") {
@@ -370,6 +384,12 @@ export function buildMaterialRecommendations(input: PlannerInput, farmingEstimat
         resinCost: totalEstimatedResin ?? undefined,
         resinPerRun,
         totalEstimatedResin,
+        expectedAdvisoryResin: estimate.expectedEstimate.resin,
+        expectedAdvisoryRuns: estimate.expectedEstimate.runs,
+        expectedAdvisoryActionableRuns: estimate.expectedEstimate.actionableRuns,
+        expectedAdvisoryDays: estimate.expectedEstimate.daysNaturalResin,
+        contributesToGuaranteedTotal: estimate.contributesToGuaranteedTotal,
+        estimateClassification: estimate.estimateClassification,
         resinLabel: formatResinLabel(totalEstimatedResin),
         estimatedRuns: estimate.estimatedRuns,
         actionableRuns: estimate.actionableRuns,
@@ -474,7 +494,10 @@ export function buildWeaponExpRecommendation(
 }
 
 function estimateResinFromFarming(farmingEstimates: FarmingEstimateDetail[]): number {
-  return farmingEstimates.reduce((sum, estimate) => sum + (estimate.estimatedResin ?? 0), 0);
+  return farmingEstimates.reduce(
+    (sum, estimate) => sum + (estimate.contributesToGuaranteedTotal ? estimate.guaranteedEstimate.resin ?? 0 : 0),
+    0,
+  );
 }
 
 function groupRecommendationsBySource(recommendations: PlannerRecommendation[]): RecommendationGroup[] {
@@ -752,15 +775,27 @@ export function buildResinSummary(params: {
   craftingMora: number;
 }): PlannerOutput["resinSummary"] {
   const totalEstimatedResin = estimateResinFromFarming(params.farmingEstimates);
+  const expectedAdvisoryResin = params.farmingEstimates.reduce(
+    (sum, estimate) => sum + (estimate.expectedEstimate.resin ?? 0),
+    0,
+  );
   return {
     progressionMora: params.progressionMora,
     craftingMora: params.craftingMora,
     totalMora: params.progressionMora + params.craftingMora,
+    guaranteedTotalResin: totalEstimatedResin,
+    guaranteedNaturalResinDays: totalEstimatedResin / params.dailyResinBudget,
+    guaranteedNaturalResinWeeks: totalEstimatedResin / params.naturalResinPerWeek,
+    expectedAdvisoryResin,
+    expectedAdvisoryDays: expectedAdvisoryResin / params.dailyResinBudget,
+    expectedAdvisoryWeeks: expectedAdvisoryResin / params.naturalResinPerWeek,
+    chanceBasedTaskCount: params.farmingEstimates.filter((estimate) => estimate.estimateClassification === "chance_based").length,
+    timeGatedTaskCount: params.farmingEstimates.filter((estimate) => estimate.estimateClassification === "time_gated").length,
     totalEstimatedResin,
     totalEstimatedNaturalResinDays: totalEstimatedResin / params.dailyResinBudget,
     totalEstimatedNaturalResinWeeks: totalEstimatedResin / params.naturalResinPerWeek,
     weeklyGatedEstimateCount: params.farmingEstimates.filter((estimate) => estimate.weeklyGate?.isWeeklyGated).length,
-    resinGatedEstimateCount: params.farmingEstimates.filter((estimate) => estimate.estimatedResin !== null).length,
+    resinGatedEstimateCount: params.farmingEstimates.filter((estimate) => estimate.contributesToGuaranteedTotal).length,
     openWorldEstimateCount: params.farmingEstimates.filter((estimate) => estimate.sourceType === "open_world_enemy").length,
     noResinTaskCount: params.farmingEstimates.filter((estimate) => estimate.estimatedResin === null && estimate.sourceType !== "unknown").length,
     unknownEstimateCount: params.farmingEstimates.filter((estimate) => estimate.sourceType === "unknown").length,

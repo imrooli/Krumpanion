@@ -16,6 +16,7 @@ Each source model should describe:
   - `reward_tier`
   - `adventure_rank`
   - `none`
+- explicit guaranteed minimum outputs by family or tier
 - expected outputs by family or tier
 - data quality
   - `exact`
@@ -29,7 +30,9 @@ Each source model should describe:
 
 Talent and weapon domains are modeled by family and domain level.
 
-Level IV defaults currently used by the planner:
+Each configured domain level stores a guaranteed lower-tier-equivalent floor and an expected average. The configured/highest-unlocked level is used for both layers; the planner does not select a lower level merely because its mathematical floor looks stronger.
+
+Level IV advisory averages currently used by the planner:
 
 - Talent domain averages:
   - 2-star: `2.2`
@@ -41,19 +44,21 @@ Level IV defaults currently used by the planner:
   - 4-star: `0.62`
   - 5-star: `0.062`
 
-These are consumed as grouped family estimates so one run can help satisfy multiple tiers.
+These are consumed as grouped family estimates so one run can help satisfy multiple tiers. Guaranteed totals use the corresponding validated minimum equivalent instead.
 
 ## Boss models
 
-Normal boss models estimate unique boss material yield by world level.
+Normal boss models store both the guaranteed unique-material floor and the expected unique-material yield by world level.
 
 Weekly boss models estimate total weekly talent materials by world level, then convert to target-specific expected material for one of the boss's three weekly drops.
 
-WL9 modeling is explicit and conservative:
+WL9 modeling is explicit:
 
-- normal boss unique material estimate: `3`
-- weekly boss total talent material estimate: `2`
-- target weekly material estimate: `2 / 3`
+- normal boss guaranteed unique-material floor: `3`
+- normal boss advisory mean: `3.08`
+- weekly boss advisory total talent material estimate: `2`
+- advisory target weekly material estimate: `2 / 3`
+- weekly target guaranteed estimate: unavailable
 
 ## Passive and incidental models
 
@@ -66,3 +71,5 @@ Some sources are tracked as guidance only:
 - incidental boss gem drops
 
 These should not be promoted into direct Resin totals unless the feature explicitly supports that behavior.
+
+Static-data validation requires finite, nonnegative minimum and average fields, checks that averages are not below guaranteed floors, and rejects guaranteed-source records without an explicit floor.

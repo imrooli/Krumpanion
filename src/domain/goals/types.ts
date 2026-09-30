@@ -193,7 +193,7 @@ export const DEFAULT_PLANNER_SETTINGS: PlannerSettings = {
   useHighestUnlockedDomain: true,
   craftAwareEstimates: true,
   craftingModeForRequirementSatisfaction: "guaranteed",
-  craftingModeForResinEstimate: "expected_value",
+  craftingModeForResinEstimate: "guaranteed",
   allowCraftingTalentExpectedValue: true,
   showCraftingVarianceWarning: true,
   allowDustOfAzothConversion: false,

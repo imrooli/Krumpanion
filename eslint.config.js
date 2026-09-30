@@ -5,26 +5,39 @@ import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
 
 export default [
-  { ignores: ["dist", "coverage"] },
+  { ignores: ["dist", "coverage", "playwright-report", "test-results"] },
   js.configs.recommended,
   {
     files: ["scripts/**/*.mjs"],
     languageOptions: {
       globals: {
+        performance: "readonly",
+        structuredClone: "readonly",
+        clearTimeout: "readonly",
+        setInterval: "readonly",
+        setTimeout: "readonly",
         console: "readonly",
         process: "readonly",
       },
     },
   },
   {
-    files: ["tools/**/*.ts"],
+    files: ["tools/**/*.ts", "e2e/**/*.ts", "playwright*.config.ts"],
     languageOptions: {
       parser: tsParser,
       globals: {
+        performance: "readonly",
+        structuredClone: "readonly",
+        clearTimeout: "readonly",
+        setInterval: "readonly",
+        setTimeout: "readonly",
         console: "readonly",
         process: "readonly",
-        setTimeout: "readonly",
         URL: "readonly",
+        Buffer: "readonly",
+        indexedDB: "readonly",
+        requestAnimationFrame: "readonly",
+        clearInterval: "readonly",
       },
       parserOptions: {
         sourceType: "module",
@@ -42,14 +55,17 @@ export default [
     languageOptions: {
       parser: tsParser,
       globals: {
+        performance: "readonly",
+        structuredClone: "readonly",
+        clearTimeout: "readonly",
+        setInterval: "readonly",
+        setTimeout: "readonly",
         console: "readonly",
         document: "readonly",
         crypto: "readonly",
         process: "readonly",
-        structuredClone: "readonly",
         window: "readonly",
         navigator: "readonly",
-        setInterval: "readonly",
         clearInterval: "readonly",
       },
       parserOptions: {

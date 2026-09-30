@@ -1,3 +1,4 @@
+import { createGameDataUpdateState, type GameDataUpdateState } from "../staticData/upstreamTypes";
 import type { ExportedKrumpanionAccount, MultiAccountUserState } from "../account/types";
 import { createDefaultMultiAccountUserState } from "../account/types";
 import type { AppSettings, KrumpanionGoalState, PlannerSettings } from "../goals/types";
@@ -6,7 +7,7 @@ import type { OverrideDataPack } from "../staticData/types";
 import type { AccountId } from "../account/types";
 
 export const APP_VERSION = "0.4.0";
-export const SAVE_SCHEMA_VERSION = 13;
+export const SAVE_SCHEMA_VERSION = 15;
 export const ACCOUNT_EXPORT_SCHEMA_VERSION = 1;
 
 export type BackupReason =
@@ -60,7 +61,8 @@ export interface PersistenceStatus {
 }
 
 export interface KrumpanionFullBackup {
-  schemaVersion: 13;
+  schemaVersion: 15;
+  gameDataUpdates: GameDataUpdateState;
   appVersion: string;
   createdAt: string;
   updatedAt: string;
@@ -82,6 +84,7 @@ export function createDefaultSaveFile(now = new Date()): KrumpanionSaveFile {
     user: createDefaultMultiAccountUserState(now),
     settings: structuredClone(DEFAULT_SETTINGS),
     overridePack: null,
+    gameDataUpdates: createGameDataUpdateState(),
   };
 }
 

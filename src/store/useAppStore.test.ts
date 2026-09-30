@@ -1,4 +1,6 @@
 import "fake-indexeddb/auto";
+import { readFileSync } from "node:fs";
+import { resolve } from "node:path";
 import exampleGood from "../../examples/good.minimal.example.json";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { persistenceAdapter } from "../adapters/persistence";
@@ -10,6 +12,7 @@ import { toSaveInfo } from "./persistenceHelpers";
 import { useAppStore } from "./useAppStore";
 
 const FIXED_DATE = new Date("2026-05-07T12:00:00.000Z");
+const PATCH_7_0_TEXT = readFileSync(resolve(process.cwd(), "data_updates/patches/7_0.json"), "utf8");
 
 function resetStore() {
   const saveFile = createDefaultSaveFile(FIXED_DATE);
@@ -41,6 +44,27 @@ function buildGoodWithMora(mora: number) {
     materials: {
       ...exampleGood.materials,
       Mora: mora,
+    },
+  });
+}
+
+function buildGoodWithoutMora() {
+  const materials = Object.fromEntries(
+    Object.entries(exampleGood.materials).filter(([materialKey]) => materialKey !== "Mora"),
+  );
+
+  return JSON.stringify({
+    ...exampleGood,
+    materials,
+  });
+}
+
+function buildGoodWithMaterials(materials: Record<string, number>) {
+  return JSON.stringify({
+    ...exampleGood,
+    materials: {
+      ...exampleGood.materials,
+      ...materials,
     },
   });
 }
@@ -143,6 +167,50 @@ describe("useAppStore multi-account support", () => {
     const activeAccount = useAppStore.getState().user.accountsById[useAppStore.getState().user.activeAccountId];
     expect(activeAccount.name).toBe("Challenge Account");
     expect(useAppStore.getState().user.accountOrder).toHaveLength(3);
+  });
+
+  it("accepts raw patch manifests and applies imported patch materials to planner inventory", async () => {
+    await useAppStore.getState().importOverrideText(PATCH_7_0_TEXT);
+
+    let state = useAppStore.getState();
+    expect(state.overridePack?.talentBookFamilies?.Fortitude).toBeDefined();
+    expect(state.staticData.characters.Alyosha).toBeDefined();
+    expect(state.staticData.materials.TeachingsOfFortitude).toBeDefined();
+    expect(state.staticData.materials.Flockingweed).toBeDefined();
+
+    await useAppStore.getState().updateCharacterGoal("Alyosha", {
+      characterKey: "Alyosha",
+      planningMode: "prefarm",
+      targetLevel: 90,
+      enabled: true,
+    });
+
+    const plannerBeforeImport = selectPlannerOutput(useAppStore.getState());
+    const flockingweedBeforeImport =
+      plannerBeforeImport.totalMissingByMaterial.find((row) => row.materialKey === "Flockingweed")?.effectiveDeficit ?? 0;
+
+    expect(flockingweedBeforeImport).toBeGreaterThan(0);
+
+    await useAppStore.getState().importGoodText(
+      buildGoodWithMaterials({
+        Flockingweed: flockingweedBeforeImport,
+        TeachingsOfFortitude: 12,
+      }),
+      {
+        fileName: "patch-materials.json",
+        source: "file",
+      },
+    );
+
+    state = useAppStore.getState();
+    const activeAccount = state.user.accountsById[state.user.activeAccountId];
+    const plannerAfterImport = selectPlannerOutput(state);
+    const flockingweedAfterImport =
+      plannerAfterImport.totalMissingByMaterial.find((row) => row.materialKey === "Flockingweed")?.effectiveDeficit ?? 0;
+
+    expect(activeAccount.inventory.Flockingweed).toBe(flockingweedBeforeImport);
+    expect(activeAccount.inventory.TeachingsOfFortitude).toBe(12);
+    expect(flockingweedAfterImport).toBe(0);
   });
 
   it("preserves existing goals when re-importing GOOD into the active account", async () => {
@@ -570,6 +638,24 @@ describe("useAppStore multi-account support", () => {
     expect(activeAccount?.recentImports[0]?.fileName).toBe("second.json");
     expect(activeAccount?.recentImports[0]?.changedMaterialCount).toBeGreaterThan(0);
     expect(activeAccount?.recentChanges.some((entry) => entry.kind === "inventory" && entry.materialKey === "Mora")).toBe(true);
+  });
+
+  it("preserves the last saved Mora count when a GOOD import omits Mora", async () => {
+    await useAppStore.getState().importGoodText(buildGoodWithMora(2500), {
+      fileName: "with-mora.json",
+      source: "file",
+    });
+    await useAppStore.getState().setActiveMaterialQuantity("Mora", 4000);
+
+    await useAppStore.getState().importGoodText(buildGoodWithoutMora(), {
+      fileName: "without-mora.json",
+      source: "file",
+    });
+
+    const activeAccount = useAppStore.getState().user.accountsById[useAppStore.getState().user.activeAccountId];
+    expect(activeAccount?.inventory.Mora).toBe(4000);
+    expect(activeAccount?.importedInventory.Mora).toBe(4000);
+    expect(activeAccount?.materialEditState.Mora).toBeUndefined();
   });
 
   it("keeps goals account-scoped and planner output tied to the active account inventory and world state", async () => {

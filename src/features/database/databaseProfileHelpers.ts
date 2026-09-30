@@ -411,7 +411,11 @@ export function validateWeaponProfile(
   if (!eliteFamilyId) {
     missingFields.push("eliteEnemyDropFamilyId");
   } else if (!staticData.eliteEnemyDropFamilies[eliteFamilyId]) {
-    errors.push("Elite enemy family must resolve to a known Elite Enemy Drop family.");
+    errors.push(
+      staticData.generalEnemyDropFamilies[eliteFamilyId]
+        ? "Elite enemy family currently resolves as a Common/General Enemy Drop family, not an Elite Enemy Drop family."
+        : "Elite enemy family must resolve to a known Elite Enemy Drop family.",
+    );
   }
 
   const commonFamilyId = profile.commonEnemyFamilyKey;

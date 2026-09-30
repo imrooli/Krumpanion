@@ -1,0 +1,2464 @@
+{
+  "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+  "applied": true,
+  "findings": [
+    {
+      "key": "Tartaglia",
+      "field": "gameId",
+      "after": 10000033,
+      "result": "repair"
+    },
+    {
+      "key": "Tartaglia",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Tartaglia",
+      "field": "weaponType",
+      "after": "Bow",
+      "result": "repair"
+    },
+    {
+      "key": "Diona",
+      "field": "gameId",
+      "after": 10000039,
+      "result": "repair"
+    },
+    {
+      "key": "Diona",
+      "field": "rarity",
+      "after": 4,
+      "result": "repair"
+    },
+    {
+      "key": "Diona",
+      "field": "weaponType",
+      "after": "Bow",
+      "result": "repair"
+    },
+    {
+      "key": "Klee",
+      "field": "gameId",
+      "after": 10000029,
+      "result": "repair"
+    },
+    {
+      "key": "Klee",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Klee",
+      "field": "weaponType",
+      "after": "Catalyst",
+      "result": "repair"
+    },
+    {
+      "key": "Venti",
+      "field": "gameId",
+      "after": 10000022,
+      "result": "repair"
+    },
+    {
+      "key": "Venti",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Venti",
+      "field": "weaponType",
+      "after": "Bow",
+      "result": "repair"
+    },
+    {
+      "key": "Keqing",
+      "field": "gameId",
+      "after": 10000042,
+      "result": "repair"
+    },
+    {
+      "key": "Keqing",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Keqing",
+      "field": "weaponType",
+      "after": "Sword",
+      "result": "repair"
+    },
+    {
+      "key": "Mona",
+      "field": "gameId",
+      "after": 10000041,
+      "result": "repair"
+    },
+    {
+      "key": "Mona",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Mona",
+      "field": "weaponType",
+      "after": "Catalyst",
+      "result": "repair"
+    },
+    {
+      "key": "Qiqi",
+      "field": "gameId",
+      "after": 10000035,
+      "result": "repair"
+    },
+    {
+      "key": "Qiqi",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Qiqi",
+      "field": "weaponType",
+      "after": "Sword",
+      "result": "repair"
+    },
+    {
+      "key": "Diluc",
+      "field": "gameId",
+      "after": 10000016,
+      "result": "repair"
+    },
+    {
+      "key": "Diluc",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Diluc",
+      "field": "weaponType",
+      "after": "Claymore",
+      "result": "repair"
+    },
+    {
+      "key": "Jean",
+      "field": "gameId",
+      "after": 10000003,
+      "result": "repair"
+    },
+    {
+      "key": "Jean",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Jean",
+      "field": "weaponType",
+      "after": "Sword",
+      "result": "repair"
+    },
+    {
+      "key": "Sucrose",
+      "field": "gameId",
+      "after": 10000043,
+      "result": "repair"
+    },
+    {
+      "key": "Sucrose",
+      "field": "rarity",
+      "after": 4,
+      "result": "repair"
+    },
+    {
+      "key": "Sucrose",
+      "field": "weaponType",
+      "after": "Catalyst",
+      "result": "repair"
+    },
+    {
+      "key": "Chongyun",
+      "field": "gameId",
+      "after": 10000036,
+      "result": "repair"
+    },
+    {
+      "key": "Chongyun",
+      "field": "rarity",
+      "after": 4,
+      "result": "repair"
+    },
+    {
+      "key": "Chongyun",
+      "field": "weaponType",
+      "after": "Claymore",
+      "result": "repair"
+    },
+    {
+      "key": "Noelle",
+      "field": "gameId",
+      "after": 10000034,
+      "result": "repair"
+    },
+    {
+      "key": "Noelle",
+      "field": "rarity",
+      "after": 4,
+      "result": "repair"
+    },
+    {
+      "key": "Noelle",
+      "field": "weaponType",
+      "after": "Claymore",
+      "result": "repair"
+    },
+    {
+      "key": "Bennett",
+      "field": "gameId",
+      "after": 10000032,
+      "result": "repair"
+    },
+    {
+      "key": "Bennett",
+      "field": "rarity",
+      "after": 4,
+      "result": "repair"
+    },
+    {
+      "key": "Fischl",
+      "field": "gameId",
+      "after": 10000031,
+      "result": "repair"
+    },
+    {
+      "key": "Fischl",
+      "field": "rarity",
+      "after": 4,
+      "result": "repair"
+    },
+    {
+      "key": "Fischl",
+      "field": "weaponType",
+      "after": "Bow",
+      "result": "repair"
+    },
+    {
+      "key": "Ningguang",
+      "field": "gameId",
+      "after": 10000027,
+      "result": "repair"
+    },
+    {
+      "key": "Ningguang",
+      "field": "rarity",
+      "after": 4,
+      "result": "repair"
+    },
+    {
+      "key": "Ningguang",
+      "field": "weaponType",
+      "after": "Catalyst",
+      "result": "repair"
+    },
+    {
+      "key": "Xingqiu",
+      "field": "gameId",
+      "after": 10000025,
+      "result": "repair"
+    },
+    {
+      "key": "Xingqiu",
+      "field": "rarity",
+      "after": 4,
+      "result": "repair"
+    },
+    {
+      "key": "Xingqiu",
+      "field": "weaponType",
+      "after": "Sword",
+      "result": "repair"
+    },
+    {
+      "key": "Beidou",
+      "field": "gameId",
+      "after": 10000024,
+      "result": "repair"
+    },
+    {
+      "key": "Beidou",
+      "field": "rarity",
+      "after": 4,
+      "result": "repair"
+    },
+    {
+      "key": "Beidou",
+      "field": "weaponType",
+      "after": "Claymore",
+      "result": "repair"
+    },
+    {
+      "key": "Xiangling",
+      "field": "gameId",
+      "after": 10000023,
+      "result": "repair"
+    },
+    {
+      "key": "Xiangling",
+      "field": "rarity",
+      "after": 4,
+      "result": "repair"
+    },
+    {
+      "key": "Xiangling",
+      "field": "weaponType",
+      "after": "Polearm",
+      "result": "repair"
+    },
+    {
+      "key": "Razor",
+      "field": "gameId",
+      "after": 10000020,
+      "result": "repair"
+    },
+    {
+      "key": "Razor",
+      "field": "rarity",
+      "after": 4,
+      "result": "repair"
+    },
+    {
+      "key": "Razor",
+      "field": "weaponType",
+      "after": "Claymore",
+      "result": "repair"
+    },
+    {
+      "key": "Barbara",
+      "field": "gameId",
+      "after": 10000014,
+      "result": "repair"
+    },
+    {
+      "key": "Barbara",
+      "field": "rarity",
+      "after": 4,
+      "result": "repair"
+    },
+    {
+      "key": "Barbara",
+      "field": "weaponType",
+      "after": "Catalyst",
+      "result": "repair"
+    },
+    {
+      "key": "Lisa",
+      "field": "gameId",
+      "after": 10000006,
+      "result": "repair"
+    },
+    {
+      "key": "Lisa",
+      "field": "rarity",
+      "after": 4,
+      "result": "repair"
+    },
+    {
+      "key": "Lisa",
+      "field": "weaponType",
+      "after": "Catalyst",
+      "result": "repair"
+    },
+    {
+      "key": "Kaeya",
+      "field": "gameId",
+      "after": 10000015,
+      "result": "repair"
+    },
+    {
+      "key": "Kaeya",
+      "field": "rarity",
+      "after": 4,
+      "result": "repair"
+    },
+    {
+      "key": "Kaeya",
+      "field": "weaponType",
+      "after": "Sword",
+      "result": "repair"
+    },
+    {
+      "key": "Amber",
+      "field": "gameId",
+      "after": 10000021,
+      "result": "repair"
+    },
+    {
+      "key": "Amber",
+      "field": "rarity",
+      "after": 4,
+      "result": "repair"
+    },
+    {
+      "key": "Amber",
+      "field": "weaponType",
+      "after": "Bow",
+      "result": "repair"
+    },
+    {
+      "key": "Zhongli",
+      "field": "gameId",
+      "after": 10000030,
+      "result": "repair"
+    },
+    {
+      "key": "Zhongli",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Zhongli",
+      "field": "weaponType",
+      "after": "Polearm",
+      "result": "repair"
+    },
+    {
+      "key": "Xinyan",
+      "field": "gameId",
+      "after": 10000044,
+      "result": "repair"
+    },
+    {
+      "key": "Xinyan",
+      "field": "rarity",
+      "after": 4,
+      "result": "repair"
+    },
+    {
+      "key": "Xinyan",
+      "field": "weaponType",
+      "after": "Claymore",
+      "result": "repair"
+    },
+    {
+      "key": "Ganyu",
+      "field": "gameId",
+      "after": 10000037,
+      "result": "repair"
+    },
+    {
+      "key": "Ganyu",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Ganyu",
+      "field": "weaponType",
+      "after": "Bow",
+      "result": "repair"
+    },
+    {
+      "key": "Albedo",
+      "field": "gameId",
+      "after": 10000038,
+      "result": "repair"
+    },
+    {
+      "key": "Albedo",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Albedo",
+      "field": "weaponType",
+      "after": "Sword",
+      "result": "repair"
+    },
+    {
+      "key": "Xiao",
+      "field": "gameId",
+      "after": 10000026,
+      "result": "repair"
+    },
+    {
+      "key": "Xiao",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Xiao",
+      "field": "weaponType",
+      "after": "Polearm",
+      "result": "repair"
+    },
+    {
+      "key": "HuTao",
+      "field": "gameId",
+      "after": 10000046,
+      "result": "repair"
+    },
+    {
+      "key": "HuTao",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "HuTao",
+      "field": "weaponType",
+      "after": "Polearm",
+      "result": "repair"
+    },
+    {
+      "key": "Rosaria",
+      "field": "gameId",
+      "after": 10000045,
+      "result": "repair"
+    },
+    {
+      "key": "Rosaria",
+      "field": "rarity",
+      "after": 4,
+      "result": "repair"
+    },
+    {
+      "key": "Rosaria",
+      "field": "weaponType",
+      "after": "Polearm",
+      "result": "repair"
+    },
+    {
+      "key": "Yanfei",
+      "field": "gameId",
+      "after": 10000048,
+      "result": "repair"
+    },
+    {
+      "key": "Yanfei",
+      "field": "rarity",
+      "after": 4,
+      "result": "repair"
+    },
+    {
+      "key": "Yanfei",
+      "field": "weaponType",
+      "after": "Catalyst",
+      "result": "repair"
+    },
+    {
+      "key": "Eula",
+      "field": "gameId",
+      "after": 10000051,
+      "result": "repair"
+    },
+    {
+      "key": "Eula",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Eula",
+      "field": "weaponType",
+      "after": "Claymore",
+      "result": "repair"
+    },
+    {
+      "key": "KaedeharaKazuha",
+      "field": "gameId",
+      "after": 10000047,
+      "result": "repair"
+    },
+    {
+      "key": "KaedeharaKazuha",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "KaedeharaKazuha",
+      "field": "weaponType",
+      "after": "Sword",
+      "result": "repair"
+    },
+    {
+      "key": "KamisatoAyaka",
+      "field": "gameId",
+      "after": 10000002,
+      "result": "repair"
+    },
+    {
+      "key": "KamisatoAyaka",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "KamisatoAyaka",
+      "field": "weaponType",
+      "after": "Sword",
+      "result": "repair"
+    },
+    {
+      "key": "Sayu",
+      "field": "gameId",
+      "after": 10000053,
+      "result": "repair"
+    },
+    {
+      "key": "Sayu",
+      "field": "rarity",
+      "after": 4,
+      "result": "repair"
+    },
+    {
+      "key": "Sayu",
+      "field": "weaponType",
+      "after": "Claymore",
+      "result": "repair"
+    },
+    {
+      "key": "Yoimiya",
+      "field": "gameId",
+      "after": 10000049,
+      "result": "repair"
+    },
+    {
+      "key": "Yoimiya",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Yoimiya",
+      "field": "weaponType",
+      "after": "Bow",
+      "result": "repair"
+    },
+    {
+      "key": "Aloy",
+      "field": "gameId",
+      "after": 10000062,
+      "result": "repair"
+    },
+    {
+      "key": "Aloy",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Aloy",
+      "field": "weaponType",
+      "after": "Bow",
+      "result": "repair"
+    },
+    {
+      "key": "KujouSara",
+      "field": "gameId",
+      "after": 10000056,
+      "result": "repair"
+    },
+    {
+      "key": "KujouSara",
+      "field": "rarity",
+      "after": 4,
+      "result": "repair"
+    },
+    {
+      "key": "KujouSara",
+      "field": "weaponType",
+      "after": "Bow",
+      "result": "repair"
+    },
+    {
+      "key": "RaidenShogun",
+      "field": "gameId",
+      "after": 10000052,
+      "result": "repair"
+    },
+    {
+      "key": "RaidenShogun",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "RaidenShogun",
+      "field": "weaponType",
+      "after": "Polearm",
+      "result": "repair"
+    },
+    {
+      "key": "SangonomiyaKokomi",
+      "field": "gameId",
+      "after": 10000054,
+      "result": "repair"
+    },
+    {
+      "key": "SangonomiyaKokomi",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "SangonomiyaKokomi",
+      "field": "weaponType",
+      "after": "Catalyst",
+      "result": "repair"
+    },
+    {
+      "key": "Thoma",
+      "field": "gameId",
+      "after": 10000050,
+      "result": "repair"
+    },
+    {
+      "key": "Thoma",
+      "field": "rarity",
+      "after": 4,
+      "result": "repair"
+    },
+    {
+      "key": "Thoma",
+      "field": "weaponType",
+      "after": "Polearm",
+      "result": "repair"
+    },
+    {
+      "key": "Gorou",
+      "field": "gameId",
+      "after": 10000055,
+      "result": "repair"
+    },
+    {
+      "key": "Gorou",
+      "field": "rarity",
+      "after": 4,
+      "result": "repair"
+    },
+    {
+      "key": "Gorou",
+      "field": "weaponType",
+      "after": "Bow",
+      "result": "repair"
+    },
+    {
+      "key": "AratakiItto",
+      "field": "gameId",
+      "after": 10000057,
+      "result": "repair"
+    },
+    {
+      "key": "AratakiItto",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "AratakiItto",
+      "field": "weaponType",
+      "after": "Claymore",
+      "result": "repair"
+    },
+    {
+      "key": "YunJin",
+      "field": "gameId",
+      "after": 10000064,
+      "result": "repair"
+    },
+    {
+      "key": "YunJin",
+      "field": "rarity",
+      "after": 4,
+      "result": "repair"
+    },
+    {
+      "key": "YunJin",
+      "field": "weaponType",
+      "after": "Polearm",
+      "result": "repair"
+    },
+    {
+      "key": "Shenhe",
+      "field": "gameId",
+      "after": 10000063,
+      "result": "repair"
+    },
+    {
+      "key": "Shenhe",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Shenhe",
+      "field": "weaponType",
+      "after": "Polearm",
+      "result": "repair"
+    },
+    {
+      "key": "YaeMiko",
+      "field": "gameId",
+      "after": 10000058,
+      "result": "repair"
+    },
+    {
+      "key": "YaeMiko",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "YaeMiko",
+      "field": "weaponType",
+      "after": "Catalyst",
+      "result": "repair"
+    },
+    {
+      "key": "KamisatoAyato",
+      "field": "gameId",
+      "after": 10000066,
+      "result": "repair"
+    },
+    {
+      "key": "KamisatoAyato",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "KamisatoAyato",
+      "field": "weaponType",
+      "after": "Sword",
+      "result": "repair"
+    },
+    {
+      "key": "Yelan",
+      "field": "gameId",
+      "after": 10000060,
+      "result": "repair"
+    },
+    {
+      "key": "Yelan",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Yelan",
+      "field": "weaponType",
+      "after": "Bow",
+      "result": "repair"
+    },
+    {
+      "key": "KukiShinobu",
+      "field": "gameId",
+      "after": 10000065,
+      "result": "repair"
+    },
+    {
+      "key": "KukiShinobu",
+      "field": "rarity",
+      "after": 4,
+      "result": "repair"
+    },
+    {
+      "key": "KukiShinobu",
+      "field": "weaponType",
+      "after": "Sword",
+      "result": "repair"
+    },
+    {
+      "key": "ShikanoinHeizou",
+      "field": "gameId",
+      "after": 10000059,
+      "result": "repair"
+    },
+    {
+      "key": "ShikanoinHeizou",
+      "field": "rarity",
+      "after": 4,
+      "result": "repair"
+    },
+    {
+      "key": "ShikanoinHeizou",
+      "field": "weaponType",
+      "after": "Catalyst",
+      "result": "repair"
+    },
+    {
+      "key": "Collei",
+      "field": "gameId",
+      "after": 10000067,
+      "result": "repair"
+    },
+    {
+      "key": "Collei",
+      "field": "rarity",
+      "after": 4,
+      "result": "repair"
+    },
+    {
+      "key": "Collei",
+      "field": "weaponType",
+      "after": "Bow",
+      "result": "repair"
+    },
+    {
+      "key": "Tighnari",
+      "field": "gameId",
+      "after": 10000069,
+      "result": "repair"
+    },
+    {
+      "key": "Tighnari",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Tighnari",
+      "field": "weaponType",
+      "after": "Bow",
+      "result": "repair"
+    },
+    {
+      "key": "Dori",
+      "field": "gameId",
+      "after": 10000068,
+      "result": "repair"
+    },
+    {
+      "key": "Dori",
+      "field": "rarity",
+      "after": 4,
+      "result": "repair"
+    },
+    {
+      "key": "Dori",
+      "field": "weaponType",
+      "after": "Claymore",
+      "result": "repair"
+    },
+    {
+      "key": "Candace",
+      "field": "gameId",
+      "after": 10000072,
+      "result": "repair"
+    },
+    {
+      "key": "Candace",
+      "field": "rarity",
+      "after": 4,
+      "result": "repair"
+    },
+    {
+      "key": "Candace",
+      "field": "weaponType",
+      "after": "Polearm",
+      "result": "repair"
+    },
+    {
+      "key": "Cyno",
+      "field": "gameId",
+      "after": 10000071,
+      "result": "repair"
+    },
+    {
+      "key": "Cyno",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Cyno",
+      "field": "weaponType",
+      "after": "Polearm",
+      "result": "repair"
+    },
+    {
+      "key": "Nilou",
+      "field": "gameId",
+      "after": 10000070,
+      "result": "repair"
+    },
+    {
+      "key": "Nilou",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Nilou",
+      "field": "weaponType",
+      "after": "Sword",
+      "result": "repair"
+    },
+    {
+      "key": "Nahida",
+      "field": "gameId",
+      "after": 10000073,
+      "result": "repair"
+    },
+    {
+      "key": "Nahida",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Nahida",
+      "field": "weaponType",
+      "after": "Catalyst",
+      "result": "repair"
+    },
+    {
+      "key": "Layla",
+      "field": "gameId",
+      "after": 10000074,
+      "result": "repair"
+    },
+    {
+      "key": "Layla",
+      "field": "rarity",
+      "after": 4,
+      "result": "repair"
+    },
+    {
+      "key": "Layla",
+      "field": "weaponType",
+      "after": "Sword",
+      "result": "repair"
+    },
+    {
+      "key": "Faruzan",
+      "field": "gameId",
+      "after": 10000076,
+      "result": "repair"
+    },
+    {
+      "key": "Faruzan",
+      "field": "rarity",
+      "after": 4,
+      "result": "repair"
+    },
+    {
+      "key": "Faruzan",
+      "field": "weaponType",
+      "after": "Bow",
+      "result": "repair"
+    },
+    {
+      "key": "Wanderer",
+      "field": "gameId",
+      "after": 10000075,
+      "result": "repair"
+    },
+    {
+      "key": "Wanderer",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Wanderer",
+      "field": "weaponType",
+      "after": "Catalyst",
+      "result": "repair"
+    },
+    {
+      "key": "Yaoyao",
+      "field": "gameId",
+      "after": 10000077,
+      "result": "repair"
+    },
+    {
+      "key": "Yaoyao",
+      "field": "rarity",
+      "after": 4,
+      "result": "repair"
+    },
+    {
+      "key": "Yaoyao",
+      "field": "weaponType",
+      "after": "Polearm",
+      "result": "repair"
+    },
+    {
+      "key": "Alhaitham",
+      "field": "gameId",
+      "after": 10000078,
+      "result": "repair"
+    },
+    {
+      "key": "Alhaitham",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Alhaitham",
+      "field": "weaponType",
+      "after": "Sword",
+      "result": "repair"
+    },
+    {
+      "key": "Dehya",
+      "field": "gameId",
+      "after": 10000079,
+      "result": "repair"
+    },
+    {
+      "key": "Dehya",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Dehya",
+      "field": "weaponType",
+      "after": "Claymore",
+      "result": "repair"
+    },
+    {
+      "key": "Mika",
+      "field": "gameId",
+      "after": 10000080,
+      "result": "repair"
+    },
+    {
+      "key": "Mika",
+      "field": "rarity",
+      "after": 4,
+      "result": "repair"
+    },
+    {
+      "key": "Mika",
+      "field": "weaponType",
+      "after": "Polearm",
+      "result": "repair"
+    },
+    {
+      "key": "Kaveh",
+      "field": "gameId",
+      "after": 10000081,
+      "result": "repair"
+    },
+    {
+      "key": "Kaveh",
+      "field": "rarity",
+      "after": 4,
+      "result": "repair"
+    },
+    {
+      "key": "Kaveh",
+      "field": "weaponType",
+      "after": "Claymore",
+      "result": "repair"
+    },
+    {
+      "key": "Baizhu",
+      "field": "gameId",
+      "after": 10000082,
+      "result": "repair"
+    },
+    {
+      "key": "Baizhu",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Baizhu",
+      "field": "weaponType",
+      "after": "Catalyst",
+      "result": "repair"
+    },
+    {
+      "key": "Kirara",
+      "field": "gameId",
+      "after": 10000061,
+      "result": "repair"
+    },
+    {
+      "key": "Kirara",
+      "field": "rarity",
+      "after": 4,
+      "result": "repair"
+    },
+    {
+      "key": "Kirara",
+      "field": "weaponType",
+      "after": "Sword",
+      "result": "repair"
+    },
+    {
+      "key": "Lynette",
+      "field": "gameId",
+      "after": 10000083,
+      "result": "repair"
+    },
+    {
+      "key": "Lynette",
+      "field": "rarity",
+      "after": 4,
+      "result": "repair"
+    },
+    {
+      "key": "Lynette",
+      "field": "weaponType",
+      "after": "Sword",
+      "result": "repair"
+    },
+    {
+      "key": "Lyney",
+      "field": "gameId",
+      "after": 10000084,
+      "result": "repair"
+    },
+    {
+      "key": "Lyney",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Lyney",
+      "field": "weaponType",
+      "after": "Bow",
+      "result": "repair"
+    },
+    {
+      "key": "Freminet",
+      "field": "gameId",
+      "after": 10000085,
+      "result": "repair"
+    },
+    {
+      "key": "Freminet",
+      "field": "rarity",
+      "after": 4,
+      "result": "repair"
+    },
+    {
+      "key": "Freminet",
+      "field": "weaponType",
+      "after": "Claymore",
+      "result": "repair"
+    },
+    {
+      "key": "Neuvillette",
+      "field": "gameId",
+      "after": 10000087,
+      "result": "repair"
+    },
+    {
+      "key": "Neuvillette",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Neuvillette",
+      "field": "weaponType",
+      "after": "Catalyst",
+      "result": "repair"
+    },
+    {
+      "key": "Wriothesley",
+      "field": "gameId",
+      "after": 10000086,
+      "result": "repair"
+    },
+    {
+      "key": "Wriothesley",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Wriothesley",
+      "field": "weaponType",
+      "after": "Catalyst",
+      "result": "repair"
+    },
+    {
+      "key": "Charlotte",
+      "field": "gameId",
+      "after": 10000088,
+      "result": "repair"
+    },
+    {
+      "key": "Charlotte",
+      "field": "rarity",
+      "after": 4,
+      "result": "repair"
+    },
+    {
+      "key": "Charlotte",
+      "field": "weaponType",
+      "after": "Catalyst",
+      "result": "repair"
+    },
+    {
+      "key": "Furina",
+      "field": "gameId",
+      "after": 10000089,
+      "result": "repair"
+    },
+    {
+      "key": "Furina",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Navia",
+      "field": "gameId",
+      "after": 10000091,
+      "result": "repair"
+    },
+    {
+      "key": "Navia",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Navia",
+      "field": "weaponType",
+      "after": "Claymore",
+      "result": "repair"
+    },
+    {
+      "key": "Chevreuse",
+      "field": "gameId",
+      "after": 10000090,
+      "result": "repair"
+    },
+    {
+      "key": "Chevreuse",
+      "field": "rarity",
+      "after": 4,
+      "result": "repair"
+    },
+    {
+      "key": "Chevreuse",
+      "field": "weaponType",
+      "after": "Polearm",
+      "result": "repair"
+    },
+    {
+      "key": "Gaming",
+      "field": "gameId",
+      "after": 10000092,
+      "result": "repair"
+    },
+    {
+      "key": "Gaming",
+      "field": "rarity",
+      "after": 4,
+      "result": "repair"
+    },
+    {
+      "key": "Gaming",
+      "field": "weaponType",
+      "after": "Claymore",
+      "result": "repair"
+    },
+    {
+      "key": "Xianyun",
+      "field": "gameId",
+      "after": 10000093,
+      "result": "repair"
+    },
+    {
+      "key": "Xianyun",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Xianyun",
+      "field": "weaponType",
+      "after": "Catalyst",
+      "result": "repair"
+    },
+    {
+      "key": "Chiori",
+      "field": "gameId",
+      "after": 10000094,
+      "result": "repair"
+    },
+    {
+      "key": "Chiori",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Chiori",
+      "field": "weaponType",
+      "after": "Sword",
+      "result": "repair"
+    },
+    {
+      "key": "Arlecchino",
+      "field": "gameId",
+      "after": 10000096,
+      "result": "repair"
+    },
+    {
+      "key": "Arlecchino",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Arlecchino",
+      "field": "weaponType",
+      "after": "Polearm",
+      "result": "repair"
+    },
+    {
+      "key": "Clorinde",
+      "field": "gameId",
+      "after": 10000098,
+      "result": "repair"
+    },
+    {
+      "key": "Clorinde",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Clorinde",
+      "field": "weaponType",
+      "after": "Sword",
+      "result": "repair"
+    },
+    {
+      "key": "Sethos",
+      "field": "gameId",
+      "after": 10000097,
+      "result": "repair"
+    },
+    {
+      "key": "Sethos",
+      "field": "rarity",
+      "after": 4,
+      "result": "repair"
+    },
+    {
+      "key": "Sethos",
+      "field": "weaponType",
+      "after": "Bow",
+      "result": "repair"
+    },
+    {
+      "key": "Sigewinne",
+      "field": "gameId",
+      "after": 10000095,
+      "result": "repair"
+    },
+    {
+      "key": "Sigewinne",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Sigewinne",
+      "field": "weaponType",
+      "after": "Bow",
+      "result": "repair"
+    },
+    {
+      "key": "Emilie",
+      "field": "gameId",
+      "after": 10000099,
+      "result": "repair"
+    },
+    {
+      "key": "Emilie",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Emilie",
+      "field": "weaponType",
+      "after": "Polearm",
+      "result": "repair"
+    },
+    {
+      "key": "Kachina",
+      "field": "gameId",
+      "after": 10000100,
+      "result": "repair"
+    },
+    {
+      "key": "Kachina",
+      "field": "rarity",
+      "after": 4,
+      "result": "repair"
+    },
+    {
+      "key": "Kachina",
+      "field": "weaponType",
+      "after": "Polearm",
+      "result": "repair"
+    },
+    {
+      "key": "Mualani",
+      "field": "gameId",
+      "after": 10000102,
+      "result": "repair"
+    },
+    {
+      "key": "Mualani",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Mualani",
+      "field": "weaponType",
+      "after": "Catalyst",
+      "result": "repair"
+    },
+    {
+      "key": "Kinich",
+      "field": "gameId",
+      "after": 10000101,
+      "result": "repair"
+    },
+    {
+      "key": "Kinich",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Kinich",
+      "field": "weaponType",
+      "after": "Claymore",
+      "result": "repair"
+    },
+    {
+      "key": "Xilonen",
+      "field": "gameId",
+      "after": 10000103,
+      "result": "repair"
+    },
+    {
+      "key": "Xilonen",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Xilonen",
+      "field": "weaponType",
+      "after": "Sword",
+      "result": "repair"
+    },
+    {
+      "key": "Ororon",
+      "field": "gameId",
+      "after": 10000105,
+      "result": "repair"
+    },
+    {
+      "key": "Ororon",
+      "field": "rarity",
+      "after": 4,
+      "result": "repair"
+    },
+    {
+      "key": "Ororon",
+      "field": "weaponType",
+      "after": "Bow",
+      "result": "repair"
+    },
+    {
+      "key": "Chasca",
+      "field": "gameId",
+      "after": 10000104,
+      "result": "repair"
+    },
+    {
+      "key": "Chasca",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Chasca",
+      "field": "weaponType",
+      "after": "Bow",
+      "result": "repair"
+    },
+    {
+      "key": "Citlali",
+      "field": "gameId",
+      "after": 10000107,
+      "result": "repair"
+    },
+    {
+      "key": "Citlali",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Citlali",
+      "field": "weaponType",
+      "after": "Catalyst",
+      "result": "repair"
+    },
+    {
+      "key": "Mavuika",
+      "field": "gameId",
+      "after": 10000106,
+      "result": "repair"
+    },
+    {
+      "key": "Mavuika",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Mavuika",
+      "field": "weaponType",
+      "after": "Claymore",
+      "result": "repair"
+    },
+    {
+      "key": "LanYan",
+      "field": "gameId",
+      "after": 10000108,
+      "result": "repair"
+    },
+    {
+      "key": "LanYan",
+      "field": "rarity",
+      "after": 4,
+      "result": "repair"
+    },
+    {
+      "key": "LanYan",
+      "field": "weaponType",
+      "after": "Catalyst",
+      "result": "repair"
+    },
+    {
+      "key": "YumemizukiMizuki",
+      "field": "gameId",
+      "after": 10000109,
+      "result": "repair"
+    },
+    {
+      "key": "YumemizukiMizuki",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "YumemizukiMizuki",
+      "field": "weaponType",
+      "after": "Catalyst",
+      "result": "repair"
+    },
+    {
+      "key": "Iansan",
+      "field": "gameId",
+      "after": 10000110,
+      "result": "repair"
+    },
+    {
+      "key": "Iansan",
+      "field": "rarity",
+      "after": 4,
+      "result": "repair"
+    },
+    {
+      "key": "Iansan",
+      "field": "weaponType",
+      "after": "Polearm",
+      "result": "repair"
+    },
+    {
+      "key": "Varesa",
+      "field": "gameId",
+      "after": 10000111,
+      "result": "repair"
+    },
+    {
+      "key": "Varesa",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Varesa",
+      "field": "weaponType",
+      "after": "Catalyst",
+      "result": "repair"
+    },
+    {
+      "key": "Ifa",
+      "field": "gameId",
+      "after": 10000113,
+      "result": "repair"
+    },
+    {
+      "key": "Ifa",
+      "field": "rarity",
+      "after": 4,
+      "result": "repair"
+    },
+    {
+      "key": "Ifa",
+      "field": "weaponType",
+      "after": "Catalyst",
+      "result": "repair"
+    },
+    {
+      "key": "Escoffier",
+      "field": "gameId",
+      "after": 10000112,
+      "result": "repair"
+    },
+    {
+      "key": "Escoffier",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Escoffier",
+      "field": "weaponType",
+      "after": "Polearm",
+      "result": "repair"
+    },
+    {
+      "key": "Dahlia",
+      "field": "gameId",
+      "after": 10000115,
+      "result": "repair"
+    },
+    {
+      "key": "Dahlia",
+      "field": "rarity",
+      "after": 4,
+      "result": "repair"
+    },
+    {
+      "key": "Dahlia",
+      "field": "weaponType",
+      "after": "Sword",
+      "result": "repair"
+    },
+    {
+      "key": "Skirk",
+      "field": "gameId",
+      "after": 10000114,
+      "result": "repair"
+    },
+    {
+      "key": "Skirk",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Skirk",
+      "field": "weaponType",
+      "after": "Sword",
+      "result": "repair"
+    },
+    {
+      "key": "Ineffa",
+      "field": "gameId",
+      "after": 10000116,
+      "result": "repair"
+    },
+    {
+      "key": "Ineffa",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Ineffa",
+      "field": "weaponType",
+      "after": "Polearm",
+      "result": "repair"
+    },
+    {
+      "key": "Aino",
+      "field": "gameId",
+      "after": 10000121,
+      "result": "repair"
+    },
+    {
+      "key": "Aino",
+      "field": "rarity",
+      "after": 4,
+      "result": "repair"
+    },
+    {
+      "key": "Aino",
+      "field": "weaponType",
+      "after": "Claymore",
+      "result": "repair"
+    },
+    {
+      "key": "Lauma",
+      "field": "gameId",
+      "after": 10000119,
+      "result": "repair"
+    },
+    {
+      "key": "Lauma",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Lauma",
+      "field": "weaponType",
+      "after": "Catalyst",
+      "result": "repair"
+    },
+    {
+      "key": "Flins",
+      "field": "gameId",
+      "after": 10000120,
+      "result": "repair"
+    },
+    {
+      "key": "Flins",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Flins",
+      "field": "weaponType",
+      "after": "Polearm",
+      "result": "repair"
+    },
+    {
+      "key": "Nefer",
+      "field": "gameId",
+      "after": 10000122,
+      "result": "repair"
+    },
+    {
+      "key": "Nefer",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Nefer",
+      "field": "weaponType",
+      "after": "Catalyst",
+      "result": "repair"
+    },
+    {
+      "key": "Jahoda",
+      "field": "gameId",
+      "after": 10000124,
+      "result": "repair"
+    },
+    {
+      "key": "Jahoda",
+      "field": "rarity",
+      "after": 4,
+      "result": "repair"
+    },
+    {
+      "key": "Jahoda",
+      "field": "weaponType",
+      "after": "Bow",
+      "result": "repair"
+    },
+    {
+      "key": "Durin",
+      "field": "gameId",
+      "after": 10000123,
+      "result": "repair"
+    },
+    {
+      "key": "Durin",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Durin",
+      "field": "weaponType",
+      "after": "Sword",
+      "result": "repair"
+    },
+    {
+      "key": "Columbina",
+      "field": "gameId",
+      "after": 10000125,
+      "result": "repair"
+    },
+    {
+      "key": "Columbina",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Columbina",
+      "field": "weaponType",
+      "after": "Catalyst",
+      "result": "repair"
+    },
+    {
+      "key": "Illuga",
+      "field": "gameId",
+      "after": 10000127,
+      "result": "repair"
+    },
+    {
+      "key": "Illuga",
+      "field": "rarity",
+      "after": 4,
+      "result": "repair"
+    },
+    {
+      "key": "Illuga",
+      "field": "weaponType",
+      "after": "Polearm",
+      "result": "repair"
+    },
+    {
+      "key": "Zibai",
+      "field": "gameId",
+      "after": 10000126,
+      "result": "repair"
+    },
+    {
+      "key": "Zibai",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Zibai",
+      "field": "weaponType",
+      "after": "Sword",
+      "result": "repair"
+    },
+    {
+      "key": "Varka",
+      "field": "gameId",
+      "after": 10000128,
+      "result": "repair"
+    },
+    {
+      "key": "Varka",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Varka",
+      "field": "weaponType",
+      "after": "Claymore",
+      "result": "repair"
+    },
+    {
+      "key": "Linnea",
+      "field": "gameId",
+      "after": 10000130,
+      "result": "repair"
+    },
+    {
+      "key": "Linnea",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Linnea",
+      "field": "weaponType",
+      "after": "Bow",
+      "result": "repair"
+    },
+    {
+      "key": "Prune",
+      "field": "gameId",
+      "after": 10000132,
+      "result": "repair"
+    },
+    {
+      "key": "Prune",
+      "field": "rarity",
+      "after": 4,
+      "result": "repair"
+    },
+    {
+      "key": "Prune",
+      "field": "weaponType",
+      "after": "Catalyst",
+      "result": "repair"
+    },
+    {
+      "key": "Prune",
+      "field": "status",
+      "before": "beta",
+      "after": "verified",
+      "result": "repair"
+    },
+    {
+      "key": "Prune",
+      "field": "releaseState",
+      "before": "beta",
+      "after": "live",
+      "result": "repair"
+    },
+    {
+      "key": "Prune",
+      "field": "plannerEligible",
+      "before": false,
+      "after": true,
+      "result": "repair"
+    },
+    {
+      "key": "Nicole",
+      "field": "gameId",
+      "after": 10000131,
+      "result": "repair"
+    },
+    {
+      "key": "Nicole",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Nicole",
+      "field": "weaponType",
+      "after": "Catalyst",
+      "result": "repair"
+    },
+    {
+      "key": "Nicole",
+      "field": "status",
+      "before": "beta",
+      "after": "verified",
+      "result": "review",
+      "reason": "Release accepted, but bundled progression does not exactly agree with all supported upstream phases/talents"
+    },
+    {
+      "key": "Lohen",
+      "field": "gameId",
+      "after": 10000129,
+      "result": "repair"
+    },
+    {
+      "key": "Lohen",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Lohen",
+      "field": "weaponType",
+      "after": "Polearm",
+      "result": "repair"
+    },
+    {
+      "key": "Lohen",
+      "field": "status",
+      "before": "beta",
+      "after": "verified",
+      "result": "repair"
+    },
+    {
+      "key": "Lohen",
+      "field": "releaseState",
+      "before": "beta",
+      "after": "live",
+      "result": "repair"
+    },
+    {
+      "key": "Lohen",
+      "field": "plannerEligible",
+      "before": false,
+      "after": true,
+      "result": "repair"
+    },
+    {
+      "key": "Sandrone",
+      "field": "gameId",
+      "after": 10000133,
+      "result": "repair"
+    },
+    {
+      "key": "Sandrone",
+      "field": "rarity",
+      "after": 5,
+      "result": "repair"
+    },
+    {
+      "key": "Sandrone",
+      "field": "weaponType",
+      "after": "Claymore",
+      "result": "repair"
+    },
+    {
+      "key": "Sandrone",
+      "field": "status",
+      "before": "beta",
+      "after": "verified",
+      "result": "repair"
+    },
+    {
+      "key": "Sandrone",
+      "field": "releaseState",
+      "before": "beta",
+      "after": "live",
+      "result": "repair"
+    },
+    {
+      "key": "Sandrone",
+      "field": "plannerEligible",
+      "before": false,
+      "after": true,
+      "result": "repair"
+    },
+    {
+      "key": "DullBlade",
+      "field": "identity",
+      "after": {
+        "weaponKey": "DullBlade",
+        "displayName": "Dull Blade",
+        "gameId": 11101,
+        "provenance": {
+          "provider": "animegamedata2",
+          "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+          "table": "WeaponExcelConfigData",
+          "relationshipIds": [
+            11101
+          ]
+        },
+        "rarity": 1,
+        "weaponType": "Sword",
+        "weaponAscensionMaterialFamilyKey": "",
+        "eliteEnemyDropFamilyKey": "",
+        "commonEnemyDropFamilyKey": "",
+        "status": "verified",
+        "releaseState": "live",
+        "plannerEligible": false,
+        "refinementTrackable": false,
+        "refinementPolicy": "not_trackable",
+        "notes": [
+          "Catalog identity only; low-rarity progression planning is unsupported."
+        ]
+      },
+      "result": "repair"
+    },
+    {
+      "key": "WasterGreatsword",
+      "field": "identity",
+      "after": {
+        "weaponKey": "WasterGreatsword",
+        "displayName": "Waster Greatsword",
+        "gameId": 12101,
+        "provenance": {
+          "provider": "animegamedata2",
+          "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+          "table": "WeaponExcelConfigData",
+          "relationshipIds": [
+            12101
+          ]
+        },
+        "rarity": 1,
+        "weaponType": "Claymore",
+        "weaponAscensionMaterialFamilyKey": "",
+        "eliteEnemyDropFamilyKey": "",
+        "commonEnemyDropFamilyKey": "",
+        "status": "verified",
+        "releaseState": "live",
+        "plannerEligible": false,
+        "refinementTrackable": false,
+        "refinementPolicy": "not_trackable",
+        "notes": [
+          "Catalog identity only; low-rarity progression planning is unsupported."
+        ]
+      },
+      "result": "repair"
+    },
+    {
+      "key": "BeginnersProtector",
+      "field": "identity",
+      "after": {
+        "weaponKey": "BeginnersProtector",
+        "displayName": "Beginner's Protector",
+        "gameId": 13101,
+        "provenance": {
+          "provider": "animegamedata2",
+          "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+          "table": "WeaponExcelConfigData",
+          "relationshipIds": [
+            13101
+          ]
+        },
+        "rarity": 1,
+        "weaponType": "Polearm",
+        "weaponAscensionMaterialFamilyKey": "",
+        "eliteEnemyDropFamilyKey": "",
+        "commonEnemyDropFamilyKey": "",
+        "status": "verified",
+        "releaseState": "live",
+        "plannerEligible": false,
+        "refinementTrackable": false,
+        "refinementPolicy": "not_trackable",
+        "notes": [
+          "Catalog identity only; low-rarity progression planning is unsupported."
+        ]
+      },
+      "result": "repair"
+    },
+    {
+      "key": "ApprenticesNotes",
+      "field": "identity",
+      "after": {
+        "weaponKey": "ApprenticesNotes",
+        "displayName": "Apprentice's Notes",
+        "gameId": 14101,
+        "provenance": {
+          "provider": "animegamedata2",
+          "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+          "table": "WeaponExcelConfigData",
+          "relationshipIds": [
+            14101
+          ]
+        },
+        "rarity": 1,
+        "weaponType": "Catalyst",
+        "weaponAscensionMaterialFamilyKey": "",
+        "eliteEnemyDropFamilyKey": "",
+        "commonEnemyDropFamilyKey": "",
+        "status": "verified",
+        "releaseState": "live",
+        "plannerEligible": false,
+        "refinementTrackable": false,
+        "refinementPolicy": "not_trackable",
+        "notes": [
+          "Catalog identity only; low-rarity progression planning is unsupported."
+        ]
+      },
+      "result": "repair"
+    },
+    {
+      "key": "HuntersBow",
+      "field": "identity",
+      "after": {
+        "weaponKey": "HuntersBow",
+        "displayName": "Hunter's Bow",
+        "gameId": 15101,
+        "provenance": {
+          "provider": "animegamedata2",
+          "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+          "table": "WeaponExcelConfigData",
+          "relationshipIds": [
+            15101
+          ]
+        },
+        "rarity": 1,
+        "weaponType": "Bow",
+        "weaponAscensionMaterialFamilyKey": "",
+        "eliteEnemyDropFamilyKey": "",
+        "commonEnemyDropFamilyKey": "",
+        "status": "verified",
+        "releaseState": "live",
+        "plannerEligible": false,
+        "refinementTrackable": false,
+        "refinementPolicy": "not_trackable",
+        "notes": [
+          "Catalog identity only; low-rarity progression planning is unsupported."
+        ]
+      },
+      "result": "repair"
+    },
+    {
+      "key": "SilverSword",
+      "field": "identity",
+      "after": {
+        "weaponKey": "SilverSword",
+        "displayName": "Silver Sword",
+        "gameId": 11201,
+        "provenance": {
+          "provider": "animegamedata2",
+          "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+          "table": "WeaponExcelConfigData",
+          "relationshipIds": [
+            11201
+          ]
+        },
+        "rarity": 2,
+        "weaponType": "Sword",
+        "weaponAscensionMaterialFamilyKey": "",
+        "eliteEnemyDropFamilyKey": "",
+        "commonEnemyDropFamilyKey": "",
+        "status": "verified",
+        "releaseState": "live",
+        "plannerEligible": false,
+        "refinementTrackable": false,
+        "refinementPolicy": "not_trackable",
+        "notes": [
+          "Catalog identity only; low-rarity progression planning is unsupported."
+        ]
+      },
+      "result": "repair"
+    },
+    {
+      "key": "OldMercsPal",
+      "field": "identity",
+      "after": {
+        "weaponKey": "OldMercsPal",
+        "displayName": "Old Merc's Pal",
+        "gameId": 12201,
+        "provenance": {
+          "provider": "animegamedata2",
+          "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+          "table": "WeaponExcelConfigData",
+          "relationshipIds": [
+            12201
+          ]
+        },
+        "rarity": 2,
+        "weaponType": "Claymore",
+        "weaponAscensionMaterialFamilyKey": "",
+        "eliteEnemyDropFamilyKey": "",
+        "commonEnemyDropFamilyKey": "",
+        "status": "verified",
+        "releaseState": "live",
+        "plannerEligible": false,
+        "refinementTrackable": false,
+        "refinementPolicy": "not_trackable",
+        "notes": [
+          "Catalog identity only; low-rarity progression planning is unsupported."
+        ]
+      },
+      "result": "repair"
+    },
+    {
+      "key": "IronPoint",
+      "field": "identity",
+      "after": {
+        "weaponKey": "IronPoint",
+        "displayName": "Iron Point",
+        "gameId": 13201,
+        "provenance": {
+          "provider": "animegamedata2",
+          "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+          "table": "WeaponExcelConfigData",
+          "relationshipIds": [
+            13201
+          ]
+        },
+        "rarity": 2,
+        "weaponType": "Polearm",
+        "weaponAscensionMaterialFamilyKey": "",
+        "eliteEnemyDropFamilyKey": "",
+        "commonEnemyDropFamilyKey": "",
+        "status": "verified",
+        "releaseState": "live",
+        "plannerEligible": false,
+        "refinementTrackable": false,
+        "refinementPolicy": "not_trackable",
+        "notes": [
+          "Catalog identity only; low-rarity progression planning is unsupported."
+        ]
+      },
+      "result": "repair"
+    },
+    {
+      "key": "PocketGrimoire",
+      "field": "identity",
+      "after": {
+        "weaponKey": "PocketGrimoire",
+        "displayName": "Pocket Grimoire",
+        "gameId": 14201,
+        "provenance": {
+          "provider": "animegamedata2",
+          "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+          "table": "WeaponExcelConfigData",
+          "relationshipIds": [
+            14201
+          ]
+        },
+        "rarity": 2,
+        "weaponType": "Catalyst",
+        "weaponAscensionMaterialFamilyKey": "",
+        "eliteEnemyDropFamilyKey": "",
+        "commonEnemyDropFamilyKey": "",
+        "status": "verified",
+        "releaseState": "live",
+        "plannerEligible": false,
+        "refinementTrackable": false,
+        "refinementPolicy": "not_trackable",
+        "notes": [
+          "Catalog identity only; low-rarity progression planning is unsupported."
+        ]
+      },
+      "result": "repair"
+    },
+    {
+      "key": "SeasonedHuntersBow",
+      "field": "identity",
+      "after": {
+        "weaponKey": "SeasonedHuntersBow",
+        "displayName": "Seasoned Hunter's Bow",
+        "gameId": 15201,
+        "provenance": {
+          "provider": "animegamedata2",
+          "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+          "table": "WeaponExcelConfigData",
+          "relationshipIds": [
+            15201
+          ]
+        },
+        "rarity": 2,
+        "weaponType": "Bow",
+        "weaponAscensionMaterialFamilyKey": "",
+        "eliteEnemyDropFamilyKey": "",
+        "commonEnemyDropFamilyKey": "",
+        "status": "verified",
+        "releaseState": "live",
+        "plannerEligible": false,
+        "refinementTrackable": false,
+        "refinementPolicy": "not_trackable",
+        "notes": [
+          "Catalog identity only; low-rarity progression planning is unsupported."
+        ]
+      },
+      "result": "repair"
+    }
+  ],
+  "errors": 0
+}

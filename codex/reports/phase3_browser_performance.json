@@ -1,0 +1,541 @@
+{
+  "before": {
+    "samples": [
+      {
+        "run": 1,
+        "browser": "153.0.8010.12",
+        "interactionMs": 2214.0323999999964,
+        "metrics": {
+          "maxTimerGapMs": 965.5999999940395,
+          "maxFrameGapMs": 959.2999999821186
+        },
+        "attempt": {
+          "trigger": "manual",
+          "startedAt": "2026-09-30T05:14:56.206Z",
+          "result": "updated",
+          "stage": "complete",
+          "checkedRevision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+          "revisionBytes": 73,
+          "recordsObserved": 29,
+          "metrics": {
+            "bytes": 33852,
+            "fetched": 22,
+            "reused": 0,
+            "downloadMs": 95.2999999821186,
+            "parseMs": 16.200000017881393
+          },
+          "farmingAccepted": 2,
+          "farmingRejected": 0,
+          "reconcileMs": 155.0999999642372,
+          "validationMs": 8.700000017881393,
+          "delta": {
+            "added": 5,
+            "changed": 24,
+            "unchanged": 125,
+            "review": 0,
+            "progression": 2,
+            "families": 1,
+            "domains": 1,
+            "schedules": 0,
+            "affectedKeys": [
+              "BrowserCharacter",
+              "DullBlade",
+              "BrowserSword"
+            ]
+          },
+          "durationMs": 3588.300000011921,
+          "finishedAt": "2026-09-30T05:14:59.793Z",
+          "persistenceMs": 1.7000000178813934
+        }
+      },
+      {
+        "run": 2,
+        "browser": "153.0.8010.12",
+        "interactionMs": 540.2627999999968,
+        "metrics": {
+          "maxTimerGapMs": 208.40000000596046,
+          "maxFrameGapMs": 199.19999998807907
+        },
+        "attempt": {
+          "trigger": "manual",
+          "startedAt": "2026-09-30T05:15:02.608Z",
+          "result": "updated",
+          "stage": "complete",
+          "checkedRevision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+          "revisionBytes": 73,
+          "recordsObserved": 29,
+          "metrics": {
+            "bytes": 33852,
+            "fetched": 22,
+            "reused": 0,
+            "downloadMs": 92.5,
+            "parseMs": 11.700000017881393
+          },
+          "farmingAccepted": 2,
+          "farmingRejected": 0,
+          "reconcileMs": 171.09999999403954,
+          "validationMs": 7.699999988079071,
+          "delta": {
+            "added": 5,
+            "changed": 24,
+            "unchanged": 125,
+            "review": 0,
+            "progression": 2,
+            "families": 1,
+            "domains": 1,
+            "schedules": 0,
+            "affectedKeys": [
+              "BrowserCharacter",
+              "DullBlade",
+              "BrowserSword"
+            ]
+          },
+          "durationMs": 372,
+          "finishedAt": "2026-09-30T05:15:02.958Z",
+          "persistenceMs": 21.900000005960464
+        }
+      },
+      {
+        "run": 3,
+        "browser": "153.0.8010.12",
+        "interactionMs": 503.8185000000085,
+        "metrics": {
+          "maxTimerGapMs": 200.90000000596046,
+          "maxFrameGapMs": 180.7000000178814
+        },
+        "attempt": {
+          "trigger": "manual",
+          "startedAt": "2026-09-30T05:15:05.344Z",
+          "result": "updated",
+          "stage": "complete",
+          "checkedRevision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+          "revisionBytes": 73,
+          "recordsObserved": 29,
+          "metrics": {
+            "bytes": 33852,
+            "fetched": 22,
+            "reused": 0,
+            "downloadMs": 90.59999999403954,
+            "parseMs": 11.699999988079071
+          },
+          "farmingAccepted": 2,
+          "farmingRejected": 0,
+          "reconcileMs": 165.09999999403954,
+          "validationMs": 8.700000017881393,
+          "delta": {
+            "added": 5,
+            "changed": 24,
+            "unchanged": 125,
+            "review": 0,
+            "progression": 2,
+            "families": 1,
+            "domains": 1,
+            "schedules": 0,
+            "affectedKeys": [
+              "BrowserCharacter",
+              "DullBlade",
+              "BrowserSword"
+            ]
+          },
+          "durationMs": 360.59999999403954,
+          "finishedAt": "2026-09-30T05:15:05.703Z",
+          "persistenceMs": 1.5999999940395355
+        }
+      },
+      {
+        "run": 4,
+        "browser": "153.0.8010.12",
+        "interactionMs": 505.34309999999823,
+        "metrics": {
+          "maxTimerGapMs": 187,
+          "maxFrameGapMs": 185.2000000178814
+        },
+        "attempt": {
+          "trigger": "manual",
+          "startedAt": "2026-09-30T05:15:07.246Z",
+          "result": "updated",
+          "stage": "complete",
+          "checkedRevision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+          "revisionBytes": 73,
+          "recordsObserved": 29,
+          "metrics": {
+            "bytes": 33852,
+            "fetched": 22,
+            "reused": 0,
+            "downloadMs": 90,
+            "parseMs": 11.800000011920929
+          },
+          "farmingAccepted": 2,
+          "farmingRejected": 0,
+          "reconcileMs": 158,
+          "validationMs": 8.800000011920929,
+          "delta": {
+            "added": 5,
+            "changed": 24,
+            "unchanged": 125,
+            "review": 0,
+            "progression": 2,
+            "families": 1,
+            "domains": 1,
+            "schedules": 0,
+            "affectedKeys": [
+              "BrowserCharacter",
+              "DullBlade",
+              "BrowserSword"
+            ]
+          },
+          "durationMs": 344.5,
+          "finishedAt": "2026-09-30T05:15:07.574Z",
+          "persistenceMs": 15.699999988079071
+        }
+      },
+      {
+        "run": 5,
+        "browser": "153.0.8010.12",
+        "interactionMs": 572.0780000000086,
+        "metrics": {
+          "maxTimerGapMs": 208.80000001192093,
+          "maxFrameGapMs": 194.2999999821186
+        },
+        "attempt": {
+          "trigger": "manual",
+          "startedAt": "2026-09-30T05:15:09.909Z",
+          "result": "updated",
+          "stage": "complete",
+          "checkedRevision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+          "revisionBytes": 73,
+          "recordsObserved": 29,
+          "metrics": {
+            "bytes": 33852,
+            "fetched": 22,
+            "reused": 0,
+            "downloadMs": 93.90000000596046,
+            "parseMs": 15.300000011920929
+          },
+          "farmingAccepted": 2,
+          "farmingRejected": 0,
+          "reconcileMs": 179.10000002384186,
+          "validationMs": 9.599999994039536,
+          "delta": {
+            "added": 5,
+            "changed": 24,
+            "unchanged": 125,
+            "review": 0,
+            "progression": 2,
+            "families": 1,
+            "domains": 1,
+            "schedules": 0,
+            "affectedKeys": [
+              "BrowserCharacter",
+              "DullBlade",
+              "BrowserSword"
+            ]
+          },
+          "durationMs": 386,
+          "finishedAt": "2026-09-30T05:15:10.275Z",
+          "persistenceMs": 20
+        }
+      }
+    ],
+    "summary": {
+      "parseMs": {
+        "median": 11.8,
+        "worst": 16.2
+      },
+      "reconcileMs": {
+        "median": 165.1,
+        "worst": 179.1
+      },
+      "validationMs": {
+        "median": 8.7,
+        "worst": 9.6
+      },
+      "persistenceMs": {
+        "median": 15.7,
+        "worst": 21.9
+      },
+      "timerGapMs": {
+        "median": 208.4,
+        "worst": 965.6
+      },
+      "frameGapMs": {
+        "median": 194.3,
+        "worst": 959.3
+      },
+      "interactionMs": {
+        "median": 540.26,
+        "worst": 2214.03
+      }
+    }
+  },
+  "after": {
+    "samples": [
+      {
+        "run": 1,
+        "browser": "153.0.8010.12",
+        "interactionMs": 620.5302000000001,
+        "metrics": {
+          "maxTimerGapMs": 206.89999997615814,
+          "maxFrameGapMs": 175.10000002384186
+        },
+        "attempt": {
+          "trigger": "manual",
+          "startedAt": "2026-09-30T05:16:14.713Z",
+          "result": "updated",
+          "stage": "complete",
+          "checkedRevision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+          "revisionBytes": 73,
+          "recordsObserved": 29,
+          "metrics": {
+            "bytes": 33852,
+            "fetched": 22,
+            "reused": 0,
+            "downloadMs": 127.39999997615814,
+            "parseMs": 18.200000017881393
+          },
+          "farmingAccepted": 2,
+          "farmingRejected": 0,
+          "reconcileMs": 155,
+          "validationMs": 13.099999994039536,
+          "delta": {
+            "added": 5,
+            "changed": 24,
+            "unchanged": 125,
+            "review": 0,
+            "progression": 2,
+            "families": 1,
+            "domains": 1,
+            "schedules": 0,
+            "affectedKeys": [
+              "BrowserCharacter",
+              "DullBlade",
+              "BrowserSword"
+            ]
+          },
+          "durationMs": 432.7000000178814,
+          "finishedAt": "2026-09-30T05:16:15.143Z",
+          "persistenceMs": 2.7000000178813934
+        }
+      },
+      {
+        "run": 2,
+        "browser": "153.0.8010.12",
+        "interactionMs": 591.3797999999997,
+        "metrics": {
+          "maxTimerGapMs": 181.39999997615814,
+          "maxFrameGapMs": 149.40000000596046
+        },
+        "attempt": {
+          "trigger": "manual",
+          "startedAt": "2026-09-30T05:16:16.882Z",
+          "result": "updated",
+          "stage": "complete",
+          "checkedRevision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+          "revisionBytes": 73,
+          "recordsObserved": 29,
+          "metrics": {
+            "bytes": 33852,
+            "fetched": 22,
+            "reused": 0,
+            "downloadMs": 136.69999998807907,
+            "parseMs": 16.5
+          },
+          "farmingAccepted": 2,
+          "farmingRejected": 0,
+          "reconcileMs": 125,
+          "validationMs": 13.400000005960464,
+          "delta": {
+            "added": 5,
+            "changed": 24,
+            "unchanged": 125,
+            "review": 0,
+            "progression": 2,
+            "families": 1,
+            "domains": 1,
+            "schedules": 0,
+            "affectedKeys": [
+              "BrowserCharacter",
+              "DullBlade",
+              "BrowserSword"
+            ]
+          },
+          "durationMs": 400.2999999821186,
+          "finishedAt": "2026-09-30T05:16:17.275Z",
+          "persistenceMs": 7.899999976158142
+        }
+      },
+      {
+        "run": 3,
+        "browser": "153.0.8010.12",
+        "interactionMs": 562.1606000000002,
+        "metrics": {
+          "maxTimerGapMs": 193.19999998807907,
+          "maxFrameGapMs": 165.2999999821186
+        },
+        "attempt": {
+          "trigger": "manual",
+          "startedAt": "2026-09-30T05:16:19.048Z",
+          "result": "updated",
+          "stage": "complete",
+          "checkedRevision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+          "revisionBytes": 73,
+          "recordsObserved": 29,
+          "metrics": {
+            "bytes": 33852,
+            "fetched": 22,
+            "reused": 0,
+            "downloadMs": 112,
+            "parseMs": 14.5
+          },
+          "farmingAccepted": 2,
+          "farmingRejected": 0,
+          "reconcileMs": 137.80000001192093,
+          "validationMs": 14.699999988079071,
+          "delta": {
+            "added": 5,
+            "changed": 24,
+            "unchanged": 125,
+            "review": 0,
+            "progression": 2,
+            "families": 1,
+            "domains": 1,
+            "schedules": 0,
+            "affectedKeys": [
+              "BrowserCharacter",
+              "DullBlade",
+              "BrowserSword"
+            ]
+          },
+          "durationMs": 386.69999998807907,
+          "finishedAt": "2026-09-30T05:16:19.431Z",
+          "persistenceMs": 2.9000000059604645
+        }
+      },
+      {
+        "run": 4,
+        "browser": "153.0.8010.12",
+        "interactionMs": 603.2121000000006,
+        "metrics": {
+          "maxTimerGapMs": 177.7000000178814,
+          "maxFrameGapMs": 168
+        },
+        "attempt": {
+          "trigger": "manual",
+          "startedAt": "2026-09-30T05:16:21.109Z",
+          "result": "updated",
+          "stage": "complete",
+          "checkedRevision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+          "revisionBytes": 73,
+          "recordsObserved": 29,
+          "metrics": {
+            "bytes": 33852,
+            "fetched": 22,
+            "reused": 0,
+            "downloadMs": 108.09999999403954,
+            "parseMs": 14.100000023841858
+          },
+          "farmingAccepted": 2,
+          "farmingRejected": 0,
+          "reconcileMs": 128.5,
+          "validationMs": 11.599999994039536,
+          "delta": {
+            "added": 5,
+            "changed": 24,
+            "unchanged": 125,
+            "review": 0,
+            "progression": 2,
+            "families": 1,
+            "domains": 1,
+            "schedules": 0,
+            "affectedKeys": [
+              "BrowserCharacter",
+              "DullBlade",
+              "BrowserSword"
+            ]
+          },
+          "durationMs": 371.69999998807907,
+          "finishedAt": "2026-09-30T05:16:21.461Z",
+          "persistenceMs": 20.299999982118607
+        }
+      },
+      {
+        "run": 5,
+        "browser": "153.0.8010.12",
+        "interactionMs": 541.1967999999997,
+        "metrics": {
+          "maxTimerGapMs": 178.09999999403954,
+          "maxFrameGapMs": 157.59999999403954
+        },
+        "attempt": {
+          "trigger": "manual",
+          "startedAt": "2026-09-30T05:16:23.476Z",
+          "result": "updated",
+          "stage": "complete",
+          "checkedRevision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+          "revisionBytes": 73,
+          "recordsObserved": 29,
+          "metrics": {
+            "bytes": 33852,
+            "fetched": 22,
+            "reused": 0,
+            "downloadMs": 114.19999998807907,
+            "parseMs": 12.599999994039536
+          },
+          "farmingAccepted": 2,
+          "farmingRejected": 0,
+          "reconcileMs": 131.2999999821186,
+          "validationMs": 12,
+          "delta": {
+            "added": 5,
+            "changed": 24,
+            "unchanged": 125,
+            "review": 0,
+            "progression": 2,
+            "families": 1,
+            "domains": 1,
+            "schedules": 0,
+            "affectedKeys": [
+              "BrowserCharacter",
+              "DullBlade",
+              "BrowserSword"
+            ]
+          },
+          "durationMs": 366.7999999821186,
+          "finishedAt": "2026-09-30T05:16:23.839Z",
+          "persistenceMs": 3.4000000059604645
+        }
+      }
+    ],
+    "summary": {
+      "parseMs": {
+        "median": 14.5,
+        "worst": 18.2
+      },
+      "reconcileMs": {
+        "median": 131.3,
+        "worst": 155
+      },
+      "validationMs": {
+        "median": 13.1,
+        "worst": 14.7
+      },
+      "persistenceMs": {
+        "median": 3.4,
+        "worst": 20.3
+      },
+      "timerGapMs": {
+        "median": 181.4,
+        "worst": 206.9
+      },
+      "frameGapMs": {
+        "median": 165.3,
+        "worst": 175.1
+      },
+      "interactionMs": {
+        "median": 591.38,
+        "worst": 620.53
+      }
+    }
+  },
+  "limitations": "Five Chromium fixture runs per variant; 33,852 decoded bytes, not the full live dataset. Hydration excluded. Before run 1 had host contention. Interaction latency includes navigation, automation waits and typing. Worker heap is not measured. No Firefox performance claim."
+}

@@ -1,3 +1,4 @@
+import { identityRecords } from "../../domain/staticData/entityIdentity";
 import type { KrumpanionAccount } from "../../domain/account/types";
 import { getArtifactGoalDisplayName, getCharacterGoalDisplayName } from "../../domain/goals/goalDisplay";
 import type {
@@ -10,13 +11,15 @@ import type {
   ArtifactSandsMainStat,
 } from "../../domain/goals/types";
 import type { ArtifactDomainRecord, StaticGameData } from "../../domain/staticData/types";
+import { getGoalPickableCharacters } from "../../domain/staticData/targetability";
 
-export const ARTIFACT_VIEW_OPTIONS = [
-  { key: "domain", label: "By Domain" },
-  { key: "character", label: "By Character" },
+export const ARTIFACT_PAGE_OPTIONS = [
+  { key: "domainGuide", label: "Domain Guide" },
+  { key: "characterGoals", label: "Character Goals" },
+  { key: "setGoals", label: "Set Goals" },
 ] as const;
 
-export type ArtifactViewKey = (typeof ARTIFACT_VIEW_OPTIONS)[number]["key"];
+export type ArtifactPageKey = (typeof ARTIFACT_PAGE_OPTIONS)[number]["key"];
 export type ArtifactGoalStatus = "missing" | "in_progress" | "complete";
 export type ArtifactGuideRowStatus = "missing" | "partial" | "complete";
 
@@ -125,6 +128,7 @@ export interface ArtifactCharacterGroupViewModel {
   goalCount: number;
   incompleteGoalCount: number;
   completedGoalCount: number;
+  domainCount: number;
 }
 
 export interface ArtifactGoalsSummaryViewModel {
@@ -132,6 +136,8 @@ export interface ArtifactGoalsSummaryViewModel {
   incompleteGoals: number;
   completedGoals: number;
   domainsNeeded: number;
+  charactersServed: number;
+  nonStandardSourceGoalCount: number;
 }
 
 export interface ArtifactSelectedGoalSummaryViewModel {
@@ -149,10 +155,21 @@ export interface ArtifactGoalsTabViewModel {
   summary: ArtifactGoalsSummaryViewModel;
   domainGroups: ArtifactDomainGroupViewModel[];
   characterGroups: ArtifactCharacterGroupViewModel[];
+  domainGuide: {
+    groups: ArtifactDomainGroupViewModel[];
+    visibleGoalIds: string[];
+  };
+  characterGoals: {
+    groups: ArtifactCharacterGroupViewModel[];
+    visibleGoalIds: string[];
+  };
+  goalEditor: {
+    groups: ArtifactCharacterGroupViewModel[];
+    visibleGoalIds: string[];
+  };
   goalRows: ArtifactGoalViewModel[];
   goalRowsById: Record<string, ArtifactGoalViewModel>;
   selectedGoalSummariesById: Record<string, ArtifactSelectedGoalSummaryViewModel>;
-  visibleGoalIdsByView: Record<ArtifactViewKey, string[]>;
 }
 
 export const ARTIFACT_SANDS_OPTIONS: ArtifactSandsMainStat[] = [
@@ -342,7 +359,7 @@ function buildSlotMainStatLabel(goal: ArtifactGoal, slotKey: ArtifactGoalSlotKey
 function resolveGoalDomains(goal: ArtifactGoal, staticData: StaticGameData): ArtifactGoalDomainAssignment[] {
   const grouped = new Map<string, ArtifactGoalDomainAssignment>();
   for (const setKey of goal.targetSetKeys) {
-    const record = staticData.artifactDomains[setKey] ?? buildNoSourceRecord(setKey);
+    const record = staticData.artifactDomains[setKey] ?? { ...buildNoSourceRecord(setKey), setName: staticData.artifactSets?.[setKey]?.displayName ?? prettifySetKey(setKey) };
     const key = record.hasStandardDomainSource && record.domainKey ? record.domainKey : "no-standard-source";
     const current = grouped.get(key);
     const setLabel = record.setName;
@@ -372,15 +389,14 @@ function resolveGoalDomains(goal: ArtifactGoal, staticData: StaticGameData): Art
 }
 
 function buildGoalWarnings(goal: ArtifactGoal, account: KrumpanionAccount | null, staticData: StaticGameData): string[] {
+  void account;
   const warnings: string[] = [];
   if (!goal.characterKey) {
     warnings.push("Select a character.");
-  } else if (!account?.characters.some((character) => character.characterId === goal.characterKey)) {
-    warnings.push("Character is not on this account.");
   }
 
   for (const setKey of goal.targetSetKeys) {
-    if (!staticData.artifactDomains[setKey]) {
+    if (!staticData.artifactDomains[setKey] && !staticData.artifactSets?.[setKey]) {
       warnings.push(`Unknown artifact set ${setKey}.`);
     }
   }
@@ -391,7 +407,7 @@ function buildGoalWarnings(goal: ArtifactGoal, account: KrumpanionAccount | null
 function buildGoalView(goal: ArtifactGoal, account: KrumpanionAccount | null, staticData: StaticGameData): ArtifactGoalViewModel {
   const domains = resolveGoalDomains(goal, staticData);
   const status = getGoalStatus(goal);
-  const setLabels = goal.targetSetKeys.map((setKey) => staticData.artifactDomains[setKey]?.setName ?? prettifySetKey(setKey));
+  const setLabels = goal.targetSetKeys.map((setKey) => staticData.artifactSets?.[setKey]?.displayName ?? staticData.artifactDomains[setKey]?.setName ?? prettifySetKey(setKey));
   const characterLabel = goal.characterKey
     ? getCharacterGoalDisplayName(goal.characterKey, staticData)
     : "Unassigned character";
@@ -454,21 +470,24 @@ function buildRowStatusLabel(status: ArtifactGuideRowStatus, incompleteGoalCount
 }
 
 export function buildArtifactSetOptions(staticData: StaticGameData): ArtifactSetOption[] {
-  return Object.values(staticData.artifactDomains)
+  return identityRecords(staticData, "artifactSet")
     .map((record) => ({
-      key: record.setKey,
-      label: record.setName,
+      key: record.key,
+      label: record.displayName,
     }))
     .sort((left, right) => left.label.localeCompare(right.label));
 }
 
 export function buildArtifactCharacterOptions(account: KrumpanionAccount | null, staticData: StaticGameData): ArtifactCharacterOption[] {
-  return (account?.characters ?? [])
+  const ownedCharacterKeys = new Set((account?.characters ?? []).map((character) => character.characterId));
+  return getGoalPickableCharacters(staticData)
     .map((character) => ({
-      key: character.characterId,
-      label: getCharacterGoalDisplayName(character.characterId, staticData),
+      key: character.key,
+      label: getCharacterGoalDisplayName(character.key, staticData),
+      owned: ownedCharacterKeys.has(character.key),
     }))
-    .sort((left, right) => left.label.localeCompare(right.label));
+    .sort((left, right) => Number(right.owned) - Number(left.owned) || left.label.localeCompare(right.label))
+    .map(({ key, label }) => ({ key, label }));
 }
 
 function buildDomainGroups(
@@ -712,6 +731,7 @@ export function buildArtifactGoalsViewModel(params: {
       current.goalCount += 1;
       current.incompleteGoalCount += goal.status === "complete" ? 0 : 1;
       current.completedGoalCount += goal.status === "complete" ? 1 : 0;
+      current.domainCount = new Set(current.goals.flatMap((entry) => entry.domains.map((domain) => domain.key))).size;
       continue;
     }
     characterGroupMap.set(key, {
@@ -721,6 +741,7 @@ export function buildArtifactGoalsViewModel(params: {
       goalCount: 1,
       incompleteGoalCount: goal.status === "complete" ? 0 : 1,
       completedGoalCount: goal.status === "complete" ? 1 : 0,
+      domainCount: new Set(goal.domains.map((domain) => domain.key)).size,
     });
   }
 
@@ -733,13 +754,18 @@ export function buildArtifactGoalsViewModel(params: {
 
   const domainGroups = buildDomainGroups(entries, params.showCompleted);
 
-  const visibleGoalIdsByView: Record<ArtifactViewKey, string[]> = {
-    character: characterGroups.flatMap((group) => group.goals.map((goal) => goal.id)),
-    domain: uniqueBy(
-      domainGroups.flatMap((group) => group.keepGuideRows.map((row) => row.representativeGoalId).filter(Boolean)),
-      (value) => value,
-    ),
-  };
+  const characterVisibleGoalIds = characterGroups.flatMap((group) => group.goals.map((goal) => goal.id));
+  const domainVisibleGoalIds = uniqueBy(
+    domainGroups.flatMap((group) => group.keepGuideRows.map((row) => row.representativeGoalId).filter(Boolean)),
+    (value) => value,
+  );
+  const charactersServed = uniqueBy(
+    goalRows
+      .filter((goal) => goal.characterKey)
+      .map((goal) => `${goal.characterKey ?? "unknown"}::${goal.characterLabel}`),
+    (value) => value,
+  ).length;
+  const nonStandardSourceGoalCount = goalRows.filter((goal) => goal.domains.some((domain) => !domain.hasStandardDomainSource)).length;
 
   return {
     summary: {
@@ -751,11 +777,24 @@ export function buildArtifactGoalsViewModel(params: {
           .filter((goal) => goal.status !== "complete")
           .flatMap((goal) => goal.domains.filter((domain) => domain.hasStandardDomainSource).map((domain) => domain.key)),
       ).size,
+      charactersServed,
+      nonStandardSourceGoalCount,
+    },
+    domainGuide: {
+      groups: domainGroups,
+      visibleGoalIds: domainVisibleGoalIds,
+    },
+    characterGoals: {
+      groups: characterGroups,
+      visibleGoalIds: characterVisibleGoalIds,
+    },
+    goalEditor: {
+      groups: characterGroups,
+      visibleGoalIds: characterVisibleGoalIds,
     },
     goalRows,
     goalRowsById: Object.fromEntries(goalRows.map((goal) => [goal.id, goal])),
     selectedGoalSummariesById: Object.fromEntries(goalRows.map((goal) => [goal.id, buildSelectedGoalSummary(goal)])),
-    visibleGoalIdsByView,
     domainGroups,
     characterGroups,
   };

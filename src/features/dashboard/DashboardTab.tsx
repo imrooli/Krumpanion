@@ -23,7 +23,8 @@ export function DashboardTab({ plannerOutput, importWarnings }: DashboardTabProp
         <MetricCard label="Weapons owned" value={String(account?.weapons.length ?? 0)} />
         <MetricCard label="Materials tracked" value={String(Object.keys(account?.inventory ?? {}).length)} />
         <MetricCard label="Active goals" value={String(totalGoals)} />
-        <MetricCard label="Resin estimate" value={`${plannerOutput.resinSummary.totalEstimatedResin}`} />
+        <MetricCard label="Guaranteed resin" value={`${plannerOutput.resinSummary.guaranteedTotalResin}`} />
+        <MetricCard label="Expected · Advisory" value={`${plannerOutput.resinSummary.expectedAdvisoryResin}`} />
       </div>
 
       <div className="panel">

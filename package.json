@@ -16,7 +16,14 @@
     "data:validate": "tsx tools/data/validate-static-data.ts",
     "data:health": "npm run data:validate",
     "codex:snapshot": "python codex/scripts/repo_snapshot.py",
-    "codex:scan-architecture": "python codex/scripts/scan_architecture_smells.py"
+    "codex:scan-architecture": "python codex/scripts/scan_architecture_smells.py",
+    "data:fetch-upstream": "tsx tools/data/fetch-game-dataset.ts",
+    "test:e2e": "playwright test --project=firefox",
+    "data:validate-upstream": "tsx tools/data/validate-upstream.ts",
+    "test:e2e:chromium": "playwright test --project=chromium",
+    "data:repair-canonical": "tsx tools/data/repair-canonical.ts",
+    "test:performance": "playwright test --config playwright.performance.config.ts",
+    "data:analyze-bundle": "tsx tools/data/analyze-bundle.ts"
   },
   "dependencies": {
     "ajv": "^8.17.1",
@@ -27,6 +34,7 @@
     "zustand": "^4.5.5"
   },
   "devDependencies": {
+    "@playwright/test": "1.63.0",
     "@testing-library/jest-dom": "^6.4.8",
     "@testing-library/react": "^16.0.0",
     "@testing-library/user-event": "^14.5.2",

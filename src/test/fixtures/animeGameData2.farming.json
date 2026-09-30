@@ -1,0 +1,1985 @@
+{
+  "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+  "files": {
+    "ExcelBinOutput/CombineExcelConfigData.json": [
+      {
+        "effectDescTextMapHash": 2651610598,
+        "scoinCost": 125,
+        "resultItemId": 114002,
+        "materialItems": [
+          {
+            "count": 3,
+            "id": 114001
+          },
+          {},
+          {}
+        ],
+        "randomItems": [
+          {
+            "count": 1
+          }
+        ],
+        "isDefaultShow": true,
+        "combineType": 2,
+        "combineId": 12001,
+        "playerLevel": 25,
+        "subCombineType": 130000,
+        "EOLNBDANHLK": 3740439850,
+        "recipeType": "RECIPE_TYPE_COMBINE",
+        "resultItemCount": 1
+      },
+      {
+        "effectDescTextMapHash": 403478766,
+        "scoinCost": 350,
+        "resultItemId": 114003,
+        "materialItems": [
+          {
+            "count": 3,
+            "id": 114002
+          },
+          {},
+          {}
+        ],
+        "randomItems": [
+          {
+            "count": 1
+          }
+        ],
+        "isDefaultShow": true,
+        "combineType": 2,
+        "combineId": 12002,
+        "playerLevel": 35,
+        "subCombineType": 130000,
+        "EOLNBDANHLK": 2596862058,
+        "recipeType": "RECIPE_TYPE_COMBINE",
+        "resultItemCount": 1
+      },
+      {
+        "effectDescTextMapHash": 2260626454,
+        "scoinCost": 1075,
+        "resultItemId": 114004,
+        "materialItems": [
+          {
+            "count": 3,
+            "id": 114003
+          },
+          {},
+          {}
+        ],
+        "randomItems": [
+          {
+            "count": 1
+          }
+        ],
+        "isDefaultShow": true,
+        "combineType": 2,
+        "combineId": 12003,
+        "playerLevel": 45,
+        "subCombineType": 130000,
+        "EOLNBDANHLK": 1922577842,
+        "recipeType": "RECIPE_TYPE_COMBINE",
+        "resultItemCount": 1
+      },
+      {
+        "effectDescTextMapHash": 1926742022,
+        "scoinCost": 175,
+        "resultItemId": 104324,
+        "materialItems": [
+          {
+            "count": 3,
+            "id": 104323
+          },
+          {},
+          {}
+        ],
+        "randomItems": [
+          {
+            "count": 1
+          }
+        ],
+        "isDefaultShow": true,
+        "combineType": 3,
+        "combineId": 13015,
+        "playerLevel": 30,
+        "subCombineType": 120070,
+        "EOLNBDANHLK": 3112325202,
+        "recipeType": "RECIPE_TYPE_COMBINE",
+        "resultItemCount": 1
+      },
+      {
+        "effectDescTextMapHash": 1316056470,
+        "scoinCost": 550,
+        "resultItemId": 104325,
+        "materialItems": [
+          {
+            "count": 3,
+            "id": 104324
+          },
+          {},
+          {}
+        ],
+        "randomItems": [
+          {
+            "count": 1
+          }
+        ],
+        "isDefaultShow": true,
+        "combineType": 3,
+        "combineId": 13016,
+        "playerLevel": 40,
+        "subCombineType": 120070,
+        "EOLNBDANHLK": 2353076234,
+        "recipeType": "RECIPE_TYPE_COMBINE",
+        "resultItemCount": 1
+      }
+    ],
+    "ExcelBinOutput/MaterialSourceDataExcelConfigData.json": [
+      {
+        "jumpTargets": [
+          "JUMP_MALL"
+        ],
+        "HNNPIIJLLEK": [
+          2759879836,
+          3144812738,
+          528822417,
+          3444878365,
+          1915475403,
+          3268289952,
+          2636402884
+        ],
+        "AOFJGAPHNDH": "103008",
+        "textList": [
+          417896895,
+          3179257904,
+          1283353045,
+          1814568100,
+          1500092585,
+          2148055096,
+          3076336762,
+          4029697375
+        ],
+        "dungeonList": [
+          4410,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "id": 104323,
+        "CEKAIOGKFBP": [
+          {},
+          {}
+        ],
+        "dungeonGroup": [
+          4410,
+          4411,
+          4412,
+          4413
+        ]
+      },
+      {
+        "jumpTargets": [
+          "JUMP_SYNTHESIS_COMBINE_PAGE"
+        ],
+        "HNNPIIJLLEK": [
+          3625243124,
+          2991245762,
+          2715343169,
+          297118069,
+          2555978099,
+          143324488,
+          1191875780
+        ],
+        "AOFJGAPHNDH": "0000",
+        "textList": [
+          637535247,
+          3017920568,
+          3712392365,
+          2340288580,
+          1855416401,
+          2137695672,
+          2849137050,
+          2980263383
+        ],
+        "dungeonList": [
+          4411,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "id": 104324,
+        "CEKAIOGKFBP": [
+          {},
+          {}
+        ],
+        "dungeonGroup": [
+          4410,
+          4411,
+          4412,
+          4413
+        ]
+      },
+      {
+        "jumpTargets": [
+          "JUMP_SYNTHESIS_COMBINE_PAGE"
+        ],
+        "HNNPIIJLLEK": [
+          1225017564,
+          12402866,
+          2369782121,
+          3976572221,
+          654459275,
+          4035779584,
+          159531372
+        ],
+        "AOFJGAPHNDH": "0000",
+        "textList": [
+          2704703847,
+          1691905128,
+          2214533229,
+          1521505436,
+          1816836217,
+          2114607408,
+          2121780594,
+          4044474631
+        ],
+        "dungeonList": [
+          4413,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "id": 104325,
+        "CEKAIOGKFBP": [
+          {},
+          {}
+        ],
+        "dungeonGroup": [
+          4410,
+          4411,
+          4412,
+          4413
+        ]
+      },
+      {
+        "jumpTargets": [
+          "JUMP_MALL"
+        ],
+        "HNNPIIJLLEK": [
+          2047979588,
+          3776976962,
+          4122965409,
+          4015442157,
+          1198416219,
+          668814832,
+          1701173380
+        ],
+        "AOFJGAPHNDH": "103009",
+        "textList": [
+          1773830263,
+          2803068392,
+          2988278181,
+          691065916,
+          3836613937,
+          1067331824,
+          2101495242,
+          3775305799
+        ],
+        "dungeonList": [
+          4310,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "id": 114001,
+        "CEKAIOGKFBP": [
+          {},
+          {}
+        ],
+        "dungeonGroup": [
+          4310,
+          4311,
+          4312,
+          4313
+        ]
+      },
+      {
+        "jumpTargets": [
+          "JUMP_SYNTHESIS_COMBINE_PAGE"
+        ],
+        "HNNPIIJLLEK": [
+          828592476,
+          2566551818,
+          2252449217,
+          1648742853,
+          586962243,
+          3558058024,
+          4160072132
+        ],
+        "AOFJGAPHNDH": "0000",
+        "textList": [
+          525258927,
+          2902429936,
+          246240477,
+          4095651108,
+          2259908937,
+          1651278080,
+          4261980314,
+          3317483655
+        ],
+        "dungeonList": [
+          4311,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "id": 114002,
+        "CEKAIOGKFBP": [
+          {},
+          {}
+        ],
+        "dungeonGroup": [
+          4310,
+          4311,
+          4312,
+          4313
+        ]
+      },
+      {
+        "jumpTargets": [
+          "JUMP_SYNTHESIS_COMBINE_PAGE"
+        ],
+        "HNNPIIJLLEK": [
+          998500444,
+          37549490,
+          1167436169,
+          3285927389,
+          2111681555,
+          3480140064,
+          1603922212
+        ],
+        "AOFJGAPHNDH": "0000",
+        "textList": [
+          1439921367,
+          1070886200,
+          2279998525,
+          712272364,
+          3169412409,
+          3398686824,
+          1804033418,
+          4247312415
+        ],
+        "dungeonList": [
+          4312,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "id": 114003,
+        "CEKAIOGKFBP": [
+          {},
+          {}
+        ],
+        "dungeonGroup": [
+          4310,
+          4311,
+          4312,
+          4313
+        ]
+      },
+      {
+        "jumpTargets": [
+          "JUMP_SYNTHESIS_COMBINE_PAGE"
+        ],
+        "HNNPIIJLLEK": [
+          3005989940,
+          2780748258,
+          2596353073,
+          854388005,
+          2785493163,
+          1748917576,
+          3590783372
+        ],
+        "AOFJGAPHNDH": "0000",
+        "textList": [
+          4141703655,
+          3188466832,
+          1957094541,
+          1102086364,
+          148666681,
+          3774371016,
+          2193274338,
+          2097077743
+        ],
+        "dungeonList": [
+          4313,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "id": 114004,
+        "CEKAIOGKFBP": [
+          {},
+          {}
+        ],
+        "dungeonGroup": [
+          4310,
+          4311,
+          4312,
+          4313
+        ]
+      }
+    ],
+    "ExcelBinOutput/MaterialExcelConfigData.json": [
+      {
+        "destroyRule": "DESTROY_RETURN_MATERIAL",
+        "materialType": "MATERIAL_AVATAR_MATERIAL",
+        "itemUse": [
+          {
+            "useParam": [
+              "",
+              "",
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "useParam": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "useParam": [
+              "",
+              ""
+            ]
+          }
+        ],
+        "effectDescTextMapHash": 2394481903,
+        "stackLimit": 2000,
+        "interactionTitleTextMapHash": 2722911471,
+        "rankLevel": 2,
+        "specialDescTextMapHash": 2201495857,
+        "typeDescTextMapHash": 3162126718,
+        "rank": 13108,
+        "icon": "UI_ItemIcon_104323",
+        "id": 104323,
+        "descTextMapHash": 2966862229,
+        "itemType": "ITEM_MATERIAL",
+        "nameTextMapHash": 2962100404,
+        "gadgetId": 70600052,
+        "weight": 1
+      },
+      {
+        "destroyRule": "DESTROY_RETURN_MATERIAL",
+        "materialType": "MATERIAL_AVATAR_MATERIAL",
+        "itemUse": [
+          {
+            "useParam": [
+              "",
+              "",
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "useParam": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "useParam": [
+              "",
+              ""
+            ]
+          }
+        ],
+        "effectDescTextMapHash": 704395407,
+        "stackLimit": 2000,
+        "interactionTitleTextMapHash": 2035676639,
+        "rankLevel": 3,
+        "specialDescTextMapHash": 3489624297,
+        "typeDescTextMapHash": 610484462,
+        "rank": 13108,
+        "icon": "UI_ItemIcon_104324",
+        "id": 104324,
+        "descTextMapHash": 2576652413,
+        "itemType": "ITEM_MATERIAL",
+        "nameTextMapHash": 4156724420,
+        "gadgetId": 70600053,
+        "weight": 1
+      },
+      {
+        "materialType": "MATERIAL_AVATAR_MATERIAL",
+        "itemUse": [
+          {
+            "useParam": [
+              "",
+              "",
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "useParam": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "useParam": [
+              "",
+              ""
+            ]
+          }
+        ],
+        "effectDescTextMapHash": 2392131887,
+        "stackLimit": 2000,
+        "interactionTitleTextMapHash": 2991761583,
+        "rankLevel": 4,
+        "specialDescTextMapHash": 3837113377,
+        "typeDescTextMapHash": 1899246974,
+        "rank": 13108,
+        "icon": "UI_ItemIcon_104325",
+        "id": 104325,
+        "descTextMapHash": 3225822421,
+        "itemType": "ITEM_MATERIAL",
+        "nameTextMapHash": 2852490284,
+        "gadgetId": 70600054,
+        "weight": 1
+      },
+      {
+        "destroyRule": "DESTROY_RETURN_MATERIAL",
+        "materialType": "MATERIAL_AVATAR_MATERIAL",
+        "itemUse": [
+          {
+            "useParam": [
+              "",
+              "",
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "useParam": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "useParam": [
+              "",
+              ""
+            ]
+          }
+        ],
+        "effectDescTextMapHash": 3520903615,
+        "stackLimit": 2000,
+        "interactionTitleTextMapHash": 678485487,
+        "rankLevel": 2,
+        "specialDescTextMapHash": 456192385,
+        "typeDescTextMapHash": 1859340678,
+        "rank": 15101,
+        "icon": "UI_ItemIcon_114001",
+        "id": 114001,
+        "descTextMapHash": 2923523173,
+        "itemType": "ITEM_MATERIAL",
+        "nameTextMapHash": 2567593300,
+        "gadgetId": 70600052,
+        "weight": 1
+      },
+      {
+        "destroyRule": "DESTROY_RETURN_MATERIAL",
+        "materialType": "MATERIAL_AVATAR_MATERIAL",
+        "itemUse": [
+          {
+            "useParam": [
+              "",
+              "",
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "useParam": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "useParam": [
+              "",
+              ""
+            ]
+          }
+        ],
+        "effectDescTextMapHash": 3445663831,
+        "stackLimit": 2000,
+        "interactionTitleTextMapHash": 1136627071,
+        "rankLevel": 3,
+        "specialDescTextMapHash": 3512336881,
+        "typeDescTextMapHash": 3690114478,
+        "rank": 15101,
+        "icon": "UI_ItemIcon_114002",
+        "id": 114002,
+        "descTextMapHash": 3545488749,
+        "itemType": "ITEM_MATERIAL",
+        "nameTextMapHash": 964863092,
+        "gadgetId": 70600053,
+        "weight": 1
+      },
+      {
+        "materialType": "MATERIAL_AVATAR_MATERIAL",
+        "itemUse": [
+          {
+            "useParam": [
+              "",
+              "",
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "useParam": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "useParam": [
+              "",
+              ""
+            ]
+          }
+        ],
+        "effectDescTextMapHash": 3849444511,
+        "stackLimit": 2000,
+        "interactionTitleTextMapHash": 3174015143,
+        "rankLevel": 4,
+        "specialDescTextMapHash": 4185088009,
+        "typeDescTextMapHash": 3678774734,
+        "rank": 15101,
+        "icon": "UI_ItemIcon_114003",
+        "id": 114003,
+        "descTextMapHash": 135685237,
+        "itemType": "ITEM_MATERIAL",
+        "nameTextMapHash": 1852199188,
+        "gadgetId": 70600054,
+        "weight": 1
+      },
+      {
+        "materialType": "MATERIAL_AVATAR_MATERIAL",
+        "itemUse": [
+          {
+            "useParam": [
+              "",
+              "",
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "useParam": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "useParam": [
+              "",
+              ""
+            ]
+          }
+        ],
+        "effectDescTextMapHash": 2749889759,
+        "stackLimit": 2000,
+        "interactionTitleTextMapHash": 19817599,
+        "rankLevel": 5,
+        "specialDescTextMapHash": 746821993,
+        "typeDescTextMapHash": 2637387798,
+        "rank": 15101,
+        "icon": "UI_ItemIcon_114004",
+        "id": 114004,
+        "descTextMapHash": 1515125213,
+        "itemType": "ITEM_MATERIAL",
+        "nameTextMapHash": 2734083348,
+        "gadgetId": 70600055,
+        "weight": 1
+      }
+    ],
+    "ExcelBinOutput/DungeonExcelConfigData.json": [
+      {
+        "subType": "DUNGEON_SUB_WEAPON",
+        "nameTextMapHash": 3767779680,
+        "levelRevise": 14,
+        "CKPIANDIHPC": false,
+        "gearDescTextMapHash": 2506940569,
+        "isDynamicLevel": false,
+        "cityID": 1,
+        "settleShows": [
+          "SETTLE_SHOW_TIME_COST",
+          "SETTLE_SHOW_NONE",
+          "SETTLE_SHOW_NONE",
+          "SETTLE_SHOW_NONE"
+        ],
+        "passCond": 51,
+        "passRewardPreviewID": 20320,
+        "displayNameTextMapHash": 2639918298,
+        "previewMonsterList": [
+          20011001,
+          20011101
+        ],
+        "quitSettleCountdownTime": 30,
+        "avatarLimitType": 6,
+        "entryPicPath": "UI_DungeonPic_Water",
+        "showLevel": 15,
+        "recommendElementTypes": [
+          "Electric",
+          "None",
+          "None",
+          "None"
+        ],
+        "limitLevel": 15,
+        "id": 4310,
+        "descTextMapHash": 177836397,
+        "stateType": "DUNGEON_STATE_RELEASE",
+        "settleCountdownTime": 999,
+        "statueDrop": 83111300,
+        "PHGJMAKCFHE": 2038180089,
+        "forbiddenRestart": false,
+        "statueCostCount": 20,
+        "levelConfigMap": {
+          "1996": 100
+        },
+        "involveType": "INVOLVE_SINGLE_MULTIPLE",
+        "failSettleCountdownTime": 30,
+        "enterCostItems": [
+          {}
+        ],
+        "sceneId": 40300,
+        "EHLOPBNGBIM": 1425580295,
+        "dayEnterCount": 3,
+        "statueCostID": 106,
+        "type": "DUNGEON_DAILY_FIGHT"
+      },
+      {
+        "subType": "DUNGEON_SUB_WEAPON",
+        "nameTextMapHash": 654377176,
+        "levelRevise": 35,
+        "CKPIANDIHPC": false,
+        "gearDescTextMapHash": 2138675449,
+        "isDynamicLevel": false,
+        "cityID": 1,
+        "settleShows": [
+          "SETTLE_SHOW_TIME_COST",
+          "SETTLE_SHOW_NONE",
+          "SETTLE_SHOW_NONE",
+          "SETTLE_SHOW_NONE"
+        ],
+        "passCond": 51,
+        "passRewardPreviewID": 20321,
+        "displayNameTextMapHash": 2810385778,
+        "previewMonsterList": [
+          20011001,
+          20011101,
+          21010201
+        ],
+        "quitSettleCountdownTime": 30,
+        "avatarLimitType": 27,
+        "entryPicPath": "UI_DungeonPic_Water",
+        "showLevel": 36,
+        "recommendElementTypes": [
+          "Electric",
+          "None",
+          "None",
+          "None"
+        ],
+        "limitLevel": 21,
+        "id": 4311,
+        "descTextMapHash": 1343697085,
+        "stateType": "DUNGEON_STATE_RELEASE",
+        "settleCountdownTime": 999,
+        "statueDrop": 83112600,
+        "PHGJMAKCFHE": 147038457,
+        "forbiddenRestart": false,
+        "statueCostCount": 20,
+        "levelConfigMap": {
+          "1996": 100
+        },
+        "involveType": "INVOLVE_SINGLE_MULTIPLE",
+        "failSettleCountdownTime": 30,
+        "enterCostItems": [
+          {}
+        ],
+        "sceneId": 40301,
+        "EHLOPBNGBIM": 2442891663,
+        "dayEnterCount": 3,
+        "statueCostID": 106,
+        "type": "DUNGEON_DAILY_FIGHT"
+      },
+      {
+        "subType": "DUNGEON_SUB_WEAPON",
+        "nameTextMapHash": 3128391704,
+        "levelRevise": 58,
+        "CKPIANDIHPC": false,
+        "gearDescTextMapHash": 424476073,
+        "isDynamicLevel": false,
+        "cityID": 1,
+        "settleShows": [
+          "SETTLE_SHOW_TIME_COST",
+          "SETTLE_SHOW_NONE",
+          "SETTLE_SHOW_NONE",
+          "SETTLE_SHOW_NONE"
+        ],
+        "passCond": 51,
+        "passRewardPreviewID": 20322,
+        "displayNameTextMapHash": 540608978,
+        "previewMonsterList": [
+          20011001,
+          20011101,
+          21030101
+        ],
+        "quitSettleCountdownTime": 30,
+        "avatarLimitType": 50,
+        "entryPicPath": "UI_DungeonPic_Water",
+        "showLevel": 59,
+        "recommendElementTypes": [
+          "Electric",
+          "None",
+          "None",
+          "None"
+        ],
+        "limitLevel": 30,
+        "id": 4312,
+        "descTextMapHash": 816858397,
+        "stateType": "DUNGEON_STATE_RELEASE",
+        "settleCountdownTime": 999,
+        "statueDrop": 83113500,
+        "PHGJMAKCFHE": 3311459617,
+        "forbiddenRestart": false,
+        "statueCostCount": 20,
+        "levelConfigMap": {
+          "1996": 100
+        },
+        "involveType": "INVOLVE_SINGLE_MULTIPLE",
+        "failSettleCountdownTime": 30,
+        "enterCostItems": [
+          {}
+        ],
+        "sceneId": 40302,
+        "recommendTips": [
+          "UI_DUNGEONENTRY_RECOMMEND_TIPS_004",
+          "UI_DUNGEONENTRY_RECOMMEND_TIPS_037"
+        ],
+        "EHLOPBNGBIM": 2407330303,
+        "dayEnterCount": 3,
+        "statueCostID": 106,
+        "type": "DUNGEON_DAILY_FIGHT"
+      },
+      {
+        "subType": "DUNGEON_SUB_WEAPON",
+        "nameTextMapHash": 278054048,
+        "levelRevise": 79,
+        "CKPIANDIHPC": false,
+        "gearDescTextMapHash": 600443217,
+        "isDynamicLevel": false,
+        "cityID": 1,
+        "settleShows": [
+          "SETTLE_SHOW_TIME_COST",
+          "SETTLE_SHOW_NONE",
+          "SETTLE_SHOW_NONE",
+          "SETTLE_SHOW_NONE"
+        ],
+        "passCond": 62,
+        "passRewardPreviewID": 20323,
+        "displayNameTextMapHash": 3613833594,
+        "previewMonsterList": [
+          20011101,
+          23020101
+        ],
+        "quitSettleCountdownTime": 30,
+        "avatarLimitType": 71,
+        "entryPicPath": "UI_DungeonPic_Water",
+        "showLevel": 80,
+        "recommendElementTypes": [
+          "Electric",
+          "None",
+          "None",
+          "None"
+        ],
+        "limitLevel": 40,
+        "id": 4313,
+        "descTextMapHash": 1100551557,
+        "stateType": "DUNGEON_STATE_RELEASE",
+        "settleCountdownTime": 999,
+        "statueDrop": 83114500,
+        "PHGJMAKCFHE": 9609249,
+        "forbiddenRestart": false,
+        "statueCostCount": 20,
+        "levelConfigMap": {
+          "1996": 100
+        },
+        "involveType": "INVOLVE_SINGLE_MULTIPLE",
+        "failSettleCountdownTime": 30,
+        "enterCostItems": [
+          {}
+        ],
+        "sceneId": 40303,
+        "recommendTips": [
+          "UI_DUNGEONENTRY_RECOMMEND_TIPS_004",
+          "UI_DUNGEONENTRY_RECOMMEND_TIPS_037"
+        ],
+        "EHLOPBNGBIM": 1811127519,
+        "dayEnterCount": 3,
+        "statueCostID": 106,
+        "type": "DUNGEON_DAILY_FIGHT"
+      },
+      {
+        "subType": "DUNGEON_SUB_TALENT",
+        "nameTextMapHash": 3881061704,
+        "levelRevise": 37,
+        "CKPIANDIHPC": false,
+        "gearDescTextMapHash": 445234265,
+        "isDynamicLevel": false,
+        "cityID": 3,
+        "settleShows": [
+          "SETTLE_SHOW_TIME_COST",
+          "SETTLE_SHOW_NONE",
+          "SETTLE_SHOW_NONE",
+          "SETTLE_SHOW_NONE"
+        ],
+        "passCond": 51,
+        "passRewardPreviewID": 22240,
+        "displayNameTextMapHash": 831494594,
+        "previewMonsterList": [
+          21010201,
+          21011601,
+          21011001,
+          21020701
+        ],
+        "quitSettleCountdownTime": 30,
+        "avatarLimitType": 29,
+        "entryPicPath": "UI_DungeonPic_Thunder_Dq",
+        "showLevel": 38,
+        "recommendElementTypes": [
+          "Electric",
+          "None",
+          "None",
+          "None"
+        ],
+        "limitLevel": 25,
+        "id": 4410,
+        "descTextMapHash": 751362061,
+        "stateType": "DUNGEON_STATE_RELEASE",
+        "settleCountdownTime": 999,
+        "statueDrop": 82232700,
+        "PHGJMAKCFHE": 3172117913,
+        "forbiddenRestart": false,
+        "statueCostCount": 20,
+        "levelConfigMap": {
+          "1604": 100
+        },
+        "involveType": "INVOLVE_SINGLE_MULTIPLE",
+        "failSettleCountdownTime": 30,
+        "enterCostItems": [
+          {}
+        ],
+        "sceneId": 40950,
+        "EHLOPBNGBIM": 3058708631,
+        "dayEnterCount": 3,
+        "statueCostID": 106,
+        "type": "DUNGEON_DAILY_FIGHT"
+      },
+      {
+        "subType": "DUNGEON_SUB_TALENT",
+        "nameTextMapHash": 946368720,
+        "levelRevise": 53,
+        "CKPIANDIHPC": false,
+        "gearDescTextMapHash": 2599022017,
+        "isDynamicLevel": false,
+        "cityID": 3,
+        "settleShows": [
+          "SETTLE_SHOW_TIME_COST",
+          "SETTLE_SHOW_NONE",
+          "SETTLE_SHOW_NONE",
+          "SETTLE_SHOW_NONE"
+        ],
+        "passCond": 51,
+        "passRewardPreviewID": 22241,
+        "displayNameTextMapHash": 718336146,
+        "previewMonsterList": [
+          25080101,
+          25080201,
+          25080301,
+          25010301,
+          25010501
+        ],
+        "quitSettleCountdownTime": 30,
+        "avatarLimitType": 45,
+        "entryPicPath": "UI_DungeonPic_Thunder_Dq",
+        "showLevel": 54,
+        "recommendElementTypes": [
+          "Electric",
+          "None",
+          "None",
+          "None"
+        ],
+        "limitLevel": 28,
+        "id": 4411,
+        "descTextMapHash": 308493813,
+        "stateType": "DUNGEON_STATE_RELEASE",
+        "settleCountdownTime": 999,
+        "statueDrop": 82233300,
+        "PHGJMAKCFHE": 1420100897,
+        "forbiddenRestart": false,
+        "statueCostCount": 20,
+        "levelConfigMap": {
+          "1604": 100
+        },
+        "involveType": "INVOLVE_SINGLE_MULTIPLE",
+        "failSettleCountdownTime": 30,
+        "enterCostItems": [
+          {}
+        ],
+        "sceneId": 40951,
+        "EHLOPBNGBIM": 4010037503,
+        "dayEnterCount": 3,
+        "statueCostID": 106,
+        "type": "DUNGEON_DAILY_FIGHT"
+      },
+      {
+        "subType": "DUNGEON_SUB_TALENT",
+        "nameTextMapHash": 1698302000,
+        "levelRevise": 70,
+        "CKPIANDIHPC": false,
+        "gearDescTextMapHash": 2735739001,
+        "isDynamicLevel": false,
+        "cityID": 3,
+        "settleShows": [
+          "SETTLE_SHOW_TIME_COST",
+          "SETTLE_SHOW_NONE",
+          "SETTLE_SHOW_NONE",
+          "SETTLE_SHOW_NONE"
+        ],
+        "passCond": 51,
+        "passRewardPreviewID": 22242,
+        "displayNameTextMapHash": 2066365794,
+        "previewMonsterList": [
+          25080201,
+          25080301,
+          25010301,
+          25010501,
+          25100201
+        ],
+        "quitSettleCountdownTime": 30,
+        "avatarLimitType": 62,
+        "entryPicPath": "UI_DungeonPic_Thunder_Dq",
+        "showLevel": 71,
+        "recommendElementTypes": [
+          "Electric",
+          "None",
+          "None",
+          "None"
+        ],
+        "limitLevel": 36,
+        "id": 4412,
+        "descTextMapHash": 1594791405,
+        "stateType": "DUNGEON_STATE_RELEASE",
+        "settleCountdownTime": 999,
+        "statueDrop": 82234100,
+        "PHGJMAKCFHE": 1102311745,
+        "forbiddenRestart": false,
+        "statueCostCount": 20,
+        "levelConfigMap": {
+          "1604": 100
+        },
+        "involveType": "INVOLVE_SINGLE_MULTIPLE",
+        "failSettleCountdownTime": 30,
+        "enterCostItems": [
+          {}
+        ],
+        "sceneId": 40952,
+        "recommendTips": [
+          "UI_DUNGEONENTRY_RECOMMEND_TIPS_006"
+        ],
+        "EHLOPBNGBIM": 1501657447,
+        "dayEnterCount": 3,
+        "statueCostID": 106,
+        "type": "DUNGEON_DAILY_FIGHT"
+      },
+      {
+        "subType": "DUNGEON_SUB_TALENT",
+        "nameTextMapHash": 3225743440,
+        "levelRevise": 87,
+        "CKPIANDIHPC": false,
+        "gearDescTextMapHash": 28461337,
+        "isDynamicLevel": false,
+        "cityID": 3,
+        "settleShows": [
+          "SETTLE_SHOW_TIME_COST",
+          "SETTLE_SHOW_NONE",
+          "SETTLE_SHOW_NONE",
+          "SETTLE_SHOW_NONE"
+        ],
+        "passCond": 51,
+        "passRewardPreviewID": 22243,
+        "displayNameTextMapHash": 397825394,
+        "previewMonsterList": [
+          25010601,
+          25100101,
+          25100201
+        ],
+        "quitSettleCountdownTime": 30,
+        "avatarLimitType": 79,
+        "entryPicPath": "UI_DungeonPic_Thunder_Dq",
+        "showLevel": 88,
+        "recommendElementTypes": [
+          "Electric",
+          "None",
+          "None",
+          "None"
+        ],
+        "limitLevel": 45,
+        "id": 4413,
+        "descTextMapHash": 860687445,
+        "stateType": "DUNGEON_STATE_RELEASE",
+        "settleCountdownTime": 999,
+        "statueDrop": 82235000,
+        "PHGJMAKCFHE": 4092981689,
+        "forbiddenRestart": false,
+        "statueCostCount": 20,
+        "levelConfigMap": {
+          "1604": 100
+        },
+        "involveType": "INVOLVE_SINGLE_MULTIPLE",
+        "failSettleCountdownTime": 30,
+        "enterCostItems": [
+          {}
+        ],
+        "sceneId": 40953,
+        "recommendTips": [
+          "UI_DUNGEONENTRY_RECOMMEND_TIPS_006",
+          "UI_DUNGEONENTRY_RECOMMEND_TIPS_007"
+        ],
+        "EHLOPBNGBIM": 3655346199,
+        "dayEnterCount": 3,
+        "statueCostID": 106,
+        "type": "DUNGEON_DAILY_FIGHT"
+      }
+    ],
+    "ExcelBinOutput/RewardPreviewExcelConfigData.json": [
+      {
+        "desc": "\u6b66\u5668\u7a81\u7834\u5730\u57ce\u8499\u5fb7_1_13\u7ea7",
+        "previewItems": [
+          {
+            "id": 102,
+            "count": "100"
+          },
+          {
+            "id": 202,
+            "count": "1125"
+          },
+          {
+            "id": 105,
+            "count": "10"
+          },
+          {},
+          {},
+          {},
+          {
+            "id": 114001,
+            "count": "2.2"
+          },
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {}
+        ],
+        "id": 20320
+      },
+      {
+        "desc": "\u6b66\u5668\u7a81\u7834\u5730\u57ce\u8499\u5fb7_1_26\u7ea7",
+        "previewItems": [
+          {
+            "id": 102,
+            "count": "100"
+          },
+          {
+            "id": 202,
+            "count": "1550"
+          },
+          {
+            "id": 105,
+            "count": "15"
+          },
+          {},
+          {},
+          {
+            "id": 114002
+          },
+          {
+            "id": 114001,
+            "count": "2.7"
+          },
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {}
+        ],
+        "id": 20321
+      },
+      {
+        "desc": "\u6b66\u5668\u7a81\u7834\u5730\u57ce\u8499\u5fb7_1_35\u7ea7",
+        "previewItems": [
+          {
+            "id": 102,
+            "count": "100"
+          },
+          {
+            "id": 202,
+            "count": "1850"
+          },
+          {
+            "id": 105,
+            "count": "15"
+          },
+          {},
+          {
+            "id": 114003
+          },
+          {
+            "id": 114002
+          },
+          {
+            "id": 114001,
+            "count": "2.26"
+          },
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {}
+        ],
+        "id": 20322
+      },
+      {
+        "desc": "\u6b66\u5668\u7a81\u7834\u5730\u57ce\u8499\u5fb7_1_45\u7ea7",
+        "previewItems": [
+          {
+            "id": 102,
+            "count": "100"
+          },
+          {
+            "id": 202,
+            "count": "2200"
+          },
+          {
+            "id": 105,
+            "count": "20"
+          },
+          {
+            "id": 114004
+          },
+          {
+            "id": 114003
+          },
+          {
+            "id": 114002
+          },
+          {
+            "id": 114001,
+            "count": "2.2"
+          },
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {}
+        ],
+        "id": 20323
+      },
+      {
+        "desc": "\u89d2\u8272\u6280\u80fd\u5730\u57ce\u7a3b\u59bb_2_27\u7ea7",
+        "previewItems": [
+          {
+            "id": 102,
+            "count": "100"
+          },
+          {
+            "id": 202,
+            "count": "1575"
+          },
+          {
+            "id": 105,
+            "count": "15"
+          },
+          {},
+          {},
+          {
+            "id": 104323,
+            "count": "2.2"
+          },
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {}
+        ],
+        "id": 22240
+      },
+      {
+        "desc": "\u89d2\u8272\u6280\u80fd\u5730\u57ce\u7a3b\u59bb_2_33\u7ea7",
+        "previewItems": [
+          {
+            "id": 102,
+            "count": "100"
+          },
+          {
+            "id": 202,
+            "count": "1800"
+          },
+          {
+            "id": 105,
+            "count": "15"
+          },
+          {},
+          {
+            "id": 104324
+          },
+          {
+            "id": 104323,
+            "count": "2.5"
+          },
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {}
+        ],
+        "id": 22241
+      },
+      {
+        "desc": "\u89d2\u8272\u6280\u80fd\u5730\u57ce\u7a3b\u59bb_2_41\u7ea7",
+        "previewItems": [
+          {
+            "id": 102,
+            "count": "100"
+          },
+          {
+            "id": 202,
+            "count": "2050"
+          },
+          {
+            "id": 105,
+            "count": "20"
+          },
+          {},
+          {
+            "id": 104324
+          },
+          {
+            "id": 104323,
+            "count": "1.8"
+          },
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {}
+        ],
+        "id": 22242
+      },
+      {
+        "desc": "\u89d2\u8272\u6280\u80fd\u5730\u57ce\u7a3b\u59bb_2_50\u7ea7",
+        "previewItems": [
+          {
+            "id": 102,
+            "count": "100"
+          },
+          {
+            "id": 202,
+            "count": "2375"
+          },
+          {
+            "id": 105,
+            "count": "20"
+          },
+          {
+            "id": 104325
+          },
+          {
+            "id": 104324
+          },
+          {
+            "id": 104323,
+            "count": "2.2"
+          },
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {}
+        ],
+        "id": 22243
+      }
+    ],
+    "ExcelBinOutput/DungeonEntryExcelConfigData.json": [
+      {
+        "sceneId": 3,
+        "descTextMapHash": 3914992809,
+        "satisfiedCond": [
+          {
+            "type": "DUNGEON_ENTRY_CONDITION_LEVEL",
+            "param1": 10
+          },
+          {
+            "type": "DUNGEON_ENTRY_CONDITION_QUEST",
+            "param1": 35802
+          }
+        ],
+        "systemOpenUiId": 8,
+        "picPath": "UI_DungeonPic_Water",
+        "id": 2,
+        "type": "DUNGEN_ENTRY_TYPE_WEAPON_PROMOTE",
+        "rewardDataId": 220402,
+        "condComb": "LOGIC_OR",
+        "dungeonEntryId": 50,
+        "LCMBHFCLDCA": true,
+        "isShowInAdvHandbook": true,
+        "descriptionCycleRewardList": [
+          [
+            114001,
+            114002,
+            114003,
+            114004
+          ],
+          [
+            114005,
+            114006,
+            114007,
+            114008
+          ],
+          [
+            114009,
+            114010,
+            114011,
+            114012
+          ],
+          [
+            114001,
+            114002,
+            114003,
+            114004,
+            114005,
+            114006,
+            114007,
+            114008,
+            114009,
+            114010,
+            114011,
+            114012
+          ]
+        ]
+      },
+      {
+        "sceneId": 3,
+        "descTextMapHash": 1335741601,
+        "satisfiedCond": [
+          {
+            "type": "DUNGEON_ENTRY_CONDITION_LEVEL",
+            "param1": 10
+          },
+          {
+            "type": "DUNGEON_ENTRY_CONDITION_QUEST",
+            "param1": 35802
+          }
+        ],
+        "picPath": "UI_DungeonPic_Thunder_Dq",
+        "id": 15,
+        "type": "DUNGEN_ENTRY_TYPE_AVATAR_TALENT",
+        "rewardDataId": 220417,
+        "condComb": "LOGIC_OR",
+        "dungeonEntryId": 310,
+        "LCMBHFCLDCA": true,
+        "isShowInAdvHandbook": true,
+        "descriptionCycleRewardList": [
+          [
+            104320,
+            104321,
+            104322
+          ],
+          [
+            104323,
+            104324,
+            104325
+          ],
+          [
+            104326,
+            104327,
+            104328
+          ],
+          [
+            104320,
+            104321,
+            104322,
+            104323,
+            104324,
+            104325,
+            104326,
+            104327,
+            104328
+          ]
+        ]
+      }
+    ],
+    "BinOutput/Scene/Point/scene3_point.json": {
+      "points": {
+        "310": {
+          "$type": "NKJPPNFAEEF",
+          "showLevel": 0,
+          "size": {
+            "y": 10.0,
+            "z": 10.0,
+            "x": 10.0
+          },
+          "OJIFNDNLEGK": "UI_Icon_Intee_Talk",
+          "titleTextID": "UI_DUNGEON_ENTRY_310",
+          "PGDPGPEEGLD": [
+            33,
+            34,
+            35,
+            36
+          ],
+          "ODPEGLCOIIP": {},
+          "NPFLMLBMDLL": "Daily",
+          "FEIKJOHFCLF": "",
+          "cutsceneList": [
+            23
+          ],
+          "rot": {
+            "y": 34.399
+          },
+          "pos": {
+            "y": 203.1,
+            "z": -3935.762,
+            "x": -3205.502
+          },
+          "tranRot": {
+            "y": 213.52255
+          },
+          "tranPos": {
+            "y": 203.70947,
+            "z": -3930.8875,
+            "x": -3202.1536
+          },
+          "alias": "",
+          "gadgetId": 70120001,
+          "areaId": 12
+        },
+        "50": {
+          "$type": "NKJPPNFAEEF",
+          "showLevel": 0,
+          "size": {
+            "y": 10.0,
+            "z": 10.0,
+            "x": 10.0
+          },
+          "OJIFNDNLEGK": "UI_Icon_Intee_Talk",
+          "titleTextID": "UI_DUNGEON_ENTRY_37",
+          "PGDPGPEEGLD": [
+            29,
+            30,
+            31,
+            32
+          ],
+          "ODPEGLCOIIP": {},
+          "NPFLMLBMDLL": "Daily",
+          "FEIKJOHFCLF": "",
+          "cutsceneList": [
+            4
+          ],
+          "rot": {
+            "y": 178.544
+          },
+          "pos": {
+            "y": 271.3699,
+            "z": -237.541,
+            "x": 2257.046
+          },
+          "HPPONAJJLFA": true,
+          "tranRot": {
+            "y": 358.69073
+          },
+          "EABBCMGNLEL": 402,
+          "tranPos": {
+            "y": 272.06613,
+            "z": -251.30351,
+            "x": 2257.2283
+          },
+          "alias": "",
+          "gadgetId": 70120002,
+          "areaId": 3
+        }
+      }
+    },
+    "ExcelBinOutput/ManualTextMapConfigData.json": [
+      {
+        "paramTypes": [
+          "TEXT_PARAM_NONE"
+        ],
+        "textMapContentTextMapHash": 256212147,
+        "textMapId": "UI_DUNGEON_ENTRY_37"
+      },
+      {
+        "paramTypes": [
+          "TEXT_PARAM_NONE"
+        ],
+        "textMapContentTextMapHash": 4049350667,
+        "textMapId": "UI_DUNGEON_ENTRY_310"
+      }
+    ],
+    "TextMap/TextMap_MediumEN.json": {
+      "4049350667": "Violet Court",
+      "256212147": "Cecilia Garden"
+    }
+  }
+}

@@ -166,7 +166,7 @@ export function buildMaterialDeficits(params: {
       const sources = params.input.staticData.materialSources[coverage.materialKey] ?? [];
       const familyReference = params.input.staticData.materialFamilyByKey[coverage.materialKey];
       const guaranteedCraftCoverage = params.craftingPlan?.guaranteedCoverageByMaterial[coverage.materialKey] ?? 0;
-      const missingQuantity = params.craftingPlan
+      const missingQuantity = params.craftingPlan && coverage.materialKey !== "Mora"
         ? Math.max(params.craftingPlan.guaranteedRemainingByMaterial[coverage.materialKey] ?? coverage.remainingAfterInventory, 0)
         : coverage.remainingAfterInventory;
       const noResin = sources.length > 0 && sources.every((source) => source.resinCost == null || source.resinCost <= 0);
@@ -241,7 +241,7 @@ export function buildMaterialRows(
     const rawCoverage = baseCoverage.find((entry) => entry.materialKey === materialKey);
     const craftableQuantity = options?.craftingPlan?.guaranteedCoverageByMaterial[materialKey] ?? 0;
     const rawMissing = rawCoverage?.remainingAfterInventory ?? coverage.remainingAfterInventory;
-    const effectiveDeficit = options?.craftingPlan
+    const effectiveDeficit = options?.craftingPlan && materialKey !== "Mora"
       ? Math.max(options.craftingPlan.guaranteedRemainingByMaterial[materialKey] ?? coverage.remainingAfterInventory, 0)
       : coverage.remainingAfterInventory;
     const needed = coverage.quantityRequired;

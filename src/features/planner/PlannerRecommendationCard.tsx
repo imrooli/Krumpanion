@@ -7,6 +7,7 @@ import {
   formatActionableRuns,
   formatActivityType,
   formatAvailabilityLabel,
+  formatDayCount,
   formatEstimatedRuns,
   formatInteger,
   formatMaterialQuantity,
@@ -453,6 +454,7 @@ function EditableMaterialBreakdown({
                       : undefined
                   }
                   stepDeltas={[-1, 1]}
+                  showCustomAdd
                 />
               </div>
             ))}
@@ -513,6 +515,7 @@ function EditableMaterialBreakdown({
                   : undefined
               }
               stepDeltas={[-1, 1]}
+              showCustomAdd
             />
           </div>
         );
@@ -628,12 +631,21 @@ export function PlannerRecommendationCard({
       </div>
 
       <div className="planner-metadata-row">
-        {row.totalEstimatedResin != null ? <span>{`${formatInteger(row.totalEstimatedResin)} total resin`}</span> : <span>No resin</span>}
+        {row.expectedAdvisoryResin != null ? <span>{`${formatInteger(row.expectedAdvisoryResin)} expected resin`}</span> : null}
+        {row.expectedAdvisoryActionableRuns != null ? (
+          <span>{`${formatInteger(row.expectedAdvisoryActionableRuns)} expected runs`}</span>
+        ) : null}
+        {row.expectedAdvisoryDays != null ? <span>{formatDayCount(row.expectedAdvisoryDays, "resin day")}</span> : null}
+        {row.totalEstimatedResin != null
+          ? <span>{`${formatInteger(row.totalEstimatedResin)} worst-case guaranteed resin`}</span>
+          : row.estimateClassification === "chance_based"
+            ? <span>Chance-based · excluded</span>
+            : <span>No resin</span>}
         {row.resinPerRun != null ? <span>{`${formatInteger(row.resinPerRun)} resin/run`}</span> : null}
-        {row.actionableRuns != null ? <span>{formatActionableRuns(row)}</span> : null}
-        {estimatedRunsLabel ? <span>{estimatedRunsLabel}</span> : null}
+        {row.actionableRuns != null ? <span>{`${formatActionableRuns(row)} worst-case`}</span> : null}
+        {estimatedRunsLabel && row.estimatedRuns !== row.actionableRuns ? <span>{`${estimatedRunsLabel} worst-case`}</span> : null}
         <span>{formatAvailabilityLabel(row.availability)}</span>
-        {row.estimatedDaysLabel ? <span>{row.estimatedDaysLabel}</span> : null}
+        {row.estimatedDaysLabel && row.expectedAdvisoryDays == null ? <span>{row.estimatedDaysLabel}</span> : null}
         {row.dayEstimateNote ? <span>{row.dayEstimateNote}</span> : null}
       </div>
 

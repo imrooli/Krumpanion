@@ -1,3 +1,4 @@
+import { cumulativeRequirements } from "./exactRequirements";
 import { addMaterialAmounts, type MaterialTotals } from "../../utils/collections";
 import type { PlannerWarning } from "../planner/types";
 import type {
@@ -414,6 +415,16 @@ export function resolveCharacterProgression(
   staticData: StaticGameData,
   enablePost90Planning: boolean,
 ): { progression: CharacterProgressionEntry | null; warnings: PlannerWarning[]; usingLegacyExact: boolean } {
+  const exact = staticData.exactCharacterRequirements?.[characterKey];
+  if (exact) {
+    const talentTotalsBySkill = {
+      normal: cumulativeRequirements(exact.talents.normal, 1),
+      skill: cumulativeRequirements(exact.talents.skill, 1),
+      burst: cumulativeRequirements(exact.talents.burst, 1),
+    };
+    const talentAscensionRequirements = Object.fromEntries(Object.entries(exact.talents).map(([slot, steps]) => [slot, Object.fromEntries(Object.entries(steps).map(([level, step]) => [level, step.requiredAscension ?? 0]))])) as NonNullable<CharacterProgressionEntry["talentAscensionRequirements"]>;
+    return { progression: { key: characterKey, levelTotals: resolveCharacterLevelTotals(staticData), ascensionTotals: cumulativeRequirements(exact.ascension, 0), talentTotals: talentTotalsBySkill.normal, talentTotalsBySkill, talentAscensionRequirements, ...(enablePost90Planning ? { levelCapExtensionTotals: buildLevelCapExtensionTotals(staticData.universalCharacterProgressionCore.post90LevelCapExtensionCosts, staticData.characterMaterialProfiles[characterKey]?.post90ResourceKey) } : {}) }, warnings: [], usingLegacyExact: false };
+  }
   const profile = resolveCharacterProfile(characterKey, staticData);
   const legacy = staticData.legacyCharacterProgressions[characterKey];
   const warnings: PlannerWarning[] = [];

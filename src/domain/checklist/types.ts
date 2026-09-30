@@ -13,6 +13,13 @@ export type CooldownChecklistKey = "parametricTransformer" | "crystalflyTrap" | 
 export type ChecklistTaskKey = ResetWindowChecklistKey | "weeklyBossClaims" | CooldownChecklistKey | "realmCurrency";
 
 export type ChecklistSectionKey = "daily" | "weekly" | "monthly" | "patch_cycle" | "cooldowns" | "realm";
+export type ChecklistPriorityGroup =
+  | "do_now"
+  | "today"
+  | "this_week"
+  | "long_cycle"
+  | "cooldowns_accumulators"
+  | "completed";
 
 export interface ChecklistCompletionState {
   completedAt?: string;
@@ -77,6 +84,16 @@ export interface ChecklistTaskView {
   capacity?: number;
   timeToFullHours?: number;
   settingsSummary?: string;
+  priorityGroup: ChecklistPriorityGroup;
+  priorityRank: number;
+  priorityReason: string;
+  urgencyLabel?: string;
+  blocksProduction: boolean;
+  expiresSoon: boolean;
+  isDaily: boolean;
+  isWeekly: boolean;
+  isLongCycle: boolean;
+  isCooldownLike: boolean;
 }
 
 export interface ChecklistSectionView {
@@ -86,27 +103,51 @@ export interface ChecklistSectionView {
 }
 
 export interface ChecklistSummaryView {
+  urgentCount: number;
   needsAttentionCount: number;
+  todayRemainingCount: number;
+  weeklyRemainingCount: number;
   completeCount: number;
   onCooldownCount: number;
+  coolingDownCount: number;
   availableCount: number;
   nextResetLabel: string;
   nextResetAt?: string;
 }
 
+export interface ChecklistDashboardSectionView {
+  key: ChecklistPriorityGroup;
+  label: string;
+  description?: string;
+  tasks: ChecklistTaskView[];
+}
+
+export interface ChecklistDashboardView {
+  doNow: ChecklistDashboardSectionView;
+  today: ChecklistDashboardSectionView;
+  thisWeek: ChecklistDashboardSectionView;
+  longCycle: ChecklistDashboardSectionView;
+  cooldownsAndAccumulators: ChecklistDashboardSectionView;
+  completedOrCoolingDown: ChecklistDashboardSectionView;
+}
+
 export interface ChecklistAccountSummaryView {
   accountId: string;
   accountName: string;
+  urgentCount: number;
   needsAttentionCount: number;
   completeCount: number;
   onCooldownCount: number;
   availableCount: number;
+  nextUrgentLabel?: string;
+  nextUrgentTimeLabel?: string;
 }
 
 export interface ChecklistViewModel {
   summary: ChecklistSummaryView;
   sections: ChecklistSectionView[];
   tasks: ChecklistTaskView[];
+  dashboard: ChecklistDashboardView;
 }
 
 function clampWeeklyBossClaimCount(value: number): number {

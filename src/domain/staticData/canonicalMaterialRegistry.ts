@@ -1,3 +1,4 @@
+import { availabilityDays } from "../../utils/days";
 import type { AvailabilityGroupKey } from "../planner/types";
 import type {
   CharacterElement,
@@ -412,7 +413,7 @@ export function buildCanonicalMaterialRegistry(data: MaterialRegistryInput): {
           type: "domain_of_mastery",
           region: family.region ?? "Unknown",
           domainName: family.domainName ?? family.domainKey ?? family.key,
-          availableDays: DAY_NAMES_BY_AVAILABILITY[family.availability ?? "UNKNOWN"],
+          availableDays: (DAY_NAMES_BY_AVAILABILITY[family.availability ?? "UNKNOWN"] ?? availabilityDays(family.availability ?? "UNKNOWN")),
         },
         usedFor: ["talent_leveling"],
         craftable: true,

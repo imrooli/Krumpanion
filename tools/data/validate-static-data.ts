@@ -165,7 +165,7 @@ function buildGeneratedMaintenanceIssues(materialKeys: Set<string>): StaticDataI
 
     issues.push(
       createIssue(
-        "warning",
+        "info",
         "generated_data",
         "legacy_unresolved_reference_now_canonical",
         `${unresolved.displayName} still has a legacy generated unresolved ${unresolved.materialSlot} reference for ${unresolved.generatedKey}, but that key now exists in canonical static data.`,
@@ -221,13 +221,13 @@ async function buildRepositoryHygieneIssues(rootDir: string): Promise<StaticData
   if (existsSync(path.join(rootDir, "dist"))) {
     issues.push(
       createIssue(
-        "warning",
+        "info",
         "repository_hygiene",
         "dist_present",
         "dist is present in the repository working tree.",
         {
           entityKey: "dist",
-          suggestedFix: "Delete build output before preparing commits or repository snapshots.",
+          suggestedFix: "Expected ignored build output; keep it excluded from commits.",
         },
       ),
     );
@@ -252,13 +252,13 @@ async function buildRepositoryHygieneIssues(rootDir: string): Promise<StaticData
   for (const file of tsbuildinfoFiles) {
     issues.push(
       createIssue(
-        "warning",
+        "info",
         "repository_hygiene",
         "tsbuildinfo_present",
         `${file} is present in the repository working tree.`,
         {
           entityKey: file,
-          suggestedFix: "Remove transient TypeScript build info files before preparing repository patches.",
+          suggestedFix: "Expected ignored compiler cache; keep it excluded from commits.",
         },
       ),
     );
@@ -278,9 +278,9 @@ async function main(): Promise<void> {
   const hygieneIssues = await buildRepositoryHygieneIssues(rootDir);
   const generatedMaintenanceIssues = buildGeneratedMaintenanceIssues(materialKeys);
   const canonicalIssues = canonicalReport.issues.map((item) =>
-    createIssue(item.severity, "repository_hygiene", `canonical_database_${item.category}`, item.message, {
+    ({ ...createIssue(item.severity, "repository_hygiene", `canonical_database_${item.category}`, item.message, {
       entityKey: item.key,
-    }),
+    }), condition: item.condition, evidence: [{ origin: "canonical" as const, code: item.code, message: item.message }] }),
   );
   const finalReport =
     hygieneIssues.length > 0 || canonicalIssues.length > 0 || generatedMaintenanceIssues.length > 0

@@ -1,0 +1,631 @@
+{
+  "version": 1,
+  "label": "7.0",
+  "releaseTag": "7.0",
+  "notes": "",
+  "recordMetadata": {
+    "characterAssignment:Odette": {
+      "id": "characterAssignment:Odette",
+      "kind": "characterAssignment",
+      "mode": "new",
+      "createdAt": "2026-08-17T03:20:30.926Z",
+      "updatedAt": "2026-08-17T03:59:13.626Z"
+    },
+    "talentBookFamily:Fortitude": {
+      "id": "talentBookFamily:Fortitude",
+      "kind": "talentBookFamily",
+      "mode": "new",
+      "createdAt": "2026-08-17T03:41:55.466Z",
+      "updatedAt": "2026-08-17T04:38:03.362Z"
+    },
+    "talentBookFamily:Glory": {
+      "id": "talentBookFamily:Glory",
+      "kind": "talentBookFamily",
+      "mode": "new",
+      "createdAt": "2026-08-17T03:42:58.528Z",
+      "updatedAt": "2026-08-17T04:38:16.374Z"
+    },
+    "talentBookFamily:Charity": {
+      "id": "talentBookFamily:Charity",
+      "kind": "talentBookFamily",
+      "mode": "new",
+      "createdAt": "2026-08-17T03:17:01.771Z",
+      "updatedAt": "2026-08-17T04:38:31.913Z"
+    },
+    "commonEnemyDropFamily:VolkodlakBrute": {
+      "id": "commonEnemyDropFamily:VolkodlakBrute",
+      "kind": "commonEnemyDropFamily",
+      "mode": "new",
+      "createdAt": "2026-08-17T03:44:24.357Z",
+      "updatedAt": "2026-08-17T03:46:55.643Z"
+    },
+    "normalBossMaterial:UnscorchedBlossomBranch": {
+      "id": "normalBossMaterial:UnscorchedBlossomBranch",
+      "kind": "normalBossMaterial",
+      "mode": "new",
+      "createdAt": "2026-08-17T03:47:06.289Z",
+      "updatedAt": "2026-08-17T03:47:56.994Z"
+    },
+    "normalBossMaterial:NormalBossMaterial2": {
+      "id": "normalBossMaterial:NormalBossMaterial2",
+      "kind": "normalBossMaterial",
+      "mode": "new",
+      "createdAt": "2026-08-17T03:48:00.240Z",
+      "updatedAt": "2026-08-17T03:48:36.804Z"
+    },
+    "commonEnemyDropFamily:AberrantChimericMonsters": {
+      "id": "commonEnemyDropFamily:AberrantChimericMonsters",
+      "kind": "commonEnemyDropFamily",
+      "mode": "new",
+      "createdAt": "2026-08-17T03:50:16.946Z",
+      "updatedAt": "2026-08-17T03:51:45.250Z"
+    },
+    "localSpecialty:Flockingweed": {
+      "id": "localSpecialty:Flockingweed",
+      "kind": "localSpecialty",
+      "mode": "new",
+      "createdAt": "2026-08-17T03:52:51.836Z",
+      "updatedAt": "2026-08-17T03:53:04.269Z"
+    },
+    "localSpecialty:FrostfairyFlower": {
+      "id": "localSpecialty:FrostfairyFlower",
+      "kind": "localSpecialty",
+      "mode": "new",
+      "createdAt": "2026-08-17T03:52:49.872Z",
+      "updatedAt": "2026-08-17T03:53:25.766Z"
+    },
+    "characterAssignment:Alyosha": {
+      "id": "characterAssignment:Alyosha",
+      "kind": "characterAssignment",
+      "mode": "new",
+      "createdAt": "2026-08-17T03:55:19.795Z",
+      "updatedAt": "2026-08-17T04:00:28.115Z"
+    },
+    "commonEnemyDropFamily:WildwoodLeshy": {
+      "id": "commonEnemyDropFamily:WildwoodLeshy",
+      "kind": "commonEnemyDropFamily",
+      "mode": "new",
+      "createdAt": "2026-08-17T04:01:02.020Z",
+      "updatedAt": "2026-08-17T04:03:16.719Z"
+    },
+    "weaponAscensionFamily:PaleStarArmy": {
+      "id": "weaponAscensionFamily:PaleStarArmy",
+      "kind": "weaponAscensionFamily",
+      "mode": "new",
+      "createdAt": "2026-08-17T04:09:36.559Z",
+      "updatedAt": "2026-08-17T04:13:56.193Z"
+    },
+    "weaponAscensionFamily:CellaredSpiritualNectar": {
+      "id": "weaponAscensionFamily:CellaredSpiritualNectar",
+      "kind": "weaponAscensionFamily",
+      "mode": "new",
+      "createdAt": "2026-08-17T04:14:04.550Z",
+      "updatedAt": "2026-08-17T04:17:11.285Z"
+    },
+    "weaponAscensionFamily:FrostEmperor": {
+      "id": "weaponAscensionFamily:FrostEmperor",
+      "kind": "weaponAscensionFamily",
+      "mode": "new",
+      "createdAt": "2026-08-17T04:17:59.065Z",
+      "updatedAt": "2026-08-17T04:19:37.275Z"
+    },
+    "weaponProfile:WhitelakeFrostfeather": {
+      "id": "weaponProfile:WhitelakeFrostfeather",
+      "kind": "weaponProfile",
+      "mode": "new",
+      "createdAt": "2026-08-17T04:19:58.779Z",
+      "updatedAt": "2026-08-17T04:22:19.171Z"
+    },
+    "weaponProfile:Emberwell": {
+      "id": "weaponProfile:Emberwell",
+      "kind": "weaponProfile",
+      "mode": "new",
+      "createdAt": "2026-08-17T04:22:48.960Z",
+      "updatedAt": "2026-08-17T04:25:50.815Z"
+    },
+    "commonEnemyDropFamily:VolkodlakBruteElite": {
+      "id": "commonEnemyDropFamily:VolkodlakBruteElite",
+      "kind": "commonEnemyDropFamily",
+      "mode": "new",
+      "createdAt": "2026-08-17T04:03:24.626Z",
+      "updatedAt": "2026-08-17T07:55:57.072Z"
+    },
+    "weaponProfile:CovenantOfFrostAndSnow": {
+      "id": "weaponProfile:CovenantOfFrostAndSnow",
+      "kind": "weaponProfile",
+      "mode": "new",
+      "createdAt": "2026-08-17T04:26:42.767Z",
+      "updatedAt": "2026-08-17T04:29:37.388Z"
+    },
+    "weaponProfile:BladeOfAtonement": {
+      "id": "weaponProfile:BladeOfAtonement",
+      "kind": "weaponProfile",
+      "mode": "new",
+      "createdAt": "2026-08-17T04:26:53.167Z",
+      "updatedAt": "2026-08-17T04:30:26.429Z"
+    },
+    "weaponProfile:EchoesOfTheHeart": {
+      "id": "weaponProfile:EchoesOfTheHeart",
+      "kind": "weaponProfile",
+      "mode": "new",
+      "createdAt": "2026-08-17T04:27:00.282Z",
+      "updatedAt": "2026-08-17T04:31:09.948Z"
+    },
+    "weaponProfile:ExaiphanesBlade": {
+      "id": "weaponProfile:ExaiphanesBlade",
+      "kind": "weaponProfile",
+      "mode": "new",
+      "createdAt": "2026-08-17T04:27:13.855Z",
+      "updatedAt": "2026-08-17T04:28:01.373Z"
+    },
+    "weaponProfile:SongOfTheVigil": {
+      "id": "weaponProfile:SongOfTheVigil",
+      "kind": "weaponProfile",
+      "mode": "new",
+      "createdAt": "2026-08-17T04:27:08.452Z",
+      "updatedAt": "2026-08-17T04:32:37.369Z"
+    },
+    "artifactDomain:ScarletProof": {
+      "id": "artifactDomain:ScarletProof",
+      "kind": "artifactDomain",
+      "mode": "new",
+      "createdAt": "2026-08-17T04:34:53.149Z",
+      "updatedAt": "2026-08-17T04:35:54.879Z"
+    },
+    "artifactDomain:HeartOfTheFurnace": {
+      "id": "artifactDomain:HeartOfTheFurnace",
+      "kind": "artifactDomain",
+      "mode": "new",
+      "createdAt": "2026-08-17T04:35:56.163Z",
+      "updatedAt": "2026-08-17T04:36:12.446Z"
+    },
+    "sourceDomain:RelicsOfTheFallenGrace": {
+      "id": "sourceDomain:RelicsOfTheFallenGrace",
+      "kind": "sourceDomain",
+      "mode": "new",
+      "createdAt": "2026-08-17T04:36:39.850Z",
+      "updatedAt": "2026-08-17T07:43:41.618Z"
+    },
+    "sourceDomain:ScarsOfCursedObsession": {
+      "id": "sourceDomain:ScarsOfCursedObsession",
+      "kind": "sourceDomain",
+      "mode": "new",
+      "createdAt": "2026-08-17T06:51:03.715Z",
+      "updatedAt": "2026-08-17T07:44:53.224Z"
+    }
+  },
+  "weeklyBossGroups": {},
+  "talentBookFamilies": {
+    "Fortitude": {
+      "key": "Fortitude",
+      "teachingsKey": "TeachingsOfFortitude",
+      "teachingsName": "Teachings of Fortitude",
+      "guideKey": "GuideToFortitude",
+      "guideName": "Guide to Fortittude",
+      "philosophiesKey": "PhilosophiesOfFortitude",
+      "philosophiesName": "Philosophies of Fortitude",
+      "domainKey": "RelicsOfTheFallenGrace",
+      "domainName": "Relics of the Fallen Grace",
+      "availability": "TUE_FRI_SUN",
+      "region": "Snezhnaya",
+      "status": "verified",
+      "notes": []
+    },
+    "Glory": {
+      "key": "Glory",
+      "teachingsKey": "TeachingsOfGlory",
+      "teachingsName": "Teachings of Glory",
+      "guideKey": "GuideToGlory",
+      "guideName": "Guide to Glory",
+      "philosophiesKey": "PhilosophiesOfGlory",
+      "philosophiesName": "Philosophies of Glory",
+      "domainKey": "RelicsOfTheFallenGrace",
+      "domainName": "Relics of the Fallen Grace",
+      "availability": "WED_SAT_SUN",
+      "region": "Snezhnaya",
+      "status": "verified",
+      "notes": []
+    },
+    "Charity": {
+      "key": "Charity",
+      "teachingsKey": "TeachingsOfCharity",
+      "teachingsName": "Teachings of Charity",
+      "guideKey": "GuideToCharity",
+      "guideName": "Guide to Charity",
+      "philosophiesKey": "PhilosophiesOfCharity",
+      "philosophiesName": "Philosophies of Charity",
+      "domainKey": "RelicsOfTheFallenGrace",
+      "domainName": "Relics of The Fallen Grace",
+      "availability": "MON_THU_SUN",
+      "region": "Snezhnaya",
+      "status": "verified",
+      "notes": []
+    }
+  },
+  "weaponAscensionFamilies": {
+    "PaleStarArmy": {
+      "key": "PaleStarArmy",
+      "displayName": "Pale Star Army",
+      "twoStarKey": "RiseofthePaleStarArmy",
+      "twoStarName": "Rise of the Pale Star Army",
+      "threeStarKey": "MusterofthePaleStarArmy",
+      "threeStarName": "Muster of the Pale Star Army",
+      "fourStarKey": "ClarionofthePaleStarArmy",
+      "fourStarName": "Clarion of the Pale Star Army",
+      "fiveStarKey": "TriumphofthePaleStarArmy",
+      "fiveStarName": "Triumph of the Pale Star Army",
+      "domainKey": "ScarsOfCursedObsession",
+      "domainName": "ScarsOfCursedObsession",
+      "availability": "MON_THU_SUN",
+      "region": "Snezhnaya",
+      "status": "beta",
+      "notes": []
+    },
+    "CellaredSpiritualNectar": {
+      "key": "CellaredSpiritualNectar",
+      "displayName": "Cellared Spiritual Nectar",
+      "twoStarKey": "MeasuredPouroftheCellaredSpiritualNectar",
+      "twoStarName": "Measured Pour of the Cellared Spiritual Nectar",
+      "threeStarKey": "IntoxicationoftheCellaredSpiritualNectar",
+      "threeStarName": "Intoxication of the Cellared Spiritual Nectar",
+      "fourStarKey": "ExhilarationoftheCellaredSpiritualNectar",
+      "fourStarName": "Exhilaration of the Cellared Spiritual Nectar",
+      "fiveStarKey": "RevelryoftheCellaredSpiritualNectar",
+      "fiveStarName": "Revelry of the Cellared Spiritual Nectar",
+      "domainKey": "ScarsOfCursedObsession",
+      "domainName": "ScarsOfCursedObsession",
+      "availability": "TUE_FRI_SUN",
+      "region": "Snezhnaya",
+      "status": "beta",
+      "notes": []
+    },
+    "FrostEmperor": {
+      "key": "FrostEmperor",
+      "displayName": "Frost Emperor",
+      "twoStarKey": "TheFrostEmperorsRevival",
+      "twoStarName": "The Frost Emperor's Revival",
+      "threeStarKey": "TheFrostEmperorsCeremony",
+      "threeStarName": "The Frost Emperor's Ceremony",
+      "fourStarKey": "TheFrostEmperorsLament",
+      "fourStarName": "The Frost Emperor's Lament",
+      "fiveStarKey": "TheFrostEmperorsFarewell",
+      "fiveStarName": "The Frost Emperor's Farewell",
+      "domainKey": "ScarsOfCursedObsession",
+      "domainName": "ScarsOfCursedObsession",
+      "availability": "WED_SAT_SUN",
+      "region": "Snezhnaya",
+      "status": "beta",
+      "notes": []
+    }
+  },
+  "commonEnemyDropFamilies": {
+    "VolkodlakBrute": {
+      "familyId": "VolkodlakBrute",
+      "displayName": "Volkodlak Brute",
+      "sourceEnemyFamily": "VolkodlakBrute",
+      "lowKey": "EtherealGlimmershard",
+      "lowName": "Ethereal Glimmershard",
+      "midKey": "EtherealCrystal",
+      "midName": "EtherealCrystal",
+      "highKey": "EtherealCrystalscaleStone",
+      "highName": "Ethereal Crystalscale Stone",
+      "status": "verified",
+      "notes": []
+    },
+    "AberrantChimericMonsters": {
+      "familyId": "AberrantChimericMonsters",
+      "displayName": "Aberrant Chimeric Monsters",
+      "sourceEnemyFamily": "AberrantChimericMonsters",
+      "lowKey": "ChimericCore",
+      "lowName": "Chimeric Core",
+      "midKey": "SymbioticChimericNucleus",
+      "midName": "Symbiotic Chimeric Nucleus",
+      "highKey": "PrimeChimericNexus",
+      "highName": " Prime Chimeric Nexus",
+      "status": "verified",
+      "notes": []
+    },
+    "WildwoodLeshy": {
+      "familyId": "WildwoodLeshy",
+      "displayName": "Wildwood Leshys",
+      "sourceEnemyFamily": "WildwoodLeshy",
+      "lowKey": "HollowRootOfLife",
+      "lowName": "Hollow Root of Life",
+      "midKey": "SproutNodeofLife",
+      "midName": "Sprout Node of Life",
+      "highKey": "CoiledCoreofLife",
+      "highName": "Coiled Core of Life",
+      "status": "verified",
+      "notes": []
+    },
+    "VolkodlakBruteElite": {
+      "familyId": "VolkodlakBruteElite",
+      "displayName": "Volkodlak Brute Elites",
+      "sourceEnemyFamily": "VolkodlakBruteElite",
+      "lowKey": "AccretedFragment",
+      "lowName": "Accreted Fragment",
+      "midKey": "AccretedMass",
+      "midName": "Accreted Mass",
+      "highKey": "AccretedGrowth",
+      "highName": "Accreted Growth",
+      "status": "verified",
+      "notes": []
+    }
+  },
+  "normalBossMaterials": {
+    "UnscorchedBlossomBranch": {
+      "key": "UnscorchedBlossomBranch",
+      "displayName": "Unscorched Blossom Branch",
+      "bossKey": "ImmortalConstruct",
+      "bossDisplayName": "Immortal Construct",
+      "status": "verified",
+      "notes": []
+    },
+    "NormalBossMaterial2": {
+      "key": "SeveredTailOfTheSkyRoamer",
+      "displayName": "Severed Tail of the Sky-Roamer",
+      "bossKey": "ChimericWingedLion",
+      "bossDisplayName": "Chimeric Winged Lion",
+      "status": "verified",
+      "notes": []
+    }
+  },
+  "localSpecialties": {
+    "Flockingweed": {
+      "key": "Flockingweed",
+      "displayName": "Flockingweed",
+      "region": "Snezhnaya",
+      "isPurchasable": false,
+      "purchaseVendors": [],
+      "searchHint": "",
+      "notes": []
+    },
+    "FrostfairyFlower": {
+      "key": "FrostfairyFlower",
+      "displayName": "Frostfairy Flower",
+      "region": "Snezhnaya",
+      "isPurchasable": false,
+      "purchaseVendors": [],
+      "searchHint": "",
+      "notes": []
+    }
+  },
+  "standaloneMaterials": {},
+  "characters": {
+    "Odette": {
+      "characterKey": "Odette",
+      "displayName": "Odette",
+      "releaseState": "live",
+      "status": "verified",
+      "plannerEligible": true,
+      "aliases": [],
+      "notes": [],
+      "sourceRefs": [],
+      "gemFamilyKey": "Cryo",
+      "normalBossMaterialKey": "UnscorchedBlossomBranch",
+      "commonEnemyDropFamilyKey": "VolkodlakBrute",
+      "localSpecialtyKey": "FrostfairyFlower",
+      "talentBookFamilyKey": "Charity",
+      "weeklyBossMaterialKey": "TwistedWitheredBranch",
+      "element": "Cryo",
+      "weaponType": "Sword",
+      "rarity": 5,
+      "region": "Snezhnaya"
+    },
+    "Alyosha": {
+      "characterKey": "Alyosha",
+      "displayName": "Alyosha",
+      "releaseState": "live",
+      "status": "verified",
+      "plannerEligible": true,
+      "aliases": [],
+      "notes": [],
+      "sourceRefs": [],
+      "gemFamilyKey": "Electro",
+      "normalBossMaterialKey": "SeveredTailOfTheSkyRoamer",
+      "commonEnemyDropFamilyKey": "AberrantChimericMonsters",
+      "localSpecialtyKey": "Flockingweed",
+      "talentBookFamilyKey": "Fortitude",
+      "weeklyBossMaterialKey": "ElixirOfTheHeretic",
+      "element": "Electro",
+      "weaponType": "Polearm",
+      "rarity": 4,
+      "region": "Snezhnaya"
+    }
+  },
+  "weapons": {
+    "WhitelakeFrostfeather": {
+      "weaponKey": "WhitelakeFrostfeather",
+      "displayName": "Whitelake Frostfeather",
+      "rarity": 5,
+      "acquisitionType": "limited_wish",
+      "refinementTrackable": true,
+      "refinementPolicy": "normal",
+      "limited": false,
+      "eventExclusive": false,
+      "weaponAscensionMaterialFamilyKey": "CellaredSpiritualNectar",
+      "eliteEnemyDropFamilyKey": "WildwoodLeshy",
+      "commonEnemyDropFamilyKey": "AberrantChimericMonsters",
+      "releaseState": "live",
+      "status": "beta",
+      "plannerEligible": true,
+      "aliases": [],
+      "notes": [],
+      "weaponType": "Sword"
+    },
+    "Emberwell": {
+      "weaponKey": "Emberwell",
+      "displayName": "Emberwell",
+      "rarity": 4,
+      "acquisitionType": "craftable",
+      "refinementTrackable": true,
+      "refinementPolicy": "normal",
+      "limited": false,
+      "eventExclusive": false,
+      "weaponAscensionMaterialFamilyKey": "PaleStarArmy",
+      "eliteEnemyDropFamilyKey": "VolkodlakBruteElite",
+      "commonEnemyDropFamilyKey": "VolkodlakBrute",
+      "releaseState": "live",
+      "status": "verified",
+      "plannerEligible": true,
+      "aliases": [],
+      "notes": [],
+      "weaponType": "Sword"
+    },
+    "CovenantOfFrostAndSnow": {
+      "weaponKey": "CovenantOfFrostAndSnow",
+      "displayName": "Covenant Of Frost And Snow",
+      "rarity": 4,
+      "acquisitionType": "craftable",
+      "refinementTrackable": true,
+      "refinementPolicy": "normal",
+      "limited": false,
+      "eventExclusive": false,
+      "weaponAscensionMaterialFamilyKey": "PaleStarArmy",
+      "eliteEnemyDropFamilyKey": "WildwoodLeshy",
+      "commonEnemyDropFamilyKey": "AberrantChimericMonsters",
+      "releaseState": "live",
+      "status": "verified",
+      "plannerEligible": true,
+      "aliases": [],
+      "notes": [],
+      "weaponType": "Bow"
+    },
+    "BladeOfAtonement": {
+      "weaponKey": "BladeOfAtonement",
+      "displayName": "Blade of Atonement",
+      "rarity": 4,
+      "acquisitionType": "craftable",
+      "refinementTrackable": true,
+      "refinementPolicy": "normal",
+      "limited": false,
+      "eventExclusive": false,
+      "weaponAscensionMaterialFamilyKey": "PaleStarArmy",
+      "eliteEnemyDropFamilyKey": "WildwoodLeshy",
+      "commonEnemyDropFamilyKey": "AberrantChimericMonsters",
+      "releaseState": "live",
+      "status": "verified",
+      "plannerEligible": true,
+      "aliases": [],
+      "notes": [],
+      "weaponType": "Claymore"
+    },
+    "EchoesOfTheHeart": {
+      "weaponKey": "EchoesOfTheHeart",
+      "displayName": "Echoes of the Heart",
+      "rarity": 4,
+      "acquisitionType": "craftable",
+      "refinementTrackable": true,
+      "refinementPolicy": "normal",
+      "limited": false,
+      "eventExclusive": false,
+      "weaponAscensionMaterialFamilyKey": "PaleStarArmy",
+      "eliteEnemyDropFamilyKey": "VolkodlakBruteElite",
+      "commonEnemyDropFamilyKey": "VolkodlakBrute",
+      "releaseState": "live",
+      "status": "verified",
+      "plannerEligible": true,
+      "aliases": [],
+      "notes": [],
+      "weaponType": "Catalyst"
+    },
+    "ExaiphanesBlade": {
+      "weaponKey": "ExaiphanesBlade",
+      "displayName": "Exaiphanes Blade",
+      "rarity": 5,
+      "acquisitionType": "quest",
+      "refinementTrackable": true,
+      "refinementPolicy": "normal",
+      "limited": false,
+      "eventExclusive": false,
+      "weaponAscensionMaterialFamilyKey": "FrostEmperor",
+      "eliteEnemyDropFamilyKey": "VolkodlakBruteElite",
+      "commonEnemyDropFamilyKey": "VolkodlakBrute",
+      "releaseState": "live",
+      "status": "verified",
+      "plannerEligible": true,
+      "aliases": [],
+      "notes": [],
+      "weaponType": "Sword"
+    },
+    "SongOfTheVigil": {
+      "weaponKey": "SongOfTheVigil",
+      "displayName": "Song of the Vigil",
+      "rarity": 4,
+      "acquisitionType": "craftable",
+      "refinementTrackable": true,
+      "refinementPolicy": "normal",
+      "limited": false,
+      "eventExclusive": false,
+      "weaponAscensionMaterialFamilyKey": "FrostEmperor",
+      "eliteEnemyDropFamilyKey": "WildwoodLeshy",
+      "commonEnemyDropFamilyKey": "VolkodlakBrute",
+      "releaseState": "live",
+      "status": "verified",
+      "plannerEligible": true,
+      "aliases": [],
+      "notes": [],
+      "weaponType": "Polearm"
+    }
+  },
+  "artifactDomains": {
+    "ScarletProof": {
+      "setKey": "ScarletProof",
+      "setName": "Scarlet Proof",
+      "hasStandardDomainSource": true,
+      "domainKey": "InvertedGlacier",
+      "domainName": "Inverted Glacier",
+      "domainLocation": "Everfrozen Earth, Snezhnaya",
+      "region": "Snezhnaya",
+      "availability": "ALWAYS",
+      "resinCost": 20,
+      "pairedSetKeys": []
+    },
+    "HeartOfTheFurnace": {
+      "setKey": "HeartOfTheFurnace",
+      "setName": "Heart Of The Furnace",
+      "hasStandardDomainSource": true,
+      "domainKey": "InvertedGlacier",
+      "domainName": "Inverted Glacier",
+      "domainLocation": "Everfrozen Earth, Snezhnaya",
+      "region": "Snezhnaya",
+      "availability": "ALWAYS",
+      "resinCost": 20,
+      "pairedSetKeys": []
+    }
+  },
+  "sourceDomains": {
+    "RelicsOfTheFallenGrace": {
+      "domainKey": "RelicsOfTheFallenGrace",
+      "domainType": "mastery",
+      "name": "Relics of the Fallen Grace",
+      "region": "Snezhnaya",
+      "location": "Fellfrost Peak, Snezhnaya",
+      "availability": "ALWAYS",
+      "linkedFamilyKeys": [
+        "Fortitude",
+        "Charity",
+        "Glory"
+      ],
+      "listedRewards": [],
+      "elements": [],
+      "notes": []
+    },
+    "ScarsOfCursedObsession": {
+      "domainKey": "ScarsOfCursedObsession",
+      "domainType": "forgery",
+      "name": "Scars of Cursed Obsession",
+      "region": "Snezhnaya",
+      "location": "Somewhere",
+      "availability": "ALWAYS",
+      "linkedFamilyKeys": [
+        "CellaredSpiritualNectar",
+        "PaleStarArmy",
+        "FrostEmperor"
+      ],
+      "listedRewards": [],
+      "elements": [],
+      "notes": []
+    }
+  }
+}

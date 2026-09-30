@@ -207,11 +207,11 @@ export function DataHealthCenter({ model, onOpenIssue }: DataHealthCenterProps) 
         ) : (
           <div className="data-health-group-list">
             {groupedIssues.map((group) => (
-              <section key={group.key} className="data-health-group">
-                <div className="data-health-group-header">
+              <details key={group.key} className="data-health-group" open={group.issues.length <= 5 || group.issues.some(issue => issue.severity === "blocking" || issue.affectsActiveGoals)}>
+                <summary className="data-health-group-header">
                   <h3>{group.label}</h3>
-                  <StatusBadge tone="muted">{group.issues.length}</StatusBadge>
-                </div>
+                  <StatusBadge tone="muted">{group.issues.length} findings — expand to review</StatusBadge>
+                </summary>
                 <div className="data-health-issue-list">
                   {group.issues.map((issue) => (
                     <details key={issue.id} className="data-health-issue">
@@ -224,7 +224,7 @@ export function DataHealthCenter({ model, onOpenIssue }: DataHealthCenterProps) 
                             <strong>
                               {[issue.affectedType ? issue.affectedType : null, issue.affectedName ?? issue.affectedKey ?? null]
                                 .filter(Boolean)
-                                .join(" · ") || "System"}
+                                .join(" Â· ") || "System"}
                             </strong>
                           </div>
                           <div className="data-health-issue-title">{issue.title}</div>
@@ -271,7 +271,7 @@ export function DataHealthCenter({ model, onOpenIssue }: DataHealthCenterProps) 
                     </details>
                   ))}
                 </div>
-              </section>
+              </details>
             ))}
           </div>
         )}

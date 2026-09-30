@@ -194,7 +194,9 @@ export class IndexedDbPersistenceAdapter implements PersistenceAdapter {
       throw new Error("Save recovery point was not found.");
     }
 
-    return structuredClone(record.payload.saveFile);
+    const migrated = migrateSaveFile(structuredClone(record.payload.saveFile));
+    if (!migrated) throw new Error("Recovery point contains an unsupported save file.");
+    return migrated;
   }
 }
 

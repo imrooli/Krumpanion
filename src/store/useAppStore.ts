@@ -1,3 +1,7 @@
+import { resolvePreservedAccounts } from "../domain/staticData/goodDiscoveries";
+import { markManualDatabaseChanges } from "../domain/staticData/databaseEditor";
+import { createGameDataUpdateActions, type GameDataUpdateActions } from "../services/gameDataUpdates";
+import { createGameDataUpdateState, type GameDataUpdateState } from "../domain/staticData/upstreamTypes";
 import { create } from "zustand";
 import { importGoodAccountFromText } from "../adapters/goodImport";
 import { persistenceAdapter } from "../adapters/persistence";
@@ -49,6 +53,7 @@ import {
   normalizeCharacterGoalRecord,
   normalizeWeaponGoalRecord,
 } from "../domain/goals/goalState";
+import { compileChangeSetToOverridePack, type DatabaseChangeSet } from "../domain/staticData/databaseChangeSet";
 import { createStaticData } from "../domain/staticData/staticDataFactory";
 import { parseOverrideDataPack } from "../domain/staticData/overrideSchema";
 import type { OverrideDataPack, StaticGameData } from "../domain/staticData/types";
@@ -61,7 +66,7 @@ import {
   type PersistenceStatus,
   type SaveRecoveryPointRecord,
 } from "../domain/save/types";
-import { buildSaveFromState, defaultSave, persistCurrentSnapshot, toSaveInfo, type SaveInfo } from "./persistenceHelpers";
+import { buildSaveFromState, defaultSave, persistCurrentSnapshot, toSaveInfo, rebaseStateChanges, withPersistenceTransaction, type SaveInfo } from "./persistenceHelpers";
 import { getGenshinResetDay } from "../utils/days";
 import { createStableEntityId } from "../utils/stableIds";
 import {
@@ -139,8 +144,83 @@ function clone<T>(value: T): T {
   return structuredClone(value);
 }
 
+function preserveMoraAcrossGoodImport(
+  inventory: ImportedAccountState["inventory"],
+  previousAccount?: Pick<KrumpanionAccount, "inventory" | "importedInventory">,
+): ImportedAccountState["inventory"] {
+  if (Object.prototype.hasOwnProperty.call(inventory, "Mora")) {
+    return { ...inventory };
+  }
+
+  const rememberedMora = previousAccount?.inventory.Mora ?? previousAccount?.importedInventory.Mora;
+  if (typeof rememberedMora !== "number" || !Number.isInteger(rememberedMora) || rememberedMora < 0) {
+    return { ...inventory };
+  }
+
+  return {
+    ...inventory,
+    Mora: rememberedMora,
+  };
+}
+
 function toErrorMessage(error: unknown): string {
   return error instanceof Error ? error.message : String(error);
+}
+
+const PATCH_MANIFEST_COLLECTION_KEYS = [
+  "weeklyBossGroups",
+  "talentBookFamilies",
+  "weaponAscensionFamilies",
+  "commonEnemyDropFamilies",
+  "normalBossMaterials",
+  "localSpecialties",
+  "standaloneMaterials",
+  "characters",
+  "weapons",
+  "artifactDomains",
+  "sourceDomains",
+] satisfies Array<keyof DatabaseChangeSet>;
+
+function isObjectRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === "object" && value !== null && !Array.isArray(value);
+}
+
+function isDatabaseChangeSet(value: unknown): value is DatabaseChangeSet {
+  if (!isObjectRecord(value)) {
+    return false;
+  }
+
+  if (value.version !== 1 || typeof value.label !== "string" || typeof value.releaseTag !== "string" || typeof value.notes !== "string") {
+    return false;
+  }
+
+  return PATCH_MANIFEST_COLLECTION_KEYS.every((key) => isObjectRecord(value[key]));
+}
+
+function parseOverrideImportText(text: string): { overridePack: OverrideDataPack; normalizedText: string } {
+  try {
+    return {
+      overridePack: parseOverrideDataPack(text),
+      normalizedText: text,
+    };
+  } catch (overrideError) {
+    let parsed: unknown;
+    try {
+      parsed = JSON.parse(text);
+    } catch {
+      throw overrideError;
+    }
+
+    if (!isDatabaseChangeSet(parsed)) {
+      throw overrideError;
+    }
+
+    const overridePack = compileChangeSetToOverridePack(parsed);
+    return {
+      overridePack,
+      normalizedText: JSON.stringify(overridePack, null, 2),
+    };
+  }
 }
 
 function createDefaultPersistenceStatus(saveInfo: SaveInfo): PersistenceStatus {
@@ -665,26 +745,31 @@ function createAccountFromImport(
     metadata: input.metadata,
   });
   const stampedImport = stampImportedWeaponState(imported, input.id);
+  const importedInventory = preserveMoraAcrossGoodImport(stampedImport.inventory);
+  const mergedImport = {
+    ...stampedImport,
+    inventory: importedInventory,
+  };
 
   return {
     ...blank,
-    ...stampedImport,
+    ...mergedImport,
     id: input.id,
     name: input.name,
-    importedInventory: { ...stampedImport.inventory },
+    importedInventory: { ...importedInventory },
     importMeta: {
-      ...stampedImport.importMeta,
-      source: input.source ?? stampedImport.importMeta.source,
+      ...mergedImport.importMeta,
+      source: input.source ?? mergedImport.importMeta.source,
     },
     importState: {
-      lastGoodImportAt: stampedImport.importMeta.importedAt,
+      lastGoodImportAt: mergedImport.importMeta.importedAt,
       lastGoodFileName: input.fileName,
       lastGoodSource: input.source ?? "unknown",
-      lastGoodFormatVersion: String(stampedImport.importMeta.version),
-      importWarnings: stampedImport.warnings.map((warning) => warning.message),
-      importSummary: createImportedAccountSummary(stampedImport),
+      lastGoodFormatVersion: String(mergedImport.importMeta.version),
+      importWarnings: mergedImport.warnings.map((warning) => warning.message),
+      importSummary: createImportedAccountSummary(mergedImport),
     },
-    warnings: stampedImport.warnings,
+    warnings: mergedImport.warnings,
     materialEditState: {},
   };
 }
@@ -701,26 +786,31 @@ function replaceAccountSnapshot(
   const now = input.now ?? new Date();
   const timestamp = now.toISOString();
   const stampedImport = stampImportedWeaponState(imported, account.id);
+  const importedInventory = preserveMoraAcrossGoodImport(stampedImport.inventory, account);
+  const mergedImport = {
+    ...stampedImport,
+    inventory: importedInventory,
+  };
 
   return {
     ...account,
-    ...stampedImport,
-    importedInventory: { ...stampedImport.inventory },
+    ...mergedImport,
+    importedInventory: { ...importedInventory },
     importMeta: {
-      ...stampedImport.importMeta,
-      source: input.source ?? stampedImport.importMeta.source,
+      ...mergedImport.importMeta,
+      source: input.source ?? mergedImport.importMeta.source,
     },
     updatedAt: timestamp,
     importState: {
       ...account.importState,
-      lastGoodImportAt: stampedImport.importMeta.importedAt,
+      lastGoodImportAt: mergedImport.importMeta.importedAt,
       lastGoodFileName: input.fileName,
       lastGoodSource: input.source ?? "unknown",
-      lastGoodFormatVersion: String(stampedImport.importMeta.version),
-      importWarnings: stampedImport.warnings.map((warning) => warning.message),
-      importSummary: createImportedAccountSummary(stampedImport),
+      lastGoodFormatVersion: String(mergedImport.importMeta.version),
+      importWarnings: mergedImport.warnings.map((warning) => warning.message),
+      importSummary: createImportedAccountSummary(mergedImport),
     },
-    warnings: stampedImport.warnings,
+    warnings: mergedImport.warnings,
     materialEditState: {},
   };
 }
@@ -971,7 +1061,7 @@ async function loadBackupCollections(accountId: AccountId) {
 }
 
 async function createSaveRecoveryPointForState(
-  state: Pick<AppState, "user" | "settings" | "overridePack" | "saveInfo">,
+  state: Pick<AppState, "user" | "settings" | "overridePack" | "saveInfo" | "gameDataUpdates">,
   reason: BackupReason,
   accountId?: AccountId,
 ): Promise<SaveRecoveryPointRecord> {
@@ -979,6 +1069,7 @@ async function createSaveRecoveryPointForState(
     user: state.user,
     settings: state.settings,
     overridePack: state.overridePack,
+    gameDataUpdates: state.gameDataUpdates,
     saveInfo: state.saveInfo,
   });
 
@@ -1063,13 +1154,23 @@ async function persistLiveSnapshot(params: {
   user?: MultiAccountUserState;
   settings?: AppSettings;
   overridePack?: OverrideDataPack | null;
+  gameDataUpdates?: GameDataUpdateState;
   patch?: Partial<AppState>;
   importErrors?: string[];
   importWarnings?: string[];
 }): Promise<SaveInfo | null> {
+  return withPersistenceTransaction(async () => {
+  const latest = useAppStore.getState();
+  const base = params.state;
+  params = { ...params, state: latest,
+    user: params.user ? (base.staticData === latest.staticData ? rebaseStateChanges(base.user, params.user, latest.user) : resolvePreservedAccounts(rebaseStateChanges(base.user, params.user, latest.user), latest.staticData)) : latest.user,
+    settings: params.settings ? rebaseStateChanges(base.settings, params.settings, latest.settings) : latest.settings,
+    overridePack: params.overridePack === undefined ? latest.overridePack : params.overridePack,
+    gameDataUpdates: params.gameDataUpdates ?? latest.gameDataUpdates,
+  };
   const nextUser = params.user ?? params.state.user;
   const nextSettings = params.settings ?? params.state.settings;
-  const nextOverridePack = params.overridePack ?? params.state.overridePack;
+  const nextOverridePack = params.overridePack === undefined ? params.state.overridePack : params.overridePack;
   const savingStatus = updatePersistenceStatus(params.state.persistenceStatus, {
     status: "saving",
     lastBackupError: undefined,
@@ -1085,6 +1186,7 @@ async function persistLiveSnapshot(params: {
       user: nextUser,
       settings: nextSettings,
       overridePack: nextOverridePack,
+      gameDataUpdates: params.gameDataUpdates ?? params.state.gameDataUpdates,
     });
 
     const latestState = params.state;
@@ -1092,6 +1194,7 @@ async function persistLiveSnapshot(params: {
       user: nextUser,
       settings: nextSettings,
       overridePack: nextOverridePack,
+      gameDataUpdates: params.gameDataUpdates ?? params.state.gameDataUpdates,
       saveInfo: toSaveInfo(saveFile),
       importErrors: params.importErrors ?? [],
       importWarnings: params.importWarnings ?? getActiveAccount(nextUser).importState.importWarnings ?? [],
@@ -1109,6 +1212,7 @@ async function persistLiveSnapshot(params: {
       user: nextUser,
       settings: nextSettings,
       overridePack: nextOverridePack,
+      gameDataUpdates: params.gameDataUpdates ?? params.state.gameDataUpdates,
       importErrors: params.importErrors ?? latestState.importErrors,
       importWarnings: params.importWarnings ?? getActiveAccount(nextUser).importState.importWarnings ?? [],
       persistenceStatus: updatePersistenceStatus(latestState.persistenceStatus, {
@@ -1119,6 +1223,7 @@ async function persistLiveSnapshot(params: {
     });
     return null;
   }
+  });
 }
 
 async function finalizePlannerAwareUserUpdate(params: {
@@ -1362,11 +1467,12 @@ function synchronizeChecklistPlannerStateInUser(
   return updateAccountInUser(user, accountId, (account) => synchronizeChecklistPlannerState(account, now));
 }
 
-function buildPersistedSlice(state: Pick<AppState, "user" | "settings" | "overridePack" | "saveInfo">) {
+function buildPersistedSlice(state: Pick<AppState, "user" | "settings" | "overridePack" | "saveInfo" | "gameDataUpdates">) {
   return {
     user: state.user,
     settings: state.settings,
     overridePack: state.overridePack,
+    gameDataUpdates: state.gameDataUpdates,
     saveInfo: state.saveInfo,
   };
 }
@@ -1412,7 +1518,9 @@ export interface ImportGoodTextOptions {
   source?: AccountImportState["lastGoodSource"];
 }
 
-export interface AppState {
+export interface AppState extends GameDataUpdateActions {
+  databaseFocus?: "farmingSetup";
+  gameDataUpdates: GameDataUpdateState;
   staticData: StaticGameData;
   overridePack: OverrideDataPack | null;
   user: MultiAccountUserState;
@@ -1501,8 +1609,10 @@ export interface AppState {
 }
 
 export const useAppStore = create<AppState>((set, get) => ({
+  ...createGameDataUpdateActions(get, set),
   staticData: createStaticData(),
   overridePack: null,
+  gameDataUpdates: createGameDataUpdateState(),
   user: clone(defaultSave.user),
   settings: clone(defaultSave.settings),
   today: getToday(),
@@ -1599,6 +1709,7 @@ export const useAppStore = create<AppState>((set, get) => ({
       user,
       settings: saveFile.settings,
       overridePack: saveFile.overridePack,
+      gameDataUpdates: saveFile.gameDataUpdates,
       staticData,
       overrideText: saveFile.overridePack ? JSON.stringify(saveFile.overridePack, null, 2) : "",
       saveInfo: toSaveInfo(saveFile),
@@ -1647,6 +1758,7 @@ export const useAppStore = create<AppState>((set, get) => ({
     });
   },
   restoreSaveRecoveryPoint: async (backupId) => {
+    get().cancelGameDataUpdate();
     const state = get();
     let recoveryPointError: string | undefined;
 
@@ -1705,6 +1817,7 @@ export const useAppStore = create<AppState>((set, get) => ({
       user: userWithStatus,
       settings: restoredSave.settings,
       overridePack: restoredSave.overridePack,
+      gameDataUpdates: restoredSave.gameDataUpdates,
       importErrors: [],
       importWarnings: getActiveAccount(userWithStatus).importState.importWarnings ?? [],
       patch: syncBackupCollections(
@@ -1772,64 +1885,41 @@ export const useAppStore = create<AppState>((set, get) => ({
           source: options.source ?? "file",
         },
       });
+      await get().recordGoodDiscoveries(accountId);
       return;
     }
 
+    const importedAccountId = get().user.activeAccountId;
     await get().replaceActiveAccountFromGoodImport(result.account, {
       fileName: options?.fileName,
       source: options?.source ?? "file",
     });
+    if (get().persistenceStatus.status !== "failed") await get().recordGoodDiscoveries(importedAccountId);
   },
   importOverrideText: async (text) => {
+    await withPersistenceTransaction(async () => {
+      const state = get();
+      const parsedOverride = parseOverrideImportText(text);
+      const overridePack = markManualDatabaseChanges(state.overridePack, parsedOverride.overridePack);
+      const staticData = createStaticData(overridePack);
+      const removedAutomatic = Object.keys(state.overridePack?.exactCharacterRequirements ?? {}).some(key => !overridePack.exactCharacterRequirements?.[key]) || Object.keys(state.overridePack?.exactWeaponRequirements ?? {}).some(key => !overridePack.exactWeaponRequirements?.[key]);
+      const gameDataUpdates = { ...state.gameDataUpdates, effectiveVersion: state.gameDataUpdates.effectiveVersion + 1, ...(removedAutomatic ? { appliedRevision: undefined, status: "idle" as const } : {}) };
+      const saveFile = await persistCurrentSnapshot({ ...buildPersistedSlice(state), overridePack, gameDataUpdates });
+      set({ overridePack, overrideText: JSON.stringify(overridePack, null, 2), staticData, gameDataUpdates, saveInfo: toSaveInfo(saveFile) });
+    });
     const state = get();
-    const overridePack = parseOverrideDataPack(text);
-    const staticData = createStaticData(overridePack);
-    const nextState = {
-      ...buildPersistedSlice(state),
-      overridePack,
-    };
-    const saveFile = await persistCurrentSnapshot(nextState);
-    set({
-      overridePack,
-      overrideText: text,
-      staticData,
-      saveInfo: toSaveInfo(saveFile),
-    });
-    await finalizePlannerAwareUserUpdate({
-      state: { ...state, overridePack, staticData },
-      setState: set,
-      getState: get,
-      nextUser: state.user,
-      targetAccountId: state.user.activeAccountId,
-      trigger: "database_update",
-      recordGoalChanges: false,
-      staticData,
-    });
+    await finalizePlannerAwareUserUpdate({ state, setState: set, getState: get, nextUser: state.user, targetAccountId: state.user.activeAccountId, trigger: "database_update", recordGoalChanges: false, staticData: state.staticData });
   },
   clearOverridePack: async () => {
+    await withPersistenceTransaction(async () => {
+      const state = get();
+      const staticData = createStaticData();
+      const gameDataUpdates = { ...state.gameDataUpdates, appliedRevision: undefined, status: "idle" as const, effectiveVersion: state.gameDataUpdates.effectiveVersion + 1 };
+      const saveFile = await persistCurrentSnapshot({ ...buildPersistedSlice(state), overridePack: null, gameDataUpdates });
+      set({ overridePack: null, overrideText: "", staticData, gameDataUpdates, saveInfo: toSaveInfo(saveFile) });
+    });
     const state = get();
-    const staticData = createStaticData();
-    const nextState = {
-      ...buildPersistedSlice(state),
-      overridePack: null,
-    };
-    const saveFile = await persistCurrentSnapshot(nextState);
-    set({
-      overridePack: null,
-      overrideText: "",
-      staticData,
-      saveInfo: toSaveInfo(saveFile),
-    });
-    await finalizePlannerAwareUserUpdate({
-      state: { ...state, overridePack: null, staticData },
-      setState: set,
-      getState: get,
-      nextUser: state.user,
-      targetAccountId: state.user.activeAccountId,
-      trigger: "database_update",
-      recordGoalChanges: false,
-      staticData,
-    });
+    await finalizePlannerAwareUserUpdate({ state, setState: set, getState: get, nextUser: state.user, targetAccountId: state.user.activeAccountId, trigger: "database_update", recordGoalChanges: false, staticData: state.staticData });
   },
   setActiveTab: async (activeTab) => {
     const state = get();
@@ -2848,6 +2938,8 @@ export const useAppStore = create<AppState>((set, get) => ({
   },
   exportSaveFile: async () => persistenceAdapter.exportSaveFile(),
   importSaveFile: async (text) => {
+    get().cancelGameDataUpdate();
+    return withPersistenceTransaction(async () => {
     const state = get();
     let recoveryPointError: string | undefined;
     try {
@@ -2872,6 +2964,7 @@ export const useAppStore = create<AppState>((set, get) => ({
       user,
       settings: saveFile.settings,
       overridePack: saveFile.overridePack,
+      gameDataUpdates: saveFile.gameDataUpdates,
       staticData,
       overrideText: saveFile.overridePack ? JSON.stringify(saveFile.overridePack, null, 2) : "",
       saveInfo: toSaveInfo(saveFile),
@@ -2886,6 +2979,7 @@ export const useAppStore = create<AppState>((set, get) => ({
       importWarnings: activeAccount.importState.importWarnings ?? [],
       today: getGenshinResetDay(now),
       timeSensitiveAt: now.toISOString(),
+    });
     });
   },
   exportAccount: async (accountId) => {

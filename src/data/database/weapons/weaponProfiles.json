@@ -2033,6 +2033,10 @@
   },
   "PrizedIsshinBlade_i_n11419": {
     "weaponKey": "PrizedIsshinBlade_i_n11419",
+    "gameId": 11419,
+    "provenance": { "provider": "animegamedata2", "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe", "table": "WeaponExcelConfigData", "relationshipIds": [11419, 111419] },
+    "refinementTrackable": false,
+    "refinementPolicy": "not_trackable",
     "displayName": "Prized Isshin Blade",
     "weaponType": "Sword",
     "rarity": 4,
@@ -2049,6 +2053,10 @@
   },
   "PrizedIsshinBlade_i_n11420": {
     "weaponKey": "PrizedIsshinBlade_i_n11420",
+    "gameId": 11420,
+    "provenance": { "provider": "animegamedata2", "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe", "table": "WeaponExcelConfigData", "relationshipIds": [11420, 111420] },
+    "refinementTrackable": false,
+    "refinementPolicy": "not_trackable",
     "displayName": "Prized Isshin Blade",
     "weaponType": "Sword",
     "rarity": 4,
@@ -2065,6 +2073,10 @@
   },
   "PrizedIsshinBlade_i_n11421": {
     "weaponKey": "PrizedIsshinBlade_i_n11421",
+    "gameId": 11421,
+    "provenance": { "provider": "animegamedata2", "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe", "table": "WeaponExcelConfigData", "relationshipIds": [11421, 111421] },
+    "refinementTrackable": false,
+    "refinementPolicy": "not_trackable",
     "displayName": "Prized Isshin Blade",
     "weaponType": "Sword",
     "rarity": 4,
@@ -3680,6 +3692,266 @@
     "notes": [],
     "aliases": [
       "Xiphos' Moonlight"
+    ]
+  },
+  "DullBlade": {
+    "weaponKey": "DullBlade",
+    "displayName": "Dull Blade",
+    "gameId": 11101,
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "WeaponExcelConfigData",
+      "relationshipIds": [
+        11101
+      ]
+    },
+    "rarity": 1,
+    "weaponType": "Sword",
+    "weaponAscensionMaterialFamilyKey": "",
+    "eliteEnemyDropFamilyKey": "",
+    "commonEnemyDropFamilyKey": "",
+    "status": "verified",
+    "releaseState": "live",
+    "plannerEligible": false,
+    "refinementTrackable": false,
+    "refinementPolicy": "not_trackable",
+    "notes": [
+      "Catalog identity only; low-rarity progression planning is unsupported."
+    ]
+  },
+  "WasterGreatsword": {
+    "weaponKey": "WasterGreatsword",
+    "displayName": "Waster Greatsword",
+    "gameId": 12101,
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "WeaponExcelConfigData",
+      "relationshipIds": [
+        12101
+      ]
+    },
+    "rarity": 1,
+    "weaponType": "Claymore",
+    "weaponAscensionMaterialFamilyKey": "",
+    "eliteEnemyDropFamilyKey": "",
+    "commonEnemyDropFamilyKey": "",
+    "status": "verified",
+    "releaseState": "live",
+    "plannerEligible": false,
+    "refinementTrackable": false,
+    "refinementPolicy": "not_trackable",
+    "notes": [
+      "Catalog identity only; low-rarity progression planning is unsupported."
+    ]
+  },
+  "BeginnersProtector": {
+    "weaponKey": "BeginnersProtector",
+    "displayName": "Beginner's Protector",
+    "gameId": 13101,
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "WeaponExcelConfigData",
+      "relationshipIds": [
+        13101
+      ]
+    },
+    "rarity": 1,
+    "weaponType": "Polearm",
+    "weaponAscensionMaterialFamilyKey": "",
+    "eliteEnemyDropFamilyKey": "",
+    "commonEnemyDropFamilyKey": "",
+    "status": "verified",
+    "releaseState": "live",
+    "plannerEligible": false,
+    "refinementTrackable": false,
+    "refinementPolicy": "not_trackable",
+    "notes": [
+      "Catalog identity only; low-rarity progression planning is unsupported."
+    ]
+  },
+  "ApprenticesNotes": {
+    "weaponKey": "ApprenticesNotes",
+    "displayName": "Apprentice's Notes",
+    "gameId": 14101,
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "WeaponExcelConfigData",
+      "relationshipIds": [
+        14101
+      ]
+    },
+    "rarity": 1,
+    "weaponType": "Catalyst",
+    "weaponAscensionMaterialFamilyKey": "",
+    "eliteEnemyDropFamilyKey": "",
+    "commonEnemyDropFamilyKey": "",
+    "status": "verified",
+    "releaseState": "live",
+    "plannerEligible": false,
+    "refinementTrackable": false,
+    "refinementPolicy": "not_trackable",
+    "notes": [
+      "Catalog identity only; low-rarity progression planning is unsupported."
+    ]
+  },
+  "HuntersBow": {
+    "weaponKey": "HuntersBow",
+    "displayName": "Hunter's Bow",
+    "gameId": 15101,
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "WeaponExcelConfigData",
+      "relationshipIds": [
+        15101
+      ]
+    },
+    "rarity": 1,
+    "weaponType": "Bow",
+    "weaponAscensionMaterialFamilyKey": "",
+    "eliteEnemyDropFamilyKey": "",
+    "commonEnemyDropFamilyKey": "",
+    "status": "verified",
+    "releaseState": "live",
+    "plannerEligible": false,
+    "refinementTrackable": false,
+    "refinementPolicy": "not_trackable",
+    "notes": [
+      "Catalog identity only; low-rarity progression planning is unsupported."
+    ]
+  },
+  "SilverSword": {
+    "weaponKey": "SilverSword",
+    "displayName": "Silver Sword",
+    "gameId": 11201,
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "WeaponExcelConfigData",
+      "relationshipIds": [
+        11201
+      ]
+    },
+    "rarity": 2,
+    "weaponType": "Sword",
+    "weaponAscensionMaterialFamilyKey": "",
+    "eliteEnemyDropFamilyKey": "",
+    "commonEnemyDropFamilyKey": "",
+    "status": "verified",
+    "releaseState": "live",
+    "plannerEligible": false,
+    "refinementTrackable": false,
+    "refinementPolicy": "not_trackable",
+    "notes": [
+      "Catalog identity only; low-rarity progression planning is unsupported."
+    ]
+  },
+  "OldMercsPal": {
+    "weaponKey": "OldMercsPal",
+    "displayName": "Old Merc's Pal",
+    "gameId": 12201,
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "WeaponExcelConfigData",
+      "relationshipIds": [
+        12201
+      ]
+    },
+    "rarity": 2,
+    "weaponType": "Claymore",
+    "weaponAscensionMaterialFamilyKey": "",
+    "eliteEnemyDropFamilyKey": "",
+    "commonEnemyDropFamilyKey": "",
+    "status": "verified",
+    "releaseState": "live",
+    "plannerEligible": false,
+    "refinementTrackable": false,
+    "refinementPolicy": "not_trackable",
+    "notes": [
+      "Catalog identity only; low-rarity progression planning is unsupported."
+    ]
+  },
+  "IronPoint": {
+    "weaponKey": "IronPoint",
+    "displayName": "Iron Point",
+    "gameId": 13201,
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "WeaponExcelConfigData",
+      "relationshipIds": [
+        13201
+      ]
+    },
+    "rarity": 2,
+    "weaponType": "Polearm",
+    "weaponAscensionMaterialFamilyKey": "",
+    "eliteEnemyDropFamilyKey": "",
+    "commonEnemyDropFamilyKey": "",
+    "status": "verified",
+    "releaseState": "live",
+    "plannerEligible": false,
+    "refinementTrackable": false,
+    "refinementPolicy": "not_trackable",
+    "notes": [
+      "Catalog identity only; low-rarity progression planning is unsupported."
+    ]
+  },
+  "PocketGrimoire": {
+    "weaponKey": "PocketGrimoire",
+    "displayName": "Pocket Grimoire",
+    "gameId": 14201,
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "WeaponExcelConfigData",
+      "relationshipIds": [
+        14201
+      ]
+    },
+    "rarity": 2,
+    "weaponType": "Catalyst",
+    "weaponAscensionMaterialFamilyKey": "",
+    "eliteEnemyDropFamilyKey": "",
+    "commonEnemyDropFamilyKey": "",
+    "status": "verified",
+    "releaseState": "live",
+    "plannerEligible": false,
+    "refinementTrackable": false,
+    "refinementPolicy": "not_trackable",
+    "notes": [
+      "Catalog identity only; low-rarity progression planning is unsupported."
+    ]
+  },
+  "SeasonedHuntersBow": {
+    "weaponKey": "SeasonedHuntersBow",
+    "displayName": "Seasoned Hunter's Bow",
+    "gameId": 15201,
+    "provenance": {
+      "provider": "animegamedata2",
+      "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+      "table": "WeaponExcelConfigData",
+      "relationshipIds": [
+        15201
+      ]
+    },
+    "rarity": 2,
+    "weaponType": "Bow",
+    "weaponAscensionMaterialFamilyKey": "",
+    "eliteEnemyDropFamilyKey": "",
+    "commonEnemyDropFamilyKey": "",
+    "status": "verified",
+    "releaseState": "live",
+    "plannerEligible": false,
+    "refinementTrackable": false,
+    "refinementPolicy": "not_trackable",
+    "notes": [
+      "Catalog identity only; low-rarity progression planning is unsupported."
     ]
   }
 }

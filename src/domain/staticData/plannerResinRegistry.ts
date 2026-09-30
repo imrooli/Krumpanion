@@ -90,6 +90,7 @@ export const LEY_LINE_REWARDS_BY_WORLD_LEVEL: Record<string, LeyLineRewardRecord
         WanderersAdvice: { min: 7, max: 8 },
         AdventurersExperience: { min: 3, max: 4 },
       },
+      minimumCharacterExp: 22000,
       averageCharacterExp: 25000,
       averageEfficiencyPercent: 20.4,
     },
@@ -107,6 +108,7 @@ export const LEY_LINE_REWARDS_BY_WORLD_LEVEL: Record<string, LeyLineRewardRecord
         WanderersAdvice: { min: 10, max: 12 },
         AdventurersExperience: { min: 5, max: 6 },
       },
+      minimumCharacterExp: 35000,
       averageCharacterExp: 38500,
       averageEfficiencyPercent: 31.4,
     },
@@ -123,6 +125,7 @@ export const LEY_LINE_REWARDS_BY_WORLD_LEVEL: Record<string, LeyLineRewardRecord
       characterExpMaterials: {
         AdventurersExperience: { min: 10, max: 11 },
       },
+      minimumCharacterExp: 50000,
       averageCharacterExp: 52500,
       averageEfficiencyPercent: 42.9,
     },
@@ -139,6 +142,7 @@ export const LEY_LINE_REWARDS_BY_WORLD_LEVEL: Record<string, LeyLineRewardRecord
       characterExpMaterials: {
         AdventurersExperience: { min: 13, max: 14 },
       },
+      minimumCharacterExp: 65000,
       averageCharacterExp: 67500,
       averageEfficiencyPercent: 55.1,
     },
@@ -156,6 +160,7 @@ export const LEY_LINE_REWARDS_BY_WORLD_LEVEL: Record<string, LeyLineRewardRecord
         AdventurersExperience: { min: 6, max: 7 },
         HerosWit: { min: 2, max: 3 },
       },
+      minimumCharacterExp: 70000,
       averageCharacterExp: 82500,
       averageEfficiencyPercent: 67.3,
     },
@@ -173,6 +178,7 @@ export const LEY_LINE_REWARDS_BY_WORLD_LEVEL: Record<string, LeyLineRewardRecord
         AdventurersExperience: { min: 6, max: 7 },
         HerosWit: { min: 3, max: 4 },
       },
+      minimumCharacterExp: 90000,
       averageCharacterExp: 102500,
       averageEfficiencyPercent: 83.7,
     },
@@ -190,6 +196,7 @@ export const LEY_LINE_REWARDS_BY_WORLD_LEVEL: Record<string, LeyLineRewardRecord
         AdventurersExperience: { min: 6, max: 7 },
         HerosWit: { min: 4, max: 5 },
       },
+      minimumCharacterExp: 110000,
       averageCharacterExp: 122500,
       averageEfficiencyPercent: null,
     },
@@ -207,6 +214,7 @@ export const LEY_LINE_REWARDS_BY_WORLD_LEVEL: Record<string, LeyLineRewardRecord
         AdventurersExperience: { min: 6, max: 7 },
         HerosWit: { min: 4, max: 5 },
       },
+      minimumCharacterExp: 110000,
       averageCharacterExp: 122500,
       averageEfficiencyPercent: null,
     },
@@ -224,6 +232,7 @@ export const LEY_LINE_REWARDS_BY_WORLD_LEVEL: Record<string, LeyLineRewardRecord
         AdventurersExperience: { min: 6, max: 7 },
         HerosWit: { min: 4, max: 5 },
       },
+      minimumCharacterExp: 110000,
       averageCharacterExp: 122500,
       averageEfficiencyPercent: null,
     },
@@ -241,6 +250,7 @@ export const LEY_LINE_REWARDS_BY_WORLD_LEVEL: Record<string, LeyLineRewardRecord
         AdventurersExperience: { min: 6, max: 7 },
         HerosWit: { min: 4, max: 5 },
       },
+      minimumCharacterExp: 110000,
       averageCharacterExp: 122500,
       averageEfficiencyPercent: null,
     },
@@ -596,6 +606,7 @@ export const WEAPON_ASCENSION_DOMAIN_DROP_MODEL: Record<PlannerDomainLevel, Weap
       fourStar: null,
       fiveStar: null,
     },
+    guaranteed: { twoStar: 4, threeStar: 0, fourStar: 0, fiveStar: 0, lowerTierEquivalent: 4 },
     twoStarRollMean: 2.2,
     dropPackMean: 2.5,
     dropPackDistribution: {
@@ -614,6 +625,7 @@ export const WEAPON_ASCENSION_DOMAIN_DROP_MODEL: Record<PlannerDomainLevel, Weap
       fourStar: null,
       fiveStar: null,
     },
+    guaranteed: { twoStar: 2, threeStar: 2, fourStar: 0, fiveStar: 0, lowerTierEquivalent: 8 },
     twoStarRollMean: 2.7,
     dropPackMean: 2.0,
     dropPackDistribution: {
@@ -632,6 +644,7 @@ export const WEAPON_ASCENSION_DOMAIN_DROP_MODEL: Record<PlannerDomainLevel, Weap
       fourStar: { range: "0-3", average: 0.24 },
       fiveStar: null,
     },
+    guaranteed: { twoStar: 2, threeStar: 0, fourStar: 0, fiveStar: 0, lowerTierEquivalent: 2 },
     twoStarRollMean: 2.26,
     dropPackMean: 3.0,
     dropPackDistribution: {
@@ -650,6 +663,7 @@ export const WEAPON_ASCENSION_DOMAIN_DROP_MODEL: Record<PlannerDomainLevel, Weap
       fourStar: { range: "0-4", average: 0.62 },
       fiveStar: { range: "0-4", average: 0.062 },
     },
+    guaranteed: { twoStar: 2, threeStar: 0, fourStar: 0, fiveStar: 0, lowerTierEquivalent: 2 },
     twoStarRollMean: 2.2,
     dropPackMean: 3.1,
     dropPackDistribution: {
@@ -670,6 +684,7 @@ export const TALENT_BOOK_DOMAIN_DROP_MODEL: Record<PlannerDomainLevel, TalentBoo
       threeStar: null,
       fourStar: null,
     },
+    guaranteed: { twoStar: 3, threeStar: 0, fourStar: 0, lowerTierEquivalent: 3 },
     twoStarRollMean: 2.2,
     dropPackMean: 1.0,
     dropPackDistribution: {
@@ -686,6 +701,7 @@ export const TALENT_BOOK_DOMAIN_DROP_MODEL: Record<PlannerDomainLevel, TalentBoo
       threeStar: { range: "1", average: 1.0 },
       fourStar: null,
     },
+    guaranteed: { twoStar: 2, threeStar: 1, fourStar: 0, lowerTierEquivalent: 5 },
     twoStarRollMean: 2.5,
     dropPackMean: 1.0,
     dropPackDistribution: {
@@ -702,6 +718,7 @@ export const TALENT_BOOK_DOMAIN_DROP_MODEL: Record<PlannerDomainLevel, TalentBoo
       threeStar: { range: "2", average: 2.0 },
       fourStar: null,
     },
+    guaranteed: { twoStar: 1, threeStar: 2, fourStar: 0, lowerTierEquivalent: 7 },
     twoStarRollMean: 1.8,
     dropPackMean: 2.0,
     dropPackDistribution: {
@@ -718,6 +735,7 @@ export const TALENT_BOOK_DOMAIN_DROP_MODEL: Record<PlannerDomainLevel, TalentBoo
       threeStar: { range: "0-3", average: 1.98 },
       fourStar: { range: "0-3", average: 0.22 },
     },
+    guaranteed: { twoStar: 2, threeStar: 0, fourStar: 0, lowerTierEquivalent: 2 },
     twoStarRollMean: 2.2,
     dropPackMean: 2.2,
     dropPackDistribution: {
@@ -754,16 +772,16 @@ export const WEEKLY_BOSS_ASCENSION_GEM_DROPS_BY_WORLD_LEVEL: Record<string, Boss
 };
 
 export const NORMAL_BOSS_UNIQUE_MATERIAL_DROP_MEAN_BY_WORLD_LEVEL: Record<string, NormalBossUniqueMaterialDropRecord> = {
-  "0": { bossLevel: "36", rewardTier: 7, dropMean: 1.6185 },
-  "1": { bossLevel: "37/39", rewardTier: 7, dropMean: 1.6185 },
-  "2": { bossLevel: "41/42", rewardTier: 8, dropMean: 1.7037 },
-  "3": { bossLevel: "50/51", rewardTier: 10, dropMean: 1.8741 },
-  "4": { bossLevel: "62/63", rewardTier: 12, dropMean: 2.0445 },
-  "5": { bossLevel: "72/73", rewardTier: 14, dropMean: 2.2149 },
-  "6": { bossLevel: "83/84", rewardTier: 16, dropMean: 2.3852 },
-  "7": { bossLevel: "91/92", rewardTier: 18, dropMean: 2.5556 },
-  "8": { bossLevel: "93/94", rewardTier: 18, dropMean: 2.5556 },
-  "9": { bossLevel: "95", rewardTier: 18, dropMean: 2.5556 },
+  "0": { bossLevel: "36", rewardTier: 7, dropMean: 1.6185, guaranteedUniqueDrops: 1 },
+  "1": { bossLevel: "37/39", rewardTier: 7, dropMean: 1.6185, guaranteedUniqueDrops: 1 },
+  "2": { bossLevel: "41/42", rewardTier: 8, dropMean: 1.7037, guaranteedUniqueDrops: 1 },
+  "3": { bossLevel: "50/51", rewardTier: 10, dropMean: 1.8741, guaranteedUniqueDrops: 1 },
+  "4": { bossLevel: "62/63", rewardTier: 12, dropMean: 2.0445, guaranteedUniqueDrops: 2 },
+  "5": { bossLevel: "72/73", rewardTier: 14, dropMean: 2.2149, guaranteedUniqueDrops: 2 },
+  "6": { bossLevel: "83/84", rewardTier: 16, dropMean: 2.3852, guaranteedUniqueDrops: 2 },
+  "7": { bossLevel: "91/92", rewardTier: 18, dropMean: 2.5556, guaranteedUniqueDrops: 2 },
+  "8": { bossLevel: "93/94", rewardTier: 18, dropMean: 2.5556, guaranteedUniqueDrops: 2 },
+  "9": { bossLevel: "95", rewardTier: 18, dropMean: 3.08, guaranteedUniqueDrops: 3 },
 };
 
 export const WEEKLY_TALENT_MATERIAL_DROP_MEAN_BY_WORLD_LEVEL: Record<string, WeeklyTalentMaterialDropRecord> = {

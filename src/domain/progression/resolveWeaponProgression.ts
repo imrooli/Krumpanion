@@ -1,3 +1,4 @@
+import { cumulativeRequirements } from "./exactRequirements";
 import { addMaterialAmounts, type MaterialTotals } from "../../utils/collections";
 import type { PlannerWarning } from "../planner/types";
 import type { StaticGameData, WeaponProgressionEntry } from "../staticData/types";
@@ -196,6 +197,9 @@ export function resolveWeaponProgression(
   staticData: StaticGameData,
 ): { progression: WeaponProgressionEntry | null; warnings: PlannerWarning[]; usingLegacyExact: boolean } {
   const profile = staticData.weaponMaterialProfiles[weaponKey];
+  const exact = staticData.exactWeaponRequirements?.[weaponKey];
+  const exactRarity = resolveGoalTrackableWeaponRarityLabel(staticData.weapons[weaponKey]?.rarity);
+  if (exact && exactRarity) return { progression: { key: weaponKey, levelTotals: buildExactLevelTotals(exactRarity, staticData), ascensionTotals: cumulativeRequirements(exact.ascension, 0) }, warnings: [], usingLegacyExact: false };
   const legacy = staticData.legacyWeaponProgressions[weaponKey];
   const warnings: PlannerWarning[] = [];
 

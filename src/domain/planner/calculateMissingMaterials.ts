@@ -189,18 +189,20 @@ function buildCharacterMissingTotals(
     for (const talentKey of ["auto", "skill", "burst"] as const) {
       const currentLevel = talentLevels[talentKey];
       const targetLevel = desiredTalents[talentKey] ?? currentLevel;
+      const slot = talentKey === "auto" ? "normal" : talentKey;
+      const talentTable = progression.talentTotalsBySkill?.[slot] ?? progression.talentTotals;
       const label = talentKey === "auto" ? "Talent: Auto" : talentKey === "skill" ? "Talent: Skill" : "Talent: Burst";
 
       addBreakdownEntry(
         breakdown,
         label,
         subtractMaterialAmounts(
-          getMaterialTotalsForTarget(progression.talentTotals, targetLevel),
-          getMaterialTotalsForTarget(progression.talentTotals, currentLevel),
+          getMaterialTotalsForTarget(talentTable, targetLevel),
+          getMaterialTotalsForTarget(talentTable, currentLevel),
         ),
       );
 
-      const highestRequiredAscension = determineHighestRequiredAscensionForTalentRange(
+      const highestRequiredAscension = progression.talentAscensionRequirements?.[slot] ? Math.max(0, ...Object.entries(progression.talentAscensionRequirements[slot]).filter(([level]) => Number(level) > currentLevel && Number(level) <= targetLevel).map(([, phase]) => phase)) : determineHighestRequiredAscensionForTalentRange(
         currentLevel,
         targetLevel,
         input.staticData.universalTalentProgressionCore.upgradeCosts,
@@ -250,7 +252,7 @@ function buildWeaponMissingTotals(
   const weapon = resolvedCurrent.state;
 
   const profile = input.staticData.weaponMaterialProfiles[weaponGoal.weaponKey];
-  const rarityLabel = profile ? resolveGoalTrackableWeaponRarityLabel(profile.rarity) : null;
+  const rarityLabel = resolveGoalTrackableWeaponRarityLabel(input.staticData.weapons[weaponGoal.weaponKey]?.rarity ?? profile?.rarity);
   const currentLevel = Math.max(1, Math.min(weapon.currentLevel, 90));
   const targetLevel = Math.max(1, Math.min(weaponGoal.targetLevel ?? weapon.currentLevel, 90));
   const requiredAscension = inferRequiredWeaponAscensionPhase(targetLevel);

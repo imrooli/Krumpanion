@@ -1,3 +1,5 @@
+import { validateExactRequirements } from "./validateExactRequirements";
+import { farmingRequirements } from "./plannerReadiness";
 import { isLegacyCompatibilityMaterialKey, resolveInventoryMaterialKey } from "./materialKeyMapping";
 import { resolveEffectiveCharacterMetadata } from "./resolveEffectiveCharacterMetadata";
 import { isGoalTrackableWeaponRecord, isIgnoredCharacterKey, isPlayableGoalCharacter } from "./targetability";
@@ -48,6 +50,8 @@ export type StaticDataIssueCategory =
 export type StaticDataIssuePlannerImpact = "high" | "low" | "none";
 
 export interface StaticDataIssue {
+  condition?: { recordType: string; field: string; kind: string; value: unknown };
+  evidence?: Array<{ origin: "canonical" | "effective"; code: string; message: string }>;
   id: string;
   severity: StaticDataIssueSeverity;
   category: StaticDataIssueCategory;
@@ -196,6 +200,7 @@ function makeIssue(
   code: string,
   message: string,
   options: {
+    condition?: StaticDataIssue["condition"];
     subCategory?: string;
     plannerImpact?: StaticDataIssuePlannerImpact;
     actionGroup?: string;
@@ -208,6 +213,8 @@ function makeIssue(
 ): StaticDataIssue {
   const idParts = [category, code, options.entityKey ?? options.entityName ?? "global"];
   return {
+    condition: options.condition,
+    evidence: [{ origin: "effective", code, message }],
     id: idParts.join(":").replace(/\s+/g, "_"),
     severity,
     category,
@@ -499,6 +506,7 @@ function validateCharacterProfiles(staticData: StaticGameData, issues: StaticDat
   validateTravelerModel(staticData, issues);
 
   for (const [characterKey, character] of Object.entries(staticData.characters)) {
+    if (staticData.exactCharacterRequirements?.[characterKey]) { completeCharacterProfileCount++; continue; }
     const effectiveCharacter = resolveEffectiveCharacterMetadata(staticData, characterKey);
     if (isIgnoredCharacterKey(characterKey)) {
       pushIssue(
@@ -607,6 +615,7 @@ function validateCharacterProfiles(staticData: StaticGameData, issues: StaticDat
             entityKey: characterKey,
             entityName: effectiveCharacter.displayName,
             suggestedFix: "Add verified catalog metadata for the character weapon type.",
+            condition: { recordType: "character", field: "weaponType", kind: effectiveWeaponType == null ? "missing" : "invalid", value: effectiveWeaponType ?? null },
             subCategory: "character_catalog_metadata",
             plannerImpact: "low",
             actionGroup: "character_catalog_metadata",
@@ -628,6 +637,7 @@ function validateCharacterProfiles(staticData: StaticGameData, issues: StaticDat
             entityKey: characterKey,
             entityName: effectiveCharacter.displayName,
             suggestedFix: "Add verified catalog metadata for rarity instead of blocking the material profile.",
+            condition: { recordType: "character", field: "rarity", kind: effectiveRarity == null ? "missing" : "invalid", value: effectiveRarity ?? null },
             subCategory: "character_catalog_metadata",
             plannerImpact: "low",
             actionGroup: "character_catalog_metadata",
@@ -826,6 +836,7 @@ function validateWeaponProfiles(staticData: StaticGameData, issues: StaticDataIs
   let incompleteWeaponProfileCount = 0;
 
   for (const [weaponKey, weapon] of Object.entries(staticData.weapons)) {
+    if (staticData.exactWeaponRequirements?.[weaponKey]) { completeWeaponProfileCount++; continue; }
     const rarity = weapon.rarity;
     if (!rarity) {
       continue;
@@ -930,6 +941,9 @@ function validateWeaponProfiles(staticData: StaticGameData, issues: StaticDataIs
     }
 
     if (!fields.eliteEnemyDropFamilyId || !staticData.eliteEnemyDropFamilies[fields.eliteEnemyDropFamilyId]) {
+      const selectedCommonFamily = fields.eliteEnemyDropFamilyId
+        ? staticData.generalEnemyDropFamilies[fields.eliteEnemyDropFamilyId]
+        : undefined;
       profileComplete = false;
       pushIssue(
         issues,
@@ -937,11 +951,16 @@ function validateWeaponProfiles(staticData: StaticGameData, issues: StaticDataIs
           severityForProfileStatus(fields.status, "error"),
           "weapon_profile",
           "missing_elite_enemy_family",
-          `Weapon profile ${weapon.displayName || weaponKey} does not resolve a valid elite enemy drop family.`,
+          selectedCommonFamily
+            ? `Weapon profile ${weapon.displayName || weaponKey} uses ${fields.eliteEnemyDropFamilyId}, but that key resolves as a common/general enemy drop family instead of an elite enemy drop family.`
+            : `Weapon profile ${weapon.displayName || weaponKey} does not resolve a valid elite enemy drop family.`,
           {
             entityKey: weaponKey,
             entityName: weapon.displayName,
             relatedKeys: fields.eliteEnemyDropFamilyId ? [fields.eliteEnemyDropFamilyId] : [],
+            suggestedFix: selectedCommonFamily
+              ? "Use an Elite Enemy Drop family key, or add this enemy family as an elite weapon-ascension family in the patch manifest."
+              : undefined,
           },
         ),
       );
@@ -1299,13 +1318,12 @@ function validateLeyLineOutcropLocations(staticData: StaticGameData, issues: Sta
       }
     }
 
-    for (const warning of location.unresolvedSpawnWarnings ?? []) {
-      pushIssue(
-        issues,
-        makeIssue("warning", "ley_line_outcrop", "unresolved_spawn_mapping", `${locationKey}: ${warning}`, {
-          entityKey: locationKey,
-        }),
-      );
+    for (const [index, spawn] of location.spawns.entries()) {
+      if (spawn.dropFamilyKey && validFamilyKeys.has(spawn.dropFamilyKey)) continue;
+      pushIssue(issues, makeIssue("warning", "ley_line_outcrop", "unresolved_spawn_mapping", `${locationKey}: Unresolved drop family mapping for ${spawn.enemyName}${spawn.notes?.length ? ` (${spawn.notes.join("; ")})` : ""}.`, {
+        entityKey: locationKey,
+        condition: { recordType: "ley_line", field: `spawns.${index}.dropFamilyKey`, kind: spawn.dropFamilyKey ? "invalid" : "missing", value: spawn.dropFamilyKey ?? null },
+      }));
     }
 
     for (const coverage of location.derivedDropFamilies) {
@@ -1794,6 +1812,66 @@ function validateProgression(staticData: StaticGameData, issues: StaticDataIssue
   validateWeaponExpSourceModel(staticData, issues);
 }
 
+function validateGuaranteedPlannerRewards(staticData: StaticGameData, issues: StaticDataIssue[]): void {
+  for (const [worldLevel, reward] of Object.entries(staticData.leyLineRewardsByWorldLevel)) {
+    if (!Number.isFinite(reward.revelation.minimumCharacterExp) || reward.revelation.minimumCharacterExp <= 0) {
+      pushIssue(
+        issues,
+        makeIssue("error", "progression", "missing_revelation_minimum", `World Level ${worldLevel} is missing minimum guaranteed Character EXP.`, {
+          entityKey: worldLevel,
+          plannerImpact: "high",
+        }),
+      );
+    }
+    if (reward.revelation.minimumCharacterExp > reward.revelation.averageCharacterExp) {
+      pushIssue(
+        issues,
+        makeIssue("error", "progression", "revelation_minimum_exceeds_average", `World Level ${worldLevel} minimum Character EXP exceeds its average.`, {
+          entityKey: worldLevel,
+          plannerImpact: "high",
+        }),
+      );
+    }
+  }
+
+  const domainModels = [
+    ...Object.values(staticData.talentBookDomainDropModel),
+    ...Object.values(staticData.weaponAscensionDomainDropModel),
+  ];
+  for (const model of domainModels) {
+    if (!Number.isInteger(model.guaranteed.lowerTierEquivalent) || model.guaranteed.lowerTierEquivalent <= 0) {
+      pushIssue(
+        issues,
+        makeIssue("error", "progression", "missing_domain_guaranteed_floor", `Domain level ${model.domainLevel} is missing a valid guaranteed equivalent reward.`, {
+          entityKey: model.domainLevel,
+          plannerImpact: "high",
+        }),
+      );
+    }
+  }
+
+  for (const [worldLevel, record] of Object.entries(staticData.normalBossUniqueMaterialDropMeanByWorldLevel)) {
+    if (!Number.isInteger(record.guaranteedUniqueDrops) || record.guaranteedUniqueDrops <= 0) {
+      pushIssue(
+        issues,
+        makeIssue("error", "progression", "missing_normal_boss_floor", `World Level ${worldLevel} is missing guaranteed unique boss-material drops.`, {
+          entityKey: worldLevel,
+          plannerImpact: "high",
+        }),
+      );
+    }
+    if (record.guaranteedUniqueDrops > record.dropMean) {
+      pushIssue(
+        issues,
+        makeIssue("warning", "progression", "normal_boss_floor_exceeds_mean", `World Level ${worldLevel} guaranteed boss floor exceeds its recorded mean.`, {
+          entityKey: worldLevel,
+          plannerImpact: "high",
+        }),
+      );
+    }
+  }
+}
+
 function validateUnresolvedReferences(staticData: StaticGameData, issues: StaticDataIssue[]): void {
   for (const unresolved of staticData.unresolvedCharacterMaterialReferences) {
     if (isTravelerSharedKey(unresolved.characterKey)) {
@@ -1954,12 +2032,24 @@ export function buildStaticDataHealthSummary(
   };
 }
 
+export function mergeHealthEvidence(issues: StaticDataIssue[]): StaticDataIssue[] {
+  const result: StaticDataIssue[] = [];
+  const seen = new Map<string, StaticDataIssue>();
+  for (const issue of issues) {
+    const signature = issue.condition ? JSON.stringify([issue.entityKey, issue.severity, issue.condition]) : undefined;
+    const previous = signature ? seen.get(signature) : undefined;
+    if (previous) previous.evidence = [...(previous.evidence ?? []), ...(issue.evidence ?? [])];
+    else { const copy = { ...issue }; result.push(copy); if (signature) seen.set(signature, copy); }
+  }
+  return result;
+}
+
 export function extendStaticDataHealthReport(
   report: StaticDataHealthReport,
   staticData: StaticGameData,
   extraIssues: StaticDataIssue[],
 ): StaticDataHealthReport {
-  const issues = ensureUniqueIssueIds(sortIssues([...report.issues, ...extraIssues]));
+  const issues = ensureUniqueIssueIds(sortIssues(mergeHealthEvidence([...report.issues, ...extraIssues])));
   const counts = {
     completeCharacterProfileCount: report.summary.completeCharacterProfileCount,
     incompleteCharacterProfileCount: report.summary.incompleteCharacterProfileCount,
@@ -2018,7 +2108,9 @@ export function formatStaticDataHealthMarkdown(report: StaticDataHealthReport): 
   const warningSections = [...warningsByCategory.entries()]
     .sort(([left], [right]) => left.localeCompare(right))
     .map(([category, issues]) => {
-      const rows = issues.map((issue) => `- \`${issue.id}\` ${issue.message}`).join("\n");
+      const conditions = new Map<string, StaticDataIssue[]>();
+      for (const issue of issues) { const condition = issue.id.split(":")[1]; conditions.set(condition, [...conditions.get(condition) ?? [], issue]); }
+      const rows = [...conditions.entries()].map(([condition, entries]) => `<details><summary>${condition}: ${entries.length} finding(s)</summary>\n\n${entries.map(issue => `- \`${issue.id}\` ${issue.message}`).join("\n")}\n\n</details>`).join("\n\n");
       return `### ${category}\n${rows}`;
     })
     .join("\n\n");
@@ -2066,6 +2158,10 @@ export function formatStaticDataHealthMarkdown(report: StaticDataHealthReport): 
 
 export function validateStaticData(staticData: StaticGameData): StaticDataHealthReport {
   const issues: StaticDataIssue[] = [];
+  try { validateExactRequirements(staticData); } catch (error) {
+    issues.push(makeIssue("error", "progression", "invalid_exact_requirements", String(error)));
+  }
+  for (const requirement of farmingRequirements(staticData)) issues.push(makeIssue("warning", "material_source", "farming_setup_required", `${staticData.materials[requirement.materialKey]?.displayName ?? requirement.materialKey}: ${requirement.fields.join(", ")}`, { entityKey: requirement.materialKey, relatedKeys: requirement.affectedKeys, suggestedFix: "Complete Farming Setup in Database.", plannerImpact: "high", actionGroup: "farming_setup" }));
 
   const characterCounts = validateCharacterProfiles(staticData, issues);
   const weaponCounts = validateWeaponProfiles(staticData, issues);
@@ -2077,6 +2173,7 @@ export function validateStaticData(staticData: StaticGameData): StaticDataHealth
   validateRecipeRegistry("recipes", staticData.recipes, staticData, issues);
   validateRecipeRegistry("craftingRecipes", staticData.craftingRecipes, staticData, issues);
   validateProgression(staticData, issues);
+  validateGuaranteedPlannerRewards(staticData, issues);
   validateUnresolvedReferences(staticData, issues);
   validateLegacyAndOverrides(staticData, issues);
 

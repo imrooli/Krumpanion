@@ -1,0 +1,488 @@
+{
+  "provider": "animegamedata2",
+  "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+  "releaseVersion": "7.1.0",
+  "observations": [
+    {
+      "entityType": "character",
+      "gameId": 10000131,
+      "displayName": "Nicole",
+      "rarity": 5,
+      "weaponType": "Catalyst",
+      "element": "Pyro",
+      "provenance": {
+        "provider": "animegamedata2",
+        "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+        "table": "AvatarExcelConfigData",
+        "relationshipIds": [
+          131,
+          13101,
+          13131,
+          13132,
+          13139
+        ]
+      },
+      "characterRequirements": {
+        "ascension": {
+          "1": {
+            "costs": {
+              "202": 20000,
+              "101269": 3,
+              "104111": 1,
+              "112125": 3
+            }
+          },
+          "2": {
+            "costs": {
+              "202": 40000,
+              "101269": 10,
+              "104112": 3,
+              "112125": 15,
+              "113084": 2
+            }
+          },
+          "3": {
+            "costs": {
+              "202": 60000,
+              "101269": 20,
+              "104112": 6,
+              "112126": 12,
+              "113084": 4
+            }
+          },
+          "4": {
+            "costs": {
+              "202": 80000,
+              "101269": 30,
+              "104113": 3,
+              "112126": 18,
+              "113084": 8
+            }
+          },
+          "5": {
+            "costs": {
+              "202": 100000,
+              "101269": 45,
+              "104113": 6,
+              "112127": 12,
+              "113084": 12
+            }
+          },
+          "6": {
+            "costs": {
+              "202": 120000,
+              "101269": 60,
+              "104114": 6,
+              "112127": 24,
+              "113084": 20
+            }
+          }
+        },
+        "talents": {
+          "normal": {
+            "2": {
+              "costs": {
+                "202": 12500,
+                "104359": 3,
+                "112125": 6
+              },
+              "requiredAscension": 2
+            },
+            "3": {
+              "costs": {
+                "202": 17500,
+                "104360": 2,
+                "112126": 3
+              },
+              "requiredAscension": 3
+            },
+            "4": {
+              "costs": {
+                "202": 25000,
+                "104360": 4,
+                "112126": 4
+              },
+              "requiredAscension": 3
+            },
+            "5": {
+              "costs": {
+                "202": 30000,
+                "104360": 6,
+                "112126": 6
+              },
+              "requiredAscension": 4
+            },
+            "6": {
+              "costs": {
+                "202": 37500,
+                "104360": 9,
+                "112126": 9
+              },
+              "requiredAscension": 4
+            },
+            "7": {
+              "costs": {
+                "202": 120000,
+                "104361": 4,
+                "112127": 4,
+                "113087": 1
+              },
+              "requiredAscension": 5
+            },
+            "8": {
+              "costs": {
+                "202": 260000,
+                "104361": 6,
+                "112127": 6,
+                "113087": 1
+              },
+              "requiredAscension": 5
+            },
+            "9": {
+              "costs": {
+                "202": 450000,
+                "104361": 12,
+                "112127": 9,
+                "113087": 2
+              },
+              "requiredAscension": 6
+            },
+            "10": {
+              "costs": {
+                "202": 700000,
+                "104319": 1,
+                "104361": 16,
+                "112127": 12,
+                "113087": 2
+              },
+              "requiredAscension": 6
+            }
+          },
+          "skill": {
+            "2": {
+              "costs": {
+                "202": 12500,
+                "104359": 3,
+                "112125": 6
+              },
+              "requiredAscension": 2
+            },
+            "3": {
+              "costs": {
+                "202": 17500,
+                "104360": 2,
+                "112126": 3
+              },
+              "requiredAscension": 3
+            },
+            "4": {
+              "costs": {
+                "202": 25000,
+                "104360": 4,
+                "112126": 4
+              },
+              "requiredAscension": 3
+            },
+            "5": {
+              "costs": {
+                "202": 30000,
+                "104360": 6,
+                "112126": 6
+              },
+              "requiredAscension": 4
+            },
+            "6": {
+              "costs": {
+                "202": 37500,
+                "104360": 9,
+                "112126": 9
+              },
+              "requiredAscension": 4
+            },
+            "7": {
+              "costs": {
+                "202": 120000,
+                "104361": 4,
+                "112127": 4,
+                "113087": 1
+              },
+              "requiredAscension": 5
+            },
+            "8": {
+              "costs": {
+                "202": 260000,
+                "104361": 6,
+                "112127": 6,
+                "113087": 1
+              },
+              "requiredAscension": 5
+            },
+            "9": {
+              "costs": {
+                "202": 450000,
+                "104361": 12,
+                "112127": 9,
+                "113087": 2
+              },
+              "requiredAscension": 6
+            },
+            "10": {
+              "costs": {
+                "202": 700000,
+                "104319": 1,
+                "104361": 16,
+                "112127": 12,
+                "113087": 2
+              },
+              "requiredAscension": 6
+            }
+          },
+          "burst": {
+            "2": {
+              "costs": {
+                "202": 12500,
+                "104359": 3,
+                "112125": 6
+              },
+              "requiredAscension": 2
+            },
+            "3": {
+              "costs": {
+                "202": 17500,
+                "104360": 2,
+                "112126": 3
+              },
+              "requiredAscension": 3
+            },
+            "4": {
+              "costs": {
+                "202": 25000,
+                "104360": 4,
+                "112126": 4
+              },
+              "requiredAscension": 3
+            },
+            "5": {
+              "costs": {
+                "202": 30000,
+                "104360": 6,
+                "112126": 6
+              },
+              "requiredAscension": 4
+            },
+            "6": {
+              "costs": {
+                "202": 37500,
+                "104360": 9,
+                "112126": 9
+              },
+              "requiredAscension": 4
+            },
+            "7": {
+              "costs": {
+                "202": 120000,
+                "104361": 4,
+                "112127": 4,
+                "113087": 1
+              },
+              "requiredAscension": 5
+            },
+            "8": {
+              "costs": {
+                "202": 260000,
+                "104361": 6,
+                "112127": 6,
+                "113087": 1
+              },
+              "requiredAscension": 5
+            },
+            "9": {
+              "costs": {
+                "202": 450000,
+                "104361": 12,
+                "112127": 9,
+                "113087": 2
+              },
+              "requiredAscension": 6
+            },
+            "10": {
+              "costs": {
+                "202": 700000,
+                "104319": 1,
+                "104361": 16,
+                "112127": 12,
+                "113087": 2
+              },
+              "requiredAscension": 6
+            }
+          }
+        },
+        "provenance": {
+          "provider": "animegamedata2",
+          "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+          "table": "AvatarExcelConfigData",
+          "relationshipIds": [
+            131,
+            13101,
+            13131,
+            13132,
+            13139
+          ]
+        }
+      }
+    },
+    {
+      "entityType": "material",
+      "gameId": 202,
+      "displayName": "Mora",
+      "provenance": {
+        "provider": "animegamedata2",
+        "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+        "table": "MaterialExcelConfigData"
+      }
+    },
+    {
+      "entityType": "material",
+      "gameId": 104319,
+      "displayName": "Crown of Insight",
+      "provenance": {
+        "provider": "animegamedata2",
+        "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+        "table": "MaterialExcelConfigData"
+      }
+    },
+    {
+      "entityType": "material",
+      "gameId": 104111,
+      "displayName": "Agnidus Agate Sliver",
+      "provenance": {
+        "provider": "animegamedata2",
+        "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+        "table": "MaterialExcelConfigData"
+      }
+    },
+    {
+      "entityType": "material",
+      "gameId": 104112,
+      "displayName": "Agnidus Agate Fragment",
+      "provenance": {
+        "provider": "animegamedata2",
+        "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+        "table": "MaterialExcelConfigData"
+      }
+    },
+    {
+      "entityType": "material",
+      "gameId": 104113,
+      "displayName": "Agnidus Agate Chunk",
+      "provenance": {
+        "provider": "animegamedata2",
+        "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+        "table": "MaterialExcelConfigData"
+      }
+    },
+    {
+      "entityType": "material",
+      "gameId": 104114,
+      "displayName": "Agnidus Agate Gemstone",
+      "provenance": {
+        "provider": "animegamedata2",
+        "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+        "table": "MaterialExcelConfigData"
+      }
+    },
+    {
+      "entityType": "material",
+      "gameId": 104359,
+      "displayName": "Teachings of Elysium",
+      "provenance": {
+        "provider": "animegamedata2",
+        "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+        "table": "MaterialExcelConfigData"
+      }
+    },
+    {
+      "entityType": "material",
+      "gameId": 104360,
+      "displayName": "Guide to Elysium",
+      "provenance": {
+        "provider": "animegamedata2",
+        "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+        "table": "MaterialExcelConfigData"
+      }
+    },
+    {
+      "entityType": "material",
+      "gameId": 104361,
+      "displayName": "Philosophies of Elysium",
+      "provenance": {
+        "provider": "animegamedata2",
+        "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+        "table": "MaterialExcelConfigData"
+      }
+    },
+    {
+      "entityType": "material",
+      "gameId": 112125,
+      "displayName": "Tattered Warrant",
+      "provenance": {
+        "provider": "animegamedata2",
+        "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+        "table": "MaterialExcelConfigData"
+      }
+    },
+    {
+      "entityType": "material",
+      "gameId": 112126,
+      "displayName": "Immaculate Warrant",
+      "provenance": {
+        "provider": "animegamedata2",
+        "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+        "table": "MaterialExcelConfigData"
+      }
+    },
+    {
+      "entityType": "material",
+      "gameId": 112127,
+      "displayName": "Frost-Etched Warrant",
+      "provenance": {
+        "provider": "animegamedata2",
+        "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+        "table": "MaterialExcelConfigData"
+      }
+    },
+    {
+      "entityType": "material",
+      "gameId": 101269,
+      "displayName": "Pine Amber",
+      "provenance": {
+        "provider": "animegamedata2",
+        "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+        "table": "MaterialExcelConfigData"
+      }
+    },
+    {
+      "entityType": "material",
+      "gameId": 113084,
+      "displayName": "Remnant of the Dreadwing",
+      "provenance": {
+        "provider": "animegamedata2",
+        "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+        "table": "MaterialExcelConfigData"
+      }
+    },
+    {
+      "entityType": "material",
+      "gameId": 113087,
+      "displayName": "Counterfeit Resin",
+      "provenance": {
+        "provider": "animegamedata2",
+        "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+        "table": "MaterialExcelConfigData"
+      }
+    }
+  ],
+  "diagnostics": [],
+  "extractorVersion": 2,
+  "farming": []
+}

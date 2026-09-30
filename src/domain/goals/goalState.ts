@@ -313,13 +313,16 @@ export function getMinimumAscensionForTalentTargets(
       }
     | undefined,
   staticData: StaticGameData,
+  characterKey?: string,
 ): number | undefined {
   if (!talents) {
     return undefined;
   }
 
-  return [talents.auto, talents.skill, talents.burst].reduce<number | undefined>((highest, targetLevel) => {
-    const requiredAscension = getMinimumAscensionForTalentTarget(targetLevel, staticData);
+  return (["auto", "skill", "burst"] as const).reduce<number | undefined>((highest, slot) => {
+    const targetLevel = talents[slot];
+    const exact = characterKey ? staticData.exactCharacterRequirements?.[characterKey]?.talents[slot === "auto" ? "normal" : slot] : undefined;
+    const requiredAscension = exact && targetLevel !== undefined ? Math.max(0, ...Object.entries(exact).filter(([level]) => Number(level) <= targetLevel).map(([, step]) => step.requiredAscension ?? 0)) : getMinimumAscensionForTalentTarget(targetLevel, staticData);
     if (requiredAscension === undefined) {
       return highest;
     }
@@ -337,7 +340,7 @@ export function normalizeCharacterGoalRecord(
   const targetLevel = clampCharacterGoalLevel(goal.targetLevel);
   const explicitAscension = clampCharacterGoalAscension(goal.targetAscension);
   const minimumLevelAscension = getMinimumAscensionForTargetLevel(targetLevel);
-  const minimumTalentAscension = staticData ? getMinimumAscensionForTalentTargets(goal.talents, staticData) : undefined;
+  const minimumTalentAscension = staticData ? getMinimumAscensionForTalentTargets(goal.talents, staticData, characterKey) : undefined;
   const minimumAscension =
     minimumLevelAscension === undefined && minimumTalentAscension === undefined
       ? undefined

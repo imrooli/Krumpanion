@@ -113,18 +113,8 @@ export function PlannerAssumptionsPanel({ staticData }: PlannerAssumptionsPanelP
           </select>
         </label>
         <label>
-          Resin Crafting
-          <select
-            value={plannerSettings.craftingModeForResinEstimate ?? "expected_value"}
-            onChange={(event) =>
-              void updatePlannerSettings({
-                craftingModeForResinEstimate: event.target.value as "guaranteed" | "expected_value",
-              })
-            }
-          >
-            <option value="guaranteed">Guaranteed</option>
-            <option value="expected_value">Expected value</option>
-          </select>
+          Resin calculation
+          <input value="Guaranteed minimum rewards" readOnly />
         </label>
         <PassiveOverrideSelect
           label="Talent passive"

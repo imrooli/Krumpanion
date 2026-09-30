@@ -1,3 +1,5 @@
+import type { FarmingConfiguration } from "./farmingConfiguration";
+import type { GameIdentity, ArtifactSetIdentity, ExactCharacterRequirements, ExactWeaponRequirements, CombatTalent } from "./upstreamTypes";
 import type { AvailabilityGroupKey } from "../planner/types";
 import type { MaterialTotals } from "../../utils/collections";
 import type {
@@ -190,7 +192,8 @@ export type LocalSpecialtyRegion =
   | "Sumeru"
   | "Fontaine"
   | "Natlan"
-  | "Nod-Krai";
+  | "Nod-Krai"
+  | "Snezhnaya";
 
 export type CharacterWeaponType = "Sword" | "Polearm" | "Claymore" | "Bow" | "Catalyst";
 export type CharacterElement = "Anemo" | "Cryo" | "Dendro" | "Electro" | "Geo" | "Hydro" | "Pyro";
@@ -399,7 +402,7 @@ export interface SpecialProgressionMaterial {
   notes?: string[];
 }
 
-export interface CharacterCatalogEntry {
+export interface CharacterCatalogEntry extends GameIdentity {
   key: string;
   displayName: string;
   element?: CharacterElement;
@@ -410,7 +413,7 @@ export interface CharacterCatalogEntry {
   characterKind?: CharacterKind;
 }
 
-export interface WeaponCatalogEntry {
+export interface WeaponCatalogEntry extends GameIdentity {
   key: string;
   displayName: string;
   weaponType?: CharacterWeaponType;
@@ -422,7 +425,7 @@ export interface WeaponCatalogEntry {
   eventExclusive?: boolean;
 }
 
-export interface MaterialDescriptor {
+export interface MaterialDescriptor extends GameIdentity {
   key: string;
   displayName: string;
   category: MaterialCategory;
@@ -430,7 +433,7 @@ export interface MaterialDescriptor {
   weaponExpValue?: number;
 }
 
-export interface MaterialRecord {
+export interface MaterialRecord extends GameIdentity {
   key: string;
   displayName: string;
   category: MaterialRecordCategory;
@@ -568,6 +571,7 @@ export interface LeyLineRewardRecord {
   companionshipExp: number;
   revelation: {
     characterExpMaterials: Record<string, WorldLevelRewardRange>;
+    minimumCharacterExp: number;
     averageCharacterExp: number;
     averageEfficiencyPercent: number | null;
   };
@@ -632,6 +636,13 @@ export interface WeaponAscensionDomainDropModelRecord {
     fourStar: TierDropAverage | null;
     fiveStar: TierDropAverage | null;
   };
+  guaranteed: {
+    twoStar: number;
+    threeStar: number;
+    fourStar: number;
+    fiveStar: number;
+    lowerTierEquivalent: number;
+  };
   twoStarRollMean: number;
   dropPackMean: number;
   dropPackDistribution: {
@@ -649,6 +660,12 @@ export interface TalentBookDomainDropModelRecord {
     twoStar: TierDropAverage | null;
     threeStar: TierDropAverage | null;
     fourStar: TierDropAverage | null;
+  };
+  guaranteed: {
+    twoStar: number;
+    threeStar: number;
+    fourStar: number;
+    lowerTierEquivalent: number;
   };
   twoStarRollMean: number;
   dropPackMean: number;
@@ -671,6 +688,7 @@ export interface NormalBossUniqueMaterialDropRecord {
   bossLevel: string;
   rewardTier: number;
   dropMean: number;
+  guaranteedUniqueDrops: number;
 }
 
 export interface WeeklyTalentMaterialDropRecord {
@@ -726,6 +744,8 @@ export interface CharacterProgressionEntry {
   levelTotals: Record<string, MaterialTotals>;
   ascensionTotals: Record<string, MaterialTotals>;
   talentTotals: Record<string, MaterialTotals>;
+  talentTotalsBySkill?: Record<CombatTalent, Record<string, MaterialTotals>>;
+  talentAscensionRequirements?: Record<CombatTalent, Record<string, number>>;
   levelCapExtensionTotals?: Record<string, MaterialTotals>;
 }
 
@@ -1018,6 +1038,9 @@ export interface GeneratedCharacterMaterialBundle {
 }
 
 export interface StaticGameData {
+  artifactSets?: Record<string, ArtifactSetIdentity>;
+  exactCharacterRequirements?: Record<string, ExactCharacterRequirements>;
+  exactWeaponRequirements?: Record<string, ExactWeaponRequirements>;
   version: number;
   characters: Record<string, CharacterCatalogEntry>;
   travelerProfile: TravelerProfile;
@@ -1098,6 +1121,13 @@ export interface StaticGameData {
 }
 
 export interface OverrideDataPack {
+  farmingRelationships?: Record<string, import("./upstreamTypes").FarmingObservation>;
+  farmingOrigins?: Record<string, Partial<Record<import("./upstreamTypes").FarmingField, import("./upstreamTypes").FarmingFieldOrigin>>>;
+  farmingConflicts?: Record<string, import("./upstreamTypes").FarmingConflict>;
+  farmingDrafts?: Record<string, FarmingConfiguration>;
+  artifactSets?: Record<string, ArtifactSetIdentity>;
+  exactCharacterRequirements?: Record<string, ExactCharacterRequirements>;
+  exactWeaponRequirements?: Record<string, ExactWeaponRequirements>;
   version: number;
   label?: string;
   characters?: Record<string, CharacterCatalogEntry>;

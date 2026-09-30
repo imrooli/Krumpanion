@@ -4,6 +4,7 @@ import type {
   DayOfWeek,
   FarmingEstimate,
   LootModelDataQuality,
+  PlannerEstimateLayer,
   PlannerEstimationSettings,
   PlannerWarning,
   SourceEstimate,
@@ -20,6 +21,7 @@ export interface FarmingEstimateDetail extends SourceEstimate {
   relatedMaterialKeys: string[];
   deterministicRequirementsByMaterial: Record<string, number>;
   remainingDeficitsByMaterial: Record<string, number>;
+  deterministicConversionCoverage: number;
   isAvailableToday: boolean;
 }
 
@@ -37,6 +39,7 @@ interface SourceEstimateGroup {
   relatedMaterialDisplayNames: Record<string, string>;
   deterministicRequirementsByMaterial: Record<string, number>;
   remainingDeficitsByMaterial: Record<string, number>;
+  deterministicConversionCoverage: number;
   assumptions: string[];
   warnings: string[];
 }
@@ -130,6 +133,33 @@ function buildDaysWeeks(
   };
 }
 
+function buildEstimateLayer(params: {
+  available: boolean;
+  canGuarantee?: boolean;
+  basis: string;
+  outputPerRun: number | null;
+  runs: number | null;
+  resin: number | null;
+  settings: PlannerEstimationSettings;
+  dataQuality: LootModelDataQuality;
+  warnings?: string[];
+}): PlannerEstimateLayer {
+  const days = buildDaysWeeks(params.resin, params.settings);
+  return {
+    available: params.available,
+    canGuarantee: params.canGuarantee,
+    basis: params.basis,
+    outputPerRun: params.outputPerRun,
+    runs: params.runs,
+    actionableRuns: params.runs === null ? null : toActionableQuantity(params.runs),
+    resin: params.resin,
+    daysNaturalResin: days.estimatedDaysNaturalResin,
+    weeksNaturalResin: days.estimatedWeeksNaturalResin,
+    dataQuality: params.dataQuality,
+    warnings: unique(params.warnings ?? []),
+  };
+}
+
 const CHARACTER_EXP_VALUE_FALLBACKS: Record<string, number> = {
   WanderersAdvice: 1000,
   AdventurersExperience: 5000,
@@ -165,6 +195,34 @@ function buildEstimateBase(group: SourceEstimateGroup, today: DayOfWeek): Farmin
     relatedMaterialDisplayNames: { ...group.relatedMaterialDisplayNames },
     deterministicRequirementsByMaterial: { ...group.deterministicRequirementsByMaterial },
     remainingDeficitsByMaterial,
+    deterministicConversionCoverage: group.deterministicConversionCoverage,
+    guaranteedEstimate: {
+      available: false,
+      canGuarantee: false,
+      basis: "Guaranteed estimate not resolved.",
+      outputPerRun: null,
+      runs: null,
+      actionableRuns: null,
+      resin: null,
+      daysNaturalResin: null,
+      weeksNaturalResin: null,
+      dataQuality: "unknown",
+      warnings: [],
+    },
+    expectedEstimate: {
+      available: false,
+      basis: "Expected estimate not resolved.",
+      outputPerRun: null,
+      runs: null,
+      actionableRuns: null,
+      resin: null,
+      daysNaturalResin: null,
+      weeksNaturalResin: null,
+      dataQuality: "unknown",
+      warnings: [],
+    },
+    contributesToGuaranteedTotal: false,
+    estimateClassification: "unknown",
     resinCostPerRun: null,
     estimatedRuns: null,
     actionableRuns: null,
@@ -281,6 +339,7 @@ function groupAssignments(assignments: SourceAssignment[]): SourceEstimateGroup[
         relatedMaterialDisplayNames: { [assignment.materialKey]: assignment.materialName },
         deterministicRequirementsByMaterial: { [assignment.materialKey]: assignment.requiredAmount },
         remainingDeficitsByMaterial: { [assignment.materialKey]: assignment.missingAmount },
+        deterministicConversionCoverage: assignment.deterministicConversionCoverage ?? 0,
         assumptions: [...assignment.assumptions],
         warnings: [...assignment.warnings],
       });
@@ -295,6 +354,7 @@ function groupAssignments(assignments: SourceAssignment[]): SourceEstimateGroup[
       (existing.deterministicRequirementsByMaterial[assignment.materialKey] ?? 0) + assignment.requiredAmount;
     existing.remainingDeficitsByMaterial[assignment.materialKey] =
       (existing.remainingDeficitsByMaterial[assignment.materialKey] ?? 0) + assignment.missingAmount;
+    existing.deterministicConversionCoverage += assignment.deterministicConversionCoverage ?? 0;
     existing.assumptions.push(...assignment.assumptions);
     existing.warnings.push(...assignment.warnings);
   }
@@ -417,6 +477,11 @@ function estimateCharacterExp(
   };
 }
 
+function configuredResin(data: StaticGameData, source: Pick<FarmingEstimateDetail, "sourceType" | "sourceName" | "relatedMaterialKeys">, fallback: number): number {
+  const configured = source.relatedMaterialKeys.flatMap(key => data.materialSources[key] ?? []).find(row => row.sourceType === source.sourceType && row.sourceName === source.sourceName && row.resinCost !== undefined && row.resinCost > 0);
+  return configured?.resinCost ?? fallback;
+}
+
 function estimateDomainMaterial(
   group: SourceEstimateGroup,
   settings: PlannerEstimationSettings,
@@ -468,10 +533,10 @@ function estimateDomainMaterial(
   }
 
   const actionableRuns = estimatedRuns === null ? null : Math.ceil(estimatedRuns);
-  const estimatedResin = actionableRuns === null ? null : actionableRuns * staticData.resinActivityCosts.domain.resin;
+  const estimatedResin = actionableRuns === null ? null : actionableRuns * configuredResin(staticData, group, staticData.resinActivityCosts.domain.resin);
   return {
     ...base,
-    resinCostPerRun: staticData.resinActivityCosts.domain.resin,
+    resinCostPerRun: configuredResin(staticData, group, staticData.resinActivityCosts.domain.resin),
     estimatedRuns,
     actionableRuns,
     estimatedResin,
@@ -536,7 +601,7 @@ function estimateNormalBoss(
       : dropRecord?.dropMean ?? 0;
   const estimatedRuns = perRun > 0 ? uniqueBossMaterialDeficit / perRun : null;
   const actionableRuns = estimatedRuns === null ? null : Math.ceil(estimatedRuns);
-  const estimatedResin = actionableRuns === null ? null : actionableRuns * staticData.resinActivityCosts.normalBoss.resin;
+  const estimatedResin = actionableRuns === null ? null : actionableRuns * configuredResin(staticData, group, staticData.resinActivityCosts.normalBoss.resin);
   const primaryAssignment = uniqueAssignments[0] ?? group.assignments[0];
   const base = buildEstimateBase(
     {
@@ -550,7 +615,7 @@ function estimateNormalBoss(
   return {
     estimate: {
       ...base,
-      resinCostPerRun: staticData.resinActivityCosts.normalBoss.resin,
+      resinCostPerRun: configuredResin(staticData, group, staticData.resinActivityCosts.normalBoss.resin),
       estimatedRuns,
       actionableRuns,
       estimatedResin,
@@ -588,6 +653,7 @@ function estimateNormalBoss(
           : [...base.warnings, "Missing normal boss drop-rate data for this estimate."],
       details: {
         worldLevel: settings.worldLevel,
+        uniqueBossMaterialDeficit,
         expectedUniqueBossMaterialsPerClaim: perRun,
       },
     },
@@ -682,6 +748,21 @@ function estimateGroup(
       return { estimate: estimateDomainMaterial(group, settings, staticData, today), warnings: [] };
     case "normal_boss":
       return estimateNormalBoss(group, settings, staticData, today);
+    case "ascension_gem":
+      return {
+        estimate: buildNonResinEstimate(
+          group,
+          today,
+          [
+            "Ascension Gem shortages use owned crafting and enabled Dust of Azoth conversion only.",
+            "Future boss gem drops are incidental and excluded from guaranteed resin totals.",
+          ],
+          ["No guaranteed resin completion estimate is assigned to gem-only shortages."],
+          "exact",
+          "Inventory and deterministic conversion coverage only",
+        ),
+        warnings: [],
+      };
     case "weekly_boss":
       return { estimate: estimateWeeklyBoss(group, settings, staticData, today), warnings: [] };
     case "open_world_enemy":
@@ -764,8 +845,8 @@ function applyWeeklyBossDiscountSchedule(
 
       const resinForClaim =
         discountsRemaining > 0
-          ? staticData.resinActivityCosts.weeklyBoss.firstThreePerWeekResin
-          : staticData.resinActivityCosts.weeklyBoss.afterFirstThreePerWeekResin;
+          ? configuredResin(staticData, estimate, staticData.resinActivityCosts.weeklyBoss.firstThreePerWeekResin)
+          : staticData.trounceDomains[estimate.relatedMaterialKeys.flatMap(key => staticData.materialSources[key] ?? []).find(source => source.sourceType === "weekly_boss")?.sourceKey ?? estimate.sourceKey]?.resinCostAfterFirstThreeWeekly ?? staticData.resinActivityCosts.weeklyBoss.afterFirstThreePerWeekResin;
       const usesDiscount = discountsRemaining > 0;
       discountsRemaining = Math.max(0, discountsRemaining - 1);
       remainingClaims.set(estimate.sourceKey, claimsLeft - 1);
@@ -791,6 +872,7 @@ function applyWeeklyBossDiscountSchedule(
     return {
       ...estimate,
       estimatedResin,
+      resinCostPerRun: fullCostClaims === 0 ? configuredResin(staticData, estimate, staticData.resinActivityCosts.weeklyBoss.firstThreePerWeekResin) : null,
       actionableRuns: estimate.actionableRuns ?? estimate.estimatedRuns,
       ...buildDaysWeeks(estimatedResin, settings),
       weeklyGate: {
@@ -807,6 +889,213 @@ function applyWeeklyBossDiscountSchedule(
       ]),
       estimateBasis: estimate.estimateBasis ?? "Weekly boss reward-claim schedule",
     };
+  });
+}
+
+function getDeficitEquivalent(
+  estimate: FarmingEstimateDetail,
+  staticData: StaticGameData,
+): number {
+  return Object.entries(estimate.remainingDeficitsByMaterial).reduce((sum, [materialKey, quantity]) => {
+    const tierIndex = staticData.tieredMaterialIndex[materialKey]?.tierIndex ?? 0;
+    return sum + quantity * (3 ** tierIndex);
+  }, 0);
+}
+
+function withEstimateLayers(
+  estimate: FarmingEstimateDetail,
+  settings: PlannerEstimationSettings,
+  staticData: StaticGameData,
+): FarmingEstimateDetail {
+  const expectedLayer = buildEstimateLayer({
+    available: estimate.estimatedRuns !== null || estimate.estimatedResin !== null,
+    basis: estimate.estimateBasis ?? "Average reward model",
+    outputPerRun:
+      typeof estimate.details?.averageCharacterExp === "number"
+        ? estimate.details.averageCharacterExp
+        : typeof estimate.details?.expectedUniqueBossMaterialsPerClaim === "number"
+          ? estimate.details.expectedUniqueBossMaterialsPerClaim
+          : typeof estimate.details?.expectedTargetMaterialPerClaim === "number"
+            ? estimate.details.expectedTargetMaterialPerClaim
+            : null,
+    runs: estimate.estimatedRuns,
+    resin: estimate.estimatedResin,
+    settings,
+    dataQuality: estimate.dataQuality ?? "unknown",
+    warnings: estimate.warnings,
+  });
+
+  let guaranteedLayer = buildEstimateLayer({
+    available: false,
+    canGuarantee: false,
+    basis: "Excluded from guaranteed resin total.",
+    outputPerRun: null,
+    runs: null,
+    resin: null,
+    settings,
+    dataQuality: "unknown",
+    warnings: estimate.warnings,
+  });
+  let contributesToGuaranteedTotal = false;
+  let estimateClassification: FarmingEstimateDetail["estimateClassification"] = "unknown";
+
+  if (estimate.sourceType === "ley_line_wealth") {
+    const reward = staticData.leyLineRewardsByWorldLevel[String(settings.worldLevel)]
+      ?? getWorldLevelRecord(staticData.leyLineRewardsByWorldLevel, settings.worldLevel).value;
+    const perRun = reward?.wealth.mora ?? 0;
+    const runs = perRun > 0 ? estimate.missingAmount / perRun : null;
+    const actionableRuns = runs === null ? null : toActionableQuantity(runs);
+    const resin = actionableRuns === null ? null : actionableRuns * staticData.resinActivityCosts.leyLineOutcrop.resin;
+    guaranteedLayer = buildEstimateLayer({
+      available: resin !== null,
+      canGuarantee: resin !== null,
+      basis: `World Level ${settings.worldLevel} fixed Mora reward`,
+      outputPerRun: perRun || null,
+      runs,
+      resin,
+      settings,
+      dataQuality: reward ? "exact" : "unknown",
+    });
+    contributesToGuaranteedTotal = resin !== null;
+    estimateClassification = "guaranteed";
+  } else if (estimate.sourceType === "ley_line_revelation") {
+    const reward = staticData.leyLineRewardsByWorldLevel[String(settings.worldLevel)]
+      ?? getWorldLevelRecord(staticData.leyLineRewardsByWorldLevel, settings.worldLevel).value;
+    const missingExp = Number(estimate.details?.missingExp ?? estimate.deterministicRequirement);
+    const perRun = reward?.revelation.minimumCharacterExp ?? 0;
+    const runs = perRun > 0 ? missingExp / perRun : null;
+    const actionableRuns = runs === null ? null : toActionableQuantity(runs);
+    const resin = actionableRuns === null ? null : actionableRuns * staticData.resinActivityCosts.leyLineOutcrop.resin;
+    guaranteedLayer = buildEstimateLayer({
+      available: resin !== null,
+      canGuarantee: resin !== null,
+      basis: `World Level ${settings.worldLevel} minimum guaranteed Character EXP reward`,
+      outputPerRun: perRun || null,
+      runs,
+      resin,
+      settings,
+      dataQuality: reward ? "exact" : "unknown",
+      warnings: ["Current in-level Character EXP is assumed to be 0."],
+    });
+    contributesToGuaranteedTotal = resin !== null;
+    estimateClassification = "guaranteed";
+  } else if (estimate.sourceType === "domain_of_mastery" || estimate.sourceType === "domain_of_forgery") {
+    const model = estimate.sourceType === "domain_of_mastery"
+      ? staticData.talentBookDomainDropModel[settings.domainLevel]
+      : staticData.weaponAscensionDomainDropModel[settings.domainLevel];
+    const deficitEquivalent = getDeficitEquivalent(estimate, staticData);
+    const perRun = model.guaranteed.lowerTierEquivalent;
+    const runs = perRun > 0 ? deficitEquivalent / perRun : null;
+    const actionableRuns = runs === null ? null : toActionableQuantity(runs);
+    const resin = actionableRuns === null ? null : actionableRuns * (estimate.resinCostPerRun ?? staticData.resinActivityCosts.domain.resin);
+    guaranteedLayer = buildEstimateLayer({
+      available: resin !== null,
+      canGuarantee: resin !== null,
+      basis: `Domain level ${settings.domainLevel} minimum lower-tier-equivalent reward`,
+      outputPerRun: perRun,
+      runs,
+      resin,
+      settings,
+      dataQuality: "exact",
+    });
+    contributesToGuaranteedTotal = resin !== null;
+    estimateClassification = "guaranteed";
+  } else if (estimate.sourceType === "normal_boss") {
+    const record = getWorldLevelRecord(staticData.normalBossUniqueMaterialDropMeanByWorldLevel, settings.worldLevel).value;
+    const deficit = Number(estimate.details?.uniqueBossMaterialDeficit ?? estimate.missingAmount);
+    const perRun = record?.guaranteedUniqueDrops ?? 0;
+    const runs = perRun > 0 ? deficit / perRun : null;
+    const actionableRuns = runs === null ? null : toActionableQuantity(runs);
+    const resin = actionableRuns === null ? null : actionableRuns * (estimate.resinCostPerRun ?? staticData.resinActivityCosts.normalBoss.resin);
+    guaranteedLayer = buildEstimateLayer({
+      available: resin !== null,
+      canGuarantee: resin !== null,
+      basis: `World Level ${settings.worldLevel} guaranteed unique boss-material floor`,
+      outputPerRun: perRun || null,
+      runs,
+      resin,
+      settings,
+      dataQuality: record ? "exact" : "unknown",
+    });
+    contributesToGuaranteedTotal = resin !== null;
+    estimateClassification = "guaranteed";
+  } else if (estimate.sourceType === "weekly_boss") {
+    guaranteedLayer = buildEstimateLayer({
+      available: false,
+      canGuarantee: false,
+      basis: "Chance-based weekly target material; no guaranteed completion bound.",
+      outputPerRun: null,
+      runs: null,
+      resin: null,
+      settings,
+      dataQuality: "exact",
+      warnings: ["Future target drops and Dream Solvent drops are not assumed."],
+    });
+    estimateClassification = "chance_based";
+  } else if (estimate.sourceType === "ascension_gem") {
+    guaranteedLayer = buildEstimateLayer({
+      available: false,
+      canGuarantee: false,
+      basis: "Inventory-supported crafting and Dust conversion only; boss gem drops are incidental.",
+      outputPerRun: null,
+      runs: null,
+      resin: null,
+      settings,
+      dataQuality: "exact",
+      warnings: estimate.warnings,
+    });
+    estimateClassification = "chance_based";
+  } else if (estimate.sourceType === "open_world_enemy") {
+    estimateClassification = "no_resin";
+  } else if (estimate.sourceType === "local_specialty") {
+    estimateClassification = "time_gated";
+  }
+
+  return {
+    ...estimate,
+    guaranteedEstimate: guaranteedLayer,
+    expectedEstimate: expectedLayer,
+    contributesToGuaranteedTotal,
+    estimateClassification,
+    estimatedRuns: guaranteedLayer.runs,
+    actionableRuns: guaranteedLayer.actionableRuns,
+    estimatedResin: guaranteedLayer.resin,
+    estimatedDaysNaturalResin: guaranteedLayer.daysNaturalResin,
+    estimatedWeeksNaturalResin: guaranteedLayer.weeksNaturalResin,
+    estimateBasis: guaranteedLayer.basis,
+    dataQuality: guaranteedLayer.dataQuality,
+  };
+}
+
+function validateEstimateInvariants(estimates: FarmingEstimateDetail[]): PlannerWarning[] {
+  return estimates.flatMap((estimate) => {
+    const messages: string[] = [];
+    if (!Number.isFinite(estimate.missingAmount) || estimate.missingAmount < 0) {
+      messages.push("remaining deficit must be finite and nonnegative");
+    }
+    for (const [label, layer] of [
+      ["guaranteed", estimate.guaranteedEstimate],
+      ["expected", estimate.expectedEstimate],
+    ] as const) {
+      if (layer.actionableRuns !== null && (!Number.isInteger(layer.actionableRuns) || layer.actionableRuns < 0)) {
+        messages.push(`${label} actionable runs must be a nonnegative integer`);
+      }
+      if (layer.resin !== null && (!Number.isFinite(layer.resin) || layer.resin < 0)) {
+        messages.push(`${label} resin must be finite and nonnegative`);
+      }
+    }
+    if (estimate.contributesToGuaranteedTotal && estimate.guaranteedEstimate.resin === null) {
+      messages.push("a guaranteed-total contributor must have guaranteed resin");
+    }
+    if (!estimate.contributesToGuaranteedTotal && estimate.estimatedResin !== null) {
+      messages.push("an excluded estimate cannot expose guaranteed resin through the compatibility alias");
+    }
+
+    return messages.map((message) => ({
+      type: "estimate_invariant" as const,
+      key: estimate.estimateKey,
+      message: `${estimate.materialName}: ${message}.`,
+    }));
   });
 }
 
@@ -828,7 +1117,8 @@ export function buildFarmingEstimates(params: {
     .filter((estimate): estimate is FarmingEstimateDetail => estimate !== null && estimate.missingAmount > 0);
 
   const scheduledWeekly = applyWeeklyBossDiscountSchedule(estimates, settings, params.staticData);
-  const aggregated = scheduledWeekly
+  const layered = scheduledWeekly.map((estimate) => withEstimateLayers(estimate, settings, params.staticData));
+  const aggregated = layered
     .sort(
       (left, right) =>
         (right.estimatedResin ?? 0) - (left.estimatedResin ?? 0) ||
@@ -846,6 +1136,7 @@ export function buildFarmingEstimates(params: {
         message: `No resin estimator is configured for ${estimate.materialName}.`,
       })),
   );
+  warnings.push(...validateEstimateInvariants(aggregated));
 
   return {
     farmingEstimates: aggregated,

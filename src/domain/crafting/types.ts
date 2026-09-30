@@ -113,6 +113,16 @@ export interface CraftingResinImpact {
   resinSavedExpected: number | null;
 }
 
+export interface CraftingExecutionPlan {
+  outputAmount: number;
+  steps: CraftingStep[];
+  moraCost: number;
+  leftovers: Record<string, number>;
+  remainingMissing: number;
+  canSatisfy: boolean;
+  lowerTierAvailable: Record<string, number>;
+}
+
 export interface CraftingAffectedGoal {
   goalType: "character" | "talent" | "weapon" | "artifact";
   goalKey: string;

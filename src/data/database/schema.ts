@@ -1,3 +1,4 @@
+import type { GameIdentity } from "../../domain/staticData/upstreamTypes";
 import type {
   ArtifactDomainRecord,
   BossGemDropPackMeanRecord,
@@ -66,7 +67,7 @@ export type CanonicalReleaseState =
   | "ignored"
   | "deprecated";
 
-export interface CanonicalCharacterProfile {
+export interface CanonicalCharacterProfile extends GameIdentity {
   characterKey: string;
   displayName: string;
   rarity?: 4 | 5;
@@ -112,11 +113,11 @@ export interface CanonicalTravelerProfile {
   elementVariants: Record<string, CanonicalTravelerElementProfile>;
 }
 
-export interface CanonicalWeaponProfile {
+export interface CanonicalWeaponProfile extends GameIdentity {
   weaponKey: string;
   displayName: string;
   weaponType?: CharacterWeaponType | null;
-  rarity: 3 | 4 | 5;
+  rarity: 1 | 2 | 3 | 4 | 5;
   acquisitionType?:
     | "standard_wish"
     | "limited_wish"
@@ -142,7 +143,7 @@ export interface CanonicalWeaponProfile {
   aliases?: string[];
 }
 
-export interface CanonicalMaterialRecord {
+export interface CanonicalMaterialRecord extends GameIdentity {
   materialKey: string;
   displayName: string;
   category: string;

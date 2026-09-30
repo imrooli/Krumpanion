@@ -1,6 +1,6 @@
 {
   "craftingModeForRequirementSatisfaction": "guaranteed",
-  "craftingModeForResinEstimate": "expected_value",
+  "craftingModeForResinEstimate": "guaranteed",
   "allowCraftingTalentExpectedValue": true,
   "showCraftingVarianceWarning": true
 }

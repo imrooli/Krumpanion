@@ -25,6 +25,7 @@ export function buildLocalSpecialtyRegionIndex(
     Fontaine: [],
     Natlan: [],
     "Nod-Krai": [],
+    Snezhnaya: [],
   };
 
   for (const item of Object.values(localSpecialties)) {

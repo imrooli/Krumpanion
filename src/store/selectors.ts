@@ -116,7 +116,14 @@ export function selectActiveChecklistAttentionCount(state: AppState) {
 
 export function selectAllAccountChecklistSummaries(state: AppState) {
   const now = new Date(state.timeSensitiveAt ?? new Date().toISOString());
-  return getAccountOrder(state.user).map((account) => buildChecklistAccountSummary(account, now));
+  return getAccountOrder(state.user)
+    .map((account) => buildChecklistAccountSummary(account, now))
+    .sort(
+      (left, right) =>
+        right.urgentCount - left.urgentCount ||
+        right.needsAttentionCount - left.needsAttentionCount ||
+        left.accountName.localeCompare(right.accountName),
+    );
 }
 
 export function selectPlannerOutput(state: AppState) {

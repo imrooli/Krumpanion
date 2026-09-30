@@ -12,6 +12,7 @@
         "fourStar": null,
         "fiveStar": null
       },
+      "guaranteed": { "twoStar": 4, "threeStar": 0, "fourStar": 0, "fiveStar": 0, "lowerTierEquivalent": 4 },
       "twoStarRollMean": 2.2,
       "dropPackMean": 2.5,
       "dropPackDistribution": {
@@ -36,6 +37,7 @@
         "fourStar": null,
         "fiveStar": null
       },
+      "guaranteed": { "twoStar": 2, "threeStar": 2, "fourStar": 0, "fiveStar": 0, "lowerTierEquivalent": 8 },
       "twoStarRollMean": 2.7,
       "dropPackMean": 2,
       "dropPackDistribution": {
@@ -63,6 +65,7 @@
         },
         "fiveStar": null
       },
+      "guaranteed": { "twoStar": 2, "threeStar": 0, "fourStar": 0, "fiveStar": 0, "lowerTierEquivalent": 2 },
       "twoStarRollMean": 2.26,
       "dropPackMean": 3,
       "dropPackDistribution": {
@@ -93,6 +96,7 @@
           "average": 0.062
         }
       },
+      "guaranteed": { "twoStar": 2, "threeStar": 0, "fourStar": 0, "fiveStar": 0, "lowerTierEquivalent": 2 },
       "twoStarRollMean": 2.2,
       "dropPackMean": 3.1,
       "dropPackDistribution": {
@@ -115,6 +119,7 @@
         "threeStar": null,
         "fourStar": null
       },
+      "guaranteed": { "twoStar": 3, "threeStar": 0, "fourStar": 0, "lowerTierEquivalent": 3 },
       "twoStarRollMean": 2.2,
       "dropPackMean": 1,
       "dropPackDistribution": {
@@ -137,6 +142,7 @@
         },
         "fourStar": null
       },
+      "guaranteed": { "twoStar": 2, "threeStar": 1, "fourStar": 0, "lowerTierEquivalent": 5 },
       "twoStarRollMean": 2.5,
       "dropPackMean": 1,
       "dropPackDistribution": {
@@ -159,6 +165,7 @@
         },
         "fourStar": null
       },
+      "guaranteed": { "twoStar": 1, "threeStar": 2, "fourStar": 0, "lowerTierEquivalent": 7 },
       "twoStarRollMean": 1.8,
       "dropPackMean": 2,
       "dropPackDistribution": {
@@ -184,6 +191,7 @@
           "average": 0.22
         }
       },
+      "guaranteed": { "twoStar": 2, "threeStar": 0, "fourStar": 0, "lowerTierEquivalent": 2 },
       "twoStarRollMean": 2.2,
       "dropPackMean": 2.2,
       "dropPackDistribution": {

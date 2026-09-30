@@ -1,3 +1,4 @@
+import { availabilityDays as configuredAvailabilityDays } from "../../utils/days";
 import type { KrumpanionAccount } from "../../domain/account/types";
 import { getGoalDisplayName } from "../../domain/goals/goalDisplay";
 import type { KrumpanionGoals, PlannerSettings } from "../../domain/goals/types";
@@ -65,6 +66,9 @@ export interface PlannerUiModel {
     domainLevel: string | null;
     totalEstimatedResin: number;
     totalEstimatedResinDays: number | null;
+    expectedAdvisoryResin: number;
+    expectedAdvisoryDays: number | null;
+    chanceBasedCount: number;
     timeGatedEstimateDays: number | null;
     excludedTaskCount: number;
     resinActivityCount: number;
@@ -181,6 +185,7 @@ function dedupeWarnings(warnings: PlannerWarning[]): PlannerWarning[] {
 }
 
 function availabilityDays(availability: AvailabilityGroupKey): DayOfWeek[] {
+  if (availability.startsWith("DAYS_")) return configuredAvailabilityDays(availability);
   switch (availability) {
     case "MON_THU_SUN":
       return ["Monday", "Thursday", "Sunday"];
@@ -335,7 +340,8 @@ function computeDayEstimate(row: PlannerRecommendation, dailyResinBudget: number
     };
   }
 
-  if (row.totalEstimatedResin == null) {
+  const displayResin = row.expectedAdvisoryResin ?? row.totalEstimatedResin;
+  if (displayResin == null) {
     return {
       estimatedDaysLabel: null,
       earliestCompletionLabel: null,
@@ -346,8 +352,8 @@ function computeDayEstimate(row: PlannerRecommendation, dailyResinBudget: number
   }
 
   const dailyBudget = Math.max(1, dailyResinBudget);
-  const resinDays = normalizeDisplayDays(row.estimatedDaysNaturalResin ?? row.totalEstimatedResin / dailyBudget);
-  const resinSessionsNeeded = Math.max(1, Math.ceil((row.totalEstimatedResin ?? 0) / dailyBudget));
+  const resinDays = normalizeDisplayDays(row.expectedAdvisoryDays ?? displayResin / dailyBudget);
+  const resinSessionsNeeded = Math.max(1, Math.ceil(displayResin / dailyBudget));
   const baseDaysLabel = formatDayCount(resinDays, "resin day");
 
   if (row.weeklyGate?.estimatedWeeks != null) {
@@ -483,7 +489,7 @@ export function buildPlannerUiModel(params: {
   const todayDomainMasteryRows = todayDomainRows.filter(isMasteryRow);
   const todayDomainForgeryRows = todayDomainRows.filter(isForgeryRow);
 
-  const weekDomainGroups = WEEK_DOMAIN_ORDER.map((availability) => {
+  const weekDomainGroups = [...new Set([...WEEK_DOMAIN_ORDER, ...domainRows.map(row => row.availability).filter(key => key.startsWith("DAYS_"))])].map((availability) => {
     const groupRows = domainRows.filter((row) => row.availability === availability);
     return {
       key: availability,
@@ -567,6 +573,9 @@ export function buildPlannerUiModel(params: {
       domainLevel: params.plannerSettings.domainLevel ?? null,
       totalEstimatedResin: params.plannerOutput.plannerReport.summary.totalEstimatedResin,
       totalEstimatedResinDays,
+      expectedAdvisoryResin: params.plannerOutput.plannerReport.summary.expectedAdvisoryResin,
+      expectedAdvisoryDays: params.plannerOutput.plannerReport.summary.expectedAdvisoryDays,
+      chanceBasedCount: params.plannerOutput.plannerReport.summary.chanceBasedTaskCount,
       timeGatedEstimateDays,
       excludedTaskCount,
       resinActivityCount: resinRows.length,
@@ -576,7 +585,7 @@ export function buildPlannerUiModel(params: {
       unknownEstimateCount: params.plannerOutput.plannerReport.summary.unknownEstimateCount,
       warningCount: warnings.length,
       requirementCraftingMode: params.plannerSettings.craftingModeForRequirementSatisfaction ?? "guaranteed",
-      resinCraftingMode: params.plannerSettings.craftingModeForResinEstimate ?? "expected_value",
+      resinCraftingMode: "guaranteed",
     },
     warnings,
     weaponExpNotes: params.plannerOutput.weaponExpSummary.notes,

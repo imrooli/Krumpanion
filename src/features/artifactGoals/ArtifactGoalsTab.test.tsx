@@ -71,8 +71,13 @@ async function waitForEditor() {
   return editor;
 }
 
-function findArtifactBrowserButton(label: string) {
-  return screen.getAllByRole("button").find((button) => button.className.includes("artifact-summary-select") && button.textContent?.includes(label));
+function findSetGoalsBrowserButtonForCharacter(characterLabel: string) {
+  const sectionHeading = screen.queryAllByText(characterLabel)[0];
+  const section = sectionHeading?.closest("section");
+  if (!section) {
+    return undefined;
+  }
+  return within(section).getAllByRole("button").find((button) => button.className.includes("artifact-summary-select"));
 }
 
 function findPickerChoice(label: string, choice: string) {
@@ -90,7 +95,7 @@ describe("ArtifactGoalsTab", () => {
     cleanup();
   });
 
-  it("defaults to by-domain browsing and keeps goal edits isolated across characters", async () => {
+  it("defaults to the domain guide and keeps goal edits isolated across characters", async () => {
     const user = userEvent.setup();
 
     render(<ArtifactGoalsTab plannerOutput={UNUSED_PLANNER_OUTPUT} />);
@@ -101,14 +106,13 @@ describe("ArtifactGoalsTab", () => {
 
     let editor = await waitForEditor();
 
-    expect(screen.getByRole("button", { name: "By Domain" })).toHaveAttribute("aria-pressed", "true");
+    expect(screen.getByRole("button", { name: "Set Goals" })).toHaveAttribute("aria-pressed", "true");
 
     await user.selectOptions(within(editor).getByLabelText("Character"), "Neuvillette");
     await user.type(within(editor).getByLabelText("Goal name"), "Neuv Goal");
     await user.click(within(within(editor).getByRole("group", { name: "Artifact sets" })).getByRole("button", { name: "Marechaussee Hunter" }));
     await user.click(within(within(editor).getByRole("group", { name: "Sands" })).getByRole("button", { name: "HP%" }));
-    await user.click(screen.getByRole("button", { name: "By Character" }));
-    await waitFor(() => expect(findArtifactBrowserButton("Neuvillette")).toBeTruthy());
+    await waitFor(() => expect(screen.getAllByText("Neuvillette").length).toBeGreaterThan(0));
 
     await user.click(screen.getAllByRole("button", { name: "Add Artifact Goal" })[0]);
 
@@ -117,11 +121,12 @@ describe("ArtifactGoalsTab", () => {
     await user.selectOptions(within(editor).getByLabelText("Character"), "Fischl");
     await user.type(within(editor).getByLabelText("Goal name"), "Fischl Goal");
     await user.click(within(within(editor).getByRole("group", { name: "Artifact sets" })).getByRole("button", { name: "Golden Troupe" }));
-    await waitFor(() => expect(findArtifactBrowserButton("Fischl")).toBeTruthy());
+    await waitFor(() => expect(screen.getAllByText("Fischl").length).toBeGreaterThan(0));
+    await waitFor(() => expect(findSetGoalsBrowserButtonForCharacter("Neuvillette")).toBeTruthy());
 
-    const neuvSection = findArtifactBrowserButton("Neuvillette");
+    const neuvSection = findSetGoalsBrowserButtonForCharacter("Neuvillette");
     if (!neuvSection) {
-      throw new Error("Neuvillette browser row missing.");
+      throw new Error("Neuv goal browser row missing.");
     }
     await user.click(neuvSection);
 
@@ -129,7 +134,7 @@ describe("ArtifactGoalsTab", () => {
     expect(findPickerChoice("Sands", "HP%").some((button) => button.getAttribute("aria-pressed") === "true")).toBe(true);
     expect(screen.getByRole("button", { name: "Golden Troupe", pressed: false })).toBeInTheDocument();
 
-    const fischlSection = screen.getAllByRole("button").find((button) => button.className.includes("artifact-summary-select") && button.textContent?.includes("Fischl"));
+    const fischlSection = findSetGoalsBrowserButtonForCharacter("Fischl");
     if (!fischlSection) {
       throw new Error("Fischl browser row missing.");
     }
@@ -140,22 +145,23 @@ describe("ArtifactGoalsTab", () => {
     expect(screen.getByRole("button", { name: "Golden Troupe", pressed: true })).toBeInTheDocument();
   }, 10000);
 
-  it("preserves selection across view changes and keeps the editor visible when completed rows are hidden", async () => {
+  it("preserves selection across artifact pages and keeps the editor visible when completed rows are hidden", async () => {
     const user = userEvent.setup();
 
     render(<ArtifactGoalsTab plannerOutput={UNUSED_PLANNER_OUTPUT} />);
 
     await user.click(screen.getAllByRole("button", { name: "Add Artifact Goal" })[0]);
 
-    const editor = await waitForEditor();
+    let editor = await waitForEditor();
 
     await user.selectOptions(within(editor).getByLabelText("Character"), "Neuvillette");
     await user.type(within(editor).getByLabelText("Goal name"), "Persistent Goal");
     await user.click(within(within(editor).getByRole("group", { name: "Artifact sets" })).getByRole("button", { name: "Marechaussee Hunter" }));
-    await user.click(screen.getByRole("button", { name: /By Character/i }));
-    await waitFor(() => expect(findArtifactBrowserButton("Neuvillette")).toBeTruthy());
+    await user.click(screen.getByRole("button", { name: "Character Goals" }));
+    await waitFor(() => expect(screen.getByRole("heading", { name: "Character Goals" })).toBeInTheDocument());
+    await user.click(screen.getByRole("button", { name: "Edit goal" }));
     await waitFor(() => expect(screen.getByLabelText("Character")).toHaveValue("Neuvillette"));
-    expect(screen.getAllByText("Neuvillette").length).toBeGreaterThan(0);
+    editor = await waitForEditor();
 
     await user.click(within(editor).getByLabelText(/Flower obtained/i));
     await user.click(within(editor).getByLabelText(/Plume obtained/i));
@@ -178,18 +184,18 @@ describe("ArtifactGoalsTab", () => {
     let editor = await waitForEditor();
     await user.selectOptions(within(editor).getByLabelText("Character"), "Fischl");
     await user.type(within(editor).getByLabelText("Goal name"), "Fischl Goal");
-    await user.click(screen.getByRole("button", { name: "By Character" }));
-    await waitFor(() => expect(findArtifactBrowserButton("Fischl")).toBeTruthy());
+    await waitFor(() => expect(screen.getAllByText("Fischl").length).toBeGreaterThan(0));
 
     await user.click(screen.getAllByRole("button", { name: "Add Artifact Goal" })[0]);
     editor = await waitForEditor();
     await user.selectOptions(within(editor).getByLabelText("Character"), "Neuvillette");
     await user.type(within(editor).getByLabelText("Goal name"), "Neuv Goal");
-    await waitFor(() => expect(findArtifactBrowserButton("Neuvillette")).toBeTruthy());
+    await waitFor(() => expect(screen.getAllByText("Neuvillette").length).toBeGreaterThan(0));
+    await waitFor(() => expect(findSetGoalsBrowserButtonForCharacter("Neuvillette")).toBeTruthy());
 
-    const neuvSection = findArtifactBrowserButton("Neuvillette");
+    const neuvSection = findSetGoalsBrowserButtonForCharacter("Neuvillette");
     if (!neuvSection) {
-      throw new Error("Neuvillette browser row missing before delete.");
+      throw new Error("Neuv goal browser row missing before delete.");
     }
     await user.click(neuvSection);
     await waitFor(() => expect(screen.getByLabelText("Character")).toHaveValue("Neuvillette"));
@@ -205,6 +211,7 @@ describe("ArtifactGoalsTab", () => {
   });
 
   it("stays scoped to the active account when switching accounts", async () => {
+    const user = userEvent.setup();
     const saveFile = createDefaultSaveFile(FIXED_DATE);
     const staticData = createStaticData();
     const accountAId = saveFile.user.activeAccountId;
@@ -296,7 +303,9 @@ describe("ArtifactGoalsTab", () => {
 
     render(<ArtifactGoalsTab plannerOutput={UNUSED_PLANNER_OUTPUT} />);
 
-    expect(screen.getByLabelText("Character")).toHaveValue("Neuvillette");
+    expect(screen.getByRole("button", { name: "Domain Guide" })).toHaveAttribute("aria-pressed", "true");
+    await user.click(screen.getByRole("button", { name: "Set Goals" }));
+    await waitFor(() => expect(screen.getByLabelText("Character")).toHaveValue("Neuvillette"));
 
     useAppStore.setState((state) => ({
       user: {
@@ -307,5 +316,22 @@ describe("ArtifactGoalsTab", () => {
 
     await waitFor(() => expect(screen.getByLabelText("Character")).toHaveValue("Fischl"));
     expect(screen.queryByDisplayValue("A goal")).not.toBeInTheDocument();
+  });
+
+  it("allows artifact goals to target unowned characters", async () => {
+    const user = userEvent.setup();
+
+    render(<ArtifactGoalsTab plannerOutput={UNUSED_PLANNER_OUTPUT} />);
+
+    await user.click(screen.getAllByRole("button", { name: "Add Artifact Goal" })[0]);
+
+    const editor = await waitForEditor();
+    const characterSelect = within(editor).getByLabelText("Character");
+
+    expect(within(characterSelect).getByRole("option", { name: "Kaedehara Kazuha" })).toBeInTheDocument();
+
+    await user.selectOptions(characterSelect, "KaedeharaKazuha");
+    await waitFor(() => expect(screen.getByLabelText("Character")).toHaveValue("KaedeharaKazuha"));
+    expect(screen.queryByText("Character is not on this account.")).not.toBeInTheDocument();
   });
 });

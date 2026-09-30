@@ -11,6 +11,7 @@ export const DAY_LABELS: Record<DayOfWeek, string> = {
 };
 
 export function availabilityMatchesDay(availability: AvailabilityGroupKey, day: DayOfWeek): boolean {
+  if (/^DAYS_[01]{7}$/.test(availability)) return availability.slice(5)[WEEKDAYS.indexOf(day)] === "1";
   switch (availability) {
     case "ALWAYS":
       return true;
@@ -66,4 +67,16 @@ export function getGenshinResetDay(date = new Date()): DayOfWeek {
   }
 
   return pacificWeekday;
+}
+
+export const WEEKDAYS: DayOfWeek[] = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+export function availabilityDays(availability: AvailabilityGroupKey): DayOfWeek[] {
+  return WEEKDAYS.filter(day => availabilityMatchesDay(availability, day));
+}
+export function availabilityFromDays(days: DayOfWeek[]): AvailabilityGroupKey {
+  const mask = WEEKDAYS.map(day => days.includes(day) ? "1" : "0").join("");
+  return ({ "1001001": "MON_THU_SUN", "0100101": "TUE_FRI_SUN", "0010011": "WED_SAT_SUN", "1111111": "ALWAYS", "0000000": "UNKNOWN" } as Record<string, AvailabilityGroupKey>)[mask] ?? `DAYS_${mask}`;
+}
+export function validAvailability(value: string): value is AvailabilityGroupKey {
+  return ["MON_THU_SUN", "TUE_FRI_SUN", "WED_SAT_SUN", "ALWAYS", "WEEKLY", "UNKNOWN"].includes(value) || /^DAYS_(?!0000000)[01]{7}$/.test(value);
 }

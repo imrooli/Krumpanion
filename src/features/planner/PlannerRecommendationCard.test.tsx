@@ -82,6 +82,43 @@ describe("PlannerRecommendationCard", () => {
     cleanup();
   });
 
+  it("shows expected domain planning values before the worst-case guarantee", () => {
+    const staticData = createStaticData();
+    render(
+      <PlannerRecommendationCard
+        staticData={staticData}
+        row={{
+          ...createPlannerRow(),
+          id: "cecilia-garden",
+          title: "Farm Cecilia Garden",
+          category: "weapon_domain",
+          actionGroup: "resin_gated",
+          actionSubgroup: "domains",
+          sourceName: "Cecilia Garden",
+          availability: "WED_SAT_SUN",
+          resinPerRun: 20,
+          totalEstimatedResin: 1260,
+          estimatedRuns: 63,
+          actionableRuns: 63,
+          estimatedDaysNaturalResin: 7,
+          expectedAdvisoryResin: 160,
+          expectedAdvisoryRuns: 7.6,
+          expectedAdvisoryActionableRuns: 8,
+          expectedAdvisoryDays: 160 / 180,
+          estimatedDaysLabel: "About 0.9 resin days",
+        }}
+      />,
+    );
+
+    expect(screen.getByText("8 expected runs | 20 resin/run | 160 expected resin")).toBeInTheDocument();
+    const metadata = screen.getByText("160 expected resin").parentElement;
+    expect(metadata).not.toBeNull();
+    expect(metadata?.textContent?.indexOf("160 expected resin")).toBeLessThan(
+      metadata?.textContent?.indexOf("1,260 worst-case guaranteed resin") ?? -1,
+    );
+    expect(screen.getByText("63 runs worst-case")).toBeInTheDocument();
+  });
+
   it("groups craftable family materials, uses compact step buttons, and supports reset to imported", async () => {
     const user = userEvent.setup();
     const staticData = createStaticData();
@@ -134,6 +171,13 @@ describe("PlannerRecommendationCard", () => {
     expect(screen.queryByRole("button", { name: /Increase Guide to Gold by 10/i })).not.toBeInTheDocument();
     expect(screen.queryByRole("button", { name: /Decrease Teachings of Gold by 10/i })).not.toBeInTheDocument();
     expect(screen.getByText("Expected-value crafting enabled • Passive override: Xingqiu")).toBeInTheDocument();
+
+    await user.type(screen.getByLabelText("Custom amount to add for Guide to Gold"), "7");
+    await user.click(screen.getByRole("button", { name: "Add custom amount for Guide to Gold" }));
+
+    await waitFor(() => {
+      expect(useAppStore.getState().user.accountsById[activeAccountId]?.inventory.GuideToGold).toBe(7);
+    });
 
     await user.click(screen.getByRole("button", { name: /Reset Guide to Gold to imported quantity/i }));
 

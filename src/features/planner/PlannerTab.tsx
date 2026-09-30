@@ -422,14 +422,19 @@ function TodayPlannerTab({
         <MetricStrip
           compact
           items={[
-            { label: "Total resin remaining", value: formatInteger(uiModel.summary.totalEstimatedResin), tone: "warning" },
+            { label: "Expected resin remaining", value: formatInteger(uiModel.summary.expectedAdvisoryResin), tone: "warning" },
             {
-              label: "Estimated days",
+              label: "Expected resin days",
               value:
-                uiModel.summary.totalEstimatedResinDays != null
-                  ? formatDayCount(uiModel.summary.totalEstimatedResinDays, "day")
+                uiModel.summary.expectedAdvisoryDays != null
+                  ? formatDayCount(uiModel.summary.expectedAdvisoryDays, "day")
                   : "Unavailable",
               tone: "accent",
+            },
+            {
+              label: "Worst-case guarantee",
+              value: formatInteger(uiModel.summary.totalEstimatedResin),
+              tone: "default",
             },
             {
               label: "Available today",
@@ -891,14 +896,23 @@ export function PlannerTab({ plannerOutput }: PlannerTabProps) {
         <MetricStrip
           compact
           items={[
-            { label: "Total resin", value: formatInteger(uiModel.summary.totalEstimatedResin), tone: "warning" },
             {
-              label: "Estimated days",
+              label: "Expected resin",
+              value: formatInteger(uiModel.summary.expectedAdvisoryResin),
+              tone: "warning",
+            },
+            {
+              label: "Expected resin days",
               value:
-                uiModel.summary.totalEstimatedResinDays != null
-                  ? formatDayCount(uiModel.summary.totalEstimatedResinDays, "day")
+                uiModel.summary.expectedAdvisoryDays != null
+                  ? formatDayCount(uiModel.summary.expectedAdvisoryDays, "day")
                   : "Unavailable",
               tone: "accent",
+            },
+            {
+              label: "Worst-case guaranteed",
+              value: formatInteger(uiModel.summary.totalEstimatedResin),
+              tone: "default",
             },
             {
               label: "Weekly locks",
@@ -906,11 +920,7 @@ export function PlannerTab({ plannerOutput }: PlannerTabProps) {
               tone: uiModel.summary.weeklyLimitedCount ? "warning" : "success",
             },
             { label: "No-resin tasks", value: formatInteger(uiModel.summary.noResinCount), tone: "default" },
-            {
-              label: "Warnings",
-              value: formatInteger(uiModel.summary.warningCount),
-              tone: uiModel.summary.warningCount ? "warning" : "success",
-            },
+            { label: "Chance-based", value: formatInteger(uiModel.summary.chanceBasedCount), tone: "default" },
           ]}
         />
       }

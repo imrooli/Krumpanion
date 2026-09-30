@@ -1,3 +1,5 @@
+import { createGameDataUpdateState } from "../staticData/upstreamTypes";
+import { updateStateSchema } from "../staticData/upstreamSchema";
 import type { ImportedAccountState, KrumpanionAccount, MultiAccountUserState } from "../account/types";
 import {
   buildImportedAccountState,
@@ -115,6 +117,7 @@ function normalizePlannerSettings(input: PlannerSettings | null | undefined): Pl
   return {
     ...DEFAULT_PLANNER_SETTINGS,
     ...(input ?? {}),
+    craftingModeForResinEstimate: "guaranteed",
     craftingPassiveOverrides: {
       ...(DEFAULT_PLANNER_SETTINGS.craftingPassiveOverrides ?? {}),
       ...((input as { craftingPassiveOverrides?: Record<string, string | null | undefined> } | undefined)
@@ -373,6 +376,11 @@ function normalizeUserState(user: unknown, createdAt: string): MultiAccountUserS
         activeGoalCount: current.plannerStatus?.activeGoalCount ?? 0,
         materialDeficitCount: current.plannerStatus?.materialDeficitCount ?? 0,
         totalEstimatedResin: current.plannerStatus?.totalEstimatedResin ?? 0,
+        guaranteedTotalResin:
+          current.plannerStatus?.guaranteedTotalResin
+          ?? current.plannerStatus?.totalEstimatedResin
+          ?? 0,
+        expectedAdvisoryResin: current.plannerStatus?.expectedAdvisoryResin ?? 0,
         warningCount: current.plannerStatus?.warningCount ?? 0,
         lastError: current.plannerStatus?.lastError,
       },
@@ -424,6 +432,7 @@ export function migrateSaveFile(value: unknown): KrumpanionSaveFile | null {
 
   const candidate = value as {
     schemaVersion?: number;
+    gameDataUpdates?: unknown;
     appVersion?: string;
     createdAt?: string;
     updatedAt?: string;
@@ -435,14 +444,15 @@ export function migrateSaveFile(value: unknown): KrumpanionSaveFile | null {
   };
 
   if (
-    (candidate.schemaVersion === 13 || candidate.schemaVersion === 12 || candidate.schemaVersion === 11 || candidate.schemaVersion === 10 || candidate.schemaVersion === 9 || candidate.schemaVersion === 8 || candidate.schemaVersion === 7 || candidate.schemaVersion === 6 || candidate.schemaVersion === 5) &&
+    (candidate.schemaVersion === 15 || candidate.schemaVersion === 14 || candidate.schemaVersion === 13 || candidate.schemaVersion === 12 || candidate.schemaVersion === 11 || candidate.schemaVersion === 10 || candidate.schemaVersion === 9 || candidate.schemaVersion === 8 || candidate.schemaVersion === 7 || candidate.schemaVersion === 6 || candidate.schemaVersion === 5) &&
     typeof candidate.createdAt === "string" &&
     typeof candidate.updatedAt === "string"
   ) {
     return {
       ...createDefaultSaveFile(new Date(candidate.createdAt)),
       ...candidate,
-      schemaVersion: 13,
+      schemaVersion: 15,
+      gameDataUpdates: normalizeGameDataUpdates(candidate.gameDataUpdates),
       appVersion: candidate.appVersion ?? APP_VERSION,
       user: normalizeUserState(candidate.user, candidate.createdAt),
       settings: {
@@ -467,7 +477,8 @@ export function migrateSaveFile(value: unknown): KrumpanionSaveFile | null {
 
     return {
       ...createDefaultSaveFile(new Date(candidate.createdAt)),
-      schemaVersion: 13,
+      schemaVersion: 15,
+      gameDataUpdates: normalizeGameDataUpdates(candidate.gameDataUpdates),
       appVersion: candidate.appVersion ?? APP_VERSION,
       createdAt: candidate.createdAt,
       updatedAt: candidate.updatedAt,
@@ -511,4 +522,14 @@ export function migrateLegacySnapshot(snapshot: LegacyPersistenceSnapshot, now =
     },
     overridePack: normalizeOverridePack(maybeOverridePack(snapshot.overridePack)) ?? save.overridePack,
   };
+}
+
+function normalizeGameDataUpdates(input: unknown) {
+  const state = input === undefined ? createGameDataUpdateState() : updateStateSchema.parse(input);
+  if (state.status === "checking" || state.status === "downloading") {
+    if (state.lastAttempt) state.lastAttempt = { ...state.lastAttempt, result: "interrupted" };
+    state.status = "failed"; state.error = "Previous update was interrupted. Retry to continue.";
+  }
+  for (const discovery of Object.values(state.discoveries)) if (discovery.status === "checking_upstream") discovery.status = "detected";
+  return state;
 }

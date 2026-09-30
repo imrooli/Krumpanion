@@ -1,0 +1,2907 @@
+{
+  "note": "Same repaired canonical data in both builds. Module rendered bytes precede chunk minification; chunk/gzip bytes are emitted JS. Workers are emitted separately by Vite.",
+  "before": [
+    {
+      "file": "assets/index-DSqttCop.js",
+      "entry": true,
+      "bytes": 3271176,
+      "gzipBytes": 545281,
+      "modules": [
+        {
+          "path": "src/data/database/materials/materials.json",
+          "renderedBytes": 869412
+        },
+        {
+          "path": "data_sources/krumpanion_ley_line_outcrop_material_coverage.json",
+          "renderedBytes": 754268
+        },
+        {
+          "path": "src/data/database/crafting/recipes.json",
+          "renderedBytes": 149473
+        },
+        {
+          "path": "src/data/database/sources/materialSources.json",
+          "renderedBytes": 144478
+        },
+        {
+          "path": "src/features/database/DatabaseWorkbench.tsx",
+          "renderedBytes": 136731
+        },
+        {
+          "path": "node_modules/react-dom/cjs/react-dom.production.min.js",
+          "renderedBytes": 133299
+        },
+        {
+          "path": "src/features/database/DatabaseTab.tsx",
+          "renderedBytes": 131272
+        },
+        {
+          "path": "node_modules/zod/v3/types.js",
+          "renderedBytes": 117286
+        },
+        {
+          "path": "src/data/database/weapons/weaponProfiles.json",
+          "renderedBytes": 108165
+        },
+        {
+          "path": "src/data/database/crafting/tieredMaterialIndex.json",
+          "renderedBytes": 103852
+        },
+        {
+          "path": "node_modules/dexie/dist/dexie.min.js",
+          "renderedBytes": 96900
+        },
+        {
+          "path": "src/data/database/characters/characterProfiles.json",
+          "renderedBytes": 95565
+        },
+        {
+          "path": "src/store/useAppStore.ts",
+          "renderedBytes": 92234
+        },
+        {
+          "path": "src/domain/staticData/databaseChangeSet.ts",
+          "renderedBytes": 70942
+        },
+        {
+          "path": "src/domain/staticData/validateStaticData.ts",
+          "renderedBytes": 70625
+        },
+        {
+          "path": "src/features/weapons/WeaponsTab.tsx",
+          "renderedBytes": 66327
+        },
+        {
+          "path": "src/data/database/sources/enemyRouteSources.json",
+          "renderedBytes": 56874
+        },
+        {
+          "path": "src/features/planner/PlannerTab.tsx",
+          "renderedBytes": 42751
+        },
+        {
+          "path": "src/domain/planner/buildFarmingEstimates.ts",
+          "renderedBytes": 41669
+        },
+        {
+          "path": "src/features/artifactGoals/ArtifactGoalsTab.tsx",
+          "renderedBytes": 35169
+        },
+        {
+          "path": "src/data/database/materials/commonEnemyDropFamilies.json",
+          "renderedBytes": 32977
+        },
+        {
+          "path": "src/features/crafting/CraftingTab.tsx",
+          "renderedBytes": 32620
+        },
+        {
+          "path": "src/features/inventory/InventoryTab.tsx",
+          "renderedBytes": 32223
+        },
+        {
+          "path": "schemas/save.schema.json",
+          "renderedBytes": 31456
+        },
+        {
+          "path": "src/features/planner/PlannerRecommendationCard.tsx",
+          "renderedBytes": 30914
+        },
+        {
+          "path": "src/domain/planner/buildLeyLineEnemyDropRecommendations.ts",
+          "renderedBytes": 30904
+        },
+        {
+          "path": "src/features/characters/CharactersTab.tsx",
+          "renderedBytes": 28716
+        },
+        {
+          "path": "src/domain/checklist/model.ts",
+          "renderedBytes": 28191
+        },
+        {
+          "path": "src/features/planner/plannerProgressionModel.ts",
+          "renderedBytes": 28081
+        },
+        {
+          "path": "src/domain/planner/buildPlannerReport.ts",
+          "renderedBytes": 27650
+        },
+        {
+          "path": "src/data/database/materials/eliteEnemyDropFamilies.json",
+          "renderedBytes": 27230
+        },
+        {
+          "path": "src/data/database/materials/weaponAscensionMaterialFamilies.json",
+          "renderedBytes": 26689
+        },
+        {
+          "path": "src/features/database/dataHealthModel.ts",
+          "renderedBytes": 26122
+        },
+        {
+          "path": "node_modules/ajv/dist/core.js",
+          "renderedBytes": 25597
+        },
+        {
+          "path": "src/features/database/GameDataUpdateCenter.tsx",
+          "renderedBytes": 25115
+        },
+        {
+          "path": "src/data/database/artifacts/artifactDomains.json",
+          "renderedBytes": 24759
+        },
+        {
+          "path": "node_modules/ajv/dist/compile/codegen/index.js",
+          "renderedBytes": 23842
+        },
+        {
+          "path": "src/features/crafting/craftingWorkbenchModel.ts",
+          "renderedBytes": 23824
+        },
+        {
+          "path": "src/features/database/databaseModel.ts",
+          "renderedBytes": 23068
+        },
+        {
+          "path": "src/domain/crafting/resolveCraftingPlan.ts",
+          "renderedBytes": 21695
+        },
+        {
+          "path": "src/domain/planner/classifySources.ts",
+          "renderedBytes": 21505
+        },
+        {
+          "path": "src/domain/goals/goalState.ts",
+          "renderedBytes": 21077
+        },
+        {
+          "path": "src/domain/staticData/assembleBaseStaticData.ts",
+          "renderedBytes": 20849
+        },
+        {
+          "path": "node_modules/ajv/dist/compile/validate/index.js",
+          "renderedBytes": 20586
+        },
+        {
+          "path": "src/domain/staticData/overrideSchema.ts",
+          "renderedBytes": 20076
+        },
+        {
+          "path": "src/domain/planner/buildPlannerRows.ts",
+          "renderedBytes": 19574
+        },
+        {
+          "path": "src/data/database/materials/localSpecialties.json",
+          "renderedBytes": 19562
+        },
+        {
+          "path": "src/features/artifactGoals/artifactGoalsModel.ts",
+          "renderedBytes": 19494
+        },
+        {
+          "path": "src/features/planner/plannerUiModel.ts",
+          "renderedBytes": 18641
+        },
+        {
+          "path": "src/data/database/materials/weeklyBossMaterials.json",
+          "renderedBytes": 16485
+        },
+        {
+          "path": "src/domain/weapons/refinementTracker.ts",
+          "renderedBytes": 16404
+        },
+        {
+          "path": "src/features/database/databaseGuidedEditors.tsx",
+          "renderedBytes": 16056
+        },
+        {
+          "path": "src/features/checklist/ChecklistWorkspace.tsx",
+          "renderedBytes": 16036
+        },
+        {
+          "path": "src/data/database/validation/validateDatabase.ts",
+          "renderedBytes": 15900
+        },
+        {
+          "path": "src/domain/save/migrations.ts",
+          "renderedBytes": 15349
+        },
+        {
+          "path": "src/data/database/progression/weaponLevelExp.json",
+          "renderedBytes": 15103
+        },
+        {
+          "path": "src/features/database/databaseProfileHelpers.ts",
+          "renderedBytes": 14677
+        },
+        {
+          "path": "src/features/database/DataHealthCenter.tsx",
+          "renderedBytes": 14555
+        },
+        {
+          "path": "src/data/database/sources/domainSchedule.json",
+          "renderedBytes": 14520
+        },
+        {
+          "path": "src/domain/progression/resolveCharacterProgression.ts",
+          "renderedBytes": 14388
+        },
+        {
+          "path": "src/data/database/materials/normalBossMaterials.json",
+          "renderedBytes": 14239
+        },
+        {
+          "path": "src/domain/staticData/normalizeStaticDataMaterialReferences.ts",
+          "renderedBytes": 14134
+        },
+        {
+          "path": "src/store/plannerTracking.ts",
+          "renderedBytes": 13945
+        },
+        {
+          "path": "src/features/importExport/SaveWorkspace.tsx",
+          "renderedBytes": 13860
+        },
+        {
+          "path": "src/features/home/HomeWorkspace.tsx",
+          "renderedBytes": 12995
+        },
+        {
+          "path": "src/domain/staticData/canonicalMaterialRegistry.ts",
+          "renderedBytes": 12629
+        },
+        {
+          "path": "src/domain/planner/calculateMissingMaterials.ts",
+          "renderedBytes": 12299
+        },
+        {
+          "path": "src/domain/staticData/applyOverridePack.ts",
+          "renderedBytes": 12159
+        },
+        {
+          "path": "src/domain/staticData/reconcileGameData.ts",
+          "renderedBytes": 11203
+        },
+        {
+          "path": "src/services/gameDataUpdates.ts",
+          "renderedBytes": 11039
+        },
+        {
+          "path": "node_modules/fast-uri/index.js",
+          "renderedBytes": 10496
+        },
+        {
+          "path": "src/data/database/sources/bossLootEstimates.json",
+          "renderedBytes": 10444
+        },
+        {
+          "path": "node_modules/ajv/dist/compile/index.js",
+          "renderedBytes": 9969
+        },
+        {
+          "path": "src/domain/planner/compareInventory.ts",
+          "renderedBytes": 9715
+        },
+        {
+          "path": "src/features/settings/SettingsWorkspace.tsx",
+          "renderedBytes": 9667
+        },
+        {
+          "path": "src/features/inventory/InventoryWorkspace.tsx",
+          "renderedBytes": 9662
+        },
+        {
+          "path": "src/features/database/DatabaseWorkspaceShell.tsx",
+          "renderedBytes": 9390
+        },
+        {
+          "path": "schemas/goals.schema.json",
+          "renderedBytes": 9380
+        },
+        {
+          "path": "node_modules/ajv/dist/compile/validate/dataType.js",
+          "renderedBytes": 8402
+        },
+        {
+          "path": "node_modules/fast-uri/lib/utils.js",
+          "renderedBytes": 8159
+        },
+        {
+          "path": "src/features/database/patchManifestRecordsModel.ts",
+          "renderedBytes": 8105
+        },
+        {
+          "path": "src/features/settings/WarningsWorkspace.tsx",
+          "renderedBytes": 8062
+        },
+        {
+          "path": "src/features/database/patchManifestResolver.ts",
+          "renderedBytes": 7892
+        },
+        {
+          "path": "node_modules/react/cjs/react.production.min.js",
+          "renderedBytes": 7656
+        },
+        {
+          "path": "src/domain/staticData/materialKeyMapping.ts",
+          "renderedBytes": 7646
+        },
+        {
+          "path": "src/domain/staticData/farmingConfiguration.ts",
+          "renderedBytes": 7252
+        },
+        {
+          "path": "src/app/AppShell.tsx",
+          "renderedBytes": 7048
+        },
+        {
+          "path": "node_modules/ajv/dist/compile/util.js",
+          "renderedBytes": 6973
+        },
+        {
+          "path": "src/domain/progression/resolveWeaponProgression.ts",
+          "renderedBytes": 6951
+        },
+        {
+          "path": "src/data/database/progression/weaponAscensionCosts.json",
+          "renderedBytes": 6874
+        },
+        {
+          "path": "node_modules/fast-uri/lib/schemes.js",
+          "renderedBytes": 6815
+        },
+        {
+          "path": "src/features/import/GoodImportPanel.tsx",
+          "renderedBytes": 6788
+        },
+        {
+          "path": "src/features/goals/GoalsWorkspace.tsx",
+          "renderedBytes": 6689
+        },
+        {
+          "path": "src/domain/staticData/reconcileFarming.ts",
+          "renderedBytes": 6629
+        },
+        {
+          "path": "src/app/layoutPrimitives.tsx",
+          "renderedBytes": 6423
+        },
+        {
+          "path": "src/data/database/index.ts",
+          "renderedBytes": 6384
+        },
+        {
+          "path": "src/store/selectors.ts",
+          "renderedBytes": 6369
+        },
+        {
+          "path": "src/features/database/databaseShared.tsx",
+          "renderedBytes": 6286
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/code.js",
+          "renderedBytes": 6084
+        },
+        {
+          "path": "src/data/database/progression/characterAscensionCosts.json",
+          "renderedBytes": 6051
+        },
+        {
+          "path": "src/domain/staticData/generalEnemyDropRegistry.ts",
+          "renderedBytes": 6020
+        },
+        {
+          "path": "node_modules/ajv/dist/compile/errors.js",
+          "renderedBytes": 5875
+        },
+        {
+          "path": "src/data/database/materials/talentBookFamilies.json",
+          "renderedBytes": 5787
+        },
+        {
+          "path": "src/domain/good/parseGood.ts",
+          "renderedBytes": 5692
+        },
+        {
+          "path": "node_modules/ajv/dist/compile/validate/keyword.js",
+          "renderedBytes": 5631
+        },
+        {
+          "path": "node_modules/zod/v3/locales/en.js",
+          "renderedBytes": 5483
+        },
+        {
+          "path": "node_modules/ajv/dist/compile/codegen/scope.js",
+          "renderedBytes": 5344
+        },
+        {
+          "path": "src/adapters/goodImport.ts",
+          "renderedBytes": 5324
+        },
+        {
+          "path": "src/features/inventory/InlineMaterialQuantityEditor.tsx",
+          "renderedBytes": 5201
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/core/ref.js",
+          "renderedBytes": 5109
+        },
+        {
+          "path": "src/features/planner/plannerFormatting.ts",
+          "renderedBytes": 5030
+        },
+        {
+          "path": "node_modules/ajv/dist/compile/resolve.js",
+          "renderedBytes": 4958
+        },
+        {
+          "path": "src/features/database/databaseCoverage.tsx",
+          "renderedBytes": 4901
+        },
+        {
+          "path": "node_modules/ajv/dist/compile/codegen/code.js",
+          "renderedBytes": 4886
+        },
+        {
+          "path": "src/domain/staticData/eliteEnemyDropRegistry.ts",
+          "renderedBytes": 4716
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/discriminator/index.js",
+          "renderedBytes": 4689
+        },
+        {
+          "path": "src/data/database/progression/talentLevelCosts.json",
+          "renderedBytes": 4644
+        },
+        {
+          "path": "src/domain/staticData/goodDiscoveries.ts",
+          "renderedBytes": 4631
+        },
+        {
+          "path": "src/domain/staticData/upstreamSchema.ts",
+          "renderedBytes": 4565
+        },
+        {
+          "path": "src/adapters/persistence.ts",
+          "renderedBytes": 4469
+        },
+        {
+          "path": "node_modules/scheduler/cjs/scheduler.production.min.js",
+          "renderedBytes": 4416
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/format/format.js",
+          "renderedBytes": 4304
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/applicator/additionalProperties.js",
+          "renderedBytes": 4252
+        },
+        {
+          "path": "node_modules/zod/v3/ZodError.js",
+          "renderedBytes": 4159
+        },
+        {
+          "path": "src/data/database/progression/legacyCharacterProgressions.json",
+          "renderedBytes": 4140
+        },
+        {
+          "path": "src/data/database/crafting/craftingUtilityPassives.json",
+          "renderedBytes": 4117
+        },
+        {
+          "path": "node_modules/zod/v3/helpers/util.js",
+          "renderedBytes": 4034
+        },
+        {
+          "path": "src/domain/staticData/buildDerivedStaticDataIndexes.ts",
+          "renderedBytes": 3987
+        },
+        {
+          "path": "src/domain/staticData/databaseEditor.ts",
+          "renderedBytes": 3850
+        },
+        {
+          "path": "src/data/database/sources/domainLootEstimates.json",
+          "renderedBytes": 3829
+        },
+        {
+          "path": "node_modules/ajv/dist/compile/validate/subschema.js",
+          "renderedBytes": 3820
+        },
+        {
+          "path": "src/features/accounts/AccountSwitcher.tsx",
+          "renderedBytes": 3775
+        },
+        {
+          "path": "src/data/database/sources/leyLineRewards.json",
+          "renderedBytes": 3686
+        },
+        {
+          "path": "src/domain/inventory/bulkInventory.ts",
+          "renderedBytes": 3679
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/applicator/contains.js",
+          "renderedBytes": 3632
+        },
+        {
+          "path": "src/domain/account/types.ts",
+          "renderedBytes": 3488
+        },
+        {
+          "path": "node_modules/zod/v3/helpers/parseUtil.js",
+          "renderedBytes": 3398
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/applicator/dependencies.js",
+          "renderedBytes": 3222
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/applicator/patternProperties.js",
+          "renderedBytes": 3133
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/validation/required.js",
+          "renderedBytes": 3122
+        },
+        {
+          "path": "src/domain/checklist/types.ts",
+          "renderedBytes": 3086
+        },
+        {
+          "path": "src/data/database/sources/resinActivities.json",
+          "renderedBytes": 2979
+        },
+        {
+          "path": "src/domain/staticData/travelerRegistry.ts",
+          "renderedBytes": 2978
+        },
+        {
+          "path": "node_modules/ajv/dist/2020.js",
+          "renderedBytes": 2944
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/validation/uniqueItems.js",
+          "renderedBytes": 2943
+        },
+        {
+          "path": "src/domain/staticData/plannerReadiness.ts",
+          "renderedBytes": 2879
+        },
+        {
+          "path": "src/domain/staticData/leyLineOutcropRegistry.ts",
+          "renderedBytes": 2818
+        },
+        {
+          "path": "src/domain/staticData/targetability.ts",
+          "renderedBytes": 2703
+        },
+        {
+          "path": "node_modules/use-sync-external-store/cjs/use-sync-external-store-shim/with-selector.production.js",
+          "renderedBytes": 2667
+        },
+        {
+          "path": "src/domain/goals/goalDisplay.ts",
+          "renderedBytes": 2660
+        },
+        {
+          "path": "src/app/navigationRegistry.tsx",
+          "renderedBytes": 2567
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/unevaluated/unevaluatedProperties.js",
+          "renderedBytes": 2538
+        },
+        {
+          "path": "node_modules/json-schema-traverse/index.js",
+          "renderedBytes": 2503
+        },
+        {
+          "path": "src/utils/days.ts",
+          "renderedBytes": 2479
+        },
+        {
+          "path": "src/data/database/progression/weaponExpItems.json",
+          "renderedBytes": 2396
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/applicator/if.js",
+          "renderedBytes": 2366
+        },
+        {
+          "path": "node_modules/ajv/dist/refs/json-schema-2020-12/schema.json",
+          "renderedBytes": 2302
+        },
+        {
+          "path": "src/data/database/characters/travelerProfile.json",
+          "renderedBytes": 2298
+        },
+        {
+          "path": "src/domain/staticData/entityIdentity.ts",
+          "renderedBytes": 2294
+        },
+        {
+          "path": "src/data/database/validation/databaseValidationRules.ts",
+          "renderedBytes": 2223
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/applicator/oneOf.js",
+          "renderedBytes": 2184
+        },
+        {
+          "path": "node_modules/ajv/dist/refs/json-schema-2020-12/meta/validation.json",
+          "renderedBytes": 2183
+        },
+        {
+          "path": "src/data/database/sources/leyLineNationCoverage.ts",
+          "renderedBytes": 2127
+        },
+        {
+          "path": "src/data/database/sources/leyLineOutcropLocations.ts",
+          "renderedBytes": 2118
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/applicator/properties.js",
+          "renderedBytes": 2059
+        },
+        {
+          "path": "src/data/database/materials/specialProgressionMaterials.json",
+          "renderedBytes": 2039
+        },
+        {
+          "path": "node_modules/use-sync-external-store/cjs/use-sync-external-store-shim.production.js",
+          "renderedBytes": 2011
+        },
+        {
+          "path": "src/adapters/gameDataTransport.ts",
+          "renderedBytes": 1917
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/dynamic/dynamicRef.js",
+          "renderedBytes": 1899
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/applicator/items.js",
+          "renderedBytes": 1897
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/applicator/additionalItems.js",
+          "renderedBytes": 1894
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/validation/enum.js",
+          "renderedBytes": 1808
+        },
+        {
+          "path": "src/data/database/materials/elementalGemFamilies.json",
+          "renderedBytes": 1682
+        },
+        {
+          "path": "src/store/persistenceHelpers.ts",
+          "renderedBytes": 1672
+        },
+        {
+          "path": "node_modules/ajv/dist/refs/json-schema-2020-12/meta/applicator.json",
+          "renderedBytes": 1578
+        },
+        {
+          "path": "src/domain/staticData/validateExactRequirements.ts",
+          "renderedBytes": 1562
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/unevaluated/unevaluatedItems.js",
+          "renderedBytes": 1534
+        },
+        {
+          "path": "node_modules/zustand/esm/index.mjs",
+          "renderedBytes": 1527
+        },
+        {
+          "path": "node_modules/ajv/dist/compile/validate/boolSchema.js",
+          "renderedBytes": 1465
+        },
+        {
+          "path": "node_modules/ajv/dist/refs/json-schema-2020-12/meta/core.json",
+          "renderedBytes": 1414
+        },
+        {
+          "path": "node_modules/ajv/dist/compile/names.js",
+          "renderedBytes": 1413
+        },
+        {
+          "path": "node_modules/zustand/esm/vanilla.mjs",
+          "renderedBytes": 1400
+        },
+        {
+          "path": "node_modules/ajv/dist/compile/validate/defaults.js",
+          "renderedBytes": 1390
+        },
+        {
+          "path": "src/adapters/gameDataProvider.ts",
+          "renderedBytes": 1358
+        },
+        {
+          "path": "src/domain/staticData/loadStaticData.ts",
+          "renderedBytes": 1302
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/applicator/index.js",
+          "renderedBytes": 1294
+        },
+        {
+          "path": "\u0000vite/modulepreload-polyfill.js",
+          "renderedBytes": 1280
+        },
+        {
+          "path": "src/domain/staticData/weaponProgressionRegistry.ts",
+          "renderedBytes": 1280
+        },
+        {
+          "path": "src/features/database/databaseConstants.ts",
+          "renderedBytes": 1258
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/validation/pattern.js",
+          "renderedBytes": 1246
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/dynamic/dynamicAnchor.js",
+          "renderedBytes": 1179
+        },
+        {
+          "path": "node_modules/fast-deep-equal/index.js",
+          "renderedBytes": 1164
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/applicator/propertyNames.js",
+          "renderedBytes": 1152
+        },
+        {
+          "path": "src/data/database/progression/legacyWeaponProgressions.json",
+          "renderedBytes": 1070
+        },
+        {
+          "path": "src/domain/goals/types.ts",
+          "renderedBytes": 1048
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/validation/limitLength.js",
+          "renderedBytes": 1046
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/validation/limitNumber.js",
+          "renderedBytes": 990
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/validation/multipleOf.js",
+          "renderedBytes": 978
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/applicator/items2020.js",
+          "renderedBytes": 945
+        },
+        {
+          "path": "node_modules/react/cjs/react-jsx-runtime.production.min.js",
+          "renderedBytes": 928
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/validation/index.js",
+          "renderedBytes": 876
+        },
+        {
+          "path": "node_modules/ajv/dist/compile/rules.js",
+          "renderedBytes": 860
+        },
+        {
+          "path": "node_modules/ajv/dist/refs/json-schema-2020-12/meta/meta-data.json",
+          "renderedBytes": 859
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/validation/limitProperties.js",
+          "renderedBytes": 856
+        },
+        {
+          "path": "node_modules/ajv/dist/compile/validate/applicability.js",
+          "renderedBytes": 839
+        },
+        {
+          "path": "node_modules/ajv/dist/refs/json-schema-2020-12/index.js",
+          "renderedBytes": 821
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/validation/limitItems.js",
+          "renderedBytes": 807
+        },
+        {
+          "path": "src/domain/staticData/resolveEffectiveCharacterMetadata.ts",
+          "renderedBytes": 789
+        },
+        {
+          "path": "node_modules/ajv/dist/runtime/ucs2length.js",
+          "renderedBytes": 765
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/validation/const.js",
+          "renderedBytes": 760
+        },
+        {
+          "path": "src/domain/progression/materialResolvers.ts",
+          "renderedBytes": 730
+        },
+        {
+          "path": "src/domain/save/types.ts",
+          "renderedBytes": 715
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/applicator/not.js",
+          "renderedBytes": 702
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/applicator/allOf.js",
+          "renderedBytes": 691
+        },
+        {
+          "path": "src/components/ErrorBoundary.tsx",
+          "renderedBytes": 688
+        },
+        {
+          "path": "node_modules/ajv/dist/refs/json-schema-2020-12/meta/content.json",
+          "renderedBytes": 679
+        },
+        {
+          "path": "node_modules/ajv/dist/refs/json-schema-2020-12/meta/unevaluated.json",
+          "renderedBytes": 675
+        },
+        {
+          "path": "src/App.tsx",
+          "renderedBytes": 662
+        },
+        {
+          "path": "node_modules/dexie/import-wrapper-prod.mjs",
+          "renderedBytes": 637
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/draft2020.js",
+          "renderedBytes": 626
+        },
+        {
+          "path": "node_modules/ajv/dist/refs/json-schema-2020-12/meta/format-annotation.json",
+          "renderedBytes": 625
+        },
+        {
+          "path": "examples/good.minimal.example.json",
+          "renderedBytes": 617
+        },
+        {
+          "path": "node_modules/ajv/dist/refs/data.json",
+          "renderedBytes": 613
+        },
+        {
+          "path": "src/utils/collections.ts",
+          "renderedBytes": 521
+        },
+        {
+          "path": "src/data/database/crafting/craftingPlannerDefaults.json",
+          "renderedBytes": 506
+        },
+        {
+          "path": "node_modules/ajv/dist/compile/ref_error.js",
+          "renderedBytes": 492
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/dynamic/recursiveAnchor.js",
+          "renderedBytes": 456
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/validation/limitContains.js",
+          "renderedBytes": 434
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/metadata.js",
+          "renderedBytes": 391
+        },
+        {
+          "path": "src/domain/staticData/upstreamTypes.ts",
+          "renderedBytes": 389
+        },
+        {
+          "path": "src/adapters/animeSchema.ts",
+          "renderedBytes": 389
+        },
+        {
+          "path": "node_modules/react-dom/index.js",
+          "renderedBytes": 381
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/applicator/thenElse.js",
+          "renderedBytes": 380
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/dynamic/index.js",
+          "renderedBytes": 365
+        },
+        {
+          "path": "src/utils/memoizeLast.ts",
+          "renderedBytes": 364
+        },
+        {
+          "path": "src/adapters/animeFarming.ts",
+          "renderedBytes": 352
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/validation/dependentRequired.js",
+          "renderedBytes": 348
+        },
+        {
+          "path": "\u0000commonjsHelpers.js",
+          "renderedBytes": 334
+        },
+        {
+          "path": "src/data/database/crafting/gemConversionDefaults.json",
+          "renderedBytes": 328
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/next.js",
+          "renderedBytes": 312
+        },
+        {
+          "path": "src/domain/progression/exactRequirements.ts",
+          "renderedBytes": 311
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/applicator/dependentSchemas.js",
+          "renderedBytes": 304
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/applicator/prefixItems.js",
+          "renderedBytes": 303
+        },
+        {
+          "path": "node_modules/ajv/dist/runtime/validation_error.js",
+          "renderedBytes": 296
+        },
+        {
+          "path": "node_modules/zod/v3/helpers/errorUtil.js",
+          "renderedBytes": 292
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/unevaluated/index.js",
+          "renderedBytes": 292
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/core/index.js",
+          "renderedBytes": 289
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/applicator/anyOf.js",
+          "renderedBytes": 281
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/dynamic/recursiveRef.js",
+          "renderedBytes": 277
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/discriminator/types.js",
+          "renderedBytes": 254
+        },
+        {
+          "path": "src/utils/stableIds.ts",
+          "renderedBytes": 239
+        },
+        {
+          "path": "node_modules/ajv/dist/runtime/equal.js",
+          "renderedBytes": 225
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/core/id.js",
+          "renderedBytes": 216
+        },
+        {
+          "path": "src/domain/planner/expandGoals.ts",
+          "renderedBytes": 203
+        },
+        {
+          "path": "node_modules/use-sync-external-store/shim/with-selector.js",
+          "renderedBytes": 197
+        },
+        {
+          "path": "src/main.tsx",
+          "renderedBytes": 183
+        },
+        {
+          "path": "node_modules/ajv/dist/runtime/uri.js",
+          "renderedBytes": 163
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/format/index.js",
+          "renderedBytes": 160
+        },
+        {
+          "path": "src/adapters/animeGameData2.ts",
+          "renderedBytes": 149
+        },
+        {
+          "path": "node_modules/react/index.js",
+          "renderedBytes": 146
+        },
+        {
+          "path": "node_modules/react/jsx-runtime.js",
+          "renderedBytes": 103
+        },
+        {
+          "path": "node_modules/react-dom/client.js",
+          "renderedBytes": 102
+        },
+        {
+          "path": "node_modules/scheduler/index.js",
+          "renderedBytes": 94
+        },
+        {
+          "path": "node_modules/use-sync-external-store/shim/index.js",
+          "renderedBytes": 94
+        },
+        {
+          "path": "node_modules/zod/v3/errors.js",
+          "renderedBytes": 88
+        },
+        {
+          "path": "src/domain/staticData/staticDataFactory.ts",
+          "renderedBytes": 82
+        },
+        {
+          "path": "\u0000node_modules/use-sync-external-store/cjs/use-sync-external-store-shim.production.js?commonjs-exports",
+          "renderedBytes": 45
+        },
+        {
+          "path": "\u0000node_modules/react/cjs/react-jsx-runtime.production.min.js?commonjs-exports",
+          "renderedBytes": 40
+        },
+        {
+          "path": "\u0000node_modules/json-schema-traverse/index.js?commonjs-module",
+          "renderedBytes": 39
+        },
+        {
+          "path": "\u0000node_modules/scheduler/cjs/scheduler.production.min.js?commonjs-exports",
+          "renderedBytes": 34
+        },
+        {
+          "path": "\u0000node_modules/react-dom/cjs/react-dom.production.min.js?commonjs-exports",
+          "renderedBytes": 33
+        },
+        {
+          "path": "\u0000node_modules/use-sync-external-store/shim/with-selector.js?commonjs-module",
+          "renderedBytes": 33
+        },
+        {
+          "path": "\u0000node_modules/use-sync-external-store/cjs/use-sync-external-store-shim/with-selector.production.js?commonjs-exports",
+          "renderedBytes": 33
+        },
+        {
+          "path": "src/data/database/progression/characterLevelExp.json",
+          "renderedBytes": 32
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/applicator/additionalProperties.js?commonjs-exports",
+          "renderedBytes": 32
+        },
+        {
+          "path": "\u0000node_modules/react/jsx-runtime.js?commonjs-module",
+          "renderedBytes": 31
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/unevaluated/unevaluatedProperties.js?commonjs-exports",
+          "renderedBytes": 31
+        },
+        {
+          "path": "\u0000node_modules/react/cjs/react.production.min.js?commonjs-exports",
+          "renderedBytes": 30
+        },
+        {
+          "path": "\u0000node_modules/scheduler/index.js?commonjs-module",
+          "renderedBytes": 30
+        },
+        {
+          "path": "\u0000node_modules/fast-uri/index.js?commonjs-module",
+          "renderedBytes": 30
+        },
+        {
+          "path": "\u0000node_modules/dexie/dist/dexie.min.js?commonjs-module",
+          "renderedBytes": 30
+        },
+        {
+          "path": "\u0000node_modules/react-dom/index.js?commonjs-module",
+          "renderedBytes": 29
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/applicator/patternProperties.js?commonjs-exports",
+          "renderedBytes": 27
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/validation/dependentRequired.js?commonjs-exports",
+          "renderedBytes": 27
+        },
+        {
+          "path": "\u0000node_modules/use-sync-external-store/shim/index.js?commonjs-module",
+          "renderedBytes": 27
+        },
+        {
+          "path": "\u0000node_modules/react/index.js?commonjs-module",
+          "renderedBytes": 26
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/2020.js?commonjs-module",
+          "renderedBytes": 26
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/runtime/validation_error.js?commonjs-exports",
+          "renderedBytes": 26
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/applicator/dependentSchemas.js?commonjs-exports",
+          "renderedBytes": 26
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/unevaluated/unevaluatedItems.js?commonjs-exports",
+          "renderedBytes": 26
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/refs/json-schema-2020-12/index.js?commonjs-exports",
+          "renderedBytes": 26
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/validation/limitProperties.js?commonjs-exports",
+          "renderedBytes": 25
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/applicator/additionalItems.js?commonjs-exports",
+          "renderedBytes": 25
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/dynamic/dynamicAnchor.js?commonjs-exports",
+          "renderedBytes": 25
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/dynamic/recursiveAnchor.js?commonjs-exports",
+          "renderedBytes": 25
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/compile/validate/applicability.js?commonjs-exports",
+          "renderedBytes": 23
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/applicator/propertyNames.js?commonjs-exports",
+          "renderedBytes": 23
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/validation/limitContains.js?commonjs-exports",
+          "renderedBytes": 23
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/unevaluated/index.js?commonjs-exports",
+          "renderedBytes": 23
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/discriminator/index.js?commonjs-exports",
+          "renderedBytes": 23
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/validation/index.js?commonjs-exports",
+          "renderedBytes": 22
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/runtime/ucs2length.js?commonjs-exports",
+          "renderedBytes": 22
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/applicator/index.js?commonjs-exports",
+          "renderedBytes": 22
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/applicator/dependencies.js?commonjs-exports",
+          "renderedBytes": 22
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/applicator/properties.js?commonjs-exports",
+          "renderedBytes": 22
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/dynamic/dynamicRef.js?commonjs-exports",
+          "renderedBytes": 22
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/dynamic/recursiveRef.js?commonjs-exports",
+          "renderedBytes": 22
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/validation/limitNumber.js?commonjs-exports",
+          "renderedBytes": 21
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/validation/limitLength.js?commonjs-exports",
+          "renderedBytes": 21
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/validation/uniqueItems.js?commonjs-exports",
+          "renderedBytes": 21
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/applicator/prefixItems.js?commonjs-exports",
+          "renderedBytes": 21
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/compile/validate/boolSchema.js?commonjs-exports",
+          "renderedBytes": 20
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/validation/multipleOf.js?commonjs-exports",
+          "renderedBytes": 20
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/validation/required.js?commonjs-exports",
+          "renderedBytes": 20
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/validation/limitItems.js?commonjs-exports",
+          "renderedBytes": 20
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/metadata.js?commonjs-exports",
+          "renderedBytes": 20
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/compile/validate/subschema.js?commonjs-exports",
+          "renderedBytes": 19
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/compile/resolve.js?commonjs-exports",
+          "renderedBytes": 19
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/compile/ref_error.js?commonjs-exports",
+          "renderedBytes": 19
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/draft2020.js?commonjs-exports",
+          "renderedBytes": 19
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/applicator/items2020.js?commonjs-exports",
+          "renderedBytes": 19
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/dynamic/index.js?commonjs-exports",
+          "renderedBytes": 19
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/compile/validate/index.js?commonjs-exports",
+          "renderedBytes": 18
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/compile/validate/dataType.js?commonjs-exports",
+          "renderedBytes": 18
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/compile/validate/defaults.js?commonjs-exports",
+          "renderedBytes": 18
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/applicator/contains.js?commonjs-exports",
+          "renderedBytes": 18
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/applicator/thenElse.js?commonjs-exports",
+          "renderedBytes": 18
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/format/index.js?commonjs-exports",
+          "renderedBytes": 18
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/format/format.js?commonjs-exports",
+          "renderedBytes": 18
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/compile/codegen/index.js?commonjs-exports",
+          "renderedBytes": 17
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/compile/names.js?commonjs-exports",
+          "renderedBytes": 17
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/compile/validate/keyword.js?commonjs-exports",
+          "renderedBytes": 17
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/compile/index.js?commonjs-exports",
+          "renderedBytes": 17
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/validation/pattern.js?commonjs-exports",
+          "renderedBytes": 17
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/runtime/equal.js?commonjs-exports",
+          "renderedBytes": 17
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/applicator/allOf.js?commonjs-exports",
+          "renderedBytes": 17
+        },
+        {
+          "path": "\u0000node_modules/react-dom/client.js?commonjs-exports",
+          "renderedBytes": 16
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/core.js?commonjs-exports",
+          "renderedBytes": 16
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/compile/errors.js?commonjs-exports",
+          "renderedBytes": 16
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/compile/codegen/code.js?commonjs-exports",
+          "renderedBytes": 16
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/core/index.js?commonjs-exports",
+          "renderedBytes": 16
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/validation/const.js?commonjs-exports",
+          "renderedBytes": 16
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/next.js?commonjs-exports",
+          "renderedBytes": 16
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/compile/codegen/scope.js?commonjs-exports",
+          "renderedBytes": 15
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/compile/rules.js?commonjs-exports",
+          "renderedBytes": 15
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/runtime/uri.js?commonjs-exports",
+          "renderedBytes": 15
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/validation/enum.js?commonjs-exports",
+          "renderedBytes": 15
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/applicator/items.js?commonjs-exports",
+          "renderedBytes": 15
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/applicator/anyOf.js?commonjs-exports",
+          "renderedBytes": 15
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/applicator/oneOf.js?commonjs-exports",
+          "renderedBytes": 15
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/discriminator/types.js?commonjs-exports",
+          "renderedBytes": 15
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/compile/util.js?commonjs-exports",
+          "renderedBytes": 14
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/code.js?commonjs-exports",
+          "renderedBytes": 14
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/core/ref.js?commonjs-exports",
+          "renderedBytes": 13
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/applicator/not.js?commonjs-exports",
+          "renderedBytes": 13
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/applicator/if.js?commonjs-exports",
+          "renderedBytes": 13
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/core/id.js?commonjs-exports",
+          "renderedBytes": 12
+        },
+        {
+          "path": "src/app/styles.css",
+          "renderedBytes": 0
+        },
+        {
+          "path": "index.html",
+          "renderedBytes": 0
+        }
+      ]
+    }
+  ],
+  "after": [
+    {
+      "file": "assets/index-D0dGHzy3.js",
+      "entry": true,
+      "bytes": 3050488,
+      "gzipBytes": 499313,
+      "modules": [
+        {
+          "path": "src/data/database/materials/materials.json",
+          "renderedBytes": 869412
+        },
+        {
+          "path": "data_sources/krumpanion_ley_line_outcrop_material_coverage.json",
+          "renderedBytes": 754268
+        },
+        {
+          "path": "src/data/database/crafting/recipes.json",
+          "renderedBytes": 149473
+        },
+        {
+          "path": "src/data/database/sources/materialSources.json",
+          "renderedBytes": 144478
+        },
+        {
+          "path": "node_modules/react-dom/cjs/react-dom.production.min.js",
+          "renderedBytes": 133299
+        },
+        {
+          "path": "node_modules/zod/v3/types.js",
+          "renderedBytes": 117286
+        },
+        {
+          "path": "src/data/database/weapons/weaponProfiles.json",
+          "renderedBytes": 108165
+        },
+        {
+          "path": "src/data/database/crafting/tieredMaterialIndex.json",
+          "renderedBytes": 103852
+        },
+        {
+          "path": "node_modules/dexie/dist/dexie.min.js",
+          "renderedBytes": 96900
+        },
+        {
+          "path": "src/data/database/characters/characterProfiles.json",
+          "renderedBytes": 95565
+        },
+        {
+          "path": "src/store/useAppStore.ts",
+          "renderedBytes": 92234
+        },
+        {
+          "path": "src/domain/staticData/databaseChangeSet.ts",
+          "renderedBytes": 70942
+        },
+        {
+          "path": "src/domain/staticData/validateStaticData.ts",
+          "renderedBytes": 70621
+        },
+        {
+          "path": "src/features/weapons/WeaponsTab.tsx",
+          "renderedBytes": 66327
+        },
+        {
+          "path": "src/data/database/sources/enemyRouteSources.json",
+          "renderedBytes": 56874
+        },
+        {
+          "path": "src/features/planner/PlannerTab.tsx",
+          "renderedBytes": 42751
+        },
+        {
+          "path": "src/domain/planner/buildFarmingEstimates.ts",
+          "renderedBytes": 41669
+        },
+        {
+          "path": "src/features/artifactGoals/ArtifactGoalsTab.tsx",
+          "renderedBytes": 35169
+        },
+        {
+          "path": "src/data/database/materials/commonEnemyDropFamilies.json",
+          "renderedBytes": 32977
+        },
+        {
+          "path": "src/features/crafting/CraftingTab.tsx",
+          "renderedBytes": 32620
+        },
+        {
+          "path": "src/features/inventory/InventoryTab.tsx",
+          "renderedBytes": 32223
+        },
+        {
+          "path": "schemas/save.schema.json",
+          "renderedBytes": 31456
+        },
+        {
+          "path": "src/features/planner/PlannerRecommendationCard.tsx",
+          "renderedBytes": 30914
+        },
+        {
+          "path": "src/domain/planner/buildLeyLineEnemyDropRecommendations.ts",
+          "renderedBytes": 30904
+        },
+        {
+          "path": "src/features/characters/CharactersTab.tsx",
+          "renderedBytes": 28716
+        },
+        {
+          "path": "src/domain/checklist/model.ts",
+          "renderedBytes": 28191
+        },
+        {
+          "path": "src/features/planner/plannerProgressionModel.ts",
+          "renderedBytes": 28081
+        },
+        {
+          "path": "src/domain/planner/buildPlannerReport.ts",
+          "renderedBytes": 27650
+        },
+        {
+          "path": "src/data/database/materials/eliteEnemyDropFamilies.json",
+          "renderedBytes": 27230
+        },
+        {
+          "path": "src/data/database/materials/weaponAscensionMaterialFamilies.json",
+          "renderedBytes": 26689
+        },
+        {
+          "path": "node_modules/ajv/dist/core.js",
+          "renderedBytes": 25597
+        },
+        {
+          "path": "src/data/database/artifacts/artifactDomains.json",
+          "renderedBytes": 24759
+        },
+        {
+          "path": "node_modules/ajv/dist/compile/codegen/index.js",
+          "renderedBytes": 23842
+        },
+        {
+          "path": "src/features/crafting/craftingWorkbenchModel.ts",
+          "renderedBytes": 23808
+        },
+        {
+          "path": "src/domain/crafting/resolveCraftingPlan.ts",
+          "renderedBytes": 21695
+        },
+        {
+          "path": "src/domain/planner/classifySources.ts",
+          "renderedBytes": 21505
+        },
+        {
+          "path": "src/domain/goals/goalState.ts",
+          "renderedBytes": 21077
+        },
+        {
+          "path": "src/domain/staticData/assembleBaseStaticData.ts",
+          "renderedBytes": 20849
+        },
+        {
+          "path": "node_modules/ajv/dist/compile/validate/index.js",
+          "renderedBytes": 20586
+        },
+        {
+          "path": "src/domain/staticData/overrideSchema.ts",
+          "renderedBytes": 20076
+        },
+        {
+          "path": "src/domain/planner/buildPlannerRows.ts",
+          "renderedBytes": 19566
+        },
+        {
+          "path": "src/data/database/materials/localSpecialties.json",
+          "renderedBytes": 19562
+        },
+        {
+          "path": "src/features/artifactGoals/artifactGoalsModel.ts",
+          "renderedBytes": 19494
+        },
+        {
+          "path": "src/features/planner/plannerUiModel.ts",
+          "renderedBytes": 18641
+        },
+        {
+          "path": "src/data/database/materials/weeklyBossMaterials.json",
+          "renderedBytes": 16485
+        },
+        {
+          "path": "src/domain/weapons/refinementTracker.ts",
+          "renderedBytes": 16404
+        },
+        {
+          "path": "src/features/checklist/ChecklistWorkspace.tsx",
+          "renderedBytes": 16036
+        },
+        {
+          "path": "src/data/database/validation/validateDatabase.ts",
+          "renderedBytes": 15900
+        },
+        {
+          "path": "src/domain/save/migrations.ts",
+          "renderedBytes": 15349
+        },
+        {
+          "path": "src/data/database/progression/weaponLevelExp.json",
+          "renderedBytes": 15103
+        },
+        {
+          "path": "src/data/database/sources/domainSchedule.json",
+          "renderedBytes": 14520
+        },
+        {
+          "path": "src/domain/progression/resolveCharacterProgression.ts",
+          "renderedBytes": 14388
+        },
+        {
+          "path": "src/data/database/materials/normalBossMaterials.json",
+          "renderedBytes": 14239
+        },
+        {
+          "path": "src/domain/staticData/normalizeStaticDataMaterialReferences.ts",
+          "renderedBytes": 14134
+        },
+        {
+          "path": "src/store/plannerTracking.ts",
+          "renderedBytes": 13945
+        },
+        {
+          "path": "src/features/importExport/SaveWorkspace.tsx",
+          "renderedBytes": 13860
+        },
+        {
+          "path": "src/features/home/HomeWorkspace.tsx",
+          "renderedBytes": 12995
+        },
+        {
+          "path": "src/domain/staticData/canonicalMaterialRegistry.ts",
+          "renderedBytes": 12629
+        },
+        {
+          "path": "src/domain/planner/calculateMissingMaterials.ts",
+          "renderedBytes": 12299
+        },
+        {
+          "path": "src/domain/staticData/applyOverridePack.ts",
+          "renderedBytes": 12159
+        },
+        {
+          "path": "src/domain/staticData/reconcileGameData.ts",
+          "renderedBytes": 11203
+        },
+        {
+          "path": "src/services/gameDataUpdates.ts",
+          "renderedBytes": 11039
+        },
+        {
+          "path": "node_modules/fast-uri/index.js",
+          "renderedBytes": 10496
+        },
+        {
+          "path": "src/data/database/sources/bossLootEstimates.json",
+          "renderedBytes": 10444
+        },
+        {
+          "path": "node_modules/ajv/dist/compile/index.js",
+          "renderedBytes": 9969
+        },
+        {
+          "path": "src/domain/planner/compareInventory.ts",
+          "renderedBytes": 9713
+        },
+        {
+          "path": "src/features/settings/SettingsWorkspace.tsx",
+          "renderedBytes": 9667
+        },
+        {
+          "path": "src/features/inventory/InventoryWorkspace.tsx",
+          "renderedBytes": 9662
+        },
+        {
+          "path": "schemas/goals.schema.json",
+          "renderedBytes": 9380
+        },
+        {
+          "path": "node_modules/ajv/dist/compile/validate/dataType.js",
+          "renderedBytes": 8402
+        },
+        {
+          "path": "node_modules/fast-uri/lib/utils.js",
+          "renderedBytes": 8159
+        },
+        {
+          "path": "src/features/settings/WarningsWorkspace.tsx",
+          "renderedBytes": 8062
+        },
+        {
+          "path": "node_modules/react/cjs/react.production.min.js",
+          "renderedBytes": 7656
+        },
+        {
+          "path": "src/domain/staticData/materialKeyMapping.ts",
+          "renderedBytes": 7646
+        },
+        {
+          "path": "src/domain/staticData/farmingConfiguration.ts",
+          "renderedBytes": 7252
+        },
+        {
+          "path": "src/app/AppShell.tsx",
+          "renderedBytes": 7048
+        },
+        {
+          "path": "node_modules/ajv/dist/compile/util.js",
+          "renderedBytes": 6973
+        },
+        {
+          "path": "src/domain/progression/resolveWeaponProgression.ts",
+          "renderedBytes": 6951
+        },
+        {
+          "path": "src/data/database/progression/weaponAscensionCosts.json",
+          "renderedBytes": 6874
+        },
+        {
+          "path": "node_modules/fast-uri/lib/schemes.js",
+          "renderedBytes": 6815
+        },
+        {
+          "path": "src/features/import/GoodImportPanel.tsx",
+          "renderedBytes": 6788
+        },
+        {
+          "path": "src/features/goals/GoalsWorkspace.tsx",
+          "renderedBytes": 6689
+        },
+        {
+          "path": "src/domain/staticData/reconcileFarming.ts",
+          "renderedBytes": 6629
+        },
+        {
+          "path": "src/app/layoutPrimitives.tsx",
+          "renderedBytes": 6423
+        },
+        {
+          "path": "src/data/database/index.ts",
+          "renderedBytes": 6384
+        },
+        {
+          "path": "src/store/selectors.ts",
+          "renderedBytes": 6369
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/code.js",
+          "renderedBytes": 6084
+        },
+        {
+          "path": "src/data/database/progression/characterAscensionCosts.json",
+          "renderedBytes": 6051
+        },
+        {
+          "path": "src/domain/staticData/generalEnemyDropRegistry.ts",
+          "renderedBytes": 6020
+        },
+        {
+          "path": "node_modules/ajv/dist/compile/errors.js",
+          "renderedBytes": 5875
+        },
+        {
+          "path": "src/data/database/materials/talentBookFamilies.json",
+          "renderedBytes": 5787
+        },
+        {
+          "path": "src/domain/good/parseGood.ts",
+          "renderedBytes": 5692
+        },
+        {
+          "path": "node_modules/ajv/dist/compile/validate/keyword.js",
+          "renderedBytes": 5631
+        },
+        {
+          "path": "node_modules/zod/v3/locales/en.js",
+          "renderedBytes": 5483
+        },
+        {
+          "path": "node_modules/ajv/dist/compile/codegen/scope.js",
+          "renderedBytes": 5344
+        },
+        {
+          "path": "src/adapters/goodImport.ts",
+          "renderedBytes": 5324
+        },
+        {
+          "path": "src/features/inventory/InlineMaterialQuantityEditor.tsx",
+          "renderedBytes": 5201
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/core/ref.js",
+          "renderedBytes": 5109
+        },
+        {
+          "path": "src/features/planner/plannerFormatting.ts",
+          "renderedBytes": 5030
+        },
+        {
+          "path": "node_modules/ajv/dist/compile/resolve.js",
+          "renderedBytes": 4958
+        },
+        {
+          "path": "node_modules/ajv/dist/compile/codegen/code.js",
+          "renderedBytes": 4886
+        },
+        {
+          "path": "src/domain/staticData/eliteEnemyDropRegistry.ts",
+          "renderedBytes": 4716
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/discriminator/index.js",
+          "renderedBytes": 4689
+        },
+        {
+          "path": "src/data/database/progression/talentLevelCosts.json",
+          "renderedBytes": 4644
+        },
+        {
+          "path": "src/domain/staticData/goodDiscoveries.ts",
+          "renderedBytes": 4631
+        },
+        {
+          "path": "src/domain/staticData/upstreamSchema.ts",
+          "renderedBytes": 4565
+        },
+        {
+          "path": "src/adapters/persistence.ts",
+          "renderedBytes": 4469
+        },
+        {
+          "path": "node_modules/scheduler/cjs/scheduler.production.min.js",
+          "renderedBytes": 4416
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/format/format.js",
+          "renderedBytes": 4304
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/applicator/additionalProperties.js",
+          "renderedBytes": 4252
+        },
+        {
+          "path": "node_modules/zod/v3/ZodError.js",
+          "renderedBytes": 4159
+        },
+        {
+          "path": "src/data/database/progression/legacyCharacterProgressions.json",
+          "renderedBytes": 4140
+        },
+        {
+          "path": "src/data/database/crafting/craftingUtilityPassives.json",
+          "renderedBytes": 4117
+        },
+        {
+          "path": "node_modules/zod/v3/helpers/util.js",
+          "renderedBytes": 4034
+        },
+        {
+          "path": "src/domain/staticData/buildDerivedStaticDataIndexes.ts",
+          "renderedBytes": 3987
+        },
+        {
+          "path": "src/domain/staticData/databaseEditor.ts",
+          "renderedBytes": 3850
+        },
+        {
+          "path": "src/data/database/sources/domainLootEstimates.json",
+          "renderedBytes": 3829
+        },
+        {
+          "path": "node_modules/ajv/dist/compile/validate/subschema.js",
+          "renderedBytes": 3820
+        },
+        {
+          "path": "src/features/accounts/AccountSwitcher.tsx",
+          "renderedBytes": 3775
+        },
+        {
+          "path": "src/data/database/sources/leyLineRewards.json",
+          "renderedBytes": 3686
+        },
+        {
+          "path": "src/domain/inventory/bulkInventory.ts",
+          "renderedBytes": 3679
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/applicator/contains.js",
+          "renderedBytes": 3632
+        },
+        {
+          "path": "src/domain/account/types.ts",
+          "renderedBytes": 3488
+        },
+        {
+          "path": "node_modules/zod/v3/helpers/parseUtil.js",
+          "renderedBytes": 3398
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/applicator/dependencies.js",
+          "renderedBytes": 3222
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/applicator/patternProperties.js",
+          "renderedBytes": 3133
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/validation/required.js",
+          "renderedBytes": 3122
+        },
+        {
+          "path": "src/domain/checklist/types.ts",
+          "renderedBytes": 3086
+        },
+        {
+          "path": "src/data/database/sources/resinActivities.json",
+          "renderedBytes": 2979
+        },
+        {
+          "path": "src/domain/staticData/travelerRegistry.ts",
+          "renderedBytes": 2978
+        },
+        {
+          "path": "node_modules/ajv/dist/2020.js",
+          "renderedBytes": 2944
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/validation/uniqueItems.js",
+          "renderedBytes": 2943
+        },
+        {
+          "path": "src/domain/staticData/plannerReadiness.ts",
+          "renderedBytes": 2879
+        },
+        {
+          "path": "src/domain/staticData/leyLineOutcropRegistry.ts",
+          "renderedBytes": 2818
+        },
+        {
+          "path": "src/app/navigationRegistry.tsx",
+          "renderedBytes": 2765
+        },
+        {
+          "path": "src/domain/staticData/targetability.ts",
+          "renderedBytes": 2703
+        },
+        {
+          "path": "node_modules/use-sync-external-store/cjs/use-sync-external-store-shim/with-selector.production.js",
+          "renderedBytes": 2667
+        },
+        {
+          "path": "src/domain/goals/goalDisplay.ts",
+          "renderedBytes": 2660
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/unevaluated/unevaluatedProperties.js",
+          "renderedBytes": 2538
+        },
+        {
+          "path": "node_modules/json-schema-traverse/index.js",
+          "renderedBytes": 2503
+        },
+        {
+          "path": "src/utils/days.ts",
+          "renderedBytes": 2479
+        },
+        {
+          "path": "src/data/database/progression/weaponExpItems.json",
+          "renderedBytes": 2396
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/applicator/if.js",
+          "renderedBytes": 2366
+        },
+        {
+          "path": "node_modules/ajv/dist/refs/json-schema-2020-12/schema.json",
+          "renderedBytes": 2302
+        },
+        {
+          "path": "src/data/database/characters/travelerProfile.json",
+          "renderedBytes": 2298
+        },
+        {
+          "path": "src/domain/staticData/entityIdentity.ts",
+          "renderedBytes": 2294
+        },
+        {
+          "path": "src/data/database/validation/databaseValidationRules.ts",
+          "renderedBytes": 2223
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/applicator/oneOf.js",
+          "renderedBytes": 2184
+        },
+        {
+          "path": "node_modules/ajv/dist/refs/json-schema-2020-12/meta/validation.json",
+          "renderedBytes": 2183
+        },
+        {
+          "path": "src/data/database/sources/leyLineNationCoverage.ts",
+          "renderedBytes": 2123
+        },
+        {
+          "path": "src/data/database/sources/leyLineOutcropLocations.ts",
+          "renderedBytes": 2118
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/applicator/properties.js",
+          "renderedBytes": 2059
+        },
+        {
+          "path": "src/data/database/materials/specialProgressionMaterials.json",
+          "renderedBytes": 2039
+        },
+        {
+          "path": "node_modules/use-sync-external-store/cjs/use-sync-external-store-shim.production.js",
+          "renderedBytes": 2011
+        },
+        {
+          "path": "\u0000vite/preload-helper.js",
+          "renderedBytes": 1928
+        },
+        {
+          "path": "src/adapters/gameDataTransport.ts",
+          "renderedBytes": 1917
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/dynamic/dynamicRef.js",
+          "renderedBytes": 1899
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/applicator/items.js",
+          "renderedBytes": 1897
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/applicator/additionalItems.js",
+          "renderedBytes": 1894
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/validation/enum.js",
+          "renderedBytes": 1808
+        },
+        {
+          "path": "src/data/database/materials/elementalGemFamilies.json",
+          "renderedBytes": 1682
+        },
+        {
+          "path": "src/store/persistenceHelpers.ts",
+          "renderedBytes": 1672
+        },
+        {
+          "path": "node_modules/ajv/dist/refs/json-schema-2020-12/meta/applicator.json",
+          "renderedBytes": 1578
+        },
+        {
+          "path": "src/domain/staticData/validateExactRequirements.ts",
+          "renderedBytes": 1562
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/unevaluated/unevaluatedItems.js",
+          "renderedBytes": 1534
+        },
+        {
+          "path": "node_modules/zustand/esm/index.mjs",
+          "renderedBytes": 1527
+        },
+        {
+          "path": "node_modules/ajv/dist/compile/validate/boolSchema.js",
+          "renderedBytes": 1465
+        },
+        {
+          "path": "node_modules/ajv/dist/refs/json-schema-2020-12/meta/core.json",
+          "renderedBytes": 1414
+        },
+        {
+          "path": "node_modules/ajv/dist/compile/names.js",
+          "renderedBytes": 1413
+        },
+        {
+          "path": "node_modules/zustand/esm/vanilla.mjs",
+          "renderedBytes": 1400
+        },
+        {
+          "path": "node_modules/ajv/dist/compile/validate/defaults.js",
+          "renderedBytes": 1390
+        },
+        {
+          "path": "src/adapters/gameDataProvider.ts",
+          "renderedBytes": 1358
+        },
+        {
+          "path": "src/domain/staticData/loadStaticData.ts",
+          "renderedBytes": 1302
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/applicator/index.js",
+          "renderedBytes": 1294
+        },
+        {
+          "path": "\u0000vite/modulepreload-polyfill.js",
+          "renderedBytes": 1280
+        },
+        {
+          "path": "src/domain/staticData/weaponProgressionRegistry.ts",
+          "renderedBytes": 1280
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/validation/pattern.js",
+          "renderedBytes": 1246
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/dynamic/dynamicAnchor.js",
+          "renderedBytes": 1179
+        },
+        {
+          "path": "node_modules/fast-deep-equal/index.js",
+          "renderedBytes": 1164
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/applicator/propertyNames.js",
+          "renderedBytes": 1152
+        },
+        {
+          "path": "src/data/database/progression/legacyWeaponProgressions.json",
+          "renderedBytes": 1070
+        },
+        {
+          "path": "src/domain/goals/types.ts",
+          "renderedBytes": 1048
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/validation/limitLength.js",
+          "renderedBytes": 1046
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/validation/limitNumber.js",
+          "renderedBytes": 990
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/validation/multipleOf.js",
+          "renderedBytes": 978
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/applicator/items2020.js",
+          "renderedBytes": 945
+        },
+        {
+          "path": "node_modules/react/cjs/react-jsx-runtime.production.min.js",
+          "renderedBytes": 928
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/validation/index.js",
+          "renderedBytes": 876
+        },
+        {
+          "path": "node_modules/ajv/dist/compile/rules.js",
+          "renderedBytes": 860
+        },
+        {
+          "path": "node_modules/ajv/dist/refs/json-schema-2020-12/meta/meta-data.json",
+          "renderedBytes": 859
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/validation/limitProperties.js",
+          "renderedBytes": 856
+        },
+        {
+          "path": "node_modules/ajv/dist/compile/validate/applicability.js",
+          "renderedBytes": 839
+        },
+        {
+          "path": "node_modules/ajv/dist/refs/json-schema-2020-12/index.js",
+          "renderedBytes": 821
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/validation/limitItems.js",
+          "renderedBytes": 807
+        },
+        {
+          "path": "src/domain/staticData/resolveEffectiveCharacterMetadata.ts",
+          "renderedBytes": 789
+        },
+        {
+          "path": "node_modules/ajv/dist/runtime/ucs2length.js",
+          "renderedBytes": 765
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/validation/const.js",
+          "renderedBytes": 760
+        },
+        {
+          "path": "src/domain/progression/materialResolvers.ts",
+          "renderedBytes": 730
+        },
+        {
+          "path": "src/domain/save/types.ts",
+          "renderedBytes": 715
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/applicator/not.js",
+          "renderedBytes": 702
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/applicator/allOf.js",
+          "renderedBytes": 691
+        },
+        {
+          "path": "src/components/ErrorBoundary.tsx",
+          "renderedBytes": 688
+        },
+        {
+          "path": "node_modules/ajv/dist/refs/json-schema-2020-12/meta/content.json",
+          "renderedBytes": 679
+        },
+        {
+          "path": "node_modules/ajv/dist/refs/json-schema-2020-12/meta/unevaluated.json",
+          "renderedBytes": 675
+        },
+        {
+          "path": "src/App.tsx",
+          "renderedBytes": 662
+        },
+        {
+          "path": "node_modules/dexie/import-wrapper-prod.mjs",
+          "renderedBytes": 637
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/draft2020.js",
+          "renderedBytes": 626
+        },
+        {
+          "path": "node_modules/ajv/dist/refs/json-schema-2020-12/meta/format-annotation.json",
+          "renderedBytes": 625
+        },
+        {
+          "path": "examples/good.minimal.example.json",
+          "renderedBytes": 617
+        },
+        {
+          "path": "node_modules/ajv/dist/refs/data.json",
+          "renderedBytes": 613
+        },
+        {
+          "path": "src/utils/collections.ts",
+          "renderedBytes": 521
+        },
+        {
+          "path": "src/data/database/crafting/craftingPlannerDefaults.json",
+          "renderedBytes": 506
+        },
+        {
+          "path": "node_modules/ajv/dist/compile/ref_error.js",
+          "renderedBytes": 492
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/dynamic/recursiveAnchor.js",
+          "renderedBytes": 456
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/validation/limitContains.js",
+          "renderedBytes": 434
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/metadata.js",
+          "renderedBytes": 391
+        },
+        {
+          "path": "src/domain/staticData/upstreamTypes.ts",
+          "renderedBytes": 389
+        },
+        {
+          "path": "src/adapters/animeSchema.ts",
+          "renderedBytes": 389
+        },
+        {
+          "path": "node_modules/react-dom/index.js",
+          "renderedBytes": 381
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/applicator/thenElse.js",
+          "renderedBytes": 380
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/dynamic/index.js",
+          "renderedBytes": 365
+        },
+        {
+          "path": "src/utils/memoizeLast.ts",
+          "renderedBytes": 364
+        },
+        {
+          "path": "src/adapters/animeFarming.ts",
+          "renderedBytes": 352
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/validation/dependentRequired.js",
+          "renderedBytes": 348
+        },
+        {
+          "path": "\u0000commonjsHelpers.js",
+          "renderedBytes": 334
+        },
+        {
+          "path": "src/data/database/crafting/gemConversionDefaults.json",
+          "renderedBytes": 328
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/next.js",
+          "renderedBytes": 312
+        },
+        {
+          "path": "src/domain/progression/exactRequirements.ts",
+          "renderedBytes": 311
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/applicator/dependentSchemas.js",
+          "renderedBytes": 304
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/applicator/prefixItems.js",
+          "renderedBytes": 303
+        },
+        {
+          "path": "node_modules/ajv/dist/runtime/validation_error.js",
+          "renderedBytes": 296
+        },
+        {
+          "path": "node_modules/zod/v3/helpers/errorUtil.js",
+          "renderedBytes": 292
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/unevaluated/index.js",
+          "renderedBytes": 292
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/core/index.js",
+          "renderedBytes": 289
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/applicator/anyOf.js",
+          "renderedBytes": 281
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/dynamic/recursiveRef.js",
+          "renderedBytes": 277
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/discriminator/types.js",
+          "renderedBytes": 254
+        },
+        {
+          "path": "src/utils/stableIds.ts",
+          "renderedBytes": 239
+        },
+        {
+          "path": "node_modules/ajv/dist/runtime/equal.js",
+          "renderedBytes": 225
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/core/id.js",
+          "renderedBytes": 216
+        },
+        {
+          "path": "src/domain/planner/expandGoals.ts",
+          "renderedBytes": 203
+        },
+        {
+          "path": "node_modules/use-sync-external-store/shim/with-selector.js",
+          "renderedBytes": 197
+        },
+        {
+          "path": "src/main.tsx",
+          "renderedBytes": 183
+        },
+        {
+          "path": "node_modules/ajv/dist/runtime/uri.js",
+          "renderedBytes": 163
+        },
+        {
+          "path": "node_modules/ajv/dist/vocabularies/format/index.js",
+          "renderedBytes": 160
+        },
+        {
+          "path": "src/adapters/animeGameData2.ts",
+          "renderedBytes": 149
+        },
+        {
+          "path": "node_modules/react/index.js",
+          "renderedBytes": 146
+        },
+        {
+          "path": "node_modules/react/jsx-runtime.js",
+          "renderedBytes": 103
+        },
+        {
+          "path": "node_modules/react-dom/client.js",
+          "renderedBytes": 102
+        },
+        {
+          "path": "node_modules/scheduler/index.js",
+          "renderedBytes": 94
+        },
+        {
+          "path": "node_modules/use-sync-external-store/shim/index.js",
+          "renderedBytes": 94
+        },
+        {
+          "path": "node_modules/zod/v3/errors.js",
+          "renderedBytes": 88
+        },
+        {
+          "path": "src/domain/staticData/staticDataFactory.ts",
+          "renderedBytes": 82
+        },
+        {
+          "path": "\u0000node_modules/use-sync-external-store/cjs/use-sync-external-store-shim.production.js?commonjs-exports",
+          "renderedBytes": 45
+        },
+        {
+          "path": "\u0000node_modules/react/cjs/react-jsx-runtime.production.min.js?commonjs-exports",
+          "renderedBytes": 40
+        },
+        {
+          "path": "\u0000node_modules/json-schema-traverse/index.js?commonjs-module",
+          "renderedBytes": 39
+        },
+        {
+          "path": "\u0000node_modules/scheduler/cjs/scheduler.production.min.js?commonjs-exports",
+          "renderedBytes": 34
+        },
+        {
+          "path": "\u0000node_modules/react-dom/cjs/react-dom.production.min.js?commonjs-exports",
+          "renderedBytes": 33
+        },
+        {
+          "path": "\u0000node_modules/use-sync-external-store/shim/with-selector.js?commonjs-module",
+          "renderedBytes": 33
+        },
+        {
+          "path": "\u0000node_modules/use-sync-external-store/cjs/use-sync-external-store-shim/with-selector.production.js?commonjs-exports",
+          "renderedBytes": 33
+        },
+        {
+          "path": "src/data/database/progression/characterLevelExp.json",
+          "renderedBytes": 32
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/applicator/additionalProperties.js?commonjs-exports",
+          "renderedBytes": 32
+        },
+        {
+          "path": "\u0000node_modules/react/jsx-runtime.js?commonjs-module",
+          "renderedBytes": 31
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/unevaluated/unevaluatedProperties.js?commonjs-exports",
+          "renderedBytes": 31
+        },
+        {
+          "path": "\u0000node_modules/react/cjs/react.production.min.js?commonjs-exports",
+          "renderedBytes": 30
+        },
+        {
+          "path": "\u0000node_modules/scheduler/index.js?commonjs-module",
+          "renderedBytes": 30
+        },
+        {
+          "path": "\u0000node_modules/fast-uri/index.js?commonjs-module",
+          "renderedBytes": 30
+        },
+        {
+          "path": "\u0000node_modules/dexie/dist/dexie.min.js?commonjs-module",
+          "renderedBytes": 30
+        },
+        {
+          "path": "\u0000node_modules/react-dom/index.js?commonjs-module",
+          "renderedBytes": 29
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/applicator/patternProperties.js?commonjs-exports",
+          "renderedBytes": 27
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/validation/dependentRequired.js?commonjs-exports",
+          "renderedBytes": 27
+        },
+        {
+          "path": "\u0000node_modules/use-sync-external-store/shim/index.js?commonjs-module",
+          "renderedBytes": 27
+        },
+        {
+          "path": "\u0000node_modules/react/index.js?commonjs-module",
+          "renderedBytes": 26
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/2020.js?commonjs-module",
+          "renderedBytes": 26
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/runtime/validation_error.js?commonjs-exports",
+          "renderedBytes": 26
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/applicator/dependentSchemas.js?commonjs-exports",
+          "renderedBytes": 26
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/unevaluated/unevaluatedItems.js?commonjs-exports",
+          "renderedBytes": 26
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/refs/json-schema-2020-12/index.js?commonjs-exports",
+          "renderedBytes": 26
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/validation/limitProperties.js?commonjs-exports",
+          "renderedBytes": 25
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/applicator/additionalItems.js?commonjs-exports",
+          "renderedBytes": 25
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/dynamic/dynamicAnchor.js?commonjs-exports",
+          "renderedBytes": 25
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/dynamic/recursiveAnchor.js?commonjs-exports",
+          "renderedBytes": 25
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/compile/validate/applicability.js?commonjs-exports",
+          "renderedBytes": 23
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/applicator/propertyNames.js?commonjs-exports",
+          "renderedBytes": 23
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/validation/limitContains.js?commonjs-exports",
+          "renderedBytes": 23
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/unevaluated/index.js?commonjs-exports",
+          "renderedBytes": 23
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/discriminator/index.js?commonjs-exports",
+          "renderedBytes": 23
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/validation/index.js?commonjs-exports",
+          "renderedBytes": 22
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/runtime/ucs2length.js?commonjs-exports",
+          "renderedBytes": 22
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/applicator/index.js?commonjs-exports",
+          "renderedBytes": 22
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/applicator/dependencies.js?commonjs-exports",
+          "renderedBytes": 22
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/applicator/properties.js?commonjs-exports",
+          "renderedBytes": 22
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/dynamic/dynamicRef.js?commonjs-exports",
+          "renderedBytes": 22
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/dynamic/recursiveRef.js?commonjs-exports",
+          "renderedBytes": 22
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/validation/limitNumber.js?commonjs-exports",
+          "renderedBytes": 21
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/validation/limitLength.js?commonjs-exports",
+          "renderedBytes": 21
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/validation/uniqueItems.js?commonjs-exports",
+          "renderedBytes": 21
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/applicator/prefixItems.js?commonjs-exports",
+          "renderedBytes": 21
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/compile/validate/boolSchema.js?commonjs-exports",
+          "renderedBytes": 20
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/validation/multipleOf.js?commonjs-exports",
+          "renderedBytes": 20
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/validation/required.js?commonjs-exports",
+          "renderedBytes": 20
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/validation/limitItems.js?commonjs-exports",
+          "renderedBytes": 20
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/metadata.js?commonjs-exports",
+          "renderedBytes": 20
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/compile/validate/subschema.js?commonjs-exports",
+          "renderedBytes": 19
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/compile/resolve.js?commonjs-exports",
+          "renderedBytes": 19
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/compile/ref_error.js?commonjs-exports",
+          "renderedBytes": 19
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/draft2020.js?commonjs-exports",
+          "renderedBytes": 19
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/applicator/items2020.js?commonjs-exports",
+          "renderedBytes": 19
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/dynamic/index.js?commonjs-exports",
+          "renderedBytes": 19
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/compile/validate/index.js?commonjs-exports",
+          "renderedBytes": 18
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/compile/validate/dataType.js?commonjs-exports",
+          "renderedBytes": 18
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/compile/validate/defaults.js?commonjs-exports",
+          "renderedBytes": 18
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/applicator/contains.js?commonjs-exports",
+          "renderedBytes": 18
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/applicator/thenElse.js?commonjs-exports",
+          "renderedBytes": 18
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/format/index.js?commonjs-exports",
+          "renderedBytes": 18
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/format/format.js?commonjs-exports",
+          "renderedBytes": 18
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/compile/codegen/index.js?commonjs-exports",
+          "renderedBytes": 17
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/compile/names.js?commonjs-exports",
+          "renderedBytes": 17
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/compile/validate/keyword.js?commonjs-exports",
+          "renderedBytes": 17
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/compile/index.js?commonjs-exports",
+          "renderedBytes": 17
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/validation/pattern.js?commonjs-exports",
+          "renderedBytes": 17
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/runtime/equal.js?commonjs-exports",
+          "renderedBytes": 17
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/applicator/allOf.js?commonjs-exports",
+          "renderedBytes": 17
+        },
+        {
+          "path": "\u0000node_modules/react-dom/client.js?commonjs-exports",
+          "renderedBytes": 16
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/core.js?commonjs-exports",
+          "renderedBytes": 16
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/compile/errors.js?commonjs-exports",
+          "renderedBytes": 16
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/compile/codegen/code.js?commonjs-exports",
+          "renderedBytes": 16
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/core/index.js?commonjs-exports",
+          "renderedBytes": 16
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/validation/const.js?commonjs-exports",
+          "renderedBytes": 16
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/next.js?commonjs-exports",
+          "renderedBytes": 16
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/compile/codegen/scope.js?commonjs-exports",
+          "renderedBytes": 15
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/compile/rules.js?commonjs-exports",
+          "renderedBytes": 15
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/runtime/uri.js?commonjs-exports",
+          "renderedBytes": 15
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/validation/enum.js?commonjs-exports",
+          "renderedBytes": 15
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/applicator/items.js?commonjs-exports",
+          "renderedBytes": 15
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/applicator/anyOf.js?commonjs-exports",
+          "renderedBytes": 15
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/applicator/oneOf.js?commonjs-exports",
+          "renderedBytes": 15
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/discriminator/types.js?commonjs-exports",
+          "renderedBytes": 15
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/compile/util.js?commonjs-exports",
+          "renderedBytes": 14
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/code.js?commonjs-exports",
+          "renderedBytes": 14
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/core/ref.js?commonjs-exports",
+          "renderedBytes": 13
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/applicator/not.js?commonjs-exports",
+          "renderedBytes": 13
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/applicator/if.js?commonjs-exports",
+          "renderedBytes": 13
+        },
+        {
+          "path": "\u0000node_modules/ajv/dist/vocabularies/core/id.js?commonjs-exports",
+          "renderedBytes": 12
+        },
+        {
+          "path": "src/app/styles.css",
+          "renderedBytes": 0
+        },
+        {
+          "path": "index.html",
+          "renderedBytes": 0
+        }
+      ]
+    },
+    {
+      "file": "assets/DatabaseTab-SmDBBGPA.js",
+      "entry": false,
+      "bytes": 220471,
+      "gzipBytes": 47163,
+      "modules": [
+        {
+          "path": "src/features/database/DatabaseWorkbench.tsx",
+          "renderedBytes": 136731
+        },
+        {
+          "path": "src/features/database/DatabaseTab.tsx",
+          "renderedBytes": 131272
+        },
+        {
+          "path": "src/features/database/dataHealthModel.ts",
+          "renderedBytes": 26122
+        },
+        {
+          "path": "src/features/database/GameDataUpdateCenter.tsx",
+          "renderedBytes": 25109
+        },
+        {
+          "path": "src/features/database/databaseModel.ts",
+          "renderedBytes": 23068
+        },
+        {
+          "path": "src/features/database/databaseGuidedEditors.tsx",
+          "renderedBytes": 16056
+        },
+        {
+          "path": "src/features/database/databaseProfileHelpers.ts",
+          "renderedBytes": 14677
+        },
+        {
+          "path": "src/features/database/DataHealthCenter.tsx",
+          "renderedBytes": 14555
+        },
+        {
+          "path": "src/features/database/DatabaseWorkspaceShell.tsx",
+          "renderedBytes": 9390
+        },
+        {
+          "path": "src/features/database/patchManifestRecordsModel.ts",
+          "renderedBytes": 8105
+        },
+        {
+          "path": "src/features/database/patchManifestResolver.ts",
+          "renderedBytes": 7892
+        },
+        {
+          "path": "src/features/database/databaseShared.tsx",
+          "renderedBytes": 6286
+        },
+        {
+          "path": "src/features/database/databaseCoverage.tsx",
+          "renderedBytes": 4901
+        },
+        {
+          "path": "src/features/database/databaseConstants.ts",
+          "renderedBytes": 1258
+        }
+      ]
+    }
+  ]
+}

@@ -10,73 +10,125 @@
     "updatedAt",
     "user",
     "settings",
-    "overridePack"
+    "overridePack",
+    "gameDataUpdates"
   ],
   "properties": {
-    "schemaVersion": { "const": 13 },
-    "appVersion": { "type": "string" },
-    "createdAt": { "type": "string" },
-    "updatedAt": { "type": "string" },
+    "schemaVersion": {
+      "const": 15
+    },
+    "appVersion": {
+      "type": "string"
+    },
+    "createdAt": {
+      "type": "string"
+    },
+    "updatedAt": {
+      "type": "string"
+    },
     "user": {
       "type": "object",
-      "required": ["schemaVersion", "activeAccountId", "accountsById", "accountOrder"],
+      "required": [
+        "schemaVersion",
+        "activeAccountId",
+        "accountsById",
+        "accountOrder"
+      ],
       "properties": {
-        "schemaVersion": { "const": 1 },
-        "activeAccountId": { "type": "string" },
+        "schemaVersion": {
+          "const": 1
+        },
+        "activeAccountId": {
+          "type": "string"
+        },
         "accountsById": {
           "type": "object",
           "additionalProperties": {
             "type": "object",
-              "required": [
-                "id",
-                "name",
-                "createdAt",
-                "updatedAt",
-                "metadata",
-                "importMeta",
-                "characters",
-                "weapons",
-                "artifacts",
-                "inventory",
-                "importedInventory",
-                "warnings",
-                "goals",
-                "plannerSettings",
-                "checklist",
-                "worldState",
-                "importState",
-                "plannerStatus",
-                "goalProgressTracking",
-                "goalMilestones",
-                "recentChanges",
-                "recentImports"
-              ],
+            "required": [
+              "id",
+              "name",
+              "createdAt",
+              "updatedAt",
+              "metadata",
+              "importMeta",
+              "characters",
+              "weapons",
+              "artifacts",
+              "inventory",
+              "importedInventory",
+              "warnings",
+              "goals",
+              "plannerSettings",
+              "checklist",
+              "worldState",
+              "importState",
+              "plannerStatus",
+              "goalProgressTracking",
+              "goalMilestones",
+              "recentChanges",
+              "recentImports"
+            ],
             "properties": {
-              "id": { "type": "string" },
-              "name": { "type": "string" },
-              "createdAt": { "type": "string" },
-              "updatedAt": { "type": "string" },
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "createdAt": {
+                "type": "string"
+              },
+              "updatedAt": {
+                "type": "string"
+              },
               "metadata": {
                 "type": "object",
                 "properties": {
-                  "description": { "type": "string" },
-                  "serverRegion": { "type": "string" },
-                  "travelerName": { "type": "string" },
-                  "uid": { "type": "string" },
-                  "lastOpenedAt": { "type": "string" },
-                  "color": { "type": "string" },
-                  "iconCharacterKey": { "type": "string" }
+                  "description": {
+                    "type": "string"
+                  },
+                  "serverRegion": {
+                    "type": "string"
+                  },
+                  "travelerName": {
+                    "type": "string"
+                  },
+                  "uid": {
+                    "type": "string"
+                  },
+                  "lastOpenedAt": {
+                    "type": "string"
+                  },
+                  "color": {
+                    "type": "string"
+                  },
+                  "iconCharacterKey": {
+                    "type": "string"
+                  }
                 },
                 "additionalProperties": false
               },
               "importMeta": {
                 "type": "object",
-                "required": ["format", "version", "importedAt"],
+                "required": [
+                  "format",
+                  "version",
+                  "importedAt"
+                ],
                 "properties": {
-                  "format": { "type": "string" },
-                  "version": { "type": "integer" },
-                  "source": { "type": "string" },
-                  "importedAt": { "type": "string" }
+                  "format": {
+                    "type": "string"
+                  },
+                  "version": {
+                    "type": "integer"
+                  },
+                  "source": {
+                    "type": "string"
+                  },
+                  "importedAt": {
+                    "type": "string"
+                  }
                 },
                 "additionalProperties": false
               },
@@ -84,20 +136,45 @@
                 "type": "array",
                 "items": {
                   "type": "object",
-                  "required": ["characterId", "currentLevel", "currentAscension", "currentTalents"],
+                  "required": [
+                    "characterId",
+                    "currentLevel",
+                    "currentAscension",
+                    "currentTalents"
+                  ],
                   "properties": {
-                    "characterId": { "type": "string" },
-                    "currentLevel": { "type": "integer" },
-                    "currentAscension": { "type": "integer" },
-                    "constellation": { "type": "integer" },
-                    "enabled": { "type": "boolean" },
+                    "characterId": {
+                      "type": "string"
+                    },
+                    "currentLevel": {
+                      "type": "integer"
+                    },
+                    "currentAscension": {
+                      "type": "integer"
+                    },
+                    "constellation": {
+                      "type": "integer"
+                    },
+                    "enabled": {
+                      "type": "boolean"
+                    },
                     "currentTalents": {
                       "type": "object",
-                      "required": ["normal", "skill", "burst"],
+                      "required": [
+                        "normal",
+                        "skill",
+                        "burst"
+                      ],
                       "properties": {
-                        "normal": { "type": "integer" },
-                        "skill": { "type": "integer" },
-                        "burst": { "type": "integer" }
+                        "normal": {
+                          "type": "integer"
+                        },
+                        "skill": {
+                          "type": "integer"
+                        },
+                        "burst": {
+                          "type": "integer"
+                        }
                       },
                       "additionalProperties": false
                     }
@@ -109,24 +186,82 @@
                 "type": "array",
                 "items": {
                   "type": "object",
-                  "required": ["weaponInstanceId", "weaponKey", "currentLevel", "currentAscension"],
+                  "required": [
+                    "weaponInstanceId",
+                    "weaponKey",
+                    "currentLevel",
+                    "currentAscension"
+                  ],
                   "properties": {
-                    "weaponInstanceId": { "type": "string" },
-                    "weaponKey": { "type": "string" },
-                    "accountId": { "type": "string" },
-                    "weaponId": { "type": ["string", "null"] },
-                    "importName": { "type": ["string", "null"] },
-                    "importedName": { "type": ["string", "null"] },
-                    "importSourceId": { "type": ["string", "null"] },
-                    "currentLevel": { "type": "integer" },
-                    "currentAscension": { "type": "integer" },
-                    "refinement": { "type": "integer" },
-                    "equippedByCharacterId": { "type": ["string", "null"] },
-                    "equippedBy": { "type": ["string", "null"] },
-                    "location": { "type": ["string", "null"] },
-                    "lock": { "type": "boolean" },
-                    "locked": { "type": "boolean" },
-                    "lastImportedAt": { "type": "string" }
+                    "weaponInstanceId": {
+                      "type": "string"
+                    },
+                    "weaponKey": {
+                      "type": "string"
+                    },
+                    "accountId": {
+                      "type": "string"
+                    },
+                    "weaponId": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "importName": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "importedName": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "importSourceId": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "currentLevel": {
+                      "type": "integer"
+                    },
+                    "currentAscension": {
+                      "type": "integer"
+                    },
+                    "refinement": {
+                      "type": "integer"
+                    },
+                    "equippedByCharacterId": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "equippedBy": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "location": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "lock": {
+                      "type": "boolean"
+                    },
+                    "locked": {
+                      "type": "boolean"
+                    },
+                    "lastImportedAt": {
+                      "type": "string"
+                    }
                   },
                   "additionalProperties": false
                 }
@@ -135,41 +270,89 @@
                 "type": "array",
                 "items": {
                   "type": "object",
-                  "required": ["artifactInstanceId", "setId", "slotKey", "level", "rarity", "mainStatKey", "substats"],
+                  "required": [
+                    "artifactInstanceId",
+                    "setId",
+                    "slotKey",
+                    "level",
+                    "rarity",
+                    "mainStatKey",
+                    "substats"
+                  ],
                   "properties": {
-                    "artifactInstanceId": { "type": "string" },
-                    "setId": { "type": "string" },
-                    "slotKey": { "type": "string" },
-                    "level": { "type": "integer" },
-                    "rarity": { "type": "integer" },
-                    "mainStatKey": { "type": "string" },
-                    "location": { "type": "string" },
-                    "lock": { "type": "boolean" },
+                    "artifactInstanceId": {
+                      "type": "string"
+                    },
+                    "setId": {
+                      "type": "string"
+                    },
+                    "slotKey": {
+                      "type": "string"
+                    },
+                    "level": {
+                      "type": "integer"
+                    },
+                    "rarity": {
+                      "type": "integer"
+                    },
+                    "mainStatKey": {
+                      "type": "string"
+                    },
+                    "location": {
+                      "type": "string"
+                    },
+                    "lock": {
+                      "type": "boolean"
+                    },
                     "substats": {
                       "type": "array",
                       "items": {
                         "type": "object",
-                        "required": ["key", "value"],
+                        "required": [
+                          "key",
+                          "value"
+                        ],
                         "properties": {
-                          "key": { "type": "string" },
-                          "value": { "type": "number" },
-                          "initialValue": { "type": "number" }
+                          "key": {
+                            "type": "string"
+                          },
+                          "value": {
+                            "type": "number"
+                          },
+                          "initialValue": {
+                            "type": "number"
+                          }
                         },
                         "additionalProperties": false
                       }
                     },
-                    "astralMark": { "type": "boolean" },
-                    "elixerCrafted": { "type": "boolean" },
-                    "totalRolls": { "type": "number" },
+                    "astralMark": {
+                      "type": "boolean"
+                    },
+                    "elixerCrafted": {
+                      "type": "boolean"
+                    },
+                    "totalRolls": {
+                      "type": "number"
+                    },
                     "unactivatedSubstats": {
                       "type": "array",
                       "items": {
                         "type": "object",
-                        "required": ["key", "value"],
+                        "required": [
+                          "key",
+                          "value"
+                        ],
                         "properties": {
-                          "key": { "type": "string" },
-                          "value": { "type": "number" },
-                          "initialValue": { "type": "number" }
+                          "key": {
+                            "type": "string"
+                          },
+                          "value": {
+                            "type": "number"
+                          },
+                          "initialValue": {
+                            "type": "number"
+                          }
                         },
                         "additionalProperties": false
                       }
@@ -180,32 +363,87 @@
               },
               "inventory": {
                 "type": "object",
-                "additionalProperties": { "type": "number" }
+                "additionalProperties": {
+                  "type": "number"
+                }
               },
               "importedInventory": {
                 "type": "object",
-                "additionalProperties": { "type": "number" }
+                "additionalProperties": {
+                  "type": "number"
+                }
               },
               "unmatchedWeapons": {
                 "type": "array",
                 "items": {
                   "type": "object",
-                  "required": ["weaponInstanceId", "importName", "currentLevel", "currentAscension"],
+                  "required": [
+                    "weaponInstanceId",
+                    "importName",
+                    "currentLevel",
+                    "currentAscension"
+                  ],
                   "properties": {
-                    "weaponInstanceId": { "type": "string" },
-                    "importName": { "type": ["string", "null"] },
-                    "importedName": { "type": ["string", "null"] },
-                    "accountId": { "type": "string" },
-                    "importSourceId": { "type": ["string", "null"] },
-                    "currentLevel": { "type": "integer" },
-                    "currentAscension": { "type": "integer" },
-                    "refinement": { "type": "integer" },
-                    "equippedByCharacterId": { "type": ["string", "null"] },
-                    "equippedBy": { "type": ["string", "null"] },
-                    "location": { "type": ["string", "null"] },
-                    "lock": { "type": "boolean" },
-                    "locked": { "type": "boolean" },
-                    "lastImportedAt": { "type": "string" }
+                    "weaponInstanceId": {
+                      "type": "string"
+                    },
+                    "importName": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "importedName": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "accountId": {
+                      "type": "string"
+                    },
+                    "importSourceId": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "currentLevel": {
+                      "type": "integer"
+                    },
+                    "currentAscension": {
+                      "type": "integer"
+                    },
+                    "refinement": {
+                      "type": "integer"
+                    },
+                    "equippedByCharacterId": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "equippedBy": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "location": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "lock": {
+                      "type": "boolean"
+                    },
+                    "locked": {
+                      "type": "boolean"
+                    },
+                    "lastImportedAt": {
+                      "type": "string"
+                    }
                   },
                   "additionalProperties": false
                 }
@@ -214,10 +452,21 @@
                 "type": "object",
                 "additionalProperties": {
                   "type": "object",
-                  "required": ["editedAt", "source"],
+                  "required": [
+                    "editedAt",
+                    "source"
+                  ],
                   "properties": {
-                    "editedAt": { "type": "string" },
-                    "source": { "type": "string", "enum": ["manual", "bulk"] }
+                    "editedAt": {
+                      "type": "string"
+                    },
+                    "source": {
+                      "type": "string",
+                      "enum": [
+                        "manual",
+                        "bulk"
+                      ]
+                    }
                   },
                   "additionalProperties": false
                 }
@@ -226,61 +475,141 @@
                 "type": "array",
                 "items": {
                   "type": "object",
-                  "required": ["type", "message"],
+                  "required": [
+                    "type",
+                    "message"
+                  ],
                   "properties": {
-                    "type": { "type": "string" },
-                    "message": { "type": "string" },
-                    "key": { "type": "string" }
+                    "type": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "key": {
+                      "type": "string"
+                    }
                   },
                   "additionalProperties": false
                 }
               },
               "goals": {
                 "type": "object",
-                "required": ["version", "characterGoals", "weaponGoals", "artifactGoals"],
+                "required": [
+                  "version",
+                  "characterGoals",
+                  "weaponGoals",
+                  "artifactGoals"
+                ],
                 "properties": {
-                  "version": { "const": 7 },
-                  "profileName": { "type": "string" },
+                  "version": {
+                    "const": 7
+                  },
+                  "profileName": {
+                    "type": "string"
+                  },
                   "characterGoals": {
                     "type": "object",
                     "additionalProperties": {
                       "type": "object",
-                      "required": ["characterKey", "enabled"],
+                      "required": [
+                        "characterKey",
+                        "enabled"
+                      ],
                       "properties": {
-                        "characterKey": { "type": "string" },
-                        "planningMode": { "type": "string", "enum": ["owned", "prefarm", "manual"] },
-                        "priority": { "type": "integer", "minimum": 1, "maximum": 5 },
-                        "targetLevel": { "type": "integer", "minimum": 1, "maximum": 90 },
-                        "targetAscension": { "type": "integer", "minimum": 0, "maximum": 6 },
+                        "characterKey": {
+                          "type": "string"
+                        },
+                        "planningMode": {
+                          "type": "string",
+                          "enum": [
+                            "owned",
+                            "prefarm",
+                            "manual"
+                          ]
+                        },
+                        "priority": {
+                          "type": "integer",
+                          "minimum": 1,
+                          "maximum": 5
+                        },
+                        "targetLevel": {
+                          "type": "integer",
+                          "minimum": 1,
+                          "maximum": 90
+                        },
+                        "targetAscension": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "maximum": 6
+                        },
                         "talents": {
                           "type": "object",
                           "properties": {
-                            "auto": { "type": "integer", "minimum": 1, "maximum": 10 },
-                            "skill": { "type": "integer", "minimum": 1, "maximum": 10 },
-                            "burst": { "type": "integer", "minimum": 1, "maximum": 10 }
+                            "auto": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 10
+                            },
+                            "skill": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 10
+                            },
+                            "burst": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 10
+                            }
                           },
                           "additionalProperties": false
                         },
                         "currentOverride": {
                           "type": "object",
                           "properties": {
-                            "level": { "type": "integer", "minimum": 1, "maximum": 90 },
-                            "ascension": { "type": "integer", "minimum": 0, "maximum": 6 },
+                            "level": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 90
+                            },
+                            "ascension": {
+                              "type": "integer",
+                              "minimum": 0,
+                              "maximum": 6
+                            },
                             "talents": {
                               "type": "object",
                               "properties": {
-                                "auto": { "type": "integer", "minimum": 1, "maximum": 10 },
-                                "skill": { "type": "integer", "minimum": 1, "maximum": 10 },
-                                "burst": { "type": "integer", "minimum": 1, "maximum": 10 }
+                                "auto": {
+                                  "type": "integer",
+                                  "minimum": 1,
+                                  "maximum": 10
+                                },
+                                "skill": {
+                                  "type": "integer",
+                                  "minimum": 1,
+                                  "maximum": 10
+                                },
+                                "burst": {
+                                  "type": "integer",
+                                  "minimum": 1,
+                                  "maximum": 10
+                                }
                               },
                               "additionalProperties": false
                             }
                           },
                           "additionalProperties": false
                         },
-                        "enabled": { "type": "boolean" },
-                        "paused": { "type": "boolean" },
-                        "notes": { "type": "string" }
+                        "enabled": {
+                          "type": "boolean"
+                        },
+                        "paused": {
+                          "type": "boolean"
+                        },
+                        "notes": {
+                          "type": "string"
+                        }
                       },
                       "additionalProperties": false
                     }
@@ -289,38 +618,102 @@
                     "type": "object",
                     "additionalProperties": {
                       "type": "object",
-                      "required": ["weaponKey", "enabled"],
+                      "required": [
+                        "weaponKey",
+                        "enabled"
+                      ],
                       "properties": {
-                        "goalId": { "type": "string" },
-                        "accountId": { "type": "string" },
-                        "id": { "type": "string" },
-                        "weaponKey": { "type": "string" },
-                        "linkedCharacterKey": { "type": "string" },
-                        "linkedInventoryInstanceId": { "type": "string" },
-                        "useOwnedInstance": { "type": "boolean" },
+                        "goalId": {
+                          "type": "string"
+                        },
+                        "accountId": {
+                          "type": "string"
+                        },
+                        "id": {
+                          "type": "string"
+                        },
+                        "weaponKey": {
+                          "type": "string"
+                        },
+                        "linkedCharacterKey": {
+                          "type": "string"
+                        },
+                        "linkedInventoryInstanceId": {
+                          "type": "string"
+                        },
+                        "useOwnedInstance": {
+                          "type": "boolean"
+                        },
                         "linkStatus": {
                           "type": "string",
-                          "enum": ["linked", "stale", "unlinked_prefarm"]
+                          "enum": [
+                            "linked",
+                            "stale",
+                            "unlinked_prefarm"
+                          ]
                         },
-                        "planningMode": { "type": "string", "enum": ["owned", "prefarm", "manual"] },
-                        "ownedWeaponInstanceId": { "type": "string" },
-                        "instanceHint": { "type": "string" },
-                        "location": { "type": "string" },
-                        "priority": { "type": "integer", "minimum": 1, "maximum": 5 },
-                        "targetLevel": { "type": "integer", "minimum": 1, "maximum": 90 },
-                        "targetAscensionPhase": { "type": "integer", "minimum": 0, "maximum": 6 },
-                        "targetAscension": { "type": "integer", "minimum": 0, "maximum": 6 },
+                        "planningMode": {
+                          "type": "string",
+                          "enum": [
+                            "owned",
+                            "prefarm",
+                            "manual"
+                          ]
+                        },
+                        "ownedWeaponInstanceId": {
+                          "type": "string"
+                        },
+                        "instanceHint": {
+                          "type": "string"
+                        },
+                        "location": {
+                          "type": "string"
+                        },
+                        "priority": {
+                          "type": "integer",
+                          "minimum": 1,
+                          "maximum": 5
+                        },
+                        "targetLevel": {
+                          "type": "integer",
+                          "minimum": 1,
+                          "maximum": 90
+                        },
+                        "targetAscensionPhase": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "maximum": 6
+                        },
+                        "targetAscension": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "maximum": 6
+                        },
                         "currentOverride": {
                           "type": "object",
                           "properties": {
-                            "level": { "type": "integer", "minimum": 1, "maximum": 90 },
-                            "ascension": { "type": "integer", "minimum": 0, "maximum": 6 }
+                            "level": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 90
+                            },
+                            "ascension": {
+                              "type": "integer",
+                              "minimum": 0,
+                              "maximum": 6
+                            }
                           },
                           "additionalProperties": false
                         },
-                        "enabled": { "type": "boolean" },
-                        "paused": { "type": "boolean" },
-                        "notes": { "type": "string" }
+                        "enabled": {
+                          "type": "boolean"
+                        },
+                        "paused": {
+                          "type": "boolean"
+                        },
+                        "notes": {
+                          "type": "string"
+                        }
                       },
                       "additionalProperties": false
                     }
@@ -329,13 +722,37 @@
                     "type": "array",
                     "items": {
                       "type": "object",
-                        "required": ["id", "targetSetKeys", "priority", "mainStatTargets", "desiredSubstats", "progress", "enabled"],
+                      "required": [
+                        "id",
+                        "targetSetKeys",
+                        "priority",
+                        "mainStatTargets",
+                        "desiredSubstats",
+                        "progress",
+                        "enabled"
+                      ],
                       "properties": {
-                        "id": { "type": "string" },
-                        "characterKey": { "type": "string" },
-                        "goalName": { "type": "string" },
-                        "targetSetKeys": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
-                        "priority": { "type": "integer", "minimum": 1, "maximum": 5 },
+                        "id": {
+                          "type": "string"
+                        },
+                        "characterKey": {
+                          "type": "string"
+                        },
+                        "goalName": {
+                          "type": "string"
+                        },
+                        "targetSetKeys": {
+                          "type": "array",
+                          "uniqueItems": true,
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "priority": {
+                          "type": "integer",
+                          "minimum": 1,
+                          "maximum": 5
+                        },
                         "mainStatTargets": {
                           "type": "object",
                           "properties": {
@@ -344,7 +761,13 @@
                               "uniqueItems": true,
                               "items": {
                                 "type": "string",
-                                "enum": ["HP%", "ATK%", "DEF%", "Elemental Mastery", "Energy Recharge%"]
+                                "enum": [
+                                  "HP%",
+                                  "ATK%",
+                                  "DEF%",
+                                  "Elemental Mastery",
+                                  "Energy Recharge%"
+                                ]
                               }
                             },
                             "goblet": {
@@ -373,7 +796,15 @@
                               "uniqueItems": true,
                               "items": {
                                 "type": "string",
-                                "enum": ["HP%", "ATK%", "DEF%", "Elemental Mastery", "CRIT Rate%", "CRIT DMG%", "Healing Bonus%"]
+                                "enum": [
+                                  "HP%",
+                                  "ATK%",
+                                  "DEF%",
+                                  "Elemental Mastery",
+                                  "CRIT Rate%",
+                                  "CRIT DMG%",
+                                  "Healing Bonus%"
+                                ]
                               }
                             }
                           },
@@ -384,23 +815,54 @@
                           "uniqueItems": true,
                           "items": {
                             "type": "string",
-                            "enum": ["HP", "ATK", "DEF", "HP%", "ATK%", "DEF%", "Elemental Mastery", "Energy Recharge%", "CRIT Rate%", "CRIT DMG%"]
+                            "enum": [
+                              "HP",
+                              "ATK",
+                              "DEF",
+                              "HP%",
+                              "ATK%",
+                              "DEF%",
+                              "Elemental Mastery",
+                              "Energy Recharge%",
+                              "CRIT Rate%",
+                              "CRIT DMG%"
+                            ]
                           }
                         },
                         "progress": {
                           "type": "object",
-                          "required": ["flowerObtained", "plumeObtained", "sandsObtained", "gobletObtained", "circletObtained"],
+                          "required": [
+                            "flowerObtained",
+                            "plumeObtained",
+                            "sandsObtained",
+                            "gobletObtained",
+                            "circletObtained"
+                          ],
                           "properties": {
-                            "flowerObtained": { "type": "boolean" },
-                            "plumeObtained": { "type": "boolean" },
-                            "sandsObtained": { "type": "boolean" },
-                            "gobletObtained": { "type": "boolean" },
-                            "circletObtained": { "type": "boolean" }
+                            "flowerObtained": {
+                              "type": "boolean"
+                            },
+                            "plumeObtained": {
+                              "type": "boolean"
+                            },
+                            "sandsObtained": {
+                              "type": "boolean"
+                            },
+                            "gobletObtained": {
+                              "type": "boolean"
+                            },
+                            "circletObtained": {
+                              "type": "boolean"
+                            }
                           },
                           "additionalProperties": false
                         },
-                        "enabled": { "type": "boolean" },
-                        "notes": { "type": "string" }
+                        "enabled": {
+                          "type": "boolean"
+                        },
+                        "notes": {
+                          "type": "string"
+                        }
                       },
                       "additionalProperties": false
                     }
@@ -408,7 +870,9 @@
                 },
                 "additionalProperties": false
               },
-              "plannerSettings": { "$ref": "https://krumpanion.local/schemas/goals.schema.json#/properties/plannerSettings" },
+              "plannerSettings": {
+                "$ref": "https://krumpanion.local/schemas/goals.schema.json#/properties/plannerSettings"
+              },
               "checklist": {
                 "type": "object",
                 "required": [
@@ -430,96 +894,139 @@
                   "dailyCommissions": {
                     "type": "object",
                     "properties": {
-                      "completedAt": { "type": "string" }
+                      "completedAt": {
+                        "type": "string"
+                      }
                     },
                     "additionalProperties": false
                   },
                   "dailyForging": {
                     "type": "object",
                     "properties": {
-                      "completedAt": { "type": "string" }
+                      "completedAt": {
+                        "type": "string"
+                      }
                     },
                     "additionalProperties": false
                   },
                   "battlePassDailyClaims": {
                     "type": "object",
                     "properties": {
-                      "completedAt": { "type": "string" }
+                      "completedAt": {
+                        "type": "string"
+                      }
                     },
                     "additionalProperties": false
                   },
                   "battlePassWeeklyClaims": {
                     "type": "object",
                     "properties": {
-                      "completedAt": { "type": "string" }
+                      "completedAt": {
+                        "type": "string"
+                      }
                     },
                     "additionalProperties": false
                   },
                   "weeklyBountiesRequests": {
                     "type": "object",
                     "properties": {
-                      "completedAt": { "type": "string" }
+                      "completedAt": {
+                        "type": "string"
+                      }
                     },
                     "additionalProperties": false
                   },
                   "stardustExchange": {
                     "type": "object",
                     "properties": {
-                      "completedAt": { "type": "string" }
+                      "completedAt": {
+                        "type": "string"
+                      }
                     },
                     "additionalProperties": false
                   },
                   "weeklyBossClaims": {
                     "type": "object",
-                    "required": ["usedCount"],
+                    "required": [
+                      "usedCount"
+                    ],
                     "properties": {
-                      "usedCount": { "type": "integer", "minimum": 0, "maximum": 3 },
-                      "updatedAt": { "type": "string" }
+                      "usedCount": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 3
+                      },
+                      "updatedAt": {
+                        "type": "string"
+                      }
                     },
                     "additionalProperties": false
                   },
                   "artifactTransmuter": {
                     "type": "object",
                     "properties": {
-                      "completedAt": { "type": "string" }
+                      "completedAt": {
+                        "type": "string"
+                      }
                     },
                     "additionalProperties": false
                   },
                   "realmDepot": {
                     "type": "object",
                     "properties": {
-                      "completedAt": { "type": "string" }
+                      "completedAt": {
+                        "type": "string"
+                      }
                     },
                     "additionalProperties": false
                   },
                   "parametricTransformer": {
                     "type": "object",
                     "properties": {
-                      "lastUsedAt": { "type": "string" }
+                      "lastUsedAt": {
+                        "type": "string"
+                      }
                     },
                     "additionalProperties": false
                   },
                   "crystalflyTrap": {
                     "type": "object",
                     "properties": {
-                      "lastUsedAt": { "type": "string" }
+                      "lastUsedAt": {
+                        "type": "string"
+                      }
                     },
                     "additionalProperties": false
                   },
                   "expeditions": {
                     "type": "object",
                     "properties": {
-                      "lastClaimedAt": { "type": "string" }
+                      "lastClaimedAt": {
+                        "type": "string"
+                      }
                     },
                     "additionalProperties": false
                   },
                   "realmCurrency": {
                     "type": "object",
-                    "required": ["realmLevel", "trustRank"],
+                    "required": [
+                      "realmLevel",
+                      "trustRank"
+                    ],
                     "properties": {
-                      "lastClaimedAt": { "type": "string" },
-                      "realmLevel": { "type": "integer", "minimum": 1, "maximum": 10 },
-                      "trustRank": { "type": "integer", "minimum": 1, "maximum": 10 }
+                      "lastClaimedAt": {
+                        "type": "string"
+                      },
+                      "realmLevel": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 10
+                      },
+                      "trustRank": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 10
+                      }
                     },
                     "additionalProperties": false
                   }
@@ -529,35 +1036,78 @@
               "worldState": {
                 "type": "object",
                 "properties": {
-                  "adventureRank": { "type": "integer" },
-                  "worldLevel": { "type": "integer" },
-                  "selectedWorldLevel": { "type": "integer" },
-                  "resinCap": { "type": "integer" },
-                  "currentResin": { "type": "integer" },
-                  "currentResinUpdatedAt": { "type": "string" },
-                  "weeklyBossDiscountsUsed": { "type": "integer" },
-                  "condensedResin": { "type": "integer" },
-                  "fragileResin": { "type": "integer" },
-                  "transientResin": { "type": "integer" }
+                  "adventureRank": {
+                    "type": "integer"
+                  },
+                  "worldLevel": {
+                    "type": "integer"
+                  },
+                  "selectedWorldLevel": {
+                    "type": "integer"
+                  },
+                  "resinCap": {
+                    "type": "integer"
+                  },
+                  "currentResin": {
+                    "type": "integer"
+                  },
+                  "currentResinUpdatedAt": {
+                    "type": "string"
+                  },
+                  "weeklyBossDiscountsUsed": {
+                    "type": "integer"
+                  },
+                  "condensedResin": {
+                    "type": "integer"
+                  },
+                  "fragileResin": {
+                    "type": "integer"
+                  },
+                  "transientResin": {
+                    "type": "integer"
+                  }
                 },
                 "additionalProperties": false
               },
               "importState": {
                 "type": "object",
                 "properties": {
-                  "lastGoodImportAt": { "type": "string" },
-                  "lastGoodFileName": { "type": "string" },
-                  "lastGoodSource": { "type": "string" },
-                  "lastGoodFormatVersion": { "type": "string" },
-                  "importWarnings": { "type": "array", "items": { "type": "string" } },
+                  "lastGoodImportAt": {
+                    "type": "string"
+                  },
+                  "lastGoodFileName": {
+                    "type": "string"
+                  },
+                  "lastGoodSource": {
+                    "type": "string"
+                  },
+                  "lastGoodFormatVersion": {
+                    "type": "string"
+                  },
+                  "importWarnings": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
                   "importSummary": {
                     "type": "object",
                     "properties": {
-                      "materialCount": { "type": "integer" },
-                      "characterCount": { "type": "integer" },
-                      "weaponCount": { "type": "integer" },
-                      "unmatchedWeaponCount": { "type": "integer" },
-                      "artifactCount": { "type": "integer" }
+                      "materialCount": {
+                        "type": "integer"
+                      },
+                      "characterCount": {
+                        "type": "integer"
+                      },
+                      "weaponCount": {
+                        "type": "integer"
+                      },
+                      "unmatchedWeaponCount": {
+                        "type": "integer"
+                      },
+                      "artifactCount": {
+                        "type": "integer"
+                      }
                     },
                     "additionalProperties": false
                   }
@@ -566,18 +1116,48 @@
               },
               "plannerStatus": {
                 "type": "object",
-                "required": ["status", "activeGoalCount", "materialDeficitCount", "totalEstimatedResin", "warningCount"],
+                "required": [
+                  "status",
+                  "activeGoalCount",
+                  "materialDeficitCount",
+                  "totalEstimatedResin",
+                  "warningCount"
+                ],
                 "properties": {
                   "status": {
                     "type": "string",
-                    "enum": ["idle", "recalculating", "recalculated", "recalculatedWithWarnings", "failed"]
+                    "enum": [
+                      "idle",
+                      "recalculating",
+                      "recalculated",
+                      "recalculatedWithWarnings",
+                      "failed"
+                    ]
                   },
-                  "lastRecalculatedAt": { "type": "string" },
-                  "activeGoalCount": { "type": "integer" },
-                  "materialDeficitCount": { "type": "integer" },
-                  "totalEstimatedResin": { "type": "number" },
-                  "warningCount": { "type": "integer" },
-                  "lastError": { "type": "string" }
+                  "lastRecalculatedAt": {
+                    "type": "string"
+                  },
+                  "activeGoalCount": {
+                    "type": "integer"
+                  },
+                  "materialDeficitCount": {
+                    "type": "integer"
+                  },
+                  "totalEstimatedResin": {
+                    "type": "number"
+                  },
+                  "guaranteedTotalResin": {
+                    "type": "number"
+                  },
+                  "expectedAdvisoryResin": {
+                    "type": "number"
+                  },
+                  "warningCount": {
+                    "type": "integer"
+                  },
+                  "lastError": {
+                    "type": "string"
+                  }
                 },
                 "additionalProperties": false
               },
@@ -585,22 +1165,58 @@
                 "type": "object",
                 "additionalProperties": {
                   "type": "object",
-                  "required": ["goalId", "goalType", "goalLabel", "targetSignature", "startedAt", "baseline"],
+                  "required": [
+                    "goalId",
+                    "goalType",
+                    "goalLabel",
+                    "targetSignature",
+                    "startedAt",
+                    "baseline"
+                  ],
                   "properties": {
-                    "goalId": { "type": "string" },
-                    "goalType": { "type": "string", "enum": ["character", "weapon"] },
-                    "goalLabel": { "type": "string" },
-                    "targetSignature": { "type": "string" },
-                    "startedAt": { "type": "string" },
-                    "completedAt": { "type": "string" },
+                    "goalId": {
+                      "type": "string"
+                    },
+                    "goalType": {
+                      "type": "string",
+                      "enum": [
+                        "character",
+                        "weapon"
+                      ]
+                    },
+                    "goalLabel": {
+                      "type": "string"
+                    },
+                    "targetSignature": {
+                      "type": "string"
+                    },
+                    "startedAt": {
+                      "type": "string"
+                    },
+                    "completedAt": {
+                      "type": "string"
+                    },
                     "baseline": {
                       "type": "object",
-                      "required": ["mora", "characterExp", "weaponExp", "materials"],
+                      "required": [
+                        "mora",
+                        "characterExp",
+                        "weaponExp",
+                        "materials"
+                      ],
                       "properties": {
-                        "mora": { "type": "number" },
-                        "characterExp": { "type": "number" },
-                        "weaponExp": { "type": "number" },
-                        "materials": { "type": "number" }
+                        "mora": {
+                          "type": "number"
+                        },
+                        "characterExp": {
+                          "type": "number"
+                        },
+                        "weaponExp": {
+                          "type": "number"
+                        },
+                        "materials": {
+                          "type": "number"
+                        }
                       },
                       "additionalProperties": false
                     }
@@ -612,16 +1228,47 @@
                 "type": "array",
                 "items": {
                   "type": "object",
-                  "required": ["id", "goalId", "goalType", "goalLabel", "milestoneType", "occurredAt"],
+                  "required": [
+                    "id",
+                    "goalId",
+                    "goalType",
+                    "goalLabel",
+                    "milestoneType",
+                    "occurredAt"
+                  ],
                   "properties": {
-                    "id": { "type": "string" },
-                    "goalId": { "type": "string" },
-                    "goalType": { "type": "string", "enum": ["character", "weapon"] },
-                    "goalLabel": { "type": "string" },
-                    "milestoneType": { "type": "string", "enum": ["character_built", "weapon_goal_met"] },
-                    "occurredAt": { "type": "string" },
-                    "startedAt": { "type": "string" },
-                    "targetSummary": { "type": "string" }
+                    "id": {
+                      "type": "string"
+                    },
+                    "goalId": {
+                      "type": "string"
+                    },
+                    "goalType": {
+                      "type": "string",
+                      "enum": [
+                        "character",
+                        "weapon"
+                      ]
+                    },
+                    "goalLabel": {
+                      "type": "string"
+                    },
+                    "milestoneType": {
+                      "type": "string",
+                      "enum": [
+                        "character_built",
+                        "weapon_goal_met"
+                      ]
+                    },
+                    "occurredAt": {
+                      "type": "string"
+                    },
+                    "startedAt": {
+                      "type": "string"
+                    },
+                    "targetSummary": {
+                      "type": "string"
+                    }
                   },
                   "additionalProperties": false
                 }
@@ -630,31 +1277,92 @@
                 "type": "array",
                 "items": {
                   "type": "object",
-                  "required": ["id", "changedAt", "kind"],
+                  "required": [
+                    "id",
+                    "changedAt",
+                    "kind"
+                  ],
                   "properties": {
-                    "id": { "type": "string" },
-                    "changedAt": { "type": "string" },
-                    "kind": { "type": "string", "enum": ["inventory", "goal_progress", "recalculation"] },
-                    "trigger": { "type": "string" },
-                    "materialKey": { "type": "string" },
-                    "materialName": { "type": "string" },
-                    "previousQuantity": { "type": "number" },
-                    "nextQuantity": { "type": "number" },
-                    "sourceStateAfter": { "type": "string" },
-                    "goalId": { "type": "string" },
-                    "goalType": { "type": "string" },
-                    "goalLabel": { "type": "string" },
-                    "previousStatus": { "type": "string" },
-                    "nextStatus": { "type": "string" },
-                    "previousSummary": { "type": "string" },
-                    "nextSummary": { "type": "string" },
-                    "blocker": { "type": "string" },
-                    "status": { "type": "string" },
-                    "activeGoalCount": { "type": "integer" },
-                    "materialDeficitCount": { "type": "integer" },
-                    "totalEstimatedResin": { "type": "number" },
-                    "warningCount": { "type": "integer" },
-                    "errorMessage": { "type": "string" }
+                    "id": {
+                      "type": "string"
+                    },
+                    "changedAt": {
+                      "type": "string"
+                    },
+                    "kind": {
+                      "type": "string",
+                      "enum": [
+                        "inventory",
+                        "goal_progress",
+                        "recalculation"
+                      ]
+                    },
+                    "trigger": {
+                      "type": "string"
+                    },
+                    "materialKey": {
+                      "type": "string"
+                    },
+                    "materialName": {
+                      "type": "string"
+                    },
+                    "previousQuantity": {
+                      "type": "number"
+                    },
+                    "nextQuantity": {
+                      "type": "number"
+                    },
+                    "sourceStateAfter": {
+                      "type": "string"
+                    },
+                    "goalId": {
+                      "type": "string"
+                    },
+                    "goalType": {
+                      "type": "string"
+                    },
+                    "goalLabel": {
+                      "type": "string"
+                    },
+                    "previousStatus": {
+                      "type": "string"
+                    },
+                    "nextStatus": {
+                      "type": "string"
+                    },
+                    "previousSummary": {
+                      "type": "string"
+                    },
+                    "nextSummary": {
+                      "type": "string"
+                    },
+                    "blocker": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "type": "string"
+                    },
+                    "activeGoalCount": {
+                      "type": "integer"
+                    },
+                    "materialDeficitCount": {
+                      "type": "integer"
+                    },
+                    "totalEstimatedResin": {
+                      "type": "number"
+                    },
+                    "guaranteedTotalResin": {
+                      "type": "number"
+                    },
+                    "expectedAdvisoryResin": {
+                      "type": "number"
+                    },
+                    "warningCount": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    }
                   },
                   "additionalProperties": false
                 }
@@ -676,18 +1384,42 @@
                     "overwrittenManualCount"
                   ],
                   "properties": {
-                    "id": { "type": "string" },
-                    "importedAt": { "type": "string" },
-                    "fileName": { "type": "string" },
-                    "source": { "type": "string" },
-                    "materialCount": { "type": "integer" },
-                    "characterCount": { "type": "integer" },
-                    "weaponCount": { "type": "integer" },
-                    "unmatchedWeaponCount": { "type": "integer" },
-                    "artifactCount": { "type": "integer" },
-                    "warningCount": { "type": "integer" },
-                    "changedMaterialCount": { "type": "integer" },
-                    "overwrittenManualCount": { "type": "integer" }
+                    "id": {
+                      "type": "string"
+                    },
+                    "importedAt": {
+                      "type": "string"
+                    },
+                    "fileName": {
+                      "type": "string"
+                    },
+                    "source": {
+                      "type": "string"
+                    },
+                    "materialCount": {
+                      "type": "integer"
+                    },
+                    "characterCount": {
+                      "type": "integer"
+                    },
+                    "weaponCount": {
+                      "type": "integer"
+                    },
+                    "unmatchedWeaponCount": {
+                      "type": "integer"
+                    },
+                    "artifactCount": {
+                      "type": "integer"
+                    },
+                    "warningCount": {
+                      "type": "integer"
+                    },
+                    "changedMaterialCount": {
+                      "type": "integer"
+                    },
+                    "overwrittenManualCount": {
+                      "type": "integer"
+                    }
                   },
                   "additionalProperties": false
                 }
@@ -698,22 +1430,70 @@
         },
         "accountOrder": {
           "type": "array",
-          "items": { "type": "string" }
+          "items": {
+            "type": "string"
+          }
         }
       },
       "additionalProperties": false
     },
     "settings": {
       "type": "object",
-      "required": ["activeTab", "plannerView"],
+      "required": [
+        "activeTab",
+        "plannerView"
+      ],
       "properties": {
-        "activeTab": { "type": "string" },
-        "plannerView": { "type": "string" }
+        "activeTab": {
+          "type": "string"
+        },
+        "plannerView": {
+          "type": "string"
+        }
       },
       "additionalProperties": false
     },
     "overridePack": {
-      "type": ["object", "null"]
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "gameDataUpdates": {
+      "type": "object",
+      "required": [
+        "provider",
+        "effectiveVersion",
+        "status",
+        "discoveries",
+        "diagnostics"
+      ],
+      "properties": {
+        "provider": {
+          "type": "string"
+        },
+        "effectiveVersion": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "status": {
+          "enum": [
+            "idle",
+            "checking",
+            "downloading",
+            "updated",
+            "current",
+            "failed"
+          ]
+        },
+        "discoveries": {
+          "type": "object"
+        },
+        "diagnostics": {
+          "type": "array"
+        }
+      },
+      "additionalProperties": true
     }
   },
   "additionalProperties": false

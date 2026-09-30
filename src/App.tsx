@@ -11,6 +11,11 @@ export default function App() {
     void hydrate();
   }, [hydrate]);
 
+  useEffect(() => {
+    if (isHydrated) void useAppStore.getState().checkGameDataUpdates("startup");
+    return () => useAppStore.getState().cancelGameDataUpdate();
+  }, [isHydrated]);
+
   return (
     <ErrorBoundary>
       {isHydrated ? <AppShell /> : <div className="loading-screen">Loading Krumpanion…</div>}

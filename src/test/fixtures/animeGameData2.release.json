@@ -1,0 +1,1286 @@
+{
+  "revision": "b061b403c8afc7bca633cf4f201edc4a3baa75fe",
+  "releaseVersion": "7.1.0",
+  "files": {
+    "ExcelBinOutput/AvatarExcelConfigData.json": [
+      {
+        "weaponType": "WEAPON_SWORD_ONE_HAND",
+        "qualityType": "QUALITY_ORANGE",
+        "useType": "AVATAR_FORMAL",
+        "avatarPromoteId": 2,
+        "skillDepotId": 201,
+        "nameTextMapHash": 1006042610,
+        "id": 10000002
+      }
+    ],
+    "ExcelBinOutput/AvatarCodexExcelConfigData.json": [
+      {
+        "beginTime": "2021-07-21 00:00:00",
+        "avatarId": 10000002
+      }
+    ],
+    "ExcelBinOutput/AvatarPromoteExcelConfigData.json": [
+      {
+        "avatarPromoteId": 2,
+        "unlockMaxLevel": 20,
+        "costItems": [
+          {},
+          {},
+          {},
+          {}
+        ]
+      },
+      {
+        "avatarPromoteId": 2,
+        "unlockMaxLevel": 40,
+        "costItems": [
+          {
+            "count": 1,
+            "id": 104161
+          },
+          {},
+          {
+            "count": 3,
+            "id": 101202
+          },
+          {
+            "count": 3,
+            "id": 112044
+          }
+        ],
+        "promoteLevel": 1,
+        "scoinCost": 20000
+      },
+      {
+        "avatarPromoteId": 2,
+        "unlockMaxLevel": 50,
+        "costItems": [
+          {
+            "count": 3,
+            "id": 104162
+          },
+          {
+            "count": 2,
+            "id": 113023
+          },
+          {
+            "count": 10,
+            "id": 101202
+          },
+          {
+            "count": 15,
+            "id": 112044
+          }
+        ],
+        "promoteLevel": 2,
+        "scoinCost": 40000
+      },
+      {
+        "avatarPromoteId": 2,
+        "unlockMaxLevel": 60,
+        "costItems": [
+          {
+            "count": 6,
+            "id": 104162
+          },
+          {
+            "count": 4,
+            "id": 113023
+          },
+          {
+            "count": 20,
+            "id": 101202
+          },
+          {
+            "count": 12,
+            "id": 112045
+          }
+        ],
+        "promoteLevel": 3,
+        "scoinCost": 60000
+      },
+      {
+        "avatarPromoteId": 2,
+        "unlockMaxLevel": 70,
+        "costItems": [
+          {
+            "count": 3,
+            "id": 104163
+          },
+          {
+            "count": 8,
+            "id": 113023
+          },
+          {
+            "count": 30,
+            "id": 101202
+          },
+          {
+            "count": 18,
+            "id": 112045
+          }
+        ],
+        "promoteLevel": 4,
+        "scoinCost": 80000
+      },
+      {
+        "avatarPromoteId": 2,
+        "unlockMaxLevel": 80,
+        "costItems": [
+          {
+            "count": 6,
+            "id": 104163
+          },
+          {
+            "count": 12,
+            "id": 113023
+          },
+          {
+            "count": 45,
+            "id": 101202
+          },
+          {
+            "count": 12,
+            "id": 112046
+          }
+        ],
+        "promoteLevel": 5,
+        "scoinCost": 100000
+      },
+      {
+        "avatarPromoteId": 2,
+        "unlockMaxLevel": 90,
+        "costItems": [
+          {
+            "count": 6,
+            "id": 104164
+          },
+          {
+            "count": 20,
+            "id": 113023
+          },
+          {
+            "count": 60,
+            "id": 101202
+          },
+          {
+            "count": 24,
+            "id": 112046
+          }
+        ],
+        "promoteLevel": 6,
+        "scoinCost": 120000
+      }
+    ],
+    "ExcelBinOutput/AvatarSkillDepotExcelConfigData.json": [
+      {
+        "skills": [
+          10024,
+          10018,
+          10013,
+          0
+        ],
+        "energySkill": 10019,
+        "id": 201
+      }
+    ],
+    "ExcelBinOutput/AvatarSkillExcelConfigData.json": [
+      {
+        "id": 10018,
+        "proudSkillGroupId": 232,
+        "nameTextMapHash": 682887613
+      },
+      {
+        "id": 10019,
+        "proudSkillGroupId": 239,
+        "costElemType": "Ice",
+        "nameTextMapHash": 81399925
+      },
+      {
+        "id": 10024,
+        "proudSkillGroupId": 231,
+        "nameTextMapHash": 813430205
+      }
+    ],
+    "ExcelBinOutput/ProudSkillExcelConfigData.json": [
+      {
+        "proudSkillGroupId": 231,
+        "level": 1,
+        "proudSkillType": 3,
+        "costItems": [
+          {},
+          {},
+          {},
+          {}
+        ],
+        "proudSkillId": 23101,
+        "nameTextMapHash": 4236418557
+      },
+      {
+        "proudSkillGroupId": 231,
+        "level": 2,
+        "proudSkillType": 3,
+        "costItems": [
+          {
+            "count": 3,
+            "id": 104323
+          },
+          {
+            "count": 6,
+            "id": 112044
+          },
+          {},
+          {}
+        ],
+        "breakLevel": 2,
+        "proudSkillId": 23102,
+        "nameTextMapHash": 75643309,
+        "coinCost": 12500
+      },
+      {
+        "proudSkillGroupId": 231,
+        "level": 3,
+        "proudSkillType": 3,
+        "costItems": [
+          {
+            "count": 2,
+            "id": 104324
+          },
+          {
+            "count": 3,
+            "id": 112045
+          },
+          {},
+          {}
+        ],
+        "breakLevel": 3,
+        "proudSkillId": 23103,
+        "nameTextMapHash": 2747078101,
+        "coinCost": 17500
+      },
+      {
+        "proudSkillGroupId": 231,
+        "level": 4,
+        "proudSkillType": 3,
+        "costItems": [
+          {
+            "count": 4,
+            "id": 104324
+          },
+          {
+            "count": 4,
+            "id": 112045
+          },
+          {},
+          {}
+        ],
+        "breakLevel": 3,
+        "proudSkillId": 23104,
+        "nameTextMapHash": 1692834157,
+        "coinCost": 25000
+      },
+      {
+        "proudSkillGroupId": 231,
+        "level": 5,
+        "proudSkillType": 3,
+        "costItems": [
+          {
+            "count": 6,
+            "id": 104324
+          },
+          {
+            "count": 6,
+            "id": 112045
+          },
+          {},
+          {}
+        ],
+        "breakLevel": 4,
+        "proudSkillId": 23105,
+        "nameTextMapHash": 3540019389,
+        "coinCost": 30000
+      },
+      {
+        "proudSkillGroupId": 231,
+        "level": 6,
+        "proudSkillType": 3,
+        "costItems": [
+          {
+            "count": 9,
+            "id": 104324
+          },
+          {
+            "count": 9,
+            "id": 112045
+          },
+          {},
+          {}
+        ],
+        "breakLevel": 4,
+        "proudSkillId": 23106,
+        "nameTextMapHash": 23680181,
+        "coinCost": 37500
+      },
+      {
+        "proudSkillGroupId": 231,
+        "level": 7,
+        "proudSkillType": 3,
+        "costItems": [
+          {
+            "count": 4,
+            "id": 104325
+          },
+          {
+            "count": 4,
+            "id": 112046
+          },
+          {
+            "count": 1,
+            "id": 113018
+          },
+          {}
+        ],
+        "breakLevel": 5,
+        "proudSkillId": 23107,
+        "nameTextMapHash": 3118917709,
+        "coinCost": 120000
+      },
+      {
+        "proudSkillGroupId": 231,
+        "level": 8,
+        "proudSkillType": 3,
+        "costItems": [
+          {
+            "count": 6,
+            "id": 104325
+          },
+          {
+            "count": 6,
+            "id": 112046
+          },
+          {
+            "count": 1,
+            "id": 113018
+          },
+          {}
+        ],
+        "breakLevel": 5,
+        "proudSkillId": 23108,
+        "nameTextMapHash": 2492927141,
+        "coinCost": 260000
+      },
+      {
+        "proudSkillGroupId": 231,
+        "level": 9,
+        "proudSkillType": 3,
+        "costItems": [
+          {
+            "count": 12,
+            "id": 104325
+          },
+          {
+            "count": 9,
+            "id": 112046
+          },
+          {
+            "count": 2,
+            "id": 113018
+          },
+          {}
+        ],
+        "breakLevel": 6,
+        "proudSkillId": 23109,
+        "nameTextMapHash": 2089761117,
+        "coinCost": 450000
+      },
+      {
+        "proudSkillGroupId": 231,
+        "level": 10,
+        "proudSkillType": 3,
+        "costItems": [
+          {
+            "count": 16,
+            "id": 104325
+          },
+          {
+            "count": 12,
+            "id": 112046
+          },
+          {
+            "count": 2,
+            "id": 113018
+          },
+          {
+            "count": 1,
+            "id": 104319
+          }
+        ],
+        "breakLevel": 6,
+        "proudSkillId": 23110,
+        "nameTextMapHash": 2344436805,
+        "coinCost": 700000
+      },
+      {
+        "proudSkillGroupId": 232,
+        "level": 1,
+        "proudSkillType": 3,
+        "costItems": [
+          {},
+          {},
+          {},
+          {}
+        ],
+        "proudSkillId": 23201,
+        "nameTextMapHash": 1146989637
+      },
+      {
+        "proudSkillGroupId": 232,
+        "level": 2,
+        "proudSkillType": 3,
+        "costItems": [
+          {
+            "count": 3,
+            "id": 104323
+          },
+          {
+            "count": 6,
+            "id": 112044
+          },
+          {},
+          {}
+        ],
+        "breakLevel": 2,
+        "proudSkillId": 23202,
+        "nameTextMapHash": 468271269,
+        "coinCost": 12500
+      },
+      {
+        "proudSkillGroupId": 232,
+        "level": 3,
+        "proudSkillType": 3,
+        "costItems": [
+          {
+            "count": 2,
+            "id": 104324
+          },
+          {
+            "count": 3,
+            "id": 112045
+          },
+          {},
+          {}
+        ],
+        "breakLevel": 3,
+        "proudSkillId": 23203,
+        "nameTextMapHash": 1642422549,
+        "coinCost": 17500
+      },
+      {
+        "proudSkillGroupId": 232,
+        "level": 4,
+        "proudSkillType": 3,
+        "costItems": [
+          {
+            "count": 4,
+            "id": 104324
+          },
+          {
+            "count": 4,
+            "id": 112045
+          },
+          {},
+          {}
+        ],
+        "breakLevel": 3,
+        "proudSkillId": 23204,
+        "nameTextMapHash": 1765755237,
+        "coinCost": 25000
+      },
+      {
+        "proudSkillGroupId": 232,
+        "level": 5,
+        "proudSkillType": 3,
+        "costItems": [
+          {
+            "count": 6,
+            "id": 104324
+          },
+          {
+            "count": 6,
+            "id": 112045
+          },
+          {},
+          {}
+        ],
+        "breakLevel": 4,
+        "proudSkillId": 23205,
+        "nameTextMapHash": 2519456941,
+        "coinCost": 30000
+      },
+      {
+        "proudSkillGroupId": 232,
+        "level": 6,
+        "proudSkillType": 3,
+        "costItems": [
+          {
+            "count": 9,
+            "id": 104324
+          },
+          {
+            "count": 9,
+            "id": 112045
+          },
+          {},
+          {}
+        ],
+        "breakLevel": 4,
+        "proudSkillId": 23206,
+        "nameTextMapHash": 1099483461,
+        "coinCost": 37500
+      },
+      {
+        "proudSkillGroupId": 232,
+        "level": 7,
+        "proudSkillType": 3,
+        "costItems": [
+          {
+            "count": 4,
+            "id": 104325
+          },
+          {
+            "count": 4,
+            "id": 112046
+          },
+          {
+            "count": 1,
+            "id": 113018
+          },
+          {}
+        ],
+        "breakLevel": 5,
+        "proudSkillId": 23207,
+        "nameTextMapHash": 2084736069,
+        "coinCost": 120000
+      },
+      {
+        "proudSkillGroupId": 232,
+        "level": 8,
+        "proudSkillType": 3,
+        "costItems": [
+          {
+            "count": 6,
+            "id": 104325
+          },
+          {
+            "count": 6,
+            "id": 112046
+          },
+          {
+            "count": 1,
+            "id": 113018
+          },
+          {}
+        ],
+        "breakLevel": 5,
+        "proudSkillId": 23208,
+        "nameTextMapHash": 3335134701,
+        "coinCost": 260000
+      },
+      {
+        "proudSkillGroupId": 232,
+        "level": 9,
+        "proudSkillType": 3,
+        "costItems": [
+          {
+            "count": 12,
+            "id": 104325
+          },
+          {
+            "count": 9,
+            "id": 112046
+          },
+          {
+            "count": 2,
+            "id": 113018
+          },
+          {}
+        ],
+        "breakLevel": 6,
+        "proudSkillId": 23209,
+        "nameTextMapHash": 1502253269,
+        "coinCost": 450000
+      },
+      {
+        "proudSkillGroupId": 232,
+        "level": 10,
+        "proudSkillType": 3,
+        "costItems": [
+          {
+            "count": 16,
+            "id": 104325
+          },
+          {
+            "count": 12,
+            "id": 112046
+          },
+          {
+            "count": 2,
+            "id": 113018
+          },
+          {
+            "count": 1,
+            "id": 104319
+          }
+        ],
+        "breakLevel": 6,
+        "proudSkillId": 23210,
+        "nameTextMapHash": 566127661,
+        "coinCost": 700000
+      },
+      {
+        "proudSkillGroupId": 239,
+        "level": 1,
+        "proudSkillType": 3,
+        "costItems": [
+          {},
+          {},
+          {},
+          {}
+        ],
+        "proudSkillId": 23901,
+        "nameTextMapHash": 452495429
+      },
+      {
+        "proudSkillGroupId": 239,
+        "level": 2,
+        "proudSkillType": 3,
+        "costItems": [
+          {
+            "count": 3,
+            "id": 104323
+          },
+          {
+            "count": 6,
+            "id": 112044
+          },
+          {},
+          {}
+        ],
+        "breakLevel": 2,
+        "proudSkillId": 23902,
+        "nameTextMapHash": 93741221,
+        "coinCost": 12500
+      },
+      {
+        "proudSkillGroupId": 239,
+        "level": 3,
+        "proudSkillType": 3,
+        "costItems": [
+          {
+            "count": 2,
+            "id": 104324
+          },
+          {
+            "count": 3,
+            "id": 112045
+          },
+          {},
+          {}
+        ],
+        "breakLevel": 3,
+        "proudSkillId": 23903,
+        "nameTextMapHash": 3456406533,
+        "coinCost": 17500
+      },
+      {
+        "proudSkillGroupId": 239,
+        "level": 4,
+        "proudSkillType": 3,
+        "costItems": [
+          {
+            "count": 4,
+            "id": 104324
+          },
+          {
+            "count": 4,
+            "id": 112045
+          },
+          {},
+          {}
+        ],
+        "breakLevel": 3,
+        "proudSkillId": 23904,
+        "nameTextMapHash": 3905190181,
+        "coinCost": 25000
+      },
+      {
+        "proudSkillGroupId": 239,
+        "level": 5,
+        "proudSkillType": 3,
+        "costItems": [
+          {
+            "count": 6,
+            "id": 104324
+          },
+          {
+            "count": 6,
+            "id": 112045
+          },
+          {},
+          {}
+        ],
+        "breakLevel": 4,
+        "proudSkillId": 23905,
+        "nameTextMapHash": 3108856093,
+        "coinCost": 30000
+      },
+      {
+        "proudSkillGroupId": 239,
+        "level": 6,
+        "proudSkillType": 3,
+        "costItems": [
+          {
+            "count": 9,
+            "id": 104324
+          },
+          {
+            "count": 9,
+            "id": 112045
+          },
+          {},
+          {}
+        ],
+        "breakLevel": 4,
+        "proudSkillId": 23906,
+        "nameTextMapHash": 4028254213,
+        "coinCost": 37500
+      },
+      {
+        "proudSkillGroupId": 239,
+        "level": 7,
+        "proudSkillType": 3,
+        "costItems": [
+          {
+            "count": 4,
+            "id": 104325
+          },
+          {
+            "count": 4,
+            "id": 112046
+          },
+          {
+            "count": 1,
+            "id": 113018
+          },
+          {}
+        ],
+        "breakLevel": 5,
+        "proudSkillId": 23907,
+        "nameTextMapHash": 1498373261,
+        "coinCost": 120000
+      },
+      {
+        "proudSkillGroupId": 239,
+        "level": 8,
+        "proudSkillType": 3,
+        "costItems": [
+          {
+            "count": 6,
+            "id": 104325
+          },
+          {
+            "count": 6,
+            "id": 112046
+          },
+          {
+            "count": 1,
+            "id": 113018
+          },
+          {}
+        ],
+        "breakLevel": 5,
+        "proudSkillId": 23908,
+        "nameTextMapHash": 3370654101,
+        "coinCost": 260000
+      },
+      {
+        "proudSkillGroupId": 239,
+        "level": 9,
+        "proudSkillType": 3,
+        "costItems": [
+          {
+            "count": 12,
+            "id": 104325
+          },
+          {
+            "count": 9,
+            "id": 112046
+          },
+          {
+            "count": 2,
+            "id": 113018
+          },
+          {}
+        ],
+        "breakLevel": 6,
+        "proudSkillId": 23909,
+        "nameTextMapHash": 3332111453,
+        "coinCost": 450000
+      },
+      {
+        "proudSkillGroupId": 239,
+        "level": 10,
+        "proudSkillType": 3,
+        "costItems": [
+          {
+            "count": 16,
+            "id": 104325
+          },
+          {
+            "count": 12,
+            "id": 112046
+          },
+          {
+            "count": 2,
+            "id": 113018
+          },
+          {
+            "count": 1,
+            "id": 104319
+          }
+        ],
+        "breakLevel": 6,
+        "proudSkillId": 23910,
+        "nameTextMapHash": 103205317,
+        "coinCost": 700000
+      }
+    ],
+    "ExcelBinOutput/WeaponExcelConfigData.json": [
+      {
+        "rankLevel": 1,
+        "weaponType": "WEAPON_SWORD_ONE_HAND",
+        "weaponPromoteId": 11101,
+        "id": 11101,
+        "itemType": "ITEM_WEAPON",
+        "nameTextMapHash": 2410593283
+      },
+      {
+        "rankLevel": 5,
+        "weaponType": "WEAPON_SWORD_ONE_HAND",
+        "weaponPromoteId": 11501,
+        "id": 11501,
+        "itemType": "ITEM_WEAPON",
+        "nameTextMapHash": 902264035
+      }
+    ],
+    "ExcelBinOutput/WeaponCodexExcelConfigData.json": [
+      {
+        "weaponId": 11101,
+        "id": 30211101
+      },
+      {
+        "weaponId": 11501,
+        "id": 30211501
+      }
+    ],
+    "ExcelBinOutput/WeaponPromoteExcelConfigData.json": [
+      {
+        "weaponPromoteId": 11501,
+        "unlockMaxLevel": 20,
+        "costItems": [
+          {},
+          {},
+          {}
+        ]
+      },
+      {
+        "weaponPromoteId": 11501,
+        "coinCost": 10000,
+        "promoteLevel": 1,
+        "unlockMaxLevel": 40,
+        "costItems": [
+          {
+            "count": 5,
+            "id": 114001
+          },
+          {
+            "count": 5,
+            "id": 112014
+          },
+          {
+            "count": 3,
+            "id": 112011
+          }
+        ]
+      },
+      {
+        "weaponPromoteId": 11501,
+        "coinCost": 20000,
+        "promoteLevel": 2,
+        "unlockMaxLevel": 50,
+        "costItems": [
+          {
+            "count": 5,
+            "id": 114002
+          },
+          {
+            "count": 18,
+            "id": 112014
+          },
+          {
+            "count": 12,
+            "id": 112011
+          }
+        ]
+      },
+      {
+        "weaponPromoteId": 11501,
+        "coinCost": 30000,
+        "promoteLevel": 3,
+        "unlockMaxLevel": 60,
+        "costItems": [
+          {
+            "count": 9,
+            "id": 114002
+          },
+          {
+            "count": 9,
+            "id": 112015
+          },
+          {
+            "count": 9,
+            "id": 112012
+          }
+        ]
+      },
+      {
+        "weaponPromoteId": 11501,
+        "coinCost": 45000,
+        "promoteLevel": 4,
+        "unlockMaxLevel": 70,
+        "costItems": [
+          {
+            "count": 5,
+            "id": 114003
+          },
+          {
+            "count": 18,
+            "id": 112015
+          },
+          {
+            "count": 14,
+            "id": 112012
+          }
+        ]
+      },
+      {
+        "weaponPromoteId": 11501,
+        "coinCost": 55000,
+        "promoteLevel": 5,
+        "unlockMaxLevel": 80,
+        "costItems": [
+          {
+            "count": 9,
+            "id": 114003
+          },
+          {
+            "count": 14,
+            "id": 112016
+          },
+          {
+            "count": 9,
+            "id": 112013
+          }
+        ]
+      },
+      {
+        "weaponPromoteId": 11501,
+        "coinCost": 65000,
+        "promoteLevel": 6,
+        "unlockMaxLevel": 90,
+        "costItems": [
+          {
+            "count": 6,
+            "id": 114004
+          },
+          {
+            "count": 27,
+            "id": 112016
+          },
+          {
+            "count": 18,
+            "id": 112013
+          }
+        ]
+      }
+    ],
+    "ExcelBinOutput/MaterialExcelConfigData.json": [
+      {
+        "rankLevel": 3,
+        "id": 202,
+        "itemType": "ITEM_VIRTUAL",
+        "nameTextMapHash": 3578052980
+      },
+      {
+        "id": 101202,
+        "itemType": "ITEM_MATERIAL",
+        "nameTextMapHash": 3896942756
+      },
+      {
+        "rankLevel": 2,
+        "id": 104161,
+        "itemType": "ITEM_MATERIAL",
+        "nameTextMapHash": 3090648092
+      },
+      {
+        "rankLevel": 3,
+        "id": 104162,
+        "itemType": "ITEM_MATERIAL",
+        "nameTextMapHash": 2226067636
+      },
+      {
+        "rankLevel": 4,
+        "id": 104163,
+        "itemType": "ITEM_MATERIAL",
+        "nameTextMapHash": 498228604
+      },
+      {
+        "rankLevel": 5,
+        "id": 104164,
+        "itemType": "ITEM_MATERIAL",
+        "nameTextMapHash": 1494672620
+      },
+      {
+        "rankLevel": 5,
+        "id": 104319,
+        "itemType": "ITEM_MATERIAL",
+        "nameTextMapHash": 2454932596
+      },
+      {
+        "rankLevel": 2,
+        "id": 104323,
+        "itemType": "ITEM_MATERIAL",
+        "nameTextMapHash": 2962100404
+      },
+      {
+        "rankLevel": 3,
+        "id": 104324,
+        "itemType": "ITEM_MATERIAL",
+        "nameTextMapHash": 4156724420
+      },
+      {
+        "rankLevel": 4,
+        "id": 104325,
+        "itemType": "ITEM_MATERIAL",
+        "nameTextMapHash": 2852490284
+      },
+      {
+        "rankLevel": 1,
+        "id": 112011,
+        "itemType": "ITEM_MATERIAL",
+        "nameTextMapHash": 85549564
+      },
+      {
+        "rankLevel": 2,
+        "id": 112012,
+        "itemType": "ITEM_MATERIAL",
+        "nameTextMapHash": 2287170668
+      },
+      {
+        "rankLevel": 3,
+        "id": 112013,
+        "itemType": "ITEM_MATERIAL",
+        "nameTextMapHash": 744013132
+      },
+      {
+        "rankLevel": 2,
+        "id": 112014,
+        "itemType": "ITEM_MATERIAL",
+        "nameTextMapHash": 1874818508
+      },
+      {
+        "rankLevel": 3,
+        "id": 112015,
+        "itemType": "ITEM_MATERIAL",
+        "nameTextMapHash": 98885076
+      },
+      {
+        "rankLevel": 4,
+        "id": 112016,
+        "itemType": "ITEM_MATERIAL",
+        "nameTextMapHash": 258444604
+      },
+      {
+        "rankLevel": 1,
+        "id": 112044,
+        "itemType": "ITEM_MATERIAL",
+        "nameTextMapHash": 3548930220
+      },
+      {
+        "rankLevel": 2,
+        "id": 112045,
+        "itemType": "ITEM_MATERIAL",
+        "nameTextMapHash": 832899108
+      },
+      {
+        "rankLevel": 3,
+        "id": 112046,
+        "itemType": "ITEM_MATERIAL",
+        "nameTextMapHash": 3514696868
+      },
+      {
+        "rankLevel": 5,
+        "id": 113018,
+        "itemType": "ITEM_MATERIAL",
+        "nameTextMapHash": 2573932868
+      },
+      {
+        "rankLevel": 4,
+        "id": 113023,
+        "itemType": "ITEM_MATERIAL",
+        "nameTextMapHash": 2070124020
+      },
+      {
+        "rankLevel": 2,
+        "id": 114001,
+        "itemType": "ITEM_MATERIAL",
+        "nameTextMapHash": 2567593300
+      },
+      {
+        "rankLevel": 3,
+        "id": 114002,
+        "itemType": "ITEM_MATERIAL",
+        "nameTextMapHash": 964863092
+      },
+      {
+        "rankLevel": 4,
+        "id": 114003,
+        "itemType": "ITEM_MATERIAL",
+        "nameTextMapHash": 1852199188
+      },
+      {
+        "rankLevel": 5,
+        "id": 114004,
+        "itemType": "ITEM_MATERIAL",
+        "nameTextMapHash": 2734083348
+      }
+    ],
+    "ExcelBinOutput/ReliquaryExcelConfigData.json": [
+      {
+        "setId": 10001,
+        "rankLevel": 1,
+        "id": 51110,
+        "itemType": "ITEM_RELIQUARY",
+        "nameTextMapHash": 3492048100
+      },
+      {
+        "setId": 10001,
+        "rankLevel": 1,
+        "id": 51120,
+        "itemType": "ITEM_RELIQUARY",
+        "nameTextMapHash": 3114338660
+      },
+      {
+        "setId": 10001,
+        "rankLevel": 1,
+        "id": 51130,
+        "itemType": "ITEM_RELIQUARY",
+        "nameTextMapHash": 1516923244
+      },
+      {
+        "setId": 10001,
+        "rankLevel": 1,
+        "id": 51140,
+        "itemType": "ITEM_RELIQUARY",
+        "nameTextMapHash": 1445795932
+      },
+      {
+        "setId": 10001,
+        "rankLevel": 1,
+        "id": 51150,
+        "itemType": "ITEM_RELIQUARY",
+        "nameTextMapHash": 1658110324
+      }
+    ],
+    "ExcelBinOutput/ReliquarySetExcelConfigData.json": [
+      {
+        "setNeedNum": [
+          2,
+          4
+        ],
+        "setId": 10001,
+        "containsList": [
+          51140,
+          51120,
+          51150,
+          51110,
+          51130
+        ],
+        "equipAffixId": 210001
+      }
+    ],
+    "ExcelBinOutput/ReliquaryCodexExcelConfigData.json": [
+      {
+        "id": 30105103,
+        "level": 3,
+        "suitId": 10001
+      },
+      {
+        "id": 30105104,
+        "level": 4,
+        "suitId": 10001
+      }
+    ],
+    "ExcelBinOutput/EquipAffixExcelConfigData.json": [
+      {
+        "id": 210001,
+        "nameTextMapHash": 35587211
+      },
+      {
+        "id": 210001,
+        "nameTextMapHash": 2364208339,
+        "level": 1
+      }
+    ],
+    "TextMap/TextMap_MediumEN.json": {
+      "682887613": "Kamisato Art: Hyouka",
+      "3090648092": "Shivada Jade Sliver",
+      "2962100404": "Teachings of Elegance",
+      "744013132": "Weathered Arrowhead",
+      "2852490284": "Philosophies of Elegance",
+      "2573932868": "Bloodjade Branch",
+      "2454932596": "Crown of Insight",
+      "2410593283": "Dull Blade",
+      "2567593300": "Tile of Decarabian's Tower",
+      "81399925": "Kamisato Art: Soumetsu",
+      "498228604": "Shivada Jade Chunk",
+      "3896942756": "Sakura Bloom",
+      "832899108": "Kageuchi Handguard",
+      "3578052980": "Mora",
+      "1494672620": "Shivada Jade Gemstone",
+      "1006042610": "Kamisato Ayaka",
+      "1658110324": "Sundial of the Sojourner",
+      "3514696868": "Famed Handguard",
+      "1445795932": "Heart of Comradeship",
+      "2734083348": "Scattered Piece of Decarabian's Dream",
+      "964863092": "Debris of Decarabian's City",
+      "2364208339": "Resolution of Sojourner",
+      "1852199188": "Fragment of Decarabian's Epic",
+      "35587211": "Resolution of Sojourner",
+      "98885076": "Black Bronze Horn",
+      "813430205": "Kamisato Art: Kabuki",
+      "85549564": "Firm Arrowhead",
+      "4156724420": "Guide to Elegance",
+      "2226067636": "Shivada Jade Fragment",
+      "2287170668": "Sharp Arrowhead",
+      "2070124020": "Perpetual Heart",
+      "1874818508": "Heavy Horn",
+      "3492048100": "Goblet of the Sojourner",
+      "258444604": "Black Crystal Horn",
+      "3548930220": "Old Handguard",
+      "1516923244": "Crown of Parting",
+      "3114338660": "Feather of Homecoming",
+      "902264035": "Aquila Favonia"
+    }
+  }
+}

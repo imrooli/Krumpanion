@@ -86,6 +86,8 @@ export function buildPlannerStatusFromOutput(output: PlannerOutput, timestamp: s
     activeGoalCount: output.plannerGoals.filter((goal) => goal.enabled).length,
     materialDeficitCount: output.totalMissingByMaterial.filter((row) => row.effectiveDeficit > 0).length,
     totalEstimatedResin: output.summary.totalEstimatedResin,
+    guaranteedTotalResin: output.summary.guaranteedTotalResin,
+    expectedAdvisoryResin: output.summary.expectedAdvisoryResin,
     warningCount: output.warnings.length,
   };
 }
@@ -152,6 +154,8 @@ export function createRecalculationChange(params: {
     activeGoalCount: params.status.activeGoalCount,
     materialDeficitCount: params.status.materialDeficitCount,
     totalEstimatedResin: params.status.totalEstimatedResin,
+    guaranteedTotalResin: params.status.guaranteedTotalResin ?? params.status.totalEstimatedResin,
+    expectedAdvisoryResin: params.status.expectedAdvisoryResin,
     warningCount: params.status.warningCount,
     resolvedGoalCount: deltas?.resolvedGoalCount,
     newlyCompletedGoalCount: deltas?.newlyCompletedGoalCount,
